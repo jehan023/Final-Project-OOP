@@ -38,14 +38,7 @@ namespace BiliPC
                 {
                     this.Hide();
                     loggedIn = true;
-                    if (user.isAdmin == true)
-                    {
-                        IsUser.Admin = (true);
-                    }
-                    if (user.isAdmin == false)
-                    {
-                        IsUser.Admin = (false);
-                    }
+                    IsUser.Admin = user.isAdmin;
                     DashboardUI dashboardUI = new DashboardUI();
                     dashboardUI.Show();
                     break;
