@@ -14,34 +14,44 @@ namespace BiliPC
 {
     public partial class LoginUI : Form
     {
-        static MongoClient client = new MongoClient();
-        static IMongoDatabase db = client.GetDatabase("POS_Database");
-        static IMongoCollection<BsonDocument> collection = db.GetCollection<BsonDocument>("Users");
+        MongoCRUD db = new MongoCRUD("POS_Database");
 
         public LoginUI()
         {
             InitializeComponent();
-
         }
 
-        //verify if admin or user
-        public string accType = textBoxUsername.Text;
+        public class IsUser
+        {
+            public static bool Admin { get; set; }
+        }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (textBoxUsername.Text == "Admin" && textBoxPassword.Text == "admin")
-            {
-                this.Hide();
-                DashboardUI dashboard = new DashboardUI();
-                dashboard.Show();
-            }
-            else if (textBoxUsername.Text == "User" && textBoxPassword.Text == "user")
-            {
-                this.Hide();
-                DashboardUI dashboard = new DashboardUI();
-                dashboard.Show();
-            }
-            else 
+            var userRecord = db.LoadRecords<UsersModel>("Users");
+            string inputUid = textBoxUsername.Text;
+            string inputPwd = textBoxPassword.Text;
+            bool loggedIn = false;
+            
+            foreach (var user in userRecord)
+                if ((inputUid == user.Username) && (inputPwd == user.Password))
+                {
+                    this.Hide();
+                    loggedIn = true;
+                    if (user.isAdmin == true)
+                    {
+                        IsUser.Admin = (true);
+                    }
+                    if (user.isAdmin == false)
+                    {
+                        IsUser.Admin = (false);
+                    }
+                    DashboardUI dashboardUI = new DashboardUI();
+                    dashboardUI.Show();
+                    break;
+                }
+
+            if (loggedIn != true)
             {
                 MessageBox.Show("Incorrect username/password.");
             }

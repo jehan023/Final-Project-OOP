@@ -100,7 +100,6 @@
     <Compile Include="DashboardUI.Designer.cs">
       <DependentUpon>DashboardUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="BsonIDAttribute.cs" />
     <Compile Include="EmployeeUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,13 +112,13 @@
     <Compile Include="FormPrac.Designer.cs">
       <DependentUpon>FormPrac.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs" />
     <Compile Include="LoginUI.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="LoginUI.Designer.cs">
       <DependentUpon>LoginUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="MongoCRUD.cs" />
     <Compile Include="Products.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +139,7 @@
     <Compile Include="TransactionForm.Designer.cs">
       <DependentUpon>TransactionForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UsersModel.cs" />
     <Compile Include="ViewEmployees.cs">
       <SubType>Form</SubType>
     </Compile>

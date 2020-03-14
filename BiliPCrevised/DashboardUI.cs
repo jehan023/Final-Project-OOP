@@ -24,10 +24,9 @@ namespace BiliPC
             CustomDesign();
 
             LoginUI login = new LoginUI();
-            //verify if user is login to hide maanage button
-            if (login.accType == "User")
-                btnManageEmployees.Visible = false;
 
+            // verify if user is an Admin to hide the "Manage Users" button
+            btnManageEmployees.Visible = LoginUI.IsUser.Admin;
         }
 
         //TIMER TICK

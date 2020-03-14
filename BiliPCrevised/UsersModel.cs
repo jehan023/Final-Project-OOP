@@ -22,7 +22,5 @@ namespace BiliPC
         public double Salary { get; set; }
         [BsonElement]
         public double Workhours { get; set; }
-
-
     }
 }
