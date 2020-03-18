@@ -86,7 +86,7 @@
             this.labelDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelDate.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDate.ForeColor = System.Drawing.Color.White;
-            this.labelDate.Location = new System.Drawing.Point(6, 616);
+            this.labelDate.Location = new System.Drawing.Point(3, 616);
             this.labelDate.Margin = new System.Windows.Forms.Padding(0);
             this.labelDate.Name = "labelDate";
             this.labelDate.Size = new System.Drawing.Size(42, 17);
@@ -109,6 +109,7 @@
             // 
             // btnInventory
             // 
+            this.btnInventory.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnInventory.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnInventory.FlatAppearance.BorderSize = 0;
             this.btnInventory.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
@@ -150,6 +151,7 @@
             // 
             // btnLogout
             // 
+            this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogout.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnLogout.FlatAppearance.BorderSize = 0;
             this.btnLogout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
@@ -183,6 +185,7 @@
             // 
             // btnTrackEmployees
             // 
+            this.btnTrackEmployees.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTrackEmployees.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnTrackEmployees.FlatAppearance.BorderSize = 0;
             this.btnTrackEmployees.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
@@ -203,6 +206,7 @@
             // 
             // btnViewEmployees
             // 
+            this.btnViewEmployees.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnViewEmployees.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnViewEmployees.FlatAppearance.BorderSize = 0;
             this.btnViewEmployees.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
@@ -223,6 +227,7 @@
             // 
             // btnManageEmployees
             // 
+            this.btnManageEmployees.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnManageEmployees.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnManageEmployees.FlatAppearance.BorderSize = 0;
             this.btnManageEmployees.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
@@ -257,6 +262,7 @@
             // 
             // btnInventoryReport
             // 
+            this.btnInventoryReport.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnInventoryReport.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnInventoryReport.FlatAppearance.BorderSize = 0;
             this.btnInventoryReport.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
@@ -277,6 +283,7 @@
             // 
             // btnEditProducts
             // 
+            this.btnEditProducts.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEditProducts.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnEditProducts.FlatAppearance.BorderSize = 0;
             this.btnEditProducts.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
@@ -297,6 +304,7 @@
             // 
             // btnSearchProducts
             // 
+            this.btnSearchProducts.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSearchProducts.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSearchProducts.FlatAppearance.BorderSize = 0;
             this.btnSearchProducts.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
@@ -331,6 +339,7 @@
             // 
             // btnSalesReport
             // 
+            this.btnSalesReport.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSalesReport.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSalesReport.FlatAppearance.BorderSize = 0;
             this.btnSalesReport.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
@@ -351,6 +360,7 @@
             // 
             // btnTransactionHistory
             // 
+            this.btnTransactionHistory.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTransactionHistory.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnTransactionHistory.FlatAppearance.BorderSize = 0;
             this.btnTransactionHistory.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
@@ -371,6 +381,7 @@
             // 
             // btnCreateTransaction
             // 
+            this.btnCreateTransaction.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCreateTransaction.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnCreateTransaction.FlatAppearance.BorderSize = 0;
             this.btnCreateTransaction.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
@@ -391,6 +402,7 @@
             // 
             // btnSales
             // 
+            this.btnSales.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSales.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSales.FlatAppearance.BorderSize = 0;
             this.btnSales.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
@@ -464,7 +476,7 @@
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
-            // AdminUI
+            // DashboardUI
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoSize = true;
@@ -475,7 +487,7 @@
             this.Controls.Add(this.panelSideMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MinimumSize = new System.Drawing.Size(1129, 726);
-            this.Name = "AdminUI";
+            this.Name = "DashboardUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BiliPC Store";
             this.panelSideMenu.ResumeLayout(false);
