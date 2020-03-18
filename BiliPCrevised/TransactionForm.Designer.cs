@@ -405,12 +405,12 @@
             this.textBox8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBox8.BackColor = System.Drawing.Color.DarkGray;
             this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox8.Location = new System.Drawing.Point(60, 36);
             this.textBox8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox8.Name = "textBox8";
             this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(447, 27);
+            this.textBox8.Size = new System.Drawing.Size(447, 23);
             this.textBox8.TabIndex = 57;
             // 
             // label8

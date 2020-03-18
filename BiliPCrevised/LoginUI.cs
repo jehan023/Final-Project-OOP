@@ -26,13 +26,13 @@ namespace BiliPC
             public static bool Admin { get; set; }
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private void btnLogin_Click_2(object sender, EventArgs e)
         {
             var userRecord = db.LoadRecords<UsersModel>("Users");
             string inputUid = textBoxUsername.Text;
             string inputPwd = textBoxPassword.Text;
             bool loggedIn = false;
-            
+
             foreach (var user in userRecord)
                 if ((inputUid == user.Username) && (inputPwd == user.Password))
                 {
@@ -49,5 +49,13 @@ namespace BiliPC
                 MessageBox.Show("Incorrect username/password.");
             }
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+
+        
     }
 }

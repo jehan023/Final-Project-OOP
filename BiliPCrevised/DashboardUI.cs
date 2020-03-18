@@ -160,7 +160,9 @@ namespace BiliPC
         #region Logout
         private void btnLogout_Click_1(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
+            LoginUI login = new LoginUI();
+            login.Show();
         }
 
 
