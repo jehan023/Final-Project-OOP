@@ -276,3 +276,24 @@ C:\Users\DENNIEL-PC\source\repos\Final-Project-OOP\BiliPCrevised\bin\Debug\Mongo
 C:\Users\DENNIEL-PC\source\repos\Final-Project-OOP\BiliPCrevised\bin\Debug\Snappy.NET.xml
 C:\Users\DENNIEL-PC\source\repos\Final-Project-OOP\BiliPCrevised\bin\Debug\System.Buffers.xml
 C:\Users\DENNIEL-PC\source\repos\Final-Project-OOP\BiliPCrevised\obj\Debug\BiliPC.csproj.CopyComplete
+C:\Users\Nitro 5\Documents\GitHub\Final-Project-OOP\BiliPCrevised\bin\Debug\mongocrypt.dll
+C:\Users\Nitro 5\Documents\GitHub\Final-Project-OOP\BiliPCrevised\bin\Debug\BiliPC.exe.config
+C:\Users\Nitro 5\Documents\GitHub\Final-Project-OOP\BiliPCrevised\bin\Debug\BiliPC.exe
+C:\Users\Nitro 5\Documents\GitHub\Final-Project-OOP\BiliPCrevised\bin\Debug\BiliPC.pdb
+C:\Users\Nitro 5\Documents\GitHub\Final-Project-OOP\BiliPCrevised\bin\Debug\Crc32C.NET.dll
+C:\Users\Nitro 5\Documents\GitHub\Final-Project-OOP\BiliPCrevised\bin\Debug\DnsClient.dll
+C:\Users\Nitro 5\Documents\GitHub\Final-Project-OOP\BiliPCrevised\bin\Debug\MongoDB.Bson.dll
+C:\Users\Nitro 5\Documents\GitHub\Final-Project-OOP\BiliPCrevised\bin\Debug\MongoDB.Driver.Core.dll
+C:\Users\Nitro 5\Documents\GitHub\Final-Project-OOP\BiliPCrevised\bin\Debug\MongoDB.Driver.dll
+C:\Users\Nitro 5\Documents\GitHub\Final-Project-OOP\BiliPCrevised\bin\Debug\MongoDB.Libmongocrypt.dll
+C:\Users\Nitro 5\Documents\GitHub\Final-Project-OOP\BiliPCrevised\bin\Debug\SharpCompress.dll
+C:\Users\Nitro 5\Documents\GitHub\Final-Project-OOP\BiliPCrevised\bin\Debug\Snappy.NET.dll
+C:\Users\Nitro 5\Documents\GitHub\Final-Project-OOP\BiliPCrevised\bin\Debug\System.Buffers.dll
+C:\Users\Nitro 5\Documents\GitHub\Final-Project-OOP\BiliPCrevised\bin\Debug\Crc32C.NET.xml
+C:\Users\Nitro 5\Documents\GitHub\Final-Project-OOP\BiliPCrevised\bin\Debug\DnsClient.xml
+C:\Users\Nitro 5\Documents\GitHub\Final-Project-OOP\BiliPCrevised\bin\Debug\MongoDB.Bson.xml
+C:\Users\Nitro 5\Documents\GitHub\Final-Project-OOP\BiliPCrevised\bin\Debug\MongoDB.Driver.xml
+C:\Users\Nitro 5\Documents\GitHub\Final-Project-OOP\BiliPCrevised\bin\Debug\MongoDB.Driver.Core.xml
+C:\Users\Nitro 5\Documents\GitHub\Final-Project-OOP\BiliPCrevised\bin\Debug\Snappy.NET.xml
+C:\Users\Nitro 5\Documents\GitHub\Final-Project-OOP\BiliPCrevised\bin\Debug\System.Buffers.xml
+C:\Users\Nitro 5\Documents\GitHub\Final-Project-OOP\BiliPCrevised\obj\Debug\BiliPC.csproj.CopyComplete
