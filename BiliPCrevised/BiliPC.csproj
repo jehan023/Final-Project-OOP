@@ -112,6 +112,7 @@
     <Compile Include="FormPrac.Designer.cs">
       <DependentUpon>FormPrac.cs</DependentUpon>
     </Compile>
+    <Compile Include="InventoryModel.cs" />
     <Compile Include="LoginUI.cs">
       <SubType>Form</SubType>
     </Compile>

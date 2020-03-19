@@ -8,21 +8,22 @@ using System.Threading.Tasks;
 
 namespace BiliPC
 {
-    class UsersModel
+    class InventoryModel
     {
         [BsonId]
         public ObjectId Id { get; set; }
         [BsonElement]
-        public bool isAdmin { get; set; }
+        public string Item { get; set; }
         [BsonElement]
-        public string Name { get; set; }
+        public int Quantity { get; set; }
         [BsonElement]
-        public string Username { get; set; }
+        public double UnitPrice { get; set; }
         [BsonElement]
-        public string Password { get; set; }
+        public double Cost { get; set; }
         [BsonElement]
-        public double Wage { get; set; }
+        public string Category { get; set; }
         [BsonElement]
-        public double Workhours { get; set; }
+        public string Supplier { get; set; }
+        
     }
 }

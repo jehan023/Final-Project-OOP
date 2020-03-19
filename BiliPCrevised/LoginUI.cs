@@ -15,7 +15,7 @@ namespace BiliPC
     public partial class LoginUI : Form
     {
         MongoCRUD db = new MongoCRUD("POS_Database");
-
+        
         public LoginUI()
         {
             InitializeComponent();
@@ -24,27 +24,40 @@ namespace BiliPC
         public class IsUser
         {
             public static bool Admin { get; set; }
+            public static bool loggedIn { get; set; }
         }
 
         private void btnLogin_Click_2(object sender, EventArgs e)
         {
             var userRecord = db.LoadRecords<UsersModel>("Users");
+            
+            // Default Account
+            if (userRecord.Count == 0)
+            {
+                db.InsertRecord("Users", new UsersModel
+                {
+                    isAdmin = true,
+                    Username = "Admin",
+                    Password = "Admin123"
+                });
+            }
+            
             string inputUid = textBoxUsername.Text;
             string inputPwd = textBoxPassword.Text;
-            bool loggedIn = false;
+            IsUser.loggedIn = false;
 
             foreach (var user in userRecord)
                 if ((inputUid == user.Username) && (inputPwd == user.Password))
                 {
                     this.Hide();
-                    loggedIn = true;
+                    IsUser.loggedIn = true;
                     IsUser.Admin = user.isAdmin;
                     DashboardUI dashboardUI = new DashboardUI();
                     dashboardUI.Show();
                     break;
                 }
 
-            if (loggedIn != true)
+            if (IsUser.loggedIn != true)
             {
                 MessageBox.Show("Incorrect username/password.");
             }

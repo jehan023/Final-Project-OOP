@@ -23,6 +23,19 @@ namespace BiliPC
             var collection = db.GetCollection<T>(table);
             collection.InsertOne(record);
         }
+        public bool CheckExistence<T>(string table, string element, string username)
+        {
+            var collection = db.GetCollection<T>(table);
+            var filter = Builders<T>.Filter.Eq(element, username);
+            if (collection.CountDocuments(filter) > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
         public List<T> LoadRecords<T>(string table)
         {
@@ -31,7 +44,7 @@ namespace BiliPC
             return collection.Find(new BsonDocument()).ToList();
         }
 
-        public T LoadRecordById<T>(string table, Guid id)
+        public T LoadRecordById<T>(string table, ObjectId id)
         {
             var collection = db.GetCollection<T>(table);
             var filter = Builders<T>.Filter.Eq("Id", id);
@@ -39,7 +52,7 @@ namespace BiliPC
             return collection.Find(filter).First();
         }
 
-        public void UpsertRecord<T>(string table, Guid id, T record)
+        public void UpsertRecord<T>(string table, ObjectId id, T record)
         {
             var collection = db.GetCollection<T>(table);
 
@@ -49,7 +62,7 @@ namespace BiliPC
                 new ReplaceOptions { IsUpsert = true });
         }
 
-        public void DeleleRecord<T>(string table, Guid id)
+        public void DeleleRecord<T>(string table, ObjectId id)
         {
             var collection = db.GetCollection<T>(table);
             var filter = Builders<T>.Filter.Eq("Id", id);
