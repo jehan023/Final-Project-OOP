@@ -10,7 +10,7 @@ namespace BiliPC
 {
     public class MongoCRUD // Create Read Update Delete
     {
-        private IMongoDatabase db;
+        public IMongoDatabase db;
 
         public MongoCRUD(string database)
         {

@@ -30,7 +30,7 @@ namespace BiliPC
         {
             bool UsernameExists = db.CheckExistence<UsersModel>("Users", "Username", UsernameBox.Text);
 
-            // Check thy empty boxes
+            // Check the empty boxes
             int BoxesCount = 0;
             foreach (Control control in GroupTextBox.Controls)
             {

@@ -296,3 +296,4 @@ C:\Users\Nitro 5\Documents\GitHub\Final-Project-OOP\BiliPCrevised\bin\Debug\Mong
 C:\Users\Nitro 5\Documents\GitHub\Final-Project-OOP\BiliPCrevised\bin\Debug\Snappy.NET.xml
 C:\Users\Nitro 5\Documents\GitHub\Final-Project-OOP\BiliPCrevised\bin\Debug\System.Buffers.xml
 C:\Users\Nitro 5\Documents\GitHub\Final-Project-OOP\BiliPCrevised\obj\Debug\BiliPC.csproj.CopyComplete
+C:\Users\Nitro 5\Documents\GitHub\Final-Project-OOP\BiliPCrevised\obj\Debug\BiliPC.csprojAssemblyReference.cache
