@@ -38,12 +38,7 @@ namespace BiliPC
             addEmployee.Show();
         }
 
-        //datasource of datagrid Users
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-            List<UsersModel> list = collection.AsQueryable().ToList<UsersModel>();
-            EmployeeDataGrid.DataSource = list;
-        }
+        
 
         //refresh table for Users
         private void btnRefresh_Click(object sender, EventArgs e)
@@ -72,7 +67,7 @@ namespace BiliPC
         }
 
         //cell click to view data in boxes
-        private void EmployeeDataGrid_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void EmployeeDataGrid_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
@@ -146,5 +141,6 @@ namespace BiliPC
             collection.DeleteOne(u => u.Id == ObjectId.Parse(IdBox.Text));
             ReadData();
         }
+
     }
 }

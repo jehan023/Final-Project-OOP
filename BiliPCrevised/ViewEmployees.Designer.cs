@@ -40,8 +40,7 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.btnAddEmployee = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.panelbox = new System.Windows.Forms.Panel();
-            this.EmployeeDataGrid = new System.Windows.Forms.DataGridView();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.GroupTextBox = new System.Windows.Forms.GroupBox();
             this.IdBox = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -58,10 +57,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.NameBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.EmployeeDataGrid = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
-            this.panelbox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.EmployeeDataGrid)).BeginInit();
+            this.panel2.SuspendLayout();
             this.GroupTextBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.EmployeeDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -216,17 +216,230 @@
             this.label3.TabIndex = 33;
             this.label3.Text = "Search Employee:";
             // 
-            // panelbox
+            // panel2
             // 
-            this.panelbox.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panelbox.Controls.Add(this.GroupTextBox);
-            this.panelbox.Controls.Add(this.EmployeeDataGrid);
-            this.panelbox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelbox.Location = new System.Drawing.Point(0, 100);
-            this.panelbox.Name = "panelbox";
-            this.panelbox.Size = new System.Drawing.Size(945, 539);
-            this.panelbox.TabIndex = 2;
-            this.panelbox.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            this.panel2.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel2.Controls.Add(this.GroupTextBox);
+            this.panel2.Controls.Add(this.EmployeeDataGrid);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 100);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(945, 539);
+            this.panel2.TabIndex = 2;
+            // 
+            // GroupTextBox
+            // 
+            this.GroupTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.GroupTextBox.BackColor = System.Drawing.Color.Transparent;
+            this.GroupTextBox.Controls.Add(this.IdBox);
+            this.GroupTextBox.Controls.Add(this.label10);
+            this.GroupTextBox.Controls.Add(this.radioAdminFalse);
+            this.GroupTextBox.Controls.Add(this.radioAdminTrue);
+            this.GroupTextBox.Controls.Add(this.label9);
+            this.GroupTextBox.Controls.Add(this.label8);
+            this.GroupTextBox.Controls.Add(this.PasswordBox);
+            this.GroupTextBox.Controls.Add(this.label7);
+            this.GroupTextBox.Controls.Add(this.UsernameBox);
+            this.GroupTextBox.Controls.Add(this.label6);
+            this.GroupTextBox.Controls.Add(this.WorkhoursBox);
+            this.GroupTextBox.Controls.Add(this.WageBox);
+            this.GroupTextBox.Controls.Add(this.label4);
+            this.GroupTextBox.Controls.Add(this.NameBox);
+            this.GroupTextBox.Controls.Add(this.label2);
+            this.GroupTextBox.Location = new System.Drawing.Point(1, 353);
+            this.GroupTextBox.Name = "GroupTextBox";
+            this.GroupTextBox.Size = new System.Drawing.Size(943, 174);
+            this.GroupTextBox.TabIndex = 48;
+            this.GroupTextBox.TabStop = false;
+            // 
+            // IdBox
+            // 
+            this.IdBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.IdBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IdBox.Location = new System.Drawing.Point(135, 16);
+            this.IdBox.Margin = new System.Windows.Forms.Padding(2);
+            this.IdBox.Name = "IdBox";
+            this.IdBox.ReadOnly = true;
+            this.IdBox.Size = new System.Drawing.Size(336, 28);
+            this.IdBox.TabIndex = 59;
+            // 
+            // label10
+            // 
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Black;
+            this.label10.Location = new System.Drawing.Point(45, 18);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(89, 22);
+            this.label10.TabIndex = 58;
+            this.label10.Text = "User ID :";
+            // 
+            // radioAdminFalse
+            // 
+            this.radioAdminFalse.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.radioAdminFalse.AutoSize = true;
+            this.radioAdminFalse.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioAdminFalse.Location = new System.Drawing.Point(593, 124);
+            this.radioAdminFalse.Margin = new System.Windows.Forms.Padding(2);
+            this.radioAdminFalse.Name = "radioAdminFalse";
+            this.radioAdminFalse.Size = new System.Drawing.Size(114, 28);
+            this.radioAdminFalse.TabIndex = 57;
+            this.radioAdminFalse.TabStop = true;
+            this.radioAdminFalse.Text = "Employee";
+            this.radioAdminFalse.UseVisualStyleBackColor = true;
+            // 
+            // radioAdminTrue
+            // 
+            this.radioAdminTrue.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.radioAdminTrue.AutoSize = true;
+            this.radioAdminTrue.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioAdminTrue.Location = new System.Drawing.Point(593, 93);
+            this.radioAdminTrue.Margin = new System.Windows.Forms.Padding(2);
+            this.radioAdminTrue.Name = "radioAdminTrue";
+            this.radioAdminTrue.Size = new System.Drawing.Size(83, 28);
+            this.radioAdminTrue.TabIndex = 56;
+            this.radioAdminTrue.TabStop = true;
+            this.radioAdminTrue.Text = "Admin";
+            this.radioAdminTrue.UseVisualStyleBackColor = true;
+            // 
+            // label9
+            // 
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(61, 98);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(73, 22);
+            this.label9.TabIndex = 55;
+            this.label9.Text = "Wage :";
+            // 
+            // label8
+            // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.Location = new System.Drawing.Point(489, 95);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(102, 22);
+            this.label8.TabIndex = 54;
+            this.label8.Text = "Acc type :";
+            // 
+            // PasswordBox
+            // 
+            this.PasswordBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.PasswordBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PasswordBox.Location = new System.Drawing.Point(593, 51);
+            this.PasswordBox.Margin = new System.Windows.Forms.Padding(2);
+            this.PasswordBox.Name = "PasswordBox";
+            this.PasswordBox.PasswordChar = '*';
+            this.PasswordBox.Size = new System.Drawing.Size(336, 28);
+            this.PasswordBox.TabIndex = 53;
+            // 
+            // label7
+            // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(479, 55);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(111, 22);
+            this.label7.TabIndex = 52;
+            this.label7.Text = "Password :";
+            // 
+            // UsernameBox
+            // 
+            this.UsernameBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.UsernameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UsernameBox.Location = new System.Drawing.Point(593, 16);
+            this.UsernameBox.Margin = new System.Windows.Forms.Padding(2);
+            this.UsernameBox.Name = "UsernameBox";
+            this.UsernameBox.Size = new System.Drawing.Size(336, 28);
+            this.UsernameBox.TabIndex = 51;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(476, 18);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(114, 22);
+            this.label6.TabIndex = 50;
+            this.label6.Text = "Username :";
+            // 
+            // WorkhoursBox
+            // 
+            this.WorkhoursBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.WorkhoursBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WorkhoursBox.Location = new System.Drawing.Point(135, 138);
+            this.WorkhoursBox.Margin = new System.Windows.Forms.Padding(2);
+            this.WorkhoursBox.Name = "WorkhoursBox";
+            this.WorkhoursBox.Size = new System.Drawing.Size(336, 28);
+            this.WorkhoursBox.TabIndex = 49;
+            // 
+            // WageBox
+            // 
+            this.WageBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.WageBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WageBox.Location = new System.Drawing.Point(135, 95);
+            this.WageBox.Margin = new System.Windows.Forms.Padding(2);
+            this.WageBox.Name = "WageBox";
+            this.WageBox.Size = new System.Drawing.Size(336, 28);
+            this.WageBox.TabIndex = 48;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(22, 141);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(112, 22);
+            this.label4.TabIndex = 47;
+            this.label4.Text = "Workhr(s) :";
+            // 
+            // NameBox
+            // 
+            this.NameBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.NameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NameBox.Location = new System.Drawing.Point(135, 54);
+            this.NameBox.Margin = new System.Windows.Forms.Padding(2);
+            this.NameBox.Name = "NameBox";
+            this.NameBox.Size = new System.Drawing.Size(336, 28);
+            this.NameBox.TabIndex = 46;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(61, 54);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(74, 22);
+            this.label2.TabIndex = 45;
+            this.label2.Text = "Name :";
             // 
             // EmployeeDataGrid
             // 
@@ -246,8 +459,8 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.EmployeeDataGrid.DefaultCellStyle = dataGridViewCellStyle1;
-            this.EmployeeDataGrid.Location = new System.Drawing.Point(25, 20);
-            this.EmployeeDataGrid.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.EmployeeDataGrid.Location = new System.Drawing.Point(24, 16);
+            this.EmployeeDataGrid.Margin = new System.Windows.Forms.Padding(2);
             this.EmployeeDataGrid.Name = "EmployeeDataGrid";
             this.EmployeeDataGrid.ReadOnly = true;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -261,227 +474,15 @@
             this.EmployeeDataGrid.RowHeadersWidth = 51;
             this.EmployeeDataGrid.RowTemplate.Height = 24;
             this.EmployeeDataGrid.Size = new System.Drawing.Size(896, 332);
-            this.EmployeeDataGrid.TabIndex = 45;
-            this.EmployeeDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.EmployeeDataGrid_CellClick);
-            // 
-            // GroupTextBox
-            // 
-            this.GroupTextBox.BackColor = System.Drawing.Color.Transparent;
-            this.GroupTextBox.Controls.Add(this.IdBox);
-            this.GroupTextBox.Controls.Add(this.label10);
-            this.GroupTextBox.Controls.Add(this.radioAdminFalse);
-            this.GroupTextBox.Controls.Add(this.radioAdminTrue);
-            this.GroupTextBox.Controls.Add(this.label9);
-            this.GroupTextBox.Controls.Add(this.label8);
-            this.GroupTextBox.Controls.Add(this.PasswordBox);
-            this.GroupTextBox.Controls.Add(this.label7);
-            this.GroupTextBox.Controls.Add(this.UsernameBox);
-            this.GroupTextBox.Controls.Add(this.label6);
-            this.GroupTextBox.Controls.Add(this.WorkhoursBox);
-            this.GroupTextBox.Controls.Add(this.WageBox);
-            this.GroupTextBox.Controls.Add(this.label4);
-            this.GroupTextBox.Controls.Add(this.NameBox);
-            this.GroupTextBox.Controls.Add(this.label2);
-            this.GroupTextBox.Location = new System.Drawing.Point(2, 357);
-            this.GroupTextBox.Name = "GroupTextBox";
-            this.GroupTextBox.Size = new System.Drawing.Size(943, 170);
-            this.GroupTextBox.TabIndex = 46;
-            this.GroupTextBox.TabStop = false;
-            // 
-            // IdBox
-            // 
-            this.IdBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.IdBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IdBox.Location = new System.Drawing.Point(135, 12);
-            this.IdBox.Margin = new System.Windows.Forms.Padding(2);
-            this.IdBox.Name = "IdBox";
-            this.IdBox.ReadOnly = true;
-            this.IdBox.Size = new System.Drawing.Size(336, 28);
-            this.IdBox.TabIndex = 59;
-            // 
-            // label10
-            // 
-            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(45, 14);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(89, 22);
-            this.label10.TabIndex = 58;
-            this.label10.Text = "User ID :";
-            // 
-            // radioAdminFalse
-            // 
-            this.radioAdminFalse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.radioAdminFalse.AutoSize = true;
-            this.radioAdminFalse.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioAdminFalse.Location = new System.Drawing.Point(593, 120);
-            this.radioAdminFalse.Margin = new System.Windows.Forms.Padding(2);
-            this.radioAdminFalse.Name = "radioAdminFalse";
-            this.radioAdminFalse.Size = new System.Drawing.Size(114, 28);
-            this.radioAdminFalse.TabIndex = 57;
-            this.radioAdminFalse.TabStop = true;
-            this.radioAdminFalse.Text = "Employee";
-            this.radioAdminFalse.UseVisualStyleBackColor = true;
-            // 
-            // radioAdminTrue
-            // 
-            this.radioAdminTrue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.radioAdminTrue.AutoSize = true;
-            this.radioAdminTrue.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioAdminTrue.Location = new System.Drawing.Point(593, 89);
-            this.radioAdminTrue.Margin = new System.Windows.Forms.Padding(2);
-            this.radioAdminTrue.Name = "radioAdminTrue";
-            this.radioAdminTrue.Size = new System.Drawing.Size(83, 28);
-            this.radioAdminTrue.TabIndex = 56;
-            this.radioAdminTrue.TabStop = true;
-            this.radioAdminTrue.Text = "Admin";
-            this.radioAdminTrue.UseVisualStyleBackColor = true;
-            // 
-            // label9
-            // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(61, 94);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(73, 22);
-            this.label9.TabIndex = 55;
-            this.label9.Text = "Wage :";
-            // 
-            // label8
-            // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(489, 91);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(102, 22);
-            this.label8.TabIndex = 54;
-            this.label8.Text = "Acc type :";
-            // 
-            // PasswordBox
-            // 
-            this.PasswordBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.PasswordBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PasswordBox.Location = new System.Drawing.Point(593, 47);
-            this.PasswordBox.Margin = new System.Windows.Forms.Padding(2);
-            this.PasswordBox.Name = "PasswordBox";
-            this.PasswordBox.PasswordChar = '*';
-            this.PasswordBox.Size = new System.Drawing.Size(336, 28);
-            this.PasswordBox.TabIndex = 53;
-            // 
-            // label7
-            // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(479, 51);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(111, 22);
-            this.label7.TabIndex = 52;
-            this.label7.Text = "Password :";
-            // 
-            // UsernameBox
-            // 
-            this.UsernameBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.UsernameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UsernameBox.Location = new System.Drawing.Point(593, 12);
-            this.UsernameBox.Margin = new System.Windows.Forms.Padding(2);
-            this.UsernameBox.Name = "UsernameBox";
-            this.UsernameBox.Size = new System.Drawing.Size(336, 28);
-            this.UsernameBox.TabIndex = 51;
-            // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(476, 14);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(114, 22);
-            this.label6.TabIndex = 50;
-            this.label6.Text = "Username :";
-            // 
-            // WorkhoursBox
-            // 
-            this.WorkhoursBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.WorkhoursBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WorkhoursBox.Location = new System.Drawing.Point(135, 134);
-            this.WorkhoursBox.Margin = new System.Windows.Forms.Padding(2);
-            this.WorkhoursBox.Name = "WorkhoursBox";
-            this.WorkhoursBox.Size = new System.Drawing.Size(336, 28);
-            this.WorkhoursBox.TabIndex = 49;
-            // 
-            // WageBox
-            // 
-            this.WageBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.WageBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WageBox.Location = new System.Drawing.Point(135, 91);
-            this.WageBox.Margin = new System.Windows.Forms.Padding(2);
-            this.WageBox.Name = "WageBox";
-            this.WageBox.Size = new System.Drawing.Size(336, 28);
-            this.WageBox.TabIndex = 48;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(15, 136);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(120, 22);
-            this.label4.TabIndex = 47;
-            this.label4.Text = "Workhours :";
-            // 
-            // NameBox
-            // 
-            this.NameBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.NameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NameBox.Location = new System.Drawing.Point(135, 50);
-            this.NameBox.Margin = new System.Windows.Forms.Padding(2);
-            this.NameBox.Name = "NameBox";
-            this.NameBox.Size = new System.Drawing.Size(336, 28);
-            this.NameBox.TabIndex = 46;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(61, 50);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 22);
-            this.label2.TabIndex = 45;
-            this.label2.Text = "Name :";
+            this.EmployeeDataGrid.TabIndex = 47;
+            this.EmployeeDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.EmployeeDataGrid_CellClick_1);
             // 
             // ViewEmployees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(945, 639);
-            this.Controls.Add(this.panelbox);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(945, 639);
@@ -489,10 +490,10 @@
             this.Text = "ViewEmployees";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panelbox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.EmployeeDataGrid)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.GroupTextBox.ResumeLayout(false);
             this.GroupTextBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.EmployeeDataGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -509,8 +510,7 @@
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Button btnAddEmployee;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panelbox;
-        private System.Windows.Forms.DataGridView EmployeeDataGrid;
+        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.GroupBox GroupTextBox;
         private System.Windows.Forms.TextBox IdBox;
         private System.Windows.Forms.Label label10;
@@ -527,5 +527,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox NameBox;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView EmployeeDataGrid;
     }
 }
