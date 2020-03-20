@@ -100,7 +100,6 @@
     <Compile Include="DashboardUI.Designer.cs">
       <DependentUpon>DashboardUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="Employees.cs" />
     <Compile Include="EmployeeUI.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -15,92 +15,52 @@ namespace BiliPC
 {
     public partial class ViewEmployees : Form
     {
-        static MongoClient client = new MongoClient("mongodb://localhost:27017/");
-        static IMongoDatabase db = client.GetDatabase("POS_Database");
-        static IMongoCollection<UsersModel> collection = db.GetCollection<UsersModel>("Users");
-
-        bool admin;
+        MongoCRUD db = new MongoCRUD("POS_Database");
 
         public ViewEmployees()
         {
             InitializeComponent();
-            ReadData();
+            RefreshAccounts();
         }
 
-        //Close button
         private void btnX_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        //Add Employee button
-        private void btnAddEmployee_Click(object sender, EventArgs e)
+        private void AddAccountBtn_Click(object sender, EventArgs e)
         {
             AddNewEmployee addEmployee = new AddNewEmployee();
             addEmployee.Show();
         }
 
-        //refresh table for Users
-        private void btnRefresh_Click(object sender, EventArgs e)
+        public void RefreshAccounts()
         {
-            List<UsersModel> list = collection.AsQueryable().ToList<UsersModel>();
-            EmployeeDataGrid.DataSource = list;
+            var userRecord = db.LoadRecords<UsersModel>("Users");
+            EmployeeDataGrid.DataSource = userRecord;
         }
 
-        //show in boxes the data
-
-        public void ReadData()
+        private void RefreshBtn_Click(object sender, EventArgs e)
         {
-            List<UsersModel> list = collection.AsQueryable().ToList<UsersModel>();
-            EmployeeDataGrid.DataSource = list;
-            IdBox.Text = EmployeeDataGrid.Rows[0].Cells[0].Value.ToString();
-            radioAdminTrue.Checked = EmployeeDataGrid.Rows[0].Cells[1].Value.Equals(true);
-            radioAdminFalse.Checked = EmployeeDataGrid.Rows[0].Cells[1].Value.Equals(false);
-            NameBox.Text = EmployeeDataGrid.Rows[0].Cells[2].Value.ToString();
-            UsernameBox.Text = EmployeeDataGrid.Rows[0].Cells[3].Value.ToString();
-            PasswordBox.Text = EmployeeDataGrid.Rows[0].Cells[4].Value.ToString();
-            WageBox.Text = EmployeeDataGrid.Rows[0].Cells[5].Value.ToString();
-            WorkhoursBox.Text = EmployeeDataGrid.Rows[0].Cells[6].Value.ToString();
+            RefreshAccounts();
         }
 
-        //cell click to view data in boxes
         private void EmployeeDataGrid_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            try
-            {
-                IdBox.Text = EmployeeDataGrid.Rows[e.RowIndex].Cells[0].Value.ToString();
-                radioAdminTrue.Checked = EmployeeDataGrid.Rows[e.RowIndex].Cells[1].Value.Equals(true);
-                radioAdminFalse.Checked = EmployeeDataGrid.Rows[e.RowIndex].Cells[1].Value.Equals(false);
-                NameBox.Text = EmployeeDataGrid.Rows[e.RowIndex].Cells[2].Value.ToString();
-                UsernameBox.Text = EmployeeDataGrid.Rows[e.RowIndex].Cells[3].Value.ToString();
-                PasswordBox.Text = EmployeeDataGrid.Rows[e.RowIndex].Cells[4].Value.ToString();
-                WageBox.Text = EmployeeDataGrid.Rows[e.RowIndex].Cells[5].Value.ToString();
-                WorkhoursBox.Text = EmployeeDataGrid.Rows[e.RowIndex].Cells[6].Value.ToString();
-            }
-            catch(Exception)
-            {
-                MessageBox.Show("Invalid selection.");
-            }
+            idBox.Text = EmployeeDataGrid.Rows[e.RowIndex].Cells[0].Value.ToString();
+            adminTrueRadioBtn.Checked = EmployeeDataGrid.Rows[e.RowIndex].Cells[1].Value.Equals(true);
+            adminFalseRadioBtn.Checked = EmployeeDataGrid.Rows[e.RowIndex].Cells[1].Value.Equals(false);
+            nameBox.Text = EmployeeDataGrid.Rows[e.RowIndex].Cells[2].Value.ToString();
+            usernameBox.Text = EmployeeDataGrid.Rows[e.RowIndex].Cells[3].Value.ToString();
+            passwordBox.Text = EmployeeDataGrid.Rows[e.RowIndex].Cells[4].Value.ToString();
+            wageBox.Text = EmployeeDataGrid.Rows[e.RowIndex].Cells[5].Value.ToString();
+            workhoursBox.Text = EmployeeDataGrid.Rows[e.RowIndex].Cells[6].Value.ToString();
         }
 
-        //Account type Radio buttons
-        private void radioAdminTrue_CheckedChanged(object sender, EventArgs e)
+        private void UpdateAccountBtn_Click(object sender, EventArgs e)
         {
-            admin = true;
-        }
-
-        private void radioAdminFalse_CheckedChanged(object sender, EventArgs e)
-        {
-            admin = false;
-        }
-
-        //Update Employee
-        private void btnUpdateEmployee_Click(object sender, EventArgs e)
-        {
-            MongoCRUD db = new MongoCRUD("POS_Database");
-            
-            // Check the empty boxes
-            int BoxesCount = 0;
+            // Check the empty fields
+            int emptyField = 0;
             foreach (Control control in GroupTextBox.Controls)
             {
                 string controlType = control.GetType().ToString();
@@ -109,35 +69,48 @@ namespace BiliPC
                     TextBox txtBox = (TextBox)control;
                     if (string.IsNullOrEmpty(txtBox.Text))
                     {
-                        BoxesCount += 1;
+                        emptyField += 1;
                     }
                 }
             }
 
-            if (BoxesCount > 0 )
+            if (emptyField > 0 )
             {
-                    MessageBox.Show("Please fill all of the " + BoxesCount + " field/s.");
+                MessageBox.Show("Please fill all of the " + emptyField + " field/s.");
             }
 
             else
             {
-                var updateDef = Builders<UsersModel>.Update
-                   .Set("Name", NameBox.Text)
-                   .Set("Username", UsernameBox.Text)
-                   .Set("Password", PasswordBox.Text)
-                   .Set("isAdmin", admin)
-                   .Set("Workhours", Double.Parse(WorkhoursBox.Text))
-                   .Set("Wage", Double.Parse(WageBox.Text));
-                collection.UpdateOne(u => u.Id == ObjectId.Parse(IdBox.Text), updateDef);
-                ReadData();
+                try
+                {
+                    var SelectedRecord = db.LoadRecordById<UsersModel>("Users", new ObjectId(idBox.Text));
+                    SelectedRecord.Name = nameBox.Text;
+                    SelectedRecord.Username = usernameBox.Text;
+                    SelectedRecord.Password = passwordBox.Text;
+                    SelectedRecord.Wage = Double.Parse(wageBox.Text);
+                    SelectedRecord.Workhours = Double.Parse(workhoursBox.Text);
+                    SelectedRecord.isAdmin = adminTrueRadioBtn.Checked;
+                    db.UpsertRecord<UsersModel>("Users", SelectedRecord.Id, SelectedRecord);
+                    RefreshAccounts();
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("Please enter a valid character.");
+                }
             }
         }
 
-        private void btnDeleteEmployee_Click(object sender, EventArgs e)
+        private void DeleteAccountBtn_Click(object sender, EventArgs e)
         {
-            collection.DeleteOne(u => u.Id == ObjectId.Parse(IdBox.Text));
-            ReadData();
+            try
+            {
+                db.DeleleRecord<UsersModel>("Users", ObjectId.Parse(idBox.Text));
+                RefreshAccounts();
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Please select an item.");
+            }
         }
-
     }
 }

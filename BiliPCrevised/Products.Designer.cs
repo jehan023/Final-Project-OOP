@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnRefresh = new System.Windows.Forms.Button();
+            this.refreshItemBtn = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnX = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.deleteItemBtn = new System.Windows.Forms.Button();
+            this.updateItemBtn = new System.Windows.Forms.Button();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.addItemBtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.GroupTextBox = new System.Windows.Forms.GroupBox();
-            this.radioStatusFalse = new System.Windows.Forms.RadioButton();
-            this.radioStatusTrue = new System.Windows.Forms.RadioButton();
-            this.itemIdBox = new System.Windows.Forms.TextBox();
+            this.inStockFalseRadioBtn = new System.Windows.Forms.RadioButton();
+            this.inStockTrueRadioBtn = new System.Windows.Forms.RadioButton();
+            this.idBox = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.categoryBox = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -52,10 +52,10 @@
             this.label7 = new System.Windows.Forms.Label();
             this.costBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.priceBox = new System.Windows.Forms.TextBox();
+            this.unitPriceBox = new System.Windows.Forms.TextBox();
             this.quantityBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.itemBox = new System.Windows.Forms.TextBox();
+            this.itemNameBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.ProductDataGrid = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
@@ -67,14 +67,14 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Firebrick;
-            this.panel1.Controls.Add(this.btnRefresh);
+            this.panel1.Controls.Add(this.refreshItemBtn);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btnX);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.deleteItemBtn);
+            this.panel1.Controls.Add(this.updateItemBtn);
             this.panel1.Controls.Add(this.textBox6);
-            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.addItemBtn);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -84,21 +84,21 @@
             this.panel1.Size = new System.Drawing.Size(945, 100);
             this.panel1.TabIndex = 0;
             // 
-            // btnRefresh
+            // refreshItemBtn
             // 
-            this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRefresh.BackColor = System.Drawing.Color.SpringGreen;
-            this.btnRefresh.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnRefresh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRefresh.Location = new System.Drawing.Point(32, 54);
-            this.btnRefresh.Margin = new System.Windows.Forms.Padding(2);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(109, 31);
-            this.btnRefresh.TabIndex = 38;
-            this.btnRefresh.Text = "Refresh";
-            this.btnRefresh.UseVisualStyleBackColor = false;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            this.refreshItemBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.refreshItemBtn.BackColor = System.Drawing.Color.SpringGreen;
+            this.refreshItemBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.refreshItemBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.refreshItemBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.refreshItemBtn.Location = new System.Drawing.Point(32, 54);
+            this.refreshItemBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.refreshItemBtn.Name = "refreshItemBtn";
+            this.refreshItemBtn.Size = new System.Drawing.Size(109, 31);
+            this.refreshItemBtn.TabIndex = 38;
+            this.refreshItemBtn.Text = "Refresh";
+            this.refreshItemBtn.UseVisualStyleBackColor = false;
+            this.refreshItemBtn.Click += new System.EventHandler(this.refreshItemBtn_Click);
             // 
             // label5
             // 
@@ -143,37 +143,37 @@
             this.btnX.UseVisualStyleBackColor = false;
             this.btnX.Click += new System.EventHandler(this.btnX_Click);
             // 
-            // button1
+            // deleteItemBtn
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.SpringGreen;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(404, 54);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(109, 31);
-            this.button1.TabIndex = 35;
-            this.button1.Text = "Delete item";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.deleteItemBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.deleteItemBtn.BackColor = System.Drawing.Color.SpringGreen;
+            this.deleteItemBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.deleteItemBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.deleteItemBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deleteItemBtn.Location = new System.Drawing.Point(404, 54);
+            this.deleteItemBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.deleteItemBtn.Name = "deleteItemBtn";
+            this.deleteItemBtn.Size = new System.Drawing.Size(109, 31);
+            this.deleteItemBtn.TabIndex = 35;
+            this.deleteItemBtn.Text = "Delete item";
+            this.deleteItemBtn.UseVisualStyleBackColor = false;
+            this.deleteItemBtn.Click += new System.EventHandler(this.deleteItemBtn_Click);
             // 
-            // button3
+            // updateItemBtn
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.BackColor = System.Drawing.Color.SpringGreen;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(280, 54);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(109, 31);
-            this.button3.TabIndex = 37;
-            this.button3.Text = "Update item";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.updateItemBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.updateItemBtn.BackColor = System.Drawing.Color.SpringGreen;
+            this.updateItemBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.updateItemBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.updateItemBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.updateItemBtn.Location = new System.Drawing.Point(280, 54);
+            this.updateItemBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.updateItemBtn.Name = "updateItemBtn";
+            this.updateItemBtn.Size = new System.Drawing.Size(109, 31);
+            this.updateItemBtn.TabIndex = 37;
+            this.updateItemBtn.Text = "Update item";
+            this.updateItemBtn.UseVisualStyleBackColor = false;
+            this.updateItemBtn.Click += new System.EventHandler(this.updateItemBtn_Click);
             // 
             // textBox6
             // 
@@ -185,21 +185,21 @@
             this.textBox6.Size = new System.Drawing.Size(262, 24);
             this.textBox6.TabIndex = 32;
             // 
-            // button2
+            // addItemBtn
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.Color.SpringGreen;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(156, 54);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(109, 31);
-            this.button2.TabIndex = 36;
-            this.button2.Text = "Add item";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.addItemBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.addItemBtn.BackColor = System.Drawing.Color.SpringGreen;
+            this.addItemBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.addItemBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.addItemBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addItemBtn.Location = new System.Drawing.Point(156, 54);
+            this.addItemBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.addItemBtn.Name = "addItemBtn";
+            this.addItemBtn.Size = new System.Drawing.Size(109, 31);
+            this.addItemBtn.TabIndex = 36;
+            this.addItemBtn.Text = "Add item";
+            this.addItemBtn.UseVisualStyleBackColor = false;
+            this.addItemBtn.Click += new System.EventHandler(this.addItemBtn_Click);
             // 
             // label3
             // 
@@ -229,9 +229,9 @@
             // GroupTextBox
             // 
             this.GroupTextBox.BackColor = System.Drawing.Color.MistyRose;
-            this.GroupTextBox.Controls.Add(this.radioStatusFalse);
-            this.GroupTextBox.Controls.Add(this.radioStatusTrue);
-            this.GroupTextBox.Controls.Add(this.itemIdBox);
+            this.GroupTextBox.Controls.Add(this.inStockFalseRadioBtn);
+            this.GroupTextBox.Controls.Add(this.inStockTrueRadioBtn);
+            this.GroupTextBox.Controls.Add(this.idBox);
             this.GroupTextBox.Controls.Add(this.label11);
             this.GroupTextBox.Controls.Add(this.categoryBox);
             this.GroupTextBox.Controls.Add(this.label10);
@@ -241,10 +241,10 @@
             this.GroupTextBox.Controls.Add(this.label7);
             this.GroupTextBox.Controls.Add(this.costBox);
             this.GroupTextBox.Controls.Add(this.label6);
-            this.GroupTextBox.Controls.Add(this.priceBox);
+            this.GroupTextBox.Controls.Add(this.unitPriceBox);
             this.GroupTextBox.Controls.Add(this.quantityBox);
             this.GroupTextBox.Controls.Add(this.label4);
-            this.GroupTextBox.Controls.Add(this.itemBox);
+            this.GroupTextBox.Controls.Add(this.itemNameBox);
             this.GroupTextBox.Controls.Add(this.label2);
             this.GroupTextBox.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.GroupTextBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -254,46 +254,48 @@
             this.GroupTextBox.TabIndex = 45;
             this.GroupTextBox.TabStop = false;
             // 
-            // radioStatusFalse
+            // inStockFalseRadioBtn
             // 
-            this.radioStatusFalse.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.radioStatusFalse.AutoSize = true;
-            this.radioStatusFalse.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
-            this.radioStatusFalse.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioStatusFalse.Location = new System.Drawing.Point(586, 144);
-            this.radioStatusFalse.Margin = new System.Windows.Forms.Padding(2);
-            this.radioStatusFalse.Name = "radioStatusFalse";
-            this.radioStatusFalse.Size = new System.Drawing.Size(169, 28);
-            this.radioStatusFalse.TabIndex = 62;
-            this.radioStatusFalse.TabStop = true;
-            this.radioStatusFalse.Text = "OUT OF STOCK";
-            this.radioStatusFalse.UseVisualStyleBackColor = true;
+            this.inStockFalseRadioBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.inStockFalseRadioBtn.AutoCheck = false;
+            this.inStockFalseRadioBtn.AutoSize = true;
+            this.inStockFalseRadioBtn.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
+            this.inStockFalseRadioBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inStockFalseRadioBtn.Location = new System.Drawing.Point(586, 144);
+            this.inStockFalseRadioBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.inStockFalseRadioBtn.Name = "inStockFalseRadioBtn";
+            this.inStockFalseRadioBtn.Size = new System.Drawing.Size(169, 28);
+            this.inStockFalseRadioBtn.TabIndex = 62;
+            this.inStockFalseRadioBtn.TabStop = true;
+            this.inStockFalseRadioBtn.Text = "OUT OF STOCK";
+            this.inStockFalseRadioBtn.UseVisualStyleBackColor = true;
             // 
-            // radioStatusTrue
+            // inStockTrueRadioBtn
             // 
-            this.radioStatusTrue.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.radioStatusTrue.AutoSize = true;
-            this.radioStatusTrue.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
-            this.radioStatusTrue.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioStatusTrue.Location = new System.Drawing.Point(586, 116);
-            this.radioStatusTrue.Margin = new System.Windows.Forms.Padding(2);
-            this.radioStatusTrue.Name = "radioStatusTrue";
-            this.radioStatusTrue.Size = new System.Drawing.Size(115, 28);
-            this.radioStatusTrue.TabIndex = 61;
-            this.radioStatusTrue.TabStop = true;
-            this.radioStatusTrue.Text = "IN STOCK";
-            this.radioStatusTrue.UseVisualStyleBackColor = true;
+            this.inStockTrueRadioBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.inStockTrueRadioBtn.AutoCheck = false;
+            this.inStockTrueRadioBtn.AutoSize = true;
+            this.inStockTrueRadioBtn.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
+            this.inStockTrueRadioBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inStockTrueRadioBtn.Location = new System.Drawing.Point(586, 116);
+            this.inStockTrueRadioBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.inStockTrueRadioBtn.Name = "inStockTrueRadioBtn";
+            this.inStockTrueRadioBtn.Size = new System.Drawing.Size(115, 28);
+            this.inStockTrueRadioBtn.TabIndex = 61;
+            this.inStockTrueRadioBtn.TabStop = true;
+            this.inStockTrueRadioBtn.Text = "IN STOCK";
+            this.inStockTrueRadioBtn.UseVisualStyleBackColor = true;
             // 
-            // itemIdBox
+            // idBox
             // 
-            this.itemIdBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.itemIdBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.itemIdBox.Location = new System.Drawing.Point(128, 16);
-            this.itemIdBox.Margin = new System.Windows.Forms.Padding(2);
-            this.itemIdBox.Name = "itemIdBox";
-            this.itemIdBox.ReadOnly = true;
-            this.itemIdBox.Size = new System.Drawing.Size(336, 24);
-            this.itemIdBox.TabIndex = 60;
+            this.idBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.idBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idBox.Location = new System.Drawing.Point(128, 16);
+            this.idBox.Margin = new System.Windows.Forms.Padding(2);
+            this.idBox.Name = "idBox";
+            this.idBox.ReadOnly = true;
+            this.idBox.Size = new System.Drawing.Size(336, 24);
+            this.idBox.TabIndex = 60;
             // 
             // label11
             // 
@@ -409,15 +411,15 @@
             this.label6.TabIndex = 50;
             this.label6.Text = "Cost :";
             // 
-            // priceBox
+            // unitPriceBox
             // 
-            this.priceBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.priceBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.priceBox.Location = new System.Drawing.Point(128, 140);
-            this.priceBox.Margin = new System.Windows.Forms.Padding(2);
-            this.priceBox.Name = "priceBox";
-            this.priceBox.Size = new System.Drawing.Size(336, 24);
-            this.priceBox.TabIndex = 49;
+            this.unitPriceBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.unitPriceBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.unitPriceBox.Location = new System.Drawing.Point(128, 140);
+            this.unitPriceBox.Margin = new System.Windows.Forms.Padding(2);
+            this.unitPriceBox.Name = "unitPriceBox";
+            this.unitPriceBox.Size = new System.Drawing.Size(336, 24);
+            this.unitPriceBox.TabIndex = 49;
             // 
             // quantityBox
             // 
@@ -443,16 +445,16 @@
             this.label4.TabIndex = 47;
             this.label4.Text = "Quantity :";
             // 
-            // itemBox
+            // itemNameBox
             // 
-            this.itemBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.itemBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.itemBox.Location = new System.Drawing.Point(128, 51);
-            this.itemBox.Margin = new System.Windows.Forms.Padding(2);
-            this.itemBox.Multiline = true;
-            this.itemBox.Name = "itemBox";
-            this.itemBox.Size = new System.Drawing.Size(336, 38);
-            this.itemBox.TabIndex = 46;
+            this.itemNameBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.itemNameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.itemNameBox.Location = new System.Drawing.Point(128, 51);
+            this.itemNameBox.Margin = new System.Windows.Forms.Padding(2);
+            this.itemNameBox.Multiline = true;
+            this.itemNameBox.Name = "itemNameBox";
+            this.itemNameBox.Size = new System.Drawing.Size(336, 38);
+            this.itemNameBox.TabIndex = 46;
             // 
             // label2
             // 
@@ -514,15 +516,15 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button updateItemBtn;
+        private System.Windows.Forms.Button addItemBtn;
+        private System.Windows.Forms.Button deleteItemBtn;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.DataGridView ProductDataGrid;
-        private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Button refreshItemBtn;
         private System.Windows.Forms.GroupBox GroupTextBox;
-        private System.Windows.Forms.TextBox itemIdBox;
+        private System.Windows.Forms.TextBox idBox;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox categoryBox;
         private System.Windows.Forms.Label label10;
@@ -532,12 +534,12 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox costBox;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox priceBox;
+        private System.Windows.Forms.TextBox unitPriceBox;
         private System.Windows.Forms.TextBox quantityBox;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox itemBox;
+        private System.Windows.Forms.TextBox itemNameBox;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.RadioButton radioStatusFalse;
-        private System.Windows.Forms.RadioButton radioStatusTrue;
+        private System.Windows.Forms.RadioButton inStockFalseRadioBtn;
+        private System.Windows.Forms.RadioButton inStockTrueRadioBtn;
     }
 }

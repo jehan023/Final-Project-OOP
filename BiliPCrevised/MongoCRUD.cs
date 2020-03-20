@@ -55,11 +55,10 @@ namespace BiliPC
         public void UpsertRecord<T>(string table, ObjectId id, T record)
         {
             var collection = db.GetCollection<T>(table);
-
             var result = collection.ReplaceOne(
-                new BsonDocument("_id", id),
+                new BsonDocument("_id",id),
                 record,
-                new ReplaceOptions { IsUpsert = true });
+                new ReplaceOptions{ IsUpsert = true });
         }
 
         public void DeleleRecord<T>(string table, ObjectId id)

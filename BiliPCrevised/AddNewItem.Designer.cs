@@ -37,9 +37,6 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAddItem = new System.Windows.Forms.Button();
             this.GroupTextBox = new System.Windows.Forms.GroupBox();
-            this.radioStatusFalse = new System.Windows.Forms.RadioButton();
-            this.radioStatusTrue = new System.Windows.Forms.RadioButton();
-            this.label8 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.ItemBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -107,9 +104,6 @@
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.radioStatusTrue);
-            this.panel5.Controls.Add(this.radioStatusFalse);
-            this.panel5.Controls.Add(this.label8);
             this.panel5.Controls.Add(this.btnCancel);
             this.panel5.Controls.Add(this.btnAddItem);
             this.panel5.Controls.Add(this.GroupTextBox);
@@ -123,6 +117,7 @@
             // 
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancel.BackColor = System.Drawing.Color.SpringGreen;
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnCancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -172,50 +167,6 @@
             this.GroupTextBox.Size = new System.Drawing.Size(374, 352);
             this.GroupTextBox.TabIndex = 67;
             this.GroupTextBox.TabStop = false;
-            // 
-            // radioStatusFalse
-            // 
-            this.radioStatusFalse.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.radioStatusFalse.AutoSize = true;
-            this.radioStatusFalse.Enabled = false;
-            this.radioStatusFalse.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioStatusFalse.Location = new System.Drawing.Point(31, 430);
-            this.radioStatusFalse.Margin = new System.Windows.Forms.Padding(2);
-            this.radioStatusFalse.Name = "radioStatusFalse";
-            this.radioStatusFalse.Size = new System.Drawing.Size(37, 24);
-            this.radioStatusFalse.TabIndex = 67;
-            this.radioStatusFalse.TabStop = true;
-            this.radioStatusFalse.Text = "F";
-            this.radioStatusFalse.UseVisualStyleBackColor = true;
-            // 
-            // radioStatusTrue
-            // 
-            this.radioStatusTrue.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.radioStatusTrue.AutoSize = true;
-            this.radioStatusTrue.Enabled = false;
-            this.radioStatusTrue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioStatusTrue.Location = new System.Drawing.Point(32, 427);
-            this.radioStatusTrue.Margin = new System.Windows.Forms.Padding(2);
-            this.radioStatusTrue.Name = "radioStatusTrue";
-            this.radioStatusTrue.Size = new System.Drawing.Size(36, 24);
-            this.radioStatusTrue.TabIndex = 66;
-            this.radioStatusTrue.TabStop = true;
-            this.radioStatusTrue.Text = "T";
-            this.radioStatusTrue.UseVisualStyleBackColor = true;
-            // 
-            // label8
-            // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(29, 433);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(28, 18);
-            this.label8.TabIndex = 65;
-            this.label8.Text = "S :";
             // 
             // label3
             // 
@@ -364,10 +315,12 @@
             // 
             // AddNewItem
             // 
+            this.AcceptButton = this.btnAddItem;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(445, 531);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
@@ -381,7 +334,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             this.GroupTextBox.ResumeLayout(false);
             this.GroupTextBox.PerformLayout();
             this.ResumeLayout(false);
@@ -411,8 +363,5 @@
         private System.Windows.Forms.TextBox SupplierBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox GroupTextBox;
-        private System.Windows.Forms.RadioButton radioStatusFalse;
-        private System.Windows.Forms.RadioButton radioStatusTrue;
-        private System.Windows.Forms.Label label8;
     }
 }

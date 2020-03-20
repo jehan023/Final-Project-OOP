@@ -27,7 +27,7 @@ namespace BiliPC
             public static bool loggedIn { get; set; }
         }
 
-        private void btnLogin_Click_2(object sender, EventArgs e)
+        private void LoginBtn_Click(object sender, EventArgs e)
         {
             var userRecord = db.LoadRecords<UsersModel>("Users");
             
@@ -36,16 +36,18 @@ namespace BiliPC
             {
                 db.InsertRecord("Users", new UsersModel
                 {
+                    Name = "Admin",
                     isAdmin = true,
                     Username = "Admin",
                     Password = "Admin123"
-                });
+                }); 
+                userRecord = db.LoadRecords<UsersModel>("Users");
             }
-            
+
             string inputUid = textBoxUsername.Text;
             string inputPwd = textBoxPassword.Text;
             IsUser.loggedIn = false;
-
+            
             foreach (var user in userRecord)
                 if ((inputUid == user.Username) && (inputPwd == user.Password))
                 {
@@ -63,12 +65,9 @@ namespace BiliPC
             }
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
+        private void ExitBtn_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
-
-        
     }
 }

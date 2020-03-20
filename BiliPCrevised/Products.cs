@@ -14,96 +14,53 @@ namespace BiliPC
 {
     public partial class Products : Form
     {
-        static MongoClient client = new MongoClient("mongodb://localhost:27017/");
-        static IMongoDatabase db = client.GetDatabase("POS_Database");
-        static IMongoCollection<InventoryModel> collection = db.GetCollection<InventoryModel>("Inventory");
-
+        MongoCRUD db = new MongoCRUD("POS_Database");
 
         public Products()
         {
             InitializeComponent();
-            ReadProductData();
+            RefreshInventory();
         }
 
-        //close the form
         private void btnX_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        //Add product
-        private void button2_Click(object sender, EventArgs e)
+        private void addItemBtn_Click(object sender, EventArgs e)
         {
             AddNewItem addItem = new AddNewItem();
             addItem.ShowDialog();
         }
 
-        //Refresh button
-        private void btnRefresh_Click(object sender, EventArgs e)
+        public void RefreshInventory()
         {
-            List<InventoryModel> list = collection.AsQueryable().ToList<InventoryModel>();
-            ProductDataGrid.DataSource = list;
+            var InventoryRecord = db.LoadRecords<InventoryModel>("Inventory");
+            ProductDataGrid.DataSource = InventoryRecord;
         }
 
-        //show in boxes the data
-        public void ReadProductData()
+        private void refreshItemBtn_Click(object sender, EventArgs e)
         {
-            List<InventoryModel> list = collection.AsQueryable().ToList<InventoryModel>();
-            ProductDataGrid.DataSource = list;
-            itemIdBox.Text = ProductDataGrid.Rows[0].Cells[0].Value.ToString();
-            itemBox.Text = ProductDataGrid.Rows[0].Cells[1].Value.ToString();
-            quantityBox.Text = ProductDataGrid.Rows[0].Cells[2].Value.ToString();
-            priceBox.Text = ProductDataGrid.Rows[0].Cells[3].Value.ToString();
-            costBox.Text = ProductDataGrid.Rows[0].Cells[4].Value.ToString();
-            categoryBox.Text = ProductDataGrid.Rows[0].Cells[5].Value.ToString();
-            supplierBox.Text = ProductDataGrid.Rows[0].Cells[6].Value.ToString();
-            radioStatusTrue.Checked = ProductDataGrid.Rows[0].Cells[7].Value.Equals(true);
-            radioStatusFalse.Checked = ProductDataGrid.Rows[0].Cells[7].Value.Equals(false);
+            RefreshInventory();
         }
 
-        //data selection in datagrid
         private void ProductDataGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            try
-            {
-                itemIdBox.Text = ProductDataGrid.Rows[e.RowIndex].Cells[0].Value.ToString();
-                itemBox.Text = ProductDataGrid.Rows[e.RowIndex].Cells[1].Value.ToString();
-                quantityBox.Text = ProductDataGrid.Rows[e.RowIndex].Cells[2].Value.ToString();
-                priceBox.Text = ProductDataGrid.Rows[e.RowIndex].Cells[3].Value.ToString();
-                costBox.Text = ProductDataGrid.Rows[e.RowIndex].Cells[4].Value.ToString();
-                categoryBox.Text = ProductDataGrid.Rows[e.RowIndex].Cells[5].Value.ToString();
-                supplierBox.Text = ProductDataGrid.Rows[e.RowIndex].Cells[6].Value.ToString();
-                radioStatusTrue.Checked = ProductDataGrid.Rows[e.RowIndex].Cells[7].Value.Equals(true);
-                radioStatusFalse.Checked = ProductDataGrid.Rows[e.RowIndex].Cells[7].Value.Equals(false);
-                
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Invalid selection.");
-            }
+            idBox.Text = ProductDataGrid.Rows[e.RowIndex].Cells[0].Value.ToString();
+            itemNameBox.Text = ProductDataGrid.Rows[e.RowIndex].Cells[1].Value.ToString();
+            quantityBox.Text = ProductDataGrid.Rows[e.RowIndex].Cells[2].Value.ToString();
+            unitPriceBox.Text = ProductDataGrid.Rows[e.RowIndex].Cells[3].Value.ToString();
+            costBox.Text = ProductDataGrid.Rows[e.RowIndex].Cells[4].Value.ToString();
+            categoryBox.Text = ProductDataGrid.Rows[e.RowIndex].Cells[5].Value.ToString();
+            supplierBox.Text = ProductDataGrid.Rows[e.RowIndex].Cells[6].Value.ToString();
+            inStockTrueRadioBtn.Checked = ProductDataGrid.Rows[e.RowIndex].Cells[7].Value.Equals(true);
+            inStockFalseRadioBtn.Checked = ProductDataGrid.Rows[e.RowIndex].Cells[7].Value.Equals(false);
         }
 
-        public bool StatusChecker()
+        private void updateItemBtn_Click(object sender, EventArgs e)
         {
-            if (Int32.Parse(quantityBox.Text) > 0)
-            {
-                radioStatusTrue.Checked = true;
-                return true;
-            }
-            else
-            {
-                radioStatusFalse.Checked = true;
-                return false;
-            }
-        }
-        
-        //Update product
-        private void button3_Click(object sender, EventArgs e)
-        {
-            MongoCRUD db = new MongoCRUD("POS_Database");
-
-            // Check the empty boxes
-            int BoxesCount = 0;
+            // Check the empty fields
+            int EmptyField = 0;
             foreach (Control control in GroupTextBox.Controls)
             {
                 string controlType = control.GetType().ToString();
@@ -112,36 +69,58 @@ namespace BiliPC
                     TextBox txtBox = (TextBox)control;
                     if (string.IsNullOrEmpty(txtBox.Text))
                     {
-                        BoxesCount += 1;
+                        EmptyField += 1;
                     }
                 }
             }
-
-            if (BoxesCount > 0)
+            if (EmptyField > 0)
             {
-                MessageBox.Show("Please fill all of the " + BoxesCount + " field/s.");
+                MessageBox.Show("Please fill all of the " + EmptyField + " field/s.");
             }
 
             else
             {
-                var updateDef = Builders<InventoryModel>.Update
-                   .Set("Item", itemBox.Text)
-                   .Set("Qty", Int32.Parse(quantityBox.Text))
-                   .Set("UnitPrice", Double.Parse(priceBox.Text))
-                   .Set("Cost", Double.Parse(costBox.Text))
-                   .Set("Category", categoryBox.Text)
-                   .Set("Status", StatusChecker())
-                   .Set("Supplier", supplierBox.Text);
-                collection.UpdateOne(p => p.Id == ObjectId.Parse(itemIdBox.Text), updateDef);
-                ReadProductData();
+                try
+                {
+                    var SelectedRecord = db.LoadRecordById<InventoryModel>("Inventory", new ObjectId(idBox.Text));
+                    SelectedRecord.Item = itemNameBox.Text;
+                    SelectedRecord.Qty = int.Parse(quantityBox.Text);
+                    SelectedRecord.UnitPrice = Double.Parse(unitPriceBox.Text);
+                    SelectedRecord.Cost = double.Parse(costBox.Text);
+                    SelectedRecord.Category = categoryBox.Text;
+                    SelectedRecord.Supplier = supplierBox.Text;
+
+                    bool inStock = SelectedRecord.Status;
+                    if (Int32.Parse(quantityBox.Text) == 0)
+                    {
+                        inStock = false;
+                    }
+                    else
+                    {
+                        inStock = true;
+                    }
+                    SelectedRecord.Status = inStock;
+                    db.UpsertRecord<InventoryModel>("Inventory", SelectedRecord.Id, SelectedRecord);
+                    RefreshInventory();
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("Please enter a valid character.");
+                }
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void deleteItemBtn_Click(object sender, EventArgs e)
         {
-            collection.DeleteOne(p => p.Id == ObjectId.Parse(itemIdBox.Text));
-            ReadProductData();
+            try
+            {
+                db.DeleleRecord<InventoryModel>("Inventory", ObjectId.Parse(idBox.Text));
+                RefreshInventory();
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Please select an item.");
+            }
         }
-
     }
 }

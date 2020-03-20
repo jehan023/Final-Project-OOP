@@ -31,7 +31,7 @@ namespace BiliPC
             bool UsernameExists = db.CheckExistence<UsersModel>("Users", "Username", UsernameBox.Text);
 
             // Check the empty boxes
-            int BoxesCount = 0;
+            int EmptyField = 0;
             foreach (Control control in GroupTextBox.Controls)
             {
                 string controlType = control.GetType().ToString();
@@ -40,27 +40,24 @@ namespace BiliPC
                     TextBox txtBox = (TextBox)control;
                     if (string.IsNullOrEmpty(txtBox.Text))
                     {
-                        BoxesCount += 1;
+                        EmptyField += 1;
                     }
                 }
             }
 
-            if (BoxesCount > 0)
+            if (EmptyField > 0)
             {
-                MessageBox.Show("Please fill all of the " + BoxesCount + " field/s.");
+                MessageBox.Show("Please fill all of the " + EmptyField + " field/s.");
             }
-
             else if (UsernameExists == true)
             {
                 MessageBox.Show("Username already taken.");
             }
-
             else if (PasswordBox.Text != ConfirmPasswordBox.Text)
             {
                 MessageBox.Show("Please confirm your password.");
             }
-
-            else if ((PasswordBox.Text == ConfirmPasswordBox.Text) && (!UsernameExists) && BoxesCount == 0)
+            else if ((PasswordBox.Text == ConfirmPasswordBox.Text) && !UsernameExists && (EmptyField == 0))
             {
                 try
                 {
@@ -74,11 +71,14 @@ namespace BiliPC
                     });
                     MessageBox.Show("Account Saved!");
                     this.Close();
-
                 }
                 catch (FormatException)
                 {
                     MessageBox.Show("Please enter a valid character.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Unhandled exception: " + ex + " . Please try again.");
                 }
             }
             else
