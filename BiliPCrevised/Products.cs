@@ -17,6 +17,8 @@ namespace BiliPC
         static MongoClient client = new MongoClient("mongodb://localhost:27017/");
         static IMongoDatabase db = client.GetDatabase("POS_Database");
         static IMongoCollection<InventoryModel> collection = db.GetCollection<InventoryModel>("Inventory");
+
+
         public Products()
         {
             InitializeComponent();
@@ -55,7 +57,8 @@ namespace BiliPC
             costBox.Text = ProductDataGrid.Rows[0].Cells[4].Value.ToString();
             categoryBox.Text = ProductDataGrid.Rows[0].Cells[5].Value.ToString();
             supplierBox.Text = ProductDataGrid.Rows[0].Cells[6].Value.ToString();
-            //statusBox.Text = ProductDataGrid.Rows[0].Cells[7].Value.ToString();
+            radioStatusTrue.Checked = ProductDataGrid.Rows[0].Cells[7].Value.Equals(true);
+            radioStatusFalse.Checked = ProductDataGrid.Rows[0].Cells[7].Value.Equals(false);
         }
 
         //data selection in datagrid
@@ -70,7 +73,9 @@ namespace BiliPC
                 costBox.Text = ProductDataGrid.Rows[e.RowIndex].Cells[4].Value.ToString();
                 categoryBox.Text = ProductDataGrid.Rows[e.RowIndex].Cells[5].Value.ToString();
                 supplierBox.Text = ProductDataGrid.Rows[e.RowIndex].Cells[6].Value.ToString();
-                //statusBox.Text = ProductDataGrid.Rows[e.RowIndex].Cells[7].Value.ToString();
+                radioStatusTrue.Checked = ProductDataGrid.Rows[e.RowIndex].Cells[7].Value.Equals(true);
+                radioStatusFalse.Checked = ProductDataGrid.Rows[e.RowIndex].Cells[7].Value.Equals(false);
+                
             }
             catch (Exception)
             {
@@ -78,11 +83,20 @@ namespace BiliPC
             }
         }
 
+        public bool StatusChecker()
+        {
+            if (Int32.Parse(quantityBox.Text) > 0)
+            {
+                radioStatusTrue.Checked = true;
+                return true;
+            }
+            else
+            {
+                radioStatusFalse.Checked = true;
+                return false;
+            }
+        }
         
-
-        //cell click to view data in boxes
-        
-
         //Update product
         private void button3_Click(object sender, EventArgs e)
         {
@@ -116,10 +130,18 @@ namespace BiliPC
                    .Set("UnitPrice", Double.Parse(priceBox.Text))
                    .Set("Cost", Double.Parse(costBox.Text))
                    .Set("Category", categoryBox.Text)
+                   .Set("Status", StatusChecker())
                    .Set("Supplier", supplierBox.Text);
-                collection.UpdateOne(u => u.Id == ObjectId.Parse(itemIdBox.Text), updateDef);
+                collection.UpdateOne(p => p.Id == ObjectId.Parse(itemIdBox.Text), updateDef);
                 ReadProductData();
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            collection.DeleteOne(p => p.Id == ObjectId.Parse(itemIdBox.Text));
+            ReadProductData();
+        }
+
     }
 }

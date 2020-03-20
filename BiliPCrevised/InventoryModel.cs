@@ -24,6 +24,8 @@ namespace BiliPC
         public string Category { get; set; }
         [BsonElement]
         public string Supplier { get; set; }
+        [BsonElement]
+        public bool Status { get; set; }
         
     }
 }

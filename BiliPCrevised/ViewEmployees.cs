@@ -18,7 +18,9 @@ namespace BiliPC
         static MongoClient client = new MongoClient("mongodb://localhost:27017/");
         static IMongoDatabase db = client.GetDatabase("POS_Database");
         static IMongoCollection<UsersModel> collection = db.GetCollection<UsersModel>("Users");
+
         bool admin;
+
         public ViewEmployees()
         {
             InitializeComponent();

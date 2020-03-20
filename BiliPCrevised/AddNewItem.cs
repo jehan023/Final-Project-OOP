@@ -13,10 +13,13 @@ namespace BiliPC
     public partial class AddNewItem : Form
     {
         MongoCRUD db = new MongoCRUD("POS_Database");
-
+        
         public AddNewItem()
         {
             InitializeComponent();
+            label8.Visible = false;
+            radioStatusFalse.Visible = false;
+            radioStatusTrue.Visible = false;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -57,6 +60,16 @@ namespace BiliPC
             {
                 try
                 {
+                    
+                    if (Int32.Parse(QuantityBox.Text) > 0)
+                    {
+                        radioStatusTrue.Checked = true;
+                    }
+                    else
+                    {
+                        radioStatusTrue.Checked = false;
+                    }
+
                     db.InsertRecord("Inventory", new InventoryModel
                     {
                         Item = ItemBox.Text,
@@ -64,7 +77,9 @@ namespace BiliPC
                         UnitPrice = Double.Parse(UnitPriceBox.Text),
                         Cost = Double.Parse(CostBox.Text),
                         Category = CategoryBox.Text,
-                        Supplier = SupplierBox.Text
+                        Supplier = SupplierBox.Text,
+                        Status = radioStatusTrue.Checked
+
                     });
                     MessageBox.Show("Item saved!");
                     this.Close();

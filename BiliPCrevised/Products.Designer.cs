@@ -39,14 +39,14 @@
             this.button2 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.ProductDataGrid = new System.Windows.Forms.DataGridView();
             this.GroupTextBox = new System.Windows.Forms.GroupBox();
+            this.radioStatusFalse = new System.Windows.Forms.RadioButton();
+            this.radioStatusTrue = new System.Windows.Forms.RadioButton();
             this.itemIdBox = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.categoryBox = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.statusBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.supplierBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -57,10 +57,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.itemBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.ProductDataGrid = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ProductDataGrid)).BeginInit();
             this.GroupTextBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ProductDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -156,6 +157,7 @@
             this.button1.TabIndex = 35;
             this.button1.Text = "Delete item";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button3
             // 
@@ -224,33 +226,16 @@
             this.panel2.Size = new System.Drawing.Size(945, 539);
             this.panel2.TabIndex = 1;
             // 
-            // ProductDataGrid
-            // 
-            this.ProductDataGrid.AllowUserToAddRows = false;
-            this.ProductDataGrid.AllowUserToDeleteRows = false;
-            this.ProductDataGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ProductDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ProductDataGrid.Location = new System.Drawing.Point(25, 14);
-            this.ProductDataGrid.Margin = new System.Windows.Forms.Padding(2);
-            this.ProductDataGrid.Name = "ProductDataGrid";
-            this.ProductDataGrid.ReadOnly = true;
-            this.ProductDataGrid.RowHeadersWidth = 51;
-            this.ProductDataGrid.RowTemplate.Height = 24;
-            this.ProductDataGrid.Size = new System.Drawing.Size(897, 337);
-            this.ProductDataGrid.TabIndex = 23;
-            this.ProductDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProductDataGrid_CellClick);
-            // 
             // GroupTextBox
             // 
             this.GroupTextBox.BackColor = System.Drawing.Color.MistyRose;
+            this.GroupTextBox.Controls.Add(this.radioStatusFalse);
+            this.GroupTextBox.Controls.Add(this.radioStatusTrue);
             this.GroupTextBox.Controls.Add(this.itemIdBox);
             this.GroupTextBox.Controls.Add(this.label11);
             this.GroupTextBox.Controls.Add(this.categoryBox);
             this.GroupTextBox.Controls.Add(this.label10);
             this.GroupTextBox.Controls.Add(this.label9);
-            this.GroupTextBox.Controls.Add(this.statusBox);
             this.GroupTextBox.Controls.Add(this.label8);
             this.GroupTextBox.Controls.Add(this.supplierBox);
             this.GroupTextBox.Controls.Add(this.label7);
@@ -268,6 +253,36 @@
             this.GroupTextBox.Size = new System.Drawing.Size(945, 183);
             this.GroupTextBox.TabIndex = 45;
             this.GroupTextBox.TabStop = false;
+            // 
+            // radioStatusFalse
+            // 
+            this.radioStatusFalse.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.radioStatusFalse.AutoSize = true;
+            this.radioStatusFalse.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
+            this.radioStatusFalse.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioStatusFalse.Location = new System.Drawing.Point(586, 144);
+            this.radioStatusFalse.Margin = new System.Windows.Forms.Padding(2);
+            this.radioStatusFalse.Name = "radioStatusFalse";
+            this.radioStatusFalse.Size = new System.Drawing.Size(169, 28);
+            this.radioStatusFalse.TabIndex = 62;
+            this.radioStatusFalse.TabStop = true;
+            this.radioStatusFalse.Text = "OUT OF STOCK";
+            this.radioStatusFalse.UseVisualStyleBackColor = true;
+            // 
+            // radioStatusTrue
+            // 
+            this.radioStatusTrue.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.radioStatusTrue.AutoSize = true;
+            this.radioStatusTrue.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
+            this.radioStatusTrue.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioStatusTrue.Location = new System.Drawing.Point(586, 116);
+            this.radioStatusTrue.Margin = new System.Windows.Forms.Padding(2);
+            this.radioStatusTrue.Name = "radioStatusTrue";
+            this.radioStatusTrue.Size = new System.Drawing.Size(115, 28);
+            this.radioStatusTrue.TabIndex = 61;
+            this.radioStatusTrue.TabStop = true;
+            this.radioStatusTrue.Text = "IN STOCK";
+            this.radioStatusTrue.UseVisualStyleBackColor = true;
             // 
             // itemIdBox
             // 
@@ -298,10 +313,9 @@
             // 
             this.categoryBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.categoryBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.categoryBox.Location = new System.Drawing.Point(586, 103);
+            this.categoryBox.Location = new System.Drawing.Point(586, 86);
             this.categoryBox.Margin = new System.Windows.Forms.Padding(2);
             this.categoryBox.Name = "categoryBox";
-            this.categoryBox.ReadOnly = true;
             this.categoryBox.Size = new System.Drawing.Size(336, 24);
             this.categoryBox.TabIndex = 58;
             // 
@@ -312,7 +326,7 @@
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(477, 104);
+            this.label10.Location = new System.Drawing.Point(477, 92);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(91, 18);
@@ -333,17 +347,6 @@
             this.label9.TabIndex = 56;
             this.label9.Text = "Unit Price :";
             // 
-            // statusBox
-            // 
-            this.statusBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.statusBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.statusBox.Location = new System.Drawing.Point(586, 137);
-            this.statusBox.Margin = new System.Windows.Forms.Padding(2);
-            this.statusBox.Name = "statusBox";
-            this.statusBox.ReadOnly = true;
-            this.statusBox.Size = new System.Drawing.Size(336, 24);
-            this.statusBox.TabIndex = 55;
-            // 
             // label8
             // 
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -351,7 +354,7 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(499, 142);
+            this.label8.Location = new System.Drawing.Point(499, 122);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(69, 18);
@@ -362,7 +365,7 @@
             // 
             this.supplierBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.supplierBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.supplierBox.Location = new System.Drawing.Point(586, 65);
+            this.supplierBox.Location = new System.Drawing.Point(586, 48);
             this.supplierBox.Margin = new System.Windows.Forms.Padding(2);
             this.supplierBox.Name = "supplierBox";
             this.supplierBox.Size = new System.Drawing.Size(336, 24);
@@ -375,7 +378,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(485, 68);
+            this.label7.Location = new System.Drawing.Point(485, 54);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(83, 18);
@@ -386,7 +389,7 @@
             // 
             this.costBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.costBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.costBox.Location = new System.Drawing.Point(586, 26);
+            this.costBox.Location = new System.Drawing.Point(586, 16);
             this.costBox.Margin = new System.Windows.Forms.Padding(2);
             this.costBox.Name = "costBox";
             this.costBox.Size = new System.Drawing.Size(336, 24);
@@ -399,7 +402,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(514, 29);
+            this.label6.Location = new System.Drawing.Point(514, 19);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(54, 18);
@@ -465,6 +468,24 @@
             this.label2.TabIndex = 45;
             this.label2.Text = "Item :";
             // 
+            // ProductDataGrid
+            // 
+            this.ProductDataGrid.AllowUserToAddRows = false;
+            this.ProductDataGrid.AllowUserToDeleteRows = false;
+            this.ProductDataGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ProductDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ProductDataGrid.Location = new System.Drawing.Point(25, 14);
+            this.ProductDataGrid.Margin = new System.Windows.Forms.Padding(2);
+            this.ProductDataGrid.Name = "ProductDataGrid";
+            this.ProductDataGrid.ReadOnly = true;
+            this.ProductDataGrid.RowHeadersWidth = 51;
+            this.ProductDataGrid.RowTemplate.Height = 24;
+            this.ProductDataGrid.Size = new System.Drawing.Size(897, 337);
+            this.ProductDataGrid.TabIndex = 23;
+            this.ProductDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProductDataGrid_CellClick);
+            // 
             // Products
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -479,9 +500,9 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ProductDataGrid)).EndInit();
             this.GroupTextBox.ResumeLayout(false);
             this.GroupTextBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ProductDataGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -506,7 +527,6 @@
         private System.Windows.Forms.TextBox categoryBox;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox statusBox;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox supplierBox;
         private System.Windows.Forms.Label label7;
@@ -517,5 +537,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox itemBox;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.RadioButton radioStatusFalse;
+        private System.Windows.Forms.RadioButton radioStatusTrue;
     }
 }
