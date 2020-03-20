@@ -105,15 +105,40 @@ namespace BiliPC
         //Update Employee
         private void btnUpdateEmployee_Click(object sender, EventArgs e)
         {
-            var updateDef = Builders<UsersModel>.Update
-               .Set("Name", NameBox.Text)
-               .Set("Username", UsernameBox.Text)
-               .Set("Password", PasswordBox.Text) 
-               .Set("isAdmin", admin)
-               .Set("Workhours", Double.Parse(WorkhoursBox.Text))
-               .Set("Wage", Double.Parse(WageBox.Text));
-            collection.UpdateOne(u => u.Id == ObjectId.Parse(IdBox.Text), updateDef);
-            ReadData();
+            MongoCRUD db = new MongoCRUD("POS_Database");
+            
+            // Check the empty boxes
+            int BoxesCount = 0;
+            foreach (Control control in GroupTextBox.Controls)
+            {
+                string controlType = control.GetType().ToString();
+                if (controlType == "System.Windows.Forms.TextBox")
+                {
+                    TextBox txtBox = (TextBox)control;
+                    if (string.IsNullOrEmpty(txtBox.Text))
+                    {
+                        BoxesCount += 1;
+                    }
+                }
+            }
+
+            if (BoxesCount > 0 )
+            {
+                    MessageBox.Show("Please fill all of the " + BoxesCount + " field/s.");
+            }
+
+            else
+            {
+                var updateDef = Builders<UsersModel>.Update
+                   .Set("Name", NameBox.Text)
+                   .Set("Username", UsernameBox.Text)
+                   .Set("Password", PasswordBox.Text)
+                   .Set("isAdmin", admin)
+                   .Set("Workhours", Double.Parse(WorkhoursBox.Text))
+                   .Set("Wage", Double.Parse(WageBox.Text));
+                collection.UpdateOne(u => u.Id == ObjectId.Parse(IdBox.Text), updateDef);
+                ReadData();
+            }
         }
 
         private void btnDeleteEmployee_Click(object sender, EventArgs e)
