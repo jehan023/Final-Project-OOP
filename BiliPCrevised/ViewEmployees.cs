@@ -38,8 +38,6 @@ namespace BiliPC
             addEmployee.Show();
         }
 
-        
-
         //refresh table for Users
         private void btnRefresh_Click(object sender, EventArgs e)
         {
@@ -61,9 +59,6 @@ namespace BiliPC
             PasswordBox.Text = EmployeeDataGrid.Rows[0].Cells[4].Value.ToString();
             WageBox.Text = EmployeeDataGrid.Rows[0].Cells[5].Value.ToString();
             WorkhoursBox.Text = EmployeeDataGrid.Rows[0].Cells[6].Value.ToString();
-                
-           
-           
         }
 
         //cell click to view data in boxes

@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -229,8 +229,6 @@
             // 
             // GroupTextBox
             // 
-            this.GroupTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.GroupTextBox.BackColor = System.Drawing.Color.Transparent;
             this.GroupTextBox.Controls.Add(this.IdBox);
             this.GroupTextBox.Controls.Add(this.label10);
@@ -247,9 +245,11 @@
             this.GroupTextBox.Controls.Add(this.label4);
             this.GroupTextBox.Controls.Add(this.NameBox);
             this.GroupTextBox.Controls.Add(this.label2);
-            this.GroupTextBox.Location = new System.Drawing.Point(1, 353);
+            this.GroupTextBox.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.GroupTextBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.GroupTextBox.Location = new System.Drawing.Point(0, 353);
             this.GroupTextBox.Name = "GroupTextBox";
-            this.GroupTextBox.Size = new System.Drawing.Size(943, 174);
+            this.GroupTextBox.Size = new System.Drawing.Size(945, 186);
             this.GroupTextBox.TabIndex = 48;
             this.GroupTextBox.TabStop = false;
             // 
@@ -257,7 +257,7 @@
             // 
             this.IdBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.IdBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IdBox.Location = new System.Drawing.Point(135, 16);
+            this.IdBox.Location = new System.Drawing.Point(136, 22);
             this.IdBox.Margin = new System.Windows.Forms.Padding(2);
             this.IdBox.Name = "IdBox";
             this.IdBox.ReadOnly = true;
@@ -271,7 +271,7 @@
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(45, 18);
+            this.label10.Location = new System.Drawing.Point(46, 24);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(89, 22);
@@ -283,7 +283,7 @@
             this.radioAdminFalse.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.radioAdminFalse.AutoSize = true;
             this.radioAdminFalse.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioAdminFalse.Location = new System.Drawing.Point(593, 124);
+            this.radioAdminFalse.Location = new System.Drawing.Point(594, 130);
             this.radioAdminFalse.Margin = new System.Windows.Forms.Padding(2);
             this.radioAdminFalse.Name = "radioAdminFalse";
             this.radioAdminFalse.Size = new System.Drawing.Size(114, 28);
@@ -297,7 +297,7 @@
             this.radioAdminTrue.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.radioAdminTrue.AutoSize = true;
             this.radioAdminTrue.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioAdminTrue.Location = new System.Drawing.Point(593, 93);
+            this.radioAdminTrue.Location = new System.Drawing.Point(594, 99);
             this.radioAdminTrue.Margin = new System.Windows.Forms.Padding(2);
             this.radioAdminTrue.Name = "radioAdminTrue";
             this.radioAdminTrue.Size = new System.Drawing.Size(83, 28);
@@ -313,7 +313,7 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(61, 98);
+            this.label9.Location = new System.Drawing.Point(62, 104);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(73, 22);
@@ -327,7 +327,7 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(489, 95);
+            this.label8.Location = new System.Drawing.Point(490, 101);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(102, 22);
@@ -338,7 +338,7 @@
             // 
             this.PasswordBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.PasswordBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PasswordBox.Location = new System.Drawing.Point(593, 51);
+            this.PasswordBox.Location = new System.Drawing.Point(594, 57);
             this.PasswordBox.Margin = new System.Windows.Forms.Padding(2);
             this.PasswordBox.Name = "PasswordBox";
             this.PasswordBox.PasswordChar = '*';
@@ -352,7 +352,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(479, 55);
+            this.label7.Location = new System.Drawing.Point(480, 61);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(111, 22);
@@ -363,7 +363,7 @@
             // 
             this.UsernameBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.UsernameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UsernameBox.Location = new System.Drawing.Point(593, 16);
+            this.UsernameBox.Location = new System.Drawing.Point(594, 22);
             this.UsernameBox.Margin = new System.Windows.Forms.Padding(2);
             this.UsernameBox.Name = "UsernameBox";
             this.UsernameBox.Size = new System.Drawing.Size(336, 28);
@@ -376,7 +376,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(476, 18);
+            this.label6.Location = new System.Drawing.Point(477, 24);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(114, 22);
@@ -387,7 +387,7 @@
             // 
             this.WorkhoursBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.WorkhoursBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WorkhoursBox.Location = new System.Drawing.Point(135, 138);
+            this.WorkhoursBox.Location = new System.Drawing.Point(136, 144);
             this.WorkhoursBox.Margin = new System.Windows.Forms.Padding(2);
             this.WorkhoursBox.Name = "WorkhoursBox";
             this.WorkhoursBox.Size = new System.Drawing.Size(336, 28);
@@ -397,7 +397,7 @@
             // 
             this.WageBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.WageBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WageBox.Location = new System.Drawing.Point(135, 95);
+            this.WageBox.Location = new System.Drawing.Point(136, 101);
             this.WageBox.Margin = new System.Windows.Forms.Padding(2);
             this.WageBox.Name = "WageBox";
             this.WageBox.Size = new System.Drawing.Size(336, 28);
@@ -410,7 +410,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(22, 141);
+            this.label4.Location = new System.Drawing.Point(23, 147);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(112, 22);
@@ -421,7 +421,7 @@
             // 
             this.NameBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.NameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NameBox.Location = new System.Drawing.Point(135, 54);
+            this.NameBox.Location = new System.Drawing.Point(136, 60);
             this.NameBox.Margin = new System.Windows.Forms.Padding(2);
             this.NameBox.Name = "NameBox";
             this.NameBox.Size = new System.Drawing.Size(336, 28);
@@ -434,7 +434,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(61, 54);
+            this.label2.Location = new System.Drawing.Point(62, 60);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(74, 22);
@@ -451,26 +451,26 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.EmployeeDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.EmployeeDataGrid.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.EmployeeDataGrid.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.EmployeeDataGrid.DefaultCellStyle = dataGridViewCellStyle5;
             this.EmployeeDataGrid.Location = new System.Drawing.Point(24, 16);
             this.EmployeeDataGrid.Margin = new System.Windows.Forms.Padding(2);
             this.EmployeeDataGrid.Name = "EmployeeDataGrid";
             this.EmployeeDataGrid.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.EmployeeDataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.EmployeeDataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.EmployeeDataGrid.RowHeadersWidth = 51;
             this.EmployeeDataGrid.RowTemplate.Height = 24;
             this.EmployeeDataGrid.Size = new System.Drawing.Size(896, 332);

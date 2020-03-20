@@ -60,9 +60,9 @@ namespace BiliPC
                     db.InsertRecord("Inventory", new InventoryModel
                     {
                         Item = ItemBox.Text,
-                        Quantity = int.Parse(QuantityBox.Text),
-                        UnitPrice = double.Parse(UnitPriceBox.Text),
-                        Cost = double.Parse(CostBox.Text),
+                        Qty = Int32.Parse(QuantityBox.Text),
+                        UnitPrice = Double.Parse(UnitPriceBox.Text),
+                        Cost = Double.Parse(CostBox.Text),
                         Category = CategoryBox.Text,
                         Supplier = SupplierBox.Text
                     });

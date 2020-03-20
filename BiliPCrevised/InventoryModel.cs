@@ -15,7 +15,7 @@ namespace BiliPC
         [BsonElement]
         public string Item { get; set; }
         [BsonElement]
-        public int Quantity { get; set; }
+        public int Qty { get; set; }
         [BsonElement]
         public double UnitPrice { get; set; }
         [BsonElement]
