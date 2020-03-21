@@ -52,11 +52,19 @@ namespace BiliPC
             return collection.Find(filter).First();
         }
 
+        public List<T> LoadRecordsBySpecific<T>(string table, string element, string specific)
+        {
+            var collection = db.GetCollection<T>(table);
+            var filter = Builders<T>.Filter.Eq(element, specific);
+
+            return collection.Find(filter).ToList();
+        }
+
         public void UpsertRecord<T>(string table, ObjectId id, T record)
         {
             var collection = db.GetCollection<T>(table);
             var result = collection.ReplaceOne(
-                new BsonDocument("_id",id),
+                new BsonDocument("_id", id),
                 record,
                 new ReplaceOptions{ IsUpsert = true });
         }

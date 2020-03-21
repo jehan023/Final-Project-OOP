@@ -32,31 +32,31 @@
             this.btnX = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.itemDropDown = new System.Windows.Forms.ComboBox();
+            this.transacationIdBox = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.changeBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.amountReceivedBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.btnaAddDiscount = new System.Windows.Forms.Button();
+            this.addDiscountBtn = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.btnPrintReceipt = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.printReceiptBtn = new System.Windows.Forms.Button();
+            this.unitPriceBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.totalPriceBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.btnBuy = new System.Windows.Forms.Button();
-            this.btnRemoveBuy = new System.Windows.Forms.Button();
+            this.addItemBtn = new System.Windows.Forms.Button();
+            this.removeItemBtn = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.totalUnitPriceBox = new System.Windows.Forms.TextBox();
+            this.quantityBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -86,7 +86,7 @@
             this.btnX.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnX.ForeColor = System.Drawing.Color.Black;
             this.btnX.Location = new System.Drawing.Point(920, 0);
-            this.btnX.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnX.Margin = new System.Windows.Forms.Padding(2);
             this.btnX.Name = "btnX";
             this.btnX.Size = new System.Drawing.Size(25, 27);
             this.btnX.TabIndex = 1;
@@ -113,20 +113,20 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.comboBox2);
-            this.panel2.Controls.Add(this.comboBox1);
-            this.panel2.Controls.Add(this.textBox8);
+            this.panel2.Controls.Add(this.itemDropDown);
+            this.panel2.Controls.Add(this.transacationIdBox);
             this.panel2.Controls.Add(this.groupBox2);
-            this.panel2.Controls.Add(this.btnaAddDiscount);
+            this.panel2.Controls.Add(this.addDiscountBtn);
             this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.btnPrintReceipt);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.printReceiptBtn);
+            this.panel2.Controls.Add(this.unitPriceBox);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.groupBox1);
-            this.panel2.Controls.Add(this.btnBuy);
-            this.panel2.Controls.Add(this.btnRemoveBuy);
+            this.panel2.Controls.Add(this.addItemBtn);
+            this.panel2.Controls.Add(this.removeItemBtn);
             this.panel2.Controls.Add(this.label9);
-            this.panel2.Controls.Add(this.textBox4);
-            this.panel2.Controls.Add(this.textBox3);
+            this.panel2.Controls.Add(this.totalUnitPriceBox);
+            this.panel2.Controls.Add(this.quantityBox);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.dataGridView1);
@@ -135,36 +135,61 @@
             this.panel2.Size = new System.Drawing.Size(945, 583);
             this.panel2.TabIndex = 1;
             // 
-            // comboBox1
+            // label10
             // 
-            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(78, 31);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(372, 28);
-            this.comboBox1.TabIndex = 58;
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Black;
+            this.label10.Location = new System.Drawing.Point(500, 31);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(95, 24);
+            this.label10.TabIndex = 60;
+            this.label10.Text = "Category :";
             // 
-            // textBox8
+            // comboBox2
             // 
-            this.textBox8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox8.BackColor = System.Drawing.Color.DarkGray;
-            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(158, 6);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(633, 19);
-            this.textBox8.TabIndex = 57;
+            this.comboBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(599, 31);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(192, 28);
+            this.comboBox2.TabIndex = 59;
+            // 
+            // itemDropDown
+            // 
+            this.itemDropDown.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.itemDropDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.itemDropDown.FormattingEnabled = true;
+            this.itemDropDown.Location = new System.Drawing.Point(78, 31);
+            this.itemDropDown.Margin = new System.Windows.Forms.Padding(2);
+            this.itemDropDown.Name = "itemDropDown";
+            this.itemDropDown.Size = new System.Drawing.Size(372, 28);
+            this.itemDropDown.TabIndex = 58;
+            // 
+            // transacationIdBox
+            // 
+            this.transacationIdBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.transacationIdBox.BackColor = System.Drawing.Color.DarkGray;
+            this.transacationIdBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.transacationIdBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.transacationIdBox.Location = new System.Drawing.Point(158, 6);
+            this.transacationIdBox.Margin = new System.Windows.Forms.Padding(2);
+            this.transacationIdBox.Name = "transacationIdBox";
+            this.transacationIdBox.ReadOnly = true;
+            this.transacationIdBox.Size = new System.Drawing.Size(633, 19);
+            this.transacationIdBox.TabIndex = 57;
             // 
             // groupBox2
             // 
             this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBox2.Controls.Add(this.textBox7);
+            this.groupBox2.Controls.Add(this.changeBox);
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.textBox6);
+            this.groupBox2.Controls.Add(this.amountReceivedBox);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Location = new System.Drawing.Point(15, 414);
             this.groupBox2.Name = "groupBox2";
@@ -172,17 +197,17 @@
             this.groupBox2.TabIndex = 55;
             this.groupBox2.TabStop = false;
             // 
-            // textBox7
+            // changeBox
             // 
-            this.textBox7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox7.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.textBox7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(27, 111);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(312, 39);
-            this.textBox7.TabIndex = 55;
+            this.changeBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.changeBox.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.changeBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.changeBox.Location = new System.Drawing.Point(27, 111);
+            this.changeBox.Margin = new System.Windows.Forms.Padding(2);
+            this.changeBox.Name = "changeBox";
+            this.changeBox.ReadOnly = true;
+            this.changeBox.Size = new System.Drawing.Size(312, 39);
+            this.changeBox.TabIndex = 55;
             // 
             // label7
             // 
@@ -198,16 +223,16 @@
             this.label7.TabIndex = 56;
             this.label7.Text = "Change";
             // 
-            // textBox6
+            // amountReceivedBox
             // 
-            this.textBox6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox6.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.textBox6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(27, 36);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(312, 39);
-            this.textBox6.TabIndex = 54;
+            this.amountReceivedBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.amountReceivedBox.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.amountReceivedBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.amountReceivedBox.Location = new System.Drawing.Point(27, 36);
+            this.amountReceivedBox.Margin = new System.Windows.Forms.Padding(2);
+            this.amountReceivedBox.Name = "amountReceivedBox";
+            this.amountReceivedBox.Size = new System.Drawing.Size(312, 39);
+            this.amountReceivedBox.TabIndex = 54;
             // 
             // label6
             // 
@@ -223,21 +248,21 @@
             this.label6.TabIndex = 54;
             this.label6.Text = "Amount Received";
             // 
-            // btnaAddDiscount
+            // addDiscountBtn
             // 
-            this.btnaAddDiscount.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnaAddDiscount.BackColor = System.Drawing.Color.Tan;
-            this.btnaAddDiscount.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnaAddDiscount.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btnaAddDiscount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnaAddDiscount.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnaAddDiscount.Location = new System.Drawing.Point(618, 525);
-            this.btnaAddDiscount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnaAddDiscount.Name = "btnaAddDiscount";
-            this.btnaAddDiscount.Size = new System.Drawing.Size(132, 45);
-            this.btnaAddDiscount.TabIndex = 53;
-            this.btnaAddDiscount.Text = "ADD DISCOUNT";
-            this.btnaAddDiscount.UseVisualStyleBackColor = false;
+            this.addDiscountBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.addDiscountBtn.BackColor = System.Drawing.Color.Tan;
+            this.addDiscountBtn.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.addDiscountBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.addDiscountBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addDiscountBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addDiscountBtn.Location = new System.Drawing.Point(618, 525);
+            this.addDiscountBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.addDiscountBtn.Name = "addDiscountBtn";
+            this.addDiscountBtn.Size = new System.Drawing.Size(132, 45);
+            this.addDiscountBtn.TabIndex = 53;
+            this.addDiscountBtn.Text = "ADD DISCOUNT";
+            this.addDiscountBtn.UseVisualStyleBackColor = false;
             // 
             // label8
             // 
@@ -253,32 +278,32 @@
             this.label8.TabIndex = 56;
             this.label8.Text = "Transaction ID: ";
             // 
-            // btnPrintReceipt
+            // printReceiptBtn
             // 
-            this.btnPrintReceipt.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnPrintReceipt.BackColor = System.Drawing.Color.LightCoral;
-            this.btnPrintReceipt.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnPrintReceipt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btnPrintReceipt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrintReceipt.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrintReceipt.Location = new System.Drawing.Point(774, 524);
-            this.btnPrintReceipt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnPrintReceipt.Name = "btnPrintReceipt";
-            this.btnPrintReceipt.Size = new System.Drawing.Size(132, 45);
-            this.btnPrintReceipt.TabIndex = 52;
-            this.btnPrintReceipt.Text = "PRINT RECEIPT";
-            this.btnPrintReceipt.UseVisualStyleBackColor = false;
+            this.printReceiptBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.printReceiptBtn.BackColor = System.Drawing.Color.LightCoral;
+            this.printReceiptBtn.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.printReceiptBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.printReceiptBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.printReceiptBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.printReceiptBtn.Location = new System.Drawing.Point(774, 524);
+            this.printReceiptBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.printReceiptBtn.Name = "printReceiptBtn";
+            this.printReceiptBtn.Size = new System.Drawing.Size(132, 45);
+            this.printReceiptBtn.TabIndex = 52;
+            this.printReceiptBtn.Text = "PRINT RECEIPT";
+            this.printReceiptBtn.UseVisualStyleBackColor = false;
             // 
-            // textBox1
+            // unitPriceBox
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(279, 70);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(171, 26);
-            this.textBox1.TabIndex = 51;
+            this.unitPriceBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.unitPriceBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.unitPriceBox.Location = new System.Drawing.Point(279, 70);
+            this.unitPriceBox.Margin = new System.Windows.Forms.Padding(2);
+            this.unitPriceBox.Name = "unitPriceBox";
+            this.unitPriceBox.ReadOnly = true;
+            this.unitPriceBox.Size = new System.Drawing.Size(171, 26);
+            this.unitPriceBox.TabIndex = 51;
             // 
             // label3
             // 
@@ -297,7 +322,7 @@
             // groupBox1
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBox1.Controls.Add(this.textBox5);
+            this.groupBox1.Controls.Add(this.totalPriceBox);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Location = new System.Drawing.Point(417, 414);
             this.groupBox1.Name = "groupBox1";
@@ -305,17 +330,17 @@
             this.groupBox1.TabIndex = 49;
             this.groupBox1.TabStop = false;
             // 
-            // textBox5
+            // totalPriceBox
             // 
-            this.textBox5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox5.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.textBox5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(19, 39);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(466, 45);
-            this.textBox5.TabIndex = 54;
+            this.totalPriceBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.totalPriceBox.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.totalPriceBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalPriceBox.Location = new System.Drawing.Point(19, 39);
+            this.totalPriceBox.Margin = new System.Windows.Forms.Padding(2);
+            this.totalPriceBox.Name = "totalPriceBox";
+            this.totalPriceBox.ReadOnly = true;
+            this.totalPriceBox.Size = new System.Drawing.Size(466, 45);
+            this.totalPriceBox.TabIndex = 54;
             // 
             // label5
             // 
@@ -331,37 +356,37 @@
             this.label5.TabIndex = 54;
             this.label5.Text = "Total Price";
             // 
-            // btnBuy
+            // addItemBtn
             // 
-            this.btnBuy.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnBuy.BackColor = System.Drawing.Color.SpringGreen;
-            this.btnBuy.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnBuy.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btnBuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuy.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuy.Location = new System.Drawing.Point(810, 54);
-            this.btnBuy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnBuy.Name = "btnBuy";
-            this.btnBuy.Size = new System.Drawing.Size(109, 41);
-            this.btnBuy.TabIndex = 48;
-            this.btnBuy.Text = "BUY";
-            this.btnBuy.UseVisualStyleBackColor = false;
+            this.addItemBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.addItemBtn.BackColor = System.Drawing.Color.SpringGreen;
+            this.addItemBtn.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.addItemBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.addItemBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addItemBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addItemBtn.Location = new System.Drawing.Point(810, 54);
+            this.addItemBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.addItemBtn.Name = "addItemBtn";
+            this.addItemBtn.Size = new System.Drawing.Size(109, 41);
+            this.addItemBtn.TabIndex = 48;
+            this.addItemBtn.Text = "ADD";
+            this.addItemBtn.UseVisualStyleBackColor = false;
             // 
-            // btnRemoveBuy
+            // removeItemBtn
             // 
-            this.btnRemoveBuy.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnRemoveBuy.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnRemoveBuy.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnRemoveBuy.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btnRemoveBuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemoveBuy.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemoveBuy.Location = new System.Drawing.Point(810, 6);
-            this.btnRemoveBuy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnRemoveBuy.Name = "btnRemoveBuy";
-            this.btnRemoveBuy.Size = new System.Drawing.Size(109, 41);
-            this.btnRemoveBuy.TabIndex = 47;
-            this.btnRemoveBuy.Text = "REMOVE";
-            this.btnRemoveBuy.UseVisualStyleBackColor = false;
+            this.removeItemBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.removeItemBtn.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.removeItemBtn.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.removeItemBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.removeItemBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.removeItemBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.removeItemBtn.Location = new System.Drawing.Point(810, 6);
+            this.removeItemBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.removeItemBtn.Name = "removeItemBtn";
+            this.removeItemBtn.Size = new System.Drawing.Size(109, 41);
+            this.removeItemBtn.TabIndex = 47;
+            this.removeItemBtn.Text = "REMOVE";
+            this.removeItemBtn.UseVisualStyleBackColor = false;
             // 
             // label9
             // 
@@ -377,26 +402,26 @@
             this.label9.TabIndex = 46;
             this.label9.Text = "Total Unit Price:";
             // 
-            // textBox4
+            // totalUnitPriceBox
             // 
-            this.textBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(599, 66);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(192, 26);
-            this.textBox4.TabIndex = 45;
+            this.totalUnitPriceBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.totalUnitPriceBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalUnitPriceBox.Location = new System.Drawing.Point(599, 66);
+            this.totalUnitPriceBox.Margin = new System.Windows.Forms.Padding(2);
+            this.totalUnitPriceBox.Name = "totalUnitPriceBox";
+            this.totalUnitPriceBox.ReadOnly = true;
+            this.totalUnitPriceBox.Size = new System.Drawing.Size(192, 26);
+            this.totalUnitPriceBox.TabIndex = 45;
             // 
-            // textBox3
+            // quantityBox
             // 
-            this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(78, 69);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(64, 26);
-            this.textBox3.TabIndex = 44;
+            this.quantityBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.quantityBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quantityBox.Location = new System.Drawing.Point(78, 69);
+            this.quantityBox.Margin = new System.Windows.Forms.Padding(2);
+            this.quantityBox.Name = "quantityBox";
+            this.quantityBox.Size = new System.Drawing.Size(64, 26);
+            this.quantityBox.TabIndex = 44;
             // 
             // label4
             // 
@@ -437,31 +462,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(904, 301);
             this.dataGridView1.TabIndex = 0;
             // 
-            // comboBox2
-            // 
-            this.comboBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(599, 31);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(192, 28);
-            this.comboBox2.TabIndex = 59;
-            // 
-            // label10
-            // 
-            this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(500, 31);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(95, 24);
-            this.label10.TabIndex = 60;
-            this.label10.Text = "Category :";
-            // 
             // TransactionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -495,27 +495,27 @@
         private System.Windows.Forms.Button btnX;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox totalUnitPriceBox;
+        private System.Windows.Forms.TextBox quantityBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox unitPriceBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnBuy;
-        private System.Windows.Forms.Button btnRemoveBuy;
-        private System.Windows.Forms.Button btnaAddDiscount;
-        private System.Windows.Forms.Button btnPrintReceipt;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Button addItemBtn;
+        private System.Windows.Forms.Button removeItemBtn;
+        private System.Windows.Forms.Button addDiscountBtn;
+        private System.Windows.Forms.Button printReceiptBtn;
+        private System.Windows.Forms.TextBox totalPriceBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox changeBox;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox amountReceivedBox;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox transacationIdBox;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox itemDropDown;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label10;
     }

@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.refreshBtn = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -37,7 +37,7 @@
             this.btnX = new System.Windows.Forms.Button();
             this.deleteAccountBtn = new System.Windows.Forms.Button();
             this.updateAccountBtn = new System.Windows.Forms.Button();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.searchEmployeeBox = new System.Windows.Forms.TextBox();
             this.addAccountBtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -58,6 +58,7 @@
             this.nameBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.EmployeeDataGrid = new System.Windows.Forms.DataGridView();
+            this.searchEmployeeBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.GroupTextBox.SuspendLayout();
@@ -67,13 +68,14 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.MidnightBlue;
+            this.panel1.Controls.Add(this.searchEmployeeBtn);
             this.panel1.Controls.Add(this.refreshBtn);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btnX);
             this.panel1.Controls.Add(this.deleteAccountBtn);
             this.panel1.Controls.Add(this.updateAccountBtn);
-            this.panel1.Controls.Add(this.textBox6);
+            this.panel1.Controls.Add(this.searchEmployeeBox);
             this.panel1.Controls.Add(this.addAccountBtn);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -175,16 +177,16 @@
             this.updateAccountBtn.UseVisualStyleBackColor = false;
             this.updateAccountBtn.Click += new System.EventHandler(this.UpdateAccountBtn_Click);
             // 
-            // textBox6
+            // searchEmployeeBox
             // 
-            this.textBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox6.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(660, 61);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(262, 24);
-            this.textBox6.TabIndex = 32;
+            this.searchEmployeeBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.searchEmployeeBox.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.searchEmployeeBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchEmployeeBox.Location = new System.Drawing.Point(660, 61);
+            this.searchEmployeeBox.Margin = new System.Windows.Forms.Padding(2);
+            this.searchEmployeeBox.Name = "searchEmployeeBox";
+            this.searchEmployeeBox.Size = new System.Drawing.Size(186, 24);
+            this.searchEmployeeBox.TabIndex = 32;
             // 
             // addAccountBtn
             // 
@@ -451,31 +453,41 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.EmployeeDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.EmployeeDataGrid.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.EmployeeDataGrid.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.EmployeeDataGrid.DefaultCellStyle = dataGridViewCellStyle3;
             this.EmployeeDataGrid.Location = new System.Drawing.Point(24, 16);
             this.EmployeeDataGrid.Margin = new System.Windows.Forms.Padding(2);
             this.EmployeeDataGrid.Name = "EmployeeDataGrid";
             this.EmployeeDataGrid.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.EmployeeDataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.EmployeeDataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.EmployeeDataGrid.RowHeadersWidth = 51;
             this.EmployeeDataGrid.RowTemplate.Height = 24;
             this.EmployeeDataGrid.Size = new System.Drawing.Size(896, 332);
             this.EmployeeDataGrid.TabIndex = 47;
             this.EmployeeDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.EmployeeDataGrid_CellClick_1);
+            // 
+            // searchEmployeeBtn
+            // 
+            this.searchEmployeeBtn.Location = new System.Drawing.Point(845, 62);
+            this.searchEmployeeBtn.Name = "searchEmployeeBtn";
+            this.searchEmployeeBtn.Size = new System.Drawing.Size(75, 23);
+            this.searchEmployeeBtn.TabIndex = 39;
+            this.searchEmployeeBtn.Text = "Search";
+            this.searchEmployeeBtn.UseVisualStyleBackColor = true;
+            this.searchEmployeeBtn.Click += new System.EventHandler(this.searchEmployeeBtn_Click);
             // 
             // ViewEmployees
             // 
@@ -507,7 +519,7 @@
         private System.Windows.Forms.Button btnX;
         private System.Windows.Forms.Button deleteAccountBtn;
         private System.Windows.Forms.Button updateAccountBtn;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox searchEmployeeBox;
         private System.Windows.Forms.Button addAccountBtn;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel2;
@@ -528,5 +540,6 @@
         private System.Windows.Forms.TextBox nameBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView EmployeeDataGrid;
+        private System.Windows.Forms.Button searchEmployeeBtn;
     }
 }

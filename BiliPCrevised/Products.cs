@@ -37,6 +37,7 @@ namespace BiliPC
         {
             var InventoryRecord = db.LoadRecords<InventoryModel>("Inventory");
             ProductDataGrid.DataSource = InventoryRecord;
+            searchItemBox.Text = "";
         }
 
         private void refreshItemBtn_Click(object sender, EventArgs e)
@@ -121,6 +122,13 @@ namespace BiliPC
             {
                 MessageBox.Show("Please select an item.");
             }
+        }
+
+        private void searchBtn_Click(object sender, EventArgs e)
+        {
+            var SelectedRecord = db.LoadRecordsBySpecific<InventoryModel>("Inventory","Item", searchItemBox.Text);
+            ProductDataGrid.DataSource = SelectedRecord;
+
         }
     }
 }

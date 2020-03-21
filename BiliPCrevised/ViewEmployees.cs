@@ -38,6 +38,7 @@ namespace BiliPC
         {
             var userRecord = db.LoadRecords<UsersModel>("Users");
             EmployeeDataGrid.DataSource = userRecord;
+            searchEmployeeBox.Text = "";
         }
 
         private void RefreshBtn_Click(object sender, EventArgs e)
@@ -111,6 +112,12 @@ namespace BiliPC
             {
                 MessageBox.Show("Please select an item.");
             }
+        }
+
+        private void searchEmployeeBtn_Click(object sender, EventArgs e)
+        {
+            var SelectedRecord = db.LoadRecordsBySpecific<UsersModel>("Users", "Name", searchEmployeeBox.Text);
+            EmployeeDataGrid.DataSource = SelectedRecord;
         }
     }
 }

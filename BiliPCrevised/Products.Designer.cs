@@ -28,17 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.refreshItemBtn = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnX = new System.Windows.Forms.Button();
-            this.deleteItemBtn = new System.Windows.Forms.Button();
-            this.updateItemBtn = new System.Windows.Forms.Button();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.addItemBtn = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.ProductDataGrid = new System.Windows.Forms.DataGridView();
             this.GroupTextBox = new System.Windows.Forms.GroupBox();
             this.inStockFalseRadioBtn = new System.Windows.Forms.RadioButton();
             this.inStockTrueRadioBtn = new System.Windows.Forms.RadioButton();
@@ -57,174 +47,41 @@
             this.label4 = new System.Windows.Forms.Label();
             this.itemNameBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.ProductDataGrid = new System.Windows.Forms.DataGridView();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.GroupTextBox.SuspendLayout();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.addItemBtn = new System.Windows.Forms.Button();
+            this.searchItemBox = new System.Windows.Forms.TextBox();
+            this.updateItemBtn = new System.Windows.Forms.Button();
+            this.deleteItemBtn = new System.Windows.Forms.Button();
+            this.btnX = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.refreshItemBtn = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.searchItemBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ProductDataGrid)).BeginInit();
+            this.GroupTextBox.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // ProductDataGrid
             // 
-            this.panel1.BackColor = System.Drawing.Color.Firebrick;
-            this.panel1.Controls.Add(this.refreshItemBtn);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.btnX);
-            this.panel1.Controls.Add(this.deleteItemBtn);
-            this.panel1.Controls.Add(this.updateItemBtn);
-            this.panel1.Controls.Add(this.textBox6);
-            this.panel1.Controls.Add(this.addItemBtn);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(945, 100);
-            this.panel1.TabIndex = 0;
-            // 
-            // refreshItemBtn
-            // 
-            this.refreshItemBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.refreshItemBtn.BackColor = System.Drawing.Color.SpringGreen;
-            this.refreshItemBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.refreshItemBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.refreshItemBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.refreshItemBtn.Location = new System.Drawing.Point(32, 54);
-            this.refreshItemBtn.Margin = new System.Windows.Forms.Padding(2);
-            this.refreshItemBtn.Name = "refreshItemBtn";
-            this.refreshItemBtn.Size = new System.Drawing.Size(109, 31);
-            this.refreshItemBtn.TabIndex = 38;
-            this.refreshItemBtn.Text = "Refresh";
-            this.refreshItemBtn.UseVisualStyleBackColor = false;
-            this.refreshItemBtn.Click += new System.EventHandler(this.refreshItemBtn_Click);
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(74, -50);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(12, 18);
-            this.label5.TabIndex = 9;
-            this.label5.Text = " ";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(18, 9);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(157, 37);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Products";
-            // 
-            // btnX
-            // 
-            this.btnX.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnX.BackColor = System.Drawing.Color.IndianRed;
-            this.btnX.FlatAppearance.BorderSize = 0;
-            this.btnX.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btnX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnX.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnX.ForeColor = System.Drawing.Color.Black;
-            this.btnX.Location = new System.Drawing.Point(921, 0);
-            this.btnX.Margin = new System.Windows.Forms.Padding(2);
-            this.btnX.Name = "btnX";
-            this.btnX.Size = new System.Drawing.Size(25, 27);
-            this.btnX.TabIndex = 0;
-            this.btnX.Text = "X";
-            this.btnX.UseVisualStyleBackColor = false;
-            this.btnX.Click += new System.EventHandler(this.btnX_Click);
-            // 
-            // deleteItemBtn
-            // 
-            this.deleteItemBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.deleteItemBtn.BackColor = System.Drawing.Color.SpringGreen;
-            this.deleteItemBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.deleteItemBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.deleteItemBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.deleteItemBtn.Location = new System.Drawing.Point(404, 54);
-            this.deleteItemBtn.Margin = new System.Windows.Forms.Padding(2);
-            this.deleteItemBtn.Name = "deleteItemBtn";
-            this.deleteItemBtn.Size = new System.Drawing.Size(109, 31);
-            this.deleteItemBtn.TabIndex = 35;
-            this.deleteItemBtn.Text = "Delete item";
-            this.deleteItemBtn.UseVisualStyleBackColor = false;
-            this.deleteItemBtn.Click += new System.EventHandler(this.deleteItemBtn_Click);
-            // 
-            // updateItemBtn
-            // 
-            this.updateItemBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.updateItemBtn.BackColor = System.Drawing.Color.SpringGreen;
-            this.updateItemBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.updateItemBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.updateItemBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.updateItemBtn.Location = new System.Drawing.Point(280, 54);
-            this.updateItemBtn.Margin = new System.Windows.Forms.Padding(2);
-            this.updateItemBtn.Name = "updateItemBtn";
-            this.updateItemBtn.Size = new System.Drawing.Size(109, 31);
-            this.updateItemBtn.TabIndex = 37;
-            this.updateItemBtn.Text = "Update item";
-            this.updateItemBtn.UseVisualStyleBackColor = false;
-            this.updateItemBtn.Click += new System.EventHandler(this.updateItemBtn_Click);
-            // 
-            // textBox6
-            // 
-            this.textBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox6.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.textBox6.Location = new System.Drawing.Point(660, 61);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(262, 24);
-            this.textBox6.TabIndex = 32;
-            // 
-            // addItemBtn
-            // 
-            this.addItemBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.addItemBtn.BackColor = System.Drawing.Color.SpringGreen;
-            this.addItemBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.addItemBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.addItemBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addItemBtn.Location = new System.Drawing.Point(156, 54);
-            this.addItemBtn.Margin = new System.Windows.Forms.Padding(2);
-            this.addItemBtn.Name = "addItemBtn";
-            this.addItemBtn.Size = new System.Drawing.Size(109, 31);
-            this.addItemBtn.TabIndex = 36;
-            this.addItemBtn.Text = "Add item";
-            this.addItemBtn.UseVisualStyleBackColor = false;
-            this.addItemBtn.Click += new System.EventHandler(this.addItemBtn_Click);
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(541, 62);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(109, 18);
-            this.label3.TabIndex = 33;
-            this.label3.Text = "Search item:";
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.MistyRose;
-            this.panel2.Controls.Add(this.GroupTextBox);
-            this.panel2.Controls.Add(this.ProductDataGrid);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 100);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(945, 539);
-            this.panel2.TabIndex = 1;
+            this.ProductDataGrid.AllowUserToAddRows = false;
+            this.ProductDataGrid.AllowUserToDeleteRows = false;
+            this.ProductDataGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ProductDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ProductDataGrid.Location = new System.Drawing.Point(25, 14);
+            this.ProductDataGrid.Margin = new System.Windows.Forms.Padding(2);
+            this.ProductDataGrid.Name = "ProductDataGrid";
+            this.ProductDataGrid.ReadOnly = true;
+            this.ProductDataGrid.RowHeadersWidth = 51;
+            this.ProductDataGrid.RowTemplate.Height = 24;
+            this.ProductDataGrid.Size = new System.Drawing.Size(897, 337);
+            this.ProductDataGrid.TabIndex = 23;
+            this.ProductDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProductDataGrid_CellClick);
             // 
             // GroupTextBox
             // 
@@ -470,23 +327,181 @@
             this.label2.TabIndex = 45;
             this.label2.Text = "Item :";
             // 
-            // ProductDataGrid
+            // panel2
             // 
-            this.ProductDataGrid.AllowUserToAddRows = false;
-            this.ProductDataGrid.AllowUserToDeleteRows = false;
-            this.ProductDataGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ProductDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ProductDataGrid.Location = new System.Drawing.Point(25, 14);
-            this.ProductDataGrid.Margin = new System.Windows.Forms.Padding(2);
-            this.ProductDataGrid.Name = "ProductDataGrid";
-            this.ProductDataGrid.ReadOnly = true;
-            this.ProductDataGrid.RowHeadersWidth = 51;
-            this.ProductDataGrid.RowTemplate.Height = 24;
-            this.ProductDataGrid.Size = new System.Drawing.Size(897, 337);
-            this.ProductDataGrid.TabIndex = 23;
-            this.ProductDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProductDataGrid_CellClick);
+            this.panel2.BackColor = System.Drawing.Color.MistyRose;
+            this.panel2.Controls.Add(this.GroupTextBox);
+            this.panel2.Controls.Add(this.ProductDataGrid);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 100);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(945, 539);
+            this.panel2.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(541, 62);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(109, 18);
+            this.label3.TabIndex = 33;
+            this.label3.Text = "Search item:";
+            // 
+            // addItemBtn
+            // 
+            this.addItemBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.addItemBtn.BackColor = System.Drawing.Color.SpringGreen;
+            this.addItemBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.addItemBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.addItemBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addItemBtn.Location = new System.Drawing.Point(156, 54);
+            this.addItemBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.addItemBtn.Name = "addItemBtn";
+            this.addItemBtn.Size = new System.Drawing.Size(109, 31);
+            this.addItemBtn.TabIndex = 36;
+            this.addItemBtn.Text = "Add item";
+            this.addItemBtn.UseVisualStyleBackColor = false;
+            this.addItemBtn.Click += new System.EventHandler(this.addItemBtn_Click);
+            // 
+            // searchItemBox
+            // 
+            this.searchItemBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.searchItemBox.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.searchItemBox.Location = new System.Drawing.Point(660, 61);
+            this.searchItemBox.Margin = new System.Windows.Forms.Padding(2);
+            this.searchItemBox.Name = "searchItemBox";
+            this.searchItemBox.Size = new System.Drawing.Size(193, 24);
+            this.searchItemBox.TabIndex = 32;
+            // 
+            // updateItemBtn
+            // 
+            this.updateItemBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.updateItemBtn.BackColor = System.Drawing.Color.SpringGreen;
+            this.updateItemBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.updateItemBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.updateItemBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.updateItemBtn.Location = new System.Drawing.Point(280, 54);
+            this.updateItemBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.updateItemBtn.Name = "updateItemBtn";
+            this.updateItemBtn.Size = new System.Drawing.Size(109, 31);
+            this.updateItemBtn.TabIndex = 37;
+            this.updateItemBtn.Text = "Update item";
+            this.updateItemBtn.UseVisualStyleBackColor = false;
+            this.updateItemBtn.Click += new System.EventHandler(this.updateItemBtn_Click);
+            // 
+            // deleteItemBtn
+            // 
+            this.deleteItemBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.deleteItemBtn.BackColor = System.Drawing.Color.SpringGreen;
+            this.deleteItemBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.deleteItemBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.deleteItemBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deleteItemBtn.Location = new System.Drawing.Point(404, 54);
+            this.deleteItemBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.deleteItemBtn.Name = "deleteItemBtn";
+            this.deleteItemBtn.Size = new System.Drawing.Size(109, 31);
+            this.deleteItemBtn.TabIndex = 35;
+            this.deleteItemBtn.Text = "Delete item";
+            this.deleteItemBtn.UseVisualStyleBackColor = false;
+            this.deleteItemBtn.Click += new System.EventHandler(this.deleteItemBtn_Click);
+            // 
+            // btnX
+            // 
+            this.btnX.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnX.BackColor = System.Drawing.Color.IndianRed;
+            this.btnX.FlatAppearance.BorderSize = 0;
+            this.btnX.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnX.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnX.ForeColor = System.Drawing.Color.Black;
+            this.btnX.Location = new System.Drawing.Point(921, 0);
+            this.btnX.Margin = new System.Windows.Forms.Padding(2);
+            this.btnX.Name = "btnX";
+            this.btnX.Size = new System.Drawing.Size(25, 27);
+            this.btnX.TabIndex = 0;
+            this.btnX.Text = "X";
+            this.btnX.UseVisualStyleBackColor = false;
+            this.btnX.Click += new System.EventHandler(this.btnX_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(18, 9);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(157, 37);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Products";
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(74, -50);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(12, 18);
+            this.label5.TabIndex = 9;
+            this.label5.Text = " ";
+            // 
+            // refreshItemBtn
+            // 
+            this.refreshItemBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.refreshItemBtn.BackColor = System.Drawing.Color.SpringGreen;
+            this.refreshItemBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.refreshItemBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.refreshItemBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.refreshItemBtn.Location = new System.Drawing.Point(32, 54);
+            this.refreshItemBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.refreshItemBtn.Name = "refreshItemBtn";
+            this.refreshItemBtn.Size = new System.Drawing.Size(109, 31);
+            this.refreshItemBtn.TabIndex = 38;
+            this.refreshItemBtn.Text = "Refresh";
+            this.refreshItemBtn.UseVisualStyleBackColor = false;
+            this.refreshItemBtn.Click += new System.EventHandler(this.refreshItemBtn_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Firebrick;
+            this.panel1.Controls.Add(this.searchItemBtn);
+            this.panel1.Controls.Add(this.refreshItemBtn);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.btnX);
+            this.panel1.Controls.Add(this.deleteItemBtn);
+            this.panel1.Controls.Add(this.updateItemBtn);
+            this.panel1.Controls.Add(this.searchItemBox);
+            this.panel1.Controls.Add(this.addItemBtn);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(945, 100);
+            this.panel1.TabIndex = 0;
+            // 
+            // searchItemBtn
+            // 
+            this.searchItemBtn.BackColor = System.Drawing.Color.Firebrick;
+            this.searchItemBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.searchItemBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.searchItemBtn.Location = new System.Drawing.Point(849, 61);
+            this.searchItemBtn.Name = "searchItemBtn";
+            this.searchItemBtn.Size = new System.Drawing.Size(73, 24);
+            this.searchItemBtn.TabIndex = 0;
+            this.searchItemBtn.Text = "Search";
+            this.searchItemBtn.UseVisualStyleBackColor = false;
+            this.searchItemBtn.Click += new System.EventHandler(this.searchBtn_Click);
             // 
             // Products
             // 
@@ -499,31 +514,22 @@
             this.MinimumSize = new System.Drawing.Size(945, 639);
             this.Name = "Products";
             this.Text = "Product";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ProductDataGrid)).EndInit();
             this.GroupTextBox.ResumeLayout(false);
             this.GroupTextBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ProductDataGrid)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnX;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button updateItemBtn;
-        private System.Windows.Forms.Button addItemBtn;
-        private System.Windows.Forms.Button deleteItemBtn;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.DataGridView ProductDataGrid;
-        private System.Windows.Forms.Button refreshItemBtn;
         private System.Windows.Forms.GroupBox GroupTextBox;
+        private System.Windows.Forms.RadioButton inStockFalseRadioBtn;
+        private System.Windows.Forms.RadioButton inStockTrueRadioBtn;
         private System.Windows.Forms.TextBox idBox;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox categoryBox;
@@ -539,7 +545,17 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox itemNameBox;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.RadioButton inStockFalseRadioBtn;
-        private System.Windows.Forms.RadioButton inStockTrueRadioBtn;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button addItemBtn;
+        private System.Windows.Forms.TextBox searchItemBox;
+        private System.Windows.Forms.Button updateItemBtn;
+        private System.Windows.Forms.Button deleteItemBtn;
+        private System.Windows.Forms.Button btnX;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button refreshItemBtn;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button searchItemBtn;
     }
 }
