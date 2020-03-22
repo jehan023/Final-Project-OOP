@@ -1,16 +1,13 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Driver;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BiliPC
 {
     public class MongoCRUD // Create Read Update Delete
     {
-        public IMongoDatabase db;
+        private IMongoDatabase db;
 
         public MongoCRUD(string database)
         {
@@ -66,7 +63,7 @@ namespace BiliPC
             var result = collection.ReplaceOne(
                 new BsonDocument("_id", id),
                 record,
-                new ReplaceOptions{ IsUpsert = true });
+                new ReplaceOptions { IsUpsert = true });
         }
 
         public void DeleleRecord<T>(string table, ObjectId id)

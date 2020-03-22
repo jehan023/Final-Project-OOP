@@ -253,6 +253,7 @@
             this.costBox.Name = "costBox";
             this.costBox.Size = new System.Drawing.Size(336, 24);
             this.costBox.TabIndex = 51;
+            this.costBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CostBox_KeyPress);
             // 
             // label6
             // 
@@ -277,6 +278,7 @@
             this.unitPriceBox.Name = "unitPriceBox";
             this.unitPriceBox.Size = new System.Drawing.Size(336, 24);
             this.unitPriceBox.TabIndex = 49;
+            this.unitPriceBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CostBox_KeyPress);
             // 
             // quantityBox
             // 
@@ -287,6 +289,7 @@
             this.quantityBox.Name = "quantityBox";
             this.quantityBox.Size = new System.Drawing.Size(336, 24);
             this.quantityBox.TabIndex = 48;
+            this.quantityBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CostBox_KeyPress);
             // 
             // label4
             // 
@@ -366,7 +369,7 @@
             this.addItemBtn.TabIndex = 36;
             this.addItemBtn.Text = "Add item";
             this.addItemBtn.UseVisualStyleBackColor = false;
-            this.addItemBtn.Click += new System.EventHandler(this.addItemBtn_Click);
+            this.addItemBtn.Click += new System.EventHandler(this.AddItemBtn_Click);
             // 
             // searchItemBox
             // 
@@ -392,7 +395,7 @@
             this.updateItemBtn.TabIndex = 37;
             this.updateItemBtn.Text = "Update item";
             this.updateItemBtn.UseVisualStyleBackColor = false;
-            this.updateItemBtn.Click += new System.EventHandler(this.updateItemBtn_Click);
+            this.updateItemBtn.Click += new System.EventHandler(this.UpdateItemBtn_Click);
             // 
             // deleteItemBtn
             // 
@@ -408,7 +411,7 @@
             this.deleteItemBtn.TabIndex = 35;
             this.deleteItemBtn.Text = "Delete item";
             this.deleteItemBtn.UseVisualStyleBackColor = false;
-            this.deleteItemBtn.Click += new System.EventHandler(this.deleteItemBtn_Click);
+            this.deleteItemBtn.Click += new System.EventHandler(this.DeleteItemBtn_Click);
             // 
             // btnX
             // 
@@ -426,7 +429,7 @@
             this.btnX.TabIndex = 0;
             this.btnX.Text = "X";
             this.btnX.UseVisualStyleBackColor = false;
-            this.btnX.Click += new System.EventHandler(this.btnX_Click);
+            this.btnX.Click += new System.EventHandler(this.BtnX_Click);
             // 
             // label1
             // 
@@ -467,7 +470,7 @@
             this.refreshItemBtn.TabIndex = 38;
             this.refreshItemBtn.Text = "Refresh";
             this.refreshItemBtn.UseVisualStyleBackColor = false;
-            this.refreshItemBtn.Click += new System.EventHandler(this.refreshItemBtn_Click);
+            this.refreshItemBtn.Click += new System.EventHandler(this.RefreshItemBtn_Click);
             // 
             // panel1
             // 
@@ -501,7 +504,7 @@
             this.searchItemBtn.TabIndex = 0;
             this.searchItemBtn.Text = "Search";
             this.searchItemBtn.UseVisualStyleBackColor = false;
-            this.searchItemBtn.Click += new System.EventHandler(this.searchBtn_Click);
+            this.searchItemBtn.Click += new System.EventHandler(this.SearchBtn_Click);
             // 
             // Products
             // 

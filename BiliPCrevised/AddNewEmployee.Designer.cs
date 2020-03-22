@@ -35,21 +35,21 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.ConfirmPasswordLabel = new System.Windows.Forms.Label();
-            this.radioBtnAdminFalse = new System.Windows.Forms.RadioButton();
-            this.radioBtnAdminTrue = new System.Windows.Forms.RadioButton();
+            this.adminFalseRadioBtn = new System.Windows.Forms.RadioButton();
+            this.adminTrueRadioBtn = new System.Windows.Forms.RadioButton();
             this.AcctTypeLabel = new System.Windows.Forms.Label();
             this.WageLabel = new System.Windows.Forms.Label();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnAddEmployee = new System.Windows.Forms.Button();
+            this.cancelBtn = new System.Windows.Forms.Button();
+            this.addAccountBtn = new System.Windows.Forms.Button();
             this.PasswordLabel = new System.Windows.Forms.Label();
             this.UsernameLabel = new System.Windows.Forms.Label();
             this.NameLabel = new System.Windows.Forms.Label();
             this.GroupTextBox = new System.Windows.Forms.GroupBox();
-            this.NameBox = new System.Windows.Forms.TextBox();
-            this.ConfirmPasswordBox = new System.Windows.Forms.TextBox();
-            this.UsernameBox = new System.Windows.Forms.TextBox();
-            this.PasswordBox = new System.Windows.Forms.TextBox();
-            this.WageBox = new System.Windows.Forms.TextBox();
+            this.nameBox = new System.Windows.Forms.TextBox();
+            this.confirmPasswordBox = new System.Windows.Forms.TextBox();
+            this.usernameBox = new System.Windows.Forms.TextBox();
+            this.passwordBox = new System.Windows.Forms.TextBox();
+            this.wageBox = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.GroupTextBox.SuspendLayout();
@@ -107,12 +107,12 @@
             // 
             this.panel5.BackColor = System.Drawing.Color.Cornsilk;
             this.panel5.Controls.Add(this.ConfirmPasswordLabel);
-            this.panel5.Controls.Add(this.radioBtnAdminFalse);
-            this.panel5.Controls.Add(this.radioBtnAdminTrue);
+            this.panel5.Controls.Add(this.adminFalseRadioBtn);
+            this.panel5.Controls.Add(this.adminTrueRadioBtn);
             this.panel5.Controls.Add(this.AcctTypeLabel);
             this.panel5.Controls.Add(this.WageLabel);
-            this.panel5.Controls.Add(this.btnCancel);
-            this.panel5.Controls.Add(this.btnAddEmployee);
+            this.panel5.Controls.Add(this.cancelBtn);
+            this.panel5.Controls.Add(this.addAccountBtn);
             this.panel5.Controls.Add(this.PasswordLabel);
             this.panel5.Controls.Add(this.UsernameLabel);
             this.panel5.Controls.Add(this.NameLabel);
@@ -137,29 +137,29 @@
             this.ConfirmPasswordLabel.TabIndex = 59;
             this.ConfirmPasswordLabel.Text = "Confirm Password";
             // 
-            // radioBtnAdminFalse
+            // adminFalseRadioBtn
             // 
-            this.radioBtnAdminFalse.AutoSize = true;
-            this.radioBtnAdminFalse.Checked = true;
-            this.radioBtnAdminFalse.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioBtnAdminFalse.Location = new System.Drawing.Point(173, 342);
-            this.radioBtnAdminFalse.Name = "radioBtnAdminFalse";
-            this.radioBtnAdminFalse.Size = new System.Drawing.Size(97, 21);
-            this.radioBtnAdminFalse.TabIndex = 65;
-            this.radioBtnAdminFalse.TabStop = true;
-            this.radioBtnAdminFalse.Text = "Employee";
-            this.radioBtnAdminFalse.UseVisualStyleBackColor = true;
+            this.adminFalseRadioBtn.AutoSize = true;
+            this.adminFalseRadioBtn.Checked = true;
+            this.adminFalseRadioBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adminFalseRadioBtn.Location = new System.Drawing.Point(173, 342);
+            this.adminFalseRadioBtn.Name = "adminFalseRadioBtn";
+            this.adminFalseRadioBtn.Size = new System.Drawing.Size(97, 21);
+            this.adminFalseRadioBtn.TabIndex = 65;
+            this.adminFalseRadioBtn.TabStop = true;
+            this.adminFalseRadioBtn.Text = "Employee";
+            this.adminFalseRadioBtn.UseVisualStyleBackColor = true;
             // 
-            // radioBtnAdminTrue
+            // adminTrueRadioBtn
             // 
-            this.radioBtnAdminTrue.AutoSize = true;
-            this.radioBtnAdminTrue.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioBtnAdminTrue.Location = new System.Drawing.Point(96, 342);
-            this.radioBtnAdminTrue.Name = "radioBtnAdminTrue";
-            this.radioBtnAdminTrue.Size = new System.Drawing.Size(72, 21);
-            this.radioBtnAdminTrue.TabIndex = 64;
-            this.radioBtnAdminTrue.Text = "Admin";
-            this.radioBtnAdminTrue.UseVisualStyleBackColor = true;
+            this.adminTrueRadioBtn.AutoSize = true;
+            this.adminTrueRadioBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adminTrueRadioBtn.Location = new System.Drawing.Point(96, 342);
+            this.adminTrueRadioBtn.Name = "adminTrueRadioBtn";
+            this.adminTrueRadioBtn.Size = new System.Drawing.Size(72, 21);
+            this.adminTrueRadioBtn.TabIndex = 64;
+            this.adminTrueRadioBtn.Text = "Admin";
+            this.adminTrueRadioBtn.UseVisualStyleBackColor = true;
             // 
             // AcctTypeLabel
             // 
@@ -189,40 +189,40 @@
             this.WageLabel.TabIndex = 61;
             this.WageLabel.Text = "Wage";
             // 
-            // btnCancel
+            // cancelBtn
             // 
-            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancel.BackColor = System.Drawing.Color.SpringGreen;
-            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnCancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(313, 399);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(109, 31);
-            this.btnCancel.TabIndex = 67;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.cancelBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.cancelBtn.BackColor = System.Drawing.Color.SpringGreen;
+            this.cancelBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.cancelBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cancelBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.cancelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cancelBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancelBtn.Location = new System.Drawing.Point(313, 399);
+            this.cancelBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.cancelBtn.Name = "cancelBtn";
+            this.cancelBtn.Size = new System.Drawing.Size(109, 31);
+            this.cancelBtn.TabIndex = 67;
+            this.cancelBtn.Text = "Cancel";
+            this.cancelBtn.UseVisualStyleBackColor = false;
+            this.cancelBtn.Click += new System.EventHandler(this.CancelBtn_Click);
             // 
-            // btnAddEmployee
+            // addAccountBtn
             // 
-            this.btnAddEmployee.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddEmployee.BackColor = System.Drawing.Color.SpringGreen;
-            this.btnAddEmployee.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnAddEmployee.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btnAddEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddEmployee.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddEmployee.Location = new System.Drawing.Point(174, 399);
-            this.btnAddEmployee.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnAddEmployee.Name = "btnAddEmployee";
-            this.btnAddEmployee.Size = new System.Drawing.Size(109, 31);
-            this.btnAddEmployee.TabIndex = 66;
-            this.btnAddEmployee.Text = "Save";
-            this.btnAddEmployee.UseVisualStyleBackColor = false;
-            this.btnAddEmployee.Click += new System.EventHandler(this.btnAddEmployee_Click);
+            this.addAccountBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.addAccountBtn.BackColor = System.Drawing.Color.SpringGreen;
+            this.addAccountBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.addAccountBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.addAccountBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addAccountBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addAccountBtn.Location = new System.Drawing.Point(174, 399);
+            this.addAccountBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.addAccountBtn.Name = "addAccountBtn";
+            this.addAccountBtn.Size = new System.Drawing.Size(109, 31);
+            this.addAccountBtn.TabIndex = 66;
+            this.addAccountBtn.Text = "Save";
+            this.addAccountBtn.UseVisualStyleBackColor = false;
+            this.addAccountBtn.Click += new System.EventHandler(this.AddAccountBtn_Click);
             // 
             // PasswordLabel
             // 
@@ -268,75 +268,76 @@
             // 
             // GroupTextBox
             // 
-            this.GroupTextBox.Controls.Add(this.NameBox);
-            this.GroupTextBox.Controls.Add(this.ConfirmPasswordBox);
-            this.GroupTextBox.Controls.Add(this.UsernameBox);
-            this.GroupTextBox.Controls.Add(this.PasswordBox);
-            this.GroupTextBox.Controls.Add(this.WageBox);
+            this.GroupTextBox.Controls.Add(this.nameBox);
+            this.GroupTextBox.Controls.Add(this.confirmPasswordBox);
+            this.GroupTextBox.Controls.Add(this.usernameBox);
+            this.GroupTextBox.Controls.Add(this.passwordBox);
+            this.GroupTextBox.Controls.Add(this.wageBox);
             this.GroupTextBox.Location = new System.Drawing.Point(70, 39);
             this.GroupTextBox.Name = "GroupTextBox";
             this.GroupTextBox.Size = new System.Drawing.Size(379, 338);
             this.GroupTextBox.TabIndex = 10;
             this.GroupTextBox.TabStop = false;
             // 
-            // NameBox
+            // nameBox
             // 
-            this.NameBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.NameBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NameBox.Location = new System.Drawing.Point(23, 39);
-            this.NameBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.NameBox.Name = "NameBox";
-            this.NameBox.Size = new System.Drawing.Size(336, 21);
-            this.NameBox.TabIndex = 54;
+            this.nameBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.nameBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameBox.Location = new System.Drawing.Point(23, 39);
+            this.nameBox.Margin = new System.Windows.Forms.Padding(2);
+            this.nameBox.Name = "nameBox";
+            this.nameBox.Size = new System.Drawing.Size(336, 21);
+            this.nameBox.TabIndex = 54;
             // 
-            // ConfirmPasswordBox
+            // confirmPasswordBox
             // 
-            this.ConfirmPasswordBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.ConfirmPasswordBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ConfirmPasswordBox.Location = new System.Drawing.Point(23, 198);
-            this.ConfirmPasswordBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.ConfirmPasswordBox.Name = "ConfirmPasswordBox";
-            this.ConfirmPasswordBox.PasswordChar = '*';
-            this.ConfirmPasswordBox.Size = new System.Drawing.Size(336, 21);
-            this.ConfirmPasswordBox.TabIndex = 60;
+            this.confirmPasswordBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.confirmPasswordBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.confirmPasswordBox.Location = new System.Drawing.Point(23, 198);
+            this.confirmPasswordBox.Margin = new System.Windows.Forms.Padding(2);
+            this.confirmPasswordBox.Name = "confirmPasswordBox";
+            this.confirmPasswordBox.PasswordChar = '*';
+            this.confirmPasswordBox.Size = new System.Drawing.Size(336, 21);
+            this.confirmPasswordBox.TabIndex = 60;
             // 
-            // UsernameBox
+            // usernameBox
             // 
-            this.UsernameBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.UsernameBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UsernameBox.Location = new System.Drawing.Point(23, 92);
-            this.UsernameBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.UsernameBox.Name = "UsernameBox";
-            this.UsernameBox.Size = new System.Drawing.Size(336, 21);
-            this.UsernameBox.TabIndex = 56;
+            this.usernameBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.usernameBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usernameBox.Location = new System.Drawing.Point(23, 92);
+            this.usernameBox.Margin = new System.Windows.Forms.Padding(2);
+            this.usernameBox.Name = "usernameBox";
+            this.usernameBox.Size = new System.Drawing.Size(336, 21);
+            this.usernameBox.TabIndex = 56;
             // 
-            // PasswordBox
+            // passwordBox
             // 
-            this.PasswordBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.PasswordBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PasswordBox.Location = new System.Drawing.Point(23, 145);
-            this.PasswordBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.PasswordBox.Name = "PasswordBox";
-            this.PasswordBox.PasswordChar = '*';
-            this.PasswordBox.Size = new System.Drawing.Size(336, 21);
-            this.PasswordBox.TabIndex = 58;
+            this.passwordBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.passwordBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwordBox.Location = new System.Drawing.Point(23, 145);
+            this.passwordBox.Margin = new System.Windows.Forms.Padding(2);
+            this.passwordBox.Name = "passwordBox";
+            this.passwordBox.PasswordChar = '*';
+            this.passwordBox.Size = new System.Drawing.Size(336, 21);
+            this.passwordBox.TabIndex = 58;
             // 
-            // WageBox
+            // wageBox
             // 
-            this.WageBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.WageBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WageBox.Location = new System.Drawing.Point(23, 251);
-            this.WageBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.WageBox.Name = "WageBox";
-            this.WageBox.Size = new System.Drawing.Size(336, 21);
-            this.WageBox.TabIndex = 62;
+            this.wageBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.wageBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.wageBox.Location = new System.Drawing.Point(23, 251);
+            this.wageBox.Margin = new System.Windows.Forms.Padding(2);
+            this.wageBox.Name = "wageBox";
+            this.wageBox.Size = new System.Drawing.Size(336, 21);
+            this.wageBox.TabIndex = 62;
+            this.wageBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.WageBox_KeyPress);
             // 
             // AddNewEmployee
             // 
-            this.AcceptButton = this.btnAddEmployee;
+            this.AcceptButton = this.addAccountBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.btnCancel;
+            this.CancelButton = this.cancelBtn;
             this.ClientSize = new System.Drawing.Size(532, 542);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
@@ -365,20 +366,20 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnAddEmployee;
-        private System.Windows.Forms.TextBox PasswordBox;
+        private System.Windows.Forms.Button cancelBtn;
+        private System.Windows.Forms.Button addAccountBtn;
+        private System.Windows.Forms.TextBox passwordBox;
         private System.Windows.Forms.Label PasswordLabel;
-        private System.Windows.Forms.TextBox UsernameBox;
+        private System.Windows.Forms.TextBox usernameBox;
         private System.Windows.Forms.Label UsernameLabel;
-        private System.Windows.Forms.TextBox NameBox;
+        private System.Windows.Forms.TextBox nameBox;
         private System.Windows.Forms.Label NameLabel;
-        private System.Windows.Forms.TextBox WageBox;
+        private System.Windows.Forms.TextBox wageBox;
         private System.Windows.Forms.Label WageLabel;
-        private System.Windows.Forms.RadioButton radioBtnAdminFalse;
-        private System.Windows.Forms.RadioButton radioBtnAdminTrue;
+        private System.Windows.Forms.RadioButton adminFalseRadioBtn;
+        private System.Windows.Forms.RadioButton adminTrueRadioBtn;
         private System.Windows.Forms.Label AcctTypeLabel;
-        private System.Windows.Forms.TextBox ConfirmPasswordBox;
+        private System.Windows.Forms.TextBox confirmPasswordBox;
         private System.Windows.Forms.Label ConfirmPasswordLabel;
         private System.Windows.Forms.GroupBox GroupTextBox;
     }

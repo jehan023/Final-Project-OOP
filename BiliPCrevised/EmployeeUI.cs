@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BiliPC
@@ -57,12 +50,14 @@ namespace BiliPC
         #endregion
 
         #region Container Form
-        private Form activeForm = null;
+
+        public Form ActiveForm1 { get; set; } = null;
+
         private void openContainerForm(Form ContainerForm)
         {
-            if (activeForm != null)
-                activeForm.Close();
-            activeForm = ContainerForm;
+            if (ActiveForm1 != null)
+                ActiveForm1.Close();
+            ActiveForm1 = ContainerForm;
             ContainerForm.TopLevel = false;
             ContainerForm.Dock = DockStyle.Fill;
             panelContainerForm.Controls.Add(ContainerForm);
@@ -70,6 +65,10 @@ namespace BiliPC
             ContainerForm.BringToFront();
             ContainerForm.Show();
 
+        }
+        public new void Dispose()
+        {
+            ActiveForm1.Dispose();
         }
 
 

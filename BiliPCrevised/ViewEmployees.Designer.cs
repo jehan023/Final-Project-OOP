@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.searchEmployeeBtn = new System.Windows.Forms.Button();
             this.refreshBtn = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -58,7 +59,6 @@
             this.nameBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.EmployeeDataGrid = new System.Windows.Forms.DataGridView();
-            this.searchEmployeeBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.GroupTextBox.SuspendLayout();
@@ -85,6 +85,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(945, 100);
             this.panel1.TabIndex = 1;
+            // 
+            // searchEmployeeBtn
+            // 
+            this.searchEmployeeBtn.Location = new System.Drawing.Point(845, 62);
+            this.searchEmployeeBtn.Name = "searchEmployeeBtn";
+            this.searchEmployeeBtn.Size = new System.Drawing.Size(75, 23);
+            this.searchEmployeeBtn.TabIndex = 39;
+            this.searchEmployeeBtn.Text = "Search";
+            this.searchEmployeeBtn.UseVisualStyleBackColor = true;
+            this.searchEmployeeBtn.Click += new System.EventHandler(this.SearchEmployeeBtn_Click);
             // 
             // refreshBtn
             // 
@@ -394,6 +404,7 @@
             this.workhoursBox.Name = "workhoursBox";
             this.workhoursBox.Size = new System.Drawing.Size(336, 28);
             this.workhoursBox.TabIndex = 49;
+            this.workhoursBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.WageBox_KeyPress);
             // 
             // wageBox
             // 
@@ -404,6 +415,7 @@
             this.wageBox.Name = "wageBox";
             this.wageBox.Size = new System.Drawing.Size(336, 28);
             this.wageBox.TabIndex = 48;
+            this.wageBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.WageBox_KeyPress);
             // 
             // label4
             // 
@@ -453,41 +465,31 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.EmployeeDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.EmployeeDataGrid.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.EmployeeDataGrid.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.EmployeeDataGrid.DefaultCellStyle = dataGridViewCellStyle1;
             this.EmployeeDataGrid.Location = new System.Drawing.Point(24, 16);
             this.EmployeeDataGrid.Margin = new System.Windows.Forms.Padding(2);
             this.EmployeeDataGrid.Name = "EmployeeDataGrid";
             this.EmployeeDataGrid.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.EmployeeDataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.EmployeeDataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.EmployeeDataGrid.RowHeadersWidth = 51;
             this.EmployeeDataGrid.RowTemplate.Height = 24;
             this.EmployeeDataGrid.Size = new System.Drawing.Size(896, 332);
             this.EmployeeDataGrid.TabIndex = 47;
-            this.EmployeeDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.EmployeeDataGrid_CellClick_1);
-            // 
-            // searchEmployeeBtn
-            // 
-            this.searchEmployeeBtn.Location = new System.Drawing.Point(845, 62);
-            this.searchEmployeeBtn.Name = "searchEmployeeBtn";
-            this.searchEmployeeBtn.Size = new System.Drawing.Size(75, 23);
-            this.searchEmployeeBtn.TabIndex = 39;
-            this.searchEmployeeBtn.Text = "Search";
-            this.searchEmployeeBtn.UseVisualStyleBackColor = true;
-            this.searchEmployeeBtn.Click += new System.EventHandler(this.searchEmployeeBtn_Click);
+            this.EmployeeDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.EmployeeDataGrid_CellClick);
             // 
             // ViewEmployees
             // 

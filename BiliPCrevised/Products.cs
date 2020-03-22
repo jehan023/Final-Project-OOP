@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MongoDB.Bson;
+using System;
 using System.Windows.Forms;
-using MongoDB.Bson;
-using MongoDB.Driver;
 
 namespace BiliPC
 {
@@ -22,15 +14,17 @@ namespace BiliPC
             RefreshInventory();
         }
 
-        private void btnX_Click(object sender, EventArgs e)
+        private void BtnX_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Dispose();
         }
 
-        private void addItemBtn_Click(object sender, EventArgs e)
+        private void AddItemBtn_Click(object sender, EventArgs e)
         {
-            AddNewItem addItem = new AddNewItem();
-            addItem.ShowDialog();
+            using (AddNewItem addItem = new AddNewItem())
+            {
+                addItem.ShowDialog();
+            }
         }
 
         public void RefreshInventory()
@@ -40,7 +34,7 @@ namespace BiliPC
             searchItemBox.Text = "";
         }
 
-        private void refreshItemBtn_Click(object sender, EventArgs e)
+        private void RefreshItemBtn_Click(object sender, EventArgs e)
         {
             RefreshInventory();
         }
@@ -58,22 +52,10 @@ namespace BiliPC
             inStockFalseRadioBtn.Checked = ProductDataGrid.Rows[e.RowIndex].Cells[7].Value.Equals(false);
         }
 
-        private void updateItemBtn_Click(object sender, EventArgs e)
+        private void UpdateItemBtn_Click(object sender, EventArgs e)
         {
             // Check the empty fields
-            int EmptyField = 0;
-            foreach (Control control in GroupTextBox.Controls)
-            {
-                string controlType = control.GetType().ToString();
-                if (controlType == "System.Windows.Forms.TextBox")
-                {
-                    TextBox txtBox = (TextBox)control;
-                    if (string.IsNullOrEmpty(txtBox.Text))
-                    {
-                        EmptyField += 1;
-                    }
-                }
-            }
+            int EmptyField = Functions.CheckFields(GroupTextBox);
             if (EmptyField > 0)
             {
                 MessageBox.Show("Please fill all of the " + EmptyField + " field/s.");
@@ -85,22 +67,13 @@ namespace BiliPC
                 {
                     var SelectedRecord = db.LoadRecordById<InventoryModel>("Inventory", new ObjectId(idBox.Text));
                     SelectedRecord.Item = itemNameBox.Text;
-                    SelectedRecord.Qty = int.Parse(quantityBox.Text);
-                    SelectedRecord.UnitPrice = Double.Parse(unitPriceBox.Text);
-                    SelectedRecord.Cost = double.Parse(costBox.Text);
+                    SelectedRecord.Qty = int.Parse(s: quantityBox.Text);
+                    SelectedRecord.UnitPrice = double.Parse(s: unitPriceBox.Text);
+                    SelectedRecord.Cost = double.Parse(s: costBox.Text);
                     SelectedRecord.Category = categoryBox.Text;
                     SelectedRecord.Supplier = supplierBox.Text;
+                    SelectedRecord.Status = int.Parse(quantityBox.Text) != 0;
 
-                    bool inStock = SelectedRecord.Status;
-                    if (Int32.Parse(quantityBox.Text) == 0)
-                    {
-                        inStock = false;
-                    }
-                    else
-                    {
-                        inStock = true;
-                    }
-                    SelectedRecord.Status = inStock;
                     db.UpsertRecord<InventoryModel>("Inventory", SelectedRecord.Id, SelectedRecord);
                     RefreshInventory();
                 }
@@ -111,7 +84,7 @@ namespace BiliPC
             }
         }
 
-        private void deleteItemBtn_Click(object sender, EventArgs e)
+        private void DeleteItemBtn_Click(object sender, EventArgs e)
         {
             try
             {
@@ -124,11 +97,15 @@ namespace BiliPC
             }
         }
 
-        private void searchBtn_Click(object sender, EventArgs e)
+        private void SearchBtn_Click(object sender, EventArgs e)
         {
-            var SelectedRecord = db.LoadRecordsBySpecific<InventoryModel>("Inventory","Item", searchItemBox.Text);
+            var SelectedRecord = db.LoadRecordsBySpecific<InventoryModel>("Inventory", "Item", searchItemBox.Text);
             ProductDataGrid.DataSource = SelectedRecord;
+        }
 
+        private void CostBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Functions.RestrictedKeyPressToInt(e);
         }
     }
 }

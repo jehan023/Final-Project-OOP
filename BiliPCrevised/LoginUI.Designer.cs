@@ -29,39 +29,39 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginUI));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.biliPCLogo = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.exitBtn = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.usernameLabel = new System.Windows.Forms.Label();
             this.loginBtn = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.passwordLabel = new System.Windows.Forms.Label();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.textBoxUsername = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.loginBiliPCLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.biliPCLogo)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // biliPCLogo
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(85, 44);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(181, 145);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
+            this.biliPCLogo.Image = ((System.Drawing.Image)(resources.GetObject("biliPCLogo.Image")));
+            this.biliPCLogo.InitialImage = ((System.Drawing.Image)(resources.GetObject("biliPCLogo.InitialImage")));
+            this.biliPCLogo.Location = new System.Drawing.Point(85, 44);
+            this.biliPCLogo.Margin = new System.Windows.Forms.Padding(2);
+            this.biliPCLogo.Name = "biliPCLogo";
+            this.biliPCLogo.Size = new System.Drawing.Size(181, 145);
+            this.biliPCLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.biliPCLogo.TabIndex = 8;
+            this.biliPCLogo.TabStop = false;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.exitBtn);
-            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.usernameLabel);
             this.groupBox1.Controls.Add(this.loginBtn);
-            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.passwordLabel);
             this.groupBox1.Controls.Add(this.textBoxPassword);
             this.groupBox1.Controls.Add(this.textBoxUsername);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -92,19 +92,19 @@
             this.exitBtn.UseVisualStyleBackColor = false;
             this.exitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
             // 
-            // label1
+            // usernameLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label1.Location = new System.Drawing.Point(14, 27);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Username";
+            this.usernameLabel.AutoSize = true;
+            this.usernameLabel.BackColor = System.Drawing.Color.Transparent;
+            this.usernameLabel.Cursor = System.Windows.Forms.Cursors.Default;
+            this.usernameLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usernameLabel.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.usernameLabel.Location = new System.Drawing.Point(14, 27);
+            this.usernameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.usernameLabel.Name = "usernameLabel";
+            this.usernameLabel.Size = new System.Drawing.Size(83, 17);
+            this.usernameLabel.TabIndex = 0;
+            this.usernameLabel.Text = "Username";
             // 
             // loginBtn
             // 
@@ -123,17 +123,17 @@
             this.loginBtn.UseVisualStyleBackColor = false;
             this.loginBtn.Click += new System.EventHandler(this.LoginBtn_Click);
             // 
-            // label2
+            // passwordLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(17, 56);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 17);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Password";
+            this.passwordLabel.AutoSize = true;
+            this.passwordLabel.BackColor = System.Drawing.Color.Transparent;
+            this.passwordLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwordLabel.Location = new System.Drawing.Point(17, 56);
+            this.passwordLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.passwordLabel.Name = "passwordLabel";
+            this.passwordLabel.Size = new System.Drawing.Size(80, 17);
+            this.passwordLabel.TabIndex = 1;
+            this.passwordLabel.Text = "Password";
             // 
             // textBoxPassword
             // 
@@ -157,7 +157,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
-            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.loginBiliPCLabel);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
@@ -165,17 +165,17 @@
             this.panel1.Size = new System.Drawing.Size(341, 30);
             this.panel1.TabIndex = 9;
             // 
-            // label3
+            // loginBiliPCLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(9, 7);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(130, 16);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Login BiliPC Store";
+            this.loginBiliPCLabel.AutoSize = true;
+            this.loginBiliPCLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginBiliPCLabel.ForeColor = System.Drawing.Color.White;
+            this.loginBiliPCLabel.Location = new System.Drawing.Point(9, 7);
+            this.loginBiliPCLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.loginBiliPCLabel.Name = "loginBiliPCLabel";
+            this.loginBiliPCLabel.Size = new System.Drawing.Size(130, 16);
+            this.loginBiliPCLabel.TabIndex = 0;
+            this.loginBiliPCLabel.Text = "Login BiliPC Store";
             // 
             // LoginUI
             // 
@@ -187,7 +187,7 @@
             this.CancelButton = this.exitBtn;
             this.ClientSize = new System.Drawing.Size(341, 344);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.biliPCLogo);
             this.Controls.Add(this.groupBox1);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.DoubleBuffered = true;
@@ -198,7 +198,7 @@
             this.Name = "LoginUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login BiliPC";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.biliPCLogo)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -209,15 +209,15 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox biliPCLogo;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label usernameLabel;
         private System.Windows.Forms.Button loginBtn;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label passwordLabel;
         private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.TextBox textBoxUsername;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label loginBiliPCLabel;
         private System.Windows.Forms.Button exitBtn;
     }
 }

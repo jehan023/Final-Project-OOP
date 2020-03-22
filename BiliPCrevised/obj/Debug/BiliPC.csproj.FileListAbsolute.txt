@@ -243,10 +243,8 @@ C:\Users\DENNIEL-PC\source\repos\Final-Project-OOP\BiliPCrevised\obj\Debug\BiliP
 C:\Users\DENNIEL-PC\source\repos\Final-Project-OOP\BiliPCrevised\obj\Debug\BiliPC.AddNewItem.resources
 C:\Users\DENNIEL-PC\source\repos\Final-Project-OOP\BiliPCrevised\obj\Debug\BiliPC.DashboardUI.resources
 C:\Users\DENNIEL-PC\source\repos\Final-Project-OOP\BiliPCrevised\obj\Debug\BiliPC.EmployeeUI.resources
-C:\Users\DENNIEL-PC\source\repos\Final-Project-OOP\BiliPCrevised\obj\Debug\BiliPC.FormPrac.resources
 C:\Users\DENNIEL-PC\source\repos\Final-Project-OOP\BiliPCrevised\obj\Debug\BiliPC.LoginUI.resources
 C:\Users\DENNIEL-PC\source\repos\Final-Project-OOP\BiliPCrevised\obj\Debug\BiliPC.Products.resources
-C:\Users\DENNIEL-PC\source\repos\Final-Project-OOP\BiliPCrevised\obj\Debug\BiliPC.Properties.Resources.resources
 C:\Users\DENNIEL-PC\source\repos\Final-Project-OOP\BiliPCrevised\obj\Debug\BiliPC.TrackEmployees.resources
 C:\Users\DENNIEL-PC\source\repos\Final-Project-OOP\BiliPCrevised\obj\Debug\BiliPC.TransactionForm.resources
 C:\Users\DENNIEL-PC\source\repos\Final-Project-OOP\BiliPCrevised\obj\Debug\BiliPC.ViewEmployees.resources

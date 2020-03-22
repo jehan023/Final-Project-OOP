@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MongoDB.Bson;
+using System;
 using System.Windows.Forms;
-using MongoDB.Bson;
-using MongoDB.Driver;
 
 
 namespace BiliPC
@@ -30,8 +22,10 @@ namespace BiliPC
 
         private void AddAccountBtn_Click(object sender, EventArgs e)
         {
-            AddNewEmployee addEmployee = new AddNewEmployee();
-            addEmployee.Show();
+            using (AddNewEmployee addEmployee = new AddNewEmployee())
+            {
+                addEmployee.ShowDialog();
+            }
         }
 
         public void RefreshAccounts()
@@ -46,7 +40,7 @@ namespace BiliPC
             RefreshAccounts();
         }
 
-        private void EmployeeDataGrid_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        private void EmployeeDataGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             idBox.Text = EmployeeDataGrid.Rows[e.RowIndex].Cells[0].Value.ToString();
             adminTrueRadioBtn.Checked = EmployeeDataGrid.Rows[e.RowIndex].Cells[1].Value.Equals(true);
@@ -61,21 +55,8 @@ namespace BiliPC
         private void UpdateAccountBtn_Click(object sender, EventArgs e)
         {
             // Check the empty fields
-            int emptyField = 0;
-            foreach (Control control in GroupTextBox.Controls)
-            {
-                string controlType = control.GetType().ToString();
-                if (controlType == "System.Windows.Forms.TextBox")
-                {
-                    TextBox txtBox = (TextBox)control;
-                    if (string.IsNullOrEmpty(txtBox.Text))
-                    {
-                        emptyField += 1;
-                    }
-                }
-            }
-
-            if (emptyField > 0 )
+            int emptyField = Functions.CheckFields(GroupTextBox);
+            if (emptyField > 0)
             {
                 MessageBox.Show("Please fill all of the " + emptyField + " field/s.");
             }
@@ -84,14 +65,14 @@ namespace BiliPC
             {
                 try
                 {
-                    var SelectedRecord = db.LoadRecordById<UsersModel>("Users", new ObjectId(idBox.Text));
-                    SelectedRecord.Name = nameBox.Text;
-                    SelectedRecord.Username = usernameBox.Text;
-                    SelectedRecord.Password = passwordBox.Text;
-                    SelectedRecord.Wage = Double.Parse(wageBox.Text);
-                    SelectedRecord.Workhours = Double.Parse(workhoursBox.Text);
-                    SelectedRecord.isAdmin = adminTrueRadioBtn.Checked;
-                    db.UpsertRecord<UsersModel>("Users", SelectedRecord.Id, SelectedRecord);
+                    var selectedRecord = db.LoadRecordById<UsersModel>("Users", new ObjectId(idBox.Text));
+                    selectedRecord.Name = nameBox.Text;
+                    selectedRecord.Username = usernameBox.Text;
+                    selectedRecord.Password = passwordBox.Text;
+                    selectedRecord.Wage = Double.Parse(wageBox.Text);
+                    selectedRecord.Workhours = Double.Parse(workhoursBox.Text);
+                    selectedRecord.isAdmin = adminTrueRadioBtn.Checked;
+                    db.UpsertRecord<UsersModel>("Users", selectedRecord.Id, selectedRecord);
                     RefreshAccounts();
                 }
                 catch (FormatException)
@@ -114,10 +95,15 @@ namespace BiliPC
             }
         }
 
-        private void searchEmployeeBtn_Click(object sender, EventArgs e)
+        private void SearchEmployeeBtn_Click(object sender, EventArgs e)
         {
-            var SelectedRecord = db.LoadRecordsBySpecific<UsersModel>("Users", "Name", searchEmployeeBox.Text);
-            EmployeeDataGrid.DataSource = SelectedRecord;
+            var selectedRecord = db.LoadRecordsBySpecific<UsersModel>("Users", "Name", searchEmployeeBox.Text);
+            EmployeeDataGrid.DataSource = selectedRecord;
+        }
+
+        private void WageBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Functions.RestrictedKeyPressToInt(e);
         }
     }
 }

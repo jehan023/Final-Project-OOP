@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BiliPC
@@ -13,85 +6,66 @@ namespace BiliPC
     public partial class AddNewItem : Form
     {
         MongoCRUD db = new MongoCRUD("POS_Database");
-        
+
         public AddNewItem()
         {
             InitializeComponent();
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void CancelBtn_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Dispose();
         }
 
-        private void btnAddItem_Click(object sender, EventArgs e)
+        private void AddItemBtn_Click(object sender, EventArgs e)
         {
-            bool itemExists = db.CheckExistence<InventoryModel>("Inventory", "Item", ItemBox.Text);
+            bool itemExists = db.CheckExistence<InventoryModel>("Inventory", "Item", itemBox.Text);
 
             // Check thy empty boxes
-            int EmptyField = 0;
-            foreach (Control control in GroupTextBox.Controls)
+            int emptyField = Functions.CheckFields(GroupTextBox);
+
+            if (emptyField > 0)
             {
-                string controlType = control.GetType().ToString();
-                if (controlType == "System.Windows.Forms.TextBox")
-                {
-                    TextBox txtBox = (TextBox)control;
-                    if (string.IsNullOrEmpty(txtBox.Text))
-                    {
-                        EmptyField += 1;
-                    }
-                }
+                MessageBox.Show("Please fill all of the " + emptyField + " field/s.");
             }
 
-            if (EmptyField > 0)
-            {
-                MessageBox.Show("Please fill all of the "+ EmptyField + " field/s.");
-            }
             else if (itemExists == true)
             {
                 MessageBox.Show("Item already exists.");
             }
+
             else if (itemExists == false)
             {
                 try
                 {
-                    bool InStock = false;
-                    if (Int32.Parse(QuantityBox.Text) > 0)
-                    {
-                        InStock = true;
-                    }
-                    else
-                    {
-                        InStock = false;
-                    }
                     db.InsertRecord("Inventory", new InventoryModel
                     {
-                        Item = ItemBox.Text,
-                        Qty = Int32.Parse(QuantityBox.Text),
-                        UnitPrice = Double.Parse(UnitPriceBox.Text),
-                        Cost = Double.Parse(CostBox.Text),
-                        Category = CategoryBox.Text,
-                        Supplier = SupplierBox.Text,
-                        Status = InStock
-                    }); 
-                    MessageBox.Show("Item saved!");
-                    this.Close();
+                        Item = itemBox.Text,
+                        Qty = int.Parse(s: quantityBox.Text),
+                        UnitPrice = double.Parse(s: unitPriceBox.Text),
+                        Cost = double.Parse(s: costBox.Text),
+                        Category = categoryBox.Text,
+                        Supplier = supplierBox.Text,
+                        Status = int.Parse(quantityBox.Text) != 0
+                    });
+                    _ = MessageBox.Show("Item saved!");
+                    this.Dispose();
                 }
                 catch (FormatException)
                 {
                     MessageBox.Show("Please enter a valid character.");
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Unhandled exception " + ex + ". Please try again.");
-                }
             }
+
             else
             {
                 MessageBox.Show("Unknown Error.");
             }
+        }
 
-
+        private void QuantityBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Functions.RestrictedKeyPressToInt(e);
         }
     }
 }

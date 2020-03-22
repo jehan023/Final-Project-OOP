@@ -1,15 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using MongoDB.Bson;
-using MongoDB.Driver;
-using MongoDB.Bson.Serialization.Attributes;
+
 
 namespace BiliPC
 {
@@ -23,18 +14,20 @@ namespace BiliPC
             labelDate.Text = DateTime.Now.ToLongDateString();
             CustomDesign();
 
-            LoginUI login = new LoginUI();
-
             // verify if user is an Admin to hide the "Manage Users" button
-            btnManageEmployees.Visible = LoginUI.IsUser.Admin;
+            using (new LoginUI())
+            {
+                btnManageEmployees.Visible = LoginUI.Admin;
+            }
         }
 
-        //TIMER TICK
+        #region Real-time Time
         private void timer1_Tick_1(object sender, EventArgs e)
         {
             labelTime.Text = DateTime.Now.ToLongTimeString();
             timer1.Start();
         }
+        #endregion
 
         #region Hide-Show Submenu
         private void CustomDesign()
@@ -68,7 +61,7 @@ namespace BiliPC
 
         #region Container Form
         private Form activeForm = null;
-        private void openContainerForm(Form ContainerForm)
+        private void OpenContainerForm(Form ContainerForm)
         {
             if (activeForm != null)
                 activeForm.Close();
@@ -82,7 +75,6 @@ namespace BiliPC
         }
         #endregion
 
-        //SALES PART
         #region Sales
         private void btnSales_Click_1(object sender, EventArgs e)
         {
@@ -91,7 +83,7 @@ namespace BiliPC
 
         private void btnCreateTransaction_Click_1(object sender, EventArgs e)
         {
-            openContainerForm(new TransactionForm());
+            OpenContainerForm(new TransactionForm());
             HideSubmenu();
         }
 
@@ -109,7 +101,6 @@ namespace BiliPC
 
         #endregion
 
-        //INVERTORY PART
         #region Inventory
         private void btnInventory_Click_1(object sender, EventArgs e)
         {
@@ -118,13 +109,13 @@ namespace BiliPC
 
         private void btnSearchProducts_Click_1(object sender, EventArgs e)
         {
-            openContainerForm(new ViewProducts());
+            OpenContainerForm(new ViewProducts());
             HideSubmenu();
         }
 
         private void btnEditProducts_Click_1(object sender, EventArgs e)
         {
-            openContainerForm(new Products());
+            OpenContainerForm(new Products());
             HideSubmenu();
         }
         private void btnInventoryReport_Click(object sender, EventArgs e)
@@ -135,7 +126,6 @@ namespace BiliPC
 
         #endregion
 
-        //MANAGE EMPLOYEES PART
         #region Manage Employees
         private void btnManageEmployees_Click(object sender, EventArgs e)
         {
@@ -144,30 +134,26 @@ namespace BiliPC
 
         private void btnViewEmployees_Click(object sender, EventArgs e)
         {
-            openContainerForm(new ViewEmployees());
+            OpenContainerForm(new ViewEmployees());
             HideSubmenu();
         }
 
         private void btnTrackEmployees_Click(object sender, EventArgs e)
         {
-            openContainerForm(new TrackEmployees());
+            OpenContainerForm(new TrackEmployees());
             HideSubmenu();
         }
 
         #endregion
 
-        //LOGOUT PART
         #region Logout
         private void btnLogout_Click_1(object sender, EventArgs e)
         {
-            this.Close();
+            this.Close();   
             LoginUI login = new LoginUI();
             login.Show();
+            
         }
-
-
-        #endregion
-
-        
+        #endregion    
     }
 }
