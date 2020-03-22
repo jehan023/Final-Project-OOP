@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BiliPC
@@ -16,7 +13,11 @@ namespace BiliPC
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginUI());
+            using (LoginUI login = new LoginUI())
+            {
+                Application.Run(login);
+            }
+
         }
     }
 }

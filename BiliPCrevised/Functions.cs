@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BiliPC
@@ -11,33 +7,35 @@ namespace BiliPC
     {
         public static int CheckFields(Control GroupTextBox)
         {
-            int EmptyField = 0;
-            try
+            if (GroupTextBox == null)
             {
-                foreach (Control control in GroupTextBox.Controls)
+                throw new ArgumentNullException(nameof(GroupTextBox));
+            }
+            int EmptyField = 0;
+            foreach (Control control in GroupTextBox.Controls)
+            {
+                string controlType = control.GetType().ToString();
+                if (controlType == "System.Windows.Forms.TextBox")
                 {
-                    string controlType = control.GetType().ToString();
-                    if (controlType == "System.Windows.Forms.TextBox")
+                    TextBox txtBox = (TextBox)control;
+                    if (string.IsNullOrEmpty(txtBox.Text))
                     {
-                        TextBox txtBox = (TextBox)control;
-                        if (string.IsNullOrEmpty(txtBox.Text))
-                        {
-                            EmptyField += 1;
-                        }
+                        EmptyField += 1;
                     }
                 }
-                return EmptyField;
             }
-            catch (ArgumentNullException)
-            {
-                return 0;
-            }
+            return EmptyField;
+
         }
 
         public static bool RestrictedKeyPressToInt(KeyPressEventArgs e)
         {
+            if (e == null)
+            {
+                throw new ArgumentNullException(nameof(e));
+            }
+            
             char ch = e.KeyChar;
-
             // ch 8 = backspace, ch 46 = del key
             if (!Char.IsDigit(ch) && ch != 8 && ch != 46)
             {
@@ -47,7 +45,7 @@ namespace BiliPC
             {
                 return e.Handled = false;
             }
-            
+
         }
     }
 }

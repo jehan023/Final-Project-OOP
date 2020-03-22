@@ -5,7 +5,7 @@ namespace BiliPC
 {
     public partial class AddNewItem : Form
     {
-        MongoCRUD db = new MongoCRUD("POS_Database");
+        readonly MongoCRUD db = new MongoCRUD("POS_Database");
 
         public AddNewItem()
         {
@@ -48,7 +48,7 @@ namespace BiliPC
                         Supplier = supplierBox.Text,
                         Status = int.Parse(quantityBox.Text) != 0
                     });
-                    _ = MessageBox.Show("Item saved!");
+                    MessageBox.Show("Item saved!");
                     this.Dispose();
                 }
                 catch (FormatException)

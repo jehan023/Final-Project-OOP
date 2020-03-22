@@ -5,7 +5,7 @@ namespace BiliPC
 {
     public partial class AddNewEmployee : Form
     {
-        MongoCRUD db = new MongoCRUD("POS_Database");
+        readonly MongoCRUD db = new MongoCRUD("POS_Database");
 
         public AddNewEmployee()
         {

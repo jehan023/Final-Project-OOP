@@ -60,12 +60,17 @@ namespace BiliPC
         #endregion
 
         #region Container Form
-        private Form activeForm = null;
+
+        public Form ActiveForm1 { get; set; } = null;
+
         private void OpenContainerForm(Form ContainerForm)
         {
-            if (activeForm != null)
-                activeForm.Close();
-            activeForm = ContainerForm;
+            if (ActiveForm1 != null)
+                ActiveForm1.Close();
+            ActiveForm1 = ContainerForm;
+            ContainerForm.TopLevel = false;
+            ContainerForm.Dock = DockStyle.Fill;
+            panelContainerForm.Controls.Add(ContainerForm);
             ContainerForm.TopLevel = false;
             ContainerForm.Dock = DockStyle.Fill;
             panelContainerForm.Controls.Add(ContainerForm);
@@ -77,27 +82,27 @@ namespace BiliPC
 
         #region Sales
         private void btnSales_Click_1(object sender, EventArgs e)
-        {
-            ShowSubmenu(panelSales);
-        }
+            {
+                ShowSubmenu(panelSales);
+            }
 
-        private void btnCreateTransaction_Click_1(object sender, EventArgs e)
-        {
-            OpenContainerForm(new TransactionForm());
-            HideSubmenu();
-        }
+            private void btnCreateTransaction_Click_1(object sender, EventArgs e)
+            {
+                OpenContainerForm(new TransactionForm());
+                HideSubmenu();
+            }
 
-        private void btnSalesReport_Click(object sender, EventArgs e)
-        {
-            //codes for sales report
-            HideSubmenu();
-        }
+            private void btnSalesReport_Click(object sender, EventArgs e)
+            {
+                //codes for sales report
+                HideSubmenu();
+            }
 
-        private void btnTransactionHistory_Click(object sender, EventArgs e)
-        {
-            //codes for sales history
-            HideSubmenu();
-        }
+            private void btnTransactionHistory_Click(object sender, EventArgs e)
+            {
+                //codes for sales history
+                HideSubmenu();
+            }
 
         #endregion
 
@@ -149,10 +154,12 @@ namespace BiliPC
         #region Logout
         private void btnLogout_Click_1(object sender, EventArgs e)
         {
-            this.Close();   
-            LoginUI login = new LoginUI();
-            login.Show();
-            
+            this.Hide();
+            using (LoginUI login = new LoginUI())
+            {
+                login.ShowDialog();
+            }
+            this.Close();
         }
         #endregion    
     }

@@ -38,13 +38,14 @@ namespace BiliPC
             foreach (var user in userRecord)
                 if ((inputUid == user.Username) && (inputPwd == user.Password))
                 {
-                    this.Hide();
                     loggedIn = true;
                     Admin = user.isAdmin;
+                    this.Hide();
                     using (DashboardUI dashboardUI = new DashboardUI())
                     {
                         dashboardUI.ShowDialog();
                     }
+                    this.Close();
                     break;
                 }
 
@@ -56,6 +57,7 @@ namespace BiliPC
 
         private void ExitBtn_Click(object sender, EventArgs e)
         {
+
             Application.Exit();
         }
     }
