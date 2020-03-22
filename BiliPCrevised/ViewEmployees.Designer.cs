@@ -28,89 +28,93 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.searchEmployeeBtn = new System.Windows.Forms.Button();
-            this.refreshBtn = new System.Windows.Forms.Button();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.pnlTop = new System.Windows.Forms.Panel();
+            this.btnSearchEmployee = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnX = new System.Windows.Forms.Button();
-            this.deleteAccountBtn = new System.Windows.Forms.Button();
-            this.updateAccountBtn = new System.Windows.Forms.Button();
-            this.searchEmployeeBox = new System.Windows.Forms.TextBox();
-            this.addAccountBtn = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnDeleteAccount = new System.Windows.Forms.Button();
+            this.btnUpdateAccount = new System.Windows.Forms.Button();
+            this.txtSearchEmployee = new System.Windows.Forms.TextBox();
+            this.btnAddAccount = new System.Windows.Forms.Button();
+            this.lblSearchEmployee = new System.Windows.Forms.Label();
+            this.pnlBackground = new System.Windows.Forms.Panel();
             this.GroupTextBox = new System.Windows.Forms.GroupBox();
-            this.idBox = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.adminFalseRadioBtn = new System.Windows.Forms.RadioButton();
-            this.adminTrueRadioBtn = new System.Windows.Forms.RadioButton();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.passwordBox = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.usernameBox = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.workhoursBox = new System.Windows.Forms.TextBox();
-            this.wageBox = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.nameBox = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.EmployeeDataGrid = new System.Windows.Forms.DataGridView();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.txtAcctID = new System.Windows.Forms.TextBox();
+            this.lblUserID = new System.Windows.Forms.Label();
+            this.radAdminFalse = new System.Windows.Forms.RadioButton();
+            this.radAdminTrue = new System.Windows.Forms.RadioButton();
+            this.lblWage = new System.Windows.Forms.Label();
+            this.lblAccType = new System.Windows.Forms.Label();
+            this.txtAcctPassword = new System.Windows.Forms.TextBox();
+            this.lblPassword = new System.Windows.Forms.Label();
+            this.txtAcctUsername = new System.Windows.Forms.TextBox();
+            this.lblUsername = new System.Windows.Forms.Label();
+            this.txtAcctWorkhours = new System.Windows.Forms.TextBox();
+            this.txtAcctWage = new System.Windows.Forms.TextBox();
+            this.lblWorkhours = new System.Windows.Forms.Label();
+            this.txtAcctName = new System.Windows.Forms.TextBox();
+            this.lblName = new System.Windows.Forms.Label();
+            this.dgdEmployee = new System.Windows.Forms.DataGridView();
+            this.pnlTop.SuspendLayout();
+            this.pnlBackground.SuspendLayout();
             this.GroupTextBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.EmployeeDataGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgdEmployee)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // pnlTop
             // 
-            this.panel1.BackColor = System.Drawing.Color.MidnightBlue;
-            this.panel1.Controls.Add(this.searchEmployeeBtn);
-            this.panel1.Controls.Add(this.refreshBtn);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.btnX);
-            this.panel1.Controls.Add(this.deleteAccountBtn);
-            this.panel1.Controls.Add(this.updateAccountBtn);
-            this.panel1.Controls.Add(this.searchEmployeeBox);
-            this.panel1.Controls.Add(this.addAccountBtn);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(945, 100);
-            this.panel1.TabIndex = 1;
+            this.pnlTop.BackColor = System.Drawing.Color.MidnightBlue;
+            this.pnlTop.Controls.Add(this.btnSearchEmployee);
+            this.pnlTop.Controls.Add(this.btnRefresh);
+            this.pnlTop.Controls.Add(this.label5);
+            this.pnlTop.Controls.Add(this.label1);
+            this.pnlTop.Controls.Add(this.btnX);
+            this.pnlTop.Controls.Add(this.btnDeleteAccount);
+            this.pnlTop.Controls.Add(this.btnUpdateAccount);
+            this.pnlTop.Controls.Add(this.txtSearchEmployee);
+            this.pnlTop.Controls.Add(this.btnAddAccount);
+            this.pnlTop.Controls.Add(this.lblSearchEmployee);
+            this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTop.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pnlTop.Location = new System.Drawing.Point(0, 0);
+            this.pnlTop.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlTop.Name = "pnlTop";
+            this.pnlTop.Size = new System.Drawing.Size(945, 100);
+            this.pnlTop.TabIndex = 1;
             // 
-            // searchEmployeeBtn
+            // btnSearchEmployee
             // 
-            this.searchEmployeeBtn.Location = new System.Drawing.Point(845, 62);
-            this.searchEmployeeBtn.Name = "searchEmployeeBtn";
-            this.searchEmployeeBtn.Size = new System.Drawing.Size(75, 23);
-            this.searchEmployeeBtn.TabIndex = 39;
-            this.searchEmployeeBtn.Text = "Search";
-            this.searchEmployeeBtn.UseVisualStyleBackColor = true;
-            this.searchEmployeeBtn.Click += new System.EventHandler(this.SearchEmployeeBtn_Click);
+            this.btnSearchEmployee.BackColor = System.Drawing.Color.Navy;
+            this.btnSearchEmployee.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnSearchEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSearchEmployee.ForeColor = System.Drawing.Color.White;
+            this.btnSearchEmployee.Location = new System.Drawing.Point(845, 61);
+            this.btnSearchEmployee.Name = "btnSearchEmployee";
+            this.btnSearchEmployee.Size = new System.Drawing.Size(75, 23);
+            this.btnSearchEmployee.TabIndex = 39;
+            this.btnSearchEmployee.Text = "Search";
+            this.btnSearchEmployee.UseVisualStyleBackColor = false;
+            this.btnSearchEmployee.Click += new System.EventHandler(this.BtnSearchEmployee_Click);
             // 
-            // refreshBtn
+            // btnRefresh
             // 
-            this.refreshBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.refreshBtn.BackColor = System.Drawing.Color.SpringGreen;
-            this.refreshBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.refreshBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.refreshBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.refreshBtn.Location = new System.Drawing.Point(25, 54);
-            this.refreshBtn.Margin = new System.Windows.Forms.Padding(2);
-            this.refreshBtn.Name = "refreshBtn";
-            this.refreshBtn.Size = new System.Drawing.Size(109, 31);
-            this.refreshBtn.TabIndex = 38;
-            this.refreshBtn.Text = "Refresh";
-            this.refreshBtn.UseVisualStyleBackColor = false;
-            this.refreshBtn.Click += new System.EventHandler(this.RefreshBtn_Click);
+            this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRefresh.BackColor = System.Drawing.Color.SpringGreen;
+            this.btnRefresh.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnRefresh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Location = new System.Drawing.Point(25, 54);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(109, 31);
+            this.btnRefresh.TabIndex = 35;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.RefreshBtn_Click);
             // 
             // label5
             // 
@@ -153,395 +157,395 @@
             this.btnX.TabIndex = 0;
             this.btnX.Text = "X";
             this.btnX.UseVisualStyleBackColor = false;
-            this.btnX.Click += new System.EventHandler(this.btnX_Click);
+            this.btnX.Click += new System.EventHandler(this.BtnX_Click);
             // 
-            // deleteAccountBtn
+            // btnDeleteAccount
             // 
-            this.deleteAccountBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.deleteAccountBtn.BackColor = System.Drawing.Color.SpringGreen;
-            this.deleteAccountBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.deleteAccountBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.deleteAccountBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.deleteAccountBtn.Location = new System.Drawing.Point(364, 54);
-            this.deleteAccountBtn.Margin = new System.Windows.Forms.Padding(2);
-            this.deleteAccountBtn.Name = "deleteAccountBtn";
-            this.deleteAccountBtn.Size = new System.Drawing.Size(109, 31);
-            this.deleteAccountBtn.TabIndex = 35;
-            this.deleteAccountBtn.Text = "Delete";
-            this.deleteAccountBtn.UseVisualStyleBackColor = false;
-            this.deleteAccountBtn.Click += new System.EventHandler(this.DeleteAccountBtn_Click);
+            this.btnDeleteAccount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDeleteAccount.BackColor = System.Drawing.Color.SpringGreen;
+            this.btnDeleteAccount.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnDeleteAccount.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnDeleteAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteAccount.Location = new System.Drawing.Point(364, 54);
+            this.btnDeleteAccount.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDeleteAccount.Name = "btnDeleteAccount";
+            this.btnDeleteAccount.Size = new System.Drawing.Size(109, 31);
+            this.btnDeleteAccount.TabIndex = 38;
+            this.btnDeleteAccount.Text = "Delete";
+            this.btnDeleteAccount.UseVisualStyleBackColor = false;
+            this.btnDeleteAccount.Click += new System.EventHandler(this.BtnDeleteAccount_Click);
             // 
-            // updateAccountBtn
+            // btnUpdateAccount
             // 
-            this.updateAccountBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.updateAccountBtn.BackColor = System.Drawing.Color.SpringGreen;
-            this.updateAccountBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.updateAccountBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.updateAccountBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.updateAccountBtn.Location = new System.Drawing.Point(251, 54);
-            this.updateAccountBtn.Margin = new System.Windows.Forms.Padding(2);
-            this.updateAccountBtn.Name = "updateAccountBtn";
-            this.updateAccountBtn.Size = new System.Drawing.Size(109, 31);
-            this.updateAccountBtn.TabIndex = 37;
-            this.updateAccountBtn.Text = "Update";
-            this.updateAccountBtn.UseVisualStyleBackColor = false;
-            this.updateAccountBtn.Click += new System.EventHandler(this.UpdateAccountBtn_Click);
+            this.btnUpdateAccount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUpdateAccount.BackColor = System.Drawing.Color.SpringGreen;
+            this.btnUpdateAccount.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnUpdateAccount.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnUpdateAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdateAccount.Location = new System.Drawing.Point(251, 54);
+            this.btnUpdateAccount.Margin = new System.Windows.Forms.Padding(2);
+            this.btnUpdateAccount.Name = "btnUpdateAccount";
+            this.btnUpdateAccount.Size = new System.Drawing.Size(109, 31);
+            this.btnUpdateAccount.TabIndex = 37;
+            this.btnUpdateAccount.Text = "Update";
+            this.btnUpdateAccount.UseVisualStyleBackColor = false;
+            this.btnUpdateAccount.Click += new System.EventHandler(this.BtnUpdateAccount_Click);
             // 
-            // searchEmployeeBox
+            // txtSearchEmployee
             // 
-            this.searchEmployeeBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.searchEmployeeBox.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.searchEmployeeBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchEmployeeBox.Location = new System.Drawing.Point(660, 61);
-            this.searchEmployeeBox.Margin = new System.Windows.Forms.Padding(2);
-            this.searchEmployeeBox.Name = "searchEmployeeBox";
-            this.searchEmployeeBox.Size = new System.Drawing.Size(186, 24);
-            this.searchEmployeeBox.TabIndex = 32;
+            this.txtSearchEmployee.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSearchEmployee.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.txtSearchEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchEmployee.Location = new System.Drawing.Point(660, 61);
+            this.txtSearchEmployee.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSearchEmployee.Name = "txtSearchEmployee";
+            this.txtSearchEmployee.Size = new System.Drawing.Size(186, 24);
+            this.txtSearchEmployee.TabIndex = 40;
             // 
-            // addAccountBtn
+            // btnAddAccount
             // 
-            this.addAccountBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.addAccountBtn.BackColor = System.Drawing.Color.SpringGreen;
-            this.addAccountBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.addAccountBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.addAccountBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addAccountBtn.Location = new System.Drawing.Point(138, 54);
-            this.addAccountBtn.Margin = new System.Windows.Forms.Padding(2);
-            this.addAccountBtn.Name = "addAccountBtn";
-            this.addAccountBtn.Size = new System.Drawing.Size(109, 31);
-            this.addAccountBtn.TabIndex = 36;
-            this.addAccountBtn.Text = "Add new";
-            this.addAccountBtn.UseVisualStyleBackColor = false;
-            this.addAccountBtn.Click += new System.EventHandler(this.AddAccountBtn_Click);
+            this.btnAddAccount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddAccount.BackColor = System.Drawing.Color.SpringGreen;
+            this.btnAddAccount.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAddAccount.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnAddAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddAccount.Location = new System.Drawing.Point(138, 54);
+            this.btnAddAccount.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAddAccount.Name = "btnAddAccount";
+            this.btnAddAccount.Size = new System.Drawing.Size(109, 31);
+            this.btnAddAccount.TabIndex = 36;
+            this.btnAddAccount.Text = "Add new";
+            this.btnAddAccount.UseVisualStyleBackColor = false;
+            this.btnAddAccount.Click += new System.EventHandler(this.BtnAddAccount_Click);
             // 
-            // label3
+            // lblSearchEmployee
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(503, 62);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(153, 18);
-            this.label3.TabIndex = 33;
-            this.label3.Text = "Search Employee:";
+            this.lblSearchEmployee.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblSearchEmployee.AutoSize = true;
+            this.lblSearchEmployee.BackColor = System.Drawing.Color.Transparent;
+            this.lblSearchEmployee.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSearchEmployee.ForeColor = System.Drawing.Color.White;
+            this.lblSearchEmployee.Location = new System.Drawing.Point(503, 62);
+            this.lblSearchEmployee.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSearchEmployee.Name = "lblSearchEmployee";
+            this.lblSearchEmployee.Size = new System.Drawing.Size(153, 18);
+            this.lblSearchEmployee.TabIndex = 39;
+            this.lblSearchEmployee.Text = "Search Employee:";
             // 
-            // panel2
+            // pnlBackground
             // 
-            this.panel2.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.panel2.Controls.Add(this.GroupTextBox);
-            this.panel2.Controls.Add(this.EmployeeDataGrid);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 100);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(945, 539);
-            this.panel2.TabIndex = 2;
+            this.pnlBackground.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.pnlBackground.Controls.Add(this.GroupTextBox);
+            this.pnlBackground.Controls.Add(this.dgdEmployee);
+            this.pnlBackground.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlBackground.Location = new System.Drawing.Point(0, 100);
+            this.pnlBackground.Name = "pnlBackground";
+            this.pnlBackground.Size = new System.Drawing.Size(945, 539);
+            this.pnlBackground.TabIndex = 41;
             // 
             // GroupTextBox
             // 
             this.GroupTextBox.BackColor = System.Drawing.Color.Transparent;
-            this.GroupTextBox.Controls.Add(this.idBox);
-            this.GroupTextBox.Controls.Add(this.label10);
-            this.GroupTextBox.Controls.Add(this.adminFalseRadioBtn);
-            this.GroupTextBox.Controls.Add(this.adminTrueRadioBtn);
-            this.GroupTextBox.Controls.Add(this.label9);
-            this.GroupTextBox.Controls.Add(this.label8);
-            this.GroupTextBox.Controls.Add(this.passwordBox);
-            this.GroupTextBox.Controls.Add(this.label7);
-            this.GroupTextBox.Controls.Add(this.usernameBox);
-            this.GroupTextBox.Controls.Add(this.label6);
-            this.GroupTextBox.Controls.Add(this.workhoursBox);
-            this.GroupTextBox.Controls.Add(this.wageBox);
-            this.GroupTextBox.Controls.Add(this.label4);
-            this.GroupTextBox.Controls.Add(this.nameBox);
-            this.GroupTextBox.Controls.Add(this.label2);
+            this.GroupTextBox.Controls.Add(this.txtAcctID);
+            this.GroupTextBox.Controls.Add(this.lblUserID);
+            this.GroupTextBox.Controls.Add(this.radAdminFalse);
+            this.GroupTextBox.Controls.Add(this.radAdminTrue);
+            this.GroupTextBox.Controls.Add(this.lblWage);
+            this.GroupTextBox.Controls.Add(this.lblAccType);
+            this.GroupTextBox.Controls.Add(this.txtAcctPassword);
+            this.GroupTextBox.Controls.Add(this.lblPassword);
+            this.GroupTextBox.Controls.Add(this.txtAcctUsername);
+            this.GroupTextBox.Controls.Add(this.lblUsername);
+            this.GroupTextBox.Controls.Add(this.txtAcctWorkhours);
+            this.GroupTextBox.Controls.Add(this.txtAcctWage);
+            this.GroupTextBox.Controls.Add(this.lblWorkhours);
+            this.GroupTextBox.Controls.Add(this.txtAcctName);
+            this.GroupTextBox.Controls.Add(this.lblName);
             this.GroupTextBox.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.GroupTextBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.GroupTextBox.Location = new System.Drawing.Point(0, 353);
             this.GroupTextBox.Name = "GroupTextBox";
             this.GroupTextBox.Size = new System.Drawing.Size(945, 186);
-            this.GroupTextBox.TabIndex = 48;
+            this.GroupTextBox.TabIndex = 43;
             this.GroupTextBox.TabStop = false;
             // 
-            // idBox
+            // txtAcctID
             // 
-            this.idBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.idBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idBox.Location = new System.Drawing.Point(136, 22);
-            this.idBox.Margin = new System.Windows.Forms.Padding(2);
-            this.idBox.Name = "idBox";
-            this.idBox.ReadOnly = true;
-            this.idBox.Size = new System.Drawing.Size(336, 28);
-            this.idBox.TabIndex = 59;
+            this.txtAcctID.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtAcctID.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAcctID.Location = new System.Drawing.Point(136, 22);
+            this.txtAcctID.Margin = new System.Windows.Forms.Padding(2);
+            this.txtAcctID.Name = "txtAcctID";
+            this.txtAcctID.ReadOnly = true;
+            this.txtAcctID.Size = new System.Drawing.Size(336, 28);
+            this.txtAcctID.TabIndex = 45;
             // 
-            // label10
+            // lblUserID
             // 
-            this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(46, 24);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(89, 22);
-            this.label10.TabIndex = 58;
-            this.label10.Text = "User ID :";
+            this.lblUserID.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblUserID.AutoSize = true;
+            this.lblUserID.BackColor = System.Drawing.Color.Transparent;
+            this.lblUserID.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserID.ForeColor = System.Drawing.Color.Black;
+            this.lblUserID.Location = new System.Drawing.Point(46, 24);
+            this.lblUserID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblUserID.Name = "lblUserID";
+            this.lblUserID.Size = new System.Drawing.Size(89, 22);
+            this.lblUserID.TabIndex = 44;
+            this.lblUserID.Text = "User ID :";
             // 
-            // adminFalseRadioBtn
+            // radAdminFalse
             // 
-            this.adminFalseRadioBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.adminFalseRadioBtn.AutoSize = true;
-            this.adminFalseRadioBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adminFalseRadioBtn.Location = new System.Drawing.Point(594, 130);
-            this.adminFalseRadioBtn.Margin = new System.Windows.Forms.Padding(2);
-            this.adminFalseRadioBtn.Name = "adminFalseRadioBtn";
-            this.adminFalseRadioBtn.Size = new System.Drawing.Size(114, 28);
-            this.adminFalseRadioBtn.TabIndex = 57;
-            this.adminFalseRadioBtn.TabStop = true;
-            this.adminFalseRadioBtn.Text = "Employee";
-            this.adminFalseRadioBtn.UseVisualStyleBackColor = true;
+            this.radAdminFalse.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.radAdminFalse.AutoSize = true;
+            this.radAdminFalse.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radAdminFalse.Location = new System.Drawing.Point(594, 130);
+            this.radAdminFalse.Margin = new System.Windows.Forms.Padding(2);
+            this.radAdminFalse.Name = "radAdminFalse";
+            this.radAdminFalse.Size = new System.Drawing.Size(114, 28);
+            this.radAdminFalse.TabIndex = 58;
+            this.radAdminFalse.TabStop = true;
+            this.radAdminFalse.Text = "Employee";
+            this.radAdminFalse.UseVisualStyleBackColor = true;
             // 
-            // adminTrueRadioBtn
+            // radAdminTrue
             // 
-            this.adminTrueRadioBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.adminTrueRadioBtn.AutoSize = true;
-            this.adminTrueRadioBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adminTrueRadioBtn.Location = new System.Drawing.Point(594, 99);
-            this.adminTrueRadioBtn.Margin = new System.Windows.Forms.Padding(2);
-            this.adminTrueRadioBtn.Name = "adminTrueRadioBtn";
-            this.adminTrueRadioBtn.Size = new System.Drawing.Size(83, 28);
-            this.adminTrueRadioBtn.TabIndex = 56;
-            this.adminTrueRadioBtn.TabStop = true;
-            this.adminTrueRadioBtn.Text = "Admin";
-            this.adminTrueRadioBtn.UseVisualStyleBackColor = true;
+            this.radAdminTrue.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.radAdminTrue.AutoSize = true;
+            this.radAdminTrue.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radAdminTrue.Location = new System.Drawing.Point(594, 99);
+            this.radAdminTrue.Margin = new System.Windows.Forms.Padding(2);
+            this.radAdminTrue.Name = "radAdminTrue";
+            this.radAdminTrue.Size = new System.Drawing.Size(83, 28);
+            this.radAdminTrue.TabIndex = 57;
+            this.radAdminTrue.TabStop = true;
+            this.radAdminTrue.Text = "Admin";
+            this.radAdminTrue.UseVisualStyleBackColor = true;
             // 
-            // label9
+            // lblWage
             // 
-            this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(62, 104);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(73, 22);
-            this.label9.TabIndex = 55;
-            this.label9.Text = "Wage :";
+            this.lblWage.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblWage.AutoSize = true;
+            this.lblWage.BackColor = System.Drawing.Color.Transparent;
+            this.lblWage.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWage.ForeColor = System.Drawing.Color.Black;
+            this.lblWage.Location = new System.Drawing.Point(62, 104);
+            this.lblWage.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblWage.Name = "lblWage";
+            this.lblWage.Size = new System.Drawing.Size(73, 22);
+            this.lblWage.TabIndex = 48;
+            this.lblWage.Text = "Wage :";
             // 
-            // label8
+            // lblAccType
             // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(490, 101);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(102, 22);
-            this.label8.TabIndex = 54;
-            this.label8.Text = "Acc type :";
+            this.lblAccType.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblAccType.AutoSize = true;
+            this.lblAccType.BackColor = System.Drawing.Color.Transparent;
+            this.lblAccType.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAccType.ForeColor = System.Drawing.Color.Black;
+            this.lblAccType.Location = new System.Drawing.Point(490, 101);
+            this.lblAccType.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAccType.Name = "lblAccType";
+            this.lblAccType.Size = new System.Drawing.Size(102, 22);
+            this.lblAccType.TabIndex = 56;
+            this.lblAccType.Text = "Acc type :";
             // 
-            // passwordBox
+            // txtAcctPassword
             // 
-            this.passwordBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.passwordBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordBox.Location = new System.Drawing.Point(594, 57);
-            this.passwordBox.Margin = new System.Windows.Forms.Padding(2);
-            this.passwordBox.Name = "passwordBox";
-            this.passwordBox.PasswordChar = '*';
-            this.passwordBox.Size = new System.Drawing.Size(336, 28);
-            this.passwordBox.TabIndex = 53;
+            this.txtAcctPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtAcctPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAcctPassword.Location = new System.Drawing.Point(594, 57);
+            this.txtAcctPassword.Margin = new System.Windows.Forms.Padding(2);
+            this.txtAcctPassword.Name = "txtAcctPassword";
+            this.txtAcctPassword.PasswordChar = '*';
+            this.txtAcctPassword.Size = new System.Drawing.Size(336, 28);
+            this.txtAcctPassword.TabIndex = 55;
             // 
-            // label7
+            // lblPassword
             // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(480, 61);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(111, 22);
-            this.label7.TabIndex = 52;
-            this.label7.Text = "Password :";
+            this.lblPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.BackColor = System.Drawing.Color.Transparent;
+            this.lblPassword.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassword.ForeColor = System.Drawing.Color.Black;
+            this.lblPassword.Location = new System.Drawing.Point(480, 61);
+            this.lblPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(111, 22);
+            this.lblPassword.TabIndex = 54;
+            this.lblPassword.Text = "Password :";
             // 
-            // usernameBox
+            // txtAcctUsername
             // 
-            this.usernameBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.usernameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernameBox.Location = new System.Drawing.Point(594, 22);
-            this.usernameBox.Margin = new System.Windows.Forms.Padding(2);
-            this.usernameBox.Name = "usernameBox";
-            this.usernameBox.Size = new System.Drawing.Size(336, 28);
-            this.usernameBox.TabIndex = 51;
+            this.txtAcctUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtAcctUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAcctUsername.Location = new System.Drawing.Point(594, 22);
+            this.txtAcctUsername.Margin = new System.Windows.Forms.Padding(2);
+            this.txtAcctUsername.Name = "txtAcctUsername";
+            this.txtAcctUsername.Size = new System.Drawing.Size(336, 28);
+            this.txtAcctUsername.TabIndex = 53;
             // 
-            // label6
+            // lblUsername
             // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(477, 24);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(114, 22);
-            this.label6.TabIndex = 50;
-            this.label6.Text = "Username :";
+            this.lblUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.BackColor = System.Drawing.Color.Transparent;
+            this.lblUsername.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.ForeColor = System.Drawing.Color.Black;
+            this.lblUsername.Location = new System.Drawing.Point(477, 24);
+            this.lblUsername.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(114, 22);
+            this.lblUsername.TabIndex = 52;
+            this.lblUsername.Text = "Username :";
             // 
-            // workhoursBox
+            // txtAcctWorkhours
             // 
-            this.workhoursBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.workhoursBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.workhoursBox.Location = new System.Drawing.Point(136, 144);
-            this.workhoursBox.Margin = new System.Windows.Forms.Padding(2);
-            this.workhoursBox.Name = "workhoursBox";
-            this.workhoursBox.Size = new System.Drawing.Size(336, 28);
-            this.workhoursBox.TabIndex = 49;
-            this.workhoursBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.WageBox_KeyPress);
+            this.txtAcctWorkhours.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtAcctWorkhours.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAcctWorkhours.Location = new System.Drawing.Point(136, 144);
+            this.txtAcctWorkhours.Margin = new System.Windows.Forms.Padding(2);
+            this.txtAcctWorkhours.Name = "txtAcctWorkhours";
+            this.txtAcctWorkhours.Size = new System.Drawing.Size(336, 28);
+            this.txtAcctWorkhours.TabIndex = 51;
+            this.txtAcctWorkhours.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.WageBox_KeyPress);
             // 
-            // wageBox
+            // txtAcctWage
             // 
-            this.wageBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.wageBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.wageBox.Location = new System.Drawing.Point(136, 101);
-            this.wageBox.Margin = new System.Windows.Forms.Padding(2);
-            this.wageBox.Name = "wageBox";
-            this.wageBox.Size = new System.Drawing.Size(336, 28);
-            this.wageBox.TabIndex = 48;
-            this.wageBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.WageBox_KeyPress);
+            this.txtAcctWage.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtAcctWage.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAcctWage.Location = new System.Drawing.Point(136, 101);
+            this.txtAcctWage.Margin = new System.Windows.Forms.Padding(2);
+            this.txtAcctWage.Name = "txtAcctWage";
+            this.txtAcctWage.Size = new System.Drawing.Size(336, 28);
+            this.txtAcctWage.TabIndex = 49;
+            this.txtAcctWage.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.WageBox_KeyPress);
             // 
-            // label4
+            // lblWorkhours
             // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(23, 147);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(112, 22);
-            this.label4.TabIndex = 47;
-            this.label4.Text = "Workhr(s) :";
+            this.lblWorkhours.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblWorkhours.AutoSize = true;
+            this.lblWorkhours.BackColor = System.Drawing.Color.Transparent;
+            this.lblWorkhours.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWorkhours.ForeColor = System.Drawing.Color.Black;
+            this.lblWorkhours.Location = new System.Drawing.Point(23, 147);
+            this.lblWorkhours.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblWorkhours.Name = "lblWorkhours";
+            this.lblWorkhours.Size = new System.Drawing.Size(112, 22);
+            this.lblWorkhours.TabIndex = 50;
+            this.lblWorkhours.Text = "Workhr(s) :";
             // 
-            // nameBox
+            // txtAcctName
             // 
-            this.nameBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.nameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameBox.Location = new System.Drawing.Point(136, 60);
-            this.nameBox.Margin = new System.Windows.Forms.Padding(2);
-            this.nameBox.Name = "nameBox";
-            this.nameBox.Size = new System.Drawing.Size(336, 28);
-            this.nameBox.TabIndex = 46;
+            this.txtAcctName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtAcctName.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAcctName.Location = new System.Drawing.Point(136, 60);
+            this.txtAcctName.Margin = new System.Windows.Forms.Padding(2);
+            this.txtAcctName.Name = "txtAcctName";
+            this.txtAcctName.Size = new System.Drawing.Size(336, 28);
+            this.txtAcctName.TabIndex = 47;
             // 
-            // label2
+            // lblName
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(62, 60);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 22);
-            this.label2.TabIndex = 45;
-            this.label2.Text = "Name :";
+            this.lblName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblName.AutoSize = true;
+            this.lblName.BackColor = System.Drawing.Color.Transparent;
+            this.lblName.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.ForeColor = System.Drawing.Color.Black;
+            this.lblName.Location = new System.Drawing.Point(62, 60);
+            this.lblName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(74, 22);
+            this.lblName.TabIndex = 46;
+            this.lblName.Text = "Name :";
             // 
-            // EmployeeDataGrid
+            // dgdEmployee
             // 
-            this.EmployeeDataGrid.AllowDrop = true;
-            this.EmployeeDataGrid.AllowUserToAddRows = false;
-            this.EmployeeDataGrid.AllowUserToDeleteRows = false;
-            this.EmployeeDataGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgdEmployee.AllowDrop = true;
+            this.dgdEmployee.AllowUserToAddRows = false;
+            this.dgdEmployee.AllowUserToDeleteRows = false;
+            this.dgdEmployee.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.EmployeeDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.EmployeeDataGrid.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.EmployeeDataGrid.DefaultCellStyle = dataGridViewCellStyle1;
-            this.EmployeeDataGrid.Location = new System.Drawing.Point(24, 16);
-            this.EmployeeDataGrid.Margin = new System.Windows.Forms.Padding(2);
-            this.EmployeeDataGrid.Name = "EmployeeDataGrid";
-            this.EmployeeDataGrid.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.EmployeeDataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.EmployeeDataGrid.RowHeadersWidth = 51;
-            this.EmployeeDataGrid.RowTemplate.Height = 24;
-            this.EmployeeDataGrid.Size = new System.Drawing.Size(896, 332);
-            this.EmployeeDataGrid.TabIndex = 47;
-            this.EmployeeDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.EmployeeDataGrid_CellClick);
+            this.dgdEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgdEmployee.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgdEmployee.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dgdEmployee.Location = new System.Drawing.Point(24, 16);
+            this.dgdEmployee.Margin = new System.Windows.Forms.Padding(2);
+            this.dgdEmployee.Name = "dgdEmployee";
+            this.dgdEmployee.ReadOnly = true;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgdEmployee.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgdEmployee.RowHeadersWidth = 51;
+            this.dgdEmployee.RowTemplate.Height = 24;
+            this.dgdEmployee.Size = new System.Drawing.Size(896, 332);
+            this.dgdEmployee.TabIndex = 42;
+            this.dgdEmployee.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgdEmployee_CellClick);
             // 
             // ViewEmployees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(945, 639);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlBackground);
+            this.Controls.Add(this.pnlTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(945, 639);
             this.Name = "ViewEmployees";
             this.Text = "ViewEmployees";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
+            this.pnlTop.ResumeLayout(false);
+            this.pnlTop.PerformLayout();
+            this.pnlBackground.ResumeLayout(false);
             this.GroupTextBox.ResumeLayout(false);
             this.GroupTextBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.EmployeeDataGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgdEmployee)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button refreshBtn;
+        private System.Windows.Forms.Panel pnlTop;
+        private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnX;
-        private System.Windows.Forms.Button deleteAccountBtn;
-        private System.Windows.Forms.Button updateAccountBtn;
-        private System.Windows.Forms.TextBox searchEmployeeBox;
-        private System.Windows.Forms.Button addAccountBtn;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnDeleteAccount;
+        private System.Windows.Forms.Button btnUpdateAccount;
+        private System.Windows.Forms.TextBox txtSearchEmployee;
+        private System.Windows.Forms.Button btnAddAccount;
+        private System.Windows.Forms.Label lblSearchEmployee;
+        private System.Windows.Forms.Panel pnlBackground;
         private System.Windows.Forms.GroupBox GroupTextBox;
-        private System.Windows.Forms.TextBox idBox;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.RadioButton adminFalseRadioBtn;
-        private System.Windows.Forms.RadioButton adminTrueRadioBtn;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox passwordBox;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox usernameBox;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox workhoursBox;
-        private System.Windows.Forms.TextBox wageBox;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox nameBox;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView EmployeeDataGrid;
-        private System.Windows.Forms.Button searchEmployeeBtn;
+        private System.Windows.Forms.TextBox txtAcctID;
+        private System.Windows.Forms.Label lblUserID;
+        private System.Windows.Forms.RadioButton radAdminFalse;
+        private System.Windows.Forms.RadioButton radAdminTrue;
+        private System.Windows.Forms.Label lblWage;
+        private System.Windows.Forms.Label lblAccType;
+        private System.Windows.Forms.TextBox txtAcctPassword;
+        private System.Windows.Forms.Label lblPassword;
+        private System.Windows.Forms.TextBox txtAcctUsername;
+        private System.Windows.Forms.Label lblUsername;
+        private System.Windows.Forms.TextBox txtAcctWorkhours;
+        private System.Windows.Forms.TextBox txtAcctWage;
+        private System.Windows.Forms.Label lblWorkhours;
+        private System.Windows.Forms.TextBox txtAcctName;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.DataGridView dgdEmployee;
+        private System.Windows.Forms.Button btnSearchEmployee;
     }
 }

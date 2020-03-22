@@ -1,52 +1,52 @@
-﻿using System;
-using System.Windows.Forms;
-
-namespace BiliPC
+﻿namespace BiliPC
 {
+    using System;
+    using System.Windows.Forms;
+
     public partial class AddNewEmployee : Form
     {
-        readonly MongoCRUD db = new MongoCRUD("POS_Database");
+        private readonly MongoCRUD db = new MongoCRUD("POS_Database");
 
         public AddNewEmployee()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
 
-        private void CancelBtn_Click(object sender, EventArgs e)
+        private void BtnCancel_Click(object sender, EventArgs e)
         {
             this.Dispose();
         }
 
-        private void AddAccountBtn_Click(object sender, EventArgs e)
+        private void BtnAddAccount_Click(object sender, EventArgs e)
         {
-            bool UsernameExists = db.CheckExistence<UsersModel>("Users", "Username", usernameBox.Text);
+            bool usernameExists = this.db.CheckExistence<UsersModel>("Users", "Username", this.txtUsername.Text);
 
             // Check the empty boxes
-            int EmptyField = Functions.CheckFields(GroupTextBox);
+            int emptyField = Functions.CheckFields(this.GroupTextBox);
 
-            if (EmptyField > 0)
+            if (emptyField > 0)
             {
-                MessageBox.Show("Please fill all of the " + EmptyField + " field/s.");
+                MessageBox.Show("Please fill all of the " + emptyField + " field/s.");
             }
-            else if (UsernameExists == true)
+            else if (usernameExists == true)
             {
                 MessageBox.Show("Username already taken.");
             }
-            else if (passwordBox.Text != confirmPasswordBox.Text)
+            else if (this.txtPassword.Text != this.txtConfirmPassword.Text)
             {
                 MessageBox.Show("Please confirm your password.");
             }
-            else if ((passwordBox.Text == confirmPasswordBox.Text) && !UsernameExists && (EmptyField == 0))
+            else if ((this.txtPassword.Text == this.txtConfirmPassword.Text) && !usernameExists && (emptyField == 0))
             {
                 try
                 {
-                    db.InsertRecord("Users", new UsersModel
+                    this.db.InsertRecord("Users", new UsersModel
                     {
-                        Name = nameBox.Text,
-                        Username = usernameBox.Text,
-                        Password = passwordBox.Text,
-                        Wage = double.Parse(wageBox.Text),
-                        isAdmin = adminTrueRadioBtn.Checked
+                        Name = this.txtName.Text,
+                        Username = this.txtUsername.Text,
+                        Password = this.txtPassword.Text,
+                        Wage = double.Parse(this.txtWage.Text),
+                        IsAdmin = this.adminTrueRadioBtn.Checked,
                     });
                     MessageBox.Show("Account Saved!");
                     this.Dispose();
@@ -62,7 +62,7 @@ namespace BiliPC
             }
         }
 
-        private void WageBox_KeyPress(object sender, KeyPressEventArgs e)
+        private void TxtWage_KeyPress(object sender, KeyPressEventArgs e)
         {
             Functions.RestrictedKeyPressToInt(e);
         }

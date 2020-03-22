@@ -1,18 +1,22 @@
-﻿using System;
-using System.Windows.Forms;
-
-namespace BiliPC
+﻿namespace BiliPC
 {
+    using System;
+    using System.Windows.Forms;
+
     public partial class TransactionForm : Form
     {
         public TransactionForm()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
 
-        private void btnX_Click(object sender, EventArgs e)
+        private void BtnX_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void BtnAddItem_Click(object sender, EventArgs e)
+        {
         }
     }
 }

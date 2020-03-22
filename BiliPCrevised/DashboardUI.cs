@@ -1,55 +1,64 @@
-﻿using System;
-using System.Windows.Forms;
-
-
-namespace BiliPC
+﻿namespace BiliPC
 {
+    using System;
+    using System.Windows.Forms;
+
     public partial class DashboardUI : Form
     {
         public DashboardUI()
         {
-            InitializeComponent();
-            timer1.Start();
-            labelTime.Text = DateTime.Now.ToLongTimeString();
-            labelDate.Text = DateTime.Now.ToLongDateString();
-            CustomDesign();
+            this.InitializeComponent();
+            this.tmrRealtimeTime.Start();
+            this.lblTime.Text = DateTime.Now.ToLongTimeString();
+            this.lblDate.Text = DateTime.Now.ToLongDateString();
+            this.CustomDesign();
 
             // verify if user is an Admin to hide the "Manage Users" button
             using (new LoginUI())
             {
-                btnManageEmployees.Visible = LoginUI.Admin;
+                this.btnManageEmployees.Visible = LoginUI.Admin;
             }
         }
 
         #region Real-time Time
-        private void timer1_Tick_1(object sender, EventArgs e)
+        private void TmrRealtimeTime_Tick(object sender, EventArgs e)
         {
-            labelTime.Text = DateTime.Now.ToLongTimeString();
-            timer1.Start();
+            this.lblTime.Text = DateTime.Now.ToLongTimeString();
+            this.tmrRealtimeTime.Start();
         }
         #endregion
 
         #region Hide-Show Submenu
         private void CustomDesign()
         {
-            panelSales.Visible = false;
-            panelInventory.Visible = false;
-            panelManageEmployees.Visible = false;
+            this.panelSales.Visible = false;
+            this.panelInventory.Visible = false;
+            this.panelManageEmployees.Visible = false;
         }
+
         private void HideSubmenu()
         {
-            if (panelSales.Visible == true)
-                panelSales.Visible = false;
-            if (panelInventory.Visible == true)
-                panelInventory.Visible = false;
-            if (panelManageEmployees.Visible == true)
-                panelManageEmployees.Visible = false;
+            if (this.panelSales.Visible == true)
+            {
+                this.panelSales.Visible = false;
+            }
+
+            if (this.panelInventory.Visible == true)
+            {
+                this.panelInventory.Visible = false;
+            }
+
+            if (this.panelManageEmployees.Visible == true)
+            {
+                this.panelManageEmployees.Visible = false;
+            }
         }
+
         private void ShowSubmenu(Panel submenu)
         {
             if (submenu.Visible == false)
             {
-                HideSubmenu();
+                this.HideSubmenu();
                 submenu.Visible = true;
             }
             else
@@ -60,107 +69,111 @@ namespace BiliPC
         #endregion
 
         #region Container Form
-
         public Form ActiveForm1 { get; set; } = null;
 
-        private void OpenContainerForm(Form ContainerForm)
+        private void OpenContainerForm(Form containerForm)
         {
-            if (ActiveForm1 != null)
-                ActiveForm1.Close();
-            ActiveForm1 = ContainerForm;
-            ContainerForm.TopLevel = false;
-            ContainerForm.Dock = DockStyle.Fill;
-            panelContainerForm.Controls.Add(ContainerForm);
-            ContainerForm.TopLevel = false;
-            ContainerForm.Dock = DockStyle.Fill;
-            panelContainerForm.Controls.Add(ContainerForm);
-            panelContainerForm.Tag = ContainerForm;
-            ContainerForm.BringToFront();
-            ContainerForm.Show();
+            if (this.ActiveForm1 != null)
+            {
+                this.ActiveForm1.Close();
+            }
+
+            this.ActiveForm1 = containerForm;
+            containerForm.TopLevel = false;
+            containerForm.Dock = DockStyle.Fill;
+            this.pnlContainerForm.Controls.Add(containerForm);
+            containerForm.TopLevel = false;
+            containerForm.Dock = DockStyle.Fill;
+            this.pnlContainerForm.Controls.Add(containerForm);
+            this.pnlContainerForm.Tag = containerForm;
+            containerForm.BringToFront();
+            containerForm.Show();
         }
         #endregion
 
         #region Sales
-        private void btnSales_Click_1(object sender, EventArgs e)
+        private void BtnSales_Click_1(object sender, EventArgs e)
             {
-                ShowSubmenu(panelSales);
+                this.ShowSubmenu(this.panelSales);
             }
 
-            private void btnCreateTransaction_Click_1(object sender, EventArgs e)
+        private void BtnCreateTransaction_Click_1(object sender, EventArgs e)
             {
-                OpenContainerForm(new TransactionForm());
-                HideSubmenu();
+                this.OpenContainerForm(new TransactionForm());
+                this.HideSubmenu();
             }
 
-            private void btnSalesReport_Click(object sender, EventArgs e)
-            {
-                //codes for sales report
-                HideSubmenu();
-            }
+        private void BtnSalesReport_Click(object sender, EventArgs e)
+        {
+            // codes for sales report
+            this.HideSubmenu();
+        }
 
-            private void btnTransactionHistory_Click(object sender, EventArgs e)
-            {
-                //codes for sales history
-                HideSubmenu();
-            }
+        private void BtnTransactionHistory_Click(object sender, EventArgs e)
+        {
+                // codes for sales history
+                this.HideSubmenu();
+        }
 
         #endregion
 
         #region Inventory
-        private void btnInventory_Click_1(object sender, EventArgs e)
+        private void BtnInventory_Click_1(object sender, EventArgs e)
         {
-            ShowSubmenu(panelInventory);
+            this.ShowSubmenu(this.panelInventory);
         }
 
-        private void btnSearchProducts_Click_1(object sender, EventArgs e)
+        private void BtnSearchProducts_Click_1(object sender, EventArgs e)
         {
-            OpenContainerForm(new ViewProducts());
-            HideSubmenu();
+            this.OpenContainerForm(new ViewProducts());
+            this.HideSubmenu();
         }
 
-        private void btnEditProducts_Click_1(object sender, EventArgs e)
+        private void BtnEditProducts_Click_1(object sender, EventArgs e)
         {
-            OpenContainerForm(new Products());
-            HideSubmenu();
+            this.OpenContainerForm(new Products());
+            this.HideSubmenu();
         }
-        private void btnInventoryReport_Click(object sender, EventArgs e)
+
+        private void BtnInventoryReport_Click(object sender, EventArgs e)
         {
-            //codes for inventory report
-            HideSubmenu();
+            // codes for inventory report
+            this.HideSubmenu();
         }
 
         #endregion
 
         #region Manage Employees
-        private void btnManageEmployees_Click(object sender, EventArgs e)
+        private void BtnManageEmployees_Click(object sender, EventArgs e)
         {
-            ShowSubmenu(panelManageEmployees);
+            this.ShowSubmenu(this.panelManageEmployees);
         }
 
-        private void btnViewEmployees_Click(object sender, EventArgs e)
+        private void BtnViewEmployees_Click(object sender, EventArgs e)
         {
-            OpenContainerForm(new ViewEmployees());
-            HideSubmenu();
+            this.OpenContainerForm(new ViewEmployees());
+            this.HideSubmenu();
         }
 
-        private void btnTrackEmployees_Click(object sender, EventArgs e)
+        private void BtnTrackEmployees_Click(object sender, EventArgs e)
         {
-            OpenContainerForm(new TrackEmployees());
-            HideSubmenu();
+            this.OpenContainerForm(new TrackEmployees());
+            this.HideSubmenu();
         }
 
         #endregion
 
         #region Logout
-        private void btnLogout_Click_1(object sender, EventArgs e)
+        private void BtnLogout_Click_1(object sender, EventArgs e)
         {
             this.Hide();
             using (LoginUI login = new LoginUI())
             {
                 login.ShowDialog();
             }
+
             this.Close();
         }
-        #endregion    
+        #endregion
     }
 }

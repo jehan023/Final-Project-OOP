@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.lblTrackEmployees = new System.Windows.Forms.Label();
+            this.lblSearchName = new System.Windows.Forms.Label();
+            this.txtSearchName = new System.Windows.Forms.TextBox();
             this.btnX = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -43,9 +43,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Maroon;
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.textBox6);
+            this.panel1.Controls.Add(this.lblTrackEmployees);
+            this.panel1.Controls.Add(this.lblSearchName);
+            this.panel1.Controls.Add(this.txtSearchName);
             this.panel1.Controls.Add(this.btnX);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -55,38 +55,38 @@
             this.panel1.Size = new System.Drawing.Size(945, 117);
             this.panel1.TabIndex = 2;
             // 
-            // label1
+            // lblTrackEmployees
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(26, 21);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(284, 37);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "Track Employees";
+            this.lblTrackEmployees.AutoSize = true;
+            this.lblTrackEmployees.Font = new System.Drawing.Font("Arial Rounded MT Bold", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTrackEmployees.ForeColor = System.Drawing.Color.White;
+            this.lblTrackEmployees.Location = new System.Drawing.Point(26, 21);
+            this.lblTrackEmployees.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTrackEmployees.Name = "lblTrackEmployees";
+            this.lblTrackEmployees.Size = new System.Drawing.Size(284, 37);
+            this.lblTrackEmployees.TabIndex = 16;
+            this.lblTrackEmployees.Text = "Track Employees";
             // 
-            // label3
+            // lblSearchName
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(29, 78);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(136, 22);
-            this.label3.TabIndex = 15;
-            this.label3.Text = "Search name:";
+            this.lblSearchName.AutoSize = true;
+            this.lblSearchName.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSearchName.ForeColor = System.Drawing.Color.White;
+            this.lblSearchName.Location = new System.Drawing.Point(29, 78);
+            this.lblSearchName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSearchName.Name = "lblSearchName";
+            this.lblSearchName.Size = new System.Drawing.Size(136, 22);
+            this.lblSearchName.TabIndex = 15;
+            this.lblSearchName.Text = "Search name:";
             // 
-            // textBox6
+            // txtSearchName
             // 
-            this.textBox6.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox6.Location = new System.Drawing.Point(169, 80);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(428, 24);
-            this.textBox6.TabIndex = 14;
+            this.txtSearchName.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txtSearchName.Location = new System.Drawing.Point(169, 80);
+            this.txtSearchName.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSearchName.Name = "txtSearchName";
+            this.txtSearchName.Size = new System.Drawing.Size(428, 24);
+            this.txtSearchName.TabIndex = 14;
             // 
             // btnX
             // 
@@ -104,7 +104,7 @@
             this.btnX.TabIndex = 0;
             this.btnX.Text = "X";
             this.btnX.UseVisualStyleBackColor = false;
-            this.btnX.Click += new System.EventHandler(this.btnX_Click);
+            this.btnX.Click += new System.EventHandler(this.BtnX_Click);
             // 
             // panel2
             // 
@@ -149,9 +149,9 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Label lblTrackEmployees;
+        private System.Windows.Forms.Label lblSearchName;
+        private System.Windows.Forms.TextBox txtSearchName;
         private System.Windows.Forms.Button btnX;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dataGridView1;

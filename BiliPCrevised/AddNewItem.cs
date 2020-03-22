@@ -1,52 +1,50 @@
-﻿using System;
-using System.Windows.Forms;
-
-namespace BiliPC
+﻿namespace BiliPC
 {
+    using System;
+    using System.Windows.Forms;
+
     public partial class AddNewItem : Form
     {
-        readonly MongoCRUD db = new MongoCRUD("POS_Database");
+        private readonly MongoCRUD db = new MongoCRUD("POS_Database");
 
         public AddNewItem()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
 
-        private void CancelBtn_Click(object sender, EventArgs e)
+        private void BtnCancel_Click(object sender, EventArgs e)
         {
             this.Dispose();
         }
 
-        private void AddItemBtn_Click(object sender, EventArgs e)
+        private void BtnAddItem_Click(object sender, EventArgs e)
         {
-            bool itemExists = db.CheckExistence<InventoryModel>("Inventory", "Item", itemBox.Text);
+            bool itemExists = this.db.CheckExistence<InventoryModel>("Inventory", "Item", this.txtItem.Text);
 
             // Check thy empty boxes
-            int emptyField = Functions.CheckFields(GroupTextBox);
+            int emptyField = Functions.CheckFields(this.GroupTextBox);
 
             if (emptyField > 0)
             {
                 MessageBox.Show("Please fill all of the " + emptyField + " field/s.");
             }
-
             else if (itemExists == true)
             {
                 MessageBox.Show("Item already exists.");
             }
-
             else if (itemExists == false)
             {
                 try
                 {
-                    db.InsertRecord("Inventory", new InventoryModel
+                    this.db.InsertRecord("Inventory", new InventoryModel
                     {
-                        Item = itemBox.Text,
-                        Qty = int.Parse(s: quantityBox.Text),
-                        UnitPrice = double.Parse(s: unitPriceBox.Text),
-                        Cost = double.Parse(s: costBox.Text),
-                        Category = categoryBox.Text,
-                        Supplier = supplierBox.Text,
-                        Status = int.Parse(quantityBox.Text) != 0
+                        Item = this.txtItem.Text,
+                        Qty = int.Parse(s: this.txtQuantity.Text),
+                        UnitPrice = double.Parse(s: this.txtUnitPrice.Text),
+                        Cost = double.Parse(s: this.txtCost.Text),
+                        Category = this.txtCategory.Text,
+                        Supplier = this.txtSupplier.Text,
+                        Status = int.Parse(this.txtQuantity.Text) != 0,
                     });
                     MessageBox.Show("Item saved!");
                     this.Dispose();
@@ -56,7 +54,6 @@ namespace BiliPC
                     MessageBox.Show("Please enter a valid character.");
                 }
             }
-
             else
             {
                 MessageBox.Show("Unknown Error.");

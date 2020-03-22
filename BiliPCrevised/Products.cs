@@ -1,17 +1,30 @@
-﻿using MongoDB.Bson;
-using System;
-using System.Windows.Forms;
-
-namespace BiliPC
+﻿namespace BiliPC
 {
+    using System;
+    using System.Windows.Forms;
+    using MongoDB.Bson;
+
     public partial class Products : Form
     {
-        MongoCRUD db = new MongoCRUD("POS_Database");
+        private readonly MongoCRUD db = new MongoCRUD("POS_Database");
 
         public Products()
         {
-            InitializeComponent();
-            RefreshInventory();
+            this.InitializeComponent();
+            this.RefreshInventory();
+        }
+
+        private void RefreshInventory()
+        {
+            var inventoryRecord = this.db.LoadRecords<InventoryModel>("Inventory");
+            this.dgdProduct.DataSource = inventoryRecord;
+            this.txtSearchItem.Text = string.Empty;
+        }
+
+        private void SearchBtn_Click(object sender, EventArgs e)
+        {
+            var selectedRecord = this.db.LoadRecordsBySpecific<InventoryModel>("Inventory", "Item", this.txtSearchItem.Text);
+            this.dgdProduct.DataSource = selectedRecord;
         }
 
         private void BtnX_Click(object sender, EventArgs e)
@@ -19,7 +32,12 @@ namespace BiliPC
             this.Dispose();
         }
 
-        private void AddItemBtn_Click(object sender, EventArgs e)
+        private void BtnRefreshItem_Click(object sender, EventArgs e)
+        {
+            this.RefreshInventory();
+        }
+
+        private void BtnAddItem_Click(object sender, EventArgs e)
         {
             using (AddNewItem addItem = new AddNewItem())
             {
@@ -27,55 +45,29 @@ namespace BiliPC
             }
         }
 
-        public void RefreshInventory()
-        {
-            var InventoryRecord = db.LoadRecords<InventoryModel>("Inventory");
-            ProductDataGrid.DataSource = InventoryRecord;
-            searchItemBox.Text = "";
-        }
-
-        private void RefreshItemBtn_Click(object sender, EventArgs e)
-        {
-            RefreshInventory();
-        }
-
-        private void ProductDataGrid_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            idBox.Text = ProductDataGrid.Rows[e.RowIndex].Cells[0].Value.ToString();
-            itemNameBox.Text = ProductDataGrid.Rows[e.RowIndex].Cells[1].Value.ToString();
-            quantityBox.Text = ProductDataGrid.Rows[e.RowIndex].Cells[2].Value.ToString();
-            unitPriceBox.Text = ProductDataGrid.Rows[e.RowIndex].Cells[3].Value.ToString();
-            costBox.Text = ProductDataGrid.Rows[e.RowIndex].Cells[4].Value.ToString();
-            categoryBox.Text = ProductDataGrid.Rows[e.RowIndex].Cells[5].Value.ToString();
-            supplierBox.Text = ProductDataGrid.Rows[e.RowIndex].Cells[6].Value.ToString();
-            inStockTrueRadioBtn.Checked = ProductDataGrid.Rows[e.RowIndex].Cells[7].Value.Equals(true);
-            inStockFalseRadioBtn.Checked = ProductDataGrid.Rows[e.RowIndex].Cells[7].Value.Equals(false);
-        }
-
-        private void UpdateItemBtn_Click(object sender, EventArgs e)
+        private void BtnUpdateItem_Click(object sender, EventArgs e)
         {
             // Check the empty fields
-            int EmptyField = Functions.CheckFields(GroupTextBox);
-            if (EmptyField > 0)
+            int emptyField = Functions.CheckFields(this.GroupTextBox);
+            if (emptyField > 0)
             {
-                MessageBox.Show("Please fill all of the " + EmptyField + " field/s.");
+                MessageBox.Show("Please fill all of the " + emptyField + " field/s.");
             }
-
             else
             {
                 try
                 {
-                    var SelectedRecord = db.LoadRecordById<InventoryModel>("Inventory", new ObjectId(idBox.Text));
-                    SelectedRecord.Item = itemNameBox.Text;
-                    SelectedRecord.Qty = int.Parse(s: quantityBox.Text);
-                    SelectedRecord.UnitPrice = double.Parse(s: unitPriceBox.Text);
-                    SelectedRecord.Cost = double.Parse(s: costBox.Text);
-                    SelectedRecord.Category = categoryBox.Text;
-                    SelectedRecord.Supplier = supplierBox.Text;
-                    SelectedRecord.Status = int.Parse(quantityBox.Text) != 0;
+                    var selectedRecord = this.db.LoadRecordById<InventoryModel>("Inventory", new ObjectId(this.idBox.Text));
+                    selectedRecord.Item = this.txtItemName.Text;
+                    selectedRecord.Qty = int.Parse(s: this.txtQuantity.Text);
+                    selectedRecord.UnitPrice = double.Parse(s: this.txtUnitPrice.Text);
+                    selectedRecord.Cost = double.Parse(s: this.txtCost.Text);
+                    selectedRecord.Category = this.txtCategory.Text;
+                    selectedRecord.Supplier = this.txtSupplier.Text;
+                    selectedRecord.Status = int.Parse(this.txtQuantity.Text) != 0;
 
-                    db.UpsertRecord<InventoryModel>("Inventory", SelectedRecord.Id, SelectedRecord);
-                    RefreshInventory();
+                    this.db.UpsertRecord<InventoryModel>("Inventory", selectedRecord.Id, selectedRecord);
+                    this.RefreshInventory();
                 }
                 catch (FormatException)
                 {
@@ -84,12 +76,12 @@ namespace BiliPC
             }
         }
 
-        private void DeleteItemBtn_Click(object sender, EventArgs e)
+        private void BtnDeleteItem_Click(object sender, EventArgs e)
         {
             try
             {
-                db.DeleleRecord<InventoryModel>("Inventory", ObjectId.Parse(idBox.Text));
-                RefreshInventory();
+                this.db.DeleleRecord<InventoryModel>("Inventory", ObjectId.Parse(this.idBox.Text));
+                this.RefreshInventory();
             }
             catch (FormatException)
             {
@@ -97,10 +89,17 @@ namespace BiliPC
             }
         }
 
-        private void SearchBtn_Click(object sender, EventArgs e)
+        private void DgdProduct_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            var SelectedRecord = db.LoadRecordsBySpecific<InventoryModel>("Inventory", "Item", searchItemBox.Text);
-            ProductDataGrid.DataSource = SelectedRecord;
+            this.idBox.Text = this.dgdProduct.Rows[e.RowIndex].Cells[0].Value.ToString();
+            this.txtItemName.Text = this.dgdProduct.Rows[e.RowIndex].Cells[1].Value.ToString();
+            this.txtQuantity.Text = this.dgdProduct.Rows[e.RowIndex].Cells[2].Value.ToString();
+            this.txtUnitPrice.Text = this.dgdProduct.Rows[e.RowIndex].Cells[3].Value.ToString();
+            this.txtCost.Text = this.dgdProduct.Rows[e.RowIndex].Cells[4].Value.ToString();
+            this.txtCategory.Text = this.dgdProduct.Rows[e.RowIndex].Cells[5].Value.ToString();
+            this.txtSupplier.Text = this.dgdProduct.Rows[e.RowIndex].Cells[6].Value.ToString();
+            this.radInStockTrue.Checked = this.dgdProduct.Rows[e.RowIndex].Cells[7].Value.Equals(true);
+            this.radInStockFalse.Checked = this.dgdProduct.Rows[e.RowIndex].Cells[7].Value.Equals(false);
         }
 
         private void CostBox_KeyPress(object sender, KeyPressEventArgs e)

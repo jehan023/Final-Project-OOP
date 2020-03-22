@@ -29,41 +29,41 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginUI));
-            this.biliPCLogo = new System.Windows.Forms.PictureBox();
+            this.picBiliPCLogo = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.exitBtn = new System.Windows.Forms.Button();
-            this.usernameLabel = new System.Windows.Forms.Label();
-            this.loginBtn = new System.Windows.Forms.Button();
-            this.passwordLabel = new System.Windows.Forms.Label();
-            this.textBoxPassword = new System.Windows.Forms.TextBox();
-            this.textBoxUsername = new System.Windows.Forms.TextBox();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.lblUsername = new System.Windows.Forms.Label();
+            this.btnLogin = new System.Windows.Forms.Button();
+            this.lblPassword = new System.Windows.Forms.Label();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.txtUsername = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.loginBiliPCLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.biliPCLogo)).BeginInit();
+            this.lblLoginBiliPC = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.picBiliPCLogo)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // biliPCLogo
+            // picBiliPCLogo
             // 
-            this.biliPCLogo.Image = ((System.Drawing.Image)(resources.GetObject("biliPCLogo.Image")));
-            this.biliPCLogo.InitialImage = ((System.Drawing.Image)(resources.GetObject("biliPCLogo.InitialImage")));
-            this.biliPCLogo.Location = new System.Drawing.Point(85, 44);
-            this.biliPCLogo.Margin = new System.Windows.Forms.Padding(2);
-            this.biliPCLogo.Name = "biliPCLogo";
-            this.biliPCLogo.Size = new System.Drawing.Size(181, 145);
-            this.biliPCLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.biliPCLogo.TabIndex = 8;
-            this.biliPCLogo.TabStop = false;
+            this.picBiliPCLogo.Image = ((System.Drawing.Image)(resources.GetObject("picBiliPCLogo.Image")));
+            this.picBiliPCLogo.InitialImage = ((System.Drawing.Image)(resources.GetObject("picBiliPCLogo.InitialImage")));
+            this.picBiliPCLogo.Location = new System.Drawing.Point(85, 44);
+            this.picBiliPCLogo.Margin = new System.Windows.Forms.Padding(2);
+            this.picBiliPCLogo.Name = "picBiliPCLogo";
+            this.picBiliPCLogo.Size = new System.Drawing.Size(181, 145);
+            this.picBiliPCLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBiliPCLogo.TabIndex = 8;
+            this.picBiliPCLogo.TabStop = false;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.exitBtn);
-            this.groupBox1.Controls.Add(this.usernameLabel);
-            this.groupBox1.Controls.Add(this.loginBtn);
-            this.groupBox1.Controls.Add(this.passwordLabel);
-            this.groupBox1.Controls.Add(this.textBoxPassword);
-            this.groupBox1.Controls.Add(this.textBoxUsername);
+            this.groupBox1.Controls.Add(this.btnExit);
+            this.groupBox1.Controls.Add(this.lblUsername);
+            this.groupBox1.Controls.Add(this.btnLogin);
+            this.groupBox1.Controls.Add(this.lblPassword);
+            this.groupBox1.Controls.Add(this.txtPassword);
+            this.groupBox1.Controls.Add(this.txtUsername);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 193);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
@@ -74,90 +74,90 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Sign In";
             // 
-            // exitBtn
+            // btnExit
             // 
-            this.exitBtn.BackColor = System.Drawing.SystemColors.Control;
-            this.exitBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.exitBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.exitBtn.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.exitBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.exitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exitBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exitBtn.Location = new System.Drawing.Point(236, 90);
-            this.exitBtn.Margin = new System.Windows.Forms.Padding(2);
-            this.exitBtn.Name = "exitBtn";
-            this.exitBtn.Size = new System.Drawing.Size(69, 32);
-            this.exitBtn.TabIndex = 5;
-            this.exitBtn.Text = "Exit";
-            this.exitBtn.UseVisualStyleBackColor = false;
-            this.exitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
+            this.btnExit.BackColor = System.Drawing.SystemColors.Control;
+            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnExit.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Location = new System.Drawing.Point(236, 90);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(2);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(69, 32);
+            this.btnExit.TabIndex = 5;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.BtnExit_Click);
             // 
-            // usernameLabel
+            // lblUsername
             // 
-            this.usernameLabel.AutoSize = true;
-            this.usernameLabel.BackColor = System.Drawing.Color.Transparent;
-            this.usernameLabel.Cursor = System.Windows.Forms.Cursors.Default;
-            this.usernameLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernameLabel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.usernameLabel.Location = new System.Drawing.Point(14, 27);
-            this.usernameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.usernameLabel.Name = "usernameLabel";
-            this.usernameLabel.Size = new System.Drawing.Size(83, 17);
-            this.usernameLabel.TabIndex = 0;
-            this.usernameLabel.Text = "Username";
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.BackColor = System.Drawing.Color.Transparent;
+            this.lblUsername.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblUsername.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblUsername.Location = new System.Drawing.Point(14, 27);
+            this.lblUsername.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(83, 17);
+            this.lblUsername.TabIndex = 0;
+            this.lblUsername.Text = "Username";
             // 
-            // loginBtn
+            // btnLogin
             // 
-            this.loginBtn.BackColor = System.Drawing.SystemColors.Control;
-            this.loginBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.loginBtn.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.loginBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.loginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.loginBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginBtn.Location = new System.Drawing.Point(148, 90);
-            this.loginBtn.Margin = new System.Windows.Forms.Padding(2);
-            this.loginBtn.Name = "loginBtn";
-            this.loginBtn.Size = new System.Drawing.Size(69, 32);
-            this.loginBtn.TabIndex = 4;
-            this.loginBtn.Text = "Login";
-            this.loginBtn.UseVisualStyleBackColor = false;
-            this.loginBtn.Click += new System.EventHandler(this.LoginBtn_Click);
+            this.btnLogin.BackColor = System.Drawing.SystemColors.Control;
+            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogin.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogin.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.Location = new System.Drawing.Point(148, 90);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(69, 32);
+            this.btnLogin.TabIndex = 4;
+            this.btnLogin.Text = "Login";
+            this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
             // 
-            // passwordLabel
+            // lblPassword
             // 
-            this.passwordLabel.AutoSize = true;
-            this.passwordLabel.BackColor = System.Drawing.Color.Transparent;
-            this.passwordLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordLabel.Location = new System.Drawing.Point(17, 56);
-            this.passwordLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.passwordLabel.Name = "passwordLabel";
-            this.passwordLabel.Size = new System.Drawing.Size(80, 17);
-            this.passwordLabel.TabIndex = 1;
-            this.passwordLabel.Text = "Password";
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.BackColor = System.Drawing.Color.Transparent;
+            this.lblPassword.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassword.Location = new System.Drawing.Point(17, 56);
+            this.lblPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(80, 17);
+            this.lblPassword.TabIndex = 1;
+            this.lblPassword.Text = "Password";
             // 
-            // textBoxPassword
+            // txtPassword
             // 
-            this.textBoxPassword.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPassword.Location = new System.Drawing.Point(116, 52);
-            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.PasswordChar = '*';
-            this.textBoxPassword.Size = new System.Drawing.Size(190, 23);
-            this.textBoxPassword.TabIndex = 3;
+            this.txtPassword.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(116, 52);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(190, 23);
+            this.txtPassword.TabIndex = 3;
             // 
-            // textBoxUsername
+            // txtUsername
             // 
-            this.textBoxUsername.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxUsername.Location = new System.Drawing.Point(116, 24);
-            this.textBoxUsername.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxUsername.Name = "textBoxUsername";
-            this.textBoxUsername.Size = new System.Drawing.Size(190, 23);
-            this.textBoxUsername.TabIndex = 2;
+            this.txtUsername.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.Location = new System.Drawing.Point(116, 24);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(2);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(190, 23);
+            this.txtUsername.TabIndex = 2;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
-            this.panel1.Controls.Add(this.loginBiliPCLabel);
+            this.panel1.Controls.Add(this.lblLoginBiliPC);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
@@ -165,29 +165,29 @@
             this.panel1.Size = new System.Drawing.Size(341, 30);
             this.panel1.TabIndex = 9;
             // 
-            // loginBiliPCLabel
+            // lblLoginBiliPC
             // 
-            this.loginBiliPCLabel.AutoSize = true;
-            this.loginBiliPCLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginBiliPCLabel.ForeColor = System.Drawing.Color.White;
-            this.loginBiliPCLabel.Location = new System.Drawing.Point(9, 7);
-            this.loginBiliPCLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.loginBiliPCLabel.Name = "loginBiliPCLabel";
-            this.loginBiliPCLabel.Size = new System.Drawing.Size(130, 16);
-            this.loginBiliPCLabel.TabIndex = 0;
-            this.loginBiliPCLabel.Text = "Login BiliPC Store";
+            this.lblLoginBiliPC.AutoSize = true;
+            this.lblLoginBiliPC.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoginBiliPC.ForeColor = System.Drawing.Color.White;
+            this.lblLoginBiliPC.Location = new System.Drawing.Point(9, 7);
+            this.lblLoginBiliPC.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblLoginBiliPC.Name = "lblLoginBiliPC";
+            this.lblLoginBiliPC.Size = new System.Drawing.Size(130, 16);
+            this.lblLoginBiliPC.TabIndex = 0;
+            this.lblLoginBiliPC.Text = "Login BiliPC Store";
             // 
             // LoginUI
             // 
-            this.AcceptButton = this.loginBtn;
+            this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LavenderBlush;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.CancelButton = this.exitBtn;
+            this.CancelButton = this.btnExit;
             this.ClientSize = new System.Drawing.Size(341, 344);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.biliPCLogo);
+            this.Controls.Add(this.picBiliPCLogo);
             this.Controls.Add(this.groupBox1);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.DoubleBuffered = true;
@@ -198,7 +198,7 @@
             this.Name = "LoginUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login BiliPC";
-            ((System.ComponentModel.ISupportInitialize)(this.biliPCLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBiliPCLogo)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -209,16 +209,16 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox biliPCLogo;
+        private System.Windows.Forms.PictureBox picBiliPCLogo;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label usernameLabel;
-        private System.Windows.Forms.Button loginBtn;
-        private System.Windows.Forms.Label passwordLabel;
-        private System.Windows.Forms.TextBox textBoxPassword;
-        private System.Windows.Forms.TextBox textBoxUsername;
+        private System.Windows.Forms.Label lblUsername;
+        private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.Label lblPassword;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label loginBiliPCLabel;
-        private System.Windows.Forms.Button exitBtn;
+        private System.Windows.Forms.Label lblLoginBiliPC;
+        private System.Windows.Forms.Button btnExit;
     }
 }
 

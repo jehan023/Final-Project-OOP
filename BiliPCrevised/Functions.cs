@@ -1,18 +1,19 @@
-﻿using System;
-using System.Windows.Forms;
-
-namespace BiliPC
+﻿namespace BiliPC
 {
+    using System;
+    using System.Windows.Forms;
+
     public static class Functions
     {
-        public static int CheckFields(Control GroupTextBox)
+        public static int CheckFields(Control groupTextBox)
         {
-            if (GroupTextBox == null)
+            if (groupTextBox == null)
             {
-                throw new ArgumentNullException(nameof(GroupTextBox));
+                throw new ArgumentNullException(nameof(groupTextBox));
             }
-            int EmptyField = 0;
-            foreach (Control control in GroupTextBox.Controls)
+
+            int emptyField = 0;
+            foreach (Control control in groupTextBox.Controls)
             {
                 string controlType = control.GetType().ToString();
                 if (controlType == "System.Windows.Forms.TextBox")
@@ -20,12 +21,12 @@ namespace BiliPC
                     TextBox txtBox = (TextBox)control;
                     if (string.IsNullOrEmpty(txtBox.Text))
                     {
-                        EmptyField += 1;
+                        emptyField += 1;
                     }
                 }
             }
-            return EmptyField;
 
+            return emptyField;
         }
 
         public static bool RestrictedKeyPressToInt(KeyPressEventArgs e)
@@ -34,10 +35,11 @@ namespace BiliPC
             {
                 throw new ArgumentNullException(nameof(e));
             }
-            
+
+            // ch 8 = backspace
+            // ch 46 = del key
             char ch = e.KeyChar;
-            // ch 8 = backspace, ch 46 = del key
-            if (!Char.IsDigit(ch) && ch != 8 && ch != 46)
+            if (!char.IsDigit(ch) && ch != 8 && ch != 46)
             {
                 return e.Handled = true;
             }
@@ -45,7 +47,6 @@ namespace BiliPC
             {
                 return e.Handled = false;
             }
-
         }
     }
 }

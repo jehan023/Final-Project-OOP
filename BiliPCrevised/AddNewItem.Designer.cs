@@ -28,139 +28,139 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.cancelBtn = new System.Windows.Forms.Button();
-            this.addItemBtn = new System.Windows.Forms.Button();
+            this.pnlTop = new System.Windows.Forms.Panel();
+            this.lblAddNewItem = new System.Windows.Forms.Label();
+            this.pnlBottom = new System.Windows.Forms.Panel();
+            this.pnlLeft = new System.Windows.Forms.Panel();
+            this.pnlRight = new System.Windows.Forms.Panel();
+            this.pnlBackground = new System.Windows.Forms.Panel();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnAddItem = new System.Windows.Forms.Button();
             this.GroupTextBox = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.itemBox = new System.Windows.Forms.TextBox();
+            this.txtItem = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.supplierBox = new System.Windows.Forms.TextBox();
+            this.txtSupplier = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.quantityBox = new System.Windows.Forms.TextBox();
+            this.txtQuantity = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.unitPriceBox = new System.Windows.Forms.TextBox();
+            this.txtUnitPrice = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.costBox = new System.Windows.Forms.TextBox();
-            this.categoryBox = new System.Windows.Forms.TextBox();
+            this.txtCost = new System.Windows.Forms.TextBox();
+            this.txtCategory = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
-            this.panel5.SuspendLayout();
+            this.pnlTop.SuspendLayout();
+            this.pnlBackground.SuspendLayout();
             this.GroupTextBox.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // pnlTop
             // 
-            this.panel1.BackColor = System.Drawing.Color.Navy;
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(445, 58);
-            this.panel1.TabIndex = 0;
+            this.pnlTop.BackColor = System.Drawing.Color.Navy;
+            this.pnlTop.Controls.Add(this.lblAddNewItem);
+            this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTop.Location = new System.Drawing.Point(0, 0);
+            this.pnlTop.Name = "pnlTop";
+            this.pnlTop.Size = new System.Drawing.Size(445, 58);
+            this.pnlTop.TabIndex = 0;
             // 
-            // label1
+            // lblAddNewItem
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(151, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 22);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Add New Item";
+            this.lblAddNewItem.AutoSize = true;
+            this.lblAddNewItem.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddNewItem.ForeColor = System.Drawing.Color.White;
+            this.lblAddNewItem.Location = new System.Drawing.Point(151, 21);
+            this.lblAddNewItem.Name = "lblAddNewItem";
+            this.lblAddNewItem.Size = new System.Drawing.Size(139, 22);
+            this.lblAddNewItem.TabIndex = 0;
+            this.lblAddNewItem.Text = "Add New Item";
             // 
-            // panel2
+            // pnlBottom
             // 
-            this.panel2.BackColor = System.Drawing.Color.Navy;
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 521);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(445, 10);
-            this.panel2.TabIndex = 2;
+            this.pnlBottom.BackColor = System.Drawing.Color.Navy;
+            this.pnlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlBottom.Location = new System.Drawing.Point(0, 521);
+            this.pnlBottom.Name = "pnlBottom";
+            this.pnlBottom.Size = new System.Drawing.Size(445, 10);
+            this.pnlBottom.TabIndex = 2;
             // 
-            // panel3
+            // pnlLeft
             // 
-            this.panel3.BackColor = System.Drawing.Color.Navy;
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel3.Location = new System.Drawing.Point(0, 58);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(10, 463);
-            this.panel3.TabIndex = 3;
+            this.pnlLeft.BackColor = System.Drawing.Color.Navy;
+            this.pnlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlLeft.Location = new System.Drawing.Point(0, 58);
+            this.pnlLeft.Name = "pnlLeft";
+            this.pnlLeft.Size = new System.Drawing.Size(10, 463);
+            this.pnlLeft.TabIndex = 3;
             // 
-            // panel4
+            // pnlRight
             // 
-            this.panel4.BackColor = System.Drawing.Color.Navy;
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(435, 58);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(10, 463);
-            this.panel4.TabIndex = 4;
+            this.pnlRight.BackColor = System.Drawing.Color.Navy;
+            this.pnlRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnlRight.Location = new System.Drawing.Point(435, 58);
+            this.pnlRight.Name = "pnlRight";
+            this.pnlRight.Size = new System.Drawing.Size(10, 463);
+            this.pnlRight.TabIndex = 4;
             // 
-            // panel5
+            // pnlBackground
             // 
-            this.panel5.Controls.Add(this.cancelBtn);
-            this.panel5.Controls.Add(this.addItemBtn);
-            this.panel5.Controls.Add(this.GroupTextBox);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(10, 58);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(425, 463);
-            this.panel5.TabIndex = 5;
+            this.pnlBackground.Controls.Add(this.btnCancel);
+            this.pnlBackground.Controls.Add(this.btnAddItem);
+            this.pnlBackground.Controls.Add(this.GroupTextBox);
+            this.pnlBackground.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlBackground.Location = new System.Drawing.Point(10, 58);
+            this.pnlBackground.Name = "pnlBackground";
+            this.pnlBackground.Size = new System.Drawing.Size(425, 463);
+            this.pnlBackground.TabIndex = 5;
             // 
-            // cancelBtn
+            // btnCancel
             // 
-            this.cancelBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.cancelBtn.BackColor = System.Drawing.Color.SpringGreen;
-            this.cancelBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.cancelBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cancelBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.cancelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cancelBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancelBtn.Location = new System.Drawing.Point(278, 402);
-            this.cancelBtn.Margin = new System.Windows.Forms.Padding(2);
-            this.cancelBtn.Name = "cancelBtn";
-            this.cancelBtn.Size = new System.Drawing.Size(109, 31);
-            this.cancelBtn.TabIndex = 66;
-            this.cancelBtn.Text = "Cancel";
-            this.cancelBtn.UseVisualStyleBackColor = false;
-            this.cancelBtn.Click += new System.EventHandler(this.CancelBtn_Click);
+            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancel.BackColor = System.Drawing.Color.SpringGreen;
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnCancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(278, 402);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(109, 31);
+            this.btnCancel.TabIndex = 66;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
-            // addItemBtn
+            // btnAddItem
             // 
-            this.addItemBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.addItemBtn.BackColor = System.Drawing.Color.SpringGreen;
-            this.addItemBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.addItemBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.addItemBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addItemBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addItemBtn.Location = new System.Drawing.Point(146, 402);
-            this.addItemBtn.Margin = new System.Windows.Forms.Padding(2);
-            this.addItemBtn.Name = "addItemBtn";
-            this.addItemBtn.Size = new System.Drawing.Size(109, 31);
-            this.addItemBtn.TabIndex = 65;
-            this.addItemBtn.Text = "Add item";
-            this.addItemBtn.UseVisualStyleBackColor = false;
-            this.addItemBtn.Click += new System.EventHandler(this.AddItemBtn_Click);
+            this.btnAddItem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddItem.BackColor = System.Drawing.Color.SpringGreen;
+            this.btnAddItem.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAddItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnAddItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddItem.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddItem.Location = new System.Drawing.Point(146, 402);
+            this.btnAddItem.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAddItem.Name = "btnAddItem";
+            this.btnAddItem.Size = new System.Drawing.Size(109, 31);
+            this.btnAddItem.TabIndex = 65;
+            this.btnAddItem.Text = "Add item";
+            this.btnAddItem.UseVisualStyleBackColor = false;
+            this.btnAddItem.Click += new System.EventHandler(this.BtnAddItem_Click);
             // 
             // GroupTextBox
             // 
             this.GroupTextBox.Controls.Add(this.label3);
-            this.GroupTextBox.Controls.Add(this.itemBox);
+            this.GroupTextBox.Controls.Add(this.txtItem);
             this.GroupTextBox.Controls.Add(this.label7);
-            this.GroupTextBox.Controls.Add(this.supplierBox);
+            this.GroupTextBox.Controls.Add(this.txtSupplier);
             this.GroupTextBox.Controls.Add(this.label6);
-            this.GroupTextBox.Controls.Add(this.quantityBox);
+            this.GroupTextBox.Controls.Add(this.txtQuantity);
             this.GroupTextBox.Controls.Add(this.label9);
-            this.GroupTextBox.Controls.Add(this.unitPriceBox);
+            this.GroupTextBox.Controls.Add(this.txtUnitPrice);
             this.GroupTextBox.Controls.Add(this.label4);
-            this.GroupTextBox.Controls.Add(this.costBox);
-            this.GroupTextBox.Controls.Add(this.categoryBox);
+            this.GroupTextBox.Controls.Add(this.txtCost);
+            this.GroupTextBox.Controls.Add(this.txtCategory);
             this.GroupTextBox.Controls.Add(this.label2);
             this.GroupTextBox.Location = new System.Drawing.Point(32, 16);
             this.GroupTextBox.Name = "GroupTextBox";
@@ -182,16 +182,16 @@
             this.label3.TabIndex = 63;
             this.label3.Text = "Supplier";
             // 
-            // itemBox
+            // txtItem
             // 
-            this.itemBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.itemBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.itemBox.Location = new System.Drawing.Point(17, 36);
-            this.itemBox.Margin = new System.Windows.Forms.Padding(2);
-            this.itemBox.Multiline = true;
-            this.itemBox.Name = "itemBox";
-            this.itemBox.Size = new System.Drawing.Size(336, 21);
-            this.itemBox.TabIndex = 54;
+            this.txtItem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtItem.Location = new System.Drawing.Point(17, 36);
+            this.txtItem.Margin = new System.Windows.Forms.Padding(2);
+            this.txtItem.Multiline = true;
+            this.txtItem.Name = "txtItem";
+            this.txtItem.Size = new System.Drawing.Size(336, 21);
+            this.txtItem.TabIndex = 54;
             // 
             // label7
             // 
@@ -207,15 +207,15 @@
             this.label7.TabIndex = 61;
             this.label7.Text = "Category";
             // 
-            // supplierBox
+            // txtSupplier
             // 
-            this.supplierBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.supplierBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.supplierBox.Location = new System.Drawing.Point(19, 311);
-            this.supplierBox.Margin = new System.Windows.Forms.Padding(2);
-            this.supplierBox.Name = "supplierBox";
-            this.supplierBox.Size = new System.Drawing.Size(336, 21);
-            this.supplierBox.TabIndex = 64;
+            this.txtSupplier.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSupplier.Location = new System.Drawing.Point(19, 311);
+            this.txtSupplier.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSupplier.Name = "txtSupplier";
+            this.txtSupplier.Size = new System.Drawing.Size(336, 21);
+            this.txtSupplier.TabIndex = 64;
             // 
             // label6
             // 
@@ -231,16 +231,16 @@
             this.label6.TabIndex = 59;
             this.label6.Text = "Cost";
             // 
-            // quantityBox
+            // txtQuantity
             // 
-            this.quantityBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.quantityBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quantityBox.Location = new System.Drawing.Point(17, 90);
-            this.quantityBox.Margin = new System.Windows.Forms.Padding(2);
-            this.quantityBox.Name = "quantityBox";
-            this.quantityBox.Size = new System.Drawing.Size(336, 21);
-            this.quantityBox.TabIndex = 56;
-            this.quantityBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.QuantityBox_KeyPress);
+            this.txtQuantity.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQuantity.Location = new System.Drawing.Point(17, 90);
+            this.txtQuantity.Margin = new System.Windows.Forms.Padding(2);
+            this.txtQuantity.Name = "txtQuantity";
+            this.txtQuantity.Size = new System.Drawing.Size(336, 21);
+            this.txtQuantity.TabIndex = 56;
+            this.txtQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.QuantityBox_KeyPress);
             // 
             // label9
             // 
@@ -256,16 +256,16 @@
             this.label9.TabIndex = 57;
             this.label9.Text = "Unit Price";
             // 
-            // unitPriceBox
+            // txtUnitPrice
             // 
-            this.unitPriceBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.unitPriceBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.unitPriceBox.Location = new System.Drawing.Point(19, 146);
-            this.unitPriceBox.Margin = new System.Windows.Forms.Padding(2);
-            this.unitPriceBox.Name = "unitPriceBox";
-            this.unitPriceBox.Size = new System.Drawing.Size(336, 21);
-            this.unitPriceBox.TabIndex = 58;
-            this.unitPriceBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.QuantityBox_KeyPress);
+            this.txtUnitPrice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtUnitPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUnitPrice.Location = new System.Drawing.Point(19, 146);
+            this.txtUnitPrice.Margin = new System.Windows.Forms.Padding(2);
+            this.txtUnitPrice.Name = "txtUnitPrice";
+            this.txtUnitPrice.Size = new System.Drawing.Size(336, 21);
+            this.txtUnitPrice.TabIndex = 58;
+            this.txtUnitPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.QuantityBox_KeyPress);
             // 
             // label4
             // 
@@ -281,26 +281,26 @@
             this.label4.TabIndex = 55;
             this.label4.Text = "Quantity";
             // 
-            // costBox
+            // txtCost
             // 
-            this.costBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.costBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.costBox.Location = new System.Drawing.Point(17, 202);
-            this.costBox.Margin = new System.Windows.Forms.Padding(2);
-            this.costBox.Name = "costBox";
-            this.costBox.Size = new System.Drawing.Size(336, 21);
-            this.costBox.TabIndex = 60;
-            this.costBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.QuantityBox_KeyPress);
+            this.txtCost.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCost.Location = new System.Drawing.Point(17, 202);
+            this.txtCost.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCost.Name = "txtCost";
+            this.txtCost.Size = new System.Drawing.Size(336, 21);
+            this.txtCost.TabIndex = 60;
+            this.txtCost.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.QuantityBox_KeyPress);
             // 
-            // categoryBox
+            // txtCategory
             // 
-            this.categoryBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.categoryBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.categoryBox.Location = new System.Drawing.Point(17, 256);
-            this.categoryBox.Margin = new System.Windows.Forms.Padding(2);
-            this.categoryBox.Name = "categoryBox";
-            this.categoryBox.Size = new System.Drawing.Size(336, 21);
-            this.categoryBox.TabIndex = 62;
+            this.txtCategory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCategory.Location = new System.Drawing.Point(17, 256);
+            this.txtCategory.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCategory.Name = "txtCategory";
+            this.txtCategory.Size = new System.Drawing.Size(336, 21);
+            this.txtCategory.TabIndex = 62;
             // 
             // label2
             // 
@@ -318,25 +318,25 @@
             // 
             // AddNewItem
             // 
-            this.AcceptButton = this.addItemBtn;
+            this.AcceptButton = this.btnAddItem;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.CancelButton = this.cancelBtn;
+            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(445, 531);
-            this.Controls.Add(this.panel5);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlBackground);
+            this.Controls.Add(this.pnlRight);
+            this.Controls.Add(this.pnlLeft);
+            this.Controls.Add(this.pnlBottom);
+            this.Controls.Add(this.pnlTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddNewItem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddNewItem";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel5.ResumeLayout(false);
+            this.pnlTop.ResumeLayout(false);
+            this.pnlTop.PerformLayout();
+            this.pnlBackground.ResumeLayout(false);
             this.GroupTextBox.ResumeLayout(false);
             this.GroupTextBox.PerformLayout();
             this.ResumeLayout(false);
@@ -345,25 +345,25 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button cancelBtn;
-        private System.Windows.Forms.Button addItemBtn;
-        private System.Windows.Forms.TextBox categoryBox;
+        private System.Windows.Forms.Panel pnlTop;
+        private System.Windows.Forms.Label lblAddNewItem;
+        private System.Windows.Forms.Panel pnlBottom;
+        private System.Windows.Forms.Panel pnlLeft;
+        private System.Windows.Forms.Panel pnlRight;
+        private System.Windows.Forms.Panel pnlBackground;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnAddItem;
+        private System.Windows.Forms.TextBox txtCategory;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox costBox;
+        private System.Windows.Forms.TextBox txtCost;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox unitPriceBox;
-        private System.Windows.Forms.TextBox quantityBox;
+        private System.Windows.Forms.TextBox txtUnitPrice;
+        private System.Windows.Forms.TextBox txtQuantity;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox itemBox;
+        private System.Windows.Forms.TextBox txtItem;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox supplierBox;
+        private System.Windows.Forms.TextBox txtSupplier;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox GroupTextBox;
     }
