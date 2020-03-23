@@ -1,6 +1,7 @@
 ﻿namespace BiliPC
 {
     using System;
+    using System.Globalization;
     using System.Windows.Forms;
 
     public partial class AddNewEmployee : Form
@@ -14,14 +15,12 @@
 
         private void BtnCancel_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            this.Close();
         }
 
         private void BtnAddAccount_Click(object sender, EventArgs e)
         {
             bool usernameExists = this.db.CheckExistence<UsersModel>("Users", "Username", this.txtUsername.Text);
-
-            // Check the empty boxes
             int emptyField = Functions.CheckFields(this.GroupTextBox);
 
             if (emptyField > 0)
@@ -45,11 +44,11 @@
                         Name = this.txtName.Text,
                         Username = this.txtUsername.Text,
                         Password = this.txtPassword.Text,
-                        Wage = double.Parse(this.txtWage.Text),
+                        Wage = double.Parse(this.txtWage.Text, CultureInfo.InvariantCulture),
                         IsAdmin = this.adminTrueRadioBtn.Checked,
                     });
                     MessageBox.Show("Account Saved!");
-                    this.Dispose();
+                    this.Close();
                 }
                 catch (FormatException)
                 {

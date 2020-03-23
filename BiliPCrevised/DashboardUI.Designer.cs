@@ -54,7 +54,7 @@
             this.picBiliPCLogo = new System.Windows.Forms.PictureBox();
             this.pnlTop = new System.Windows.Forms.Panel();
             this.pnlContainerForm = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.picBiliPCLogoDefault = new System.Windows.Forms.PictureBox();
             this.pnlSideMenu.SuspendLayout();
             this.panelManageEmployees.SuspendLayout();
             this.panelInventory.SuspendLayout();
@@ -62,7 +62,7 @@
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBiliPCLogo)).BeginInit();
             this.pnlContainerForm.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBiliPCLogoDefault)).BeginInit();
             this.SuspendLayout();
             // 
             // tmrRealtimeTime
@@ -457,7 +457,7 @@
             // pnlContainerForm
             // 
             this.pnlContainerForm.BackColor = System.Drawing.Color.LavenderBlush;
-            this.pnlContainerForm.Controls.Add(this.pictureBox2);
+            this.pnlContainerForm.Controls.Add(this.picBiliPCLogoDefault);
             this.pnlContainerForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlContainerForm.Location = new System.Drawing.Point(168, 24);
             this.pnlContainerForm.Margin = new System.Windows.Forms.Padding(2);
@@ -466,17 +466,17 @@
             this.pnlContainerForm.Size = new System.Drawing.Size(945, 639);
             this.pnlContainerForm.TabIndex = 17;
             // 
-            // pictureBox2
+            // picBiliPCLogoDefault
             // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(332, 161);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(284, 262);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
+            this.picBiliPCLogoDefault.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.picBiliPCLogoDefault.Image = ((System.Drawing.Image)(resources.GetObject("picBiliPCLogoDefault.Image")));
+            this.picBiliPCLogoDefault.Location = new System.Drawing.Point(332, 161);
+            this.picBiliPCLogoDefault.Margin = new System.Windows.Forms.Padding(2);
+            this.picBiliPCLogoDefault.Name = "picBiliPCLogoDefault";
+            this.picBiliPCLogoDefault.Size = new System.Drawing.Size(284, 262);
+            this.picBiliPCLogoDefault.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBiliPCLogoDefault.TabIndex = 0;
+            this.picBiliPCLogoDefault.TabStop = false;
             // 
             // DashboardUI
             // 
@@ -488,6 +488,7 @@
             this.Controls.Add(this.pnlBottom);
             this.Controls.Add(this.pnlSideMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1129, 726);
             this.Name = "DashboardUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -500,7 +501,7 @@
             this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picBiliPCLogo)).EndInit();
             this.pnlContainerForm.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBiliPCLogoDefault)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -531,6 +532,6 @@
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Panel pnlTop;
         private System.Windows.Forms.Panel pnlContainerForm;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox picBiliPCLogoDefault;
     }
 }

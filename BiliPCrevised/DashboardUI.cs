@@ -13,12 +13,35 @@
             this.lblDate.Text = DateTime.Now.ToLongDateString();
             this.CustomDesign();
 
-            // verify if user is an Admin to hide the "Manage Users" button
+            // Verify if user is an Admin to show the "Manage Users" button
             using (new LoginUI())
             {
                 this.btnManageEmployees.Visible = LoginUI.Admin;
             }
         }
+
+        #region Container Form
+        public new Form ActiveForm { get; set; } = null;
+
+        private void OpenContainerForm(Form containerForm)
+        {
+            if (this.ActiveForm != null)
+            {
+                this.ActiveForm.Close();
+            }
+
+            this.ActiveForm = containerForm;
+            containerForm.TopLevel = false;
+            containerForm.Dock = DockStyle.Fill;
+            this.pnlContainerForm.Controls.Add(containerForm);
+            containerForm.TopLevel = false;
+            containerForm.Dock = DockStyle.Fill;
+            this.pnlContainerForm.Controls.Add(containerForm);
+            this.pnlContainerForm.Tag = containerForm;
+            containerForm.BringToFront();
+            containerForm.Show();
+        }
+        #endregion
 
         #region Real-time Time
         private void TmrRealtimeTime_Tick(object sender, EventArgs e)
@@ -65,29 +88,6 @@
             {
                 submenu.Visible = false;
             }
-        }
-        #endregion
-
-        #region Container Form
-        public Form ActiveForm1 { get; set; } = null;
-
-        private void OpenContainerForm(Form containerForm)
-        {
-            if (this.ActiveForm1 != null)
-            {
-                this.ActiveForm1.Close();
-            }
-
-            this.ActiveForm1 = containerForm;
-            containerForm.TopLevel = false;
-            containerForm.Dock = DockStyle.Fill;
-            this.pnlContainerForm.Controls.Add(containerForm);
-            containerForm.TopLevel = false;
-            containerForm.Dock = DockStyle.Fill;
-            this.pnlContainerForm.Controls.Add(containerForm);
-            this.pnlContainerForm.Tag = containerForm;
-            containerForm.BringToFront();
-            containerForm.Show();
         }
         #endregion
 

@@ -1,6 +1,7 @@
 ﻿namespace BiliPC
 {
     using System;
+    using System.Globalization;
     using System.Windows.Forms;
 
     public partial class AddNewItem : Form
@@ -14,14 +15,12 @@
 
         private void BtnCancel_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            this.Close();
         }
 
         private void BtnAddItem_Click(object sender, EventArgs e)
         {
             bool itemExists = this.db.CheckExistence<InventoryModel>("Inventory", "Item", this.txtItem.Text);
-
-            // Check thy empty boxes
             int emptyField = Functions.CheckFields(this.GroupTextBox);
 
             if (emptyField > 0)
@@ -39,15 +38,15 @@
                     this.db.InsertRecord("Inventory", new InventoryModel
                     {
                         Item = this.txtItem.Text,
-                        Qty = int.Parse(s: this.txtQuantity.Text),
-                        UnitPrice = double.Parse(s: this.txtUnitPrice.Text),
-                        Cost = double.Parse(s: this.txtCost.Text),
+                        Qty = int.Parse(s: this.txtQuantity.Text, CultureInfo.InvariantCulture),
+                        UnitPrice = double.Parse(s: this.txtUnitPrice.Text, CultureInfo.InvariantCulture),
+                        Cost = double.Parse(s: this.txtCost.Text, CultureInfo.InvariantCulture),
                         Category = this.txtCategory.Text,
                         Supplier = this.txtSupplier.Text,
-                        Status = int.Parse(this.txtQuantity.Text) != 0,
+                        Status = int.Parse(this.txtQuantity.Text, CultureInfo.InvariantCulture) != 0,
                     });
                     MessageBox.Show("Item saved!");
-                    this.Dispose();
+                    this.Close();
                 }
                 catch (FormatException)
                 {

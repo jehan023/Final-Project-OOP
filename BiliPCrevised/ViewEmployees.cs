@@ -1,6 +1,7 @@
 ﻿namespace BiliPC
 {
     using System;
+    using System.Globalization;
     using System.Windows.Forms;
     using MongoDB.Bson;
 
@@ -12,6 +13,16 @@
         {
             this.InitializeComponent();
             this.RefreshAccounts();
+
+            // Show first item in the textboxes
+            this.txtAcctID.Text = this.dgdEmployee.Rows[0].Cells[0].Value.ToString();
+            this.radAdminTrue.Checked = this.dgdEmployee.Rows[0].Cells[1].Value.Equals(true);
+            this.radAdminFalse.Checked = this.dgdEmployee.Rows[0].Cells[1].Value.Equals(false);
+            this.txtAcctName.Text = this.dgdEmployee.Rows[0].Cells[2].Value.ToString();
+            this.txtAcctUsername.Text = this.dgdEmployee.Rows[0].Cells[3].Value.ToString();
+            this.txtAcctPassword.Text = this.dgdEmployee.Rows[0].Cells[4].Value.ToString();
+            this.txtAcctWage.Text = this.dgdEmployee.Rows[0].Cells[5].Value.ToString();
+            this.txtAcctWorkhours.Text = this.dgdEmployee.Rows[0].Cells[6].Value.ToString();
         }
 
         private void BtnX_Click(object sender, EventArgs e)
@@ -61,8 +72,8 @@
                     selectedRecord.Name = this.txtAcctName.Text;
                     selectedRecord.Username = this.txtAcctUsername.Text;
                     selectedRecord.Password = this.txtAcctPassword.Text;
-                    selectedRecord.Wage = double.Parse(this.txtAcctWage.Text);
-                    selectedRecord.Workhours = double.Parse(this.txtAcctWorkhours.Text);
+                    selectedRecord.Wage = double.Parse(this.txtAcctWage.Text, CultureInfo.InvariantCulture);
+                    selectedRecord.Workhours = double.Parse(this.txtAcctWorkhours.Text, CultureInfo.InvariantCulture);
                     selectedRecord.IsAdmin = this.radAdminTrue.Checked;
                     this.db.UpsertRecord<UsersModel>("Users", selectedRecord.Id, selectedRecord);
                     this.RefreshAccounts();

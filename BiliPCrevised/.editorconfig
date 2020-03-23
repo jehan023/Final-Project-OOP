@@ -1,31 +1,25 @@
 ﻿[*.cs]
 
-# CA1303: Do not pass literals as localized parameters
-dotnet_diagnostic.CA1303.severity = silent
-
-# CA1305: Specify IFormatProvider
-dotnet_diagnostic.CA1305.severity = silent
+# SA1633: File should have header
+dotnet_diagnostic.SA1633.severity = suggestion
 
 # SA1124: Do not use regions
-dotnet_diagnostic.SA1124.severity = silent
+dotnet_diagnostic.SA1124.severity = suggestion
+
+# IDE0058: Expression value is never used
+csharp_style_unused_value_expression_statement_preference = discard_variable:none
 
 # SA1600: Elements should be documented
-dotnet_diagnostic.SA1600.severity = silent
-
-# SA1633: File should have header
-dotnet_diagnostic.SA1633.severity = silent
+dotnet_diagnostic.SA1600.severity = suggestion
 
 # SA1601: Partial elements should be documented
-dotnet_diagnostic.SA1601.severity = silent
+dotnet_diagnostic.SA1601.severity = suggestion
+
+# CA1303: Do not pass literals as localized parameters
+dotnet_diagnostic.CA1303.severity = none
 
 # SA0001: XML comment analysis is disabled due to project configuration
 dotnet_diagnostic.SA0001.severity = silent
-
-# SA1201: Elements should appear in the correct order
-dotnet_diagnostic.SA1201.severity = silent
-
-# SA1400: Access modifier should be declared
-dotnet_diagnostic.SA1400.severity = none
 
 # AD0001: Analyzer Failure
 dotnet_diagnostic.AD0001.severity = silent

@@ -48,10 +48,10 @@
             // 
             this.picBiliPCLogo.Image = ((System.Drawing.Image)(resources.GetObject("picBiliPCLogo.Image")));
             this.picBiliPCLogo.InitialImage = ((System.Drawing.Image)(resources.GetObject("picBiliPCLogo.InitialImage")));
-            this.picBiliPCLogo.Location = new System.Drawing.Point(85, 44);
+            this.picBiliPCLogo.Location = new System.Drawing.Point(91, 44);
             this.picBiliPCLogo.Margin = new System.Windows.Forms.Padding(2);
             this.picBiliPCLogo.Name = "picBiliPCLogo";
-            this.picBiliPCLogo.Size = new System.Drawing.Size(181, 145);
+            this.picBiliPCLogo.Size = new System.Drawing.Size(164, 145);
             this.picBiliPCLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBiliPCLogo.TabIndex = 8;
             this.picBiliPCLogo.TabStop = false;
@@ -193,6 +193,7 @@
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "LoginUI";

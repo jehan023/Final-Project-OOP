@@ -1,6 +1,7 @@
 ﻿namespace BiliPC
 {
     using System;
+    using System.Globalization;
     using System.Windows.Forms;
     using MongoDB.Bson;
 
@@ -12,6 +13,17 @@
         {
             this.InitializeComponent();
             this.RefreshInventory();
+
+            // Show first item in the textboxes
+            this.idBox.Text = this.dgdProduct.Rows[0].Cells[0].Value.ToString();
+            this.txtItemName.Text = this.dgdProduct.Rows[0].Cells[1].Value.ToString();
+            this.txtQuantity.Text = this.dgdProduct.Rows[0].Cells[2].Value.ToString();
+            this.txtUnitPrice.Text = this.dgdProduct.Rows[0].Cells[3].Value.ToString();
+            this.txtCost.Text = this.dgdProduct.Rows[0].Cells[4].Value.ToString();
+            this.txtCategory.Text = this.dgdProduct.Rows[0].Cells[5].Value.ToString();
+            this.txtSupplier.Text = this.dgdProduct.Rows[0].Cells[6].Value.ToString();
+            this.radInStockTrue.Checked = this.dgdProduct.Rows[0].Cells[7].Value.Equals(true);
+            this.radInStockFalse.Checked = this.dgdProduct.Rows[0].Cells[7].Value.Equals(false);
         }
 
         private void RefreshInventory()
@@ -29,7 +41,7 @@
 
         private void BtnX_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            this.Close();
         }
 
         private void BtnRefreshItem_Click(object sender, EventArgs e)
@@ -59,12 +71,12 @@
                 {
                     var selectedRecord = this.db.LoadRecordById<InventoryModel>("Inventory", new ObjectId(this.idBox.Text));
                     selectedRecord.Item = this.txtItemName.Text;
-                    selectedRecord.Qty = int.Parse(s: this.txtQuantity.Text);
-                    selectedRecord.UnitPrice = double.Parse(s: this.txtUnitPrice.Text);
-                    selectedRecord.Cost = double.Parse(s: this.txtCost.Text);
+                    selectedRecord.Qty = int.Parse(s: this.txtQuantity.Text, CultureInfo.InvariantCulture);
+                    selectedRecord.UnitPrice = double.Parse(s: this.txtUnitPrice.Text, CultureInfo.InvariantCulture);
+                    selectedRecord.Cost = double.Parse(s: this.txtCost.Text, CultureInfo.InvariantCulture);
                     selectedRecord.Category = this.txtCategory.Text;
                     selectedRecord.Supplier = this.txtSupplier.Text;
-                    selectedRecord.Status = int.Parse(this.txtQuantity.Text) != 0;
+                    selectedRecord.Status = int.Parse(this.txtQuantity.Text, CultureInfo.InvariantCulture) != 0;
 
                     this.db.UpsertRecord<InventoryModel>("Inventory", selectedRecord.Id, selectedRecord);
                     this.RefreshInventory();
