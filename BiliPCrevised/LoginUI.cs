@@ -14,6 +14,8 @@
 
         public static bool Admin { get; set; }
 
+        public static string AcctName { get; set; }
+
         private void BtnLogin_Click(object sender, EventArgs e)
         {
             var userRecord = this.db.LoadRecords<UsersModel>("Users");
@@ -41,6 +43,7 @@
                 {
                     loggedIn = true;
                     Admin = user.IsAdmin;
+                    AcctName = user.Name;
                     this.Hide();
                     using (DashboardUI dashboardUI = new DashboardUI())
                     {

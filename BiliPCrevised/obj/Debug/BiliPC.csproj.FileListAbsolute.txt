@@ -296,3 +296,4 @@ C:\Users\DENNIEL-PC\source\repos\Final-Project-OOP\BiliPCrevised\bin\Debug\BiliP
 C:\Users\Nitro 5\Documents\GitHub\Final-Project-OOP\BiliPCrevised\bin\Debug\BiliPC.exe.CodeAnalysisLog.xml
 C:\Users\Nitro 5\Documents\GitHub\Final-Project-OOP\BiliPCrevised\bin\Debug\BiliPC.exe.lastcodeanalysissucceeded
 C:\Users\Nitro 5\Documents\GitHub\Final-Project-OOP\BiliPCrevised\obj\Debug\BiliPC.csprojAssemblyReference.cache
+C:\Users\DENNIEL-PC\source\repos\Final-Project-OOP\BiliPCrevised\obj\Debug\BiliPC.csprojAssemblyReference.cache

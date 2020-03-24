@@ -58,9 +58,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnRefreshItem = new System.Windows.Forms.Button();
             this.pnlTop = new System.Windows.Forms.Panel();
-            this.searchItemBtn = new System.Windows.Forms.Button();
             this.CategoryBox = new System.Windows.Forms.ComboBox();
             this.lblCategory = new System.Windows.Forms.Label();
+            this.searchItemBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgdProduct)).BeginInit();
             this.GroupTextBox.SuspendLayout();
             this.pnlBackground.SuspendLayout();
@@ -77,6 +77,7 @@
             this.dgdProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgdProduct.Location = new System.Drawing.Point(25, 16);
             this.dgdProduct.Margin = new System.Windows.Forms.Padding(2);
+            this.dgdProduct.MultiSelect = false;
             this.dgdProduct.Name = "dgdProduct";
             this.dgdProduct.ReadOnly = true;
             this.dgdProduct.RowHeadersWidth = 51;
@@ -360,7 +361,8 @@
             // 
             // btnAddItem
             // 
-            this.btnAddItem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddItem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.btnAddItem.BackColor = System.Drawing.Color.SpringGreen;
             this.btnAddItem.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnAddItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
@@ -387,7 +389,8 @@
             // 
             // btnUpdateItem
             // 
-            this.btnUpdateItem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUpdateItem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.btnUpdateItem.BackColor = System.Drawing.Color.SpringGreen;
             this.btnUpdateItem.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnUpdateItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
@@ -403,7 +406,8 @@
             // 
             // btnDeleteItem
             // 
-            this.btnDeleteItem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDeleteItem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.btnDeleteItem.BackColor = System.Drawing.Color.SpringGreen;
             this.btnDeleteItem.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnDeleteItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
@@ -462,7 +466,8 @@
             // 
             // btnRefreshItem
             // 
-            this.btnRefreshItem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRefreshItem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.btnRefreshItem.BackColor = System.Drawing.Color.SpringGreen;
             this.btnRefreshItem.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnRefreshItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
@@ -499,23 +504,6 @@
             this.pnlTop.Size = new System.Drawing.Size(945, 100);
             this.pnlTop.TabIndex = 0;
             // 
-            // searchItemBtn
-            // 
-            this.searchItemBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.searchItemBtn.BackColor = System.Drawing.Color.IndianRed;
-            this.searchItemBtn.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.searchItemBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
-            this.searchItemBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.searchItemBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchItemBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.searchItemBtn.Location = new System.Drawing.Point(849, 62);
-            this.searchItemBtn.Name = "searchItemBtn";
-            this.searchItemBtn.Size = new System.Drawing.Size(75, 25);
-            this.searchItemBtn.TabIndex = 0;
-            this.searchItemBtn.Text = "Search";
-            this.searchItemBtn.UseVisualStyleBackColor = false;
-            this.searchItemBtn.Click += new System.EventHandler(this.SearchBtn_Click);
-            // 
             // CategoryBox
             // 
             this.CategoryBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -541,6 +529,23 @@
             this.lblCategory.Size = new System.Drawing.Size(87, 18);
             this.lblCategory.TabIndex = 39;
             this.lblCategory.Text = "Category:";
+            // 
+            // searchItemBtn
+            // 
+            this.searchItemBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.searchItemBtn.BackColor = System.Drawing.Color.IndianRed;
+            this.searchItemBtn.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.searchItemBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.searchItemBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.searchItemBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchItemBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.searchItemBtn.Location = new System.Drawing.Point(849, 62);
+            this.searchItemBtn.Name = "searchItemBtn";
+            this.searchItemBtn.Size = new System.Drawing.Size(75, 25);
+            this.searchItemBtn.TabIndex = 0;
+            this.searchItemBtn.Text = "Search";
+            this.searchItemBtn.UseVisualStyleBackColor = false;
+            this.searchItemBtn.Click += new System.EventHandler(this.SearchBtn_Click);
             // 
             // Products
             // 

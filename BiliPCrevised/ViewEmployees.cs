@@ -2,6 +2,7 @@
 {
     using System;
     using System.Globalization;
+    using System.Linq;
     using System.Windows.Forms;
     using MongoDB.Bson;
 
@@ -13,16 +14,6 @@
         {
             this.InitializeComponent();
             this.RefreshAccounts();
-
-            // Show first item in the textboxes
-            this.txtAcctID.Text = this.dgdEmployee.Rows[0].Cells[0].Value.ToString();
-            this.radAdminTrue.Checked = this.dgdEmployee.Rows[0].Cells[1].Value.Equals(true);
-            this.radAdminFalse.Checked = this.dgdEmployee.Rows[0].Cells[1].Value.Equals(false);
-            this.txtAcctName.Text = this.dgdEmployee.Rows[0].Cells[2].Value.ToString();
-            this.txtAcctUsername.Text = this.dgdEmployee.Rows[0].Cells[3].Value.ToString();
-            this.txtAcctPassword.Text = this.dgdEmployee.Rows[0].Cells[4].Value.ToString();
-            this.txtAcctWage.Text = this.dgdEmployee.Rows[0].Cells[5].Value.ToString();
-            this.txtAcctWorkhours.Text = this.dgdEmployee.Rows[0].Cells[6].Value.ToString();
         }
 
         private void BtnX_Click(object sender, EventArgs e)
@@ -32,7 +23,7 @@
 
         private void BtnSearchEmployee_Click(object sender, EventArgs e)
         {
-            var selectedRecord = this.db.LoadRecordsBySpecific<UsersModel>("Users", "Name", this.txtSearchEmployee.Text);
+            var selectedRecord = this.db.LoadRecordsByStringList<UsersModel>("Users", "Name", this.txtSearchEmployee.Text);
             this.dgdEmployee.DataSource = selectedRecord;
         }
 
@@ -41,6 +32,34 @@
             var userRecord = this.db.LoadRecords<UsersModel>("Users");
             this.dgdEmployee.DataSource = userRecord;
             this.txtSearchEmployee.Text = string.Empty;
+
+            if (userRecord.Any())
+            {
+                // Show first item in the textboxes
+                this.txtAcctID.Text = this.dgdEmployee.Rows[0].Cells[0].Value.ToString();
+                this.radAdminTrue.Checked = this.dgdEmployee.Rows[0].Cells[1].Value.Equals(true);
+                this.radAdminFalse.Checked = this.dgdEmployee.Rows[0].Cells[1].Value.Equals(false);
+                this.txtAcctName.Text = this.dgdEmployee.Rows[0].Cells[2].Value.ToString();
+                this.txtAcctUsername.Text = this.dgdEmployee.Rows[0].Cells[3].Value.ToString();
+                this.txtAcctPassword.Text = this.dgdEmployee.Rows[0].Cells[4].Value.ToString();
+                this.txtAcctWage.Text = this.dgdEmployee.Rows[0].Cells[5].Value.ToString();
+                this.txtAcctWorkhours.Text = this.dgdEmployee.Rows[0].Cells[6].Value.ToString();
+            }
+            else
+            {
+                // Clear textboxes if the data is null
+                this.txtAcctID.Text
+                    = this.txtAcctName.Text
+                    = this.txtAcctUsername.Text
+                    = this.txtAcctPassword.Text
+                    = this.txtAcctPassword.Text
+                    = this.txtAcctWage.Text
+                    = this.txtAcctWorkhours.Text
+                    = string.Empty;
+                this.radAdminTrue.Checked
+                    = this.radAdminFalse.Checked
+                    = false;
+            }
         }
 
         private void RefreshBtn_Click(object sender, EventArgs e)
@@ -54,6 +73,8 @@
             {
                 addEmployee.ShowDialog();
             }
+
+            this.RefreshAccounts();
         }
 
         private void BtnUpdateAccount_Click(object sender, EventArgs e)
@@ -76,8 +97,8 @@
                     selectedRecord.Workhours = double.Parse(this.txtAcctWorkhours.Text, CultureInfo.InvariantCulture);
                     selectedRecord.IsAdmin = this.radAdminTrue.Checked;
                     this.db.UpsertRecord<UsersModel>("Users", selectedRecord.Id, selectedRecord);
-                    this.RefreshAccounts();
                     MessageBox.Show("Account updated.");
+                    this.RefreshAccounts();
                 }
                 catch (FormatException)
                 {
@@ -91,8 +112,8 @@
             try
             {
                 this.db.DeleleRecord<UsersModel>("Users", ObjectId.Parse(this.txtAcctID.Text));
-                this.RefreshAccounts();
                 MessageBox.Show("Account deleted.");
+                this.RefreshAccounts();
             }
             catch (FormatException)
             {
@@ -113,9 +134,10 @@
                 this.txtAcctWage.Text = this.dgdEmployee.Rows[e.RowIndex].Cells[5].Value.ToString();
                 this.txtAcctWorkhours.Text = this.dgdEmployee.Rows[e.RowIndex].Cells[6].Value.ToString();
             }
-            catch (Exception)
+            catch (ArgumentOutOfRangeException)
             {
-                MessageBox.Show("Invalid selction.");
+                // Occurs when upper-leftmost datagridview is clicked.
+                MessageBox.Show("Invalid selection.");
             }
         }
 

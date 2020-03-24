@@ -55,6 +55,8 @@
             this.pnlTop = new System.Windows.Forms.Panel();
             this.pnlContainerForm = new System.Windows.Forms.Panel();
             this.picBiliPCLogoDefault = new System.Windows.Forms.PictureBox();
+            this.lblLoggedInAs = new System.Windows.Forms.Label();
+            this.lblAcctName = new System.Windows.Forms.Label();
             this.pnlSideMenu.SuspendLayout();
             this.panelManageEmployees.SuspendLayout();
             this.panelInventory.SuspendLayout();
@@ -86,7 +88,7 @@
             this.lblDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblDate.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDate.ForeColor = System.Drawing.Color.White;
-            this.lblDate.Location = new System.Drawing.Point(12, 619);
+            this.lblDate.Location = new System.Drawing.Point(12, 637);
             this.lblDate.Margin = new System.Windows.Forms.Padding(0);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(34, 14);
@@ -101,7 +103,7 @@
             this.lblTime.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblTime.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTime.ForeColor = System.Drawing.Color.White;
-            this.lblTime.Location = new System.Drawing.Point(39, 592);
+            this.lblTime.Location = new System.Drawing.Point(12, 614);
             this.lblTime.Margin = new System.Windows.Forms.Padding(0);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(43, 17);
@@ -134,6 +136,8 @@
             // 
             this.pnlSideMenu.AutoScroll = true;
             this.pnlSideMenu.BackColor = System.Drawing.Color.Black;
+            this.pnlSideMenu.Controls.Add(this.lblAcctName);
+            this.pnlSideMenu.Controls.Add(this.lblLoggedInAs);
             this.pnlSideMenu.Controls.Add(this.btnLogout);
             this.pnlSideMenu.Controls.Add(this.panelManageEmployees);
             this.pnlSideMenu.Controls.Add(this.btnManageEmployees);
@@ -478,6 +482,28 @@
             this.picBiliPCLogoDefault.TabIndex = 0;
             this.picBiliPCLogoDefault.TabStop = false;
             // 
+            // lblLoggedInAs
+            // 
+            this.lblLoggedInAs.AutoSize = true;
+            this.lblLoggedInAs.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoggedInAs.ForeColor = System.Drawing.Color.White;
+            this.lblLoggedInAs.Location = new System.Drawing.Point(11, 559);
+            this.lblLoggedInAs.Name = "lblLoggedInAs";
+            this.lblLoggedInAs.Size = new System.Drawing.Size(79, 12);
+            this.lblLoggedInAs.TabIndex = 23;
+            this.lblLoggedInAs.Text = "Logged in as:";
+            // 
+            // lblAcctName
+            // 
+            this.lblAcctName.AutoSize = true;
+            this.lblAcctName.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAcctName.ForeColor = System.Drawing.Color.White;
+            this.lblAcctName.Location = new System.Drawing.Point(22, 576);
+            this.lblAcctName.Name = "lblAcctName";
+            this.lblAcctName.Size = new System.Drawing.Size(47, 17);
+            this.lblAcctName.TabIndex = 24;
+            this.lblAcctName.Text = "Gago";
+            // 
             // DashboardUI
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -533,5 +559,7 @@
         private System.Windows.Forms.Panel pnlTop;
         private System.Windows.Forms.Panel pnlContainerForm;
         private System.Windows.Forms.PictureBox picBiliPCLogoDefault;
+        private System.Windows.Forms.Label lblAcctName;
+        private System.Windows.Forms.Label lblLoggedInAs;
     }
 }

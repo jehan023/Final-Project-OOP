@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlTop = new System.Windows.Forms.Panel();
             this.btnX = new System.Windows.Forms.Button();
             this.lblTransaction = new System.Windows.Forms.Label();
             this.pnlBackground = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.lblCategory = new System.Windows.Forms.Label();
+            this.cboCategory = new System.Windows.Forms.ComboBox();
             this.cboItem = new System.Windows.Forms.ComboBox();
             this.txtTransacationID = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -56,25 +56,25 @@
             this.txtQuantity = new System.Windows.Forms.TextBox();
             this.lblQuantity = new System.Windows.Forms.Label();
             this.lblItem = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panel1.SuspendLayout();
+            this.dgdCart = new System.Windows.Forms.DataGridView();
+            this.pnlTop.SuspendLayout();
             this.pnlBackground.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgdCart)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // pnlTop
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.pnlTop.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.panel1.Controls.Add(this.btnX);
-            this.panel1.Controls.Add(this.lblTransaction);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(945, 56);
-            this.panel1.TabIndex = 0;
+            this.pnlTop.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.pnlTop.Controls.Add(this.btnX);
+            this.pnlTop.Controls.Add(this.lblTransaction);
+            this.pnlTop.Location = new System.Drawing.Point(0, 0);
+            this.pnlTop.Name = "pnlTop";
+            this.pnlTop.Size = new System.Drawing.Size(945, 56);
+            this.pnlTop.TabIndex = 0;
             // 
             // btnX
             // 
@@ -111,8 +111,8 @@
             this.pnlBackground.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlBackground.Controls.Add(this.label10);
-            this.pnlBackground.Controls.Add(this.comboBox2);
+            this.pnlBackground.Controls.Add(this.lblCategory);
+            this.pnlBackground.Controls.Add(this.cboCategory);
             this.pnlBackground.Controls.Add(this.cboItem);
             this.pnlBackground.Controls.Add(this.txtTransacationID);
             this.pnlBackground.Controls.Add(this.groupBox2);
@@ -129,36 +129,37 @@
             this.pnlBackground.Controls.Add(this.txtQuantity);
             this.pnlBackground.Controls.Add(this.lblQuantity);
             this.pnlBackground.Controls.Add(this.lblItem);
-            this.pnlBackground.Controls.Add(this.dataGridView1);
+            this.pnlBackground.Controls.Add(this.dgdCart);
             this.pnlBackground.Location = new System.Drawing.Point(0, 56);
             this.pnlBackground.Name = "pnlBackground";
             this.pnlBackground.Size = new System.Drawing.Size(945, 583);
             this.pnlBackground.TabIndex = 1;
             // 
-            // label10
+            // lblCategory
             // 
-            this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(500, 31);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(95, 24);
-            this.label10.TabIndex = 60;
-            this.label10.Text = "Category :";
+            this.lblCategory.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblCategory.AutoSize = true;
+            this.lblCategory.BackColor = System.Drawing.Color.Transparent;
+            this.lblCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategory.ForeColor = System.Drawing.Color.Black;
+            this.lblCategory.Location = new System.Drawing.Point(500, 31);
+            this.lblCategory.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCategory.Name = "lblCategory";
+            this.lblCategory.Size = new System.Drawing.Size(95, 24);
+            this.lblCategory.TabIndex = 60;
+            this.lblCategory.Text = "Category :";
             // 
-            // comboBox2
+            // cboCategory
             // 
-            this.comboBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(599, 31);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(192, 28);
-            this.comboBox2.TabIndex = 59;
+            this.cboCategory.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cboCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboCategory.FormattingEnabled = true;
+            this.cboCategory.Location = new System.Drawing.Point(599, 31);
+            this.cboCategory.Margin = new System.Windows.Forms.Padding(2);
+            this.cboCategory.Name = "cboCategory";
+            this.cboCategory.Size = new System.Drawing.Size(192, 28);
+            this.cboCategory.TabIndex = 59;
+            this.cboCategory.SelectedIndexChanged += new System.EventHandler(this.CboCategory_SelectedIndexChanged);
             // 
             // cboItem
             // 
@@ -170,6 +171,7 @@
             this.cboItem.Name = "cboItem";
             this.cboItem.Size = new System.Drawing.Size(372, 28);
             this.cboItem.TabIndex = 58;
+            this.cboItem.SelectedIndexChanged += new System.EventHandler(this.CboItem_SelectedIndexChanged);
             // 
             // txtTransacationID
             // 
@@ -452,16 +454,17 @@
             this.lblItem.TabIndex = 41;
             this.lblItem.Text = "Item :";
             // 
-            // dataGridView1
+            // dgdCart
             // 
-            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(15, 107);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(904, 301);
-            this.dataGridView1.TabIndex = 0;
+            this.dgdCart.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dgdCart.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgdCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgdCart.Location = new System.Drawing.Point(15, 107);
+            this.dgdCart.MultiSelect = false;
+            this.dgdCart.Name = "dgdCart";
+            this.dgdCart.RowHeadersWidth = 51;
+            this.dgdCart.Size = new System.Drawing.Size(904, 301);
+            this.dgdCart.TabIndex = 0;
             // 
             // TransactionForm
             // 
@@ -470,31 +473,32 @@
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(945, 639);
             this.Controls.Add(this.pnlBackground);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(945, 639);
             this.Name = "TransactionForm";
             this.Text = "TransactionForm";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.Load += new System.EventHandler(this.TransactionForm_Load);
+            this.pnlTop.ResumeLayout(false);
+            this.pnlTop.PerformLayout();
             this.pnlBackground.ResumeLayout(false);
             this.pnlBackground.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgdCart)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlTop;
         private System.Windows.Forms.Panel pnlBackground;
         private System.Windows.Forms.Label lblTransaction;
         private System.Windows.Forms.Button btnX;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgdCart;
         private System.Windows.Forms.Label lblTotalUnitPrice;
         private System.Windows.Forms.TextBox txtTotalUnitPrice;
         private System.Windows.Forms.TextBox txtQuantity;
@@ -517,7 +521,7 @@
         private System.Windows.Forms.TextBox txtTransacationID;
         private System.Windows.Forms.Label lblTransactionID;
         private System.Windows.Forms.ComboBox cboItem;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox cboCategory;
+        private System.Windows.Forms.Label lblCategory;
     }
 }

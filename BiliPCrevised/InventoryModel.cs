@@ -3,7 +3,7 @@
     using MongoDB.Bson;
     using MongoDB.Bson.Serialization.Attributes;
 
-    internal class InventoryModel
+    public class InventoryModel
     {
         [BsonId]
         public ObjectId Id { get; set; }

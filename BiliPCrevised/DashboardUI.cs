@@ -17,6 +17,7 @@
             using (new LoginUI())
             {
                 this.btnManageEmployees.Visible = LoginUI.Admin;
+                this.lblAcctName.Text = LoginUI.AcctName;
             }
         }
 

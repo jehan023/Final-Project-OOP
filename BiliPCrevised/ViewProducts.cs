@@ -35,13 +35,13 @@
 
         private void BtnSearchItem_Click(object sender, EventArgs e)
         {
-            var selectedRecord = this.db.LoadRecordsBySpecific<InventoryModel>("Inventory", "Item", this.txtSearchItem.Text);
+            var selectedRecord = this.db.LoadRecordsByStringList<InventoryModel>("Inventory", "Item", this.txtSearchItem.Text);
             this.dgdViewProducts.DataSource = selectedRecord;
         }
 
         private void CboCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var selectedRecord = this.db.LoadRecordsBySpecific<InventoryModel>("Inventory", "Category", this.cboCategory.Text);
+            var selectedRecord = this.db.LoadRecordsByStringList<InventoryModel>("Inventory", "Category", this.cboCategory.Text);
             this.dgdViewProducts.DataSource = selectedRecord;
         }
 

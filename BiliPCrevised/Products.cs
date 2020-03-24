@@ -2,6 +2,7 @@
 {
     using System;
     using System.Globalization;
+    using System.Linq;
     using System.Windows.Forms;
     using MongoDB.Bson;
 
@@ -13,17 +14,6 @@
         {
             this.InitializeComponent();
             this.RefreshInventory();
-
-            // Show first item in the textboxes
-            this.idBox.Text = this.dgdProduct.Rows[0].Cells[0].Value.ToString();
-            this.txtItemName.Text = this.dgdProduct.Rows[0].Cells[1].Value.ToString();
-            this.txtQuantity.Text = this.dgdProduct.Rows[0].Cells[2].Value.ToString();
-            this.txtUnitPrice.Text = this.dgdProduct.Rows[0].Cells[3].Value.ToString();
-            this.txtCost.Text = this.dgdProduct.Rows[0].Cells[4].Value.ToString();
-            this.txtCategory.Text = this.dgdProduct.Rows[0].Cells[5].Value.ToString();
-            this.txtSupplier.Text = this.dgdProduct.Rows[0].Cells[6].Value.ToString();
-            this.radInStockTrue.Checked = this.dgdProduct.Rows[0].Cells[7].Value.Equals(true);
-            this.radInStockFalse.Checked = this.dgdProduct.Rows[0].Cells[7].Value.Equals(false);
         }
 
         private void RefreshInventory()
@@ -39,11 +29,40 @@
                     this.CategoryBox.Items.Add(itemInventory.Category);
                 }
             }
+
+            if (inventoryRecord.Any())
+            {
+                // Show first item in the textboxes if there is data
+                this.idBox.Text = this.dgdProduct.Rows[0].Cells[0].Value.ToString();
+                this.txtItemName.Text = this.dgdProduct.Rows[0].Cells[1].Value.ToString();
+                this.txtQuantity.Text = this.dgdProduct.Rows[0].Cells[2].Value.ToString();
+                this.txtUnitPrice.Text = this.dgdProduct.Rows[0].Cells[3].Value.ToString();
+                this.txtCost.Text = this.dgdProduct.Rows[0].Cells[4].Value.ToString();
+                this.txtCategory.Text = this.dgdProduct.Rows[0].Cells[5].Value.ToString();
+                this.txtSupplier.Text = this.dgdProduct.Rows[0].Cells[6].Value.ToString();
+                this.radInStockTrue.Checked = this.dgdProduct.Rows[0].Cells[7].Value.Equals(true);
+                this.radInStockFalse.Checked = this.dgdProduct.Rows[0].Cells[7].Value.Equals(false);
+            }
+            else
+            {
+                // Clear textboxes if the data is null
+                this.idBox.Text
+                    = this.txtItemName.Text
+                    = this.txtQuantity.Text
+                    = this.txtUnitPrice.Text
+                    = this.txtCost.Text
+                    = this.txtCategory.Text
+                    = this.txtSupplier.Text
+                    = string.Empty;
+                this.radInStockTrue.Checked
+                    = this.radInStockFalse.Checked
+                    = false;
+            }
         }
 
         private void SearchBtn_Click(object sender, EventArgs e)
         {
-            var selectedRecord = this.db.LoadRecordsBySpecific<InventoryModel>("Inventory", "Item", this.txtSearchItem.Text);
+            var selectedRecord = this.db.LoadRecordsByStringList<InventoryModel>("Inventory", "Item", this.txtSearchItem.Text);
             this.dgdProduct.DataSource = selectedRecord;
         }
 
@@ -64,6 +83,8 @@
             {
                 addItem.ShowDialog();
             }
+
+            this.RefreshInventory();
         }
 
         private void BtnUpdateItem_Click(object sender, EventArgs e)
@@ -88,8 +109,8 @@
                     selectedRecord.Status = int.Parse(this.txtQuantity.Text, CultureInfo.InvariantCulture) != 0;
 
                     this.db.UpsertRecord<InventoryModel>("Inventory", selectedRecord.Id, selectedRecord);
-                    this.RefreshInventory();
                     MessageBox.Show("Item updated.");
+                    this.RefreshInventory();
                 }
                 catch (FormatException)
                 {
@@ -103,8 +124,8 @@
             try
             {
                 this.db.DeleleRecord<InventoryModel>("Inventory", ObjectId.Parse(this.idBox.Text));
-                this.RefreshInventory();
                 MessageBox.Show("Item deleted.");
+                this.RefreshInventory();
             }
             catch (FormatException)
             {
@@ -126,8 +147,9 @@
                 this.radInStockTrue.Checked = this.dgdProduct.Rows[e.RowIndex].Cells[7].Value.Equals(true);
                 this.radInStockFalse.Checked = this.dgdProduct.Rows[e.RowIndex].Cells[7].Value.Equals(false);
             }
-            catch (Exception)
+            catch (ArgumentOutOfRangeException)
             {
+                // Occurs when upper-leftmost datagridview is clicked.
                 MessageBox.Show("Invalid selection.");
             }
         }
@@ -139,7 +161,7 @@
 
         private void CategoryBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var selectedRecord = this.db.LoadRecordsBySpecific<InventoryModel>("Inventory", "Category", this.CategoryBox.Text);
+            var selectedRecord = this.db.LoadRecordsByStringList<InventoryModel>("Inventory", "Category", this.CategoryBox.Text);
             this.dgdProduct.DataSource = selectedRecord;
         }
     }
