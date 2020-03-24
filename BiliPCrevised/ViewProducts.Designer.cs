@@ -59,6 +59,7 @@
             // txtSearchItem
             // 
             this.txtSearchItem.BackColor = System.Drawing.SystemColors.Window;
+            this.txtSearchItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchItem.Location = new System.Drawing.Point(159, 75);
             this.txtSearchItem.Margin = new System.Windows.Forms.Padding(2);
             this.txtSearchItem.Name = "txtSearchItem";
@@ -119,16 +120,18 @@
             // 
             // btnSearchItem
             // 
+            this.btnSearchItem.BackColor = System.Drawing.Color.IndianRed;
             this.btnSearchItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnSearchItem.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSearchItem.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSearchItem.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchItem.ForeColor = System.Drawing.Color.White;
             this.btnSearchItem.Location = new System.Drawing.Point(519, 74);
             this.btnSearchItem.Name = "btnSearchItem";
             this.btnSearchItem.Size = new System.Drawing.Size(75, 26);
             this.btnSearchItem.TabIndex = 19;
             this.btnSearchItem.Text = "Search";
-            this.btnSearchItem.UseVisualStyleBackColor = true;
+            this.btnSearchItem.UseVisualStyleBackColor = false;
             this.btnSearchItem.Click += new System.EventHandler(this.BtnSearchItem_Click);
             // 
             // cboCategory
@@ -178,12 +181,15 @@
             // 
             // dgdViewProducts
             // 
+            this.dgdViewProducts.AllowUserToAddRows = false;
+            this.dgdViewProducts.AllowUserToDeleteRows = false;
             this.dgdViewProducts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgdViewProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgdViewProducts.Location = new System.Drawing.Point(26, 22);
             this.dgdViewProducts.Name = "dgdViewProducts";
+            this.dgdViewProducts.ReadOnly = true;
             this.dgdViewProducts.Size = new System.Drawing.Size(894, 430);
             this.dgdViewProducts.TabIndex = 0;
             // 

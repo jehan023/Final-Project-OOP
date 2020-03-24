@@ -31,6 +31,14 @@
             var inventoryRecord = this.db.LoadRecords<InventoryModel>("Inventory");
             this.dgdProduct.DataSource = inventoryRecord;
             this.txtSearchItem.Text = string.Empty;
+
+            foreach (var itemInventory in inventoryRecord)
+            {
+                if (!this.CategoryBox.Items.Contains(itemInventory.Category))
+                {
+                    this.CategoryBox.Items.Add(itemInventory.Category);
+                }
+            }
         }
 
         private void SearchBtn_Click(object sender, EventArgs e)
@@ -46,6 +54,7 @@
 
         private void BtnRefreshItem_Click(object sender, EventArgs e)
         {
+            this.CategoryBox.Text = string.Empty;
             this.RefreshInventory();
         }
 
@@ -80,6 +89,7 @@
 
                     this.db.UpsertRecord<InventoryModel>("Inventory", selectedRecord.Id, selectedRecord);
                     this.RefreshInventory();
+                    MessageBox.Show("Item updated.");
                 }
                 catch (FormatException)
                 {
@@ -94,6 +104,7 @@
             {
                 this.db.DeleleRecord<InventoryModel>("Inventory", ObjectId.Parse(this.idBox.Text));
                 this.RefreshInventory();
+                MessageBox.Show("Item deleted.");
             }
             catch (FormatException)
             {
@@ -103,20 +114,33 @@
 
         private void DgdProduct_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            this.idBox.Text = this.dgdProduct.Rows[e.RowIndex].Cells[0].Value.ToString();
-            this.txtItemName.Text = this.dgdProduct.Rows[e.RowIndex].Cells[1].Value.ToString();
-            this.txtQuantity.Text = this.dgdProduct.Rows[e.RowIndex].Cells[2].Value.ToString();
-            this.txtUnitPrice.Text = this.dgdProduct.Rows[e.RowIndex].Cells[3].Value.ToString();
-            this.txtCost.Text = this.dgdProduct.Rows[e.RowIndex].Cells[4].Value.ToString();
-            this.txtCategory.Text = this.dgdProduct.Rows[e.RowIndex].Cells[5].Value.ToString();
-            this.txtSupplier.Text = this.dgdProduct.Rows[e.RowIndex].Cells[6].Value.ToString();
-            this.radInStockTrue.Checked = this.dgdProduct.Rows[e.RowIndex].Cells[7].Value.Equals(true);
-            this.radInStockFalse.Checked = this.dgdProduct.Rows[e.RowIndex].Cells[7].Value.Equals(false);
+            try
+            {
+                this.idBox.Text = this.dgdProduct.Rows[e.RowIndex].Cells[0].Value.ToString();
+                this.txtItemName.Text = this.dgdProduct.Rows[e.RowIndex].Cells[1].Value.ToString();
+                this.txtQuantity.Text = this.dgdProduct.Rows[e.RowIndex].Cells[2].Value.ToString();
+                this.txtUnitPrice.Text = this.dgdProduct.Rows[e.RowIndex].Cells[3].Value.ToString();
+                this.txtCost.Text = this.dgdProduct.Rows[e.RowIndex].Cells[4].Value.ToString();
+                this.txtCategory.Text = this.dgdProduct.Rows[e.RowIndex].Cells[5].Value.ToString();
+                this.txtSupplier.Text = this.dgdProduct.Rows[e.RowIndex].Cells[6].Value.ToString();
+                this.radInStockTrue.Checked = this.dgdProduct.Rows[e.RowIndex].Cells[7].Value.Equals(true);
+                this.radInStockFalse.Checked = this.dgdProduct.Rows[e.RowIndex].Cells[7].Value.Equals(false);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Invalid selection.");
+            }
         }
 
         private void CostBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             Functions.RestrictedKeyPressToInt(e);
+        }
+
+        private void CategoryBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var selectedRecord = this.db.LoadRecordsBySpecific<InventoryModel>("Inventory", "Category", this.CategoryBox.Text);
+            this.dgdProduct.DataSource = selectedRecord;
         }
     }
 }

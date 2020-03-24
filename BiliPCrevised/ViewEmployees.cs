@@ -77,6 +77,7 @@
                     selectedRecord.IsAdmin = this.radAdminTrue.Checked;
                     this.db.UpsertRecord<UsersModel>("Users", selectedRecord.Id, selectedRecord);
                     this.RefreshAccounts();
+                    MessageBox.Show("Account updated.");
                 }
                 catch (FormatException)
                 {
@@ -91,6 +92,7 @@
             {
                 this.db.DeleleRecord<UsersModel>("Users", ObjectId.Parse(this.txtAcctID.Text));
                 this.RefreshAccounts();
+                MessageBox.Show("Account deleted.");
             }
             catch (FormatException)
             {
@@ -100,14 +102,21 @@
 
         private void DgdEmployee_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            this.txtAcctID.Text = this.dgdEmployee.Rows[e.RowIndex].Cells[0].Value.ToString();
-            this.radAdminTrue.Checked = this.dgdEmployee.Rows[e.RowIndex].Cells[1].Value.Equals(true);
-            this.radAdminFalse.Checked = this.dgdEmployee.Rows[e.RowIndex].Cells[1].Value.Equals(false);
-            this.txtAcctName.Text = this.dgdEmployee.Rows[e.RowIndex].Cells[2].Value.ToString();
-            this.txtAcctUsername.Text = this.dgdEmployee.Rows[e.RowIndex].Cells[3].Value.ToString();
-            this.txtAcctPassword.Text = this.dgdEmployee.Rows[e.RowIndex].Cells[4].Value.ToString();
-            this.txtAcctWage.Text = this.dgdEmployee.Rows[e.RowIndex].Cells[5].Value.ToString();
-            this.txtAcctWorkhours.Text = this.dgdEmployee.Rows[e.RowIndex].Cells[6].Value.ToString();
+            try
+            {
+                this.txtAcctID.Text = this.dgdEmployee.Rows[e.RowIndex].Cells[0].Value.ToString();
+                this.radAdminTrue.Checked = this.dgdEmployee.Rows[e.RowIndex].Cells[1].Value.Equals(true);
+                this.radAdminFalse.Checked = this.dgdEmployee.Rows[e.RowIndex].Cells[1].Value.Equals(false);
+                this.txtAcctName.Text = this.dgdEmployee.Rows[e.RowIndex].Cells[2].Value.ToString();
+                this.txtAcctUsername.Text = this.dgdEmployee.Rows[e.RowIndex].Cells[3].Value.ToString();
+                this.txtAcctPassword.Text = this.dgdEmployee.Rows[e.RowIndex].Cells[4].Value.ToString();
+                this.txtAcctWage.Text = this.dgdEmployee.Rows[e.RowIndex].Cells[5].Value.ToString();
+                this.txtAcctWorkhours.Text = this.dgdEmployee.Rows[e.RowIndex].Cells[6].Value.ToString();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Invalid selction.");
+            }
         }
 
         private void WageBox_KeyPress(object sender, KeyPressEventArgs e)

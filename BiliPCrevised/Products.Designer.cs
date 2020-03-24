@@ -59,6 +59,8 @@
             this.btnRefreshItem = new System.Windows.Forms.Button();
             this.pnlTop = new System.Windows.Forms.Panel();
             this.searchItemBtn = new System.Windows.Forms.Button();
+            this.CategoryBox = new System.Windows.Forms.ComboBox();
+            this.lblCategory = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgdProduct)).BeginInit();
             this.GroupTextBox.SuspendLayout();
             this.pnlBackground.SuspendLayout();
@@ -73,7 +75,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgdProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgdProduct.Location = new System.Drawing.Point(25, 14);
+            this.dgdProduct.Location = new System.Drawing.Point(25, 16);
             this.dgdProduct.Margin = new System.Windows.Forms.Padding(2);
             this.dgdProduct.Name = "dgdProduct";
             this.dgdProduct.ReadOnly = true;
@@ -185,7 +187,7 @@
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(477, 90);
+            this.label10.Location = new System.Drawing.Point(477, 89);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(91, 18);
@@ -224,7 +226,7 @@
             // 
             this.txtSupplier.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSupplier.Location = new System.Drawing.Point(586, 48);
+            this.txtSupplier.Location = new System.Drawing.Point(586, 52);
             this.txtSupplier.Margin = new System.Windows.Forms.Padding(2);
             this.txtSupplier.Name = "txtSupplier";
             this.txtSupplier.Size = new System.Drawing.Size(336, 24);
@@ -237,7 +239,7 @@
             this.lblSupplier.BackColor = System.Drawing.Color.Transparent;
             this.lblSupplier.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSupplier.ForeColor = System.Drawing.Color.Black;
-            this.lblSupplier.Location = new System.Drawing.Point(485, 52);
+            this.lblSupplier.Location = new System.Drawing.Point(485, 55);
             this.lblSupplier.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSupplier.Name = "lblSupplier";
             this.lblSupplier.Size = new System.Drawing.Size(83, 18);
@@ -308,11 +310,12 @@
             // txtItemName
             // 
             this.txtItemName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtItemName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtItemName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtItemName.Location = new System.Drawing.Point(128, 51);
             this.txtItemName.Margin = new System.Windows.Forms.Padding(2);
             this.txtItemName.Multiline = true;
             this.txtItemName.Name = "txtItemName";
+            this.txtItemName.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtItemName.Size = new System.Drawing.Size(336, 38);
             this.txtItemName.TabIndex = 46;
             // 
@@ -348,7 +351,7 @@
             this.lblSearchItem.BackColor = System.Drawing.Color.Transparent;
             this.lblSearchItem.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSearchItem.ForeColor = System.Drawing.Color.White;
-            this.lblSearchItem.Location = new System.Drawing.Point(541, 62);
+            this.lblSearchItem.Location = new System.Drawing.Point(536, 65);
             this.lblSearchItem.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSearchItem.Name = "lblSearchItem";
             this.lblSearchItem.Size = new System.Drawing.Size(109, 18);
@@ -362,7 +365,7 @@
             this.btnAddItem.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnAddItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnAddItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddItem.Location = new System.Drawing.Point(156, 54);
+            this.btnAddItem.Location = new System.Drawing.Point(138, 54);
             this.btnAddItem.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddItem.Name = "btnAddItem";
             this.btnAddItem.Size = new System.Drawing.Size(109, 31);
@@ -375,7 +378,8 @@
             // 
             this.txtSearchItem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSearchItem.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.txtSearchItem.Location = new System.Drawing.Point(660, 61);
+            this.txtSearchItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchItem.Location = new System.Drawing.Point(655, 62);
             this.txtSearchItem.Margin = new System.Windows.Forms.Padding(2);
             this.txtSearchItem.Name = "txtSearchItem";
             this.txtSearchItem.Size = new System.Drawing.Size(193, 24);
@@ -388,7 +392,7 @@
             this.btnUpdateItem.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnUpdateItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnUpdateItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdateItem.Location = new System.Drawing.Point(280, 54);
+            this.btnUpdateItem.Location = new System.Drawing.Point(251, 54);
             this.btnUpdateItem.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdateItem.Name = "btnUpdateItem";
             this.btnUpdateItem.Size = new System.Drawing.Size(109, 31);
@@ -404,7 +408,7 @@
             this.btnDeleteItem.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnDeleteItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnDeleteItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteItem.Location = new System.Drawing.Point(404, 54);
+            this.btnDeleteItem.Location = new System.Drawing.Point(364, 54);
             this.btnDeleteItem.Margin = new System.Windows.Forms.Padding(2);
             this.btnDeleteItem.Name = "btnDeleteItem";
             this.btnDeleteItem.Size = new System.Drawing.Size(109, 31);
@@ -463,7 +467,7 @@
             this.btnRefreshItem.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnRefreshItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnRefreshItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRefreshItem.Location = new System.Drawing.Point(32, 54);
+            this.btnRefreshItem.Location = new System.Drawing.Point(25, 54);
             this.btnRefreshItem.Margin = new System.Windows.Forms.Padding(2);
             this.btnRefreshItem.Name = "btnRefreshItem";
             this.btnRefreshItem.Size = new System.Drawing.Size(109, 31);
@@ -475,6 +479,8 @@
             // pnlTop
             // 
             this.pnlTop.BackColor = System.Drawing.Color.Firebrick;
+            this.pnlTop.Controls.Add(this.CategoryBox);
+            this.pnlTop.Controls.Add(this.lblCategory);
             this.pnlTop.Controls.Add(this.searchItemBtn);
             this.pnlTop.Controls.Add(this.btnRefreshItem);
             this.pnlTop.Controls.Add(this.label5);
@@ -495,16 +501,46 @@
             // 
             // searchItemBtn
             // 
-            this.searchItemBtn.BackColor = System.Drawing.Color.Firebrick;
-            this.searchItemBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.searchItemBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.searchItemBtn.BackColor = System.Drawing.Color.IndianRed;
+            this.searchItemBtn.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.searchItemBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.searchItemBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.searchItemBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchItemBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.searchItemBtn.Location = new System.Drawing.Point(849, 61);
+            this.searchItemBtn.Location = new System.Drawing.Point(849, 62);
             this.searchItemBtn.Name = "searchItemBtn";
-            this.searchItemBtn.Size = new System.Drawing.Size(73, 24);
+            this.searchItemBtn.Size = new System.Drawing.Size(75, 25);
             this.searchItemBtn.TabIndex = 0;
             this.searchItemBtn.Text = "Search";
             this.searchItemBtn.UseVisualStyleBackColor = false;
             this.searchItemBtn.Click += new System.EventHandler(this.SearchBtn_Click);
+            // 
+            // CategoryBox
+            // 
+            this.CategoryBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.CategoryBox.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.CategoryBox.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.CategoryBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CategoryBox.FormattingEnabled = true;
+            this.CategoryBox.Location = new System.Drawing.Point(655, 30);
+            this.CategoryBox.Name = "CategoryBox";
+            this.CategoryBox.Size = new System.Drawing.Size(193, 26);
+            this.CategoryBox.TabIndex = 40;
+            this.CategoryBox.SelectedIndexChanged += new System.EventHandler(this.CategoryBox_SelectedIndexChanged);
+            // 
+            // lblCategory
+            // 
+            this.lblCategory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblCategory.AutoSize = true;
+            this.lblCategory.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategory.ForeColor = System.Drawing.Color.White;
+            this.lblCategory.Location = new System.Drawing.Point(558, 33);
+            this.lblCategory.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCategory.Name = "lblCategory";
+            this.lblCategory.Size = new System.Drawing.Size(87, 18);
+            this.lblCategory.TabIndex = 39;
+            this.lblCategory.Text = "Category:";
             // 
             // Products
             // 
@@ -560,5 +596,7 @@
         private System.Windows.Forms.Button btnRefreshItem;
         private System.Windows.Forms.Panel pnlTop;
         private System.Windows.Forms.Button searchItemBtn;
+        private System.Windows.Forms.ComboBox CategoryBox;
+        private System.Windows.Forms.Label lblCategory;
     }
 }
