@@ -30,29 +30,31 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblTrackEmployees = new System.Windows.Forms.Label();
-            this.lblSearchName = new System.Windows.Forms.Label();
-            this.txtSearchName = new System.Windows.Forms.TextBox();
             this.btnX = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgdTrackEmployees = new System.Windows.Forms.DataGridView();
+            this.btnShowAll = new System.Windows.Forms.Button();
+            this.cboViewMonth = new System.Windows.Forms.ComboBox();
+            this.lblEmployeeName = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgdTrackEmployees)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Maroon;
+            this.panel1.Controls.Add(this.cboViewMonth);
+            this.panel1.Controls.Add(this.lblEmployeeName);
+            this.panel1.Controls.Add(this.btnShowAll);
             this.panel1.Controls.Add(this.lblTrackEmployees);
-            this.panel1.Controls.Add(this.lblSearchName);
-            this.panel1.Controls.Add(this.txtSearchName);
             this.panel1.Controls.Add(this.btnX);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(945, 117);
+            this.panel1.Size = new System.Drawing.Size(935, 117);
             this.panel1.TabIndex = 2;
             // 
             // lblTrackEmployees
@@ -67,27 +69,6 @@
             this.lblTrackEmployees.TabIndex = 16;
             this.lblTrackEmployees.Text = "Track Employees";
             // 
-            // lblSearchName
-            // 
-            this.lblSearchName.AutoSize = true;
-            this.lblSearchName.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSearchName.ForeColor = System.Drawing.Color.White;
-            this.lblSearchName.Location = new System.Drawing.Point(29, 78);
-            this.lblSearchName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblSearchName.Name = "lblSearchName";
-            this.lblSearchName.Size = new System.Drawing.Size(136, 22);
-            this.lblSearchName.TabIndex = 15;
-            this.lblSearchName.Text = "Search name:";
-            // 
-            // txtSearchName
-            // 
-            this.txtSearchName.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.txtSearchName.Location = new System.Drawing.Point(169, 80);
-            this.txtSearchName.Margin = new System.Windows.Forms.Padding(2);
-            this.txtSearchName.Name = "txtSearchName";
-            this.txtSearchName.Size = new System.Drawing.Size(428, 24);
-            this.txtSearchName.TabIndex = 14;
-            // 
             // btnX
             // 
             this.btnX.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -97,7 +78,7 @@
             this.btnX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnX.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnX.ForeColor = System.Drawing.Color.Black;
-            this.btnX.Location = new System.Drawing.Point(921, 0);
+            this.btnX.Location = new System.Drawing.Point(911, 0);
             this.btnX.Margin = new System.Windows.Forms.Padding(2);
             this.btnX.Name = "btnX";
             this.btnX.Size = new System.Drawing.Size(25, 27);
@@ -108,40 +89,76 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.BackColor = System.Drawing.Color.MistyRose;
+            this.panel2.Controls.Add(this.dgdTrackEmployees);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 117);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(945, 522);
+            this.panel2.Size = new System.Drawing.Size(935, 522);
             this.panel2.TabIndex = 3;
             // 
-            // dataGridView1
+            // dgdTrackEmployees
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgdTrackEmployees.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(23, 22);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(899, 430);
-            this.dataGridView1.TabIndex = 0;
+            this.dgdTrackEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgdTrackEmployees.Location = new System.Drawing.Point(23, 22);
+            this.dgdTrackEmployees.Name = "dgdTrackEmployees";
+            this.dgdTrackEmployees.Size = new System.Drawing.Size(889, 475);
+            this.dgdTrackEmployees.TabIndex = 0;
+            // 
+            // btnShowAll
+            // 
+            this.btnShowAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnShowAll.BackColor = System.Drawing.Color.SpringGreen;
+            this.btnShowAll.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnShowAll.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnShowAll.ForeColor = System.Drawing.Color.Black;
+            this.btnShowAll.Location = new System.Drawing.Point(783, 51);
+            this.btnShowAll.Name = "btnShowAll";
+            this.btnShowAll.Size = new System.Drawing.Size(102, 44);
+            this.btnShowAll.TabIndex = 21;
+            this.btnShowAll.Text = "Show All";
+            this.btnShowAll.UseVisualStyleBackColor = false;
+            // 
+            // cboViewMonth
+            // 
+            this.cboViewMonth.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.cboViewMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboViewMonth.FormattingEnabled = true;
+            this.cboViewMonth.Location = new System.Drawing.Point(104, 69);
+            this.cboViewMonth.Name = "cboViewMonth";
+            this.cboViewMonth.Size = new System.Drawing.Size(374, 26);
+            this.cboViewMonth.TabIndex = 24;
+            // 
+            // lblEmployeeName
+            // 
+            this.lblEmployeeName.AutoSize = true;
+            this.lblEmployeeName.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmployeeName.ForeColor = System.Drawing.Color.White;
+            this.lblEmployeeName.Location = new System.Drawing.Point(30, 69);
+            this.lblEmployeeName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblEmployeeName.Name = "lblEmployeeName";
+            this.lblEmployeeName.Size = new System.Drawing.Size(69, 22);
+            this.lblEmployeeName.TabIndex = 23;
+            this.lblEmployeeName.Text = "Name:";
             // 
             // TrackEmployees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(945, 639);
+            this.ClientSize = new System.Drawing.Size(935, 639);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MinimumSize = new System.Drawing.Size(945, 639);
+            this.MinimumSize = new System.Drawing.Size(935, 639);
             this.Name = "TrackEmployees";
             this.Text = "TrackEmployees";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgdTrackEmployees)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -150,10 +167,11 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblTrackEmployees;
-        private System.Windows.Forms.Label lblSearchName;
-        private System.Windows.Forms.TextBox txtSearchName;
         private System.Windows.Forms.Button btnX;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgdTrackEmployees;
+        private System.Windows.Forms.Button btnShowAll;
+        private System.Windows.Forms.ComboBox cboViewMonth;
+        private System.Windows.Forms.Label lblEmployeeName;
     }
 }

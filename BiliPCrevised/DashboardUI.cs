@@ -106,14 +106,14 @@
 
         private void BtnSalesReport_Click(object sender, EventArgs e)
         {
-            // codes for sales report
+            this.OpenContainerForm(new SalesReport());
             this.HideSubmenu();
         }
 
         private void BtnTransactionHistory_Click(object sender, EventArgs e)
         {
-                // codes for sales history
-                this.HideSubmenu();
+            this.OpenContainerForm(new SalesHistory());
+            this.HideSubmenu();
         }
 
         #endregion
@@ -138,7 +138,7 @@
 
         private void BtnInventoryReport_Click(object sender, EventArgs e)
         {
-            // codes for inventory report
+            this.OpenContainerForm(new InventoryReport());
             this.HideSubmenu();
         }
 

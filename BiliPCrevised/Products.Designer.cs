@@ -82,7 +82,7 @@
             this.dgdProduct.ReadOnly = true;
             this.dgdProduct.RowHeadersWidth = 51;
             this.dgdProduct.RowTemplate.Height = 24;
-            this.dgdProduct.Size = new System.Drawing.Size(897, 337);
+            this.dgdProduct.Size = new System.Drawing.Size(887, 337);
             this.dgdProduct.TabIndex = 23;
             this.dgdProduct.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgdProduct_CellClick);
             // 
@@ -110,7 +110,7 @@
             this.GroupTextBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.GroupTextBox.Location = new System.Drawing.Point(0, 356);
             this.GroupTextBox.Name = "GroupTextBox";
-            this.GroupTextBox.Size = new System.Drawing.Size(945, 183);
+            this.GroupTextBox.Size = new System.Drawing.Size(935, 183);
             this.GroupTextBox.TabIndex = 45;
             this.GroupTextBox.TabStop = false;
             // 
@@ -121,7 +121,7 @@
             this.radInStockFalse.AutoSize = true;
             this.radInStockFalse.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
             this.radInStockFalse.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radInStockFalse.Location = new System.Drawing.Point(586, 144);
+            this.radInStockFalse.Location = new System.Drawing.Point(581, 144);
             this.radInStockFalse.Margin = new System.Windows.Forms.Padding(2);
             this.radInStockFalse.Name = "radInStockFalse";
             this.radInStockFalse.Size = new System.Drawing.Size(169, 28);
@@ -137,7 +137,7 @@
             this.radInStockTrue.AutoSize = true;
             this.radInStockTrue.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
             this.radInStockTrue.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radInStockTrue.Location = new System.Drawing.Point(586, 116);
+            this.radInStockTrue.Location = new System.Drawing.Point(581, 116);
             this.radInStockTrue.Margin = new System.Windows.Forms.Padding(2);
             this.radInStockTrue.Name = "radInStockTrue";
             this.radInStockTrue.Size = new System.Drawing.Size(115, 28);
@@ -150,7 +150,7 @@
             // 
             this.idBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.idBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idBox.Location = new System.Drawing.Point(128, 16);
+            this.idBox.Location = new System.Drawing.Point(123, 16);
             this.idBox.Margin = new System.Windows.Forms.Padding(2);
             this.idBox.Name = "idBox";
             this.idBox.ReadOnly = true;
@@ -164,7 +164,7 @@
             this.lblItemID.BackColor = System.Drawing.Color.Transparent;
             this.lblItemID.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblItemID.ForeColor = System.Drawing.Color.Black;
-            this.lblItemID.Location = new System.Drawing.Point(45, 19);
+            this.lblItemID.Location = new System.Drawing.Point(40, 19);
             this.lblItemID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblItemID.Name = "lblItemID";
             this.lblItemID.Size = new System.Drawing.Size(69, 18);
@@ -175,7 +175,7 @@
             // 
             this.txtCategory.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCategory.Location = new System.Drawing.Point(586, 86);
+            this.txtCategory.Location = new System.Drawing.Point(581, 86);
             this.txtCategory.Margin = new System.Windows.Forms.Padding(2);
             this.txtCategory.Name = "txtCategory";
             this.txtCategory.Size = new System.Drawing.Size(336, 24);
@@ -188,7 +188,7 @@
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(477, 89);
+            this.label10.Location = new System.Drawing.Point(472, 89);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(91, 18);
@@ -202,7 +202,7 @@
             this.lblUnitPrice.BackColor = System.Drawing.Color.Transparent;
             this.lblUnitPrice.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUnitPrice.ForeColor = System.Drawing.Color.Black;
-            this.lblUnitPrice.Location = new System.Drawing.Point(19, 140);
+            this.lblUnitPrice.Location = new System.Drawing.Point(14, 140);
             this.lblUnitPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUnitPrice.Name = "lblUnitPrice";
             this.lblUnitPrice.Size = new System.Drawing.Size(95, 18);
@@ -216,7 +216,7 @@
             this.lblInStock.BackColor = System.Drawing.Color.Transparent;
             this.lblInStock.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInStock.ForeColor = System.Drawing.Color.Black;
-            this.lblInStock.Location = new System.Drawing.Point(499, 122);
+            this.lblInStock.Location = new System.Drawing.Point(494, 122);
             this.lblInStock.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblInStock.Name = "lblInStock";
             this.lblInStock.Size = new System.Drawing.Size(69, 18);
@@ -227,7 +227,7 @@
             // 
             this.txtSupplier.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSupplier.Location = new System.Drawing.Point(586, 52);
+            this.txtSupplier.Location = new System.Drawing.Point(581, 52);
             this.txtSupplier.Margin = new System.Windows.Forms.Padding(2);
             this.txtSupplier.Name = "txtSupplier";
             this.txtSupplier.Size = new System.Drawing.Size(336, 24);
@@ -240,7 +240,7 @@
             this.lblSupplier.BackColor = System.Drawing.Color.Transparent;
             this.lblSupplier.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSupplier.ForeColor = System.Drawing.Color.Black;
-            this.lblSupplier.Location = new System.Drawing.Point(485, 55);
+            this.lblSupplier.Location = new System.Drawing.Point(480, 55);
             this.lblSupplier.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSupplier.Name = "lblSupplier";
             this.lblSupplier.Size = new System.Drawing.Size(83, 18);
@@ -251,7 +251,7 @@
             // 
             this.txtCost.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCost.Location = new System.Drawing.Point(586, 16);
+            this.txtCost.Location = new System.Drawing.Point(581, 16);
             this.txtCost.Margin = new System.Windows.Forms.Padding(2);
             this.txtCost.Name = "txtCost";
             this.txtCost.Size = new System.Drawing.Size(336, 24);
@@ -265,7 +265,7 @@
             this.lblCost.BackColor = System.Drawing.Color.Transparent;
             this.lblCost.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCost.ForeColor = System.Drawing.Color.Black;
-            this.lblCost.Location = new System.Drawing.Point(514, 19);
+            this.lblCost.Location = new System.Drawing.Point(509, 19);
             this.lblCost.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCost.Name = "lblCost";
             this.lblCost.Size = new System.Drawing.Size(54, 18);
@@ -276,7 +276,7 @@
             // 
             this.txtUnitPrice.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtUnitPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUnitPrice.Location = new System.Drawing.Point(128, 140);
+            this.txtUnitPrice.Location = new System.Drawing.Point(123, 140);
             this.txtUnitPrice.Margin = new System.Windows.Forms.Padding(2);
             this.txtUnitPrice.Name = "txtUnitPrice";
             this.txtUnitPrice.Size = new System.Drawing.Size(336, 24);
@@ -287,7 +287,7 @@
             // 
             this.txtQuantity.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQuantity.Location = new System.Drawing.Point(128, 103);
+            this.txtQuantity.Location = new System.Drawing.Point(123, 103);
             this.txtQuantity.Margin = new System.Windows.Forms.Padding(2);
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(336, 24);
@@ -301,7 +301,7 @@
             this.lblQuantity.BackColor = System.Drawing.Color.Transparent;
             this.lblQuantity.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQuantity.ForeColor = System.Drawing.Color.Black;
-            this.lblQuantity.Location = new System.Drawing.Point(29, 106);
+            this.lblQuantity.Location = new System.Drawing.Point(24, 106);
             this.lblQuantity.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblQuantity.Name = "lblQuantity";
             this.lblQuantity.Size = new System.Drawing.Size(85, 18);
@@ -312,7 +312,7 @@
             // 
             this.txtItemName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtItemName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtItemName.Location = new System.Drawing.Point(128, 51);
+            this.txtItemName.Location = new System.Drawing.Point(123, 51);
             this.txtItemName.Margin = new System.Windows.Forms.Padding(2);
             this.txtItemName.Multiline = true;
             this.txtItemName.Name = "txtItemName";
@@ -327,7 +327,7 @@
             this.lblItemName.BackColor = System.Drawing.Color.Transparent;
             this.lblItemName.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblItemName.ForeColor = System.Drawing.Color.Black;
-            this.lblItemName.Location = new System.Drawing.Point(62, 54);
+            this.lblItemName.Location = new System.Drawing.Point(57, 54);
             this.lblItemName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblItemName.Name = "lblItemName";
             this.lblItemName.Size = new System.Drawing.Size(52, 18);
@@ -342,7 +342,7 @@
             this.pnlBackground.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlBackground.Location = new System.Drawing.Point(0, 100);
             this.pnlBackground.Name = "pnlBackground";
-            this.pnlBackground.Size = new System.Drawing.Size(945, 539);
+            this.pnlBackground.Size = new System.Drawing.Size(935, 539);
             this.pnlBackground.TabIndex = 1;
             // 
             // lblSearchItem
@@ -352,7 +352,7 @@
             this.lblSearchItem.BackColor = System.Drawing.Color.Transparent;
             this.lblSearchItem.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSearchItem.ForeColor = System.Drawing.Color.White;
-            this.lblSearchItem.Location = new System.Drawing.Point(536, 65);
+            this.lblSearchItem.Location = new System.Drawing.Point(517, 64);
             this.lblSearchItem.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSearchItem.Name = "lblSearchItem";
             this.lblSearchItem.Size = new System.Drawing.Size(109, 18);
@@ -381,7 +381,7 @@
             this.txtSearchItem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSearchItem.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.txtSearchItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchItem.Location = new System.Drawing.Point(655, 62);
+            this.txtSearchItem.Location = new System.Drawing.Point(636, 61);
             this.txtSearchItem.Margin = new System.Windows.Forms.Padding(2);
             this.txtSearchItem.Name = "txtSearchItem";
             this.txtSearchItem.Size = new System.Drawing.Size(193, 24);
@@ -430,7 +430,7 @@
             this.btnX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnX.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnX.ForeColor = System.Drawing.Color.Black;
-            this.btnX.Location = new System.Drawing.Point(921, 0);
+            this.btnX.Location = new System.Drawing.Point(911, 0);
             this.btnX.Margin = new System.Windows.Forms.Padding(2);
             this.btnX.Name = "btnX";
             this.btnX.Size = new System.Drawing.Size(25, 27);
@@ -501,7 +501,7 @@
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
             this.pnlTop.Margin = new System.Windows.Forms.Padding(2);
             this.pnlTop.Name = "pnlTop";
-            this.pnlTop.Size = new System.Drawing.Size(945, 100);
+            this.pnlTop.Size = new System.Drawing.Size(935, 100);
             this.pnlTop.TabIndex = 0;
             // 
             // CategoryBox
@@ -511,7 +511,7 @@
             this.CategoryBox.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.CategoryBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CategoryBox.FormattingEnabled = true;
-            this.CategoryBox.Location = new System.Drawing.Point(655, 30);
+            this.CategoryBox.Location = new System.Drawing.Point(636, 29);
             this.CategoryBox.Name = "CategoryBox";
             this.CategoryBox.Size = new System.Drawing.Size(193, 26);
             this.CategoryBox.TabIndex = 40;
@@ -523,7 +523,7 @@
             this.lblCategory.AutoSize = true;
             this.lblCategory.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCategory.ForeColor = System.Drawing.Color.White;
-            this.lblCategory.Location = new System.Drawing.Point(558, 33);
+            this.lblCategory.Location = new System.Drawing.Point(539, 32);
             this.lblCategory.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCategory.Name = "lblCategory";
             this.lblCategory.Size = new System.Drawing.Size(87, 18);
@@ -539,7 +539,7 @@
             this.searchItemBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.searchItemBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchItemBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.searchItemBtn.Location = new System.Drawing.Point(849, 62);
+            this.searchItemBtn.Location = new System.Drawing.Point(830, 61);
             this.searchItemBtn.Name = "searchItemBtn";
             this.searchItemBtn.Size = new System.Drawing.Size(75, 25);
             this.searchItemBtn.TabIndex = 0;
@@ -550,12 +550,12 @@
             // Products
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            this.ClientSize = new System.Drawing.Size(945, 639);
+            this.ClientSize = new System.Drawing.Size(935, 639);
             this.Controls.Add(this.pnlBackground);
             this.Controls.Add(this.pnlTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.MinimumSize = new System.Drawing.Size(945, 639);
+            this.MinimumSize = new System.Drawing.Size(935, 639);
             this.Name = "Products";
             this.Text = "Product";
             ((System.ComponentModel.ISupportInitialize)(this.dgdProduct)).EndInit();

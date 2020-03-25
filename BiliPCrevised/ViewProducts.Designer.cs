@@ -76,7 +76,7 @@
             this.btnX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnX.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnX.ForeColor = System.Drawing.Color.Black;
-            this.btnX.Location = new System.Drawing.Point(921, 0);
+            this.btnX.Location = new System.Drawing.Point(911, 0);
             this.btnX.Margin = new System.Windows.Forms.Padding(2);
             this.btnX.Name = "btnX";
             this.btnX.Size = new System.Drawing.Size(25, 27);
@@ -101,7 +101,7 @@
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
             this.pnlTop.Margin = new System.Windows.Forms.Padding(2);
             this.pnlTop.Name = "pnlTop";
-            this.pnlTop.Size = new System.Drawing.Size(945, 117);
+            this.pnlTop.Size = new System.Drawing.Size(935, 117);
             this.pnlTop.TabIndex = 1;
             // 
             // btnShowAll
@@ -110,7 +110,7 @@
             this.btnShowAll.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnShowAll.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnShowAll.ForeColor = System.Drawing.Color.Black;
-            this.btnShowAll.Location = new System.Drawing.Point(832, 40);
+            this.btnShowAll.Location = new System.Drawing.Point(822, 38);
             this.btnShowAll.Name = "btnShowAll";
             this.btnShowAll.Size = new System.Drawing.Size(88, 28);
             this.btnShowAll.TabIndex = 20;
@@ -139,7 +139,7 @@
             this.cboCategory.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.cboCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboCategory.FormattingEnabled = true;
-            this.cboCategory.Location = new System.Drawing.Point(757, 74);
+            this.cboCategory.Location = new System.Drawing.Point(747, 72);
             this.cboCategory.Name = "cboCategory";
             this.cboCategory.Size = new System.Drawing.Size(163, 26);
             this.cboCategory.TabIndex = 18;
@@ -150,7 +150,7 @@
             this.lblCategory.AutoSize = true;
             this.lblCategory.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCategory.ForeColor = System.Drawing.Color.White;
-            this.lblCategory.Location = new System.Drawing.Point(653, 76);
+            this.lblCategory.Location = new System.Drawing.Point(643, 74);
             this.lblCategory.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCategory.Name = "lblCategory";
             this.lblCategory.Size = new System.Drawing.Size(100, 22);
@@ -176,7 +176,7 @@
             this.pnlBackground.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlBackground.Location = new System.Drawing.Point(0, 117);
             this.pnlBackground.Name = "pnlBackground";
-            this.pnlBackground.Size = new System.Drawing.Size(945, 522);
+            this.pnlBackground.Size = new System.Drawing.Size(935, 522);
             this.pnlBackground.TabIndex = 2;
             // 
             // dgdViewProducts
@@ -190,19 +190,19 @@
             this.dgdViewProducts.Location = new System.Drawing.Point(26, 22);
             this.dgdViewProducts.Name = "dgdViewProducts";
             this.dgdViewProducts.ReadOnly = true;
-            this.dgdViewProducts.Size = new System.Drawing.Size(894, 430);
+            this.dgdViewProducts.Size = new System.Drawing.Size(884, 472);
             this.dgdViewProducts.TabIndex = 0;
             // 
             // ViewProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(945, 639);
+            this.ClientSize = new System.Drawing.Size(935, 639);
             this.Controls.Add(this.pnlBackground);
             this.Controls.Add(this.pnlTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.MinimumSize = new System.Drawing.Size(944, 639);
+            this.MinimumSize = new System.Drawing.Size(935, 639);
             this.Name = "ViewProducts";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ViewProducts";

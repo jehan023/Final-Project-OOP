@@ -78,7 +78,7 @@
             this.pnlBottom.Location = new System.Drawing.Point(185, 663);
             this.pnlBottom.Margin = new System.Windows.Forms.Padding(2);
             this.pnlBottom.Name = "pnlBottom";
-            this.pnlBottom.Size = new System.Drawing.Size(928, 24);
+            this.pnlBottom.Size = new System.Drawing.Size(929, 24);
             this.pnlBottom.TabIndex = 15;
             // 
             // lblDate
@@ -477,7 +477,7 @@
             this.pnlTop.Location = new System.Drawing.Point(185, 0);
             this.pnlTop.Margin = new System.Windows.Forms.Padding(2);
             this.pnlTop.Name = "pnlTop";
-            this.pnlTop.Size = new System.Drawing.Size(928, 24);
+            this.pnlTop.Size = new System.Drawing.Size(929, 24);
             this.pnlTop.TabIndex = 16;
             // 
             // pnlContainerForm
@@ -487,16 +487,16 @@
             this.pnlContainerForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlContainerForm.Location = new System.Drawing.Point(185, 24);
             this.pnlContainerForm.Margin = new System.Windows.Forms.Padding(2);
-            this.pnlContainerForm.MinimumSize = new System.Drawing.Size(945, 639);
+            this.pnlContainerForm.MinimumSize = new System.Drawing.Size(935, 639);
             this.pnlContainerForm.Name = "pnlContainerForm";
-            this.pnlContainerForm.Size = new System.Drawing.Size(945, 639);
+            this.pnlContainerForm.Size = new System.Drawing.Size(935, 639);
             this.pnlContainerForm.TabIndex = 17;
             // 
             // picBiliPCLogoDefault
             // 
             this.picBiliPCLogoDefault.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.picBiliPCLogoDefault.Image = ((System.Drawing.Image)(resources.GetObject("picBiliPCLogoDefault.Image")));
-            this.picBiliPCLogoDefault.Location = new System.Drawing.Point(332, 161);
+            this.picBiliPCLogoDefault.Location = new System.Drawing.Point(327, 161);
             this.picBiliPCLogoDefault.Margin = new System.Windows.Forms.Padding(2);
             this.picBiliPCLogoDefault.Name = "picBiliPCLogoDefault";
             this.picBiliPCLogoDefault.Size = new System.Drawing.Size(284, 262);
@@ -508,14 +508,14 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1113, 687);
+            this.ClientSize = new System.Drawing.Size(1114, 687);
             this.Controls.Add(this.pnlContainerForm);
             this.Controls.Add(this.pnlTop);
             this.Controls.Add(this.pnlBottom);
             this.Controls.Add(this.pnlSideMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(1129, 726);
+            this.MinimumSize = new System.Drawing.Size(1130, 726);
             this.Name = "DashboardUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BiliPC Store";

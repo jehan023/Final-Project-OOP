@@ -80,8 +80,8 @@
             var selectedRecord = this.db.LoadRecordsBySpecificT<InventoryModel>("Inventory", "Item", this.cboItem.Text);
             this.cboItem.Text = selectedRecord.Item;
             this.cboCategory.Text = selectedRecord.Category;
-            this.txtUnitPrice.Text = selectedRecord.Cost.ToString(CultureInfo.InvariantCulture);
-            this.txtTotalUnitPrice.Text = (selectedRecord.Cost *
+            this.txtUnitPrice.Text = selectedRecord.UnitPrice.ToString(CultureInfo.InvariantCulture);
+            this.txtTotalUnitPrice.Text = (selectedRecord.UnitPrice *
                 int.Parse(this.txtQuantity.Text, CultureInfo.InvariantCulture))
                 .ToString(CultureInfo.InvariantCulture);
         }
@@ -102,8 +102,8 @@
             selectedCartRecord.Id = selectedInvRecord.Id;
             selectedCartRecord.Item = selectedInvRecord.Item;
             selectedCartRecord.Quantity = int.Parse(s: this.txtQuantity.Text, CultureInfo.InvariantCulture);
-            selectedCartRecord.Cost = selectedInvRecord.Cost;
-            selectedCartRecord.TotalUnitCost = selectedCartRecord.Cost * selectedCartRecord.Quantity;
+            selectedCartRecord.UnitPrice = selectedInvRecord.UnitPrice;
+            selectedCartRecord.TotalUnitPrice = selectedCartRecord.UnitPrice * selectedCartRecord.Quantity;
 
             this.db.UpsertRecord<TransactionTempModel>("TransactionTemp", selectedCartRecord.Id, selectedCartRecord);
             this.RefreshDataGrid();
@@ -124,10 +124,10 @@
                 }
 
                 var selectedRecord = this.db.LoadRecordsBySpecificT<InventoryModel>("Inventory", "Item", this.cboItem.Text);
-                this.txtUnitPrice.Text = selectedRecord.Cost.ToString(CultureInfo.InvariantCulture);
+                this.txtUnitPrice.Text = selectedRecord.UnitPrice.ToString(CultureInfo.InvariantCulture);
                 try
                 {
-                    this.txtTotalUnitPrice.Text = (selectedRecord.Cost
+                    this.txtTotalUnitPrice.Text = (selectedRecord.UnitPrice
                         * int.Parse(this.txtQuantity.Text, CultureInfo.InvariantCulture))
                         .ToString(CultureInfo.InvariantCulture);
                 }

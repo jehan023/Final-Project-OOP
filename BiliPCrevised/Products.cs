@@ -103,7 +103,7 @@
                     selectedRecord.Item = this.txtItemName.Text;
                     selectedRecord.Qty = int.Parse(s: this.txtQuantity.Text, CultureInfo.InvariantCulture);
                     selectedRecord.UnitPrice = double.Parse(s: this.txtUnitPrice.Text, CultureInfo.InvariantCulture);
-                    selectedRecord.Cost = double.Parse(s: this.txtCost.Text, CultureInfo.InvariantCulture);
+                    selectedRecord.UnitPrice = double.Parse(s: this.txtCost.Text, CultureInfo.InvariantCulture);
                     selectedRecord.Category = this.txtCategory.Text;
                     selectedRecord.Supplier = this.txtSupplier.Text;
                     selectedRecord.Status = int.Parse(this.txtQuantity.Text, CultureInfo.InvariantCulture) != 0;

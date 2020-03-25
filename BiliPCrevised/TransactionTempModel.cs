@@ -16,9 +16,9 @@
         public int Quantity { get; set; }
 
         [BsonElement]
-        public double Cost { get; set; }
+        public double UnitPrice { get; set; }
 
         [BsonElement]
-        public double TotalUnitCost { get; set; }
+        public double TotalUnitPrice { get; set; }
     }
 }
