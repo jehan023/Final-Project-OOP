@@ -27,7 +27,7 @@
             {
                 MessageBox.Show("Please fill all of the " + emptyField + " field/s.");
             }
-            else if (usernameExists == true)
+            else if (usernameExists)
             {
                 MessageBox.Show("Username already taken.");
             }

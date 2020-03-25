@@ -47,7 +47,7 @@
             var collection = this.db.GetCollection<T>(table);
             var filter = Builders<T>.Filter.Eq("Id", id);
 
-            return collection.Find(filter).First();
+            return collection.Find(filter).FirstOrDefault();
         }
 
         public T LoadRecordsBySpecificT<T>(string table, string element, string specific)

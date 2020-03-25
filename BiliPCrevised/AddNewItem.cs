@@ -27,11 +27,11 @@
             {
                 MessageBox.Show("Please fill all of the " + emptyField + " field/s.");
             }
-            else if (itemExists == true)
+            else if (itemExists)
             {
                 MessageBox.Show("Item already exists.");
             }
-            else if (itemExists == false)
+            else if (!itemExists)
             {
                 try
                 {

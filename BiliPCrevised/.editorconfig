@@ -19,7 +19,7 @@ dotnet_diagnostic.SA1601.severity = suggestion
 dotnet_diagnostic.CA1303.severity = none
 
 # SA0001: XML comment analysis is disabled due to project configuration
-dotnet_diagnostic.SA0001.severity = silent
+dotnet_diagnostic.SA0001.severity = none
 
 # AD0001: Analyzer Failure
 dotnet_diagnostic.AD0001.severity = silent

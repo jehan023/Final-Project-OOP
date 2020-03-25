@@ -235,6 +235,8 @@
             this.txtAmountReceived.Name = "txtAmountReceived";
             this.txtAmountReceived.Size = new System.Drawing.Size(312, 39);
             this.txtAmountReceived.TabIndex = 54;
+            this.txtAmountReceived.TextChanged += new System.EventHandler(this.TxtAmountReceived_TextChanged);
+            this.txtAmountReceived.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtQuantity_KeyPress);
             // 
             // lblAmountReceived
             // 
@@ -425,6 +427,8 @@
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(64, 26);
             this.txtQuantity.TabIndex = 44;
+            this.txtQuantity.TextChanged += new System.EventHandler(this.TxtQuantity_TextChanged);
+            this.txtQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtQuantity_KeyPress);
             // 
             // lblQuantity
             // 

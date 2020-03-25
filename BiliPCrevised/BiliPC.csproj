@@ -163,7 +163,8 @@
     <Compile Include="TransactionForm.Designer.cs">
       <DependentUpon>TransactionForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Transaction_TEMP.cs" />
+    <Compile Include="SalesHistoryModel.cs" />
+    <Compile Include="TransactionTempModel.cs" />
     <Compile Include="UsersModel.cs" />
     <Compile Include="ViewEmployees.cs">
       <SubType>Form</SubType>
