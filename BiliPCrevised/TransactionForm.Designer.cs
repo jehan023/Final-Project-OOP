@@ -40,7 +40,7 @@
             this.txtChange = new System.Windows.Forms.TextBox();
             this.lblChange = new System.Windows.Forms.Label();
             this.txtAmountReceived = new System.Windows.Forms.TextBox();
-            this.lblAmountReceived = new System.Windows.Forms.Label();
+            this.lblCash = new System.Windows.Forms.Label();
             this.btnAddDiscount = new System.Windows.Forms.Button();
             this.lblTransactionID = new System.Windows.Forms.Label();
             this.btnPrintReceipt = new System.Windows.Forms.Button();
@@ -48,7 +48,7 @@
             this.lblUnitPrice = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtTotalPrice = new System.Windows.Forms.TextBox();
-            this.lblTotalPrice = new System.Windows.Forms.Label();
+            this.lblTotalAmountDue = new System.Windows.Forms.Label();
             this.btnAddItem = new System.Windows.Forms.Button();
             this.btnRemoveItem = new System.Windows.Forms.Button();
             this.lblTotalUnitPrice = new System.Windows.Forms.Label();
@@ -57,6 +57,7 @@
             this.lblQuantity = new System.Windows.Forms.Label();
             this.lblItem = new System.Windows.Forms.Label();
             this.dgdCart = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             this.pnlTop.SuspendLayout();
             this.pnlBackground.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -111,6 +112,7 @@
             this.pnlBackground.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlBackground.Controls.Add(this.button1);
             this.pnlBackground.Controls.Add(this.lblCategory);
             this.pnlBackground.Controls.Add(this.cboCategory);
             this.pnlBackground.Controls.Add(this.cboItem);
@@ -192,10 +194,10 @@
             this.groupBox2.Controls.Add(this.txtChange);
             this.groupBox2.Controls.Add(this.lblChange);
             this.groupBox2.Controls.Add(this.txtAmountReceived);
-            this.groupBox2.Controls.Add(this.lblAmountReceived);
+            this.groupBox2.Controls.Add(this.lblCash);
             this.groupBox2.Location = new System.Drawing.Point(10, 414);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(361, 158);
+            this.groupBox2.Size = new System.Drawing.Size(361, 157);
             this.groupBox2.TabIndex = 55;
             this.groupBox2.TabStop = false;
             // 
@@ -238,19 +240,19 @@
             this.txtAmountReceived.TextChanged += new System.EventHandler(this.TxtAmountReceived_TextChanged);
             this.txtAmountReceived.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtQuantity_KeyPress);
             // 
-            // lblAmountReceived
+            // lblCash
             // 
-            this.lblAmountReceived.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblAmountReceived.AutoSize = true;
-            this.lblAmountReceived.BackColor = System.Drawing.Color.Transparent;
-            this.lblAmountReceived.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAmountReceived.ForeColor = System.Drawing.Color.Black;
-            this.lblAmountReceived.Location = new System.Drawing.Point(23, 10);
-            this.lblAmountReceived.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblAmountReceived.Name = "lblAmountReceived";
-            this.lblAmountReceived.Size = new System.Drawing.Size(161, 24);
-            this.lblAmountReceived.TabIndex = 54;
-            this.lblAmountReceived.Text = "Amount Received";
+            this.lblCash.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblCash.AutoSize = true;
+            this.lblCash.BackColor = System.Drawing.Color.Transparent;
+            this.lblCash.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCash.ForeColor = System.Drawing.Color.Black;
+            this.lblCash.Location = new System.Drawing.Point(23, 10);
+            this.lblCash.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCash.Name = "lblCash";
+            this.lblCash.Size = new System.Drawing.Size(53, 24);
+            this.lblCash.TabIndex = 54;
+            this.lblCash.Text = "Cash";
             // 
             // btnAddDiscount
             // 
@@ -260,13 +262,14 @@
             this.btnAddDiscount.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnAddDiscount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddDiscount.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddDiscount.Location = new System.Drawing.Point(613, 525);
+            this.btnAddDiscount.Location = new System.Drawing.Point(470, 524);
             this.btnAddDiscount.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddDiscount.Name = "btnAddDiscount";
             this.btnAddDiscount.Size = new System.Drawing.Size(132, 45);
             this.btnAddDiscount.TabIndex = 53;
             this.btnAddDiscount.Text = "ADD DISCOUNT";
             this.btnAddDiscount.UseVisualStyleBackColor = false;
+            this.btnAddDiscount.Click += new System.EventHandler(this.btnAddDiscount_Click);
             // 
             // lblTransactionID
             // 
@@ -295,7 +298,7 @@
             this.btnPrintReceipt.Name = "btnPrintReceipt";
             this.btnPrintReceipt.Size = new System.Drawing.Size(132, 45);
             this.btnPrintReceipt.TabIndex = 52;
-            this.btnPrintReceipt.Text = "PRINT RECEIPT";
+            this.btnPrintReceipt.Text = "TRANSACT w/ RECEIPT";
             this.btnPrintReceipt.UseVisualStyleBackColor = false;
             // 
             // txtUnitPrice
@@ -327,7 +330,7 @@
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox1.Controls.Add(this.txtTotalPrice);
-            this.groupBox1.Controls.Add(this.lblTotalPrice);
+            this.groupBox1.Controls.Add(this.lblTotalAmountDue);
             this.groupBox1.Location = new System.Drawing.Point(412, 414);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(502, 98);
@@ -346,19 +349,19 @@
             this.txtTotalPrice.Size = new System.Drawing.Size(466, 45);
             this.txtTotalPrice.TabIndex = 54;
             // 
-            // lblTotalPrice
+            // lblTotalAmountDue
             // 
-            this.lblTotalPrice.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblTotalPrice.AutoSize = true;
-            this.lblTotalPrice.BackColor = System.Drawing.Color.Transparent;
-            this.lblTotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalPrice.ForeColor = System.Drawing.Color.Black;
-            this.lblTotalPrice.Location = new System.Drawing.Point(15, 13);
-            this.lblTotalPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblTotalPrice.Name = "lblTotalPrice";
-            this.lblTotalPrice.Size = new System.Drawing.Size(115, 25);
-            this.lblTotalPrice.TabIndex = 54;
-            this.lblTotalPrice.Text = "Total Price";
+            this.lblTotalAmountDue.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblTotalAmountDue.AutoSize = true;
+            this.lblTotalAmountDue.BackColor = System.Drawing.Color.Transparent;
+            this.lblTotalAmountDue.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalAmountDue.ForeColor = System.Drawing.Color.Black;
+            this.lblTotalAmountDue.Location = new System.Drawing.Point(15, 13);
+            this.lblTotalAmountDue.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTotalAmountDue.Name = "lblTotalAmountDue";
+            this.lblTotalAmountDue.Size = new System.Drawing.Size(184, 25);
+            this.lblTotalAmountDue.TabIndex = 54;
+            this.lblTotalAmountDue.Text = "Total Amount Due";
             // 
             // btnAddItem
             // 
@@ -470,6 +473,22 @@
             this.dgdCart.Size = new System.Drawing.Size(904, 301);
             this.dgdCart.TabIndex = 0;
             // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button1.BackColor = System.Drawing.Color.YellowGreen;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(620, 524);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(132, 45);
+            this.button1.TabIndex = 61;
+            this.button1.Text = "TRANSACT";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // TransactionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -516,16 +535,17 @@
         private System.Windows.Forms.Button btnAddDiscount;
         private System.Windows.Forms.Button btnPrintReceipt;
         private System.Windows.Forms.TextBox txtTotalPrice;
-        private System.Windows.Forms.Label lblTotalPrice;
+        private System.Windows.Forms.Label lblTotalAmountDue;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtChange;
         private System.Windows.Forms.Label lblChange;
         private System.Windows.Forms.TextBox txtAmountReceived;
-        private System.Windows.Forms.Label lblAmountReceived;
+        private System.Windows.Forms.Label lblCash;
         private System.Windows.Forms.TextBox txtTransacationID;
         private System.Windows.Forms.Label lblTransactionID;
         private System.Windows.Forms.ComboBox cboItem;
         private System.Windows.Forms.ComboBox cboCategory;
         private System.Windows.Forms.Label lblCategory;
+        private System.Windows.Forms.Button button1;
     }
 }

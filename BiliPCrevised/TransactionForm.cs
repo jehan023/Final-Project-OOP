@@ -144,5 +144,13 @@
                 - double.Parse(this.txtTotalPrice.Text, CultureInfo.InvariantCulture))
                 .ToString(CultureInfo.InvariantCulture);
         }
+
+        private void btnAddDiscount_Click(object sender, EventArgs e)
+        {
+            using (AddDiscount addDiscount = new AddDiscount())
+            {
+                addDiscount.ShowDialog();
+            }
+        }
     }
 }

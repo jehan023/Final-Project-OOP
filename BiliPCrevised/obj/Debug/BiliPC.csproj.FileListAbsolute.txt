@@ -300,3 +300,4 @@ C:\Users\Nitro 5\Documents\GitHub\Final-Project-OOP\BiliPCrevised\obj\Debug\Bili
 C:\Users\Nitro 5\Documents\GitHub\Final-Project-OOP\BiliPCrevised\obj\Debug\BiliPC.csprojAssemblyReference.cache
 C:\Users\Nitro 5\Documents\GitHub\Final-Project-OOP\BiliPCrevised\obj\Debug\BiliPC.InventoryReport.resources
 C:\Users\Nitro 5\Documents\GitHub\Final-Project-OOP\BiliPCrevised\obj\Debug\BiliPC.SalesReport.resources
+C:\Users\Nitro 5\Documents\GitHub\Final-Project-OOP\BiliPCrevised\obj\Debug\BiliPC.AddDiscount.resources
