@@ -30,12 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashboardUI));
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.panelBottom = new System.Windows.Forms.Panel();
-            this.labelDate = new System.Windows.Forms.Label();
-            this.labelTime = new System.Windows.Forms.Label();
+            this.tmrRealtimeTime = new System.Windows.Forms.Timer(this.components);
+            this.pnlBottom = new System.Windows.Forms.Panel();
+            this.lblDate = new System.Windows.Forms.Label();
+            this.lblTime = new System.Windows.Forms.Label();
             this.btnInventory = new System.Windows.Forms.Button();
-            this.panelSideMenu = new System.Windows.Forms.Panel();
+            this.pnlSideMenu = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
             this.panelManageEmployees = new System.Windows.Forms.Panel();
             this.btnTrackEmployees = new System.Windows.Forms.Button();
@@ -51,64 +51,69 @@
             this.btnCreateTransaction = new System.Windows.Forms.Button();
             this.btnSales = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panelTop = new System.Windows.Forms.Panel();
-            this.panelContainerForm = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.panelSideMenu.SuspendLayout();
+            this.picBiliPCLogo = new System.Windows.Forms.PictureBox();
+            this.pnlTop = new System.Windows.Forms.Panel();
+            this.pnlContainerForm = new System.Windows.Forms.Panel();
+            this.picBiliPCLogoDefault = new System.Windows.Forms.PictureBox();
+            this.lblLoggedInAs = new System.Windows.Forms.Label();
+            this.lblAcctName = new System.Windows.Forms.Label();
+            this.pnlSideMenu.SuspendLayout();
             this.panelManageEmployees.SuspendLayout();
             this.panelInventory.SuspendLayout();
             this.panelSales.SuspendLayout();
             this.panelLogo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panelContainerForm.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBiliPCLogo)).BeginInit();
+            this.pnlContainerForm.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBiliPCLogoDefault)).BeginInit();
             this.SuspendLayout();
             // 
-            // timer1
+            // tmrRealtimeTime
             // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
+            this.tmrRealtimeTime.Tick += new System.EventHandler(this.TmrRealtimeTime_Tick);
             // 
-            // panelBottom
+            // pnlBottom
             // 
-            this.panelBottom.BackColor = System.Drawing.Color.Black;
-            this.panelBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelBottom.Location = new System.Drawing.Point(168, 663);
-            this.panelBottom.Margin = new System.Windows.Forms.Padding(2);
-            this.panelBottom.Name = "panelBottom";
-            this.panelBottom.Size = new System.Drawing.Size(945, 24);
-            this.panelBottom.TabIndex = 15;
+            this.pnlBottom.BackColor = System.Drawing.Color.Black;
+            this.pnlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlBottom.Location = new System.Drawing.Point(168, 663);
+            this.pnlBottom.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlBottom.Name = "pnlBottom";
+            this.pnlBottom.Size = new System.Drawing.Size(945, 24);
+            this.pnlBottom.TabIndex = 15;
             // 
-            // labelDate
+            // lblDate
             // 
-            this.labelDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.labelDate.AutoSize = true;
-            this.labelDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.labelDate.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDate.ForeColor = System.Drawing.Color.White;
-            this.labelDate.Location = new System.Drawing.Point(6, 616);
-            this.labelDate.Margin = new System.Windows.Forms.Padding(0);
-            this.labelDate.Name = "labelDate";
-            this.labelDate.Size = new System.Drawing.Size(42, 17);
-            this.labelDate.TabIndex = 19;
-            this.labelDate.Text = "Date";
+            this.lblDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblDate.AutoSize = true;
+            this.lblDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblDate.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDate.ForeColor = System.Drawing.Color.White;
+            this.lblDate.Location = new System.Drawing.Point(12, 637);
+            this.lblDate.Margin = new System.Windows.Forms.Padding(0);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(34, 14);
+            this.lblDate.TabIndex = 19;
+            this.lblDate.Text = "Date";
+            this.lblDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // labelTime
+            // lblTime
             // 
-            this.labelTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.labelTime.AutoSize = true;
-            this.labelTime.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.labelTime.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTime.ForeColor = System.Drawing.Color.White;
-            this.labelTime.Location = new System.Drawing.Point(36, 590);
-            this.labelTime.Margin = new System.Windows.Forms.Padding(0);
-            this.labelTime.Name = "labelTime";
-            this.labelTime.Size = new System.Drawing.Size(55, 22);
-            this.labelTime.TabIndex = 18;
-            this.labelTime.Text = "Time";
+            this.lblTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblTime.AutoSize = true;
+            this.lblTime.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblTime.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTime.ForeColor = System.Drawing.Color.White;
+            this.lblTime.Location = new System.Drawing.Point(12, 614);
+            this.lblTime.Margin = new System.Windows.Forms.Padding(0);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(43, 17);
+            this.lblTime.TabIndex = 18;
+            this.lblTime.Text = "Time";
+            this.lblTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnInventory
             // 
+            this.btnInventory.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnInventory.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnInventory.FlatAppearance.BorderSize = 0;
             this.btnInventory.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
@@ -125,31 +130,34 @@
             this.btnInventory.Text = "Inventory";
             this.btnInventory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnInventory.UseVisualStyleBackColor = true;
-            this.btnInventory.Click += new System.EventHandler(this.btnInventory_Click_1);
+            this.btnInventory.Click += new System.EventHandler(this.BtnInventory_Click_1);
             // 
-            // panelSideMenu
+            // pnlSideMenu
             // 
-            this.panelSideMenu.AutoScroll = true;
-            this.panelSideMenu.BackColor = System.Drawing.Color.Black;
-            this.panelSideMenu.Controls.Add(this.btnLogout);
-            this.panelSideMenu.Controls.Add(this.panelManageEmployees);
-            this.panelSideMenu.Controls.Add(this.btnManageEmployees);
-            this.panelSideMenu.Controls.Add(this.labelDate);
-            this.panelSideMenu.Controls.Add(this.labelTime);
-            this.panelSideMenu.Controls.Add(this.panelInventory);
-            this.panelSideMenu.Controls.Add(this.btnInventory);
-            this.panelSideMenu.Controls.Add(this.panelSales);
-            this.panelSideMenu.Controls.Add(this.btnSales);
-            this.panelSideMenu.Controls.Add(this.panelLogo);
-            this.panelSideMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelSideMenu.Location = new System.Drawing.Point(0, 0);
-            this.panelSideMenu.Margin = new System.Windows.Forms.Padding(2);
-            this.panelSideMenu.Name = "panelSideMenu";
-            this.panelSideMenu.Size = new System.Drawing.Size(168, 687);
-            this.panelSideMenu.TabIndex = 13;
+            this.pnlSideMenu.AutoScroll = true;
+            this.pnlSideMenu.BackColor = System.Drawing.Color.Black;
+            this.pnlSideMenu.Controls.Add(this.lblAcctName);
+            this.pnlSideMenu.Controls.Add(this.lblLoggedInAs);
+            this.pnlSideMenu.Controls.Add(this.btnLogout);
+            this.pnlSideMenu.Controls.Add(this.panelManageEmployees);
+            this.pnlSideMenu.Controls.Add(this.btnManageEmployees);
+            this.pnlSideMenu.Controls.Add(this.lblDate);
+            this.pnlSideMenu.Controls.Add(this.lblTime);
+            this.pnlSideMenu.Controls.Add(this.panelInventory);
+            this.pnlSideMenu.Controls.Add(this.btnInventory);
+            this.pnlSideMenu.Controls.Add(this.panelSales);
+            this.pnlSideMenu.Controls.Add(this.btnSales);
+            this.pnlSideMenu.Controls.Add(this.panelLogo);
+            this.pnlSideMenu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlSideMenu.Location = new System.Drawing.Point(0, 0);
+            this.pnlSideMenu.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlSideMenu.Name = "pnlSideMenu";
+            this.pnlSideMenu.Size = new System.Drawing.Size(168, 687);
+            this.pnlSideMenu.TabIndex = 13;
             // 
             // btnLogout
             // 
+            this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogout.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnLogout.FlatAppearance.BorderSize = 0;
             this.btnLogout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
@@ -166,7 +174,7 @@
             this.btnLogout.Text = "Logout";
             this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLogout.UseVisualStyleBackColor = true;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click_1);
+            this.btnLogout.Click += new System.EventHandler(this.BtnLogout_Click_1);
             // 
             // panelManageEmployees
             // 
@@ -183,6 +191,7 @@
             // 
             // btnTrackEmployees
             // 
+            this.btnTrackEmployees.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTrackEmployees.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnTrackEmployees.FlatAppearance.BorderSize = 0;
             this.btnTrackEmployees.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
@@ -199,10 +208,11 @@
             this.btnTrackEmployees.Text = "Track Employees";
             this.btnTrackEmployees.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTrackEmployees.UseVisualStyleBackColor = true;
-            this.btnTrackEmployees.Click += new System.EventHandler(this.btnTrackEmployees_Click);
+            this.btnTrackEmployees.Click += new System.EventHandler(this.BtnTrackEmployees_Click);
             // 
             // btnViewEmployees
             // 
+            this.btnViewEmployees.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnViewEmployees.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnViewEmployees.FlatAppearance.BorderSize = 0;
             this.btnViewEmployees.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
@@ -219,10 +229,11 @@
             this.btnViewEmployees.Text = "View Employees";
             this.btnViewEmployees.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnViewEmployees.UseVisualStyleBackColor = true;
-            this.btnViewEmployees.Click += new System.EventHandler(this.btnViewEmployees_Click);
+            this.btnViewEmployees.Click += new System.EventHandler(this.BtnViewEmployees_Click);
             // 
             // btnManageEmployees
             // 
+            this.btnManageEmployees.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnManageEmployees.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnManageEmployees.FlatAppearance.BorderSize = 0;
             this.btnManageEmployees.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
@@ -239,7 +250,7 @@
             this.btnManageEmployees.Text = "Manage Employees";
             this.btnManageEmployees.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnManageEmployees.UseVisualStyleBackColor = true;
-            this.btnManageEmployees.Click += new System.EventHandler(this.btnManageEmployees_Click);
+            this.btnManageEmployees.Click += new System.EventHandler(this.BtnManageEmployees_Click);
             // 
             // panelInventory
             // 
@@ -257,6 +268,7 @@
             // 
             // btnInventoryReport
             // 
+            this.btnInventoryReport.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnInventoryReport.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnInventoryReport.FlatAppearance.BorderSize = 0;
             this.btnInventoryReport.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
@@ -273,10 +285,11 @@
             this.btnInventoryReport.Text = "Report";
             this.btnInventoryReport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnInventoryReport.UseVisualStyleBackColor = true;
-            this.btnInventoryReport.Click += new System.EventHandler(this.btnInventoryReport_Click);
+            this.btnInventoryReport.Click += new System.EventHandler(this.BtnInventoryReport_Click);
             // 
             // btnEditProducts
             // 
+            this.btnEditProducts.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEditProducts.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnEditProducts.FlatAppearance.BorderSize = 0;
             this.btnEditProducts.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
@@ -293,10 +306,11 @@
             this.btnEditProducts.Text = "Edit Products";
             this.btnEditProducts.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEditProducts.UseVisualStyleBackColor = true;
-            this.btnEditProducts.Click += new System.EventHandler(this.btnEditProducts_Click_1);
+            this.btnEditProducts.Click += new System.EventHandler(this.BtnEditProducts_Click_1);
             // 
             // btnSearchProducts
             // 
+            this.btnSearchProducts.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSearchProducts.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSearchProducts.FlatAppearance.BorderSize = 0;
             this.btnSearchProducts.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
@@ -313,7 +327,7 @@
             this.btnSearchProducts.Text = "Search Products";
             this.btnSearchProducts.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSearchProducts.UseVisualStyleBackColor = true;
-            this.btnSearchProducts.Click += new System.EventHandler(this.btnSearchProducts_Click_1);
+            this.btnSearchProducts.Click += new System.EventHandler(this.BtnSearchProducts_Click_1);
             // 
             // panelSales
             // 
@@ -331,6 +345,7 @@
             // 
             // btnSalesReport
             // 
+            this.btnSalesReport.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSalesReport.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSalesReport.FlatAppearance.BorderSize = 0;
             this.btnSalesReport.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
@@ -347,10 +362,11 @@
             this.btnSalesReport.Text = "Sales Report";
             this.btnSalesReport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSalesReport.UseVisualStyleBackColor = true;
-            this.btnSalesReport.Click += new System.EventHandler(this.btnSalesReport_Click);
+            this.btnSalesReport.Click += new System.EventHandler(this.BtnSalesReport_Click);
             // 
             // btnTransactionHistory
             // 
+            this.btnTransactionHistory.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTransactionHistory.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnTransactionHistory.FlatAppearance.BorderSize = 0;
             this.btnTransactionHistory.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
@@ -367,10 +383,11 @@
             this.btnTransactionHistory.Text = "Sales History";
             this.btnTransactionHistory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTransactionHistory.UseVisualStyleBackColor = true;
-            this.btnTransactionHistory.Click += new System.EventHandler(this.btnTransactionHistory_Click);
+            this.btnTransactionHistory.Click += new System.EventHandler(this.BtnTransactionHistory_Click);
             // 
             // btnCreateTransaction
             // 
+            this.btnCreateTransaction.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCreateTransaction.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnCreateTransaction.FlatAppearance.BorderSize = 0;
             this.btnCreateTransaction.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
@@ -387,10 +404,11 @@
             this.btnCreateTransaction.Text = "Create Transaction";
             this.btnCreateTransaction.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCreateTransaction.UseVisualStyleBackColor = true;
-            this.btnCreateTransaction.Click += new System.EventHandler(this.btnCreateTransaction_Click_1);
+            this.btnCreateTransaction.Click += new System.EventHandler(this.BtnCreateTransaction_Click_1);
             // 
             // btnSales
             // 
+            this.btnSales.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSales.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSales.FlatAppearance.BorderSize = 0;
             this.btnSales.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
@@ -407,11 +425,11 @@
             this.btnSales.Text = "Sales";
             this.btnSales.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSales.UseVisualStyleBackColor = true;
-            this.btnSales.Click += new System.EventHandler(this.btnSales_Click_1);
+            this.btnSales.Click += new System.EventHandler(this.BtnSales_Click_1);
             // 
             // panelLogo
             // 
-            this.panelLogo.Controls.Add(this.pictureBox1);
+            this.panelLogo.Controls.Add(this.picBiliPCLogo);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Margin = new System.Windows.Forms.Padding(2);
@@ -419,86 +437,109 @@
             this.panelLogo.Size = new System.Drawing.Size(168, 106);
             this.panelLogo.TabIndex = 1;
             // 
-            // pictureBox1
+            // picBiliPCLogo
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(9, 10);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(151, 89);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.picBiliPCLogo.Image = ((System.Drawing.Image)(resources.GetObject("picBiliPCLogo.Image")));
+            this.picBiliPCLogo.Location = new System.Drawing.Point(4, 18);
+            this.picBiliPCLogo.Margin = new System.Windows.Forms.Padding(2);
+            this.picBiliPCLogo.Name = "picBiliPCLogo";
+            this.picBiliPCLogo.Size = new System.Drawing.Size(162, 76);
+            this.picBiliPCLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBiliPCLogo.TabIndex = 0;
+            this.picBiliPCLogo.TabStop = false;
             // 
-            // panelTop
+            // pnlTop
             // 
-            this.panelTop.BackColor = System.Drawing.Color.Black;
-            this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTop.Location = new System.Drawing.Point(168, 0);
-            this.panelTop.Margin = new System.Windows.Forms.Padding(2);
-            this.panelTop.Name = "panelTop";
-            this.panelTop.Size = new System.Drawing.Size(945, 24);
-            this.panelTop.TabIndex = 16;
+            this.pnlTop.BackColor = System.Drawing.Color.Black;
+            this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTop.Location = new System.Drawing.Point(168, 0);
+            this.pnlTop.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlTop.Name = "pnlTop";
+            this.pnlTop.Size = new System.Drawing.Size(945, 24);
+            this.pnlTop.TabIndex = 16;
             // 
-            // panelContainerForm
+            // pnlContainerForm
             // 
-            this.panelContainerForm.BackColor = System.Drawing.Color.LavenderBlush;
-            this.panelContainerForm.Controls.Add(this.pictureBox2);
-            this.panelContainerForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContainerForm.Location = new System.Drawing.Point(168, 24);
-            this.panelContainerForm.Margin = new System.Windows.Forms.Padding(2);
-            this.panelContainerForm.MinimumSize = new System.Drawing.Size(945, 639);
-            this.panelContainerForm.Name = "panelContainerForm";
-            this.panelContainerForm.Size = new System.Drawing.Size(945, 639);
-            this.panelContainerForm.TabIndex = 17;
+            this.pnlContainerForm.BackColor = System.Drawing.Color.LavenderBlush;
+            this.pnlContainerForm.Controls.Add(this.picBiliPCLogoDefault);
+            this.pnlContainerForm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlContainerForm.Location = new System.Drawing.Point(168, 24);
+            this.pnlContainerForm.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlContainerForm.MinimumSize = new System.Drawing.Size(945, 639);
+            this.pnlContainerForm.Name = "pnlContainerForm";
+            this.pnlContainerForm.Size = new System.Drawing.Size(945, 639);
+            this.pnlContainerForm.TabIndex = 17;
             // 
-            // pictureBox2
+            // picBiliPCLogoDefault
             // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(332, 161);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(284, 262);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
+            this.picBiliPCLogoDefault.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.picBiliPCLogoDefault.Image = ((System.Drawing.Image)(resources.GetObject("picBiliPCLogoDefault.Image")));
+            this.picBiliPCLogoDefault.Location = new System.Drawing.Point(332, 161);
+            this.picBiliPCLogoDefault.Margin = new System.Windows.Forms.Padding(2);
+            this.picBiliPCLogoDefault.Name = "picBiliPCLogoDefault";
+            this.picBiliPCLogoDefault.Size = new System.Drawing.Size(284, 262);
+            this.picBiliPCLogoDefault.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBiliPCLogoDefault.TabIndex = 0;
+            this.picBiliPCLogoDefault.TabStop = false;
             // 
-            // AdminUI
+            // lblLoggedInAs
+            // 
+            this.lblLoggedInAs.AutoSize = true;
+            this.lblLoggedInAs.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoggedInAs.ForeColor = System.Drawing.Color.White;
+            this.lblLoggedInAs.Location = new System.Drawing.Point(11, 559);
+            this.lblLoggedInAs.Name = "lblLoggedInAs";
+            this.lblLoggedInAs.Size = new System.Drawing.Size(79, 12);
+            this.lblLoggedInAs.TabIndex = 23;
+            this.lblLoggedInAs.Text = "Logged in as:";
+            // 
+            // lblAcctName
+            // 
+            this.lblAcctName.AutoSize = true;
+            this.lblAcctName.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAcctName.ForeColor = System.Drawing.Color.White;
+            this.lblAcctName.Location = new System.Drawing.Point(22, 576);
+            this.lblAcctName.Name = "lblAcctName";
+            this.lblAcctName.Size = new System.Drawing.Size(47, 17);
+            this.lblAcctName.TabIndex = 24;
+            this.lblAcctName.Text = "Gago";
+            // 
+            // DashboardUI
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1113, 687);
-            this.Controls.Add(this.panelContainerForm);
-            this.Controls.Add(this.panelTop);
-            this.Controls.Add(this.panelBottom);
-            this.Controls.Add(this.panelSideMenu);
+            this.Controls.Add(this.pnlContainerForm);
+            this.Controls.Add(this.pnlTop);
+            this.Controls.Add(this.pnlBottom);
+            this.Controls.Add(this.pnlSideMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1129, 726);
-            this.Name = "AdminUI";
+            this.Name = "DashboardUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BiliPC Store";
-            this.panelSideMenu.ResumeLayout(false);
-            this.panelSideMenu.PerformLayout();
+            this.pnlSideMenu.ResumeLayout(false);
+            this.pnlSideMenu.PerformLayout();
             this.panelManageEmployees.ResumeLayout(false);
             this.panelInventory.ResumeLayout(false);
             this.panelSales.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panelContainerForm.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBiliPCLogo)).EndInit();
+            this.pnlContainerForm.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picBiliPCLogoDefault)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Panel panelBottom;
-        private System.Windows.Forms.Label labelDate;
-        private System.Windows.Forms.Label labelTime;
+        private System.Windows.Forms.Timer tmrRealtimeTime;
+        private System.Windows.Forms.Panel pnlBottom;
+        private System.Windows.Forms.Label lblDate;
+        private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.Button btnInventory;
-        private System.Windows.Forms.Panel panelSideMenu;
+        private System.Windows.Forms.Panel pnlSideMenu;
         private System.Windows.Forms.Panel panelManageEmployees;
         private System.Windows.Forms.Button btnTrackEmployees;
         private System.Windows.Forms.Button btnViewEmployees;
@@ -513,10 +554,12 @@
         private System.Windows.Forms.Button btnCreateTransaction;
         private System.Windows.Forms.Button btnSales;
         private System.Windows.Forms.Panel panelLogo;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picBiliPCLogo;
         private System.Windows.Forms.Button btnLogout;
-        private System.Windows.Forms.Panel panelTop;
-        private System.Windows.Forms.Panel panelContainerForm;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Panel pnlTop;
+        private System.Windows.Forms.Panel pnlContainerForm;
+        private System.Windows.Forms.PictureBox picBiliPCLogoDefault;
+        private System.Windows.Forms.Label lblAcctName;
+        private System.Windows.Forms.Label lblLoggedInAs;
     }
 }
