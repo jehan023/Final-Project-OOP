@@ -35,7 +35,7 @@
             this.idBox = new System.Windows.Forms.TextBox();
             this.lblItemID = new System.Windows.Forms.Label();
             this.txtCategory = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lblCategory = new System.Windows.Forms.Label();
             this.lblUnitPrice = new System.Windows.Forms.Label();
             this.lblInStock = new System.Windows.Forms.Label();
             this.txtSupplier = new System.Windows.Forms.TextBox();
@@ -58,8 +58,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnRefreshItem = new System.Windows.Forms.Button();
             this.pnlTop = new System.Windows.Forms.Panel();
-            this.CategoryBox = new System.Windows.Forms.ComboBox();
-            this.lblCategory = new System.Windows.Forms.Label();
+            this.cboCategory = new System.Windows.Forms.ComboBox();
+            this.lblCategorySort = new System.Windows.Forms.Label();
             this.searchItemBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgdProduct)).BeginInit();
             this.GroupTextBox.SuspendLayout();
@@ -94,7 +94,7 @@
             this.GroupTextBox.Controls.Add(this.idBox);
             this.GroupTextBox.Controls.Add(this.lblItemID);
             this.GroupTextBox.Controls.Add(this.txtCategory);
-            this.GroupTextBox.Controls.Add(this.label10);
+            this.GroupTextBox.Controls.Add(this.lblCategory);
             this.GroupTextBox.Controls.Add(this.lblUnitPrice);
             this.GroupTextBox.Controls.Add(this.lblInStock);
             this.GroupTextBox.Controls.Add(this.txtSupplier);
@@ -181,19 +181,19 @@
             this.txtCategory.Size = new System.Drawing.Size(336, 24);
             this.txtCategory.TabIndex = 58;
             // 
-            // label10
+            // lblCategory
             // 
-            this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(472, 89);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(91, 18);
-            this.label10.TabIndex = 57;
-            this.label10.Text = "Category :";
+            this.lblCategory.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblCategory.AutoSize = true;
+            this.lblCategory.BackColor = System.Drawing.Color.Transparent;
+            this.lblCategory.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategory.ForeColor = System.Drawing.Color.Black;
+            this.lblCategory.Location = new System.Drawing.Point(472, 89);
+            this.lblCategory.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCategory.Name = "lblCategory";
+            this.lblCategory.Size = new System.Drawing.Size(91, 18);
+            this.lblCategory.TabIndex = 57;
+            this.lblCategory.Text = "Category :";
             // 
             // lblUnitPrice
             // 
@@ -292,7 +292,7 @@
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(336, 24);
             this.txtQuantity.TabIndex = 48;
-            this.txtQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CostBox_KeyPress);
+            this.txtQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtQuantity_KeyPress);
             // 
             // lblQuantity
             // 
@@ -484,8 +484,8 @@
             // pnlTop
             // 
             this.pnlTop.BackColor = System.Drawing.Color.Firebrick;
-            this.pnlTop.Controls.Add(this.CategoryBox);
-            this.pnlTop.Controls.Add(this.lblCategory);
+            this.pnlTop.Controls.Add(this.cboCategory);
+            this.pnlTop.Controls.Add(this.lblCategorySort);
             this.pnlTop.Controls.Add(this.searchItemBtn);
             this.pnlTop.Controls.Add(this.btnRefreshItem);
             this.pnlTop.Controls.Add(this.label5);
@@ -504,31 +504,31 @@
             this.pnlTop.Size = new System.Drawing.Size(935, 100);
             this.pnlTop.TabIndex = 0;
             // 
-            // CategoryBox
+            // cboCategory
             // 
-            this.CategoryBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.CategoryBox.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.CategoryBox.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.CategoryBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CategoryBox.FormattingEnabled = true;
-            this.CategoryBox.Location = new System.Drawing.Point(636, 29);
-            this.CategoryBox.Name = "CategoryBox";
-            this.CategoryBox.Size = new System.Drawing.Size(193, 26);
-            this.CategoryBox.TabIndex = 40;
-            this.CategoryBox.SelectedIndexChanged += new System.EventHandler(this.CategoryBox_SelectedIndexChanged);
+            this.cboCategory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboCategory.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.cboCategory.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.cboCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboCategory.FormattingEnabled = true;
+            this.cboCategory.Location = new System.Drawing.Point(636, 29);
+            this.cboCategory.Name = "cboCategory";
+            this.cboCategory.Size = new System.Drawing.Size(193, 26);
+            this.cboCategory.TabIndex = 40;
+            this.cboCategory.SelectedIndexChanged += new System.EventHandler(this.CboCategory_SelectedIndexChanged);
             // 
-            // lblCategory
+            // lblCategorySort
             // 
-            this.lblCategory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblCategory.AutoSize = true;
-            this.lblCategory.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategory.ForeColor = System.Drawing.Color.White;
-            this.lblCategory.Location = new System.Drawing.Point(539, 32);
-            this.lblCategory.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblCategory.Name = "lblCategory";
-            this.lblCategory.Size = new System.Drawing.Size(87, 18);
-            this.lblCategory.TabIndex = 39;
-            this.lblCategory.Text = "Category:";
+            this.lblCategorySort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblCategorySort.AutoSize = true;
+            this.lblCategorySort.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategorySort.ForeColor = System.Drawing.Color.White;
+            this.lblCategorySort.Location = new System.Drawing.Point(539, 32);
+            this.lblCategorySort.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCategorySort.Name = "lblCategorySort";
+            this.lblCategorySort.Size = new System.Drawing.Size(87, 18);
+            this.lblCategorySort.TabIndex = 39;
+            this.lblCategorySort.Text = "Category:";
             // 
             // searchItemBtn
             // 
@@ -577,7 +577,7 @@
         private System.Windows.Forms.TextBox idBox;
         private System.Windows.Forms.Label lblItemID;
         private System.Windows.Forms.TextBox txtCategory;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblCategory;
         private System.Windows.Forms.Label lblUnitPrice;
         private System.Windows.Forms.Label lblInStock;
         private System.Windows.Forms.TextBox txtSupplier;
@@ -601,7 +601,7 @@
         private System.Windows.Forms.Button btnRefreshItem;
         private System.Windows.Forms.Panel pnlTop;
         private System.Windows.Forms.Button searchItemBtn;
-        private System.Windows.Forms.ComboBox CategoryBox;
-        private System.Windows.Forms.Label lblCategory;
+        private System.Windows.Forms.ComboBox cboCategory;
+        private System.Windows.Forms.Label lblCategorySort;
     }
 }

@@ -423,7 +423,7 @@
             this.txtAcctWorkhours.Name = "txtAcctWorkhours";
             this.txtAcctWorkhours.Size = new System.Drawing.Size(336, 28);
             this.txtAcctWorkhours.TabIndex = 51;
-            this.txtAcctWorkhours.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.WageBox_KeyPress);
+            this.txtAcctWorkhours.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtAcctWage_KeyPress);
             // 
             // txtAcctWage
             // 
@@ -434,7 +434,7 @@
             this.txtAcctWage.Name = "txtAcctWage";
             this.txtAcctWage.Size = new System.Drawing.Size(336, 28);
             this.txtAcctWage.TabIndex = 49;
-            this.txtAcctWage.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.WageBox_KeyPress);
+            this.txtAcctWage.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtAcctWage_KeyPress);
             // 
             // lblWorkhours
             // 

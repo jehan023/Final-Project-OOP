@@ -24,9 +24,9 @@
 
             foreach (var itemInventory in inventoryRecord)
             {
-                if (!this.CategoryBox.Items.Contains(itemInventory.Category))
+                if (!this.cboCategory.Items.Contains(itemInventory.Category))
                 {
-                    this.CategoryBox.Items.Add(itemInventory.Category);
+                    this.cboCategory.Items.Add(itemInventory.Category);
                 }
             }
 
@@ -53,10 +53,10 @@
                     = this.txtCost.Text
                     = this.txtCategory.Text
                     = this.txtSupplier.Text
-                    = string.Empty;
+                        = string.Empty;
                 this.radInStockTrue.Checked
                     = this.radInStockFalse.Checked
-                    = false;
+                        = false;
             }
         }
 
@@ -73,7 +73,7 @@
 
         private void BtnRefreshItem_Click(object sender, EventArgs e)
         {
-            this.CategoryBox.Text = string.Empty;
+            this.cboCategory.Text = string.Empty;
             this.RefreshInventory();
         }
 
@@ -103,7 +103,7 @@
                     selectedRecord.Item = this.txtItemName.Text;
                     selectedRecord.Qty = int.Parse(s: this.txtQuantity.Text, CultureInfo.InvariantCulture);
                     selectedRecord.UnitPrice = double.Parse(s: this.txtUnitPrice.Text, CultureInfo.InvariantCulture);
-                    selectedRecord.UnitPrice = double.Parse(s: this.txtCost.Text, CultureInfo.InvariantCulture);
+                    selectedRecord.Cost = double.Parse(s: this.txtCost.Text, CultureInfo.InvariantCulture);
                     selectedRecord.Category = this.txtCategory.Text;
                     selectedRecord.Supplier = this.txtSupplier.Text;
                     selectedRecord.Status = int.Parse(this.txtQuantity.Text, CultureInfo.InvariantCulture) != 0;
@@ -121,13 +121,13 @@
 
         private void BtnDeleteItem_Click(object sender, EventArgs e)
         {
-            try
+            if (!string.IsNullOrEmpty(this.idBox.Text))
             {
                 this.db.DeleleRecord<InventoryModel>("Inventory", ObjectId.Parse(this.idBox.Text));
                 MessageBox.Show("Item deleted.");
                 this.RefreshInventory();
             }
-            catch (FormatException)
+            else
             {
                 MessageBox.Show("Please select an item.");
             }
@@ -135,7 +135,7 @@
 
         private void DgdProduct_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            try
+            if (e.RowIndex > 0 && e.ColumnIndex > 0)
             {
                 this.idBox.Text = this.dgdProduct.Rows[e.RowIndex].Cells[0].Value.ToString();
                 this.txtItemName.Text = this.dgdProduct.Rows[e.RowIndex].Cells[1].Value.ToString();
@@ -147,22 +147,22 @@
                 this.radInStockTrue.Checked = this.dgdProduct.Rows[e.RowIndex].Cells[7].Value.Equals(true);
                 this.radInStockFalse.Checked = this.dgdProduct.Rows[e.RowIndex].Cells[7].Value.Equals(false);
             }
-            catch (ArgumentOutOfRangeException)
-            {
-                // Occurs when upper-leftmost datagridview is clicked.
-                MessageBox.Show("Invalid selection.");
-            }
+        }
+
+        private void CboCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var selectedRecord = this.db.LoadRecordsByStringList<InventoryModel>("Inventory", "Category", this.cboCategory.Text);
+            this.dgdProduct.DataSource = selectedRecord;
         }
 
         private void CostBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            Functions.RestrictedKeyPressToInt(e);
+            Functions.RestrictedKeyPressToDouble(e);
         }
 
-        private void CategoryBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void TxtQuantity_KeyPress(object sender, KeyPressEventArgs e)
         {
-            var selectedRecord = this.db.LoadRecordsByStringList<InventoryModel>("Inventory", "Category", this.CategoryBox.Text);
-            this.dgdProduct.DataSource = selectedRecord;
+            Functions.RestrictedKeyPressToInt(e);
         }
     }
 }

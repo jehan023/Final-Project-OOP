@@ -59,9 +59,14 @@
             }
         }
 
-        private void QuantityBox_KeyPress(object sender, KeyPressEventArgs e)
+        private void TxtQuantity_KeyPress(object sender, KeyPressEventArgs e)
         {
             Functions.RestrictedKeyPressToInt(e);
+        }
+
+        private void TxtUnitPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Functions.RestrictedKeyPressToDouble(e);
         }
     }
 }

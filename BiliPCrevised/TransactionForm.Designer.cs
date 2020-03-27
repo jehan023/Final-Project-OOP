@@ -32,6 +32,7 @@
             this.btnX = new System.Windows.Forms.Button();
             this.lblTransaction = new System.Windows.Forms.Label();
             this.pnlBackground = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.lblCategory = new System.Windows.Forms.Label();
             this.cboCategory = new System.Windows.Forms.ComboBox();
             this.cboItem = new System.Windows.Forms.ComboBox();
@@ -57,7 +58,6 @@
             this.lblQuantity = new System.Windows.Forms.Label();
             this.lblItem = new System.Windows.Forms.Label();
             this.dgdCart = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
             this.pnlTop.SuspendLayout();
             this.pnlBackground.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -136,6 +136,22 @@
             this.pnlBackground.Name = "pnlBackground";
             this.pnlBackground.Size = new System.Drawing.Size(935, 583);
             this.pnlBackground.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button1.BackColor = System.Drawing.Color.YellowGreen;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(620, 524);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(132, 45);
+            this.button1.TabIndex = 61;
+            this.button1.Text = "TRANSACT";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // lblCategory
             // 
@@ -232,13 +248,14 @@
             this.txtAmountReceived.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtAmountReceived.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.txtAmountReceived.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAmountReceived.HideSelection = false;
             this.txtAmountReceived.Location = new System.Drawing.Point(27, 36);
             this.txtAmountReceived.Margin = new System.Windows.Forms.Padding(2);
             this.txtAmountReceived.Name = "txtAmountReceived";
             this.txtAmountReceived.Size = new System.Drawing.Size(312, 39);
             this.txtAmountReceived.TabIndex = 54;
             this.txtAmountReceived.TextChanged += new System.EventHandler(this.TxtAmountReceived_TextChanged);
-            this.txtAmountReceived.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtQuantity_KeyPress);
+            this.txtAmountReceived.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtAmountReceived_KeyPress);
             // 
             // lblCash
             // 
@@ -269,7 +286,7 @@
             this.btnAddDiscount.TabIndex = 53;
             this.btnAddDiscount.Text = "ADD DISCOUNT";
             this.btnAddDiscount.UseVisualStyleBackColor = false;
-            this.btnAddDiscount.Click += new System.EventHandler(this.btnAddDiscount_Click);
+            this.btnAddDiscount.Click += new System.EventHandler(this.BtnAddDiscount_Click);
             // 
             // lblTransactionID
             // 
@@ -395,6 +412,7 @@
             this.btnRemoveItem.TabIndex = 47;
             this.btnRemoveItem.Text = "REMOVE";
             this.btnRemoveItem.UseVisualStyleBackColor = false;
+            this.btnRemoveItem.Click += new System.EventHandler(this.BtnRemoveItem_Click);
             // 
             // lblTotalUnitPrice
             // 
@@ -463,31 +481,20 @@
             // 
             // dgdCart
             // 
+            this.dgdCart.AllowUserToAddRows = false;
+            this.dgdCart.AllowUserToDeleteRows = false;
             this.dgdCart.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgdCart.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgdCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgdCart.Location = new System.Drawing.Point(10, 107);
             this.dgdCart.MultiSelect = false;
             this.dgdCart.Name = "dgdCart";
+            this.dgdCart.ReadOnly = true;
             this.dgdCart.RowHeadersWidth = 51;
+            this.dgdCart.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgdCart.Size = new System.Drawing.Size(904, 301);
             this.dgdCart.TabIndex = 0;
-            // 
-            // button1
-            // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.BackColor = System.Drawing.Color.YellowGreen;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(620, 524);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(132, 45);
-            this.button1.TabIndex = 61;
-            this.button1.Text = "TRANSACT";
-            this.button1.UseVisualStyleBackColor = false;
+            this.dgdCart.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgdCart_CellClick);
             // 
             // TransactionForm
             // 

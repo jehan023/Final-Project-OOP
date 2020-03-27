@@ -20,5 +20,8 @@
 
         [BsonElement]
         public double TotalUnitPrice { get; set; }
+
+        [BsonElement]
+        public double Discount { get; set; }
     }
 }

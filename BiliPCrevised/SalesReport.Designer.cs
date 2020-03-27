@@ -175,7 +175,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(935, 639);
             this.Name = "SalesReport";
-            this.Text = "SalesReport";
+            this.Text = "``````````````````````````````````````````````````";
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
             this.pnlBackground.ResumeLayout(false);

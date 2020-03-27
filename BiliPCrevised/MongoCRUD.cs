@@ -50,7 +50,7 @@
             return collection.Find(filter).FirstOrDefault();
         }
 
-        public T LoadRecordsBySpecificT<T>(string table, string element, string specific)
+        public T LoadRecordsByStringT<T>(string table, string element, string specific)
         {
             var collection = this.db.GetCollection<T>(table);
             var filter = Builders<T>.Filter.Eq(element, specific);

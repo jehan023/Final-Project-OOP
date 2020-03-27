@@ -29,6 +29,26 @@
             return emptyField;
         }
 
+        public static bool RestrictedKeyPressToDouble(KeyPressEventArgs e)
+        {
+            if (e == null)
+            {
+                throw new ArgumentNullException(nameof(e));
+            }
+
+            // ch 8 = backspace
+            // ch 46 = decimal point
+            char ch = e.KeyChar;
+            if (!char.IsDigit(ch) && ch != 8 && ch != 46)
+            {
+                return e.Handled = true;
+            }
+            else
+            {
+                return e.Handled = false;
+            }
+        }
+
         public static bool RestrictedKeyPressToInt(KeyPressEventArgs e)
         {
             if (e == null)
@@ -37,9 +57,8 @@
             }
 
             // ch 8 = backspace
-            // ch 46 = del key
             char ch = e.KeyChar;
-            if (!char.IsDigit(ch) && ch != 8 && ch != 46)
+            if (!char.IsDigit(ch) && ch != 8)
             {
                 return e.Handled = true;
             }

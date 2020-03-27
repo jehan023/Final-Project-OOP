@@ -141,9 +141,9 @@
             }
         }
 
-        private void WageBox_KeyPress(object sender, KeyPressEventArgs e)
+        private void TxtAcctWage_KeyPress(object sender, KeyPressEventArgs e)
         {
-            Functions.RestrictedKeyPressToInt(e);
+            Functions.RestrictedKeyPressToDouble(e);
         }
     }
 }

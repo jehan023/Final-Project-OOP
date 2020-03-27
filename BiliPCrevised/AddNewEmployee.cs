@@ -63,7 +63,7 @@
 
         private void TxtWage_KeyPress(object sender, KeyPressEventArgs e)
         {
-            Functions.RestrictedKeyPressToInt(e);
+            Functions.RestrictedKeyPressToDouble(e);
         }
     }
 }
