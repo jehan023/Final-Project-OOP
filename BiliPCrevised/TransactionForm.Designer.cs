@@ -74,7 +74,7 @@
             this.pnlTop.Controls.Add(this.lblTransaction);
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
             this.pnlTop.Name = "pnlTop";
-            this.pnlTop.Size = new System.Drawing.Size(935, 56);
+            this.pnlTop.Size = new System.Drawing.Size(945, 56);
             this.pnlTop.TabIndex = 0;
             // 
             // btnX
@@ -86,7 +86,7 @@
             this.btnX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnX.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnX.ForeColor = System.Drawing.Color.Black;
-            this.btnX.Location = new System.Drawing.Point(910, 0);
+            this.btnX.Location = new System.Drawing.Point(920, 0);
             this.btnX.Margin = new System.Windows.Forms.Padding(2);
             this.btnX.Name = "btnX";
             this.btnX.Size = new System.Drawing.Size(25, 27);
@@ -134,7 +134,7 @@
             this.pnlBackground.Controls.Add(this.dgdCart);
             this.pnlBackground.Location = new System.Drawing.Point(0, 56);
             this.pnlBackground.Name = "pnlBackground";
-            this.pnlBackground.Size = new System.Drawing.Size(935, 583);
+            this.pnlBackground.Size = new System.Drawing.Size(945, 583);
             this.pnlBackground.TabIndex = 1;
             // 
             // button1
@@ -145,7 +145,7 @@
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(620, 524);
+            this.button1.Location = new System.Drawing.Point(625, 524);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(132, 45);
@@ -160,7 +160,7 @@
             this.lblCategory.BackColor = System.Drawing.Color.Transparent;
             this.lblCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCategory.ForeColor = System.Drawing.Color.Black;
-            this.lblCategory.Location = new System.Drawing.Point(495, 31);
+            this.lblCategory.Location = new System.Drawing.Point(504, 31);
             this.lblCategory.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCategory.Name = "lblCategory";
             this.lblCategory.Size = new System.Drawing.Size(95, 24);
@@ -172,7 +172,7 @@
             this.cboCategory.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboCategory.FormattingEnabled = true;
-            this.cboCategory.Location = new System.Drawing.Point(594, 31);
+            this.cboCategory.Location = new System.Drawing.Point(603, 31);
             this.cboCategory.Margin = new System.Windows.Forms.Padding(2);
             this.cboCategory.Name = "cboCategory";
             this.cboCategory.Size = new System.Drawing.Size(192, 28);
@@ -184,7 +184,7 @@
             this.cboItem.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboItem.FormattingEnabled = true;
-            this.cboItem.Location = new System.Drawing.Point(73, 31);
+            this.cboItem.Location = new System.Drawing.Point(82, 31);
             this.cboItem.Margin = new System.Windows.Forms.Padding(2);
             this.cboItem.Name = "cboItem";
             this.cboItem.Size = new System.Drawing.Size(372, 28);
@@ -197,7 +197,7 @@
             this.txtTransacationID.BackColor = System.Drawing.Color.DarkGray;
             this.txtTransacationID.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTransacationID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTransacationID.Location = new System.Drawing.Point(153, 6);
+            this.txtTransacationID.Location = new System.Drawing.Point(162, 6);
             this.txtTransacationID.Margin = new System.Windows.Forms.Padding(2);
             this.txtTransacationID.Name = "txtTransacationID";
             this.txtTransacationID.ReadOnly = true;
@@ -211,7 +211,7 @@
             this.groupBox2.Controls.Add(this.lblChange);
             this.groupBox2.Controls.Add(this.txtAmountReceived);
             this.groupBox2.Controls.Add(this.lblCash);
-            this.groupBox2.Location = new System.Drawing.Point(10, 414);
+            this.groupBox2.Location = new System.Drawing.Point(19, 414);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(361, 157);
             this.groupBox2.TabIndex = 55;
@@ -279,7 +279,7 @@
             this.btnAddDiscount.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnAddDiscount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddDiscount.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddDiscount.Location = new System.Drawing.Point(470, 524);
+            this.btnAddDiscount.Location = new System.Drawing.Point(475, 524);
             this.btnAddDiscount.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddDiscount.Name = "btnAddDiscount";
             this.btnAddDiscount.Size = new System.Drawing.Size(132, 45);
@@ -295,7 +295,7 @@
             this.lblTransactionID.BackColor = System.Drawing.Color.Transparent;
             this.lblTransactionID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTransactionID.ForeColor = System.Drawing.Color.Black;
-            this.lblTransactionID.Location = new System.Drawing.Point(6, 5);
+            this.lblTransactionID.Location = new System.Drawing.Point(15, 5);
             this.lblTransactionID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTransactionID.Name = "lblTransactionID";
             this.lblTransactionID.Size = new System.Drawing.Size(140, 24);
@@ -310,7 +310,7 @@
             this.btnPrintReceipt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnPrintReceipt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrintReceipt.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrintReceipt.Location = new System.Drawing.Point(769, 524);
+            this.btnPrintReceipt.Location = new System.Drawing.Point(774, 524);
             this.btnPrintReceipt.Margin = new System.Windows.Forms.Padding(2);
             this.btnPrintReceipt.Name = "btnPrintReceipt";
             this.btnPrintReceipt.Size = new System.Drawing.Size(132, 45);
@@ -322,7 +322,7 @@
             // 
             this.txtUnitPrice.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtUnitPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUnitPrice.Location = new System.Drawing.Point(274, 70);
+            this.txtUnitPrice.Location = new System.Drawing.Point(283, 70);
             this.txtUnitPrice.Margin = new System.Windows.Forms.Padding(2);
             this.txtUnitPrice.Name = "txtUnitPrice";
             this.txtUnitPrice.ReadOnly = true;
@@ -336,7 +336,7 @@
             this.lblUnitPrice.BackColor = System.Drawing.Color.Transparent;
             this.lblUnitPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUnitPrice.ForeColor = System.Drawing.Color.Black;
-            this.lblUnitPrice.Location = new System.Drawing.Point(159, 70);
+            this.lblUnitPrice.Location = new System.Drawing.Point(168, 70);
             this.lblUnitPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUnitPrice.Name = "lblUnitPrice";
             this.lblUnitPrice.Size = new System.Drawing.Size(100, 24);
@@ -348,7 +348,7 @@
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox1.Controls.Add(this.txtTotalPrice);
             this.groupBox1.Controls.Add(this.lblTotalAmountDue);
-            this.groupBox1.Location = new System.Drawing.Point(412, 414);
+            this.groupBox1.Location = new System.Drawing.Point(421, 414);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(502, 98);
             this.groupBox1.TabIndex = 49;
@@ -388,7 +388,7 @@
             this.btnAddItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnAddItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddItem.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddItem.Location = new System.Drawing.Point(805, 54);
+            this.btnAddItem.Location = new System.Drawing.Point(814, 54);
             this.btnAddItem.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddItem.Name = "btnAddItem";
             this.btnAddItem.Size = new System.Drawing.Size(109, 41);
@@ -405,7 +405,7 @@
             this.btnRemoveItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnRemoveItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoveItem.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemoveItem.Location = new System.Drawing.Point(805, 6);
+            this.btnRemoveItem.Location = new System.Drawing.Point(814, 6);
             this.btnRemoveItem.Margin = new System.Windows.Forms.Padding(2);
             this.btnRemoveItem.Name = "btnRemoveItem";
             this.btnRemoveItem.Size = new System.Drawing.Size(109, 41);
@@ -421,7 +421,7 @@
             this.lblTotalUnitPrice.BackColor = System.Drawing.Color.Transparent;
             this.lblTotalUnitPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalUnitPrice.ForeColor = System.Drawing.Color.Black;
-            this.lblTotalUnitPrice.Location = new System.Drawing.Point(449, 69);
+            this.lblTotalUnitPrice.Location = new System.Drawing.Point(458, 69);
             this.lblTotalUnitPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTotalUnitPrice.Name = "lblTotalUnitPrice";
             this.lblTotalUnitPrice.Size = new System.Drawing.Size(141, 24);
@@ -432,7 +432,7 @@
             // 
             this.txtTotalUnitPrice.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtTotalUnitPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalUnitPrice.Location = new System.Drawing.Point(594, 67);
+            this.txtTotalUnitPrice.Location = new System.Drawing.Point(603, 67);
             this.txtTotalUnitPrice.Margin = new System.Windows.Forms.Padding(2);
             this.txtTotalUnitPrice.Name = "txtTotalUnitPrice";
             this.txtTotalUnitPrice.ReadOnly = true;
@@ -443,7 +443,7 @@
             // 
             this.txtQuantity.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQuantity.Location = new System.Drawing.Point(73, 69);
+            this.txtQuantity.Location = new System.Drawing.Point(82, 69);
             this.txtQuantity.Margin = new System.Windows.Forms.Padding(2);
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(64, 26);
@@ -458,7 +458,7 @@
             this.lblQuantity.BackColor = System.Drawing.Color.Transparent;
             this.lblQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQuantity.ForeColor = System.Drawing.Color.Black;
-            this.lblQuantity.Location = new System.Drawing.Point(18, 69);
+            this.lblQuantity.Location = new System.Drawing.Point(27, 69);
             this.lblQuantity.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblQuantity.Name = "lblQuantity";
             this.lblQuantity.Size = new System.Drawing.Size(48, 24);
@@ -472,7 +472,7 @@
             this.lblItem.BackColor = System.Drawing.Color.Transparent;
             this.lblItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblItem.ForeColor = System.Drawing.Color.Black;
-            this.lblItem.Location = new System.Drawing.Point(11, 32);
+            this.lblItem.Location = new System.Drawing.Point(20, 32);
             this.lblItem.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblItem.Name = "lblItem";
             this.lblItem.Size = new System.Drawing.Size(55, 24);
@@ -486,7 +486,7 @@
             this.dgdCart.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgdCart.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgdCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgdCart.Location = new System.Drawing.Point(10, 107);
+            this.dgdCart.Location = new System.Drawing.Point(19, 107);
             this.dgdCart.MultiSelect = false;
             this.dgdCart.Name = "dgdCart";
             this.dgdCart.ReadOnly = true;
@@ -501,11 +501,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(935, 639);
+            this.ClientSize = new System.Drawing.Size(945, 639);
             this.Controls.Add(this.pnlBackground);
             this.Controls.Add(this.pnlTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MinimumSize = new System.Drawing.Size(935, 639);
+            this.MinimumSize = new System.Drawing.Size(945, 639);
             this.Name = "TransactionForm";
             this.Text = "TransactionForm";
             this.Load += new System.EventHandler(this.TransactionForm_Load);

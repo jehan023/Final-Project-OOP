@@ -297,7 +297,6 @@ C:\Users\Nitro 5\Documents\GitHub\Final-Project-OOP\BiliPCrevised\bin\Debug\Bili
 C:\Users\Nitro 5\Documents\GitHub\Final-Project-OOP\BiliPCrevised\bin\Debug\BiliPC.exe.lastcodeanalysissucceeded
 C:\Users\DENNIEL-PC\source\repos\Final-Project-OOP\BiliPCrevised\obj\Debug\BiliPC.csprojAssemblyReference.cache
 C:\Users\Nitro 5\Documents\GitHub\Final-Project-OOP\BiliPCrevised\obj\Debug\BiliPC.SalesHistory.resources
-C:\Users\Nitro 5\Documents\GitHub\Final-Project-OOP\BiliPCrevised\obj\Debug\BiliPC.csprojAssemblyReference.cache
 C:\Users\Nitro 5\Documents\GitHub\Final-Project-OOP\BiliPCrevised\obj\Debug\BiliPC.InventoryReport.resources
 C:\Users\Nitro 5\Documents\GitHub\Final-Project-OOP\BiliPCrevised\obj\Debug\BiliPC.SalesReport.resources
 C:\Users\Nitro 5\Documents\GitHub\Final-Project-OOP\BiliPCrevised\obj\Debug\BiliPC.AddDiscount.resources
@@ -305,3 +304,4 @@ C:\Users\DENNIEL-PC\source\repos\Final-Project-OOP\BiliPCrevised\obj\Debug\BiliP
 C:\Users\DENNIEL-PC\source\repos\Final-Project-OOP\BiliPCrevised\obj\Debug\BiliPC.InventoryReport.resources
 C:\Users\DENNIEL-PC\source\repos\Final-Project-OOP\BiliPCrevised\obj\Debug\BiliPC.SalesHistory.resources
 C:\Users\DENNIEL-PC\source\repos\Final-Project-OOP\BiliPCrevised\obj\Debug\BiliPC.SalesReport.resources
+C:\Users\Nitro 5\Documents\GitHub\Final-Project-OOP\BiliPCrevised\obj\Debug\BiliPC.csprojAssemblyReference.cache

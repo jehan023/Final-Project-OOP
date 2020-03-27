@@ -135,7 +135,7 @@
 
         private void DgdProduct_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex > 0 && e.ColumnIndex > 0)
+            try
             {
                 this.idBox.Text = this.dgdProduct.Rows[e.RowIndex].Cells[0].Value.ToString();
                 this.txtItemName.Text = this.dgdProduct.Rows[e.RowIndex].Cells[1].Value.ToString();
@@ -146,6 +146,11 @@
                 this.txtSupplier.Text = this.dgdProduct.Rows[e.RowIndex].Cells[6].Value.ToString();
                 this.radInStockTrue.Checked = this.dgdProduct.Rows[e.RowIndex].Cells[7].Value.Equals(true);
                 this.radInStockFalse.Checked = this.dgdProduct.Rows[e.RowIndex].Cells[7].Value.Equals(false);
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                // Occurs when upper-leftmost datagridview is clicked.
+                MessageBox.Show("Invalid selection.");
             }
         }
 
