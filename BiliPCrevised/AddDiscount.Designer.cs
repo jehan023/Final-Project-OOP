@@ -39,13 +39,13 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAddDiscount = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblPercent = new System.Windows.Forms.Label();
             this.txtDiscountedPrice = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.txtDiscount = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtTotalPrice = new System.Windows.Forms.TextBox();
             this.lblTotalAmountDue = new System.Windows.Forms.Label();
-            this.txtDiscount = new System.Windows.Forms.TextBox();
-            this.lblPercent = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -184,6 +184,17 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
+            // lblPercent
+            // 
+            this.lblPercent.AutoSize = true;
+            this.lblPercent.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.lblPercent.Font = new System.Drawing.Font("Arial Rounded MT Bold", 24F);
+            this.lblPercent.Location = new System.Drawing.Point(442, 233);
+            this.lblPercent.Name = "lblPercent";
+            this.lblPercent.Size = new System.Drawing.Size(44, 37);
+            this.lblPercent.TabIndex = 64;
+            this.lblPercent.Text = "%";
+            // 
             // txtDiscountedPrice
             // 
             this.txtDiscountedPrice.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -209,6 +220,19 @@
             this.label2.Size = new System.Drawing.Size(244, 25);
             this.label2.TabIndex = 62;
             this.label2.Text = "Discounted Amount Due";
+            // 
+            // txtDiscount
+            // 
+            this.txtDiscount.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtDiscount.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.txtDiscount.Font = new System.Drawing.Font("Arial Rounded MT Bold", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDiscount.Location = new System.Drawing.Point(24, 229);
+            this.txtDiscount.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDiscount.Name = "txtDiscount";
+            this.txtDiscount.Size = new System.Drawing.Size(466, 45);
+            this.txtDiscount.TabIndex = 57;
+            this.txtDiscount.TextChanged += new System.EventHandler(this.TxtDiscount_TextChanged);
+            this.txtDiscount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtDiscount_KeyPress);
             // 
             // label1
             // 
@@ -250,34 +274,12 @@
             this.lblTotalAmountDue.TabIndex = 60;
             this.lblTotalAmountDue.Text = "Total Amount Due";
             // 
-            // txtDiscount
-            // 
-            this.txtDiscount.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtDiscount.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.txtDiscount.Font = new System.Drawing.Font("Arial Rounded MT Bold", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDiscount.Location = new System.Drawing.Point(24, 229);
-            this.txtDiscount.Margin = new System.Windows.Forms.Padding(2);
-            this.txtDiscount.Name = "txtDiscount";
-            this.txtDiscount.Size = new System.Drawing.Size(466, 45);
-            this.txtDiscount.TabIndex = 57;
-            this.txtDiscount.TextChanged += new System.EventHandler(this.TxtDiscount_TextChanged);
-            this.txtDiscount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtDiscount_KeyPress);
-            // 
-            // lblPercent
-            // 
-            this.lblPercent.AutoSize = true;
-            this.lblPercent.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.lblPercent.Font = new System.Drawing.Font("Arial Rounded MT Bold", 24F);
-            this.lblPercent.Location = new System.Drawing.Point(442, 233);
-            this.lblPercent.Name = "lblPercent";
-            this.lblPercent.Size = new System.Drawing.Size(44, 37);
-            this.lblPercent.TabIndex = 64;
-            this.lblPercent.Text = "%";
-            // 
             // AddDiscount
             // 
+            this.AcceptButton = this.btnAddDiscount;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(608, 452);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel6);

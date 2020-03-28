@@ -21,10 +21,24 @@
             collection.InsertOne(record);
         }
 
-        public bool CheckExistence<T>(string table, string element, string username)
+        public bool CheckExistenceByString<T>(string table, string element, string username)
         {
             var collection = this.db.GetCollection<T>(table);
             var filter = Builders<T>.Filter.Eq(element, username);
+            if (collection.CountDocuments(filter) > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool CheckExistenceById<T>(string table, ObjectId id)
+        {
+            var collection = this.db.GetCollection<T>(table);
+            var filter = Builders<T>.Filter.Eq("Id", id);
             if (collection.CountDocuments(filter) > 0)
             {
                 return true;

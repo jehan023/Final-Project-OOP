@@ -1,7 +1,7 @@
 ﻿namespace BiliPC
 {
     using System;
-    using System.Globalization;
+    using System.Linq;
     using System.Windows.Forms;
 
     public partial class AddNewItem : Form
@@ -20,7 +20,7 @@
 
         private void BtnAddItem_Click(object sender, EventArgs e)
         {
-            bool itemExists = this.db.CheckExistence<InventoryModel>("Inventory", "Item", this.txtItem.Text);
+            bool itemExists = this.db.CheckExistenceByString<InventoryModel>("Inventory", "Item", this.txtItem.Text);
             int emptyField = Functions.CheckFields(this.GroupTextBox);
 
             if (emptyField > 0)
@@ -33,22 +33,24 @@
             }
             else if (!itemExists)
             {
-                try
+                if (int.TryParse(this.txtQuantity.Text, out int quantity)
+                    && double.TryParse(this.txtUnitPrice.Text, out double unitPrice)
+                    && double.TryParse(this.txtCost.Text, out double cost))
                 {
                     this.db.InsertRecord("Inventory", new InventoryModel
                     {
                         Item = this.txtItem.Text,
-                        Qty = int.Parse(s: this.txtQuantity.Text, CultureInfo.InvariantCulture),
-                        UnitPrice = double.Parse(s: this.txtUnitPrice.Text, CultureInfo.InvariantCulture),
-                        Cost = double.Parse(s: this.txtCost.Text, CultureInfo.InvariantCulture),
+                        Qty = quantity,
+                        UnitPrice = unitPrice,
+                        Cost = cost,
                         Category = this.txtCategory.Text,
                         Supplier = this.txtSupplier.Text,
-                        Status = int.Parse(this.txtQuantity.Text, CultureInfo.InvariantCulture) != 0,
+                        Status = quantity != 0,
                     });
                     MessageBox.Show("Item saved!");
                     this.Close();
                 }
-                catch (FormatException)
+                else
                 {
                     MessageBox.Show("Please enter a valid character.");
                 }
@@ -66,7 +68,14 @@
 
         private void TxtUnitPrice_KeyPress(object sender, KeyPressEventArgs e)
         {
-            Functions.RestrictedKeyPressToDouble(e);
+            if ((e.KeyChar == 46) && !this.txtUnitPrice.Text.Contains('.'))
+            {
+                Functions.RestrictedKeyPressToDouble(e);
+            }
+            else
+            {
+                Functions.RestrictedKeyPressToInt(e);
+            }
         }
     }
 }

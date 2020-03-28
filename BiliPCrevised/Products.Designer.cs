@@ -256,7 +256,7 @@
             this.txtCost.Name = "txtCost";
             this.txtCost.Size = new System.Drawing.Size(336, 24);
             this.txtCost.TabIndex = 51;
-            this.txtCost.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CostBox_KeyPress);
+            this.txtCost.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCost_KeyPress);
             // 
             // lblCost
             // 
@@ -281,7 +281,7 @@
             this.txtUnitPrice.Name = "txtUnitPrice";
             this.txtUnitPrice.Size = new System.Drawing.Size(336, 24);
             this.txtUnitPrice.TabIndex = 49;
-            this.txtUnitPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CostBox_KeyPress);
+            this.txtUnitPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtUnitPrice_KeyPress);
             // 
             // txtQuantity
             // 

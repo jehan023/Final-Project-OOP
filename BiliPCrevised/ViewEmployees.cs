@@ -85,37 +85,36 @@
             {
                 MessageBox.Show("Please fill all of the " + emptyField + " field/s.");
             }
+            else if (ObjectId.TryParse(this.txtAcctID.Text, out ObjectId id)
+                    && double.TryParse(this.txtAcctWage.Text, out double wage)
+                    && double.TryParse(this.txtAcctWorkhours.Text, out double workHours))
+            {
+                var selectedRecord = this.db.LoadRecordById<UsersModel>("Users", id);
+                selectedRecord.Name = this.txtAcctName.Text;
+                selectedRecord.Username = this.txtAcctUsername.Text;
+                selectedRecord.Password = this.txtAcctPassword.Text;
+                selectedRecord.Wage = wage;
+                selectedRecord.Workhours = workHours;
+                selectedRecord.IsAdmin = this.radAdminTrue.Checked;
+                this.db.UpsertRecord("Users", selectedRecord.Id, selectedRecord);
+                MessageBox.Show("Account updated.");
+                this.RefreshAccounts();
+            }
             else
             {
-                try
-                {
-                    var selectedRecord = this.db.LoadRecordById<UsersModel>("Users", new ObjectId(this.txtAcctID.Text));
-                    selectedRecord.Name = this.txtAcctName.Text;
-                    selectedRecord.Username = this.txtAcctUsername.Text;
-                    selectedRecord.Password = this.txtAcctPassword.Text;
-                    selectedRecord.Wage = double.Parse(this.txtAcctWage.Text, CultureInfo.InvariantCulture);
-                    selectedRecord.Workhours = double.Parse(this.txtAcctWorkhours.Text, CultureInfo.InvariantCulture);
-                    selectedRecord.IsAdmin = this.radAdminTrue.Checked;
-                    this.db.UpsertRecord<UsersModel>("Users", selectedRecord.Id, selectedRecord);
-                    MessageBox.Show("Account updated.");
-                    this.RefreshAccounts();
-                }
-                catch (FormatException)
-                {
-                    MessageBox.Show("Please enter a valid character.");
-                }
+                MessageBox.Show("Please enter a valid character.");
             }
         }
 
         private void BtnDeleteAccount_Click(object sender, EventArgs e)
         {
-            try
+            if (ObjectId.TryParse(this.txtAcctID.Text, out ObjectId id))
             {
-                this.db.DeleleRecord<UsersModel>("Users", ObjectId.Parse(this.txtAcctID.Text));
+                this.db.DeleleRecord<UsersModel>("Users", id);
                 MessageBox.Show("Account deleted.");
                 this.RefreshAccounts();
             }
-            catch (FormatException)
+            else
             {
                 MessageBox.Show("Please select an item.");
             }
@@ -123,7 +122,7 @@
 
         private void DgdEmployee_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            try
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 this.txtAcctID.Text = this.dgdEmployee.Rows[e.RowIndex].Cells[0].Value.ToString();
                 this.radAdminTrue.Checked = this.dgdEmployee.Rows[e.RowIndex].Cells[1].Value.Equals(true);
@@ -134,16 +133,30 @@
                 this.txtAcctWage.Text = this.dgdEmployee.Rows[e.RowIndex].Cells[5].Value.ToString();
                 this.txtAcctWorkhours.Text = this.dgdEmployee.Rows[e.RowIndex].Cells[6].Value.ToString();
             }
-            catch (ArgumentOutOfRangeException)
-            {
-                // Occurs when upper-leftmost datagridview is clicked.
-                MessageBox.Show("Invalid selection.");
-            }
         }
 
         private void TxtAcctWage_KeyPress(object sender, KeyPressEventArgs e)
         {
-            Functions.RestrictedKeyPressToDouble(e);
+            if ((e.KeyChar == 46) && !this.txtAcctWage.Text.Contains('.'))
+            {
+                Functions.RestrictedKeyPressToDouble(e);
+            }
+            else
+            {
+                Functions.RestrictedKeyPressToInt(e);
+            }
+        }
+
+        private void TxtAcctWorkhours_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar == 46) && !this.txtAcctWorkhours.Text.Contains('.'))
+            {
+                Functions.RestrictedKeyPressToDouble(e);
+            }
+            else
+            {
+                Functions.RestrictedKeyPressToInt(e);
+            }
         }
     }
 }

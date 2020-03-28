@@ -24,31 +24,7 @@
 
         private void TransactionForm_Load(object sender, EventArgs e)
         {
-            var inventoryRecord = this.db.LoadRecords<InventoryModel>("Inventory");
-            foreach (var cboInventory in inventoryRecord)
-            {
-                if (!this.cboCategory.Items.Contains(cboInventory.Category))
-                {
-                    this.cboCategory.Items.Add(cboInventory.Category);
-                }
-
-                if (!this.cboItem.Items.Contains(cboInventory.Item))
-                {
-                    this.cboItem.Items.Add(cboInventory.Item);
-                }
-            }
-
-            var cartRecord = this.db.LoadRecords<TransactionTempModel>("TransactionTemp");
-
-            foreach (var item in cartRecord)
-            {
-                bool itemExists = this.db.CheckExistence<InventoryModel>("Inventory", "Item", item.Item);
-                if (!itemExists)
-                {
-                    this.db.DeleleRecord<TransactionTempModel>("TransactionTemp", item.Id);
-                }
-            }
-
+            this.RefreshCboItems();
             this.RefreshDiscountsToAll();
             this.RefreshDataGrid();
             this.RefreshDataUpper();
@@ -57,7 +33,7 @@
 
         private void RefreshAddButton()
         {
-            bool itemExists = this.db.CheckExistence<TransactionTempModel>("TransactionTemp", "Item", this.cboItem.Text);
+            bool itemExists = this.db.CheckExistenceByString<TransactionTempModel>("TransactionTemp", "Item", this.cboItem.Text);
             if (itemExists)
             {
                 this.btnAddItem.Text = "MODIFY";
@@ -71,15 +47,12 @@
         private void RefreshDataUpper()
         {
             // Refresh Total Unit Price
-            if (!string.IsNullOrEmpty(this.cboItem.Text))
+            if (!string.IsNullOrEmpty(this.cboItem.Text) && int.TryParse(this.txtQuantity.Text, out int result))
             {
                 InventoryModel selectedRecord = this.db.LoadRecordsByStringT<InventoryModel>("Inventory", "Item", this.cboItem.Text);
                 this.txtUnitPrice.Text = selectedRecord.UnitPrice.ToString(CultureInfo.InvariantCulture);
-                if (int.TryParse(this.txtQuantity.Text, out int result))
-                {
-                    this.txtTotalUnitPrice.Text = (selectedRecord.UnitPrice * result)
+                this.txtTotalUnitPrice.Text = (selectedRecord.UnitPrice * result)
                         .ToString(CultureInfo.InvariantCulture);
-                }
 
                 // Comment this part if you do not want to change the category according to selected cboItem
                 this.cboCategory.Text = selectedRecord.Category.ToString(CultureInfo.InvariantCulture);
@@ -90,6 +63,26 @@
                 this.txtQuantity.Text =
                     this.txtUnitPrice.Text =
                     this.txtTotalUnitPrice.Text = "0";
+            }
+        }
+
+        private void RefreshCboItems()
+        {
+            this.cboCategory.Text = this.cboItem.Text = string.Empty;
+            this.txtQuantity.Text = this.txtUnitPrice.Text = this.txtTotalUnitPrice.Text = "0";
+
+            var inventoryRecord = this.db.LoadRecords<InventoryModel>("Inventory");
+            foreach (var cboInventory in inventoryRecord)
+            {
+                if (!this.cboCategory.Items.Contains(cboInventory.Category))
+                {
+                    this.cboCategory.Items.Add(cboInventory.Category);
+                }
+
+                if (!this.cboItem.Items.Contains(cboInventory.Item))
+                {
+                    this.cboItem.Items.Add(cboInventory.Item);
+                }
             }
         }
 
@@ -162,7 +155,7 @@
 
         private void DgdCart_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex > 0 && e.ColumnIndex > 0)
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 this.Id = this.dgdCart.Rows[e.RowIndex].Cells[0].Value.ToString();
             }
@@ -238,7 +231,7 @@
         {
             if (!string.IsNullOrEmpty(this.cboItem.Text))
             {
-                if (this.txtQuantity.Text != "0")
+                if (this.txtQuantity.Text != "0" && int.TryParse(this.txtQuantity.Text, out int result))
                 {
                     var selectedInvRecord = this.db.LoadRecordsByStringT<InventoryModel>("Inventory", "Item", this.cboItem.Text);
                     var selectedCartRecord = this.db.LoadRecordById<TransactionTempModel>("TransactionTemp", selectedInvRecord.Id);
@@ -254,16 +247,13 @@
                     selectedCartRecord.Id = selectedInvRecord.Id;
                     selectedCartRecord.Item = selectedInvRecord.Item;
                     selectedCartRecord.UnitPrice = selectedInvRecord.UnitPrice;
-                    if (int.TryParse(this.txtQuantity.Text, out int result))
-                    {
-                        selectedCartRecord.Quantity = result;
-                    }
-
+                    selectedCartRecord.Quantity = result;
                     selectedCartRecord.TotalUnitPrice = selectedCartRecord.UnitPrice * selectedCartRecord.Quantity;
 
                     if (selectedInvRecord.Qty >= selectedCartRecord.Quantity)
                     {
                         this.db.UpsertRecord("TransactionTemp", selectedCartRecord.Id, selectedCartRecord);
+                        this.RefreshCboItems();
                         this.RefreshDiscountsToAll();
                         this.RefreshDataGrid();
                         this.RefreshDataLower();
@@ -291,6 +281,7 @@
             {
                 this.db.DeleleRecord<TransactionTempModel>("TransactionTemp", result);
                 MessageBox.Show("Item removed.");
+                this.RefreshCboItems();
                 this.RefreshDataGrid();
                 this.RefreshDataLower();
                 this.RefreshAddButton();

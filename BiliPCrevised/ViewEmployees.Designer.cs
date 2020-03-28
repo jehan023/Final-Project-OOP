@@ -423,7 +423,7 @@
             this.txtAcctWorkhours.Name = "txtAcctWorkhours";
             this.txtAcctWorkhours.Size = new System.Drawing.Size(336, 28);
             this.txtAcctWorkhours.TabIndex = 51;
-            this.txtAcctWorkhours.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtAcctWage_KeyPress);
+            this.txtAcctWorkhours.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtAcctWorkhours_KeyPress);
             // 
             // txtAcctWage
             // 

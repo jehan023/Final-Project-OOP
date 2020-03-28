@@ -1,7 +1,7 @@
 ﻿namespace BiliPC
 {
     using System;
-    using System.Globalization;
+    using System.Linq;
     using System.Windows.Forms;
 
     public partial class AddNewEmployee : Form
@@ -20,7 +20,7 @@
 
         private void BtnAddAccount_Click(object sender, EventArgs e)
         {
-            bool usernameExists = this.db.CheckExistence<UsersModel>("Users", "Username", this.txtUsername.Text);
+            bool usernameExists = this.db.CheckExistenceByString<UsersModel>("Users", "Username", this.txtUsername.Text);
             int emptyField = Functions.CheckFields(this.GroupTextBox);
 
             if (emptyField > 0)
@@ -37,20 +37,20 @@
             }
             else if ((this.txtPassword.Text == this.txtConfirmPassword.Text) && !usernameExists && (emptyField == 0))
             {
-                try
+                if (double.TryParse(this.txtWage.Text, out double wage))
                 {
                     this.db.InsertRecord("Users", new UsersModel
                     {
                         Name = this.txtName.Text,
                         Username = this.txtUsername.Text,
                         Password = this.txtPassword.Text,
-                        Wage = double.Parse(this.txtWage.Text, CultureInfo.InvariantCulture),
+                        Wage = wage,
                         IsAdmin = this.adminTrueRadioBtn.Checked,
                     });
                     MessageBox.Show("Account Saved!");
                     this.Close();
                 }
-                catch (FormatException)
+                else
                 {
                     MessageBox.Show("Please enter a valid character.");
                 }
@@ -63,7 +63,14 @@
 
         private void TxtWage_KeyPress(object sender, KeyPressEventArgs e)
         {
-            Functions.RestrictedKeyPressToDouble(e);
+            if ((e.KeyChar == 46) && !this.txtWage.Text.Contains('.'))
+            {
+                Functions.RestrictedKeyPressToDouble(e);
+            }
+            else
+            {
+                Functions.RestrictedKeyPressToInt(e);
+            }
         }
     }
 }
