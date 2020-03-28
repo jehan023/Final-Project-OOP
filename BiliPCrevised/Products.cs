@@ -170,6 +170,11 @@
                 this.radInStockTrue.Checked = this.dgdProduct.Rows[e.RowIndex].Cells[7].Value.Equals(true);
                 this.radInStockFalse.Checked = this.dgdProduct.Rows[e.RowIndex].Cells[7].Value.Equals(false);
             }
+            else
+            {
+                // Occurs when upper-leftmost datagridview is clicked.
+                MessageBox.Show("Invalid selection.");
+            }
         }
 
         private void CboCategory_SelectedIndexChanged(object sender, EventArgs e)

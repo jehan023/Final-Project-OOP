@@ -155,9 +155,19 @@
 
         private void DgdCart_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 this.Id = this.dgdCart.Rows[e.RowIndex].Cells[0].Value.ToString();
+                this.cboItem.Text = this.dgdCart.Rows[e.RowIndex].Cells[1].Value.ToString();
+                this.txtQuantity.Text = this.dgdCart.Rows[e.RowIndex].Cells[2].Value.ToString();
+                this.txtUnitPrice.Text = this.dgdCart.Rows[e.RowIndex].Cells[3].Value.ToString();
+                this.txtTotalUnitPrice.Text = this.dgdCart.Rows[e.RowIndex].Cells[4].Value.ToString();
+            }
+            else
+            {
+                // Occurs when upper-leftmost datagridview is clicked.
+                MessageBox.Show("Invalid selection.");
             }
         }
 

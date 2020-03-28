@@ -54,7 +54,7 @@
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
             this.pnlTop.Margin = new System.Windows.Forms.Padding(2);
             this.pnlTop.Name = "pnlTop";
-            this.pnlTop.Size = new System.Drawing.Size(935, 117);
+            this.pnlTop.Size = new System.Drawing.Size(945, 117);
             this.pnlTop.TabIndex = 2;
             // 
             // btnShowAll
@@ -64,7 +64,7 @@
             this.btnShowAll.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnShowAll.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnShowAll.ForeColor = System.Drawing.Color.Black;
-            this.btnShowAll.Location = new System.Drawing.Point(783, 51);
+            this.btnShowAll.Location = new System.Drawing.Point(793, 51);
             this.btnShowAll.Name = "btnShowAll";
             this.btnShowAll.Size = new System.Drawing.Size(102, 44);
             this.btnShowAll.TabIndex = 20;
@@ -115,7 +115,7 @@
             this.btnX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnX.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnX.ForeColor = System.Drawing.Color.Black;
-            this.btnX.Location = new System.Drawing.Point(911, 0);
+            this.btnX.Location = new System.Drawing.Point(921, 0);
             this.btnX.Margin = new System.Windows.Forms.Padding(2);
             this.btnX.Name = "btnX";
             this.btnX.Size = new System.Drawing.Size(25, 27);
@@ -131,7 +131,7 @@
             this.pnlBackground.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlBackground.Location = new System.Drawing.Point(0, 117);
             this.pnlBackground.Name = "pnlBackground";
-            this.pnlBackground.Size = new System.Drawing.Size(935, 522);
+            this.pnlBackground.Size = new System.Drawing.Size(945, 522);
             this.pnlBackground.TabIndex = 3;
             // 
             // dgdSalesHistory
@@ -146,18 +146,18 @@
             this.dgdSalesHistory.Name = "dgdSalesHistory";
             this.dgdSalesHistory.ReadOnly = true;
             this.dgdSalesHistory.RowHeadersWidth = 51;
-            this.dgdSalesHistory.Size = new System.Drawing.Size(884, 472);
+            this.dgdSalesHistory.Size = new System.Drawing.Size(894, 472);
             this.dgdSalesHistory.TabIndex = 0;
             // 
             // SalesHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(935, 639);
+            this.ClientSize = new System.Drawing.Size(945, 639);
             this.Controls.Add(this.pnlBackground);
             this.Controls.Add(this.pnlTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MinimumSize = new System.Drawing.Size(935, 639);
+            this.MinimumSize = new System.Drawing.Size(945, 639);
             this.Name = "SalesHistory";
             this.Text = "SalesHistory";
             this.pnlTop.ResumeLayout(false);
