@@ -317,6 +317,7 @@
             this.btnPrintReceipt.TabIndex = 52;
             this.btnPrintReceipt.Text = "TRANSACT w/ RECEIPT";
             this.btnPrintReceipt.UseVisualStyleBackColor = false;
+            this.btnPrintReceipt.Click += new System.EventHandler(this.btnPrintReceipt_Click);
             // 
             // txtUnitPrice
             // 

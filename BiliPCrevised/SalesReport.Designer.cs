@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.pnlTop = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnGenerateReport = new System.Windows.Forms.Button();
             this.cboViewMonth = new System.Windows.Forms.ComboBox();
             this.lblMonth = new System.Windows.Forms.Label();
             this.btnShowAll = new System.Windows.Forms.Button();
@@ -37,6 +37,7 @@
             this.btnX = new System.Windows.Forms.Button();
             this.pnlBackground = new System.Windows.Forms.Panel();
             this.dgdInventoryReport = new System.Windows.Forms.DataGridView();
+            this.btnExportExcel = new System.Windows.Forms.Button();
             this.pnlTop.SuspendLayout();
             this.pnlBackground.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgdInventoryReport)).BeginInit();
@@ -45,7 +46,8 @@
             // pnlTop
             // 
             this.pnlTop.BackColor = System.Drawing.Color.SaddleBrown;
-            this.pnlTop.Controls.Add(this.button1);
+            this.pnlTop.Controls.Add(this.btnExportExcel);
+            this.pnlTop.Controls.Add(this.btnGenerateReport);
             this.pnlTop.Controls.Add(this.cboViewMonth);
             this.pnlTop.Controls.Add(this.lblMonth);
             this.pnlTop.Controls.Add(this.btnShowAll);
@@ -59,19 +61,19 @@
             this.pnlTop.Size = new System.Drawing.Size(945, 117);
             this.pnlTop.TabIndex = 4;
             // 
-            // button1
+            // btnGenerateReport
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.SpringGreen;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(793, 51);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(102, 44);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "Generate Report";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnGenerateReport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGenerateReport.BackColor = System.Drawing.Color.SpringGreen;
+            this.btnGenerateReport.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGenerateReport.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnGenerateReport.ForeColor = System.Drawing.Color.Black;
+            this.btnGenerateReport.Location = new System.Drawing.Point(683, 51);
+            this.btnGenerateReport.Name = "btnGenerateReport";
+            this.btnGenerateReport.Size = new System.Drawing.Size(102, 44);
+            this.btnGenerateReport.TabIndex = 23;
+            this.btnGenerateReport.Text = "Generate Report";
+            this.btnGenerateReport.UseVisualStyleBackColor = false;
             // 
             // cboViewMonth
             // 
@@ -102,7 +104,7 @@
             this.btnShowAll.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnShowAll.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnShowAll.ForeColor = System.Drawing.Color.Black;
-            this.btnShowAll.Location = new System.Drawing.Point(673, 51);
+            this.btnShowAll.Location = new System.Drawing.Point(563, 51);
             this.btnShowAll.Name = "btnShowAll";
             this.btnShowAll.Size = new System.Drawing.Size(102, 44);
             this.btnShowAll.TabIndex = 20;
@@ -165,6 +167,20 @@
             this.dgdInventoryReport.Size = new System.Drawing.Size(894, 472);
             this.dgdInventoryReport.TabIndex = 0;
             // 
+            // btnExportExcel
+            // 
+            this.btnExportExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExportExcel.BackColor = System.Drawing.Color.SpringGreen;
+            this.btnExportExcel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExportExcel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnExportExcel.ForeColor = System.Drawing.Color.Black;
+            this.btnExportExcel.Location = new System.Drawing.Point(803, 51);
+            this.btnExportExcel.Name = "btnExportExcel";
+            this.btnExportExcel.Size = new System.Drawing.Size(102, 44);
+            this.btnExportExcel.TabIndex = 24;
+            this.btnExportExcel.Text = "Export to Excel";
+            this.btnExportExcel.UseVisualStyleBackColor = false;
+            // 
             // SalesReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -187,7 +203,7 @@
         #endregion
 
         private System.Windows.Forms.Panel pnlTop;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnGenerateReport;
         private System.Windows.Forms.ComboBox cboViewMonth;
         private System.Windows.Forms.Label lblMonth;
         private System.Windows.Forms.Button btnShowAll;
@@ -195,5 +211,6 @@
         private System.Windows.Forms.Button btnX;
         private System.Windows.Forms.Panel pnlBackground;
         private System.Windows.Forms.DataGridView dgdInventoryReport;
+        private System.Windows.Forms.Button btnExportExcel;
     }
 }

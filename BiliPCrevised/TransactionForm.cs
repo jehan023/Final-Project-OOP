@@ -166,7 +166,7 @@
             }
             else
             {
-                // Occurs when upper-leftmost datagridview is clicked.
+                // occurs when upper-leftmost datagridview is clicked.
                 MessageBox.Show("Invalid selection.");
             }
         }
@@ -311,6 +311,14 @@
 
             this.RefreshDataGrid();
             this.RefreshDataLower();
+        }
+
+        private void btnPrintReceipt_Click(object sender, EventArgs e)
+        {
+            using (PrintReceipt receipt = new PrintReceipt())
+            {
+                receipt.ShowDialog();
+            }
         }
     }
 }
