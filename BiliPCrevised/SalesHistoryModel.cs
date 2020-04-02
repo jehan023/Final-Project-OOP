@@ -24,9 +24,10 @@
         [BsonElement]
         public double TRA { get; set; }
 
-        // Net sales
-        // Gross Margin = Net Sales - TCIS
-        // Net Profit = Gross Margin - EmployeeSalary[wage * workhours]
-        // Profit Percentage ((SellingPrice - CostPrice) * 100) / CostPrice --> ((TRA - TCIS) * 100) / TCIS
+        [BsonElement]
+        public double NetSales { get; set; }
+
+        [BsonElement]
+        public double GrossMargin { get; set; }
     }
 }

@@ -95,5 +95,10 @@
             var filter = Builders<T>.Filter.Eq("Id", id);
             collection.DeleteOne(filter);
         }
+
+        public void DropCollection<T>(string table)
+        {
+            this.db.DropCollection(table);
+        }
     }
 }

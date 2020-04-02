@@ -268,10 +268,6 @@ C:\Users\Nitro 5\Documents\GitHub\Final-Project-OOP\BiliPCrevised\bin\Debug\Micr
 C:\Users\DENNIEL-PC\source\repos\Final-Project-OOP\BiliPCrevised\obj\Debug\BiliPC.PrintReceipt.resources
 C:\Users\DENNIEL-PC\source\repos\Final-Project-OOP\BiliPCrevised\obj\Debug\RdlCompile.cache
 C:\Users\DENNIEL-PC\source\repos\Final-Project-OOP\BiliPCrevised\obj\Debug\RdlCompile.compiled
-C:\Users\DENNIEL-PC\source\repos\Final-Project-OOP\BiliPCrevised\bin\Debug\SqlServerTypes\x64\msvcr120.dll
-C:\Users\DENNIEL-PC\source\repos\Final-Project-OOP\BiliPCrevised\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
-C:\Users\DENNIEL-PC\source\repos\Final-Project-OOP\BiliPCrevised\bin\Debug\SqlServerTypes\x86\msvcr120.dll
-C:\Users\DENNIEL-PC\source\repos\Final-Project-OOP\BiliPCrevised\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
 C:\Users\DENNIEL-PC\source\repos\Final-Project-OOP\BiliPCrevised\bin\Debug\Microsoft.ReportViewer.Common.dll
 C:\Users\DENNIEL-PC\source\repos\Final-Project-OOP\BiliPCrevised\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
 C:\Users\DENNIEL-PC\source\repos\Final-Project-OOP\BiliPCrevised\bin\Debug\Microsoft.ReportViewer.Design.dll

@@ -33,7 +33,7 @@
             this.btnX = new System.Windows.Forms.Button();
             this.lblTransaction = new System.Windows.Forms.Label();
             this.pnlBackground = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnTransact = new System.Windows.Forms.Button();
             this.lblCategory = new System.Windows.Forms.Label();
             this.cboCategory = new System.Windows.Forms.ComboBox();
             this.cboItem = new System.Windows.Forms.ComboBox();
@@ -58,20 +58,20 @@
             this.txtQuantity = new System.Windows.Forms.TextBox();
             this.lblQuantity = new System.Windows.Forms.Label();
             this.lblItem = new System.Windows.Forms.Label();
-            this.transactionTempModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.totalUnitPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.discountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unitPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.itemDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgdCart = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.itemDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unitPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.discountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalUnitPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.transactionTempModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pnlTop.SuspendLayout();
             this.pnlBackground.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.transactionTempModelBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgdCart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.transactionTempModelBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTop
@@ -121,7 +121,7 @@
             this.pnlBackground.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlBackground.Controls.Add(this.button1);
+            this.pnlBackground.Controls.Add(this.btnTransact);
             this.pnlBackground.Controls.Add(this.lblCategory);
             this.pnlBackground.Controls.Add(this.cboCategory);
             this.pnlBackground.Controls.Add(this.cboItem);
@@ -146,21 +146,22 @@
             this.pnlBackground.Size = new System.Drawing.Size(945, 583);
             this.pnlBackground.TabIndex = 1;
             // 
-            // button1
+            // btnTransact
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.BackColor = System.Drawing.Color.YellowGreen;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(625, 524);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(132, 45);
-            this.button1.TabIndex = 61;
-            this.button1.Text = "TRANSACT";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnTransact.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnTransact.BackColor = System.Drawing.Color.YellowGreen;
+            this.btnTransact.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnTransact.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnTransact.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTransact.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTransact.Location = new System.Drawing.Point(625, 524);
+            this.btnTransact.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTransact.Name = "btnTransact";
+            this.btnTransact.Size = new System.Drawing.Size(132, 45);
+            this.btnTransact.TabIndex = 61;
+            this.btnTransact.Text = "TRANSACT";
+            this.btnTransact.UseVisualStyleBackColor = false;
+            this.btnTransact.Click += new System.EventHandler(this.BtnTransact_Click);
             // 
             // lblCategory
             // 
@@ -489,53 +490,6 @@
             this.lblItem.TabIndex = 41;
             this.lblItem.Text = "Item :";
             // 
-            // transactionTempModelBindingSource
-            // 
-            this.transactionTempModelBindingSource.DataSource = typeof(BiliPC.TransactionTempModel);
-            // 
-            // totalUnitPriceDataGridViewTextBoxColumn
-            // 
-            this.totalUnitPriceDataGridViewTextBoxColumn.DataPropertyName = "TotalUnitPrice";
-            this.totalUnitPriceDataGridViewTextBoxColumn.HeaderText = "TotalUnitPrice";
-            this.totalUnitPriceDataGridViewTextBoxColumn.Name = "totalUnitPriceDataGridViewTextBoxColumn";
-            this.totalUnitPriceDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // discountDataGridViewTextBoxColumn
-            // 
-            this.discountDataGridViewTextBoxColumn.DataPropertyName = "Discount";
-            this.discountDataGridViewTextBoxColumn.HeaderText = "Discount";
-            this.discountDataGridViewTextBoxColumn.Name = "discountDataGridViewTextBoxColumn";
-            this.discountDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // unitPriceDataGridViewTextBoxColumn
-            // 
-            this.unitPriceDataGridViewTextBoxColumn.DataPropertyName = "UnitPrice";
-            this.unitPriceDataGridViewTextBoxColumn.HeaderText = "UnitPrice";
-            this.unitPriceDataGridViewTextBoxColumn.Name = "unitPriceDataGridViewTextBoxColumn";
-            this.unitPriceDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // quantityDataGridViewTextBoxColumn
-            // 
-            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
-            this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
-            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
-            this.quantityDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // itemDataGridViewTextBoxColumn
-            // 
-            this.itemDataGridViewTextBoxColumn.DataPropertyName = "Item";
-            this.itemDataGridViewTextBoxColumn.HeaderText = "Item";
-            this.itemDataGridViewTextBoxColumn.Name = "itemDataGridViewTextBoxColumn";
-            this.itemDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Visible = false;
-            // 
             // dgdCart
             // 
             this.dgdCart.AllowUserToAddRows = false;
@@ -562,6 +516,53 @@
             this.dgdCart.TabIndex = 0;
             this.dgdCart.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgdCart_CellClick);
             // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // itemDataGridViewTextBoxColumn
+            // 
+            this.itemDataGridViewTextBoxColumn.DataPropertyName = "Item";
+            this.itemDataGridViewTextBoxColumn.HeaderText = "Item";
+            this.itemDataGridViewTextBoxColumn.Name = "itemDataGridViewTextBoxColumn";
+            this.itemDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // quantityDataGridViewTextBoxColumn
+            // 
+            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
+            this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
+            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
+            this.quantityDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // unitPriceDataGridViewTextBoxColumn
+            // 
+            this.unitPriceDataGridViewTextBoxColumn.DataPropertyName = "UnitPrice";
+            this.unitPriceDataGridViewTextBoxColumn.HeaderText = "UnitPrice";
+            this.unitPriceDataGridViewTextBoxColumn.Name = "unitPriceDataGridViewTextBoxColumn";
+            this.unitPriceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // discountDataGridViewTextBoxColumn
+            // 
+            this.discountDataGridViewTextBoxColumn.DataPropertyName = "Discount";
+            this.discountDataGridViewTextBoxColumn.HeaderText = "Discount";
+            this.discountDataGridViewTextBoxColumn.Name = "discountDataGridViewTextBoxColumn";
+            this.discountDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // totalUnitPriceDataGridViewTextBoxColumn
+            // 
+            this.totalUnitPriceDataGridViewTextBoxColumn.DataPropertyName = "TotalUnitPrice";
+            this.totalUnitPriceDataGridViewTextBoxColumn.HeaderText = "TotalUnitPrice";
+            this.totalUnitPriceDataGridViewTextBoxColumn.Name = "totalUnitPriceDataGridViewTextBoxColumn";
+            this.totalUnitPriceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // transactionTempModelBindingSource
+            // 
+            this.transactionTempModelBindingSource.DataSource = typeof(BiliPC.TransactionTempModel);
+            // 
             // TransactionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -583,8 +584,8 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.transactionTempModelBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgdCart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.transactionTempModelBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -619,7 +620,7 @@
         private System.Windows.Forms.ComboBox cboItem;
         private System.Windows.Forms.ComboBox cboCategory;
         private System.Windows.Forms.Label lblCategory;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnTransact;
         private System.Windows.Forms.BindingSource transactionTempModelBindingSource;
         private System.Windows.Forms.DataGridView dgdCart;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
