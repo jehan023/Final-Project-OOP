@@ -436,27 +436,14 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value xml:space="preserve">      </Value>
+                    <Value xml:space="preserve">       </Value>
                     <Style>
                       <FontSize>8pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value xml:space="preserve">    </Value>
-                    <Style>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value xml:space="preserve"> </Value>
-                    <Style>
-                      <FontSize>8pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>:</Value>
+                    <Value>    :</Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
                     </Style>
@@ -494,7 +481,7 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value xml:space="preserve">  </Value>
+                    <Value xml:space="preserve"> </Value>
                     <Style>
                       <FontSize>9pt</FontSize>
                       <FontWeight>Bold</FontWeight>
@@ -1087,7 +1074,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Customer's Printed Name over Signature</Value>
+                    <Value>Customer's Signature over Printed Name</Value>
                     <Style>
                       <FontSize>9pt</FontSize>
                     </Style>
