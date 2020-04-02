@@ -37,9 +37,15 @@
             this.btnX = new System.Windows.Forms.Button();
             this.pnlBackground = new System.Windows.Forms.Panel();
             this.dgdInventoryReport = new System.Windows.Forms.DataGridView();
+            this.GroupTextBox = new System.Windows.Forms.GroupBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.pnlTop.SuspendLayout();
             this.pnlBackground.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgdInventoryReport)).BeginInit();
+            this.GroupTextBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlTop
@@ -143,6 +149,7 @@
             // pnlBackground
             // 
             this.pnlBackground.BackColor = System.Drawing.SystemColors.Info;
+            this.pnlBackground.Controls.Add(this.GroupTextBox);
             this.pnlBackground.Controls.Add(this.dgdInventoryReport);
             this.pnlBackground.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlBackground.Location = new System.Drawing.Point(0, 117);
@@ -162,8 +169,73 @@
             this.dgdInventoryReport.Name = "dgdInventoryReport";
             this.dgdInventoryReport.ReadOnly = true;
             this.dgdInventoryReport.RowHeadersWidth = 51;
-            this.dgdInventoryReport.Size = new System.Drawing.Size(894, 472);
+            this.dgdInventoryReport.Size = new System.Drawing.Size(894, 365);
             this.dgdInventoryReport.TabIndex = 0;
+            // 
+            // GroupTextBox
+            // 
+            this.GroupTextBox.BackColor = System.Drawing.SystemColors.Info;
+            this.GroupTextBox.Controls.Add(this.textBox2);
+            this.GroupTextBox.Controls.Add(this.label2);
+            this.GroupTextBox.Controls.Add(this.textBox1);
+            this.GroupTextBox.Controls.Add(this.label1);
+            this.GroupTextBox.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.GroupTextBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.GroupTextBox.Location = new System.Drawing.Point(0, 393);
+            this.GroupTextBox.Name = "GroupTextBox";
+            this.GroupTextBox.Size = new System.Drawing.Size(945, 129);
+            this.GroupTextBox.TabIndex = 47;
+            this.GroupTextBox.TabStop = false;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(379, 74);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(336, 29);
+            this.textBox2.TabIndex = 66;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(80, 33);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(295, 22);
+            this.label2.TabIndex = 65;
+            this.label2.Text = "Total retail amount of all items :";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(379, 33);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(336, 29);
+            this.textBox1.TabIndex = 64;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(161, 74);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(214, 22);
+            this.label1.TabIndex = 63;
+            this.label1.Text = "Total cost of all items :";
             // 
             // InventoryReport
             // 
@@ -180,6 +252,8 @@
             this.pnlTop.PerformLayout();
             this.pnlBackground.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgdInventoryReport)).EndInit();
+            this.GroupTextBox.ResumeLayout(false);
+            this.GroupTextBox.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -195,5 +269,10 @@
         private System.Windows.Forms.Label lblMonth;
         private System.Windows.Forms.Panel pnlBackground;
         private System.Windows.Forms.DataGridView dgdInventoryReport;
+        private System.Windows.Forms.GroupBox GroupTextBox;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
     }
 }
