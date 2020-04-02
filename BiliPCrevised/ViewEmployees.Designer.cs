@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlTop = new System.Windows.Forms.Panel();
             this.btnSearchEmployee = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
@@ -59,10 +61,19 @@
             this.txtAcctName = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
             this.dgdEmployee = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.wageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.workhoursDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isAdminDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.usersModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pnlTop.SuspendLayout();
             this.pnlBackground.SuspendLayout();
             this.GroupTextBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgdEmployee)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersModelBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTop
@@ -481,34 +492,100 @@
             this.dgdEmployee.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgdEmployee.AutoGenerateColumns = false;
             this.dgdEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgdEmployee.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.usernameDataGridViewTextBoxColumn,
+            this.passwordDataGridViewTextBoxColumn,
+            this.wageDataGridViewTextBoxColumn,
+            this.workhoursDataGridViewTextBoxColumn,
+            this.isAdminDataGridViewCheckBoxColumn});
             this.dgdEmployee.Cursor = System.Windows.Forms.Cursors.Default;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgdEmployee.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dgdEmployee.DataSource = this.usersModelBindingSource;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgdEmployee.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgdEmployee.Location = new System.Drawing.Point(25, 16);
             this.dgdEmployee.Margin = new System.Windows.Forms.Padding(2);
             this.dgdEmployee.MultiSelect = false;
             this.dgdEmployee.Name = "dgdEmployee";
             this.dgdEmployee.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgdEmployee.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgdEmployee.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgdEmployee.RowHeadersWidth = 51;
             this.dgdEmployee.RowTemplate.Height = 24;
             this.dgdEmployee.Size = new System.Drawing.Size(897, 337);
             this.dgdEmployee.TabIndex = 42;
             this.dgdEmployee.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgdEmployee_CellClick);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // usernameDataGridViewTextBoxColumn
+            // 
+            this.usernameDataGridViewTextBoxColumn.DataPropertyName = "Username";
+            this.usernameDataGridViewTextBoxColumn.HeaderText = "Username";
+            this.usernameDataGridViewTextBoxColumn.Name = "usernameDataGridViewTextBoxColumn";
+            this.usernameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // passwordDataGridViewTextBoxColumn
+            // 
+            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "Password";
+            dataGridViewCellStyle1.NullValue = null;
+            this.passwordDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            this.passwordDataGridViewTextBoxColumn.HeaderText = "Password";
+            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
+            this.passwordDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // wageDataGridViewTextBoxColumn
+            // 
+            this.wageDataGridViewTextBoxColumn.DataPropertyName = "Wage";
+            this.wageDataGridViewTextBoxColumn.HeaderText = "Wage";
+            this.wageDataGridViewTextBoxColumn.Name = "wageDataGridViewTextBoxColumn";
+            this.wageDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // workhoursDataGridViewTextBoxColumn
+            // 
+            this.workhoursDataGridViewTextBoxColumn.DataPropertyName = "Workhours";
+            this.workhoursDataGridViewTextBoxColumn.HeaderText = "Workhours";
+            this.workhoursDataGridViewTextBoxColumn.Name = "workhoursDataGridViewTextBoxColumn";
+            this.workhoursDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // isAdminDataGridViewCheckBoxColumn
+            // 
+            this.isAdminDataGridViewCheckBoxColumn.DataPropertyName = "IsAdmin";
+            this.isAdminDataGridViewCheckBoxColumn.HeaderText = "IsAdmin";
+            this.isAdminDataGridViewCheckBoxColumn.Name = "isAdminDataGridViewCheckBoxColumn";
+            this.isAdminDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // usersModelBindingSource
+            // 
+            this.usersModelBindingSource.DataSource = typeof(BiliPC.UsersModel);
             // 
             // ViewEmployees
             // 
@@ -527,6 +604,7 @@
             this.GroupTextBox.ResumeLayout(false);
             this.GroupTextBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgdEmployee)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersModelBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -562,5 +640,13 @@
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.DataGridView dgdEmployee;
         private System.Windows.Forms.Button btnSearchEmployee;
+        private System.Windows.Forms.BindingSource usersModelBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn usernameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn wageDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn workhoursDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn isAdminDataGridViewCheckBoxColumn;
     }
 }

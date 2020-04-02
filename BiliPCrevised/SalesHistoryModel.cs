@@ -10,22 +10,23 @@
         public ObjectId Id { get; set; }
 
         [BsonElement]
-        public string Transaction { get; set; }
+        public string Items { get; set; }
 
         [BsonElement]
-        public List<Content> Items { get; } = new List<Content>();
+        public BsonDateTime DateOfPurchase { get; set; }
 
         [BsonElement]
-        public string TotalCost { get; set; }
+        public string Employee { get; set; }
 
         [BsonElement]
-        public BsonDateTime DateOfTransaction { get; set; }
-    }
+        public double TCIS { get; set; }
 
-#pragma warning disable SA1402 // FileMayOnlyContainASingleType
-    public class Content
-    {
         [BsonElement]
-        public TransactionTempModel ItemsModel { get; set; }
+        public double TRA { get; set; }
+
+        // Net sales
+        // Gross Margin = Net Sales - TCIS
+        // Net Profit = Gross Margin - EmployeeSalary[wage * workhours]
+        // Profit Percentage ((SellingPrice - CostPrice) * 100) / CostPrice --> ((TRA - TCIS) * 100) / TCIS
     }
 }

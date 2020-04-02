@@ -37,13 +37,13 @@
             {
                 // Show first item in the textboxes
                 this.txtAcctID.Text = this.dgdEmployee.Rows[0].Cells[0].Value.ToString();
-                this.radAdminTrue.Checked = this.dgdEmployee.Rows[0].Cells[1].Value.Equals(true);
-                this.radAdminFalse.Checked = this.dgdEmployee.Rows[0].Cells[1].Value.Equals(false);
-                this.txtAcctName.Text = this.dgdEmployee.Rows[0].Cells[2].Value.ToString();
-                this.txtAcctUsername.Text = this.dgdEmployee.Rows[0].Cells[3].Value.ToString();
-                this.txtAcctPassword.Text = this.dgdEmployee.Rows[0].Cells[4].Value.ToString();
-                this.txtAcctWage.Text = this.dgdEmployee.Rows[0].Cells[5].Value.ToString();
-                this.txtAcctWorkhours.Text = this.dgdEmployee.Rows[0].Cells[6].Value.ToString();
+                this.txtAcctName.Text = this.dgdEmployee.Rows[0].Cells[1].Value.ToString();
+                this.txtAcctUsername.Text = this.dgdEmployee.Rows[0].Cells[2].Value.ToString();
+                this.txtAcctPassword.Text = this.dgdEmployee.Rows[0].Cells[3].Value.ToString();
+                this.txtAcctWage.Text = this.dgdEmployee.Rows[0].Cells[4].Value.ToString();
+                this.txtAcctWorkhours.Text = this.dgdEmployee.Rows[0].Cells[5].Value.ToString();
+                this.radAdminTrue.Checked = this.dgdEmployee.Rows[0].Cells[6].Value.Equals(true);
+                this.radAdminFalse.Checked = this.dgdEmployee.Rows[0].Cells[6].Value.Equals(false);
             }
             else
             {
@@ -125,13 +125,13 @@
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 this.txtAcctID.Text = this.dgdEmployee.Rows[e.RowIndex].Cells[0].Value.ToString();
-                this.radAdminTrue.Checked = this.dgdEmployee.Rows[e.RowIndex].Cells[1].Value.Equals(true);
-                this.radAdminFalse.Checked = this.dgdEmployee.Rows[e.RowIndex].Cells[1].Value.Equals(false);
-                this.txtAcctName.Text = this.dgdEmployee.Rows[e.RowIndex].Cells[2].Value.ToString();
-                this.txtAcctUsername.Text = this.dgdEmployee.Rows[e.RowIndex].Cells[3].Value.ToString();
-                this.txtAcctPassword.Text = this.dgdEmployee.Rows[e.RowIndex].Cells[4].Value.ToString();
-                this.txtAcctWage.Text = this.dgdEmployee.Rows[e.RowIndex].Cells[5].Value.ToString();
-                this.txtAcctWorkhours.Text = this.dgdEmployee.Rows[e.RowIndex].Cells[6].Value.ToString();
+                this.txtAcctName.Text = this.dgdEmployee.Rows[e.RowIndex].Cells[1].Value.ToString();
+                this.txtAcctUsername.Text = this.dgdEmployee.Rows[e.RowIndex].Cells[2].Value.ToString();
+                this.txtAcctPassword.Text = this.dgdEmployee.Rows[e.RowIndex].Cells[3].Value.ToString();
+                this.txtAcctWage.Text = this.dgdEmployee.Rows[e.RowIndex].Cells[4].Value.ToString();
+                this.txtAcctWorkhours.Text = this.dgdEmployee.Rows[e.RowIndex].Cells[5].Value.ToString();
+                this.radAdminTrue.Checked = this.dgdEmployee.Rows[e.RowIndex].Cells[6].Value.Equals(true);
+                this.radAdminFalse.Checked = this.dgdEmployee.Rows[e.RowIndex].Cells[6].Value.Equals(false);
             }
         }
 

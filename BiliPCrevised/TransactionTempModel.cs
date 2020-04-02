@@ -6,7 +6,6 @@
     public class TransactionTempModel
     {
         [BsonId]
-        [BsonIgnoreIfDefault]
         public ObjectId Id { get; set; }
 
         [BsonElement]

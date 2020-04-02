@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pnlTop = new System.Windows.Forms.Panel();
             this.btnX = new System.Windows.Forms.Button();
             this.lblTransaction = new System.Windows.Forms.Label();
@@ -57,11 +58,19 @@
             this.txtQuantity = new System.Windows.Forms.TextBox();
             this.lblQuantity = new System.Windows.Forms.Label();
             this.lblItem = new System.Windows.Forms.Label();
+            this.transactionTempModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.totalUnitPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.discountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unitPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.itemDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgdCart = new System.Windows.Forms.DataGridView();
             this.pnlTop.SuspendLayout();
             this.pnlBackground.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.transactionTempModelBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgdCart)).BeginInit();
             this.SuspendLayout();
             // 
@@ -317,7 +326,7 @@
             this.btnPrintReceipt.TabIndex = 52;
             this.btnPrintReceipt.Text = "TRANSACT w/ RECEIPT";
             this.btnPrintReceipt.UseVisualStyleBackColor = false;
-            this.btnPrintReceipt.Click += new System.EventHandler(this.btnPrintReceipt_Click);
+            this.btnPrintReceipt.Click += new System.EventHandler(this.BtnPrintReceipt_Click);
             // 
             // txtUnitPrice
             // 
@@ -480,13 +489,69 @@
             this.lblItem.TabIndex = 41;
             this.lblItem.Text = "Item :";
             // 
+            // transactionTempModelBindingSource
+            // 
+            this.transactionTempModelBindingSource.DataSource = typeof(BiliPC.TransactionTempModel);
+            // 
+            // totalUnitPriceDataGridViewTextBoxColumn
+            // 
+            this.totalUnitPriceDataGridViewTextBoxColumn.DataPropertyName = "TotalUnitPrice";
+            this.totalUnitPriceDataGridViewTextBoxColumn.HeaderText = "TotalUnitPrice";
+            this.totalUnitPriceDataGridViewTextBoxColumn.Name = "totalUnitPriceDataGridViewTextBoxColumn";
+            this.totalUnitPriceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // discountDataGridViewTextBoxColumn
+            // 
+            this.discountDataGridViewTextBoxColumn.DataPropertyName = "Discount";
+            this.discountDataGridViewTextBoxColumn.HeaderText = "Discount";
+            this.discountDataGridViewTextBoxColumn.Name = "discountDataGridViewTextBoxColumn";
+            this.discountDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // unitPriceDataGridViewTextBoxColumn
+            // 
+            this.unitPriceDataGridViewTextBoxColumn.DataPropertyName = "UnitPrice";
+            this.unitPriceDataGridViewTextBoxColumn.HeaderText = "UnitPrice";
+            this.unitPriceDataGridViewTextBoxColumn.Name = "unitPriceDataGridViewTextBoxColumn";
+            this.unitPriceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // quantityDataGridViewTextBoxColumn
+            // 
+            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
+            this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
+            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
+            this.quantityDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // itemDataGridViewTextBoxColumn
+            // 
+            this.itemDataGridViewTextBoxColumn.DataPropertyName = "Item";
+            this.itemDataGridViewTextBoxColumn.HeaderText = "Item";
+            this.itemDataGridViewTextBoxColumn.Name = "itemDataGridViewTextBoxColumn";
+            this.itemDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            // 
             // dgdCart
             // 
             this.dgdCart.AllowUserToAddRows = false;
             this.dgdCart.AllowUserToDeleteRows = false;
             this.dgdCart.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dgdCart.AutoGenerateColumns = false;
             this.dgdCart.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgdCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgdCart.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.itemDataGridViewTextBoxColumn,
+            this.quantityDataGridViewTextBoxColumn,
+            this.unitPriceDataGridViewTextBoxColumn,
+            this.discountDataGridViewTextBoxColumn,
+            this.totalUnitPriceDataGridViewTextBoxColumn});
+            this.dgdCart.DataSource = this.transactionTempModelBindingSource;
             this.dgdCart.Location = new System.Drawing.Point(19, 107);
             this.dgdCart.MultiSelect = false;
             this.dgdCart.Name = "dgdCart";
@@ -518,6 +583,7 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.transactionTempModelBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgdCart)).EndInit();
             this.ResumeLayout(false);
 
@@ -529,7 +595,6 @@
         private System.Windows.Forms.Panel pnlBackground;
         private System.Windows.Forms.Label lblTransaction;
         private System.Windows.Forms.Button btnX;
-        private System.Windows.Forms.DataGridView dgdCart;
         private System.Windows.Forms.Label lblTotalUnitPrice;
         private System.Windows.Forms.TextBox txtTotalUnitPrice;
         private System.Windows.Forms.TextBox txtQuantity;
@@ -555,5 +620,13 @@
         private System.Windows.Forms.ComboBox cboCategory;
         private System.Windows.Forms.Label lblCategory;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.BindingSource transactionTempModelBindingSource;
+        private System.Windows.Forms.DataGridView dgdCart;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn itemDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unitPriceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn discountDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn totalUnitPriceDataGridViewTextBoxColumn;
     }
 }

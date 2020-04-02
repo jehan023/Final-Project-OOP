@@ -1,4 +1,4 @@
-﻿namespace BiliPC
+﻿    namespace BiliPC
 {
     using System;
     using System.Globalization;
@@ -155,7 +155,6 @@
 
         private void DgdCart_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 this.Id = this.dgdCart.Rows[e.RowIndex].Cells[0].Value.ToString();
@@ -163,11 +162,6 @@
                 this.txtQuantity.Text = this.dgdCart.Rows[e.RowIndex].Cells[2].Value.ToString();
                 this.txtUnitPrice.Text = this.dgdCart.Rows[e.RowIndex].Cells[3].Value.ToString();
                 this.txtTotalUnitPrice.Text = this.dgdCart.Rows[e.RowIndex].Cells[4].Value.ToString();
-            }
-            else
-            {
-                // occurs when upper-leftmost datagridview is clicked.
-                MessageBox.Show("Invalid selection.");
             }
         }
 
@@ -313,11 +307,31 @@
             this.RefreshDataLower();
         }
 
-        private void btnPrintReceipt_Click(object sender, EventArgs e)
+        private void BtnPrintReceipt_Click(object sender, EventArgs e)
         {
-            using (PrintReceipt receipt = new PrintReceipt())
+            if (ObjectId.TryParse(this.Id, out ObjectId id))
             {
-                receipt.ShowDialog();
+                var cartRecord = this.db.LoadRecords<TransactionTempModel>("TransactionTemp");
+                var selectedCartRecord = this.db.LoadRecordById<TransactionTempModel>("TransactionTemp", id);
+                double rawTotalPrice = 0;
+                foreach (var item in cartRecord)
+                {
+                    rawTotalPrice += item.TotalUnitPrice;
+                }
+
+                using (PrintReceipt receipt = new PrintReceipt(
+                    DateTime.Now.ToString("MM/dd/yyyy", CultureInfo.InvariantCulture),
+                    LoginUI.AcctName,
+                    default,
+                    cartRecord,
+                    string.Format(CultureInfo.InvariantCulture, "₱{0:0.00}", rawTotalPrice),
+                    string.Format(CultureInfo.InvariantCulture, "{0}%", selectedCartRecord.Discount),
+                    string.Format(CultureInfo.InvariantCulture, "₱{0:0.00}", this.txtAmountReceived.Text),
+                    string.Format(CultureInfo.InvariantCulture, "₱{0:0.00}", this.txtChange.Text),
+                    string.Format(CultureInfo.InvariantCulture, "₱{0:0.00}", this.txtTotalPrice.Text)))
+                {
+                    receipt.ShowDialog();
+                }
             }
         }
     }

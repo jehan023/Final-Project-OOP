@@ -199,7 +199,7 @@
     <Compile Include="SalesReport.Designer.cs">
       <DependentUpon>SalesReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="SqlServerTypes\Utilities.cs" />
     <Compile Include="TrackEmployees.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -276,8 +276,10 @@
     </EmbeddedResource>
     <None Include=".editorconfig" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\InventoryModel.datasource" />
     <None Include="Properties\DataSources\MongoCRUD.datasource" />
     <None Include="Properties\DataSources\TransactionTempModel.datasource" />
+    <None Include="Properties\DataSources\UsersModel.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

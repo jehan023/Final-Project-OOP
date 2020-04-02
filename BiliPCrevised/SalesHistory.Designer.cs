@@ -122,7 +122,7 @@
             this.btnX.TabIndex = 0;
             this.btnX.Text = "X";
             this.btnX.UseVisualStyleBackColor = false;
-            this.btnX.Click += new System.EventHandler(this.btnX_Click);
+            this.btnX.Click += new System.EventHandler(this.BtnX_Click);
             // 
             // pnlBackground
             // 
