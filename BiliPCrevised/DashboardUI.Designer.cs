@@ -75,10 +75,10 @@
             // 
             this.pnlBottom.BackColor = System.Drawing.Color.Black;
             this.pnlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlBottom.Location = new System.Drawing.Point(185, 663);
+            this.pnlBottom.Location = new System.Drawing.Point(206, 663);
             this.pnlBottom.Margin = new System.Windows.Forms.Padding(2);
             this.pnlBottom.Name = "pnlBottom";
-            this.pnlBottom.Size = new System.Drawing.Size(941, 24);
+            this.pnlBottom.Size = new System.Drawing.Size(944, 24);
             this.pnlBottom.TabIndex = 15;
             // 
             // lblDate
@@ -88,7 +88,7 @@
             this.lblDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblDate.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDate.ForeColor = System.Drawing.Color.White;
-            this.lblDate.Location = new System.Drawing.Point(12, 637);
+            this.lblDate.Location = new System.Drawing.Point(5, 637);
             this.lblDate.Margin = new System.Windows.Forms.Padding(0);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(34, 14);
@@ -101,12 +101,12 @@
             this.lblTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblTime.AutoSize = true;
             this.lblTime.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblTime.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTime.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTime.ForeColor = System.Drawing.Color.White;
-            this.lblTime.Location = new System.Drawing.Point(12, 614);
+            this.lblTime.Location = new System.Drawing.Point(11, 608);
             this.lblTime.Margin = new System.Windows.Forms.Padding(0);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(43, 17);
+            this.lblTime.Size = new System.Drawing.Size(60, 24);
             this.lblTime.TabIndex = 18;
             this.lblTime.Text = "Time";
             this.lblTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -125,7 +125,7 @@
             this.btnInventory.Margin = new System.Windows.Forms.Padding(2);
             this.btnInventory.Name = "btnInventory";
             this.btnInventory.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
-            this.btnInventory.Size = new System.Drawing.Size(185, 30);
+            this.btnInventory.Size = new System.Drawing.Size(206, 30);
             this.btnInventory.TabIndex = 11;
             this.btnInventory.Text = "Inventory";
             this.btnInventory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -152,26 +152,28 @@
             this.pnlSideMenu.Location = new System.Drawing.Point(0, 0);
             this.pnlSideMenu.Margin = new System.Windows.Forms.Padding(2);
             this.pnlSideMenu.Name = "pnlSideMenu";
-            this.pnlSideMenu.Size = new System.Drawing.Size(185, 687);
+            this.pnlSideMenu.Size = new System.Drawing.Size(206, 687);
             this.pnlSideMenu.TabIndex = 13;
             // 
             // lblAcctName
             // 
+            this.lblAcctName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblAcctName.AutoSize = true;
             this.lblAcctName.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAcctName.ForeColor = System.Drawing.Color.White;
-            this.lblAcctName.Location = new System.Drawing.Point(22, 576);
+            this.lblAcctName.Location = new System.Drawing.Point(22, 559);
             this.lblAcctName.Name = "lblAcctName";
-            this.lblAcctName.Size = new System.Drawing.Size(47, 17);
+            this.lblAcctName.Size = new System.Drawing.Size(43, 17);
             this.lblAcctName.TabIndex = 24;
-            this.lblAcctName.Text = "Gago";
+            this.lblAcctName.Text = "User";
             // 
             // lblLoggedInAs
             // 
+            this.lblLoggedInAs.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblLoggedInAs.AutoSize = true;
             this.lblLoggedInAs.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLoggedInAs.ForeColor = System.Drawing.Color.White;
-            this.lblLoggedInAs.Location = new System.Drawing.Point(11, 559);
+            this.lblLoggedInAs.Location = new System.Drawing.Point(11, 542);
             this.lblLoggedInAs.Name = "lblLoggedInAs";
             this.lblLoggedInAs.Size = new System.Drawing.Size(79, 12);
             this.lblLoggedInAs.TabIndex = 23;
@@ -191,7 +193,7 @@
             this.btnLogout.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
-            this.btnLogout.Size = new System.Drawing.Size(185, 30);
+            this.btnLogout.Size = new System.Drawing.Size(206, 30);
             this.btnLogout.TabIndex = 22;
             this.btnLogout.Text = "Logout";
             this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -208,7 +210,7 @@
             this.panelManageEmployees.Location = new System.Drawing.Point(0, 380);
             this.panelManageEmployees.Margin = new System.Windows.Forms.Padding(2);
             this.panelManageEmployees.Name = "panelManageEmployees";
-            this.panelManageEmployees.Size = new System.Drawing.Size(185, 61);
+            this.panelManageEmployees.Size = new System.Drawing.Size(206, 61);
             this.panelManageEmployees.TabIndex = 21;
             // 
             // btnTrackEmployees
@@ -225,7 +227,7 @@
             this.btnTrackEmployees.Margin = new System.Windows.Forms.Padding(2);
             this.btnTrackEmployees.Name = "btnTrackEmployees";
             this.btnTrackEmployees.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnTrackEmployees.Size = new System.Drawing.Size(185, 30);
+            this.btnTrackEmployees.Size = new System.Drawing.Size(206, 30);
             this.btnTrackEmployees.TabIndex = 3;
             this.btnTrackEmployees.Text = "Track Employees";
             this.btnTrackEmployees.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -246,7 +248,7 @@
             this.btnViewEmployees.Margin = new System.Windows.Forms.Padding(2);
             this.btnViewEmployees.Name = "btnViewEmployees";
             this.btnViewEmployees.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnViewEmployees.Size = new System.Drawing.Size(185, 30);
+            this.btnViewEmployees.Size = new System.Drawing.Size(206, 30);
             this.btnViewEmployees.TabIndex = 2;
             this.btnViewEmployees.Text = "View Employees";
             this.btnViewEmployees.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -267,7 +269,7 @@
             this.btnManageEmployees.Margin = new System.Windows.Forms.Padding(2);
             this.btnManageEmployees.Name = "btnManageEmployees";
             this.btnManageEmployees.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
-            this.btnManageEmployees.Size = new System.Drawing.Size(185, 30);
+            this.btnManageEmployees.Size = new System.Drawing.Size(206, 30);
             this.btnManageEmployees.TabIndex = 20;
             this.btnManageEmployees.Text = "Manage Employees";
             this.btnManageEmployees.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -285,7 +287,7 @@
             this.panelInventory.Location = new System.Drawing.Point(0, 259);
             this.panelInventory.Margin = new System.Windows.Forms.Padding(2);
             this.panelInventory.Name = "panelInventory";
-            this.panelInventory.Size = new System.Drawing.Size(185, 91);
+            this.panelInventory.Size = new System.Drawing.Size(206, 91);
             this.panelInventory.TabIndex = 12;
             // 
             // btnInventoryReport
@@ -302,7 +304,7 @@
             this.btnInventoryReport.Margin = new System.Windows.Forms.Padding(2);
             this.btnInventoryReport.Name = "btnInventoryReport";
             this.btnInventoryReport.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnInventoryReport.Size = new System.Drawing.Size(185, 30);
+            this.btnInventoryReport.Size = new System.Drawing.Size(206, 30);
             this.btnInventoryReport.TabIndex = 4;
             this.btnInventoryReport.Text = "Report";
             this.btnInventoryReport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -323,7 +325,7 @@
             this.btnEditProducts.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditProducts.Name = "btnEditProducts";
             this.btnEditProducts.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnEditProducts.Size = new System.Drawing.Size(185, 30);
+            this.btnEditProducts.Size = new System.Drawing.Size(206, 30);
             this.btnEditProducts.TabIndex = 3;
             this.btnEditProducts.Text = "Edit Products";
             this.btnEditProducts.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -344,7 +346,7 @@
             this.btnSearchProducts.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearchProducts.Name = "btnSearchProducts";
             this.btnSearchProducts.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnSearchProducts.Size = new System.Drawing.Size(185, 30);
+            this.btnSearchProducts.Size = new System.Drawing.Size(206, 30);
             this.btnSearchProducts.TabIndex = 2;
             this.btnSearchProducts.Text = "Search Products";
             this.btnSearchProducts.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -362,7 +364,7 @@
             this.panelSales.Location = new System.Drawing.Point(0, 136);
             this.panelSales.Margin = new System.Windows.Forms.Padding(2);
             this.panelSales.Name = "panelSales";
-            this.panelSales.Size = new System.Drawing.Size(185, 93);
+            this.panelSales.Size = new System.Drawing.Size(206, 93);
             this.panelSales.TabIndex = 10;
             // 
             // btnSalesReport
@@ -379,7 +381,7 @@
             this.btnSalesReport.Margin = new System.Windows.Forms.Padding(2);
             this.btnSalesReport.Name = "btnSalesReport";
             this.btnSalesReport.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnSalesReport.Size = new System.Drawing.Size(185, 32);
+            this.btnSalesReport.Size = new System.Drawing.Size(206, 32);
             this.btnSalesReport.TabIndex = 4;
             this.btnSalesReport.Text = "Sales Report";
             this.btnSalesReport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -400,7 +402,7 @@
             this.btnTransactionHistory.Margin = new System.Windows.Forms.Padding(2);
             this.btnTransactionHistory.Name = "btnTransactionHistory";
             this.btnTransactionHistory.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnTransactionHistory.Size = new System.Drawing.Size(185, 30);
+            this.btnTransactionHistory.Size = new System.Drawing.Size(206, 30);
             this.btnTransactionHistory.TabIndex = 3;
             this.btnTransactionHistory.Text = "Sales History";
             this.btnTransactionHistory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -421,7 +423,7 @@
             this.btnCreateTransaction.Margin = new System.Windows.Forms.Padding(2);
             this.btnCreateTransaction.Name = "btnCreateTransaction";
             this.btnCreateTransaction.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnCreateTransaction.Size = new System.Drawing.Size(185, 30);
+            this.btnCreateTransaction.Size = new System.Drawing.Size(206, 30);
             this.btnCreateTransaction.TabIndex = 2;
             this.btnCreateTransaction.Text = "Create Transaction";
             this.btnCreateTransaction.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -442,7 +444,7 @@
             this.btnSales.Margin = new System.Windows.Forms.Padding(2);
             this.btnSales.Name = "btnSales";
             this.btnSales.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
-            this.btnSales.Size = new System.Drawing.Size(185, 30);
+            this.btnSales.Size = new System.Drawing.Size(206, 30);
             this.btnSales.TabIndex = 9;
             this.btnSales.Text = "Sales";
             this.btnSales.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -456,7 +458,7 @@
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Margin = new System.Windows.Forms.Padding(2);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(185, 106);
+            this.panelLogo.Size = new System.Drawing.Size(206, 106);
             this.panelLogo.TabIndex = 1;
             // 
             // picBiliPCLogo
@@ -474,10 +476,10 @@
             // 
             this.pnlTop.BackColor = System.Drawing.Color.Black;
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTop.Location = new System.Drawing.Point(185, 0);
+            this.pnlTop.Location = new System.Drawing.Point(206, 0);
             this.pnlTop.Margin = new System.Windows.Forms.Padding(2);
             this.pnlTop.Name = "pnlTop";
-            this.pnlTop.Size = new System.Drawing.Size(941, 24);
+            this.pnlTop.Size = new System.Drawing.Size(944, 24);
             this.pnlTop.TabIndex = 16;
             // 
             // pnlContainerForm
@@ -485,7 +487,7 @@
             this.pnlContainerForm.BackColor = System.Drawing.Color.LavenderBlush;
             this.pnlContainerForm.Controls.Add(this.picBiliPCLogoDefault);
             this.pnlContainerForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlContainerForm.Location = new System.Drawing.Point(185, 24);
+            this.pnlContainerForm.Location = new System.Drawing.Point(206, 24);
             this.pnlContainerForm.Margin = new System.Windows.Forms.Padding(2);
             this.pnlContainerForm.MinimumSize = new System.Drawing.Size(945, 639);
             this.pnlContainerForm.Name = "pnlContainerForm";
@@ -508,14 +510,14 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1126, 687);
+            this.ClientSize = new System.Drawing.Size(1150, 687);
             this.Controls.Add(this.pnlContainerForm);
             this.Controls.Add(this.pnlTop);
             this.Controls.Add(this.pnlBottom);
             this.Controls.Add(this.pnlSideMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(1142, 726);
+            this.MinimumSize = new System.Drawing.Size(1163, 726);
             this.Name = "DashboardUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BiliPC Store";
