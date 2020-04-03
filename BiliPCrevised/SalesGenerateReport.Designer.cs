@@ -49,7 +49,7 @@
             this.Controls.Add(this.reportViewer1);
             this.Name = "SalesGenerateReport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "SalesGenerateReport";
+            this.Text = "Sales Generated Report";
             this.Load += new System.EventHandler(this.SalesGenerateReport_Load);
             this.ResumeLayout(false);
 

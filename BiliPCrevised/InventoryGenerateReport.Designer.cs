@@ -48,7 +48,7 @@
             this.Controls.Add(this.reportViewer1);
             this.Name = "InventoryGenerateReport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "InventoryGenerateReport";
+            this.Text = "Inventory Generated Report";
             this.Load += new System.EventHandler(this.InventoryGenerateReport_Load);
             this.ResumeLayout(false);
 

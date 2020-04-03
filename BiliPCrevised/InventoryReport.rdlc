@@ -349,7 +349,7 @@
             </Style>
           </Textbox>
           <Line Name="Line2">
-            <Top>4.70986cm</Top>
+            <Top>4.78041cm</Top>
             <Left>0.57466cm</Left>
             <Height>0cm</Height>
             <Width>29.77427cm</Width>
@@ -391,8 +391,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox19</rd:DefaultName>
-            <Top>7.25038cm</Top>
-            <Left>0.87772cm</Left>
+            <Top>7.29494cm</Top>
+            <Left>0.57466cm</Left>
             <Height>0.6cm</Height>
             <Width>5.77346cm</Width>
             <ZIndex>10</ZIndex>
@@ -437,7 +437,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox19</rd:DefaultName>
             <Top>7.8942cm</Top>
-            <Left>0.87772cm</Left>
+            <Left>0.57466cm</Left>
             <Height>0.6cm</Height>
             <Width>5.77346cm</Width>
             <ZIndex>11</ZIndex>
@@ -458,7 +458,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=Parameters!pTCI.Value</Value>
+                    <Value>=Parameters!pTCAI.Value</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -466,8 +466,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox19</rd:DefaultName>
-            <Top>7.25038cm</Top>
-            <Left>7.13625cm</Left>
+            <Top>7.29494cm</Top>
+            <Left>6.83319cm</Left>
             <Height>0.6cm</Height>
             <Width>6.57459cm</Width>
             <ZIndex>12</ZIndex>
@@ -496,8 +496,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox19</rd:DefaultName>
-            <Top>7.8942cm</Top>
-            <Left>7.13625cm</Left>
+            <Top>7.93876cm</Top>
+            <Left>6.83319cm</Left>
             <Height>0.6cm</Height>
             <Width>6.57459cm</Width>
             <ZIndex>13</ZIndex>
@@ -512,10 +512,10 @@
             </Style>
           </Textbox>
           <Line Name="Line1">
-            <Top>6.85864cm</Top>
-            <Left>0.617cm</Left>
+            <Top>6.96648cm</Top>
+            <Left>0.57466cm</Left>
             <Height>0cm</Height>
-            <Width>29.73193cm</Width>
+            <Width>29.77427cm</Width>
             <ZIndex>14</ZIndex>
             <Style>
               <Border>
@@ -1118,7 +1118,7 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>dsInventoryReport</DataSetName>
-            <Top>4.78041cm</Top>
+            <Top>4.9568cm</Top>
             <Left>0.57466cm</Left>
             <Height>1.2cm</Height>
             <Width>29.77427cm</Width>
@@ -1155,11 +1155,15 @@
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
-    <ReportParameter Name="pTCI">
+    <ReportParameter Name="pTCAI">
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="pTRA">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="pSalesRepresentative">
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
@@ -1182,12 +1186,17 @@
         <CellDefinition>
           <ColumnIndex>2</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>pTCI</ParameterName>
+          <ParameterName>pTCAI</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>3</ColumnIndex>
           <RowIndex>0</RowIndex>
           <ParameterName>pTRA</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>1</RowIndex>
+          <ParameterName>pSalesRepresentative</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>

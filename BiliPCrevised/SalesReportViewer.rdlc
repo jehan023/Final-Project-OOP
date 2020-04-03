@@ -103,7 +103,7 @@
             </Style>
           </Textbox>
           <Line Name="Line2">
-            <Top>4.67458cm</Top>
+            <Top>4.78041cm</Top>
             <Left>0.57466cm</Left>
             <Height>0cm</Height>
             <Width>28.98052cm</Width>
@@ -565,7 +565,7 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>dsSalesReport</DataSetName>
-            <Top>4.74514cm</Top>
+            <Top>4.9568cm</Top>
             <Left>0.57466cm</Left>
             <Height>1.2cm</Height>
             <Width>28.98052cm</Width>
@@ -912,19 +912,6 @@
               <PaddingBottom>2pt</PaddingBottom>
             </Style>
           </Textbox>
-          <Line Name="Line1">
-            <Top>6.9032cm</Top>
-            <Left>0.617cm</Left>
-            <Height>0cm</Height>
-            <Width>28.93818cm</Width>
-            <ZIndex>13</ZIndex>
-            <Style>
-              <Border>
-                <Style>Solid</Style>
-                <Width>1.5pt</Width>
-              </Border>
-            </Style>
-          </Line>
           <Textbox Name="Textbox43">
             <CanGrow>true</CanGrow>
             <KeepTogether>true</KeepTogether>
@@ -959,7 +946,7 @@
             <Left>0.57466cm</Left>
             <Height>0.6cm</Height>
             <Width>4.50346cm</Width>
-            <ZIndex>14</ZIndex>
+            <ZIndex>13</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -989,7 +976,7 @@
             <Left>5.21923cm</Left>
             <Height>0.6cm</Height>
             <Width>6.57459cm</Width>
-            <ZIndex>15</ZIndex>
+            <ZIndex>14</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1024,7 +1011,7 @@
             <Left>3.9719cm</Left>
             <Height>0.75875cm</Height>
             <Width>3.55833cm</Width>
-            <ZIndex>16</ZIndex>
+            <ZIndex>15</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1043,7 +1030,7 @@
             <Left>0.57466cm</Left>
             <Height>2.27495cm</Height>
             <Width>2.95942cm</Width>
-            <ZIndex>17</ZIndex>
+            <ZIndex>16</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1071,7 +1058,7 @@
             <Left>3.9719cm</Left>
             <Height>0.6cm</Height>
             <Width>4.50346cm</Width>
-            <ZIndex>18</ZIndex>
+            <ZIndex>17</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1103,7 +1090,7 @@
             <Left>3.9719cm</Left>
             <Height>0.6cm</Height>
             <Width>4.50346cm</Width>
-            <ZIndex>19</ZIndex>
+            <ZIndex>18</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1141,7 +1128,7 @@
             <Left>9.08944cm</Left>
             <Height>0.6cm</Height>
             <Width>4.93417cm</Width>
-            <ZIndex>20</ZIndex>
+            <ZIndex>19</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1171,7 +1158,7 @@
             <Left>9.08944cm</Left>
             <Height>0.6cm</Height>
             <Width>4.93417cm</Width>
-            <ZIndex>21</ZIndex>
+            <ZIndex>20</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1203,7 +1190,7 @@
             <Left>8.61647cm</Left>
             <Height>0.6cm</Height>
             <Width>0.29658cm</Width>
-            <ZIndex>22</ZIndex>
+            <ZIndex>21</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1235,7 +1222,7 @@
             <Left>8.61647cm</Left>
             <Height>0.6cm</Height>
             <Width>0.29658cm</Width>
-            <ZIndex>23</ZIndex>
+            <ZIndex>22</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1246,6 +1233,19 @@
               <PaddingBottom>2pt</PaddingBottom>
             </Style>
           </Textbox>
+          <Line Name="Line3">
+            <Top>6.96648cm</Top>
+            <Left>0.57466cm</Left>
+            <Height>0cm</Height>
+            <Width>28.98052cm</Width>
+            <ZIndex>23</ZIndex>
+            <Style>
+              <Border>
+                <Style>Solid</Style>
+                <Width>1.5pt</Width>
+              </Border>
+            </Style>
+          </Line>
         </ReportItems>
         <Height>4.55208in</Height>
         <Style />

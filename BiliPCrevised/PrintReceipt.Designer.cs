@@ -49,7 +49,7 @@
             this.Controls.Add(this.ReceiptViewer);
             this.Name = "PrintReceipt";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PrintReceipt";
+            this.Text = "Print Receipt";
             this.Load += new System.EventHandler(this.PrintReceipt_Load);
             this.ResumeLayout(false);
 
