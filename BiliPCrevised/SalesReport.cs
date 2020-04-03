@@ -40,8 +40,28 @@
 
         private void CboViewMonth_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var selectedRecord = this.db.LoadRecordsByStringList<InventoryModel>("Inventory", "Category", this.cboViewMonth.Text);
+            DateTime monYear = DateTime.Parse(this.cboViewMonth.Text, CultureInfo.InvariantCulture);
+            var selectedRecord = this.db.LoadRecordsByMonthListT<SalesHistoryModel>(
+                "SalesHistory", "DateOfPurchase", monYear.Year, monYear.Month, DateTime.DaysInMonth(monYear.Year, monYear.Month));
             this.dgdInventoryReport.DataSource = selectedRecord;
+
+            double totalCostItemSold, totalRetailPrice, grossMargin, employeeSalary, netProfit, profitPercentage;
+            totalCostItemSold = totalRetailPrice = grossMargin = employeeSalary = 0;
+
+            foreach (var transaction in selectedRecord)
+            {
+                totalCostItemSold += transaction.TCIS;
+                totalRetailPrice += transaction.TRA;
+                grossMargin += transaction.GrossMargin;
+            }
+
+            netProfit = grossMargin - employeeSalary;
+            profitPercentage = (netProfit / totalCostItemSold) * 100;
+            this.txtTCIS.Text = totalCostItemSold.ToString(CultureInfo.CurrentCulture);
+            this.txtTRA.Text = totalRetailPrice.ToString(CultureInfo.CurrentCulture);
+            this.txtGrossMargin.Text = grossMargin.ToString(CultureInfo.CurrentCulture);
+            this.txtNetProfit.Text = netProfit.ToString(CultureInfo.CurrentCulture);
+            this.txtProfitPerce.Text = profitPercentage.ToString(CultureInfo.CurrentCulture);
         }
     }
 }

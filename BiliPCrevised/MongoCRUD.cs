@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Globalization;
     using System.Linq;
     using MongoDB.Bson;
     using MongoDB.Driver;
@@ -81,13 +82,17 @@
             return collection.Find(filter).ToList();
         }
 
-        //public List<T> LoadRecordsByDateListT<T>(string table, DateTime element, DateTime specific)
-        //{
-        //    var collection = this.db.GetCollection<T>(table);
-        //    var filter = Builders<T>.Filter.Eq(element.Month, specific);
+        public List<T> LoadRecordsByMonthListT<T>(string table, string element, int year, int month, int lastDay)
+        {
+            var collection = this.db.GetCollection<T>(table);
+            var start = new DateTime(year, month, 01, 0, 0, 0).ToUniversalTime();
+            var end = new DateTime(year, month, lastDay, 23, 59, 59).ToUniversalTime();
 
-        //    return collection.Find(filter).ToList();
-        //}
+            var filterBuilder = Builders<T>.Filter;
+            var filter = filterBuilder.Gte(element, start) & filterBuilder.Lte(element, end);
+
+            return collection.Find(filter).ToList();
+        }
 
         public void UpsertRecord<T>(string table, ObjectId id, T record)
         {
