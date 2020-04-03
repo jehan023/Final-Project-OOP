@@ -414,7 +414,6 @@
                                 totalCostItemSold += item.Cost * cart.Quantity;
                                 break;
                             }
-
                         }
                     }
 

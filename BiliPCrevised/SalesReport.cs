@@ -45,18 +45,19 @@
                 "SalesHistory", "DateOfPurchase", monYear.Year, monYear.Month, DateTime.DaysInMonth(monYear.Year, monYear.Month));
             this.dgdInventoryReport.DataSource = selectedRecord;
 
-            double totalCostItemSold, totalRetailPrice, grossMargin, employeeSalary, netProfit, profitPercentage;
-            totalCostItemSold = totalRetailPrice = grossMargin = employeeSalary = 0;
+            double totalCostItemSold, totalRetailPrice, grossMargin, employeeSalary, netProfit, profitPercentage, netSales;
+            totalCostItemSold = totalRetailPrice = grossMargin = employeeSalary = netSales = 0;
 
             foreach (var transaction in selectedRecord)
             {
                 totalCostItemSold += transaction.TCIS;
                 totalRetailPrice += transaction.TRA;
+                netSales += transaction.NetSales;
                 grossMargin += transaction.GrossMargin;
             }
 
             netProfit = grossMargin - employeeSalary;
-            profitPercentage = (netProfit / totalCostItemSold) * 100;
+            profitPercentage = (netProfit / netSales) * 100;
             this.txtTCIS.Text = totalCostItemSold.ToString(CultureInfo.CurrentCulture);
             this.txtTRA.Text = totalRetailPrice.ToString(CultureInfo.CurrentCulture);
             this.txtGrossMargin.Text = grossMargin.ToString(CultureInfo.CurrentCulture);

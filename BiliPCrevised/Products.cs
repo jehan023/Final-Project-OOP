@@ -94,7 +94,9 @@
             {
                 MessageBox.Show("Please fill all of the " + emptyField + " field/s.");
             }
-            else if (ObjectId.TryParse(this.idBox.Text, out ObjectId id) && int.TryParse(this.txtQuantity.Text, out int quantity) && double.TryParse(this.txtUnitPrice.Text, out double unitPrice) && double.TryParse(this.txtCost.Text, out double cost))
+            else if (ObjectId.TryParse(this.idBox.Text, out ObjectId id) &&
+                int.TryParse(this.txtQuantity.Text, out int quantity) && double.TryParse(this.txtUnitPrice.Text, out double unitPrice)
+                && double.TryParse(this.txtCost.Text, out double cost))
             {
                 var selectedRecord = this.db.LoadRecordById<InventoryModel>("Inventory", id);
                 selectedRecord.Item = this.txtItemName.Text;

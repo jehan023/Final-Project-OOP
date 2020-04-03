@@ -323,10 +323,6 @@ C:\Users\DENNIEL-PC\source\repos\Final-Project-OOP\BiliPCrevised\bin\Debug\ru\Mi
 C:\Users\DENNIEL-PC\source\repos\Final-Project-OOP\BiliPCrevised\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\DENNIEL-PC\source\repos\Final-Project-OOP\BiliPCrevised\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\DENNIEL-PC\source\repos\Final-Project-OOP\BiliPCrevised\obj\Debug\BiliPC.csproj.CoreCompileInputs.cache
-C:\Users\Nitro 5\Documents\GitHub\Final-Project-OOP\BiliPCrevised\bin\Debug\SqlServerTypes\x64\msvcr120.dll
-C:\Users\Nitro 5\Documents\GitHub\Final-Project-OOP\BiliPCrevised\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
-C:\Users\Nitro 5\Documents\GitHub\Final-Project-OOP\BiliPCrevised\bin\Debug\SqlServerTypes\x86\msvcr120.dll
-C:\Users\Nitro 5\Documents\GitHub\Final-Project-OOP\BiliPCrevised\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
 C:\Users\Nitro 5\Documents\GitHub\Final-Project-OOP\BiliPCrevised\bin\Debug\mongocrypt.dll
 C:\Users\Nitro 5\Documents\GitHub\Final-Project-OOP\BiliPCrevised\bin\Debug\BiliPC.exe.config
 C:\Users\Nitro 5\Documents\GitHub\Final-Project-OOP\BiliPCrevised\bin\Debug\BiliPC.exe
@@ -423,3 +419,6 @@ C:\Users\Nitro 5\Documents\GitHub\Final-Project-OOP\BiliPCrevised\obj\Debug\RdlC
 C:\Users\Nitro 5\Documents\GitHub\Final-Project-OOP\BiliPCrevised\obj\Debug\BiliPC.csproj.CopyComplete
 C:\Users\Nitro 5\Documents\GitHub\Final-Project-OOP\BiliPCrevised\obj\Debug\BiliPC.exe
 C:\Users\Nitro 5\Documents\GitHub\Final-Project-OOP\BiliPCrevised\obj\Debug\BiliPC.pdb
+C:\Users\Nitro 5\Documents\GitHub\Final-Project-OOP\BiliPCrevised\obj\Debug\BiliPC.csprojAssemblyReference.cache
+C:\Users\Nitro 5\Documents\GitHub\Final-Project-OOP\BiliPCrevised\obj\Debug\BiliPC.InventoryGenerateReport.resources
+C:\Users\Nitro 5\Documents\GitHub\Final-Project-OOP\BiliPCrevised\obj\Debug\BiliPC.SalesGenerateReport.resources

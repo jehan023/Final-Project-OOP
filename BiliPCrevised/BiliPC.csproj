@@ -153,6 +153,12 @@
       <DependentUpon>DashboardUI.cs</DependentUpon>
     </Compile>
     <Compile Include="Functions.cs" />
+    <Compile Include="InventoryGenerateReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InventoryGenerateReport.Designer.cs">
+      <DependentUpon>InventoryGenerateReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="InventoryReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,6 +192,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SalesGenerateReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalesGenerateReport.Designer.cs">
+      <DependentUpon>SalesGenerateReport.cs</DependentUpon>
     </Compile>
     <Compile Include="SalesHistory.cs">
       <SubType>Form</SubType>
@@ -238,6 +250,10 @@
     <EmbeddedResource Include="DashboardUI.resx">
       <DependentUpon>DashboardUI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InventoryGenerateReport.resx">
+      <DependentUpon>InventoryGenerateReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InventoryReport.rdlc" />
     <EmbeddedResource Include="InventoryReport.resx">
       <DependentUpon>InventoryReport.cs</DependentUpon>
     </EmbeddedResource>
@@ -255,12 +271,16 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="SalesGenerateReport.resx">
+      <DependentUpon>SalesGenerateReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SalesHistory.resx">
       <DependentUpon>SalesHistory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SalesReport.resx">
       <DependentUpon>SalesReport.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SalesReportViewer.rdlc" />
     <EmbeddedResource Include="TrackEmployees.resx">
       <DependentUpon>TrackEmployees.cs</DependentUpon>
     </EmbeddedResource>
@@ -275,10 +295,29 @@
     </EmbeddedResource>
     <None Include=".editorconfig" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\AddDiscount.datasource" />
+    <None Include="Properties\DataSources\AddNewEmployee.datasource" />
+    <None Include="Properties\DataSources\AddNewItem.datasource" />
+    <None Include="Properties\DataSources\BiliPC.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\BiliPC.Properties.Settings.datasource" />
+    <None Include="Properties\DataSources\DashboardUI.datasource" />
+    <None Include="Properties\DataSources\Functions.datasource" />
     <None Include="Properties\DataSources\InventoryModel.datasource" />
+    <None Include="Properties\DataSources\InventoryReport.datasource" />
+    <None Include="Properties\DataSources\LoginUI.datasource" />
+    <None Include="Properties\DataSources\MongoCRUD.datasource" />
+    <None Include="Properties\DataSources\PrintReceipt.datasource" />
+    <None Include="Properties\DataSources\Products.datasource" />
+    <None Include="Properties\DataSources\Program.datasource" />
+    <None Include="Properties\DataSources\SalesHistory.datasource" />
     <None Include="Properties\DataSources\SalesHistoryModel.datasource" />
+    <None Include="Properties\DataSources\SalesReport.datasource" />
+    <None Include="Properties\DataSources\TrackEmployees.datasource" />
+    <None Include="Properties\DataSources\TransactionForm.datasource" />
     <None Include="Properties\DataSources\TransactionTempModel.datasource" />
     <None Include="Properties\DataSources\UsersModel.datasource" />
+    <None Include="Properties\DataSources\ViewEmployees.datasource" />
+    <None Include="Properties\DataSources\ViewProducts.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
