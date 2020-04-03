@@ -1,5 +1,6 @@
 ﻿namespace BiliPC
 {
+    using System;
     using System.Collections.Generic;
     using System.Linq;
     using MongoDB.Bson;
@@ -79,6 +80,14 @@
 
             return collection.Find(filter).ToList();
         }
+
+        //public List<T> LoadRecordsByDateListT<T>(string table, DateTime element, DateTime specific)
+        //{
+        //    var collection = this.db.GetCollection<T>(table);
+        //    var filter = Builders<T>.Filter.Eq(element.Month, specific);
+
+        //    return collection.Find(filter).ToList();
+        //}
 
         public void UpsertRecord<T>(string table, ObjectId id, T record)
         {

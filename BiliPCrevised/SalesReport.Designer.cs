@@ -38,18 +38,6 @@
             this.btnX = new System.Windows.Forms.Button();
             this.pnlBackground = new System.Windows.Forms.Panel();
             this.dgdInventoryReport = new System.Windows.Forms.DataGridView();
-            this.GroupTextBox = new System.Windows.Forms.GroupBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.salesHistoryModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itemsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.employeeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,11 +46,23 @@
             this.tRADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.netSalesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grossMarginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.salesHistoryModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.GroupTextBox = new System.Windows.Forms.GroupBox();
+            this.txtGrossMargin = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtProfitPerce = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtNetProfit = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtTRA = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtTCIS = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.pnlTop.SuspendLayout();
             this.pnlBackground.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgdInventoryReport)).BeginInit();
-            this.GroupTextBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.salesHistoryModelBindingSource)).BeginInit();
+            this.GroupTextBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlTop
@@ -105,6 +105,7 @@
             this.cboViewMonth.Name = "cboViewMonth";
             this.cboViewMonth.Size = new System.Drawing.Size(312, 26);
             this.cboViewMonth.TabIndex = 22;
+            this.cboViewMonth.SelectedIndexChanged += new System.EventHandler(this.CboViewMonth_SelectedIndexChanged);
             // 
             // lblMonth
             // 
@@ -131,6 +132,7 @@
             this.btnShowAll.TabIndex = 20;
             this.btnShowAll.Text = "Show All";
             this.btnShowAll.UseVisualStyleBackColor = false;
+            this.btnShowAll.Click += new System.EventHandler(this.BtnShowAll_Click);
             // 
             // lblSalesReport
             // 
@@ -199,156 +201,6 @@
             this.dgdInventoryReport.Size = new System.Drawing.Size(894, 311);
             this.dgdInventoryReport.TabIndex = 0;
             // 
-            // GroupTextBox
-            // 
-            this.GroupTextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.GroupTextBox.Controls.Add(this.textBox5);
-            this.GroupTextBox.Controls.Add(this.label5);
-            this.GroupTextBox.Controls.Add(this.textBox4);
-            this.GroupTextBox.Controls.Add(this.label4);
-            this.GroupTextBox.Controls.Add(this.textBox3);
-            this.GroupTextBox.Controls.Add(this.label3);
-            this.GroupTextBox.Controls.Add(this.textBox2);
-            this.GroupTextBox.Controls.Add(this.label2);
-            this.GroupTextBox.Controls.Add(this.textBox1);
-            this.GroupTextBox.Controls.Add(this.label1);
-            this.GroupTextBox.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.GroupTextBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.GroupTextBox.Location = new System.Drawing.Point(0, 456);
-            this.GroupTextBox.Name = "GroupTextBox";
-            this.GroupTextBox.Size = new System.Drawing.Size(945, 183);
-            this.GroupTextBox.TabIndex = 46;
-            this.GroupTextBox.TabStop = false;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(592, 127);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(328, 29);
-            this.textBox5.TabIndex = 72;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(469, 83);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(108, 22);
-            this.label5.TabIndex = 71;
-            this.label5.Text = "Net Profit :";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(592, 33);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(328, 29);
-            this.textBox4.TabIndex = 70;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(374, 36);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(203, 22);
-            this.label4.TabIndex = 69;
-            this.label4.Text = "Profit Percentage % :";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(592, 80);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(328, 29);
-            this.textBox3.TabIndex = 68;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(434, 130);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(143, 22);
-            this.label3.TabIndex = 67;
-            this.label3.Text = "Gross Margin :";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(26, 129);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(336, 29);
-            this.textBox2.TabIndex = 66;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(26, 105);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(201, 22);
-            this.label2.TabIndex = 65;
-            this.label2.Text = "Total Retail Amount :";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(26, 57);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(336, 29);
-            this.textBox1.TabIndex = 64;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(26, 33);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(238, 22);
-            this.label1.TabIndex = 63;
-            this.label1.Text = "Total Cost of Items Sold :";
-            // 
-            // salesHistoryModelBindingSource
-            // 
-            this.salesHistoryModelBindingSource.DataSource = typeof(BiliPC.SalesHistoryModel);
-            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -406,6 +258,156 @@
             this.grossMarginDataGridViewTextBoxColumn.Name = "grossMarginDataGridViewTextBoxColumn";
             this.grossMarginDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // salesHistoryModelBindingSource
+            // 
+            this.salesHistoryModelBindingSource.DataSource = typeof(BiliPC.SalesHistoryModel);
+            // 
+            // GroupTextBox
+            // 
+            this.GroupTextBox.BackColor = System.Drawing.SystemColors.Info;
+            this.GroupTextBox.Controls.Add(this.txtGrossMargin);
+            this.GroupTextBox.Controls.Add(this.label5);
+            this.GroupTextBox.Controls.Add(this.txtProfitPerce);
+            this.GroupTextBox.Controls.Add(this.label4);
+            this.GroupTextBox.Controls.Add(this.txtNetProfit);
+            this.GroupTextBox.Controls.Add(this.label3);
+            this.GroupTextBox.Controls.Add(this.txtTRA);
+            this.GroupTextBox.Controls.Add(this.label2);
+            this.GroupTextBox.Controls.Add(this.txtTCIS);
+            this.GroupTextBox.Controls.Add(this.label1);
+            this.GroupTextBox.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.GroupTextBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.GroupTextBox.Location = new System.Drawing.Point(0, 456);
+            this.GroupTextBox.Name = "GroupTextBox";
+            this.GroupTextBox.Size = new System.Drawing.Size(945, 183);
+            this.GroupTextBox.TabIndex = 46;
+            this.GroupTextBox.TabStop = false;
+            // 
+            // txtGrossMargin
+            // 
+            this.txtGrossMargin.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtGrossMargin.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGrossMargin.Location = new System.Drawing.Point(592, 127);
+            this.txtGrossMargin.Margin = new System.Windows.Forms.Padding(2);
+            this.txtGrossMargin.Name = "txtGrossMargin";
+            this.txtGrossMargin.ReadOnly = true;
+            this.txtGrossMargin.Size = new System.Drawing.Size(328, 29);
+            this.txtGrossMargin.TabIndex = 72;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(469, 83);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(108, 22);
+            this.label5.TabIndex = 71;
+            this.label5.Text = "Net Profit :";
+            // 
+            // txtProfitPerce
+            // 
+            this.txtProfitPerce.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtProfitPerce.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProfitPerce.Location = new System.Drawing.Point(592, 33);
+            this.txtProfitPerce.Margin = new System.Windows.Forms.Padding(2);
+            this.txtProfitPerce.Name = "txtProfitPerce";
+            this.txtProfitPerce.ReadOnly = true;
+            this.txtProfitPerce.Size = new System.Drawing.Size(328, 29);
+            this.txtProfitPerce.TabIndex = 70;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(374, 36);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(203, 22);
+            this.label4.TabIndex = 69;
+            this.label4.Text = "Profit Percentage % :";
+            // 
+            // txtNetProfit
+            // 
+            this.txtNetProfit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtNetProfit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNetProfit.Location = new System.Drawing.Point(592, 80);
+            this.txtNetProfit.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNetProfit.Name = "txtNetProfit";
+            this.txtNetProfit.ReadOnly = true;
+            this.txtNetProfit.Size = new System.Drawing.Size(328, 29);
+            this.txtNetProfit.TabIndex = 68;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(434, 130);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(143, 22);
+            this.label3.TabIndex = 67;
+            this.label3.Text = "Gross Margin :";
+            // 
+            // txtTRA
+            // 
+            this.txtTRA.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtTRA.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTRA.Location = new System.Drawing.Point(26, 129);
+            this.txtTRA.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTRA.Name = "txtTRA";
+            this.txtTRA.ReadOnly = true;
+            this.txtTRA.Size = new System.Drawing.Size(336, 29);
+            this.txtTRA.TabIndex = 66;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(26, 105);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(201, 22);
+            this.label2.TabIndex = 65;
+            this.label2.Text = "Total Retail Amount :";
+            // 
+            // txtTCIS
+            // 
+            this.txtTCIS.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtTCIS.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTCIS.Location = new System.Drawing.Point(26, 57);
+            this.txtTCIS.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTCIS.Name = "txtTCIS";
+            this.txtTCIS.ReadOnly = true;
+            this.txtTCIS.Size = new System.Drawing.Size(336, 29);
+            this.txtTCIS.TabIndex = 64;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(26, 33);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(238, 22);
+            this.label1.TabIndex = 63;
+            this.label1.Text = "Total Cost of Items Sold :";
+            // 
             // SalesReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -418,13 +420,14 @@
             this.MinimumSize = new System.Drawing.Size(945, 639);
             this.Name = "SalesReport";
             this.Text = "``````````````````````````````````````````````````";
+            this.Load += new System.EventHandler(this.SalesReport_Load);
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
             this.pnlBackground.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgdInventoryReport)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.salesHistoryModelBindingSource)).EndInit();
             this.GroupTextBox.ResumeLayout(false);
             this.GroupTextBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.salesHistoryModelBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -441,15 +444,15 @@
         private System.Windows.Forms.Panel pnlBackground;
         private System.Windows.Forms.DataGridView dgdInventoryReport;
         private System.Windows.Forms.GroupBox GroupTextBox;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtProfitPerce;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtNetProfit;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtTRA;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtTCIS;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtGrossMargin;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn itemsDataGridViewTextBoxColumn;

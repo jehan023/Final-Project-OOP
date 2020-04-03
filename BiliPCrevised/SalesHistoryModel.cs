@@ -1,5 +1,6 @@
 ﻿namespace BiliPC
 {
+    using System;
     using System.Collections.Generic;
     using MongoDB.Bson;
     using MongoDB.Bson.Serialization.Attributes;
@@ -13,7 +14,8 @@
         public string Items { get; set; }
 
         [BsonElement]
-        public BsonDateTime DateOfPurchase { get; set; }
+        [BsonDateTimeOptions(Kind = DateTimeKind.Local)]
+        public DateTime DateOfPurchase { get; set; }
 
         [BsonElement]
         public string Employee { get; set; }

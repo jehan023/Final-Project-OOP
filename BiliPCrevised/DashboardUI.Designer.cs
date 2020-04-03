@@ -88,7 +88,7 @@
             this.lblDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblDate.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDate.ForeColor = System.Drawing.Color.White;
-            this.lblDate.Location = new System.Drawing.Point(5, 637);
+            this.lblDate.Location = new System.Drawing.Point(9, 637);
             this.lblDate.Margin = new System.Windows.Forms.Padding(0);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(34, 14);
@@ -103,7 +103,7 @@
             this.lblTime.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblTime.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTime.ForeColor = System.Drawing.Color.White;
-            this.lblTime.Location = new System.Drawing.Point(11, 608);
+            this.lblTime.Location = new System.Drawing.Point(9, 608);
             this.lblTime.Margin = new System.Windows.Forms.Padding(0);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(60, 24);
@@ -161,7 +161,7 @@
             this.lblAcctName.AutoSize = true;
             this.lblAcctName.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAcctName.ForeColor = System.Drawing.Color.White;
-            this.lblAcctName.Location = new System.Drawing.Point(22, 559);
+            this.lblAcctName.Location = new System.Drawing.Point(9, 559);
             this.lblAcctName.Name = "lblAcctName";
             this.lblAcctName.Size = new System.Drawing.Size(43, 17);
             this.lblAcctName.TabIndex = 24;
@@ -173,7 +173,7 @@
             this.lblLoggedInAs.AutoSize = true;
             this.lblLoggedInAs.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLoggedInAs.ForeColor = System.Drawing.Color.White;
-            this.lblLoggedInAs.Location = new System.Drawing.Point(11, 542);
+            this.lblLoggedInAs.Location = new System.Drawing.Point(9, 542);
             this.lblLoggedInAs.Name = "lblLoggedInAs";
             this.lblLoggedInAs.Size = new System.Drawing.Size(79, 12);
             this.lblLoggedInAs.TabIndex = 23;
@@ -464,10 +464,10 @@
             // picBiliPCLogo
             // 
             this.picBiliPCLogo.Image = ((System.Drawing.Image)(resources.GetObject("picBiliPCLogo.Image")));
-            this.picBiliPCLogo.Location = new System.Drawing.Point(4, 18);
+            this.picBiliPCLogo.Location = new System.Drawing.Point(11, 18);
             this.picBiliPCLogo.Margin = new System.Windows.Forms.Padding(2);
             this.picBiliPCLogo.Name = "picBiliPCLogo";
-            this.picBiliPCLogo.Size = new System.Drawing.Size(162, 76);
+            this.picBiliPCLogo.Size = new System.Drawing.Size(184, 84);
             this.picBiliPCLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picBiliPCLogo.TabIndex = 0;
             this.picBiliPCLogo.TabStop = false;
