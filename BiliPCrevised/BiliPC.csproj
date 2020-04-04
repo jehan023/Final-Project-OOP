@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Xamarin.Forms.4.5.0.530\build\Xamarin.Forms.props" Condition="Exists('packages\Xamarin.Forms.4.5.0.530\build\Xamarin.Forms.props')" />
   <Import Project="packages\Microsoft.CodeAnalysis.FxCopAnalyzers.2.9.8\build\Microsoft.CodeAnalysis.FxCopAnalyzers.props" Condition="Exists('packages\Microsoft.CodeAnalysis.FxCopAnalyzers.2.9.8\build\Microsoft.CodeAnalysis.FxCopAnalyzers.props')" />
   <Import Project="packages\Microsoft.NetFramework.Analyzers.2.9.8\build\Microsoft.NetFramework.Analyzers.props" Condition="Exists('packages\Microsoft.NetFramework.Analyzers.2.9.8\build\Microsoft.NetFramework.Analyzers.props')" />
   <Import Project="packages\Microsoft.NetCore.Analyzers.2.9.8\build\Microsoft.NetCore.Analyzers.props" Condition="Exists('packages\Microsoft.NetCore.Analyzers.2.9.8\build\Microsoft.NetCore.Analyzers.props')" />
@@ -66,8 +67,8 @@
     <Reference Include="Crc32C.NET, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\Crc32C.NET.1.0.5.0\lib\net20\Crc32C.NET.dll</HintPath>
     </Reference>
-    <Reference Include="DnsClient, Version=1.3.0.0, Culture=neutral, PublicKeyToken=4574bb5573c51424, processorArchitecture=MSIL">
-      <HintPath>packages\DnsClient.1.3.0\lib\net471\DnsClient.dll</HintPath>
+    <Reference Include="DnsClient, Version=1.3.1.0, Culture=neutral, PublicKeyToken=4574bb5573c51424, processorArchitecture=MSIL">
+      <HintPath>packages\DnsClient.1.3.1\lib\net471\DnsClient.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
@@ -85,7 +86,7 @@
       <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+      <HintPath>packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="MongoDB.Bson, Version=2.10.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\MongoDB.Bson.2.10.2\lib\net452\MongoDB.Bson.dll</HintPath>
@@ -99,22 +100,92 @@
     <Reference Include="MongoDB.Libmongocrypt, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\MongoDB.Libmongocrypt.1.0.0\lib\net452\MongoDB.Libmongocrypt.dll</HintPath>
     </Reference>
-    <Reference Include="SharpCompress, Version=0.24.0.0, Culture=neutral, PublicKeyToken=afb0a02973931d96, processorArchitecture=MSIL">
-      <HintPath>packages\SharpCompress.0.24.0\lib\net45\SharpCompress.dll</HintPath>
+    <Reference Include="SharpCompress, Version=0.25.0.0, Culture=neutral, PublicKeyToken=afb0a02973931d96, processorArchitecture=MSIL">
+      <HintPath>packages\SharpCompress.0.25.0\lib\net46\SharpCompress.dll</HintPath>
     </Reference>
     <Reference Include="Snappy.NET, Version=1.1.1.8, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\Snappy.NET.1.1.1.8\lib\net45\Snappy.NET.dll</HintPath>
     </Reference>
+    <Reference Include="Syncfusion.Compression.Base, Version=18.1460.0.42, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>packages\Syncfusion.Compression.Base.18.1.0.42\lib\net46\Syncfusion.Compression.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Core.WinForms, Version=18.1460.0.42, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>packages\Syncfusion.Core.WinForms.18.1.0.42\lib\net46\Syncfusion.Core.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Core.XForms, Version=18.1451.0.42, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Syncfusion.Xamarin.Core.18.1.0.42\lib\netstandard2.0\Syncfusion.Core.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Data.Portable, Version=18.1451.0.42, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Syncfusion.Xamarin.SfDataGrid.18.1.0.42\lib\netstandard2.0\Syncfusion.Data.Portable.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Data.WinForms, Version=18.1460.0.42, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>packages\Syncfusion.Data.WinForms.18.1.0.42\lib\net46\Syncfusion.Data.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.DataSource.WinForms, Version=18.1460.0.42, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>packages\Syncfusion.DataSource.WinForms.18.1.0.42\lib\net46\Syncfusion.DataSource.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.GridCommon.Portable, Version=18.1451.0.42, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Syncfusion.Xamarin.GridCommon.18.1.0.42\lib\netstandard2.0\Syncfusion.GridCommon.Portable.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.GridCommon.WinForms, Version=18.1460.0.42, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>packages\Syncfusion.GridCommon.WinForms.18.1.0.42\lib\net46\Syncfusion.GridCommon.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Licensing, Version=18.1460.0.42, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
+      <HintPath>packages\Syncfusion.Licensing.18.1.0.42\lib\net46\Syncfusion.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Pdf.Base, Version=18.1460.0.42, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>packages\Syncfusion.Pdf.WinForms.18.1.0.42\lib\net46\Syncfusion.Pdf.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfComboBox.XForms, Version=18.1451.0.42, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Syncfusion.Xamarin.SfComboBox.18.1.0.42\lib\netstandard2.0\Syncfusion.SfComboBox.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfDataGrid.WinForms, Version=18.1460.0.42, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>packages\Syncfusion.SfDataGrid.WinForms.18.1.0.42\lib\net46\Syncfusion.SfDataGrid.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfDataGrid.XForms, Version=18.1451.0.42, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Syncfusion.Xamarin.SfDataGrid.18.1.0.42\lib\netstandard2.0\Syncfusion.SfDataGrid.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfDataGridConverter.WinForms, Version=18.1460.0.42, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>packages\Syncfusion.DataGridExport.WinForms.18.1.0.42\lib\net46\Syncfusion.SfDataGridConverter.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfInput.WinForms, Version=18.1460.0.42, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>packages\Syncfusion.SfInput.WinForms.18.1.0.42\lib\net46\Syncfusion.SfInput.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfListView.WinForms, Version=18.1460.0.42, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>packages\Syncfusion.SfListView.WinForms.18.1.0.42\lib\net46\Syncfusion.SfListView.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfNumericTextBox.XForms, Version=18.1451.0.42, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Syncfusion.Xamarin.SfNumericTextBox.18.1.0.42\lib\netstandard2.0\Syncfusion.SfNumericTextBox.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Shared.Base, Version=18.1460.0.42, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>packages\Syncfusion.Shared.Base.18.1.0.42\lib\net46\Syncfusion.Shared.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.XlsIO.Base, Version=18.1460.0.42, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>packages\Syncfusion.XlsIO.WinForms.18.1.0.42\lib\net46\Syncfusion.XlsIO.Base.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.Buffers.4.5.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+      <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
     </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.4.7.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
       <Private>True</Private>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Text.Encoding.CodePages, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Text.Encoding.CodePages.4.7.0\lib\net461\System.Text.Encoding.CodePages.dll</HintPath>
     </Reference>
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
@@ -126,6 +197,15 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Xamarin.Forms.4.5.0.530\lib\netstandard2.0\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Xamarin.Forms.4.5.0.530\lib\netstandard2.0\Xamarin.Forms.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Xamarin.Forms.4.5.0.530\lib\netstandard2.0\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddDiscount.cs">
@@ -211,6 +291,7 @@
     <Compile Include="SalesReport.Designer.cs">
       <DependentUpon>SalesReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="TrackEmployees.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -359,6 +440,19 @@
   <ItemGroup>
     <Content Include="picBiliPCIcon.ico" />
     <Content Include="picbilipclogo.ico" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\MongoDB.Libmongocrypt.1.0.0\build\MongoDB.Libmongocrypt.targets" Condition="Exists('packages\MongoDB.Libmongocrypt.1.0.0\build\MongoDB.Libmongocrypt.targets')" />
@@ -372,5 +466,8 @@
     <Error Condition="!Exists('packages\Microsoft.NetCore.Analyzers.2.9.8\build\Microsoft.NetCore.Analyzers.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.NetCore.Analyzers.2.9.8\build\Microsoft.NetCore.Analyzers.props'))" />
     <Error Condition="!Exists('packages\Microsoft.NetFramework.Analyzers.2.9.8\build\Microsoft.NetFramework.Analyzers.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.NetFramework.Analyzers.2.9.8\build\Microsoft.NetFramework.Analyzers.props'))" />
     <Error Condition="!Exists('packages\Microsoft.CodeAnalysis.FxCopAnalyzers.2.9.8\build\Microsoft.CodeAnalysis.FxCopAnalyzers.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeAnalysis.FxCopAnalyzers.2.9.8\build\Microsoft.CodeAnalysis.FxCopAnalyzers.props'))" />
+    <Error Condition="!Exists('packages\Xamarin.Forms.4.5.0.530\build\Xamarin.Forms.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Xamarin.Forms.4.5.0.530\build\Xamarin.Forms.props'))" />
+    <Error Condition="!Exists('packages\Xamarin.Forms.4.5.0.530\build\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Xamarin.Forms.4.5.0.530\build\Xamarin.Forms.targets'))" />
   </Target>
+  <Import Project="packages\Xamarin.Forms.4.5.0.530\build\Xamarin.Forms.targets" Condition="Exists('packages\Xamarin.Forms.4.5.0.530\build\Xamarin.Forms.targets')" />
 </Project>

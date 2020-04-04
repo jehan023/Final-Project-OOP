@@ -58,11 +58,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtTCIS = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.sfDataGrid1 = new Syncfusion.WinForms.DataGrid.SfDataGrid();
             this.pnlTop.SuspendLayout();
             this.pnlBackground.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgdInventoryReport)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.salesHistoryModelBindingSource)).BeginInit();
             this.GroupTextBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sfDataGrid1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTop
@@ -95,6 +97,7 @@
             this.btnGenerateReport.TabIndex = 23;
             this.btnGenerateReport.Text = "Generate Report";
             this.btnGenerateReport.UseVisualStyleBackColor = false;
+            this.btnGenerateReport.Click += new System.EventHandler(this.BtnGenerateReport_Click);
             // 
             // cboViewMonth
             // 
@@ -168,6 +171,7 @@
             // pnlBackground
             // 
             this.pnlBackground.BackColor = System.Drawing.SystemColors.Info;
+            this.pnlBackground.Controls.Add(this.sfDataGrid1);
             this.pnlBackground.Controls.Add(this.dgdInventoryReport);
             this.pnlBackground.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlBackground.Location = new System.Drawing.Point(0, 117);
@@ -408,6 +412,16 @@
             this.label1.TabIndex = 63;
             this.label1.Text = "Total Cost of Items Sold :";
             // 
+            // sfDataGrid1
+            // 
+            this.sfDataGrid1.AccessibleName = "Table";
+            this.sfDataGrid1.DataSource = this.salesHistoryModelBindingSource;
+            this.sfDataGrid1.Location = new System.Drawing.Point(30, 59);
+            this.sfDataGrid1.Name = "sfDataGrid1";
+            this.sfDataGrid1.Size = new System.Drawing.Size(865, 250);
+            this.sfDataGrid1.TabIndex = 24;
+            this.sfDataGrid1.Text = "sfDataGrid1";
+            // 
             // SalesReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -428,6 +442,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.salesHistoryModelBindingSource)).EndInit();
             this.GroupTextBox.ResumeLayout(false);
             this.GroupTextBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sfDataGrid1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -463,5 +478,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn netSalesDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn grossMarginDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource salesHistoryModelBindingSource;
+        private Syncfusion.WinForms.DataGrid.SfDataGrid sfDataGrid1;
     }
 }

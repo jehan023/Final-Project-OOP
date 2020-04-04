@@ -2,7 +2,10 @@
 {
     using System;
     using System.Globalization;
+    using System.IO;
     using System.Windows.Forms;
+    using Syncfusion.WinForms.DataGridConverter;
+    using Syncfusion.XlsIO;
 
     public partial class SalesReport : Form
     {
@@ -43,10 +46,10 @@
             DateTime monYear = DateTime.Parse(this.cboViewMonth.Text, CultureInfo.InvariantCulture);
             var selectedRecord = this.db.LoadRecordsByMonthListT<SalesHistoryModel>(
                 "SalesHistory", "DateOfPurchase", monYear.Year, monYear.Month, DateTime.DaysInMonth(monYear.Year, monYear.Month));
-            this.dgdInventoryReport.DataSource = selectedRecord;
+            this.sfDataGrid1.DataSource = selectedRecord;
 
-            double totalCostItemSold, totalRetailPrice, grossMargin, employeeSalary, netProfit, profitPercentage, netSales;
-            totalCostItemSold = totalRetailPrice = grossMargin = employeeSalary = netSales = 0;
+            double totalCostItemSold, totalRetailPrice, grossMargin, netSales, employeeSalary, netProfit, profitPercentage;
+            totalCostItemSold = totalRetailPrice = grossMargin = netSales = employeeSalary = 0;
 
             foreach (var transaction in selectedRecord)
             {
@@ -63,6 +66,51 @@
             this.txtGrossMargin.Text = grossMargin.ToString(CultureInfo.CurrentCulture);
             this.txtNetProfit.Text = netProfit.ToString(CultureInfo.CurrentCulture);
             this.txtProfitPerce.Text = profitPercentage.ToString(CultureInfo.CurrentCulture);
+        }
+
+        private void BtnGenerateReport_Click(object sender, EventArgs e)
+        {
+            var options = new ExcelExportingOptions();
+            options.ExcludeColumns.Add("id");
+            options.ExcludeColumns.Add("TCIS");
+            var excelEngine = this.sfDataGrid1.ExportToExcel(this.sfDataGrid1.View, options);
+            var workBook = excelEngine.Excel.Workbooks[0];
+
+            using (SaveFileDialog saveFilterDialog = new SaveFileDialog())
+            {
+                {
+                    saveFilterDialog.FilterIndex = 2;
+                    saveFilterDialog.Filter = "Excel 97 to 2003 Files(*.xls)|*.xls|Excel 2007 to 2010 Files(*.xlsx)|*.xlsx|Excel 2013 File(*.xlsx)|*.xlsx";
+                }
+
+                if (saveFilterDialog.ShowDialog() == DialogResult.OK)
+                {
+                    using (Stream stream = saveFilterDialog.OpenFile())
+                    {
+                        if (saveFilterDialog.FilterIndex == 1)
+                        {
+                            workBook.Version = ExcelVersion.Excel97to2003;
+                        }
+                        else if (saveFilterDialog.FilterIndex == 2)
+                        {
+                            workBook.Version = ExcelVersion.Excel2010;
+                        }
+                        else
+                        {
+                            workBook.Version = ExcelVersion.Excel2013;
+                        }
+
+                        workBook.SaveAs(stream);
+                    }
+
+                    // Message box confirmation to view the created workbook.
+                    if (MessageBox.Show(this.sfDataGrid1, "Do you want to view the workbook?", "Workbook has been created", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                    {
+                        // Launching the Excel file using the default Application.[MS Excel Or Free ExcelViewer]
+                        System.Diagnostics.Process.Start(saveFilterDialog.FileName);
+                    }
+                }
+            }
         }
     }
 }
