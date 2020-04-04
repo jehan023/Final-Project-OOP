@@ -183,10 +183,11 @@
             // sfDataGrid1
             // 
             this.sfDataGrid1.AccessibleName = "Table";
+            this.sfDataGrid1.AutoSizeColumnsMode = Syncfusion.WinForms.DataGrid.Enums.AutoSizeColumnsMode.Fill;
             this.sfDataGrid1.DataSource = this.salesHistoryModelBindingSource;
-            this.sfDataGrid1.Location = new System.Drawing.Point(142, 117);
+            this.sfDataGrid1.Location = new System.Drawing.Point(30, 117);
             this.sfDataGrid1.Name = "sfDataGrid1";
-            this.sfDataGrid1.Size = new System.Drawing.Size(767, 216);
+            this.sfDataGrid1.Size = new System.Drawing.Size(879, 216);
             this.sfDataGrid1.TabIndex = 24;
             this.sfDataGrid1.Text = "sfDataGrid1";
             // 
@@ -198,6 +199,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgdSalesReport.AutoGenerateColumns = false;
+            this.dgdSalesReport.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
