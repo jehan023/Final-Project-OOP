@@ -24,8 +24,8 @@
         private void SalesReport_Load(object sender, EventArgs e)
         {
             var salesRecord = this.db.LoadRecords<SalesHistoryModel>("SalesHistory");
-            this.dgdInventoryReport.DataSource = salesRecord;
-
+            this.dgdSalesReport.DataSource = salesRecord;
+            this.sfDataGrid1.DataSource = salesRecord;
             foreach (var transaction in salesRecord)
             {
                 if (!this.cboViewMonth.Items.Contains(transaction.DateOfPurchase.ToString("MMMM yyyy", CultureInfo.CurrentCulture)))
@@ -33,13 +33,44 @@
                     this.cboViewMonth.Items.Add(transaction.DateOfPurchase.ToString("MMMM yyyy", CultureInfo.CurrentCulture));
                 }
             }
+
+            this.ShowLowerData();
         }
 
-        private void BtnShowAll_Click(object sender, EventArgs e)
+        // Show automatically the data for all in textboxes
+        private void ShowLowerData()
         {
             var salesRecord = this.db.LoadRecords<SalesHistoryModel>("SalesHistory");
-            this.dgdInventoryReport.DataSource = salesRecord;
+            this.dgdSalesReport.DataSource = salesRecord;
+            this.sfDataGrid1.DataSource = salesRecord;
+
+            double totalCostItemSold, totalRetailPrice, grossMargin, netSales, employeeSalary, netProfit, profitPercentage;
+            totalCostItemSold = totalRetailPrice = grossMargin = netSales = employeeSalary = 0;
+
+            foreach (var transaction in salesRecord)
+            {
+                totalCostItemSold += transaction.TCIS;
+                totalRetailPrice += transaction.TRA;
+                netSales += transaction.NetSales;
+                grossMargin += transaction.GrossMargin;
+            }
+
+            netProfit = grossMargin - employeeSalary;
+            profitPercentage = (netProfit / netSales) * 100;
+            this.txtTCIS.Text = totalCostItemSold.ToString(CultureInfo.CurrentCulture);
+            this.txtTRA.Text = totalRetailPrice.ToString(CultureInfo.CurrentCulture);
+            this.txtGrossMargin.Text = grossMargin.ToString(CultureInfo.CurrentCulture);
+            this.txtNetProfit.Text = netProfit.ToString(CultureInfo.CurrentCulture);
+            this.txtProfitPerce.Text = profitPercentage.ToString(CultureInfo.CurrentCulture);
         }
+
+        // refresh and show all the data
+        private void BtnShowAll_Click(object sender, EventArgs e)
+        {
+            this.cboViewMonth.Text = string.Empty;
+            this.ShowLowerData();
+        }
+
 
         private void CboViewMonth_SelectedIndexChanged(object sender, EventArgs e)
         {
