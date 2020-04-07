@@ -498,6 +498,7 @@
             this.dgdCart.AllowUserToDeleteRows = false;
             this.dgdCart.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgdCart.AutoGenerateColumns = false;
+            this.dgdCart.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgdCart.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
