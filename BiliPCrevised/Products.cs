@@ -1,6 +1,7 @@
 ﻿namespace BiliPC
 {
     using System;
+    using System.Globalization;
     using System.Linq;
     using System.Windows.Forms;
     using MongoDB.Bson;
@@ -66,7 +67,13 @@
 
         private void SearchBtn_Click(object sender, EventArgs e)
         {
-            var selectedRecord = this.db.LoadRecordsByStringList<InventoryModel>("Inventory", "Item", this.txtSearchItem.Text);
+            var selectedRecord = this.db.LoadRecordsByCaseInsensitive<InventoryModel>("Inventory", "Item", this.txtSearchItem.Text);
+            this.dgdProduct.DataSource = selectedRecord;
+        }
+
+        private void TxtSearchItem_TextChanged(object sender, EventArgs e)
+        {
+            var selectedRecord = this.db.LoadRecordsByCaseInsensitive<InventoryModel>("Inventory", "Item", this.txtSearchItem.Text);
             this.dgdProduct.DataSource = selectedRecord;
         }
 
@@ -94,38 +101,63 @@
             {
                 MessageBox.Show("Please fill all of the " + emptyField + " field/s.");
             }
-            else if (ObjectId.TryParse(this.idBox.Text, out ObjectId id) &&
-                int.TryParse(this.txtQuantity.Text, out int quantity) && double.TryParse(this.txtUnitPrice.Text, out double unitPrice)
-                && double.TryParse(this.txtCost.Text, out double cost))
+            else if (ObjectId.TryParse(this.idBox.Text, out ObjectId id) && int.TryParse(this.txtQuantity.Text, out int quantity) && double.TryParse(this.txtUnitPrice.Text, out double unitPrice) && double.TryParse(this.txtCost.Text, out double cost))
             {
-                var selectedRecord = this.db.LoadRecordById<InventoryModel>("Inventory", id);
-                selectedRecord.Item = this.txtItemName.Text;
-                selectedRecord.Qty = quantity;
-                selectedRecord.UnitPrice = unitPrice;
-                selectedRecord.Cost = cost;
-                selectedRecord.Category = this.txtCategory.Text;
-                selectedRecord.Supplier = this.txtSupplier.Text;
-                selectedRecord.Status = quantity != 0;
+                var selectedInvRecord = this.db.LoadRecordsByGenericT<InventoryModel, ObjectId>("Inventory", "Id", id);
 
-                this.db.UpsertRecord("Inventory", selectedRecord.Id, selectedRecord);
+                // Updating Inventory Report -- update report first because it is dependent to the inventory
+                var selectedReportRecord = this.db.LoadRecordsByGenericT<InventoryReportModel, string>("InventoryReport", "Item", selectedInvRecord.Item);
+                string status = "Out";
+                if (quantity > 0)
+                {
+                    status = "In(" + quantity.ToString(CultureInfo.CurrentCulture) + ")";
+                }
+
+                selectedReportRecord.Item = selectedInvRecord.Item;
+                selectedReportRecord.DateModified = DateTime.Now;
+                selectedReportRecord.Cost = selectedInvRecord.Cost;
+                selectedReportRecord.RetailAmount = selectedInvRecord.UnitPrice;
+                selectedReportRecord.Category = selectedInvRecord.Category;
+                selectedReportRecord.Supplier = selectedInvRecord.Supplier;
+                selectedReportRecord.Status = status;
+
+                this.db.UpsertRecord("InventoryReport", selectedReportRecord.Id, selectedReportRecord);
+
+                // Updating Inventory
+                selectedInvRecord.Item = this.txtItemName.Text;
+                selectedInvRecord.Qty = quantity;
+                selectedInvRecord.UnitPrice = unitPrice;
+                selectedInvRecord.Cost = cost;
+                selectedInvRecord.Category = this.txtCategory.Text;
+                selectedInvRecord.Supplier = this.txtSupplier.Text;
+                selectedInvRecord.Status = quantity != 0;
+
+                this.db.UpsertRecord("Inventory", selectedInvRecord.Id, selectedInvRecord);
                 MessageBox.Show("Item updated.");
 
                 // Updating of Transaction Form
-                bool itemExists = this.db.CheckExistenceById<TransactionTempModel>("TransactionTemp", id);
-                var selectedCartRecord = this.db.LoadRecordById<TransactionTempModel>("TransactionTemp", id);
-                if (itemExists && (selectedRecord.Qty >= selectedCartRecord.Quantity))
+                bool itemExists = this.db.CheckExistenceByGeneric<TransactionTempModel, ObjectId>("TransactionTemp", "Id", id);
+                if (itemExists)
                 {
-                    selectedCartRecord.Item = selectedRecord.Item;
-                    selectedCartRecord.UnitPrice = selectedRecord.UnitPrice;
-                    selectedCartRecord.TotalUnitPrice = selectedCartRecord.UnitPrice * selectedCartRecord.Quantity;
-                    this.db.UpsertRecord("TransactionTemp", selectedRecord.Id, selectedCartRecord);
+                    var selectedCartRecord = this.db.LoadRecordsByGenericT<TransactionTempModel, ObjectId>("TransactionTemp", "Id", id);
+                    if (selectedInvRecord.Qty >= selectedCartRecord.Quantity)
+                    {
+                        selectedCartRecord.Item = selectedInvRecord.Item;
+                        selectedCartRecord.UnitPrice = selectedInvRecord.UnitPrice;
+                        selectedCartRecord.TotalUnitPrice = selectedCartRecord.UnitPrice * selectedCartRecord.Quantity;
+                        this.db.UpsertRecord("TransactionTemp", selectedInvRecord.Id, selectedCartRecord);
 
-                    MessageBox.Show("Transaction form updated.");
+                        MessageBox.Show("Transaction form updated.");
+                    }
                 }
-                else if (itemExists && (selectedRecord.Qty < selectedCartRecord.Quantity))
+                else if (itemExists)
                 {
-                    this.db.DeleleRecord<TransactionTempModel>("TransactionTemp", id);
-                    MessageBox.Show("An item was deleted in transaction form due to insufficient stock.");
+                    var selectedCartRecord = this.db.LoadRecordsByGenericT<TransactionTempModel, ObjectId>("TransactionTemp", "Id", id);
+                    if (selectedInvRecord.Qty < selectedCartRecord.Quantity)
+                    {
+                        this.db.DeleleRecord<TransactionTempModel>("TransactionTemp", id);
+                        MessageBox.Show("An item was deleted in transaction form due to insufficient stock.");
+                    }
                 }
 
                 this.RefreshInventory();
@@ -140,10 +172,24 @@
         {
             if (!string.IsNullOrEmpty(this.idBox.Text) && ObjectId.TryParse(this.idBox.Text, out ObjectId id))
             {
+                // Record deleted Item then delete from Inventory Report
+                this.db.InsertRecord("InventoryDeletedRecords", new InventoryReportModel
+                {
+                    Item = this.txtItemName.Text,
+                    DateModified = DateTime.Now,
+                    Category = this.txtCategory.Text,
+                    Supplier = this.txtSupplier.Text,
+                });
+                var selectedRecord = this.db.LoadRecordsByGenericT<InventoryModel, ObjectId>("Inventory", "Id", id);
+                var selectedRepRec = this.db.LoadRecordsByGenericT<InventoryReportModel, string>("InventoryReport", "Item", selectedRecord.Item);
+                this.db.DeleleRecord<InventoryReportModel>("InventoryReport", selectedRepRec.Id);
+
+                // Delete item in Inventory
                 this.db.DeleleRecord<InventoryModel>("Inventory", id);
                 MessageBox.Show("Item deleted.");
 
-                bool itemExists = this.db.CheckExistenceById<TransactionTempModel>("TransactionTemp", id);
+                // Delete item in Transaction Form
+                bool itemExists = this.db.CheckExistenceByGeneric<TransactionTempModel, ObjectId>("TransactionTemp", "Id", id);
                 if (itemExists)
                 {
                     this.db.DeleleRecord<TransactionTempModel>("TransactionTemp", id);
@@ -176,7 +222,7 @@
 
         private void CboCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var selectedRecord = this.db.LoadRecordsByStringList<InventoryModel>("Inventory", "Category", this.cboCategory.Text);
+            var selectedRecord = this.db.LoadRecordsByGenericList<InventoryModel, string>("Inventory", "Category", this.cboCategory.Text);
             this.dgdProduct.DataSource = selectedRecord;
         }
 

@@ -23,7 +23,7 @@
 
         private void BtnSearchEmployee_Click(object sender, EventArgs e)
         {
-            var selectedRecord = this.db.LoadRecordsByStringList<UsersModel>("Users", "Name", this.txtSearchEmployee.Text);
+            var selectedRecord = this.db.LoadRecordsByCaseInsensitive<UsersModel>("Users", "Name", this.txtSearchEmployee.Text);
             this.dgdEmployee.DataSource = selectedRecord;
         }
 
@@ -40,7 +40,7 @@
                 this.txtAcctName.Text = this.dgdEmployee.Rows[0].Cells[1].Value.ToString();
                 this.txtAcctUsername.Text = this.dgdEmployee.Rows[0].Cells[2].Value.ToString();
                 this.txtAcctPassword.Text = this.dgdEmployee.Rows[0].Cells[3].Value.ToString();
-                this.txtAcctWage.Text = this.dgdEmployee.Rows[0].Cells[4].Value.ToString();
+                this.txtAcctSalary.Text = this.dgdEmployee.Rows[0].Cells[4].Value.ToString();
                 this.txtAcctWorkhours.Text = this.dgdEmployee.Rows[0].Cells[5].Value.ToString();
                 this.radAdminTrue.Checked = this.dgdEmployee.Rows[0].Cells[6].Value.Equals(true);
                 this.radAdminFalse.Checked = this.dgdEmployee.Rows[0].Cells[6].Value.Equals(false);
@@ -53,7 +53,7 @@
                     = this.txtAcctUsername.Text
                     = this.txtAcctPassword.Text
                     = this.txtAcctPassword.Text
-                    = this.txtAcctWage.Text
+                    = this.txtAcctSalary.Text
                     = this.txtAcctWorkhours.Text
                     = string.Empty;
                 this.radAdminTrue.Checked
@@ -85,20 +85,43 @@
             {
                 MessageBox.Show("Please fill all of the " + emptyField + " field/s.");
             }
-            else if (ObjectId.TryParse(this.txtAcctID.Text, out ObjectId id)
-                    && double.TryParse(this.txtAcctWage.Text, out double wage)
-                    && double.TryParse(this.txtAcctWorkhours.Text, out double workHours))
+            else if (ObjectId.TryParse(this.txtAcctID.Text, out ObjectId id) && double.TryParse(this.txtAcctSalary.Text, out double salary) && double.TryParse(this.txtAcctWorkhours.Text, out double workHours))
             {
-                var selectedRecord = this.db.LoadRecordById<UsersModel>("Users", id);
-                selectedRecord.Name = this.txtAcctName.Text;
-                selectedRecord.Username = this.txtAcctUsername.Text;
-                selectedRecord.Password = this.txtAcctPassword.Text;
-                selectedRecord.Wage = wage;
-                selectedRecord.Workhours = workHours;
-                selectedRecord.IsAdmin = this.radAdminTrue.Checked;
-                this.db.UpsertRecord("Users", selectedRecord.Id, selectedRecord);
-                MessageBox.Show("Account updated.");
-                this.RefreshAccounts();
+                var selectedRecord = this.db.LoadRecordsByGenericT<UsersModel, ObjectId>("Users", "Id", id);
+                var userRecord = this.db.LoadRecords<UsersModel>("Users");
+                bool usernameExists = false;
+                foreach (var user in userRecord)
+                {
+                    if (user.Id != selectedRecord.Id && user.Username == this.txtAcctUsername.Text)
+                    {
+                        usernameExists = true;
+                    }
+                }
+
+                if (!usernameExists)
+                {
+                    using (DashboardUI dashboard = new DashboardUI())
+                    {
+                        if (selectedRecord.Name == DashboardUI.AcctName)
+                        {
+                            DashboardUI.AcctName = this.txtAcctName.Text;
+                        }
+                    }
+
+                    selectedRecord.Name = this.txtAcctName.Text;
+                    selectedRecord.Username = this.txtAcctUsername.Text;
+                    selectedRecord.Password = this.txtAcctPassword.Text;
+                    selectedRecord.Salary = salary;
+                    selectedRecord.Workhours = workHours;
+                    selectedRecord.IsAdmin = this.radAdminTrue.Checked;
+                    this.db.UpsertRecord("Users", selectedRecord.Id, selectedRecord);
+                    MessageBox.Show("Account updated.");
+                    this.RefreshAccounts();
+                }
+                else
+                {
+                    MessageBox.Show("Username already exists. Please choose another username.");
+                }
             }
             else
             {
@@ -110,9 +133,19 @@
         {
             if (ObjectId.TryParse(this.txtAcctID.Text, out ObjectId id))
             {
-                this.db.DeleleRecord<UsersModel>("Users", id);
-                MessageBox.Show("Account deleted.");
-                this.RefreshAccounts();
+                var selectedRecord = this.db.LoadRecordsByGenericT<UsersModel, string>("Users", "Name", DashboardUI.AcctName);
+                {
+                    if (selectedRecord.Id != id)
+                    {
+                        this.db.DeleleRecord<UsersModel>("Users", id);
+                        MessageBox.Show("Account deleted.");
+                        this.RefreshAccounts();
+                    }
+                    else
+                    {
+                        MessageBox.Show("You cannot delete your account while logged in. Please log in using different admin account.");
+                    }
+                }
             }
             else
             {
@@ -128,7 +161,7 @@
                 this.txtAcctName.Text = this.dgdEmployee.Rows[e.RowIndex].Cells[1].Value.ToString();
                 this.txtAcctUsername.Text = this.dgdEmployee.Rows[e.RowIndex].Cells[2].Value.ToString();
                 this.txtAcctPassword.Text = this.dgdEmployee.Rows[e.RowIndex].Cells[3].Value.ToString();
-                this.txtAcctWage.Text = this.dgdEmployee.Rows[e.RowIndex].Cells[4].Value.ToString();
+                this.txtAcctSalary.Text = this.dgdEmployee.Rows[e.RowIndex].Cells[4].Value.ToString();
                 this.txtAcctWorkhours.Text = this.dgdEmployee.Rows[e.RowIndex].Cells[5].Value.ToString();
                 this.radAdminTrue.Checked = this.dgdEmployee.Rows[e.RowIndex].Cells[6].Value.Equals(true);
                 this.radAdminFalse.Checked = this.dgdEmployee.Rows[e.RowIndex].Cells[6].Value.Equals(false);
@@ -137,7 +170,7 @@
 
         private void TxtAcctWage_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((e.KeyChar == 46) && !this.txtAcctWage.Text.Contains('.'))
+            if ((e.KeyChar == 46) && !this.txtAcctSalary.Text.Contains('.'))
             {
                 Functions.RestrictedKeyPressToDouble(e);
             }

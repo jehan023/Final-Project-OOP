@@ -30,9 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlTop = new System.Windows.Forms.Panel();
             this.btnSearchEmployee = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
@@ -50,26 +49,26 @@
             this.lblUserID = new System.Windows.Forms.Label();
             this.radAdminFalse = new System.Windows.Forms.RadioButton();
             this.radAdminTrue = new System.Windows.Forms.RadioButton();
-            this.lblWage = new System.Windows.Forms.Label();
+            this.lblSalary = new System.Windows.Forms.Label();
             this.lblAccType = new System.Windows.Forms.Label();
             this.txtAcctPassword = new System.Windows.Forms.TextBox();
             this.lblPassword = new System.Windows.Forms.Label();
             this.txtAcctUsername = new System.Windows.Forms.TextBox();
             this.lblUsername = new System.Windows.Forms.Label();
             this.txtAcctWorkhours = new System.Windows.Forms.TextBox();
-            this.txtAcctWage = new System.Windows.Forms.TextBox();
+            this.txtAcctSalary = new System.Windows.Forms.TextBox();
             this.lblWorkhours = new System.Windows.Forms.Label();
             this.txtAcctName = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
             this.dgdEmployee = new System.Windows.Forms.DataGridView();
+            this.usersModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.wageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.salaryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.workhoursDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isAdminDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.usersModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pnlTop.SuspendLayout();
             this.pnlBackground.SuspendLayout();
             this.GroupTextBox.SuspendLayout();
@@ -275,14 +274,14 @@
             this.GroupTextBox.Controls.Add(this.lblUserID);
             this.GroupTextBox.Controls.Add(this.radAdminFalse);
             this.GroupTextBox.Controls.Add(this.radAdminTrue);
-            this.GroupTextBox.Controls.Add(this.lblWage);
+            this.GroupTextBox.Controls.Add(this.lblSalary);
             this.GroupTextBox.Controls.Add(this.lblAccType);
             this.GroupTextBox.Controls.Add(this.txtAcctPassword);
             this.GroupTextBox.Controls.Add(this.lblPassword);
             this.GroupTextBox.Controls.Add(this.txtAcctUsername);
             this.GroupTextBox.Controls.Add(this.lblUsername);
             this.GroupTextBox.Controls.Add(this.txtAcctWorkhours);
-            this.GroupTextBox.Controls.Add(this.txtAcctWage);
+            this.GroupTextBox.Controls.Add(this.txtAcctSalary);
             this.GroupTextBox.Controls.Add(this.lblWorkhours);
             this.GroupTextBox.Controls.Add(this.txtAcctName);
             this.GroupTextBox.Controls.Add(this.lblName);
@@ -298,7 +297,7 @@
             // 
             this.txtAcctID.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtAcctID.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAcctID.Location = new System.Drawing.Point(136, 22);
+            this.txtAcctID.Location = new System.Drawing.Point(136, 21);
             this.txtAcctID.Margin = new System.Windows.Forms.Padding(2);
             this.txtAcctID.Name = "txtAcctID";
             this.txtAcctID.ReadOnly = true;
@@ -312,7 +311,7 @@
             this.lblUserID.BackColor = System.Drawing.Color.Transparent;
             this.lblUserID.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUserID.ForeColor = System.Drawing.Color.Black;
-            this.lblUserID.Location = new System.Drawing.Point(46, 24);
+            this.lblUserID.Location = new System.Drawing.Point(45, 24);
             this.lblUserID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUserID.Name = "lblUserID";
             this.lblUserID.Size = new System.Drawing.Size(89, 22);
@@ -349,19 +348,19 @@
             this.radAdminTrue.Text = "Admin";
             this.radAdminTrue.UseVisualStyleBackColor = true;
             // 
-            // lblWage
+            // lblSalary
             // 
-            this.lblWage.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblWage.AutoSize = true;
-            this.lblWage.BackColor = System.Drawing.Color.Transparent;
-            this.lblWage.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWage.ForeColor = System.Drawing.Color.Black;
-            this.lblWage.Location = new System.Drawing.Point(62, 104);
-            this.lblWage.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblWage.Name = "lblWage";
-            this.lblWage.Size = new System.Drawing.Size(73, 22);
-            this.lblWage.TabIndex = 48;
-            this.lblWage.Text = "Wage :";
+            this.lblSalary.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblSalary.AutoSize = true;
+            this.lblSalary.BackColor = System.Drawing.Color.Transparent;
+            this.lblSalary.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSalary.ForeColor = System.Drawing.Color.Black;
+            this.lblSalary.Location = new System.Drawing.Point(55, 104);
+            this.lblSalary.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSalary.Name = "lblSalary";
+            this.lblSalary.Size = new System.Drawing.Size(79, 22);
+            this.lblSalary.TabIndex = 48;
+            this.lblSalary.Text = "Salary :";
             // 
             // lblAccType
             // 
@@ -370,7 +369,7 @@
             this.lblAccType.BackColor = System.Drawing.Color.Transparent;
             this.lblAccType.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAccType.ForeColor = System.Drawing.Color.Black;
-            this.lblAccType.Location = new System.Drawing.Point(490, 101);
+            this.lblAccType.Location = new System.Drawing.Point(490, 102);
             this.lblAccType.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAccType.Name = "lblAccType";
             this.lblAccType.Size = new System.Drawing.Size(102, 22);
@@ -406,7 +405,7 @@
             // 
             this.txtAcctUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtAcctUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAcctUsername.Location = new System.Drawing.Point(594, 22);
+            this.txtAcctUsername.Location = new System.Drawing.Point(594, 21);
             this.txtAcctUsername.Margin = new System.Windows.Forms.Padding(2);
             this.txtAcctUsername.Name = "txtAcctUsername";
             this.txtAcctUsername.Size = new System.Drawing.Size(336, 28);
@@ -437,16 +436,16 @@
             this.txtAcctWorkhours.TabIndex = 51;
             this.txtAcctWorkhours.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtAcctWorkhours_KeyPress);
             // 
-            // txtAcctWage
+            // txtAcctSalary
             // 
-            this.txtAcctWage.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtAcctWage.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAcctWage.Location = new System.Drawing.Point(136, 101);
-            this.txtAcctWage.Margin = new System.Windows.Forms.Padding(2);
-            this.txtAcctWage.Name = "txtAcctWage";
-            this.txtAcctWage.Size = new System.Drawing.Size(336, 28);
-            this.txtAcctWage.TabIndex = 49;
-            this.txtAcctWage.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtAcctWage_KeyPress);
+            this.txtAcctSalary.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtAcctSalary.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAcctSalary.Location = new System.Drawing.Point(136, 101);
+            this.txtAcctSalary.Margin = new System.Windows.Forms.Padding(2);
+            this.txtAcctSalary.Name = "txtAcctSalary";
+            this.txtAcctSalary.Size = new System.Drawing.Size(336, 28);
+            this.txtAcctSalary.TabIndex = 49;
+            this.txtAcctSalary.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtAcctWage_KeyPress);
             // 
             // lblWorkhours
             // 
@@ -455,7 +454,7 @@
             this.lblWorkhours.BackColor = System.Drawing.Color.Transparent;
             this.lblWorkhours.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWorkhours.ForeColor = System.Drawing.Color.Black;
-            this.lblWorkhours.Location = new System.Drawing.Point(23, 147);
+            this.lblWorkhours.Location = new System.Drawing.Point(22, 147);
             this.lblWorkhours.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblWorkhours.Name = "lblWorkhours";
             this.lblWorkhours.Size = new System.Drawing.Size(112, 22);
@@ -466,7 +465,7 @@
             // 
             this.txtAcctName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtAcctName.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAcctName.Location = new System.Drawing.Point(136, 60);
+            this.txtAcctName.Location = new System.Drawing.Point(136, 57);
             this.txtAcctName.Margin = new System.Windows.Forms.Padding(2);
             this.txtAcctName.Name = "txtAcctName";
             this.txtAcctName.Size = new System.Drawing.Size(336, 28);
@@ -479,7 +478,7 @@
             this.lblName.BackColor = System.Drawing.Color.Transparent;
             this.lblName.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.ForeColor = System.Drawing.Color.Black;
-            this.lblName.Location = new System.Drawing.Point(62, 63);
+            this.lblName.Location = new System.Drawing.Point(60, 60);
             this.lblName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(74, 22);
@@ -508,37 +507,41 @@
             this.nameDataGridViewTextBoxColumn,
             this.usernameDataGridViewTextBoxColumn,
             this.passwordDataGridViewTextBoxColumn,
-            this.wageDataGridViewTextBoxColumn,
+            this.salaryDataGridViewTextBoxColumn,
             this.workhoursDataGridViewTextBoxColumn,
             this.isAdminDataGridViewCheckBoxColumn});
             this.dgdEmployee.Cursor = System.Windows.Forms.Cursors.Default;
             this.dgdEmployee.DataSource = this.usersModelBindingSource;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgdEmployee.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgdEmployee.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgdEmployee.Location = new System.Drawing.Point(25, 16);
             this.dgdEmployee.Margin = new System.Windows.Forms.Padding(2);
             this.dgdEmployee.MultiSelect = false;
             this.dgdEmployee.Name = "dgdEmployee";
             this.dgdEmployee.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgdEmployee.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgdEmployee.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgdEmployee.RowHeadersWidth = 51;
             this.dgdEmployee.RowTemplate.Height = 24;
             this.dgdEmployee.Size = new System.Drawing.Size(897, 337);
             this.dgdEmployee.TabIndex = 42;
             this.dgdEmployee.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgdEmployee_CellClick);
+            // 
+            // usersModelBindingSource
+            // 
+            this.usersModelBindingSource.DataSource = typeof(BiliPC.UsersModel);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -546,7 +549,6 @@
             this.idDataGridViewTextBoxColumn.HeaderText = "Id";
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Visible = false;
             // 
             // nameDataGridViewTextBoxColumn
             // 
@@ -565,18 +567,16 @@
             // passwordDataGridViewTextBoxColumn
             // 
             this.passwordDataGridViewTextBoxColumn.DataPropertyName = "Password";
-            dataGridViewCellStyle2.NullValue = null;
-            this.passwordDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.passwordDataGridViewTextBoxColumn.HeaderText = "Password";
             this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
             this.passwordDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // wageDataGridViewTextBoxColumn
+            // salaryDataGridViewTextBoxColumn
             // 
-            this.wageDataGridViewTextBoxColumn.DataPropertyName = "Wage";
-            this.wageDataGridViewTextBoxColumn.HeaderText = "Wage";
-            this.wageDataGridViewTextBoxColumn.Name = "wageDataGridViewTextBoxColumn";
-            this.wageDataGridViewTextBoxColumn.ReadOnly = true;
+            this.salaryDataGridViewTextBoxColumn.DataPropertyName = "Salary";
+            this.salaryDataGridViewTextBoxColumn.HeaderText = "Salary";
+            this.salaryDataGridViewTextBoxColumn.Name = "salaryDataGridViewTextBoxColumn";
+            this.salaryDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // workhoursDataGridViewTextBoxColumn
             // 
@@ -591,10 +591,6 @@
             this.isAdminDataGridViewCheckBoxColumn.HeaderText = "IsAdmin";
             this.isAdminDataGridViewCheckBoxColumn.Name = "isAdminDataGridViewCheckBoxColumn";
             this.isAdminDataGridViewCheckBoxColumn.ReadOnly = true;
-            // 
-            // usersModelBindingSource
-            // 
-            this.usersModelBindingSource.DataSource = typeof(BiliPC.UsersModel);
             // 
             // ViewEmployees
             // 
@@ -636,25 +632,26 @@
         private System.Windows.Forms.Label lblUserID;
         private System.Windows.Forms.RadioButton radAdminFalse;
         private System.Windows.Forms.RadioButton radAdminTrue;
-        private System.Windows.Forms.Label lblWage;
+        private System.Windows.Forms.Label lblSalary;
         private System.Windows.Forms.Label lblAccType;
         private System.Windows.Forms.TextBox txtAcctPassword;
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.TextBox txtAcctUsername;
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.TextBox txtAcctWorkhours;
-        private System.Windows.Forms.TextBox txtAcctWage;
+        private System.Windows.Forms.TextBox txtAcctSalary;
         private System.Windows.Forms.Label lblWorkhours;
         private System.Windows.Forms.TextBox txtAcctName;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.DataGridView dgdEmployee;
         private System.Windows.Forms.Button btnSearchEmployee;
+        private System.Windows.Forms.DataGridViewTextBoxColumn wageDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource usersModelBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn usernameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn wageDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn salaryDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn workhoursDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn isAdminDataGridViewCheckBoxColumn;
     }

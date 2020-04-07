@@ -201,6 +201,7 @@
             this.cboItem.Size = new System.Drawing.Size(372, 28);
             this.cboItem.TabIndex = 58;
             this.cboItem.SelectedIndexChanged += new System.EventHandler(this.CboItem_SelectedIndexChanged);
+            this.cboItem.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CboItem_KeyPress);
             // 
             // txtTransacationID
             // 

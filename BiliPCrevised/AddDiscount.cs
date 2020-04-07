@@ -2,8 +2,8 @@
 {
     using System;
     using System.Globalization;
-    using System.Linq;
     using System.Windows.Forms;
+    using MongoDB.Bson;
 
     public partial class AddDiscount : Form
     {
@@ -59,7 +59,7 @@
 
             foreach (var item in cartRecord)
             {
-                var selectedCartRecord = this.db.LoadRecordById<TransactionTempModel>("TransactionTemp", item.Id);
+                var selectedCartRecord = this.db.LoadRecordsByGenericT<TransactionTempModel, ObjectId>("TransactionTemp", "Id", item.Id);
                 selectedCartRecord.Discount = discount;
                 this.db.UpsertRecord("TransactionTemp", selectedCartRecord.Id, selectedCartRecord);
             }

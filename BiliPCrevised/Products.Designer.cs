@@ -486,6 +486,7 @@
             this.txtSearchItem.Name = "txtSearchItem";
             this.txtSearchItem.Size = new System.Drawing.Size(193, 24);
             this.txtSearchItem.TabIndex = 32;
+            this.txtSearchItem.TextChanged += new System.EventHandler(this.TxtSearchItem_TextChanged);
             // 
             // btnUpdateItem
             // 

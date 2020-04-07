@@ -8,6 +8,9 @@
   <Import Project="packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.8\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.props" Condition="Exists('packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.8\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
+    <LangVersion>preview</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{1952BB12-AABC-41C3-96A7-0B05C00D8241}</ProjectGuid>
@@ -70,6 +73,10 @@
     <Reference Include="DnsClient, Version=1.3.1.0, Culture=neutral, PublicKeyToken=4574bb5573c51424, processorArchitecture=MSIL">
       <HintPath>packages\DnsClient.1.3.1\lib\net471\DnsClient.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
     </Reference>
@@ -106,63 +113,6 @@
     <Reference Include="Snappy.NET, Version=1.1.1.8, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\Snappy.NET.1.1.1.8\lib\net45\Snappy.NET.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.Compression.Base, Version=18.1460.0.42, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <HintPath>packages\Syncfusion.Compression.Base.18.1.0.42\lib\net46\Syncfusion.Compression.Base.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.Core.WinForms, Version=18.1460.0.42, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <HintPath>packages\Syncfusion.Core.WinForms.18.1.0.42\lib\net46\Syncfusion.Core.WinForms.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.Core.XForms, Version=18.1451.0.42, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Syncfusion.Xamarin.Core.18.1.0.42\lib\netstandard2.0\Syncfusion.Core.XForms.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.Data.Portable, Version=18.1451.0.42, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Syncfusion.Xamarin.SfDataGrid.18.1.0.42\lib\netstandard2.0\Syncfusion.Data.Portable.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.Data.WinForms, Version=18.1460.0.42, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <HintPath>packages\Syncfusion.Data.WinForms.18.1.0.42\lib\net46\Syncfusion.Data.WinForms.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.DataSource.WinForms, Version=18.1460.0.42, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <HintPath>packages\Syncfusion.DataSource.WinForms.18.1.0.42\lib\net46\Syncfusion.DataSource.WinForms.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.GridCommon.Portable, Version=18.1451.0.42, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Syncfusion.Xamarin.GridCommon.18.1.0.42\lib\netstandard2.0\Syncfusion.GridCommon.Portable.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.GridCommon.WinForms, Version=18.1460.0.42, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <HintPath>packages\Syncfusion.GridCommon.WinForms.18.1.0.42\lib\net46\Syncfusion.GridCommon.WinForms.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.Licensing, Version=18.1460.0.42, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
-      <HintPath>packages\Syncfusion.Licensing.18.1.0.42\lib\net46\Syncfusion.Licensing.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.Pdf.Base, Version=18.1460.0.42, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <HintPath>packages\Syncfusion.Pdf.WinForms.18.1.0.42\lib\net46\Syncfusion.Pdf.Base.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.SfComboBox.XForms, Version=18.1451.0.42, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Syncfusion.Xamarin.SfComboBox.18.1.0.42\lib\netstandard2.0\Syncfusion.SfComboBox.XForms.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.SfDataGrid.WinForms, Version=18.1460.0.42, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <HintPath>packages\Syncfusion.SfDataGrid.WinForms.18.1.0.42\lib\net46\Syncfusion.SfDataGrid.WinForms.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.SfDataGrid.XForms, Version=18.1451.0.42, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Syncfusion.Xamarin.SfDataGrid.18.1.0.42\lib\netstandard2.0\Syncfusion.SfDataGrid.XForms.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.SfDataGridConverter.WinForms, Version=18.1460.0.42, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <HintPath>packages\Syncfusion.DataGridExport.WinForms.18.1.0.42\lib\net46\Syncfusion.SfDataGridConverter.WinForms.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.SfInput.WinForms, Version=18.1460.0.42, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <HintPath>packages\Syncfusion.SfInput.WinForms.18.1.0.42\lib\net46\Syncfusion.SfInput.WinForms.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.SfListView.WinForms, Version=18.1460.0.42, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <HintPath>packages\Syncfusion.SfListView.WinForms.18.1.0.42\lib\net46\Syncfusion.SfListView.WinForms.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.SfNumericTextBox.XForms, Version=18.1451.0.42, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Syncfusion.Xamarin.SfNumericTextBox.18.1.0.42\lib\netstandard2.0\Syncfusion.SfNumericTextBox.XForms.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.Shared.Base, Version=18.1460.0.42, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <HintPath>packages\Syncfusion.Shared.Base.18.1.0.42\lib\net46\Syncfusion.Shared.Base.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.XlsIO.Base, Version=18.1460.0.42, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <HintPath>packages\Syncfusion.XlsIO.WinForms.18.1.0.42\lib\net46\Syncfusion.XlsIO.Base.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
@@ -177,7 +127,7 @@
       <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.4.7.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.4.7.1\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
@@ -246,6 +196,7 @@
       <DependentUpon>InventoryReport.cs</DependentUpon>
     </Compile>
     <Compile Include="InventoryModel.cs" />
+    <Compile Include="InventoryReportModel.cs" />
     <Compile Include="LoginUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -298,6 +249,7 @@
     <Compile Include="TrackEmployees.Designer.cs">
       <DependentUpon>TrackEmployees.cs</DependentUpon>
     </Compile>
+    <Compile Include="TrackEmployeesModel.cs" />
     <Compile Include="TransactionForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -321,15 +273,18 @@
     </Compile>
     <EmbeddedResource Include="AddDiscount.resx">
       <DependentUpon>AddDiscount.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="AddNewEmployee.resx">
       <DependentUpon>AddNewEmployee.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="AddNewItem.resx">
       <DependentUpon>AddNewItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DashboardUI.resx">
       <DependentUpon>DashboardUI.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="InventoryGenerateReport.resx">
       <DependentUpon>InventoryGenerateReport.cs</DependentUpon>
@@ -376,29 +331,14 @@
     </EmbeddedResource>
     <None Include=".editorconfig" />
     <None Include="packages.config" />
-    <None Include="Properties\DataSources\AddDiscount.datasource" />
-    <None Include="Properties\DataSources\AddNewEmployee.datasource" />
-    <None Include="Properties\DataSources\AddNewItem.datasource" />
     <None Include="Properties\DataSources\BiliPC.Properties.Resources.datasource" />
     <None Include="Properties\DataSources\BiliPC.Properties.Settings.datasource" />
-    <None Include="Properties\DataSources\DashboardUI.datasource" />
-    <None Include="Properties\DataSources\Functions.datasource" />
     <None Include="Properties\DataSources\InventoryModel.datasource" />
-    <None Include="Properties\DataSources\InventoryReport.datasource" />
-    <None Include="Properties\DataSources\LoginUI.datasource" />
-    <None Include="Properties\DataSources\MongoCRUD.datasource" />
-    <None Include="Properties\DataSources\PrintReceipt.datasource" />
-    <None Include="Properties\DataSources\Products.datasource" />
-    <None Include="Properties\DataSources\Program.datasource" />
-    <None Include="Properties\DataSources\SalesHistory.datasource" />
+    <None Include="Properties\DataSources\InventoryReportModel.datasource" />
     <None Include="Properties\DataSources\SalesHistoryModel.datasource" />
-    <None Include="Properties\DataSources\SalesReport.datasource" />
-    <None Include="Properties\DataSources\TrackEmployees.datasource" />
-    <None Include="Properties\DataSources\TransactionForm.datasource" />
+    <None Include="Properties\DataSources\TrackEmployeesModel.datasource" />
     <None Include="Properties\DataSources\TransactionTempModel.datasource" />
     <None Include="Properties\DataSources\UsersModel.datasource" />
-    <None Include="Properties\DataSources\ViewEmployees.datasource" />
-    <None Include="Properties\DataSources\ViewProducts.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

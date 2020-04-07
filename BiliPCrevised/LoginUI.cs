@@ -1,7 +1,9 @@
 ﻿namespace BiliPC
 {
     using System;
+    using System.Linq;
     using System.Windows.Forms;
+    using MongoDB.Bson;
 
     public partial class LoginUI : Form
     {
@@ -15,6 +17,8 @@
         public static bool Admin { get; set; }
 
         public static string AcctName { get; set; }
+
+        public static bool IsLoggedIn { get; set; } = false;
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
@@ -33,18 +37,36 @@
                 userRecord = this.db.LoadRecords<UsersModel>("Users");
             }
 
-            string inputUid = this.txtUsername.Text;
+            string inputUsrnm = this.txtUsername.Text;
             string inputPwd = this.txtPassword.Text;
-            bool loggedIn = false;
 
             foreach (var user in userRecord)
             {
-                if ((inputUid == user.Username) && (inputPwd == user.Password))
+                if ((inputUsrnm == user.Username) && (inputPwd == user.Password))
                 {
-                    loggedIn = true;
                     Admin = user.IsAdmin;
                     AcctName = user.Name;
+                    IsLoggedIn = true;
                     this.Hide();
+
+                    double userWorkHours = 0;
+                    var trackRecordExists = this.db.CheckExistenceByGeneric<TrackEmployeesModel, ObjectId>("TrackEmployees", "AcctId", user.Id);
+                    if (trackRecordExists)
+                    {
+                        var loginRecord = this.db.LoadRecordByGenericSortedT<TrackEmployeesModel, ObjectId>("TrackEmployees", "AcctId", user.Id, "Date");
+                        userWorkHours = loginRecord.TotalWorkHours;
+                    }
+
+                    this.db.InsertRecord("TrackEmployees", new TrackEmployeesModel
+                    {
+                        AcctName = AcctName,
+                        AcctId = user.Id,
+                        Date = DateTime.Now,
+                        LoggedIn = IsLoggedIn,
+                        TotalWorkHours = userWorkHours,
+                        Salary = user.Salary,
+                    });
+
                     using (DashboardUI dashboardUI = new DashboardUI())
                     {
                         dashboardUI.ShowDialog();
@@ -55,7 +77,7 @@
                 }
             }
 
-            if (loggedIn != true)
+            if (IsLoggedIn != true)
             {
                 MessageBox.Show("Incorrect username/password.");
             }

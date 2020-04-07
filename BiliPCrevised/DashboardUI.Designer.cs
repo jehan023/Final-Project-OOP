@@ -36,7 +36,7 @@
             this.lblTime = new System.Windows.Forms.Label();
             this.btnInventory = new System.Windows.Forms.Button();
             this.pnlSideMenu = new System.Windows.Forms.Panel();
-            this.lblAcctName = new System.Windows.Forms.Label();
+            this.txtAcctName = new System.Windows.Forms.Label();
             this.lblLoggedInAs = new System.Windows.Forms.Label();
             this.btnLogout = new System.Windows.Forms.Button();
             this.panelManageEmployees = new System.Windows.Forms.Panel();
@@ -136,7 +136,7 @@
             // 
             this.pnlSideMenu.AutoScroll = true;
             this.pnlSideMenu.BackColor = System.Drawing.Color.Black;
-            this.pnlSideMenu.Controls.Add(this.lblAcctName);
+            this.pnlSideMenu.Controls.Add(this.txtAcctName);
             this.pnlSideMenu.Controls.Add(this.lblLoggedInAs);
             this.pnlSideMenu.Controls.Add(this.btnLogout);
             this.pnlSideMenu.Controls.Add(this.panelManageEmployees);
@@ -155,17 +155,17 @@
             this.pnlSideMenu.Size = new System.Drawing.Size(206, 687);
             this.pnlSideMenu.TabIndex = 13;
             // 
-            // lblAcctName
+            // txtAcctName
             // 
-            this.lblAcctName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblAcctName.AutoSize = true;
-            this.lblAcctName.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAcctName.ForeColor = System.Drawing.Color.White;
-            this.lblAcctName.Location = new System.Drawing.Point(9, 559);
-            this.lblAcctName.Name = "lblAcctName";
-            this.lblAcctName.Size = new System.Drawing.Size(43, 17);
-            this.lblAcctName.TabIndex = 24;
-            this.lblAcctName.Text = "User";
+            this.txtAcctName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtAcctName.AutoSize = true;
+            this.txtAcctName.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAcctName.ForeColor = System.Drawing.Color.White;
+            this.txtAcctName.Location = new System.Drawing.Point(9, 559);
+            this.txtAcctName.Name = "txtAcctName";
+            this.txtAcctName.Size = new System.Drawing.Size(43, 17);
+            this.txtAcctName.TabIndex = 24;
+            this.txtAcctName.Text = "User";
             // 
             // lblLoggedInAs
             // 
@@ -198,7 +198,7 @@
             this.btnLogout.Text = "Logout";
             this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLogout.UseVisualStyleBackColor = true;
-            this.btnLogout.Click += new System.EventHandler(this.BtnLogout_Click_1);
+            this.btnLogout.Click += new System.EventHandler(this.BtnLogout_Click);
             // 
             // panelManageEmployees
             // 
@@ -521,6 +521,7 @@
             this.Name = "DashboardUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BiliPC Store";
+            this.Load += new System.EventHandler(this.DashboardUI_Load);
             this.pnlSideMenu.ResumeLayout(false);
             this.pnlSideMenu.PerformLayout();
             this.panelManageEmployees.ResumeLayout(false);
@@ -559,7 +560,7 @@
         private System.Windows.Forms.PictureBox picBiliPCLogo;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Panel pnlTop;
-        private System.Windows.Forms.Label lblAcctName;
+        private System.Windows.Forms.Label txtAcctName;
         private System.Windows.Forms.Label lblLoggedInAs;
         private System.Windows.Forms.Panel pnlContainerForm;
         private System.Windows.Forms.PictureBox picBiliPCLogoDefault;

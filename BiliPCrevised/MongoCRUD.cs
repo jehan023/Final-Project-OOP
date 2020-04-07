@@ -2,7 +2,6 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.Globalization;
     using System.Linq;
     using MongoDB.Bson;
     using MongoDB.Driver;
@@ -23,10 +22,10 @@
             collection.InsertOne(record);
         }
 
-        public bool CheckExistenceByString<T>(string table, string element, string username)
+        public bool CheckExistenceByGeneric<T, TU>(string table, string element, TU specific)
         {
             var collection = this.db.GetCollection<T>(table);
-            var filter = Builders<T>.Filter.Eq(element, username);
+            var filter = Builders<T>.Filter.Eq(element, specific);
             if (collection.CountDocuments(filter) > 0)
             {
                 return true;
@@ -37,18 +36,22 @@
             }
         }
 
-        public bool CheckExistenceById<T>(string table, ObjectId id)
+        public T LoadRecordsByGenericT<T, TU>(string table, string element, TU specific)
         {
             var collection = this.db.GetCollection<T>(table);
-            var filter = Builders<T>.Filter.Eq("Id", id);
-            if (collection.CountDocuments(filter) > 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            var filter = Builders<T>.Filter.Eq(element, specific);
+
+            return collection.Find(filter).First();
+        }
+
+        public T LoadRecordByGenericSortedT<T, TU>(string table, string element, TU specific, string sortingElement)
+        {
+            var collection = this.db.GetCollection<T>(table);
+            var filter = Builders<T>.Filter.Eq(element, specific);
+            var builder = Builders<T>.Sort;
+            var sort = builder.Descending(sortingElement);
+
+            return collection.Find(filter).Sort(sort).First();
         }
 
         public List<T> LoadRecords<T>(string table)
@@ -58,23 +61,7 @@
             return collection.Find(new BsonDocument()).ToList();
         }
 
-        public T LoadRecordById<T>(string table, ObjectId id)
-        {
-            var collection = this.db.GetCollection<T>(table);
-            var filter = Builders<T>.Filter.Eq("Id", id);
-
-            return collection.Find(filter).FirstOrDefault();
-        }
-
-        public T LoadRecordsByStringT<T>(string table, string element, string specific)
-        {
-            var collection = this.db.GetCollection<T>(table);
-            var filter = Builders<T>.Filter.Eq(element, specific);
-
-            return collection.Find(filter).First();
-        }
-
-        public List<T> LoadRecordsByStringList<T>(string table, string element, string specific)
+        public List<T> LoadRecordsByGenericList<T, TU>(string table, string element, TU specific)
         {
             var collection = this.db.GetCollection<T>(table);
             var filter = Builders<T>.Filter.Eq(element, specific);
@@ -82,9 +69,18 @@
             return collection.Find(filter).ToList();
         }
 
-        public List<T> LoadRecordsByMonthListT<T>(string table, string element, int year, int month, int lastDay)
+        public List<T> LoadRecordsByCaseInsensitive<T>(string table, string element, string specific)
         {
             var collection = this.db.GetCollection<T>(table);
+            var filter = Builders<T>.Filter.Regex(element, new BsonRegularExpression(specific, "i"));
+
+            return collection.Find(filter).ToList();
+        }
+
+        public List<T> LoadRecordsByMonthList<T>(string table, string element, int year, int month)
+        {
+            var collection = this.db.GetCollection<T>(table);
+            int lastDay = DateTime.DaysInMonth(year, month);
             var start = new DateTime(year, month, 01, 0, 0, 0).ToUniversalTime();
             var end = new DateTime(year, month, lastDay, 23, 59, 59).ToUniversalTime();
 

@@ -1,6 +1,7 @@
 ﻿    namespace BiliPC
 {
     using System;
+    using System.Collections.Generic;
     using System.Globalization;
     using System.Linq;
     using System.Windows.Forms;
@@ -33,7 +34,7 @@
 
         private void RefreshAddButton()
         {
-            bool itemExists = this.db.CheckExistenceByString<TransactionTempModel>("TransactionTemp", "Item", this.cboItem.Text);
+            bool itemExists = this.db.CheckExistenceByGeneric<TransactionTempModel, string>("TransactionTemp", "Item", this.cboItem.Text);
             if (itemExists)
             {
                 this.btnAddItem.Text = "MODIFY";
@@ -49,7 +50,7 @@
             // Refresh Total Unit Price
             if (!string.IsNullOrEmpty(this.cboItem.Text) && int.TryParse(this.txtQuantity.Text, out int result))
             {
-                InventoryModel selectedRecord = this.db.LoadRecordsByStringT<InventoryModel>("Inventory", "Item", this.cboItem.Text);
+                InventoryModel selectedRecord = this.db.LoadRecordsByGenericT<InventoryModel, string>("Inventory", "Item", this.cboItem.Text);
                 this.txtUnitPrice.Text = selectedRecord.UnitPrice.ToString(CultureInfo.InvariantCulture);
                 this.txtTotalUnitPrice.Text = (selectedRecord.UnitPrice * result)
                         .ToString(CultureInfo.InvariantCulture);
@@ -131,7 +132,7 @@
 
             foreach (var item in cartRecord)
             {
-                var selectedCartRecord = this.db.LoadRecordById<TransactionTempModel>("TransactionTemp", item.Id);
+                var selectedCartRecord = this.db.LoadRecordsByGenericT<TransactionTempModel, ObjectId>("TransactionTemp", "Id", item.Id);
                 selectedCartRecord.Discount = discount;
                 this.db.UpsertRecord("TransactionTemp", selectedCartRecord.Id, selectedCartRecord);
             }
@@ -204,7 +205,7 @@
             // Reset the cboItem value
             this.cboItem.Items.Clear();
             this.cboItem.Text = string.Empty;
-            var selectedCatRecord = this.db.LoadRecordsByStringList<InventoryModel>("Inventory", "Category", this.cboCategory.Text);
+            var selectedCatRecord = this.db.LoadRecordsByGenericList<InventoryModel, string>("Inventory", "Category", this.cboCategory.Text);
 
             // Change cboItem.Items value depending on selected cboCategory
             foreach (var cboInventory in selectedCatRecord)
@@ -237,18 +238,14 @@
             {
                 if (int.TryParse(this.txtQuantity.Text, out int result) && result > 0)
                 {
-                    var selectedInvRecord = this.db.LoadRecordsByStringT<InventoryModel>("Inventory", "Item", this.cboItem.Text);
-                    var selectedCartRecord = this.db.LoadRecordById<TransactionTempModel>("TransactionTemp", selectedInvRecord.Id);
-
-                    if (selectedCartRecord == null)
+                    var selectedInvRecord = this.db.LoadRecordsByGenericT<InventoryModel, string>("Inventory", "Item", this.cboItem.Text);
+                    var cartExists = this.db.CheckExistenceByGeneric<TransactionTempModel, ObjectId>("TransactionTemp", "Id", selectedInvRecord.Id);
+                    if (!cartExists)
                     {
-                        selectedCartRecord = new TransactionTempModel
-                        {
-                            Id = selectedInvRecord.Id,
-                        };
+                        this.db.InsertRecord("TransactionTemp", new TransactionTempModel { Id = selectedInvRecord.Id, });
                     }
 
-                    selectedCartRecord.Id = selectedInvRecord.Id;
+                    var selectedCartRecord = this.db.LoadRecordsByGenericT<TransactionTempModel, ObjectId>("TransactionTemp", "Id", selectedInvRecord.Id);
                     selectedCartRecord.Item = selectedInvRecord.Item;
                     selectedCartRecord.UnitPrice = selectedInvRecord.UnitPrice;
                     selectedCartRecord.Quantity = result;
@@ -281,9 +278,9 @@
 
         private void BtnRemoveItem_Click(object sender, EventArgs e)
         {
-            if (ObjectId.TryParse(this.Id, out ObjectId result))
+            if (ObjectId.TryParse(this.Id, out ObjectId id))
             {
-                this.db.DeleleRecord<TransactionTempModel>("TransactionTemp", result);
+                this.db.DeleleRecord<TransactionTempModel>("TransactionTemp", id);
                 MessageBox.Show("Item removed.");
                 this.RefreshCboItems();
                 this.RefreshDataGrid();
@@ -318,19 +315,13 @@
                 && double.TryParse(this.txtTotalPrice.Text, out double totalPrice)
                 && change >= 0)
                 {
-                    var selectedCartRecord = this.db.LoadRecordById<TransactionTempModel>("TransactionTemp", id);
-                    double rawTotalPrice = 0;
-                    foreach (var item in cartRecord)
-                    {
-                        rawTotalPrice += item.TotalUnitPrice;
-                    }
-
+                    var selectedCartRecord = this.db.LoadRecordsByGenericT<TransactionTempModel, ObjectId>("TransactionTemp", "Id", id);
                     using (PrintReceipt receipt = new PrintReceipt(
                         DateTime.Now.ToString("MM/dd/yyyy", CultureInfo.InvariantCulture),
                         LoginUI.AcctName,
                         default,
                         cartRecord,
-                        string.Format(CultureInfo.CurrentCulture, "₱{0:0.00}", rawTotalPrice),
+                        string.Format(CultureInfo.CurrentCulture, "₱{0:0.00}", cartRecord.Sum(x => x.TotalUnitPrice)),
                         string.Format(CultureInfo.CurrentCulture, "{0}%", selectedCartRecord.Discount),
                         string.Format(CultureInfo.CurrentCulture, "₱{0:0.00}", cash),
                         string.Format(CultureInfo.CurrentCulture, "₱{0:0.00}", change),
@@ -339,43 +330,7 @@
                         receipt.ShowDialog();
                     }
 
-                    // Update the inventory quantity
-                    double totalCostItemSold = 0;
-                    var invRecord = this.db.LoadRecords<InventoryModel>("Inventory");
-                    foreach (var cart in cartRecord)
-                    {
-                        foreach (var item in invRecord)
-                        {
-                            if (cart.Id == item.Id)
-                            {
-                                if (item.Qty == cart.Quantity)
-                                {
-                                    item.Status = false;
-                                }
-
-                                item.Qty -= cart.Quantity;
-                                this.db.UpsertRecord("Inventory", item.Id, item);
-                                totalCostItemSold += item.Cost * cart.Quantity;
-                                break;
-                            }
-                        }
-                    }
-
-                    // Insert the sales history to the database
-                    this.db.InsertRecord("SalesHistory", new SalesHistoryModel
-                    {
-                        Items = string.Join(", ", (from item in cartRecord select item.Item).ToArray()),
-                        DateOfPurchase = DateTime.Now,
-                        Employee = LoginUI.AcctName,
-                        TCIS = totalCostItemSold,
-                        TRA = rawTotalPrice,
-                        NetSales = totalPrice,
-                        GrossMargin = totalPrice - totalCostItemSold,
-                    });
-                    this.db.DropCollection<TransactionTempModel>("TransactionTemp");
-                    this.RefreshDataUpper();
-                    this.RefreshDataGrid();
-                    this.RefreshDataLower();
+                    this.Transact(cartRecord);
                 }
                 else
                 {
@@ -393,57 +348,85 @@
             var cartRecord = this.db.LoadRecords<TransactionTempModel>("TransactionTemp");
             if (cartRecord.Any())
             {
-                if (double.TryParse(this.txtTotalPrice.Text, out double totalPrice)
-                && double.TryParse(this.txtChange.Text, out double change) && change >= 0)
+                if (double.TryParse(this.txtChange.Text, out double change) && change > 0)
                 {
-                    var invRecord = this.db.LoadRecords<InventoryModel>("Inventory");
-                    double totalCostItemSold = 0;
-                    foreach (var cart in cartRecord)
-                    {
-                        foreach (var item in invRecord)
-                        {
-                            if (cart.Id == item.Id)
-                            {
-                                if (item.Qty == cart.Quantity)
-                                {
-                                    item.Status = false;
-                                }
-
-                                item.Qty -= cart.Quantity;
-                                this.db.UpsertRecord("Inventory", item.Id, item);
-                                totalCostItemSold += item.Cost * cart.Quantity;
-                                break;
-                            }
-                        }
-                    }
-
-                    // Insert the sales history to the database
-                    this.db.InsertRecord("SalesHistory", new SalesHistoryModel
-                    {
-                        Items = string.Join(", ", (from item in cartRecord select item.Item).ToArray()),
-                        DateOfPurchase = DateTime.Now,
-                        Employee = LoginUI.AcctName,
-                        TCIS = totalCostItemSold,
-                        TRA = cartRecord.Sum(x => x.TotalUnitPrice),
-                        NetSales = totalPrice,
-                        GrossMargin = totalPrice - totalCostItemSold,
-                    });
-
-                    MessageBox.Show("Transaction Success!");
-                    this.db.DropCollection<TransactionTempModel>("TransactionTemp");
-                    this.RefreshDataUpper();
-                    this.RefreshDataGrid();
-                    this.RefreshDataLower();
+                    this.Transact(cartRecord);
                 }
                 else
                 {
-                    MessageBox.Show("Please check your cash.");
+                    MessageBox.Show("Please check your cash");
                 }
             }
             else
             {
                 MessageBox.Show("Please add an item.");
             }
+        }
+
+        private void Transact(List<TransactionTempModel> cartRecord)
+        {
+            if (double.TryParse(this.txtTotalPrice.Text, out double totalPrice)
+                && double.TryParse(this.txtChange.Text, out double change))
+            {
+                var invRecord = this.db.LoadRecords<InventoryModel>("Inventory");
+                double totalCostItemSold = 0;
+                foreach (var cart in cartRecord)
+                {
+                    foreach (var item in invRecord)
+                    {
+                        if (cart.Id == item.Id)
+                        {
+                            if (item.Qty == cart.Quantity)
+                            {
+                                item.Status = false;
+                            }
+
+                            item.Qty -= cart.Quantity;
+                            this.db.UpsertRecord("Inventory", item.Id, item);
+                            totalCostItemSold += item.Cost * cart.Quantity;
+
+                            // Update status in Inventory Report
+                            var selectedReportRecord = this.db.LoadRecordsByGenericT<InventoryReportModel, string>("InventoryReport", "Item", item.Item);
+                            string status = "Out";
+                            if (item.Qty > 0)
+                            {
+                                status = "In(" + item.Qty.ToString(CultureInfo.CurrentCulture) + ")";
+                            }
+
+                            selectedReportRecord.Status = status;
+
+                            this.db.UpsertRecord("InventoryReport", selectedReportRecord.Id, selectedReportRecord);
+                            break;
+                        }
+                    }
+                }
+
+                // Insert the sales history to the database
+                this.db.InsertRecord("SalesHistory", new SalesHistoryModel
+                {
+                    Items = string.Join(", ", (from item in cartRecord select item.Item).ToArray()),
+                    DateOfPurchase = DateTime.Now,
+                    Employee = LoginUI.AcctName,
+                    TCIS = totalCostItemSold,
+                    TRA = cartRecord.Sum(x => x.TotalUnitPrice),
+                    NetSales = totalPrice,
+                    GrossMargin = totalPrice - totalCostItemSold,
+                });
+
+                MessageBox.Show("Transaction Success!");
+                this.db.DropCollection<TransactionTempModel>("TransactionTemp");
+
+                this.txtChange.Text = this.txtAmountReceived.Text = string.Empty;
+                this.RefreshDataUpper();
+                this.RefreshDataGrid();
+                this.RefreshDataLower();
+            }
+        }
+
+        private void CboItem_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // disable typing for no errors
+            e.Handled = true;
         }
     }
 }

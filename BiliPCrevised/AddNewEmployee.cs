@@ -20,7 +20,7 @@
 
         private void BtnAddAccount_Click(object sender, EventArgs e)
         {
-            bool usernameExists = this.db.CheckExistenceByString<UsersModel>("Users", "Username", this.txtUsername.Text);
+            bool usernameExists = this.db.CheckExistenceByGeneric<UsersModel, string>("Users", "Username", this.txtUsername.Text);
             int emptyField = Functions.CheckFields(this.GroupTextBox);
 
             if (emptyField > 0)
@@ -44,7 +44,7 @@
                         Name = this.txtName.Text,
                         Username = this.txtUsername.Text,
                         Password = this.txtPassword.Text,
-                        Wage = wage,
+                        Salary = wage,
                         IsAdmin = this.adminTrueRadioBtn.Checked,
                     });
                     MessageBox.Show("Account Saved!");

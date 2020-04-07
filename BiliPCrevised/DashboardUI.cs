@@ -2,6 +2,7 @@
 {
     using System;
     using System.Windows.Forms;
+    using MongoDB.Bson;
 
     public partial class DashboardUI : Form
     {
@@ -12,12 +13,18 @@
             this.lblTime.Text = DateTime.Now.ToLongTimeString();
             this.lblDate.Text = DateTime.Now.ToLongDateString();
             this.CustomDesign();
+            this.txtAcctName.Text = AcctName;
+        }
 
+        public static string AcctName { get; set; }
+
+        private void DashboardUI_Load(object sender, EventArgs e)
+        {
             // Verify if user is an Admin to show the "Manage Users" button
             using (new LoginUI())
             {
                 this.btnManageEmployees.Visible = LoginUI.Admin;
-                this.lblAcctName.Text = LoginUI.AcctName;
+                this.txtAcctName.Text = AcctName = LoginUI.AcctName;
             }
         }
 
@@ -165,9 +172,28 @@
         #endregion
 
         #region Logout
-        private void BtnLogout_Click_1(object sender, EventArgs e)
+        public static void Logout()
+        {
+            MongoCRUD db = new MongoCRUD("POS_Database");
+            LoginUI.IsLoggedIn = false;
+            var userRecord = db.LoadRecordsByGenericT<UsersModel, string>("Users", "Name", AcctName);
+            var loginRecord = db.LoadRecordByGenericSortedT<TrackEmployeesModel, ObjectId>("TrackEmployees", "AcctId", userRecord.Id, "Date");
+            db.InsertRecord("TrackEmployees", new TrackEmployeesModel
+            {
+                AcctName = AcctName,
+                AcctId = userRecord.Id,
+                Date = DateTime.Now,
+                LoggedIn = LoginUI.IsLoggedIn,
+                TotalWorkHours = (DateTime.Now - loginRecord.Date).TotalHours + loginRecord.TotalWorkHours,
+                Salary = userRecord.Salary,
+            });
+            AcctName = null;
+        }
+
+        private void BtnLogout_Click(object sender, EventArgs e)
         {
             this.Hide();
+            Logout();
             using (LoginUI login = new LoginUI())
             {
                 login.ShowDialog();

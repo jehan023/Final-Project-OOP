@@ -38,7 +38,7 @@
             this.adminFalseRadioBtn = new System.Windows.Forms.RadioButton();
             this.adminTrueRadioBtn = new System.Windows.Forms.RadioButton();
             this.lblAcctType = new System.Windows.Forms.Label();
-            this.lblWage = new System.Windows.Forms.Label();
+            this.lblSalary = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAddAccount = new System.Windows.Forms.Button();
             this.lblPassword = new System.Windows.Forms.Label();
@@ -110,7 +110,7 @@
             this.pnlBackground.Controls.Add(this.adminFalseRadioBtn);
             this.pnlBackground.Controls.Add(this.adminTrueRadioBtn);
             this.pnlBackground.Controls.Add(this.lblAcctType);
-            this.pnlBackground.Controls.Add(this.lblWage);
+            this.pnlBackground.Controls.Add(this.lblSalary);
             this.pnlBackground.Controls.Add(this.btnCancel);
             this.pnlBackground.Controls.Add(this.btnAddAccount);
             this.pnlBackground.Controls.Add(this.lblPassword);
@@ -175,19 +175,19 @@
             this.lblAcctType.TabIndex = 63;
             this.lblAcctType.Text = "Account Type";
             // 
-            // lblWage
+            // lblSalary
             // 
-            this.lblWage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblWage.AutoSize = true;
-            this.lblWage.BackColor = System.Drawing.Color.Transparent;
-            this.lblWage.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWage.ForeColor = System.Drawing.Color.Black;
-            this.lblWage.Location = new System.Drawing.Point(90, 269);
-            this.lblWage.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblWage.Name = "lblWage";
-            this.lblWage.Size = new System.Drawing.Size(53, 18);
-            this.lblWage.TabIndex = 61;
-            this.lblWage.Text = "Wage";
+            this.lblSalary.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblSalary.AutoSize = true;
+            this.lblSalary.BackColor = System.Drawing.Color.Transparent;
+            this.lblSalary.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSalary.ForeColor = System.Drawing.Color.Black;
+            this.lblSalary.Location = new System.Drawing.Point(90, 269);
+            this.lblSalary.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSalary.Name = "lblSalary";
+            this.lblSalary.Size = new System.Drawing.Size(59, 18);
+            this.lblSalary.TabIndex = 61;
+            this.lblSalary.Text = "Salary";
             // 
             // btnCancel
             // 
@@ -375,7 +375,7 @@
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.TextBox txtWage;
-        private System.Windows.Forms.Label lblWage;
+        private System.Windows.Forms.Label lblSalary;
         private System.Windows.Forms.RadioButton adminFalseRadioBtn;
         private System.Windows.Forms.RadioButton adminTrueRadioBtn;
         private System.Windows.Forms.Label lblAcctType;

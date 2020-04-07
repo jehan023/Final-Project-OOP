@@ -1,6 +1,7 @@
 ﻿namespace BiliPC
 {
     using System;
+    using System.Globalization;
     using System.Linq;
     using System.Windows.Forms;
 
@@ -20,7 +21,7 @@
 
         private void BtnAddItem_Click(object sender, EventArgs e)
         {
-            bool itemExists = this.db.CheckExistenceByString<InventoryModel>("Inventory", "Item", this.txtItem.Text);
+            bool itemExists = this.db.CheckExistenceByGeneric<InventoryModel, string>("Inventory", "Item", this.txtItem.Text);
             int emptyField = Functions.CheckFields(this.GroupTextBox);
 
             if (emptyField > 0)
@@ -37,6 +38,7 @@
                     && double.TryParse(this.txtUnitPrice.Text, out double unitPrice)
                     && double.TryParse(this.txtCost.Text, out double cost))
                 {
+                    // Insert to Inventory
                     this.db.InsertRecord("Inventory", new InventoryModel
                     {
                         Item = this.txtItem.Text,
@@ -47,6 +49,25 @@
                         Supplier = this.txtSupplier.Text,
                         Status = quantity != 0,
                     });
+
+                    // Insert to Inventory Report
+                    string status = "Out";
+                    if (quantity > 0)
+                    {
+                        status = "In(" + quantity.ToString(CultureInfo.CurrentCulture) + ")";
+                    }
+
+                    this.db.InsertRecord("InventoryReport", new InventoryReportModel
+                    {
+                        Item = this.txtItem.Text,
+                        DateModified = DateTime.Now,
+                        Status = status,
+                        RetailAmount = unitPrice,
+                        Cost = cost,
+                        Category = this.txtCategory.Text,
+                        Supplier = this.txtSupplier.Text,
+                    });
+
                     MessageBox.Show("Item saved!");
                     this.Close();
                 }

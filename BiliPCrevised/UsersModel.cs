@@ -21,7 +21,7 @@
         public string Password { get; set; }
 
         [BsonElement]
-        public double Wage { get; set; }
+        public double Salary { get; set; }
 
         [BsonElement]
         public double Workhours { get; set; }
