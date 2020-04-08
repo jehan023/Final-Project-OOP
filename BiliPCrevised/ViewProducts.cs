@@ -10,14 +10,32 @@
         public ViewProducts()
         {
             this.InitializeComponent();
+            this.AutoCompleteSearch();
             this.RefreshInventory();
+        }
+
+        private void AutoCompleteSearch()
+        {
+            AutoCompleteStringCollection search = new AutoCompleteStringCollection();
+
+            var inventoryRecord = this.db.LoadRecords<InventoryModel>("Inventory");
+
+            foreach (var itemInventory in inventoryRecord)
+            {
+                if (!search.Contains(itemInventory.Item))
+                {
+                    search.Add(itemInventory.Item);
+                }
+            }
+
+            this.TxtSearchItem.AutoCompleteCustomSource = search;
         }
 
         private void RefreshInventory()
         {
             var inventoryRecord = this.db.LoadRecords<InventoryModel>("Inventory");
             this.dgdViewProducts.DataSource = inventoryRecord;
-            this.txtSearchItem.Text = string.Empty;
+            this.TxtSearchItem.Text = string.Empty;
 
             foreach (var itemInventory in inventoryRecord)
             {
@@ -35,7 +53,7 @@
 
         private void BtnSearchItem_Click(object sender, EventArgs e)
         {
-            var selectedRecord = this.db.LoadRecordsByCaseInsensitive<InventoryModel>("Inventory", "Item", this.txtSearchItem.Text);
+            var selectedRecord = this.db.LoadRecordsByCaseInsensitive<InventoryModel>("Inventory", "Item", this.TxtSearchItem.Text);
             this.dgdViewProducts.DataSource = selectedRecord;
         }
 
@@ -48,6 +66,12 @@
         private void BtnShowAll_Click(object sender, EventArgs e)
         {
             this.RefreshInventory();
+        }
+
+        private void TxtSearchItem_TextChanged_1(object sender, EventArgs e)
+        {
+            var selectedRecord = this.db.LoadRecordsByCaseInsensitive<InventoryModel>("Inventory", "Item", this.TxtSearchItem.Text);
+            this.dgdViewProducts.DataSource = selectedRecord;
         }
     }
 }

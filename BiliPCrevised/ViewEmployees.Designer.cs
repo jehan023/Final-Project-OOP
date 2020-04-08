@@ -40,7 +40,7 @@
             this.btnX = new System.Windows.Forms.Button();
             this.btnDeleteAccount = new System.Windows.Forms.Button();
             this.btnUpdateAccount = new System.Windows.Forms.Button();
-            this.txtSearchEmployee = new System.Windows.Forms.TextBox();
+            this.TxtSearchEmployee = new System.Windows.Forms.TextBox();
             this.btnAddAccount = new System.Windows.Forms.Button();
             this.lblSearchEmployee = new System.Windows.Forms.Label();
             this.pnlBackground = new System.Windows.Forms.Panel();
@@ -61,7 +61,6 @@
             this.txtAcctName = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
             this.dgdEmployee = new System.Windows.Forms.DataGridView();
-            this.usersModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,6 +68,7 @@
             this.salaryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.workhoursDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isAdminDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.usersModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pnlTop.SuspendLayout();
             this.pnlBackground.SuspendLayout();
             this.GroupTextBox.SuspendLayout();
@@ -86,7 +86,7 @@
             this.pnlTop.Controls.Add(this.btnX);
             this.pnlTop.Controls.Add(this.btnDeleteAccount);
             this.pnlTop.Controls.Add(this.btnUpdateAccount);
-            this.pnlTop.Controls.Add(this.txtSearchEmployee);
+            this.pnlTop.Controls.Add(this.TxtSearchEmployee);
             this.pnlTop.Controls.Add(this.btnAddAccount);
             this.pnlTop.Controls.Add(this.lblSearchEmployee);
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
@@ -213,16 +213,19 @@
             this.btnUpdateAccount.UseVisualStyleBackColor = false;
             this.btnUpdateAccount.Click += new System.EventHandler(this.BtnUpdateAccount_Click);
             // 
-            // txtSearchEmployee
+            // TxtSearchEmployee
             // 
-            this.txtSearchEmployee.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSearchEmployee.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.txtSearchEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchEmployee.Location = new System.Drawing.Point(658, 57);
-            this.txtSearchEmployee.Margin = new System.Windows.Forms.Padding(2);
-            this.txtSearchEmployee.Name = "txtSearchEmployee";
-            this.txtSearchEmployee.Size = new System.Drawing.Size(186, 24);
-            this.txtSearchEmployee.TabIndex = 40;
+            this.TxtSearchEmployee.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.TxtSearchEmployee.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.TxtSearchEmployee.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.TxtSearchEmployee.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.TxtSearchEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtSearchEmployee.Location = new System.Drawing.Point(658, 57);
+            this.TxtSearchEmployee.Margin = new System.Windows.Forms.Padding(2);
+            this.TxtSearchEmployee.Name = "TxtSearchEmployee";
+            this.TxtSearchEmployee.Size = new System.Drawing.Size(186, 24);
+            this.TxtSearchEmployee.TabIndex = 40;
+            this.TxtSearchEmployee.TextChanged += new System.EventHandler(this.TxtSearchEmployee_TextChanged);
             // 
             // btnAddAccount
             // 
@@ -540,10 +543,6 @@
             this.dgdEmployee.TabIndex = 42;
             this.dgdEmployee.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgdEmployee_CellClick);
             // 
-            // usersModelBindingSource
-            // 
-            this.usersModelBindingSource.DataSource = typeof(BiliPC.UsersModel);
-            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -593,6 +592,10 @@
             this.isAdminDataGridViewCheckBoxColumn.Name = "isAdminDataGridViewCheckBoxColumn";
             this.isAdminDataGridViewCheckBoxColumn.ReadOnly = true;
             // 
+            // usersModelBindingSource
+            // 
+            this.usersModelBindingSource.DataSource = typeof(BiliPC.UsersModel);
+            // 
             // ViewEmployees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -624,7 +627,7 @@
         private System.Windows.Forms.Button btnX;
         private System.Windows.Forms.Button btnDeleteAccount;
         private System.Windows.Forms.Button btnUpdateAccount;
-        private System.Windows.Forms.TextBox txtSearchEmployee;
+        private System.Windows.Forms.TextBox TxtSearchEmployee;
         private System.Windows.Forms.Button btnAddAccount;
         private System.Windows.Forms.Label lblSearchEmployee;
         private System.Windows.Forms.Panel pnlBackground;

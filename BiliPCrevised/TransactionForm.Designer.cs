@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlTop = new System.Windows.Forms.Panel();
             this.btnX = new System.Windows.Forms.Button();
             this.lblTransaction = new System.Windows.Forms.Label();
@@ -37,7 +37,7 @@
             this.btnTransact = new System.Windows.Forms.Button();
             this.lblCategory = new System.Windows.Forms.Label();
             this.cboCategory = new System.Windows.Forms.ComboBox();
-            this.cboItem = new System.Windows.Forms.ComboBox();
+            this.CboItem = new System.Windows.Forms.ComboBox();
             this.txtTransacationID = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtChange = new System.Windows.Forms.TextBox();
@@ -125,7 +125,7 @@
             this.pnlBackground.Controls.Add(this.btnTransact);
             this.pnlBackground.Controls.Add(this.lblCategory);
             this.pnlBackground.Controls.Add(this.cboCategory);
-            this.pnlBackground.Controls.Add(this.cboItem);
+            this.pnlBackground.Controls.Add(this.CboItem);
             this.pnlBackground.Controls.Add(this.txtTransacationID);
             this.pnlBackground.Controls.Add(this.groupBox2);
             this.pnlBackground.Controls.Add(this.btnAddDiscount);
@@ -190,18 +190,21 @@
             this.cboCategory.TabIndex = 59;
             this.cboCategory.SelectedIndexChanged += new System.EventHandler(this.CboCategory_SelectedIndexChanged);
             // 
-            // cboItem
+            // CboItem
             // 
-            this.cboItem.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cboItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboItem.FormattingEnabled = true;
-            this.cboItem.Location = new System.Drawing.Point(82, 31);
-            this.cboItem.Margin = new System.Windows.Forms.Padding(2);
-            this.cboItem.Name = "cboItem";
-            this.cboItem.Size = new System.Drawing.Size(372, 28);
-            this.cboItem.TabIndex = 58;
-            this.cboItem.SelectedIndexChanged += new System.EventHandler(this.CboItem_SelectedIndexChanged);
-            this.cboItem.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CboItem_KeyPress);
+            this.CboItem.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.CboItem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.CboItem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.CboItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CboItem.FormattingEnabled = true;
+            this.CboItem.Location = new System.Drawing.Point(82, 31);
+            this.CboItem.Margin = new System.Windows.Forms.Padding(2);
+            this.CboItem.Name = "CboItem";
+            this.CboItem.Size = new System.Drawing.Size(372, 28);
+            this.CboItem.TabIndex = 58;
+            this.CboItem.SelectedIndexChanged += new System.EventHandler(this.CboItem_SelectedIndexChanged);
+            this.CboItem.TextChanged += new System.EventHandler(this.CboItem_TextChanged);
+            this.CboItem.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CboItem_KeyPress);
             // 
             // txtTransacationID
             // 
@@ -500,14 +503,14 @@
             this.dgdCart.AutoGenerateColumns = false;
             this.dgdCart.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgdCart.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgdCart.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgdCart.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgdCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgdCart.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
@@ -628,7 +631,7 @@
         private System.Windows.Forms.Label lblCash;
         private System.Windows.Forms.TextBox txtTransacationID;
         private System.Windows.Forms.Label lblTransactionID;
-        private System.Windows.Forms.ComboBox cboItem;
+        private System.Windows.Forms.ComboBox CboItem;
         private System.Windows.Forms.ComboBox cboCategory;
         private System.Windows.Forms.Label lblCategory;
         private System.Windows.Forms.Button btnTransact;

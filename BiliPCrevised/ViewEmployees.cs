@@ -13,7 +13,25 @@
         public ViewEmployees()
         {
             this.InitializeComponent();
+            this.AutoCompleteSearch();
             this.RefreshAccounts();
+        }
+
+        private void AutoCompleteSearch()
+        {
+            AutoCompleteStringCollection search = new AutoCompleteStringCollection();
+
+            var userRecord = this.db.LoadRecords<UsersModel>("Users");
+
+            foreach (var userName in userRecord)
+            {
+                if (!search.Contains(userName.Name))
+                {
+                    search.Add(userName.Name);
+                }
+            }
+
+            this.TxtSearchEmployee.AutoCompleteCustomSource = search;
         }
 
         private void BtnX_Click(object sender, EventArgs e)
@@ -23,7 +41,7 @@
 
         private void BtnSearchEmployee_Click(object sender, EventArgs e)
         {
-            var selectedRecord = this.db.LoadRecordsByCaseInsensitive<UsersModel>("Users", "Name", this.txtSearchEmployee.Text);
+            var selectedRecord = this.db.LoadRecordsByCaseInsensitive<UsersModel>("Users", "Name", this.TxtSearchEmployee.Text);
             this.dgdEmployee.DataSource = selectedRecord;
         }
 
@@ -31,7 +49,7 @@
         {
             var userRecord = this.db.LoadRecords<UsersModel>("Users");
             this.dgdEmployee.DataSource = userRecord;
-            this.txtSearchEmployee.Text = string.Empty;
+            this.TxtSearchEmployee.Text = string.Empty;
 
             if (userRecord.Any())
             {
@@ -190,6 +208,12 @@
             {
                 Functions.RestrictedKeyPressToInt(e);
             }
+        }
+
+        private void TxtSearchEmployee_TextChanged(object sender, EventArgs e)
+        {
+            var userRecord = this.db.LoadRecordsByCaseInsensitive<UsersModel>("Users", "Name", this.TxtSearchEmployee.Text);
+            this.dgdEmployee.DataSource = userRecord;
         }
     }
 }

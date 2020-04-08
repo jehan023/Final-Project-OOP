@@ -71,11 +71,17 @@
             double totalCostAllItems, totalRetailPrice;
             totalCostAllItems = totalRetailPrice = 0;
 
+            // Gets the quantity of each items in Inventory Model for summation
+            var invRecord = this.db.LoadRecords<InventoryModel>("Inventory");
+
             // Summation of data in sales record
             foreach (var item in inventoryReport)
             {
-                totalCostAllItems += item.Cost;
-                totalRetailPrice += item.RetailAmount;
+                foreach (var qty in invRecord)
+                {
+                    totalCostAllItems += item.Cost * qty.Qty;
+                    totalRetailPrice += item.RetailAmount * qty.Qty;
+                }
             }
 
             this.txtTCAI.Text = totalCostAllItems.ToString(CultureInfo.CurrentCulture);

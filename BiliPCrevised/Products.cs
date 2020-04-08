@@ -13,7 +13,25 @@
         public Products()
         {
             this.InitializeComponent();
+            this.AutoCompleteSearch();
             this.RefreshInventory();
+        }
+
+        private void AutoCompleteSearch()
+        {
+            AutoCompleteStringCollection search = new AutoCompleteStringCollection();
+
+            var inventoryRecord = this.db.LoadRecords<InventoryModel>("Inventory");
+
+            foreach (var itemInventory in inventoryRecord)
+            {
+                if (!search.Contains(itemInventory.Item))
+                {
+                    search.Add(itemInventory.Item);
+                }
+            }
+
+            this.txtSearchItem.AutoCompleteCustomSource = search;
         }
 
         private void RefreshInventory()
@@ -38,10 +56,11 @@
                 this.txtQuantity.Text = this.dgdProduct.Rows[0].Cells[2].Value.ToString();
                 this.txtUnitPrice.Text = this.dgdProduct.Rows[0].Cells[3].Value.ToString();
                 this.txtCost.Text = this.dgdProduct.Rows[0].Cells[4].Value.ToString();
-                this.txtCategory.Text = this.dgdProduct.Rows[0].Cells[5].Value.ToString();
-                this.txtSupplier.Text = this.dgdProduct.Rows[0].Cells[6].Value.ToString();
-                this.radInStockTrue.Checked = this.dgdProduct.Rows[0].Cells[7].Value.Equals(true);
-                this.radInStockFalse.Checked = this.dgdProduct.Rows[0].Cells[7].Value.Equals(false);
+                this.txtDate.Text = this.dgdProduct.Rows[0].Cells[5].Value.ToString();
+                this.txtCategory.Text = this.dgdProduct.Rows[0].Cells[6].Value.ToString();
+                this.txtSupplier.Text = this.dgdProduct.Rows[0].Cells[7].Value.ToString();
+                this.radInStockTrue.Checked = this.dgdProduct.Rows[0].Cells[8].Value.Equals(true);
+                this.radInStockFalse.Checked = this.dgdProduct.Rows[0].Cells[8].Value.Equals(false);
             }
             else
             {
@@ -51,6 +70,7 @@
                     = this.txtQuantity.Text
                     = this.txtUnitPrice.Text
                     = this.txtCost.Text
+                    = this.txtDate.Text
                     = this.txtCategory.Text
                     = this.txtSupplier.Text
                         = string.Empty;
@@ -107,10 +127,10 @@
 
                 // Updating Inventory Report -- update report first because it is dependent to the inventory
                 var selectedReportRecord = this.db.LoadRecordsByGenericT<InventoryReportModel, string>("InventoryReport", "Item", selectedInvRecord.Item);
-                string status = "Out";
+                string status = "OUT";
                 if (quantity > 0)
                 {
-                    status = "In(" + quantity.ToString(CultureInfo.CurrentCulture) + ")";
+                    status = "IN (" + quantity.ToString(CultureInfo.CurrentCulture) + ")";
                 }
 
                 selectedReportRecord.Item = selectedInvRecord.Item;
@@ -128,6 +148,7 @@
                 selectedInvRecord.Qty = quantity;
                 selectedInvRecord.UnitPrice = unitPrice;
                 selectedInvRecord.Cost = cost;
+                selectedInvRecord.Date = DateTime.Now;
                 selectedInvRecord.Category = this.txtCategory.Text;
                 selectedInvRecord.Supplier = this.txtSupplier.Text;
                 selectedInvRecord.Status = quantity != 0;
@@ -213,10 +234,11 @@
                 this.txtQuantity.Text = this.dgdProduct.Rows[e.RowIndex].Cells[2].Value.ToString();
                 this.txtUnitPrice.Text = this.dgdProduct.Rows[e.RowIndex].Cells[3].Value.ToString();
                 this.txtCost.Text = this.dgdProduct.Rows[e.RowIndex].Cells[4].Value.ToString();
-                this.txtCategory.Text = this.dgdProduct.Rows[e.RowIndex].Cells[5].Value.ToString();
-                this.txtSupplier.Text = this.dgdProduct.Rows[e.RowIndex].Cells[6].Value.ToString();
-                this.radInStockTrue.Checked = this.dgdProduct.Rows[e.RowIndex].Cells[7].Value.Equals(true);
-                this.radInStockFalse.Checked = this.dgdProduct.Rows[e.RowIndex].Cells[7].Value.Equals(false);
+                this.txtDate.Text = this.dgdProduct.Rows[e.RowIndex].Cells[5].Value.ToString();
+                this.txtCategory.Text = this.dgdProduct.Rows[e.RowIndex].Cells[6].Value.ToString();
+                this.txtSupplier.Text = this.dgdProduct.Rows[e.RowIndex].Cells[7].Value.ToString();
+                this.radInStockTrue.Checked = this.dgdProduct.Rows[e.RowIndex].Cells[8].Value.Equals(true);
+                this.radInStockFalse.Checked = this.dgdProduct.Rows[e.RowIndex].Cells[8].Value.Equals(false);
             }
         }
 

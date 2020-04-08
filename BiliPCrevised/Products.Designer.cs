@@ -30,8 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgdProduct = new System.Windows.Forms.DataGridView();
             this.GroupTextBox = new System.Windows.Forms.GroupBox();
             this.radInStockFalse = new System.Windows.Forms.RadioButton();
@@ -65,11 +63,14 @@
             this.cboCategory = new System.Windows.Forms.ComboBox();
             this.lblCategorySort = new System.Windows.Forms.Label();
             this.searchItemBtn = new System.Windows.Forms.Button();
+            this.txtDate = new System.Windows.Forms.TextBox();
+            this.lblDate = new System.Windows.Forms.Label();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itemDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.qtyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unitPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.supplierDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -105,6 +106,7 @@
             this.qtyDataGridViewTextBoxColumn,
             this.unitPriceDataGridViewTextBoxColumn,
             this.costDataGridViewTextBoxColumn,
+            this.dateDataGridViewTextBoxColumn,
             this.categoryDataGridViewTextBoxColumn,
             this.supplierDataGridViewTextBoxColumn,
             this.statusDataGridViewCheckBoxColumn});
@@ -116,13 +118,15 @@
             this.dgdProduct.ReadOnly = true;
             this.dgdProduct.RowHeadersWidth = 51;
             this.dgdProduct.RowTemplate.Height = 24;
-            this.dgdProduct.Size = new System.Drawing.Size(887, 337);
+            this.dgdProduct.Size = new System.Drawing.Size(887, 335);
             this.dgdProduct.TabIndex = 23;
             this.dgdProduct.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgdProduct_CellClick);
             // 
             // GroupTextBox
             // 
             this.GroupTextBox.BackColor = System.Drawing.Color.MistyRose;
+            this.GroupTextBox.Controls.Add(this.txtDate);
+            this.GroupTextBox.Controls.Add(this.lblDate);
             this.GroupTextBox.Controls.Add(this.radInStockFalse);
             this.GroupTextBox.Controls.Add(this.radInStockTrue);
             this.GroupTextBox.Controls.Add(this.idBox);
@@ -142,9 +146,9 @@
             this.GroupTextBox.Controls.Add(this.lblItemName);
             this.GroupTextBox.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.GroupTextBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.GroupTextBox.Location = new System.Drawing.Point(0, 356);
+            this.GroupTextBox.Location = new System.Drawing.Point(0, 351);
             this.GroupTextBox.Name = "GroupTextBox";
-            this.GroupTextBox.Size = new System.Drawing.Size(935, 183);
+            this.GroupTextBox.Size = new System.Drawing.Size(935, 188);
             this.GroupTextBox.TabIndex = 45;
             this.GroupTextBox.TabStop = false;
             // 
@@ -155,7 +159,7 @@
             this.radInStockFalse.AutoSize = true;
             this.radInStockFalse.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
             this.radInStockFalse.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radInStockFalse.Location = new System.Drawing.Point(581, 144);
+            this.radInStockFalse.Location = new System.Drawing.Point(704, 152);
             this.radInStockFalse.Margin = new System.Windows.Forms.Padding(2);
             this.radInStockFalse.Name = "radInStockFalse";
             this.radInStockFalse.Size = new System.Drawing.Size(169, 28);
@@ -171,7 +175,7 @@
             this.radInStockTrue.AutoSize = true;
             this.radInStockTrue.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
             this.radInStockTrue.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radInStockTrue.Location = new System.Drawing.Point(581, 116);
+            this.radInStockTrue.Location = new System.Drawing.Point(585, 152);
             this.radInStockTrue.Margin = new System.Windows.Forms.Padding(2);
             this.radInStockTrue.Name = "radInStockTrue";
             this.radInStockTrue.Size = new System.Drawing.Size(115, 28);
@@ -184,7 +188,7 @@
             // 
             this.idBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.idBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idBox.Location = new System.Drawing.Point(123, 16);
+            this.idBox.Location = new System.Drawing.Point(123, 18);
             this.idBox.Margin = new System.Windows.Forms.Padding(2);
             this.idBox.Name = "idBox";
             this.idBox.ReadOnly = true;
@@ -198,7 +202,7 @@
             this.lblItemID.BackColor = System.Drawing.Color.Transparent;
             this.lblItemID.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblItemID.ForeColor = System.Drawing.Color.Black;
-            this.lblItemID.Location = new System.Drawing.Point(40, 19);
+            this.lblItemID.Location = new System.Drawing.Point(40, 21);
             this.lblItemID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblItemID.Name = "lblItemID";
             this.lblItemID.Size = new System.Drawing.Size(69, 18);
@@ -209,7 +213,7 @@
             // 
             this.txtCategory.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCategory.Location = new System.Drawing.Point(581, 86);
+            this.txtCategory.Location = new System.Drawing.Point(581, 120);
             this.txtCategory.Margin = new System.Windows.Forms.Padding(2);
             this.txtCategory.Name = "txtCategory";
             this.txtCategory.Size = new System.Drawing.Size(336, 24);
@@ -222,7 +226,7 @@
             this.lblCategory.BackColor = System.Drawing.Color.Transparent;
             this.lblCategory.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCategory.ForeColor = System.Drawing.Color.Black;
-            this.lblCategory.Location = new System.Drawing.Point(472, 89);
+            this.lblCategory.Location = new System.Drawing.Point(473, 123);
             this.lblCategory.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCategory.Name = "lblCategory";
             this.lblCategory.Size = new System.Drawing.Size(91, 18);
@@ -236,7 +240,7 @@
             this.lblUnitPrice.BackColor = System.Drawing.Color.Transparent;
             this.lblUnitPrice.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUnitPrice.ForeColor = System.Drawing.Color.Black;
-            this.lblUnitPrice.Location = new System.Drawing.Point(14, 140);
+            this.lblUnitPrice.Location = new System.Drawing.Point(14, 142);
             this.lblUnitPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUnitPrice.Name = "lblUnitPrice";
             this.lblUnitPrice.Size = new System.Drawing.Size(95, 18);
@@ -250,7 +254,7 @@
             this.lblInStock.BackColor = System.Drawing.Color.Transparent;
             this.lblInStock.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInStock.ForeColor = System.Drawing.Color.Black;
-            this.lblInStock.Location = new System.Drawing.Point(494, 122);
+            this.lblInStock.Location = new System.Drawing.Point(495, 158);
             this.lblInStock.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblInStock.Name = "lblInStock";
             this.lblInStock.Size = new System.Drawing.Size(69, 18);
@@ -261,7 +265,7 @@
             // 
             this.txtSupplier.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSupplier.Location = new System.Drawing.Point(581, 52);
+            this.txtSupplier.Location = new System.Drawing.Point(581, 53);
             this.txtSupplier.Margin = new System.Windows.Forms.Padding(2);
             this.txtSupplier.Name = "txtSupplier";
             this.txtSupplier.Size = new System.Drawing.Size(336, 24);
@@ -274,7 +278,7 @@
             this.lblSupplier.BackColor = System.Drawing.Color.Transparent;
             this.lblSupplier.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSupplier.ForeColor = System.Drawing.Color.Black;
-            this.lblSupplier.Location = new System.Drawing.Point(480, 55);
+            this.lblSupplier.Location = new System.Drawing.Point(481, 56);
             this.lblSupplier.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSupplier.Name = "lblSupplier";
             this.lblSupplier.Size = new System.Drawing.Size(83, 18);
@@ -285,7 +289,7 @@
             // 
             this.txtCost.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCost.Location = new System.Drawing.Point(581, 16);
+            this.txtCost.Location = new System.Drawing.Point(581, 18);
             this.txtCost.Margin = new System.Windows.Forms.Padding(2);
             this.txtCost.Name = "txtCost";
             this.txtCost.Size = new System.Drawing.Size(336, 24);
@@ -299,7 +303,7 @@
             this.lblCost.BackColor = System.Drawing.Color.Transparent;
             this.lblCost.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCost.ForeColor = System.Drawing.Color.Black;
-            this.lblCost.Location = new System.Drawing.Point(509, 19);
+            this.lblCost.Location = new System.Drawing.Point(509, 21);
             this.lblCost.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCost.Name = "lblCost";
             this.lblCost.Size = new System.Drawing.Size(54, 18);
@@ -310,7 +314,7 @@
             // 
             this.txtUnitPrice.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtUnitPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUnitPrice.Location = new System.Drawing.Point(123, 140);
+            this.txtUnitPrice.Location = new System.Drawing.Point(123, 142);
             this.txtUnitPrice.Margin = new System.Windows.Forms.Padding(2);
             this.txtUnitPrice.Name = "txtUnitPrice";
             this.txtUnitPrice.Size = new System.Drawing.Size(336, 24);
@@ -321,7 +325,7 @@
             // 
             this.txtQuantity.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQuantity.Location = new System.Drawing.Point(123, 103);
+            this.txtQuantity.Location = new System.Drawing.Point(123, 105);
             this.txtQuantity.Margin = new System.Windows.Forms.Padding(2);
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(336, 24);
@@ -335,7 +339,7 @@
             this.lblQuantity.BackColor = System.Drawing.Color.Transparent;
             this.lblQuantity.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQuantity.ForeColor = System.Drawing.Color.Black;
-            this.lblQuantity.Location = new System.Drawing.Point(24, 106);
+            this.lblQuantity.Location = new System.Drawing.Point(24, 108);
             this.lblQuantity.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblQuantity.Name = "lblQuantity";
             this.lblQuantity.Size = new System.Drawing.Size(85, 18);
@@ -346,7 +350,7 @@
             // 
             this.txtItemName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtItemName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtItemName.Location = new System.Drawing.Point(123, 51);
+            this.txtItemName.Location = new System.Drawing.Point(123, 53);
             this.txtItemName.Margin = new System.Windows.Forms.Padding(2);
             this.txtItemName.Multiline = true;
             this.txtItemName.Name = "txtItemName";
@@ -361,7 +365,7 @@
             this.lblItemName.BackColor = System.Drawing.Color.Transparent;
             this.lblItemName.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblItemName.ForeColor = System.Drawing.Color.Black;
-            this.lblItemName.Location = new System.Drawing.Point(57, 54);
+            this.lblItemName.Location = new System.Drawing.Point(57, 56);
             this.lblItemName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblItemName.Name = "lblItemName";
             this.lblItemName.Size = new System.Drawing.Size(52, 18);
@@ -413,6 +417,8 @@
             // txtSearchItem
             // 
             this.txtSearchItem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSearchItem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtSearchItem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtSearchItem.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.txtSearchItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchItem.Location = new System.Drawing.Point(636, 61);
@@ -582,13 +588,37 @@
             this.searchItemBtn.UseVisualStyleBackColor = false;
             this.searchItemBtn.Click += new System.EventHandler(this.SearchBtn_Click);
             // 
+            // txtDate
+            // 
+            this.txtDate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDate.Location = new System.Drawing.Point(581, 86);
+            this.txtDate.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDate.Name = "txtDate";
+            this.txtDate.ReadOnly = true;
+            this.txtDate.Size = new System.Drawing.Size(336, 24);
+            this.txtDate.TabIndex = 64;
+            // 
+            // lblDate
+            // 
+            this.lblDate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblDate.AutoSize = true;
+            this.lblDate.BackColor = System.Drawing.Color.Transparent;
+            this.lblDate.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDate.ForeColor = System.Drawing.Color.Black;
+            this.lblDate.Location = new System.Drawing.Point(508, 89);
+            this.lblDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(55, 18);
+            this.lblDate.TabIndex = 63;
+            this.lblDate.Text = "Date :";
+            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
             this.idDataGridViewTextBoxColumn.HeaderText = "Id";
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Visible = false;
             // 
             // itemDataGridViewTextBoxColumn
             // 
@@ -607,9 +637,6 @@
             // unitPriceDataGridViewTextBoxColumn
             // 
             this.unitPriceDataGridViewTextBoxColumn.DataPropertyName = "UnitPrice";
-            dataGridViewCellStyle2.Format = "C2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.unitPriceDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.unitPriceDataGridViewTextBoxColumn.HeaderText = "UnitPrice";
             this.unitPriceDataGridViewTextBoxColumn.Name = "unitPriceDataGridViewTextBoxColumn";
             this.unitPriceDataGridViewTextBoxColumn.ReadOnly = true;
@@ -617,12 +644,16 @@
             // costDataGridViewTextBoxColumn
             // 
             this.costDataGridViewTextBoxColumn.DataPropertyName = "Cost";
-            dataGridViewCellStyle3.Format = "C2";
-            dataGridViewCellStyle3.NullValue = null;
-            this.costDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.costDataGridViewTextBoxColumn.HeaderText = "Cost";
             this.costDataGridViewTextBoxColumn.Name = "costDataGridViewTextBoxColumn";
             this.costDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dateDataGridViewTextBoxColumn
+            // 
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // categoryDataGridViewTextBoxColumn
             // 
@@ -707,11 +738,14 @@
         private System.Windows.Forms.ComboBox cboCategory;
         private System.Windows.Forms.Label lblCategorySort;
         private System.Windows.Forms.BindingSource inventoryModelBindingSource;
+        private System.Windows.Forms.TextBox txtDate;
+        private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn itemDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn qtyDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn unitPriceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn costDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn categoryDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn supplierDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn statusDataGridViewCheckBoxColumn;

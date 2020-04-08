@@ -46,7 +46,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txtUnitPrice = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtCost = new System.Windows.Forms.TextBox();
+            this.TxtCost = new System.Windows.Forms.TextBox();
             this.txtCategory = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pnlTop.SuspendLayout();
@@ -159,7 +159,7 @@
             this.GroupTextBox.Controls.Add(this.label9);
             this.GroupTextBox.Controls.Add(this.txtUnitPrice);
             this.GroupTextBox.Controls.Add(this.label4);
-            this.GroupTextBox.Controls.Add(this.txtCost);
+            this.GroupTextBox.Controls.Add(this.TxtCost);
             this.GroupTextBox.Controls.Add(this.txtCategory);
             this.GroupTextBox.Controls.Add(this.label2);
             this.GroupTextBox.Location = new System.Drawing.Point(32, 16);
@@ -281,16 +281,16 @@
             this.label4.TabIndex = 55;
             this.label4.Text = "Quantity";
             // 
-            // txtCost
+            // TxtCost
             // 
-            this.txtCost.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCost.Location = new System.Drawing.Point(17, 202);
-            this.txtCost.Margin = new System.Windows.Forms.Padding(2);
-            this.txtCost.Name = "txtCost";
-            this.txtCost.Size = new System.Drawing.Size(336, 21);
-            this.txtCost.TabIndex = 60;
-            this.txtCost.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtUnitPrice_KeyPress);
+            this.TxtCost.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.TxtCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtCost.Location = new System.Drawing.Point(17, 202);
+            this.TxtCost.Margin = new System.Windows.Forms.Padding(2);
+            this.TxtCost.Name = "TxtCost";
+            this.TxtCost.Size = new System.Drawing.Size(336, 21);
+            this.TxtCost.TabIndex = 60;
+            this.TxtCost.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCost_KeyPress);
             // 
             // txtCategory
             // 
@@ -355,7 +355,7 @@
         private System.Windows.Forms.Button btnAddItem;
         private System.Windows.Forms.TextBox txtCategory;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtCost;
+        private System.Windows.Forms.TextBox TxtCost;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtUnitPrice;

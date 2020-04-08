@@ -30,9 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblSearchItem = new System.Windows.Forms.Label();
-            this.txtSearchItem = new System.Windows.Forms.TextBox();
+            this.TxtSearchItem = new System.Windows.Forms.TextBox();
             this.btnX = new System.Windows.Forms.Button();
             this.pnlTop = new System.Windows.Forms.Panel();
             this.btnShowAll = new System.Windows.Forms.Button();
@@ -47,6 +46,7 @@
             this.qtyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unitPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.supplierDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -69,15 +69,18 @@
             this.lblSearchItem.TabIndex = 15;
             this.lblSearchItem.Text = "Search item:";
             // 
-            // txtSearchItem
+            // TxtSearchItem
             // 
-            this.txtSearchItem.BackColor = System.Drawing.SystemColors.Window;
-            this.txtSearchItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchItem.Location = new System.Drawing.Point(159, 75);
-            this.txtSearchItem.Margin = new System.Windows.Forms.Padding(2);
-            this.txtSearchItem.Name = "txtSearchItem";
-            this.txtSearchItem.Size = new System.Drawing.Size(360, 24);
-            this.txtSearchItem.TabIndex = 14;
+            this.TxtSearchItem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.TxtSearchItem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.TxtSearchItem.BackColor = System.Drawing.SystemColors.Window;
+            this.TxtSearchItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtSearchItem.Location = new System.Drawing.Point(159, 75);
+            this.TxtSearchItem.Margin = new System.Windows.Forms.Padding(2);
+            this.TxtSearchItem.Name = "TxtSearchItem";
+            this.TxtSearchItem.Size = new System.Drawing.Size(360, 24);
+            this.TxtSearchItem.TabIndex = 14;
+            this.TxtSearchItem.TextChanged += new System.EventHandler(this.TxtSearchItem_TextChanged_1);
             // 
             // btnX
             // 
@@ -107,7 +110,7 @@
             this.pnlTop.Controls.Add(this.lblCategory);
             this.pnlTop.Controls.Add(this.lblViewProducts);
             this.pnlTop.Controls.Add(this.lblSearchItem);
-            this.pnlTop.Controls.Add(this.txtSearchItem);
+            this.pnlTop.Controls.Add(this.TxtSearchItem);
             this.pnlTop.Controls.Add(this.btnX);
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTop.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -206,6 +209,15 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgdViewProducts.AutoGenerateColumns = false;
+            this.dgdViewProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgdViewProducts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgdViewProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgdViewProducts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
@@ -213,6 +225,7 @@
             this.qtyDataGridViewTextBoxColumn,
             this.unitPriceDataGridViewTextBoxColumn,
             this.costDataGridViewTextBoxColumn,
+            this.dateDataGridViewTextBoxColumn,
             this.categoryDataGridViewTextBoxColumn,
             this.supplierDataGridViewTextBoxColumn,
             this.statusDataGridViewCheckBoxColumn});
@@ -229,7 +242,6 @@
             this.idDataGridViewTextBoxColumn.HeaderText = "Id";
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Visible = false;
             // 
             // itemDataGridViewTextBoxColumn
             // 
@@ -248,9 +260,6 @@
             // unitPriceDataGridViewTextBoxColumn
             // 
             this.unitPriceDataGridViewTextBoxColumn.DataPropertyName = "UnitPrice";
-            dataGridViewCellStyle1.Format = "C2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.unitPriceDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
             this.unitPriceDataGridViewTextBoxColumn.HeaderText = "UnitPrice";
             this.unitPriceDataGridViewTextBoxColumn.Name = "unitPriceDataGridViewTextBoxColumn";
             this.unitPriceDataGridViewTextBoxColumn.ReadOnly = true;
@@ -258,12 +267,16 @@
             // costDataGridViewTextBoxColumn
             // 
             this.costDataGridViewTextBoxColumn.DataPropertyName = "Cost";
-            dataGridViewCellStyle2.Format = "C2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.costDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.costDataGridViewTextBoxColumn.HeaderText = "Cost";
             this.costDataGridViewTextBoxColumn.Name = "costDataGridViewTextBoxColumn";
             this.costDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dateDataGridViewTextBoxColumn
+            // 
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // categoryDataGridViewTextBoxColumn
             // 
@@ -315,7 +328,7 @@
         #endregion
 
         private System.Windows.Forms.Label lblSearchItem;
-        private System.Windows.Forms.TextBox txtSearchItem;
+        private System.Windows.Forms.TextBox TxtSearchItem;
         private System.Windows.Forms.Button btnX;
         private System.Windows.Forms.Panel pnlTop;
         private System.Windows.Forms.Panel pnlBackground;
@@ -331,6 +344,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn qtyDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn unitPriceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn costDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn categoryDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn supplierDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn statusDataGridViewCheckBoxColumn;

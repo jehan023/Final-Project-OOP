@@ -36,7 +36,7 @@
             {
                 if (int.TryParse(this.txtQuantity.Text, out int quantity)
                     && double.TryParse(this.txtUnitPrice.Text, out double unitPrice)
-                    && double.TryParse(this.txtCost.Text, out double cost))
+                    && double.TryParse(this.TxtCost.Text, out double cost))
                 {
                     // Insert to Inventory
                     this.db.InsertRecord("Inventory", new InventoryModel
@@ -45,16 +45,17 @@
                         Qty = quantity,
                         UnitPrice = unitPrice,
                         Cost = cost,
+                        Date = DateTime.Now,
                         Category = this.txtCategory.Text,
                         Supplier = this.txtSupplier.Text,
                         Status = quantity != 0,
                     });
 
                     // Insert to Inventory Report
-                    string status = "Out";
+                    string status = "OUT";
                     if (quantity > 0)
                     {
-                        status = "In(" + quantity.ToString(CultureInfo.CurrentCulture) + ")";
+                        status = "IN (" + quantity.ToString(CultureInfo.CurrentCulture) + ")";
                     }
 
                     this.db.InsertRecord("InventoryReport", new InventoryReportModel
@@ -90,6 +91,18 @@
         private void TxtUnitPrice_KeyPress(object sender, KeyPressEventArgs e)
         {
             if ((e.KeyChar == 46) && !this.txtUnitPrice.Text.Contains('.'))
+            {
+                Functions.RestrictedKeyPressToDouble(e);
+            }
+            else
+            {
+                Functions.RestrictedKeyPressToInt(e);
+            }
+        }
+
+        private void TxtCost_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar == 46) && !this.TxtCost.Text.Contains('.'))
             {
                 Functions.RestrictedKeyPressToDouble(e);
             }

@@ -14,9 +14,28 @@
         public TransactionForm()
         {
             this.InitializeComponent();
+            this.AutoCompleteSearch();
         }
 
         public string Id { get; set; }
+
+        // Suggestion typing for search Item
+        private void AutoCompleteSearch()
+        {
+            AutoCompleteStringCollection search = new AutoCompleteStringCollection();
+
+            var inventoryRecord = this.db.LoadRecords<InventoryModel>("Inventory");
+
+            foreach (var itemInventory in inventoryRecord)
+            {
+                if (!search.Contains(itemInventory.Item))
+                {
+                    search.Add(itemInventory.Item);
+                }
+            }
+
+            this.CboItem.AutoCompleteCustomSource = search;
+        }
 
         private void BtnX_Click(object sender, EventArgs e)
         {
@@ -34,7 +53,7 @@
 
         private void RefreshAddButton()
         {
-            bool itemExists = this.db.CheckExistenceByGeneric<TransactionTempModel, string>("TransactionTemp", "Item", this.cboItem.Text);
+            bool itemExists = this.db.CheckExistenceByGeneric<TransactionTempModel, string>("TransactionTemp", "Item", this.CboItem.Text);
             if (itemExists)
             {
                 this.btnAddItem.Text = "MODIFY";
@@ -48,9 +67,9 @@
         private void RefreshDataUpper()
         {
             // Refresh Total Unit Price
-            if (!string.IsNullOrEmpty(this.cboItem.Text) && int.TryParse(this.txtQuantity.Text, out int result))
+            if (!string.IsNullOrEmpty(this.CboItem.Text) && int.TryParse(this.txtQuantity.Text, out int result))
             {
-                InventoryModel selectedRecord = this.db.LoadRecordsByGenericT<InventoryModel, string>("Inventory", "Item", this.cboItem.Text);
+                InventoryModel selectedRecord = this.db.LoadRecordsByGenericT<InventoryModel, string>("Inventory", "Item", this.CboItem.Text);
                 this.txtUnitPrice.Text = selectedRecord.UnitPrice.ToString(CultureInfo.InvariantCulture);
                 this.txtTotalUnitPrice.Text = (selectedRecord.UnitPrice * result)
                         .ToString(CultureInfo.InvariantCulture);
@@ -69,7 +88,7 @@
 
         private void RefreshCboItems()
         {
-            this.cboCategory.Text = this.cboItem.Text = string.Empty;
+            this.cboCategory.Text = this.CboItem.Text = string.Empty;
             this.txtQuantity.Text = this.txtUnitPrice.Text = this.txtTotalUnitPrice.Text = "0";
 
             var inventoryRecord = this.db.LoadRecords<InventoryModel>("Inventory");
@@ -80,9 +99,9 @@
                     this.cboCategory.Items.Add(cboInventory.Category);
                 }
 
-                if (!this.cboItem.Items.Contains(cboInventory.Item))
+                if (!this.CboItem.Items.Contains(cboInventory.Item))
                 {
-                    this.cboItem.Items.Add(cboInventory.Item);
+                    this.CboItem.Items.Add(cboInventory.Item);
                 }
             }
         }
@@ -159,7 +178,7 @@
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 this.Id = this.dgdCart.Rows[e.RowIndex].Cells[0].Value.ToString();
-                this.cboItem.Text = this.dgdCart.Rows[e.RowIndex].Cells[1].Value.ToString();
+                this.CboItem.Text = this.dgdCart.Rows[e.RowIndex].Cells[1].Value.ToString();
                 this.txtQuantity.Text = this.dgdCart.Rows[e.RowIndex].Cells[2].Value.ToString();
                 this.txtUnitPrice.Text = this.dgdCart.Rows[e.RowIndex].Cells[3].Value.ToString();
                 this.txtTotalUnitPrice.Text = this.dgdCart.Rows[e.RowIndex].Cells[4].Value.ToString();
@@ -185,7 +204,7 @@
 
         private void TxtQuantity_TextChanged(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(this.cboItem.Text))
+            if (!string.IsNullOrEmpty(this.CboItem.Text))
             {
                 this.RefreshAddButton();
                 this.RefreshDataUpper();
@@ -200,24 +219,24 @@
         private void CboCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Pass the value before resetting the box
-            string returnItem = this.cboItem.Text;
+            string returnItem = this.CboItem.Text;
 
             // Reset the cboItem value
-            this.cboItem.Items.Clear();
-            this.cboItem.Text = string.Empty;
+            this.CboItem.Items.Clear();
+            this.CboItem.Text = string.Empty;
             var selectedCatRecord = this.db.LoadRecordsByGenericList<InventoryModel, string>("Inventory", "Category", this.cboCategory.Text);
 
             // Change cboItem.Items value depending on selected cboCategory
             foreach (var cboInventory in selectedCatRecord)
             {
-                if (!this.cboItem.Items.Contains(cboInventory.Item))
+                if (!this.CboItem.Items.Contains(cboInventory.Item))
                 {
-                    this.cboItem.Items.Add(cboInventory.Item);
+                    this.CboItem.Items.Add(cboInventory.Item);
 
                     // Show the cleared value at the textbox if same category
                     if (returnItem == cboInventory.Item)
                     {
-                        this.cboItem.Text = returnItem;
+                        this.CboItem.Text = returnItem;
                     }
                 }
             }
@@ -234,11 +253,11 @@
 
         private void BtnAddItem_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(this.cboItem.Text))
+            if (!string.IsNullOrEmpty(this.CboItem.Text))
             {
                 if (int.TryParse(this.txtQuantity.Text, out int result) && result > 0)
                 {
-                    var selectedInvRecord = this.db.LoadRecordsByGenericT<InventoryModel, string>("Inventory", "Item", this.cboItem.Text);
+                    var selectedInvRecord = this.db.LoadRecordsByGenericT<InventoryModel, string>("Inventory", "Item", this.CboItem.Text);
                     var cartExists = this.db.CheckExistenceByGeneric<TransactionTempModel, ObjectId>("TransactionTemp", "Id", selectedInvRecord.Id);
                     if (!cartExists)
                     {
@@ -425,8 +444,27 @@
 
         private void CboItem_KeyPress(object sender, KeyPressEventArgs e)
         {
-            // disable typing for no errors
-            e.Handled = true;
+            // true - disable typing
+            e.Handled = false;
+        }
+
+        private void CboItem_TextChanged(object sender, EventArgs e)
+        {
+            // Refresh the CboItem and CboCategory
+            if (string.IsNullOrEmpty(this.CboItem.Text))
+            {
+                this.cboCategory.Text = string.Empty;
+            }
+
+            // Automatic fill the Category box match with item
+            var invRecord = this.db.LoadRecords<InventoryModel>("Inventory");
+            foreach (var item in invRecord)
+            {
+                if (this.CboItem.Text == item.Item)
+                {
+                    this.cboCategory.Text = item.Category;
+                }
+            }
         }
     }
 }
