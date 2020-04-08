@@ -39,6 +39,7 @@
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblLoginBiliPC = new System.Windows.Forms.Label();
+            this.LinkResetPassword = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.picBiliPCLogo)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -58,6 +59,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.LinkResetPassword);
             this.groupBox1.Controls.Add(this.btnExit);
             this.groupBox1.Controls.Add(this.lblUsername);
             this.groupBox1.Controls.Add(this.btnLogin);
@@ -69,7 +71,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(316, 139);
+            this.groupBox1.Size = new System.Drawing.Size(316, 154);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Sign In";
@@ -83,7 +85,7 @@
             this.btnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(236, 90);
+            this.btnExit.Location = new System.Drawing.Point(236, 107);
             this.btnExit.Margin = new System.Windows.Forms.Padding(2);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(69, 32);
@@ -114,7 +116,7 @@
             this.btnLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(148, 90);
+            this.btnLogin.Location = new System.Drawing.Point(148, 107);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(69, 32);
@@ -177,6 +179,19 @@
             this.lblLoginBiliPC.TabIndex = 0;
             this.lblLoginBiliPC.Text = "Login BiliPC Store";
             // 
+            // LinkResetPassword
+            // 
+            this.LinkResetPassword.AutoSize = true;
+            this.LinkResetPassword.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LinkResetPassword.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LinkResetPassword.Location = new System.Drawing.Point(116, 80);
+            this.LinkResetPassword.Name = "LinkResetPassword";
+            this.LinkResetPassword.Size = new System.Drawing.Size(96, 14);
+            this.LinkResetPassword.TabIndex = 6;
+            this.LinkResetPassword.TabStop = true;
+            this.LinkResetPassword.Text = "reset password";
+            this.LinkResetPassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkResetPassword_LinkClicked);
+            // 
             // LoginUI
             // 
             this.AcceptButton = this.btnLogin;
@@ -185,7 +200,7 @@
             this.BackColor = System.Drawing.Color.LavenderBlush;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.CancelButton = this.btnExit;
-            this.ClientSize = new System.Drawing.Size(341, 344);
+            this.ClientSize = new System.Drawing.Size(341, 358);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.picBiliPCLogo);
             this.Controls.Add(this.groupBox1);
@@ -220,6 +235,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblLoginBiliPC;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.LinkLabel LinkResetPassword;
     }
 }
 

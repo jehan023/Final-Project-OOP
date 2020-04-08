@@ -224,6 +224,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="ResetPassUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResetPassUI.Designer.cs">
+      <DependentUpon>ResetPassUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="SalesGenerateReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -306,6 +312,9 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResetPassUI.resx">
+      <DependentUpon>ResetPassUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SalesGenerateReport.resx">
       <DependentUpon>SalesGenerateReport.cs</DependentUpon>

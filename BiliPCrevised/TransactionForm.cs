@@ -260,7 +260,6 @@
             {
                 if (this.CboItem.Text == item.Item)
                 {
-                    this.cboCategory.Text = item.Item;
                     exists = true;
                 }
             }
@@ -475,7 +474,6 @@
             // Refresh the CboItem and CboCategory
             if (string.IsNullOrEmpty(this.CboItem.Text))
             {
-                this.cboCategory.Text = string.Empty;
                 this.RefreshCboItems();
             }
 

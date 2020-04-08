@@ -87,5 +87,13 @@
         {
             Application.Exit();
         }
+
+        private void LinkResetPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            using (ResetPassUI resetpassUI = new ResetPassUI())
+            {
+                resetpassUI.ShowDialog();
+            }
+        }
     }
 }
