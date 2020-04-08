@@ -406,10 +406,10 @@
 
                             // Update status in Inventory Report
                             var selectedReportRecord = this.db.LoadRecordsByGenericT<InventoryReportModel, string>("InventoryReport", "Item", item.Item);
-                            string status = "Out";
+                            string status = "OUT";
                             if (item.Qty > 0)
                             {
-                                status = "In(" + item.Qty.ToString(CultureInfo.CurrentCulture) + ")";
+                                status = "IN (" + item.Qty.ToString(CultureInfo.CurrentCulture) + ")";
                             }
 
                             selectedReportRecord.Status = status;
