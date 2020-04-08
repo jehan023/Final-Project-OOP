@@ -251,8 +251,30 @@
             this.RefreshAddButton();
         }
 
+        // Checks item input in CboItem
+        private void CheckItem()
+        {
+            var invRecord = this.db.LoadRecords<InventoryModel>("Inventory");
+            bool exists = false;
+            foreach (var item in invRecord)
+            {
+                if (this.CboItem.Text == item.Item)
+                {
+                    this.cboCategory.Text = item.Item;
+                    exists = true;
+                }
+            }
+
+            if (exists == false)
+            {
+                MessageBox.Show("Item not exist.");
+                this.RefreshCboItems();
+            }
+        }
+
         private void BtnAddItem_Click(object sender, EventArgs e)
         {
+            this.CheckItem();
             if (!string.IsNullOrEmpty(this.CboItem.Text))
             {
                 if (int.TryParse(this.txtQuantity.Text, out int result) && result > 0)
@@ -367,7 +389,7 @@
             var cartRecord = this.db.LoadRecords<TransactionTempModel>("TransactionTemp");
             if (cartRecord.Any())
             {
-                if (double.TryParse(this.txtChange.Text, out double change) && change > 0)
+                if (double.TryParse(this.txtChange.Text, out double change) && change >= 0)
                 {
                     this.Transact(cartRecord);
                 }
@@ -454,6 +476,7 @@
             if (string.IsNullOrEmpty(this.CboItem.Text))
             {
                 this.cboCategory.Text = string.Empty;
+                this.RefreshCboItems();
             }
 
             // Automatic fill the Category box match with item
