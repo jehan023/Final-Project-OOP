@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlTop = new System.Windows.Forms.Panel();
             this.btnX = new System.Windows.Forms.Button();
             this.lblTransaction = new System.Windows.Forms.Label();
@@ -38,7 +38,7 @@
             this.lblCategory = new System.Windows.Forms.Label();
             this.cboCategory = new System.Windows.Forms.ComboBox();
             this.CboItem = new System.Windows.Forms.ComboBox();
-            this.txtTransacationID = new System.Windows.Forms.TextBox();
+            this.txtTransactionID = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtChange = new System.Windows.Forms.TextBox();
             this.lblChange = new System.Windows.Forms.Label();
@@ -114,7 +114,7 @@
             this.lblTransaction.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTransaction.Name = "lblTransaction";
             this.lblTransaction.Size = new System.Drawing.Size(202, 37);
-            this.lblTransaction.TabIndex = 2;
+            this.lblTransaction.TabIndex = 1;
             this.lblTransaction.Text = "Transaction";
             // 
             // pnlBackground
@@ -126,7 +126,7 @@
             this.pnlBackground.Controls.Add(this.lblCategory);
             this.pnlBackground.Controls.Add(this.cboCategory);
             this.pnlBackground.Controls.Add(this.CboItem);
-            this.pnlBackground.Controls.Add(this.txtTransacationID);
+            this.pnlBackground.Controls.Add(this.txtTransactionID);
             this.pnlBackground.Controls.Add(this.groupBox2);
             this.pnlBackground.Controls.Add(this.btnAddDiscount);
             this.pnlBackground.Controls.Add(this.lblTransactionID);
@@ -145,7 +145,7 @@
             this.pnlBackground.Location = new System.Drawing.Point(0, 56);
             this.pnlBackground.Name = "pnlBackground";
             this.pnlBackground.Size = new System.Drawing.Size(945, 583);
-            this.pnlBackground.TabIndex = 1;
+            this.pnlBackground.TabIndex = 16;
             // 
             // btnTransact
             // 
@@ -159,7 +159,7 @@
             this.btnTransact.Margin = new System.Windows.Forms.Padding(2);
             this.btnTransact.Name = "btnTransact";
             this.btnTransact.Size = new System.Drawing.Size(132, 45);
-            this.btnTransact.TabIndex = 61;
+            this.btnTransact.TabIndex = 27;
             this.btnTransact.Text = "TRANSACT";
             this.btnTransact.UseVisualStyleBackColor = false;
             this.btnTransact.Click += new System.EventHandler(this.BtnTransact_Click);
@@ -175,7 +175,7 @@
             this.lblCategory.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCategory.Name = "lblCategory";
             this.lblCategory.Size = new System.Drawing.Size(95, 24);
-            this.lblCategory.TabIndex = 60;
+            this.lblCategory.TabIndex = 6;
             this.lblCategory.Text = "Category :";
             // 
             // cboCategory
@@ -187,7 +187,7 @@
             this.cboCategory.Margin = new System.Windows.Forms.Padding(2);
             this.cboCategory.Name = "cboCategory";
             this.cboCategory.Size = new System.Drawing.Size(192, 28);
-            this.cboCategory.TabIndex = 59;
+            this.cboCategory.TabIndex = 7;
             this.cboCategory.SelectedIndexChanged += new System.EventHandler(this.CboCategory_SelectedIndexChanged);
             // 
             // CboItem
@@ -201,23 +201,23 @@
             this.CboItem.Margin = new System.Windows.Forms.Padding(2);
             this.CboItem.Name = "CboItem";
             this.CboItem.Size = new System.Drawing.Size(372, 28);
-            this.CboItem.TabIndex = 58;
+            this.CboItem.TabIndex = 5;
             this.CboItem.SelectedIndexChanged += new System.EventHandler(this.CboItem_SelectedIndexChanged);
             this.CboItem.TextChanged += new System.EventHandler(this.CboItem_TextChanged);
             this.CboItem.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CboItem_KeyPress);
             // 
-            // txtTransacationID
+            // txtTransactionID
             // 
-            this.txtTransacationID.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtTransacationID.BackColor = System.Drawing.Color.DarkGray;
-            this.txtTransacationID.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTransacationID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTransacationID.Location = new System.Drawing.Point(162, 6);
-            this.txtTransacationID.Margin = new System.Windows.Forms.Padding(2);
-            this.txtTransacationID.Name = "txtTransacationID";
-            this.txtTransacationID.ReadOnly = true;
-            this.txtTransacationID.Size = new System.Drawing.Size(633, 19);
-            this.txtTransacationID.TabIndex = 57;
+            this.txtTransactionID.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtTransactionID.BackColor = System.Drawing.Color.DarkGray;
+            this.txtTransactionID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTransactionID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTransactionID.Location = new System.Drawing.Point(162, 6);
+            this.txtTransactionID.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTransactionID.Name = "txtTransactionID";
+            this.txtTransactionID.ReadOnly = true;
+            this.txtTransactionID.Size = new System.Drawing.Size(633, 19);
+            this.txtTransactionID.TabIndex = 3;
             // 
             // groupBox2
             // 
@@ -229,7 +229,7 @@
             this.groupBox2.Location = new System.Drawing.Point(19, 414);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(361, 157);
-            this.groupBox2.TabIndex = 55;
+            this.groupBox2.TabIndex = 18;
             this.groupBox2.TabStop = false;
             // 
             // txtChange
@@ -242,7 +242,7 @@
             this.txtChange.Name = "txtChange";
             this.txtChange.ReadOnly = true;
             this.txtChange.Size = new System.Drawing.Size(312, 39);
-            this.txtChange.TabIndex = 55;
+            this.txtChange.TabIndex = 22;
             // 
             // lblChange
             // 
@@ -255,7 +255,7 @@
             this.lblChange.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblChange.Name = "lblChange";
             this.lblChange.Size = new System.Drawing.Size(77, 24);
-            this.lblChange.TabIndex = 56;
+            this.lblChange.TabIndex = 21;
             this.lblChange.Text = "Change";
             // 
             // txtAmountReceived
@@ -268,7 +268,7 @@
             this.txtAmountReceived.Margin = new System.Windows.Forms.Padding(2);
             this.txtAmountReceived.Name = "txtAmountReceived";
             this.txtAmountReceived.Size = new System.Drawing.Size(312, 39);
-            this.txtAmountReceived.TabIndex = 54;
+            this.txtAmountReceived.TabIndex = 20;
             this.txtAmountReceived.TextChanged += new System.EventHandler(this.TxtAmountReceived_TextChanged);
             this.txtAmountReceived.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtAmountReceived_KeyPress);
             // 
@@ -283,7 +283,7 @@
             this.lblCash.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCash.Name = "lblCash";
             this.lblCash.Size = new System.Drawing.Size(53, 24);
-            this.lblCash.TabIndex = 54;
+            this.lblCash.TabIndex = 19;
             this.lblCash.Text = "Cash";
             // 
             // btnAddDiscount
@@ -298,7 +298,7 @@
             this.btnAddDiscount.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddDiscount.Name = "btnAddDiscount";
             this.btnAddDiscount.Size = new System.Drawing.Size(132, 45);
-            this.btnAddDiscount.TabIndex = 53;
+            this.btnAddDiscount.TabIndex = 26;
             this.btnAddDiscount.Text = "ADD DISCOUNT";
             this.btnAddDiscount.UseVisualStyleBackColor = false;
             this.btnAddDiscount.Click += new System.EventHandler(this.BtnAddDiscount_Click);
@@ -314,7 +314,7 @@
             this.lblTransactionID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTransactionID.Name = "lblTransactionID";
             this.lblTransactionID.Size = new System.Drawing.Size(140, 24);
-            this.lblTransactionID.TabIndex = 56;
+            this.lblTransactionID.TabIndex = 2;
             this.lblTransactionID.Text = "Transaction ID: ";
             // 
             // btnPrintReceipt
@@ -329,7 +329,7 @@
             this.btnPrintReceipt.Margin = new System.Windows.Forms.Padding(2);
             this.btnPrintReceipt.Name = "btnPrintReceipt";
             this.btnPrintReceipt.Size = new System.Drawing.Size(132, 45);
-            this.btnPrintReceipt.TabIndex = 52;
+            this.btnPrintReceipt.TabIndex = 28;
             this.btnPrintReceipt.Text = "TRANSACT w/ RECEIPT";
             this.btnPrintReceipt.UseVisualStyleBackColor = false;
             this.btnPrintReceipt.Click += new System.EventHandler(this.BtnPrintReceipt_Click);
@@ -343,7 +343,7 @@
             this.txtUnitPrice.Name = "txtUnitPrice";
             this.txtUnitPrice.ReadOnly = true;
             this.txtUnitPrice.Size = new System.Drawing.Size(171, 26);
-            this.txtUnitPrice.TabIndex = 51;
+            this.txtUnitPrice.TabIndex = 11;
             // 
             // lblUnitPrice
             // 
@@ -356,7 +356,7 @@
             this.lblUnitPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUnitPrice.Name = "lblUnitPrice";
             this.lblUnitPrice.Size = new System.Drawing.Size(100, 24);
-            this.lblUnitPrice.TabIndex = 50;
+            this.lblUnitPrice.TabIndex = 10;
             this.lblUnitPrice.Text = "Unit Price :";
             // 
             // groupBox1
@@ -367,7 +367,7 @@
             this.groupBox1.Location = new System.Drawing.Point(421, 414);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(502, 98);
-            this.groupBox1.TabIndex = 49;
+            this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
             // 
             // txtTotalPrice
@@ -380,7 +380,7 @@
             this.txtTotalPrice.Name = "txtTotalPrice";
             this.txtTotalPrice.ReadOnly = true;
             this.txtTotalPrice.Size = new System.Drawing.Size(466, 45);
-            this.txtTotalPrice.TabIndex = 54;
+            this.txtTotalPrice.TabIndex = 25;
             // 
             // lblTotalAmountDue
             // 
@@ -393,7 +393,7 @@
             this.lblTotalAmountDue.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTotalAmountDue.Name = "lblTotalAmountDue";
             this.lblTotalAmountDue.Size = new System.Drawing.Size(184, 25);
-            this.lblTotalAmountDue.TabIndex = 54;
+            this.lblTotalAmountDue.TabIndex = 24;
             this.lblTotalAmountDue.Text = "Total Amount Due";
             // 
             // btnAddItem
@@ -408,7 +408,7 @@
             this.btnAddItem.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddItem.Name = "btnAddItem";
             this.btnAddItem.Size = new System.Drawing.Size(109, 41);
-            this.btnAddItem.TabIndex = 48;
+            this.btnAddItem.TabIndex = 14;
             this.btnAddItem.Text = "ADD";
             this.btnAddItem.UseVisualStyleBackColor = false;
             this.btnAddItem.Click += new System.EventHandler(this.BtnAddItem_Click);
@@ -425,7 +425,7 @@
             this.btnRemoveItem.Margin = new System.Windows.Forms.Padding(2);
             this.btnRemoveItem.Name = "btnRemoveItem";
             this.btnRemoveItem.Size = new System.Drawing.Size(109, 41);
-            this.btnRemoveItem.TabIndex = 47;
+            this.btnRemoveItem.TabIndex = 15;
             this.btnRemoveItem.Text = "REMOVE";
             this.btnRemoveItem.UseVisualStyleBackColor = false;
             this.btnRemoveItem.Click += new System.EventHandler(this.BtnRemoveItem_Click);
@@ -441,7 +441,7 @@
             this.lblTotalUnitPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTotalUnitPrice.Name = "lblTotalUnitPrice";
             this.lblTotalUnitPrice.Size = new System.Drawing.Size(141, 24);
-            this.lblTotalUnitPrice.TabIndex = 46;
+            this.lblTotalUnitPrice.TabIndex = 12;
             this.lblTotalUnitPrice.Text = "Total Unit Price:";
             // 
             // txtTotalUnitPrice
@@ -453,7 +453,7 @@
             this.txtTotalUnitPrice.Name = "txtTotalUnitPrice";
             this.txtTotalUnitPrice.ReadOnly = true;
             this.txtTotalUnitPrice.Size = new System.Drawing.Size(192, 26);
-            this.txtTotalUnitPrice.TabIndex = 45;
+            this.txtTotalUnitPrice.TabIndex = 13;
             // 
             // txtQuantity
             // 
@@ -463,7 +463,7 @@
             this.txtQuantity.Margin = new System.Windows.Forms.Padding(2);
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(64, 26);
-            this.txtQuantity.TabIndex = 44;
+            this.txtQuantity.TabIndex = 9;
             this.txtQuantity.TextChanged += new System.EventHandler(this.TxtQuantity_TextChanged);
             this.txtQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtQuantity_KeyPress);
             // 
@@ -478,7 +478,7 @@
             this.lblQuantity.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblQuantity.Name = "lblQuantity";
             this.lblQuantity.Size = new System.Drawing.Size(48, 24);
-            this.lblQuantity.TabIndex = 43;
+            this.lblQuantity.TabIndex = 8;
             this.lblQuantity.Text = "Qty :";
             // 
             // lblItem
@@ -492,7 +492,7 @@
             this.lblItem.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblItem.Name = "lblItem";
             this.lblItem.Size = new System.Drawing.Size(55, 24);
-            this.lblItem.TabIndex = 41;
+            this.lblItem.TabIndex = 4;
             this.lblItem.Text = "Item :";
             // 
             // dgdCart
@@ -503,14 +503,14 @@
             this.dgdCart.AutoGenerateColumns = false;
             this.dgdCart.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgdCart.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgdCart.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgdCart.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgdCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgdCart.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
@@ -527,7 +527,7 @@
             this.dgdCart.RowHeadersWidth = 51;
             this.dgdCart.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgdCart.Size = new System.Drawing.Size(904, 301);
-            this.dgdCart.TabIndex = 0;
+            this.dgdCart.TabIndex = 17;
             this.dgdCart.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgdCart_CellClick);
             // 
             // idDataGridViewTextBoxColumn
@@ -629,7 +629,7 @@
         private System.Windows.Forms.Label lblChange;
         private System.Windows.Forms.TextBox txtAmountReceived;
         private System.Windows.Forms.Label lblCash;
-        private System.Windows.Forms.TextBox txtTransacationID;
+        private System.Windows.Forms.TextBox txtTransactionID;
         private System.Windows.Forms.Label lblTransactionID;
         private System.Windows.Forms.ComboBox CboItem;
         private System.Windows.Forms.ComboBox cboCategory;

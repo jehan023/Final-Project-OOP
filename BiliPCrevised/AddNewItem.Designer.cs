@@ -62,7 +62,7 @@
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
             this.pnlTop.Name = "pnlTop";
             this.pnlTop.Size = new System.Drawing.Size(445, 58);
-            this.pnlTop.TabIndex = 0;
+            this.pnlTop.TabIndex = 2;
             // 
             // lblAddNewItem
             // 
@@ -72,7 +72,7 @@
             this.lblAddNewItem.Location = new System.Drawing.Point(151, 21);
             this.lblAddNewItem.Name = "lblAddNewItem";
             this.lblAddNewItem.Size = new System.Drawing.Size(139, 22);
-            this.lblAddNewItem.TabIndex = 0;
+            this.lblAddNewItem.TabIndex = 1;
             this.lblAddNewItem.Text = "Add New Item";
             // 
             // pnlBottom
@@ -126,7 +126,7 @@
             this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(109, 31);
-            this.btnCancel.TabIndex = 66;
+            this.btnCancel.TabIndex = 20;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
@@ -143,7 +143,7 @@
             this.btnAddItem.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddItem.Name = "btnAddItem";
             this.btnAddItem.Size = new System.Drawing.Size(109, 31);
-            this.btnAddItem.TabIndex = 65;
+            this.btnAddItem.TabIndex = 19;
             this.btnAddItem.Text = "Add item";
             this.btnAddItem.UseVisualStyleBackColor = false;
             this.btnAddItem.Click += new System.EventHandler(this.BtnAddItem_Click);
@@ -165,7 +165,7 @@
             this.GroupTextBox.Location = new System.Drawing.Point(32, 16);
             this.GroupTextBox.Name = "GroupTextBox";
             this.GroupTextBox.Size = new System.Drawing.Size(374, 352);
-            this.GroupTextBox.TabIndex = 67;
+            this.GroupTextBox.TabIndex = 6;
             this.GroupTextBox.TabStop = false;
             // 
             // label3
@@ -179,7 +179,7 @@
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(74, 18);
-            this.label3.TabIndex = 63;
+            this.label3.TabIndex = 17;
             this.label3.Text = "Supplier";
             // 
             // txtItem
@@ -191,7 +191,7 @@
             this.txtItem.Multiline = true;
             this.txtItem.Name = "txtItem";
             this.txtItem.Size = new System.Drawing.Size(336, 21);
-            this.txtItem.TabIndex = 54;
+            this.txtItem.TabIndex = 8;
             // 
             // label7
             // 
@@ -204,7 +204,7 @@
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(82, 18);
-            this.label7.TabIndex = 61;
+            this.label7.TabIndex = 15;
             this.label7.Text = "Category";
             // 
             // txtSupplier
@@ -215,7 +215,7 @@
             this.txtSupplier.Margin = new System.Windows.Forms.Padding(2);
             this.txtSupplier.Name = "txtSupplier";
             this.txtSupplier.Size = new System.Drawing.Size(336, 21);
-            this.txtSupplier.TabIndex = 64;
+            this.txtSupplier.TabIndex = 18;
             // 
             // label6
             // 
@@ -228,7 +228,7 @@
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(45, 18);
-            this.label6.TabIndex = 59;
+            this.label6.TabIndex = 13;
             this.label6.Text = "Cost";
             // 
             // txtQuantity
@@ -239,7 +239,7 @@
             this.txtQuantity.Margin = new System.Windows.Forms.Padding(2);
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(336, 21);
-            this.txtQuantity.TabIndex = 56;
+            this.txtQuantity.TabIndex = 10;
             this.txtQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtQuantity_KeyPress);
             // 
             // label9
@@ -253,7 +253,7 @@
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(86, 18);
-            this.label9.TabIndex = 57;
+            this.label9.TabIndex = 11;
             this.label9.Text = "Unit Price";
             // 
             // txtUnitPrice
@@ -264,7 +264,7 @@
             this.txtUnitPrice.Margin = new System.Windows.Forms.Padding(2);
             this.txtUnitPrice.Name = "txtUnitPrice";
             this.txtUnitPrice.Size = new System.Drawing.Size(336, 21);
-            this.txtUnitPrice.TabIndex = 58;
+            this.txtUnitPrice.TabIndex = 12;
             this.txtUnitPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtUnitPrice_KeyPress);
             // 
             // label4
@@ -278,7 +278,7 @@
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(76, 18);
-            this.label4.TabIndex = 55;
+            this.label4.TabIndex = 9;
             this.label4.Text = "Quantity";
             // 
             // TxtCost
@@ -289,7 +289,7 @@
             this.TxtCost.Margin = new System.Windows.Forms.Padding(2);
             this.TxtCost.Name = "TxtCost";
             this.TxtCost.Size = new System.Drawing.Size(336, 21);
-            this.TxtCost.TabIndex = 60;
+            this.TxtCost.TabIndex = 14;
             this.TxtCost.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCost_KeyPress);
             // 
             // txtCategory
@@ -300,7 +300,7 @@
             this.txtCategory.Margin = new System.Windows.Forms.Padding(2);
             this.txtCategory.Name = "txtCategory";
             this.txtCategory.Size = new System.Drawing.Size(336, 21);
-            this.txtCategory.TabIndex = 62;
+            this.txtCategory.TabIndex = 16;
             // 
             // label2
             // 
@@ -313,7 +313,7 @@
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(43, 18);
-            this.label2.TabIndex = 53;
+            this.label2.TabIndex = 7;
             this.label2.Text = "Item";
             // 
             // AddNewItem

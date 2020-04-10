@@ -38,6 +38,13 @@
                     && double.TryParse(this.txtUnitPrice.Text, out double unitPrice)
                     && double.TryParse(this.TxtCost.Text, out double cost))
                 {
+                    // Default stock status unless specified
+                    string status = "OUT";
+                    if (quantity > 0)
+                    {
+                        status = "IN (" + quantity.ToString(CultureInfo.CurrentCulture) + ")";
+                    }
+
                     // Insert to Inventory
                     this.db.InsertRecord("Inventory", new InventoryModel
                     {
@@ -45,28 +52,11 @@
                         Qty = quantity,
                         UnitPrice = unitPrice,
                         Cost = cost,
-                        Date = DateTime.Now,
-                        Category = this.txtCategory.Text,
-                        Supplier = this.txtSupplier.Text,
-                        Status = quantity != 0,
-                    });
-
-                    // Insert to Inventory Report
-                    string status = "OUT";
-                    if (quantity > 0)
-                    {
-                        status = "IN (" + quantity.ToString(CultureInfo.CurrentCulture) + ")";
-                    }
-
-                    this.db.InsertRecord("InventoryReport", new InventoryReportModel
-                    {
-                        Item = this.txtItem.Text,
                         DateModified = DateTime.Now,
-                        Status = status,
-                        RetailAmount = unitPrice,
-                        Cost = cost,
                         Category = this.txtCategory.Text,
                         Supplier = this.txtSupplier.Text,
+                        InStock = quantity != 0,
+                        Status = status,
                     });
 
                     MessageBox.Show("Item saved!");

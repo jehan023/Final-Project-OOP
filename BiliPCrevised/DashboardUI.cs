@@ -178,13 +178,20 @@
             LoginUI.IsLoggedIn = false;
             var userRecord = db.LoadRecordsByGenericT<UsersModel, string>("Users", "Name", AcctName);
             var loginRecord = db.LoadRecordByGenericSortedT<TrackEmployeesModel, ObjectId>("TrackEmployees", "AcctId", userRecord.Id, "Date");
+            double workHours = (DateTime.Now - loginRecord.Date).TotalHours + loginRecord.TotalWorkHours;
+
+            // Update current workhours in the UsersModel
+            userRecord.Workhours = workHours;
+            db.UpsertRecord("Users", userRecord.Id, userRecord);
+
+            // Insert to Track Employees Database
             db.InsertRecord("TrackEmployees", new TrackEmployeesModel
             {
                 AcctName = AcctName,
                 AcctId = userRecord.Id,
                 Date = DateTime.Now,
                 LoggedIn = LoginUI.IsLoggedIn,
-                TotalWorkHours = (DateTime.Now - loginRecord.Date).TotalHours + loginRecord.TotalWorkHours,
+                TotalWorkHours = workHours,
                 Salary = userRecord.Salary,
             });
             AcctName = null;

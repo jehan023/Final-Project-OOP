@@ -90,10 +90,8 @@
 
         private void LinkResetPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            using (ResetPassUI resetpassUI = new ResetPassUI())
-            {
-                resetpassUI.ShowDialog();
-            }
+            using ResetPassUI resetpassUI = new ResetPassUI();
+            resetpassUI.ShowDialog();
         }
     }
 }

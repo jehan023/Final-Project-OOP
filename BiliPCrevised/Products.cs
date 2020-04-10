@@ -56,9 +56,9 @@
                 this.txtQuantity.Text = this.dgdProduct.Rows[0].Cells[2].Value.ToString();
                 this.txtUnitPrice.Text = this.dgdProduct.Rows[0].Cells[3].Value.ToString();
                 this.txtCost.Text = this.dgdProduct.Rows[0].Cells[4].Value.ToString();
-                this.txtDate.Text = this.dgdProduct.Rows[0].Cells[5].Value.ToString();
-                this.txtCategory.Text = this.dgdProduct.Rows[0].Cells[6].Value.ToString();
-                this.txtSupplier.Text = this.dgdProduct.Rows[0].Cells[7].Value.ToString();
+                this.txtCategory.Text = this.dgdProduct.Rows[0].Cells[5].Value.ToString();
+                this.txtSupplier.Text = this.dgdProduct.Rows[0].Cells[6].Value.ToString();
+                this.txtDate.Text = this.dgdProduct.Rows[0].Cells[7].Value.ToString();
                 this.radInStockTrue.Checked = this.dgdProduct.Rows[0].Cells[8].Value.Equals(true);
                 this.radInStockFalse.Checked = this.dgdProduct.Rows[0].Cells[8].Value.Equals(false);
             }
@@ -125,33 +125,23 @@
             {
                 var selectedInvRecord = this.db.LoadRecordsByGenericT<InventoryModel, ObjectId>("Inventory", "Id", id);
 
-                // Updating Inventory Report -- update report first because it is dependent to the inventory
-                var selectedReportRecord = this.db.LoadRecordsByGenericT<InventoryReportModel, string>("InventoryReport", "Item", selectedInvRecord.Item);
+                // Default stock status unless specified
                 string status = "OUT";
                 if (quantity > 0)
                 {
                     status = "IN (" + quantity.ToString(CultureInfo.CurrentCulture) + ")";
                 }
 
-                selectedReportRecord.Item = selectedInvRecord.Item;
-                selectedReportRecord.DateModified = DateTime.Now;
-                selectedReportRecord.Cost = selectedInvRecord.Cost;
-                selectedReportRecord.RetailAmount = selectedInvRecord.UnitPrice;
-                selectedReportRecord.Category = selectedInvRecord.Category;
-                selectedReportRecord.Supplier = selectedInvRecord.Supplier;
-                selectedReportRecord.Status = status;
-
-                this.db.UpsertRecord("InventoryReport", selectedReportRecord.Id, selectedReportRecord);
-
                 // Updating Inventory
                 selectedInvRecord.Item = this.txtItemName.Text;
                 selectedInvRecord.Qty = quantity;
                 selectedInvRecord.UnitPrice = unitPrice;
                 selectedInvRecord.Cost = cost;
-                selectedInvRecord.Date = DateTime.Now;
+                selectedInvRecord.DateModified = DateTime.Now;
                 selectedInvRecord.Category = this.txtCategory.Text;
                 selectedInvRecord.Supplier = this.txtSupplier.Text;
-                selectedInvRecord.Status = quantity != 0;
+                selectedInvRecord.InStock = quantity != 0;
+                selectedInvRecord.Status = status;
 
                 this.db.UpsertRecord("Inventory", selectedInvRecord.Id, selectedInvRecord);
                 MessageBox.Show("Item updated.");
@@ -193,17 +183,17 @@
         {
             if (!string.IsNullOrEmpty(this.idBox.Text) && ObjectId.TryParse(this.idBox.Text, out ObjectId id))
             {
-                // Record deleted Item then delete from Inventory Report
-                this.db.InsertRecord("InventoryDeletedRecords", new InventoryReportModel
-                {
-                    Item = this.txtItemName.Text,
-                    DateModified = DateTime.Now,
-                    Category = this.txtCategory.Text,
-                    Supplier = this.txtSupplier.Text,
-                });
                 var selectedRecord = this.db.LoadRecordsByGenericT<InventoryModel, ObjectId>("Inventory", "Id", id);
-                var selectedRepRec = this.db.LoadRecordsByGenericT<InventoryReportModel, string>("InventoryReport", "Item", selectedRecord.Item);
-                this.db.DeleleRecord<InventoryReportModel>("InventoryReport", selectedRepRec.Id);
+
+                // Record deleted Item then delete from Inventory Report
+                this.db.InsertRecord("InventoryDeletedRecords", new InventoryModel
+                {
+                    Item = selectedRecord.Item,
+                    DateModified = DateTime.Now,
+                    Qty = selectedRecord.Qty,
+                    Category = selectedRecord.Category,
+                    Supplier = selectedRecord.Supplier,
+                });
 
                 // Delete item in Inventory
                 this.db.DeleleRecord<InventoryModel>("Inventory", id);
@@ -234,9 +224,9 @@
                 this.txtQuantity.Text = this.dgdProduct.Rows[e.RowIndex].Cells[2].Value.ToString();
                 this.txtUnitPrice.Text = this.dgdProduct.Rows[e.RowIndex].Cells[3].Value.ToString();
                 this.txtCost.Text = this.dgdProduct.Rows[e.RowIndex].Cells[4].Value.ToString();
-                this.txtDate.Text = this.dgdProduct.Rows[e.RowIndex].Cells[5].Value.ToString();
-                this.txtCategory.Text = this.dgdProduct.Rows[e.RowIndex].Cells[6].Value.ToString();
-                this.txtSupplier.Text = this.dgdProduct.Rows[e.RowIndex].Cells[7].Value.ToString();
+                this.txtCategory.Text = this.dgdProduct.Rows[e.RowIndex].Cells[5].Value.ToString();
+                this.txtSupplier.Text = this.dgdProduct.Rows[e.RowIndex].Cells[6].Value.ToString();
+                this.txtDate.Text = this.dgdProduct.Rows[e.RowIndex].Cells[7].Value.ToString();
                 this.radInStockTrue.Checked = this.dgdProduct.Rows[e.RowIndex].Cells[8].Value.Equals(true);
                 this.radInStockFalse.Checked = this.dgdProduct.Rows[e.RowIndex].Cells[8].Value.Equals(false);
             }

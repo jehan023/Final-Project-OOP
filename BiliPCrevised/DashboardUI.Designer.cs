@@ -79,7 +79,7 @@
             this.pnlBottom.Margin = new System.Windows.Forms.Padding(2);
             this.pnlBottom.Name = "pnlBottom";
             this.pnlBottom.Size = new System.Drawing.Size(944, 24);
-            this.pnlBottom.TabIndex = 15;
+            this.pnlBottom.TabIndex = 2;
             // 
             // lblDate
             // 
@@ -92,7 +92,7 @@
             this.lblDate.Margin = new System.Windows.Forms.Padding(0);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(34, 14);
-            this.lblDate.TabIndex = 19;
+            this.lblDate.TabIndex = 8;
             this.lblDate.Text = "Date";
             this.lblDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -107,7 +107,7 @@
             this.lblTime.Margin = new System.Windows.Forms.Padding(0);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(60, 24);
-            this.lblTime.TabIndex = 18;
+            this.lblTime.TabIndex = 7;
             this.lblTime.Text = "Time";
             this.lblTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -126,7 +126,7 @@
             this.btnInventory.Name = "btnInventory";
             this.btnInventory.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
             this.btnInventory.Size = new System.Drawing.Size(206, 30);
-            this.btnInventory.TabIndex = 11;
+            this.btnInventory.TabIndex = 12;
             this.btnInventory.Text = "Inventory";
             this.btnInventory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnInventory.UseVisualStyleBackColor = true;
@@ -153,7 +153,7 @@
             this.pnlSideMenu.Margin = new System.Windows.Forms.Padding(2);
             this.pnlSideMenu.Name = "pnlSideMenu";
             this.pnlSideMenu.Size = new System.Drawing.Size(206, 687);
-            this.pnlSideMenu.TabIndex = 13;
+            this.pnlSideMenu.TabIndex = 14;
             // 
             // txtAcctName
             // 
@@ -164,7 +164,7 @@
             this.txtAcctName.Location = new System.Drawing.Point(9, 559);
             this.txtAcctName.Name = "txtAcctName";
             this.txtAcctName.Size = new System.Drawing.Size(43, 17);
-            this.txtAcctName.TabIndex = 24;
+            this.txtAcctName.TabIndex = 6;
             this.txtAcctName.Text = "User";
             // 
             // lblLoggedInAs
@@ -176,7 +176,7 @@
             this.lblLoggedInAs.Location = new System.Drawing.Point(9, 542);
             this.lblLoggedInAs.Name = "lblLoggedInAs";
             this.lblLoggedInAs.Size = new System.Drawing.Size(79, 12);
-            this.lblLoggedInAs.TabIndex = 23;
+            this.lblLoggedInAs.TabIndex = 5;
             this.lblLoggedInAs.Text = "Logged in as:";
             // 
             // btnLogout
@@ -194,7 +194,7 @@
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
             this.btnLogout.Size = new System.Drawing.Size(206, 30);
-            this.btnLogout.TabIndex = 22;
+            this.btnLogout.TabIndex = 40;
             this.btnLogout.Text = "Logout";
             this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLogout.UseVisualStyleBackColor = true;
@@ -228,7 +228,7 @@
             this.btnTrackEmployees.Name = "btnTrackEmployees";
             this.btnTrackEmployees.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnTrackEmployees.Size = new System.Drawing.Size(206, 30);
-            this.btnTrackEmployees.TabIndex = 3;
+            this.btnTrackEmployees.TabIndex = 1;
             this.btnTrackEmployees.Text = "Track Employees";
             this.btnTrackEmployees.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTrackEmployees.UseVisualStyleBackColor = true;
@@ -249,7 +249,7 @@
             this.btnViewEmployees.Name = "btnViewEmployees";
             this.btnViewEmployees.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnViewEmployees.Size = new System.Drawing.Size(206, 30);
-            this.btnViewEmployees.TabIndex = 2;
+            this.btnViewEmployees.TabIndex = 0;
             this.btnViewEmployees.Text = "View Employees";
             this.btnViewEmployees.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnViewEmployees.UseVisualStyleBackColor = true;
@@ -270,7 +270,7 @@
             this.btnManageEmployees.Name = "btnManageEmployees";
             this.btnManageEmployees.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
             this.btnManageEmployees.Size = new System.Drawing.Size(206, 30);
-            this.btnManageEmployees.TabIndex = 20;
+            this.btnManageEmployees.TabIndex = 21;
             this.btnManageEmployees.Text = "Manage Employees";
             this.btnManageEmployees.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnManageEmployees.UseVisualStyleBackColor = true;
@@ -305,7 +305,7 @@
             this.btnInventoryReport.Name = "btnInventoryReport";
             this.btnInventoryReport.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnInventoryReport.Size = new System.Drawing.Size(206, 30);
-            this.btnInventoryReport.TabIndex = 4;
+            this.btnInventoryReport.TabIndex = 2;
             this.btnInventoryReport.Text = "Report";
             this.btnInventoryReport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnInventoryReport.UseVisualStyleBackColor = true;
@@ -326,7 +326,7 @@
             this.btnEditProducts.Name = "btnEditProducts";
             this.btnEditProducts.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnEditProducts.Size = new System.Drawing.Size(206, 30);
-            this.btnEditProducts.TabIndex = 3;
+            this.btnEditProducts.TabIndex = 1;
             this.btnEditProducts.Text = "Edit Products";
             this.btnEditProducts.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEditProducts.UseVisualStyleBackColor = true;
@@ -347,7 +347,7 @@
             this.btnSearchProducts.Name = "btnSearchProducts";
             this.btnSearchProducts.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnSearchProducts.Size = new System.Drawing.Size(206, 30);
-            this.btnSearchProducts.TabIndex = 2;
+            this.btnSearchProducts.TabIndex = 0;
             this.btnSearchProducts.Text = "Search Products";
             this.btnSearchProducts.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSearchProducts.UseVisualStyleBackColor = true;
@@ -382,7 +382,7 @@
             this.btnSalesReport.Name = "btnSalesReport";
             this.btnSalesReport.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnSalesReport.Size = new System.Drawing.Size(206, 32);
-            this.btnSalesReport.TabIndex = 4;
+            this.btnSalesReport.TabIndex = 2;
             this.btnSalesReport.Text = "Sales Report";
             this.btnSalesReport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSalesReport.UseVisualStyleBackColor = true;
@@ -403,7 +403,7 @@
             this.btnTransactionHistory.Name = "btnTransactionHistory";
             this.btnTransactionHistory.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnTransactionHistory.Size = new System.Drawing.Size(206, 30);
-            this.btnTransactionHistory.TabIndex = 3;
+            this.btnTransactionHistory.TabIndex = 1;
             this.btnTransactionHistory.Text = "Sales History";
             this.btnTransactionHistory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTransactionHistory.UseVisualStyleBackColor = true;
@@ -424,7 +424,7 @@
             this.btnCreateTransaction.Name = "btnCreateTransaction";
             this.btnCreateTransaction.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnCreateTransaction.Size = new System.Drawing.Size(206, 30);
-            this.btnCreateTransaction.TabIndex = 2;
+            this.btnCreateTransaction.TabIndex = 0;
             this.btnCreateTransaction.Text = "Create Transaction";
             this.btnCreateTransaction.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCreateTransaction.UseVisualStyleBackColor = true;
@@ -445,7 +445,7 @@
             this.btnSales.Name = "btnSales";
             this.btnSales.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
             this.btnSales.Size = new System.Drawing.Size(206, 30);
-            this.btnSales.TabIndex = 9;
+            this.btnSales.TabIndex = 10;
             this.btnSales.Text = "Sales";
             this.btnSales.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSales.UseVisualStyleBackColor = true;
@@ -459,7 +459,7 @@
             this.panelLogo.Margin = new System.Windows.Forms.Padding(2);
             this.panelLogo.Name = "panelLogo";
             this.panelLogo.Size = new System.Drawing.Size(206, 106);
-            this.panelLogo.TabIndex = 1;
+            this.panelLogo.TabIndex = 0;
             // 
             // picBiliPCLogo
             // 
@@ -480,7 +480,7 @@
             this.pnlTop.Margin = new System.Windows.Forms.Padding(2);
             this.pnlTop.Name = "pnlTop";
             this.pnlTop.Size = new System.Drawing.Size(944, 24);
-            this.pnlTop.TabIndex = 16;
+            this.pnlTop.TabIndex = 0;
             // 
             // pnlContainerForm
             // 
@@ -492,7 +492,7 @@
             this.pnlContainerForm.MinimumSize = new System.Drawing.Size(945, 639);
             this.pnlContainerForm.Name = "pnlContainerForm";
             this.pnlContainerForm.Size = new System.Drawing.Size(945, 639);
-            this.pnlContainerForm.TabIndex = 18;
+            this.pnlContainerForm.TabIndex = 0;
             // 
             // picBiliPCLogoDefault
             // 

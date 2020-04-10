@@ -32,7 +32,7 @@
                 totalPrice += item.TotalUnitPrice - (item.TotalUnitPrice * item.Discount / 100);
             }
 
-            this.txtTotalPrice.Text = totalPrice.ToString(CultureInfo.InvariantCulture);
+            this.txtTotalPrice.Text = totalPrice.ToString("F", CultureInfo.CurrentCulture);
             this.RefreshDiscountedPrice();
         }
 
@@ -48,7 +48,7 @@
                 if (double.TryParse(this.txtTotalPrice.Text, out double totalPrice))
                 {
                     this.txtDiscountedPrice.Text = (totalPrice - (discount / 100 * totalPrice))
-                        .ToString(CultureInfo.InvariantCulture);
+                        .ToString("F", CultureInfo.CurrentCulture);
                 }
             }
         }

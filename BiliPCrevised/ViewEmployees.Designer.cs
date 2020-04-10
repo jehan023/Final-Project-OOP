@@ -111,7 +111,7 @@
             this.btnSearchEmployee.Location = new System.Drawing.Point(847, 56);
             this.btnSearchEmployee.Name = "btnSearchEmployee";
             this.btnSearchEmployee.Size = new System.Drawing.Size(75, 25);
-            this.btnSearchEmployee.TabIndex = 39;
+            this.btnSearchEmployee.TabIndex = 9;
             this.btnSearchEmployee.Text = "Search";
             this.btnSearchEmployee.UseVisualStyleBackColor = false;
             this.btnSearchEmployee.Click += new System.EventHandler(this.BtnSearchEmployee_Click);
@@ -129,7 +129,7 @@
             this.btnRefresh.Margin = new System.Windows.Forms.Padding(2);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(109, 31);
-            this.btnRefresh.TabIndex = 35;
+            this.btnRefresh.TabIndex = 3;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = false;
             this.btnRefresh.Click += new System.EventHandler(this.RefreshBtn_Click);
@@ -156,7 +156,7 @@
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(186, 37);
-            this.label1.TabIndex = 1;
+            this.label1.TabIndex = 2;
             this.label1.Text = "Employees";
             // 
             // btnX
@@ -190,7 +190,7 @@
             this.btnDeleteAccount.Margin = new System.Windows.Forms.Padding(2);
             this.btnDeleteAccount.Name = "btnDeleteAccount";
             this.btnDeleteAccount.Size = new System.Drawing.Size(109, 31);
-            this.btnDeleteAccount.TabIndex = 38;
+            this.btnDeleteAccount.TabIndex = 6;
             this.btnDeleteAccount.Text = "Delete";
             this.btnDeleteAccount.UseVisualStyleBackColor = false;
             this.btnDeleteAccount.Click += new System.EventHandler(this.BtnDeleteAccount_Click);
@@ -208,7 +208,7 @@
             this.btnUpdateAccount.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdateAccount.Name = "btnUpdateAccount";
             this.btnUpdateAccount.Size = new System.Drawing.Size(109, 31);
-            this.btnUpdateAccount.TabIndex = 37;
+            this.btnUpdateAccount.TabIndex = 5;
             this.btnUpdateAccount.Text = "Update";
             this.btnUpdateAccount.UseVisualStyleBackColor = false;
             this.btnUpdateAccount.Click += new System.EventHandler(this.BtnUpdateAccount_Click);
@@ -224,7 +224,7 @@
             this.TxtSearchEmployee.Margin = new System.Windows.Forms.Padding(2);
             this.TxtSearchEmployee.Name = "TxtSearchEmployee";
             this.TxtSearchEmployee.Size = new System.Drawing.Size(186, 24);
-            this.TxtSearchEmployee.TabIndex = 40;
+            this.TxtSearchEmployee.TabIndex = 8;
             this.TxtSearchEmployee.TextChanged += new System.EventHandler(this.TxtSearchEmployee_TextChanged);
             // 
             // btnAddAccount
@@ -240,7 +240,7 @@
             this.btnAddAccount.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddAccount.Name = "btnAddAccount";
             this.btnAddAccount.Size = new System.Drawing.Size(109, 31);
-            this.btnAddAccount.TabIndex = 36;
+            this.btnAddAccount.TabIndex = 4;
             this.btnAddAccount.Text = "Add new";
             this.btnAddAccount.UseVisualStyleBackColor = false;
             this.btnAddAccount.Click += new System.EventHandler(this.BtnAddAccount_Click);
@@ -256,7 +256,7 @@
             this.lblSearchEmployee.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSearchEmployee.Name = "lblSearchEmployee";
             this.lblSearchEmployee.Size = new System.Drawing.Size(153, 18);
-            this.lblSearchEmployee.TabIndex = 39;
+            this.lblSearchEmployee.TabIndex = 7;
             this.lblSearchEmployee.Text = "Search Employee:";
             // 
             // pnlBackground
@@ -268,7 +268,7 @@
             this.pnlBackground.Location = new System.Drawing.Point(0, 100);
             this.pnlBackground.Name = "pnlBackground";
             this.pnlBackground.Size = new System.Drawing.Size(945, 539);
-            this.pnlBackground.TabIndex = 41;
+            this.pnlBackground.TabIndex = 10;
             // 
             // GroupTextBox
             // 
@@ -293,7 +293,7 @@
             this.GroupTextBox.Location = new System.Drawing.Point(0, 353);
             this.GroupTextBox.Name = "GroupTextBox";
             this.GroupTextBox.Size = new System.Drawing.Size(945, 186);
-            this.GroupTextBox.TabIndex = 43;
+            this.GroupTextBox.TabIndex = 12;
             this.GroupTextBox.TabStop = false;
             // 
             // txtAcctID
@@ -305,7 +305,7 @@
             this.txtAcctID.Name = "txtAcctID";
             this.txtAcctID.ReadOnly = true;
             this.txtAcctID.Size = new System.Drawing.Size(336, 28);
-            this.txtAcctID.TabIndex = 45;
+            this.txtAcctID.TabIndex = 14;
             // 
             // lblUserID
             // 
@@ -318,7 +318,7 @@
             this.lblUserID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUserID.Name = "lblUserID";
             this.lblUserID.Size = new System.Drawing.Size(89, 22);
-            this.lblUserID.TabIndex = 44;
+            this.lblUserID.TabIndex = 13;
             this.lblUserID.Text = "User ID :";
             // 
             // radAdminFalse
@@ -331,7 +331,7 @@
             this.radAdminFalse.Margin = new System.Windows.Forms.Padding(2);
             this.radAdminFalse.Name = "radAdminFalse";
             this.radAdminFalse.Size = new System.Drawing.Size(114, 28);
-            this.radAdminFalse.TabIndex = 58;
+            this.radAdminFalse.TabIndex = 27;
             this.radAdminFalse.TabStop = true;
             this.radAdminFalse.Text = "Employee";
             this.radAdminFalse.UseVisualStyleBackColor = true;
@@ -346,7 +346,7 @@
             this.radAdminTrue.Margin = new System.Windows.Forms.Padding(2);
             this.radAdminTrue.Name = "radAdminTrue";
             this.radAdminTrue.Size = new System.Drawing.Size(83, 28);
-            this.radAdminTrue.TabIndex = 57;
+            this.radAdminTrue.TabIndex = 26;
             this.radAdminTrue.TabStop = true;
             this.radAdminTrue.Text = "Admin";
             this.radAdminTrue.UseVisualStyleBackColor = true;
@@ -362,7 +362,7 @@
             this.lblSalary.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSalary.Name = "lblSalary";
             this.lblSalary.Size = new System.Drawing.Size(79, 22);
-            this.lblSalary.TabIndex = 48;
+            this.lblSalary.TabIndex = 17;
             this.lblSalary.Text = "Salary :";
             // 
             // lblAccType
@@ -376,7 +376,7 @@
             this.lblAccType.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAccType.Name = "lblAccType";
             this.lblAccType.Size = new System.Drawing.Size(102, 22);
-            this.lblAccType.TabIndex = 56;
+            this.lblAccType.TabIndex = 25;
             this.lblAccType.Text = "Acc type :";
             // 
             // txtAcctPassword
@@ -388,7 +388,7 @@
             this.txtAcctPassword.Name = "txtAcctPassword";
             this.txtAcctPassword.PasswordChar = '*';
             this.txtAcctPassword.Size = new System.Drawing.Size(336, 28);
-            this.txtAcctPassword.TabIndex = 55;
+            this.txtAcctPassword.TabIndex = 24;
             // 
             // lblPassword
             // 
@@ -401,7 +401,7 @@
             this.lblPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(111, 22);
-            this.lblPassword.TabIndex = 54;
+            this.lblPassword.TabIndex = 23;
             this.lblPassword.Text = "Password :";
             // 
             // txtAcctUsername
@@ -412,7 +412,7 @@
             this.txtAcctUsername.Margin = new System.Windows.Forms.Padding(2);
             this.txtAcctUsername.Name = "txtAcctUsername";
             this.txtAcctUsername.Size = new System.Drawing.Size(336, 28);
-            this.txtAcctUsername.TabIndex = 53;
+            this.txtAcctUsername.TabIndex = 22;
             // 
             // lblUsername
             // 
@@ -425,7 +425,7 @@
             this.lblUsername.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(114, 22);
-            this.lblUsername.TabIndex = 52;
+            this.lblUsername.TabIndex = 21;
             this.lblUsername.Text = "Username :";
             // 
             // txtAcctWorkhours
@@ -435,9 +435,9 @@
             this.txtAcctWorkhours.Location = new System.Drawing.Point(136, 144);
             this.txtAcctWorkhours.Margin = new System.Windows.Forms.Padding(2);
             this.txtAcctWorkhours.Name = "txtAcctWorkhours";
+            this.txtAcctWorkhours.ReadOnly = true;
             this.txtAcctWorkhours.Size = new System.Drawing.Size(336, 28);
-            this.txtAcctWorkhours.TabIndex = 51;
-            this.txtAcctWorkhours.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtAcctWorkhours_KeyPress);
+            this.txtAcctWorkhours.TabIndex = 20;
             // 
             // txtAcctSalary
             // 
@@ -447,7 +447,7 @@
             this.txtAcctSalary.Margin = new System.Windows.Forms.Padding(2);
             this.txtAcctSalary.Name = "txtAcctSalary";
             this.txtAcctSalary.Size = new System.Drawing.Size(336, 28);
-            this.txtAcctSalary.TabIndex = 49;
+            this.txtAcctSalary.TabIndex = 18;
             this.txtAcctSalary.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtAcctWage_KeyPress);
             // 
             // lblWorkhours
@@ -461,7 +461,7 @@
             this.lblWorkhours.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblWorkhours.Name = "lblWorkhours";
             this.lblWorkhours.Size = new System.Drawing.Size(112, 22);
-            this.lblWorkhours.TabIndex = 50;
+            this.lblWorkhours.TabIndex = 19;
             this.lblWorkhours.Text = "Workhr(s) :";
             // 
             // txtAcctName
@@ -472,7 +472,7 @@
             this.txtAcctName.Margin = new System.Windows.Forms.Padding(2);
             this.txtAcctName.Name = "txtAcctName";
             this.txtAcctName.Size = new System.Drawing.Size(336, 28);
-            this.txtAcctName.TabIndex = 47;
+            this.txtAcctName.TabIndex = 16;
             // 
             // lblName
             // 
@@ -485,7 +485,7 @@
             this.lblName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(74, 22);
-            this.lblName.TabIndex = 46;
+            this.lblName.TabIndex = 15;
             this.lblName.Text = "Name :";
             // 
             // dgdEmployee
@@ -540,7 +540,7 @@
             this.dgdEmployee.RowHeadersWidth = 51;
             this.dgdEmployee.RowTemplate.Height = 24;
             this.dgdEmployee.Size = new System.Drawing.Size(897, 337);
-            this.dgdEmployee.TabIndex = 42;
+            this.dgdEmployee.TabIndex = 11;
             this.dgdEmployee.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgdEmployee_CellClick);
             // 
             // idDataGridViewTextBoxColumn
@@ -649,7 +649,6 @@
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.DataGridView dgdEmployee;
         private System.Windows.Forms.Button btnSearchEmployee;
-        private System.Windows.Forms.DataGridViewTextBoxColumn wageDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource usersModelBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;

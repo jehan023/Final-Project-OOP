@@ -68,7 +68,7 @@
             this.RefreshInventory();
         }
 
-        private void TxtSearchItem_TextChanged_1(object sender, EventArgs e)
+        private void TxtSearchItem_TextChanged(object sender, EventArgs e)
         {
             var selectedRecord = this.db.LoadRecordsByCaseInsensitive<InventoryModel>("Inventory", "Item", this.TxtSearchItem.Text);
             this.dgdViewProducts.DataSource = selectedRecord;

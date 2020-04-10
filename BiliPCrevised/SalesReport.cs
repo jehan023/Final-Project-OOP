@@ -67,12 +67,20 @@
             }
 
             netProfit = grossMargin - employeeSalary;
-            profitPercentage = (netProfit / netSales) * 100;
+            if (netSales != 0)
+            {
+                profitPercentage = (netProfit / netSales) * 100;
+            }
+            else
+            {
+                profitPercentage = 0;
+            }
+
             this.txtTCIS.Text = totalCostItemSold.ToString(CultureInfo.CurrentCulture);
             this.txtTRA.Text = totalRetailPrice.ToString(CultureInfo.CurrentCulture);
             this.txtGrossMargin.Text = grossMargin.ToString(CultureInfo.CurrentCulture);
             this.txtNetProfit.Text = netProfit.ToString(CultureInfo.CurrentCulture);
-            this.txtProfitPerce.Text = profitPercentage.ToString(CultureInfo.CurrentCulture);
+            this.txtProfitPerce.Text = profitPercentage.ToString("F", CultureInfo.CurrentCulture);
         }
 
         private void CboViewMonth_SelectedIndexChanged(object sender, EventArgs e)
@@ -145,11 +153,13 @@
             xlWorkSheet.Cells[lastRow + 5, 2] = this.txtProfitPerce.Text;
 
             // Save the file
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.FileName = "BiliPC Sales Report";
-            saveFileDialog.DefaultExt = ".xlsx";
-            saveFileDialog.Filter = "Excel files (*.xlsx)|*.xlsx|All files (*.*)|*.*";
-            saveFileDialog.FilterIndex = 2;
+            SaveFileDialog saveFileDialog = new SaveFileDialog
+            {
+                FileName = "BiliPC Sales Report",
+                DefaultExt = ".xlsx",
+                Filter = "Excel files (*.xlsx)|*.xlsx|All files (*.*)|*.*",
+                FilterIndex = 2,
+            };
 
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {

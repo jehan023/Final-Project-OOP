@@ -31,7 +31,20 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgdProduct = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.itemDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qtyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unitPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.supplierDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateModifiedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inStockDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inventoryModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.GroupTextBox = new System.Windows.Forms.GroupBox();
+            this.txtDate = new System.Windows.Forms.TextBox();
+            this.lblDate = new System.Windows.Forms.Label();
             this.radInStockFalse = new System.Windows.Forms.RadioButton();
             this.radInStockTrue = new System.Windows.Forms.RadioButton();
             this.idBox = new System.Windows.Forms.TextBox();
@@ -63,23 +76,11 @@
             this.cboCategory = new System.Windows.Forms.ComboBox();
             this.lblCategorySort = new System.Windows.Forms.Label();
             this.searchItemBtn = new System.Windows.Forms.Button();
-            this.txtDate = new System.Windows.Forms.TextBox();
-            this.lblDate = new System.Windows.Forms.Label();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.itemDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.qtyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unitPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.supplierDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.inventoryModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgdProduct)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inventoryModelBindingSource)).BeginInit();
             this.GroupTextBox.SuspendLayout();
             this.pnlBackground.SuspendLayout();
             this.pnlTop.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.inventoryModelBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dgdProduct
@@ -106,10 +107,11 @@
             this.qtyDataGridViewTextBoxColumn,
             this.unitPriceDataGridViewTextBoxColumn,
             this.costDataGridViewTextBoxColumn,
-            this.dateDataGridViewTextBoxColumn,
             this.categoryDataGridViewTextBoxColumn,
             this.supplierDataGridViewTextBoxColumn,
-            this.statusDataGridViewCheckBoxColumn});
+            this.dateModifiedDataGridViewTextBoxColumn,
+            this.inStockDataGridViewCheckBoxColumn,
+            this.statusDataGridViewTextBoxColumn});
             this.dgdProduct.DataSource = this.inventoryModelBindingSource;
             this.dgdProduct.Location = new System.Drawing.Point(25, 16);
             this.dgdProduct.Margin = new System.Windows.Forms.Padding(2);
@@ -119,8 +121,85 @@
             this.dgdProduct.RowHeadersWidth = 51;
             this.dgdProduct.RowTemplate.Height = 24;
             this.dgdProduct.Size = new System.Drawing.Size(887, 335);
-            this.dgdProduct.TabIndex = 23;
+            this.dgdProduct.TabIndex = 13;
             this.dgdProduct.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgdProduct_CellClick);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // itemDataGridViewTextBoxColumn
+            // 
+            this.itemDataGridViewTextBoxColumn.DataPropertyName = "Item";
+            this.itemDataGridViewTextBoxColumn.HeaderText = "Item";
+            this.itemDataGridViewTextBoxColumn.Name = "itemDataGridViewTextBoxColumn";
+            this.itemDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // qtyDataGridViewTextBoxColumn
+            // 
+            this.qtyDataGridViewTextBoxColumn.DataPropertyName = "Qty";
+            this.qtyDataGridViewTextBoxColumn.HeaderText = "Qty";
+            this.qtyDataGridViewTextBoxColumn.Name = "qtyDataGridViewTextBoxColumn";
+            this.qtyDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // unitPriceDataGridViewTextBoxColumn
+            // 
+            this.unitPriceDataGridViewTextBoxColumn.DataPropertyName = "UnitPrice";
+            this.unitPriceDataGridViewTextBoxColumn.HeaderText = "UnitPrice";
+            this.unitPriceDataGridViewTextBoxColumn.Name = "unitPriceDataGridViewTextBoxColumn";
+            this.unitPriceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // costDataGridViewTextBoxColumn
+            // 
+            this.costDataGridViewTextBoxColumn.DataPropertyName = "Cost";
+            this.costDataGridViewTextBoxColumn.HeaderText = "Cost";
+            this.costDataGridViewTextBoxColumn.Name = "costDataGridViewTextBoxColumn";
+            this.costDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // categoryDataGridViewTextBoxColumn
+            // 
+            this.categoryDataGridViewTextBoxColumn.DataPropertyName = "Category";
+            this.categoryDataGridViewTextBoxColumn.HeaderText = "Category";
+            this.categoryDataGridViewTextBoxColumn.Name = "categoryDataGridViewTextBoxColumn";
+            this.categoryDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // supplierDataGridViewTextBoxColumn
+            // 
+            this.supplierDataGridViewTextBoxColumn.DataPropertyName = "Supplier";
+            this.supplierDataGridViewTextBoxColumn.HeaderText = "Supplier";
+            this.supplierDataGridViewTextBoxColumn.Name = "supplierDataGridViewTextBoxColumn";
+            this.supplierDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dateModifiedDataGridViewTextBoxColumn
+            // 
+            this.dateModifiedDataGridViewTextBoxColumn.DataPropertyName = "DateModified";
+            this.dateModifiedDataGridViewTextBoxColumn.HeaderText = "DateModified";
+            this.dateModifiedDataGridViewTextBoxColumn.Name = "dateModifiedDataGridViewTextBoxColumn";
+            this.dateModifiedDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // inStockDataGridViewCheckBoxColumn
+            // 
+            this.inStockDataGridViewCheckBoxColumn.DataPropertyName = "InStock";
+            this.inStockDataGridViewCheckBoxColumn.HeaderText = "InStock";
+            this.inStockDataGridViewCheckBoxColumn.Name = "inStockDataGridViewCheckBoxColumn";
+            this.inStockDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.inStockDataGridViewCheckBoxColumn.Visible = false;
+            // 
+            // statusDataGridViewTextBoxColumn
+            // 
+            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
+            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
+            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            this.statusDataGridViewTextBoxColumn.ReadOnly = true;
+            this.statusDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // inventoryModelBindingSource
+            // 
+            this.inventoryModelBindingSource.DataSource = typeof(BiliPC.InventoryModel);
             // 
             // GroupTextBox
             // 
@@ -149,8 +228,33 @@
             this.GroupTextBox.Location = new System.Drawing.Point(0, 351);
             this.GroupTextBox.Name = "GroupTextBox";
             this.GroupTextBox.Size = new System.Drawing.Size(935, 188);
-            this.GroupTextBox.TabIndex = 45;
+            this.GroupTextBox.TabIndex = 14;
             this.GroupTextBox.TabStop = false;
+            // 
+            // txtDate
+            // 
+            this.txtDate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDate.Location = new System.Drawing.Point(581, 86);
+            this.txtDate.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDate.Name = "txtDate";
+            this.txtDate.ReadOnly = true;
+            this.txtDate.Size = new System.Drawing.Size(336, 24);
+            this.txtDate.TabIndex = 28;
+            // 
+            // lblDate
+            // 
+            this.lblDate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblDate.AutoSize = true;
+            this.lblDate.BackColor = System.Drawing.Color.Transparent;
+            this.lblDate.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDate.ForeColor = System.Drawing.Color.Black;
+            this.lblDate.Location = new System.Drawing.Point(508, 89);
+            this.lblDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(55, 18);
+            this.lblDate.TabIndex = 27;
+            this.lblDate.Text = "Date :";
             // 
             // radInStockFalse
             // 
@@ -163,7 +267,7 @@
             this.radInStockFalse.Margin = new System.Windows.Forms.Padding(2);
             this.radInStockFalse.Name = "radInStockFalse";
             this.radInStockFalse.Size = new System.Drawing.Size(169, 28);
-            this.radInStockFalse.TabIndex = 62;
+            this.radInStockFalse.TabIndex = 33;
             this.radInStockFalse.TabStop = true;
             this.radInStockFalse.Text = "OUT OF STOCK";
             this.radInStockFalse.UseVisualStyleBackColor = true;
@@ -179,7 +283,7 @@
             this.radInStockTrue.Margin = new System.Windows.Forms.Padding(2);
             this.radInStockTrue.Name = "radInStockTrue";
             this.radInStockTrue.Size = new System.Drawing.Size(115, 28);
-            this.radInStockTrue.TabIndex = 61;
+            this.radInStockTrue.TabIndex = 32;
             this.radInStockTrue.TabStop = true;
             this.radInStockTrue.Text = "IN STOCK";
             this.radInStockTrue.UseVisualStyleBackColor = true;
@@ -193,7 +297,7 @@
             this.idBox.Name = "idBox";
             this.idBox.ReadOnly = true;
             this.idBox.Size = new System.Drawing.Size(336, 24);
-            this.idBox.TabIndex = 60;
+            this.idBox.TabIndex = 16;
             // 
             // lblItemID
             // 
@@ -206,7 +310,7 @@
             this.lblItemID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblItemID.Name = "lblItemID";
             this.lblItemID.Size = new System.Drawing.Size(69, 18);
-            this.lblItemID.TabIndex = 59;
+            this.lblItemID.TabIndex = 15;
             this.lblItemID.Text = "Item ID:";
             // 
             // txtCategory
@@ -217,7 +321,7 @@
             this.txtCategory.Margin = new System.Windows.Forms.Padding(2);
             this.txtCategory.Name = "txtCategory";
             this.txtCategory.Size = new System.Drawing.Size(336, 24);
-            this.txtCategory.TabIndex = 58;
+            this.txtCategory.TabIndex = 30;
             // 
             // lblCategory
             // 
@@ -230,7 +334,7 @@
             this.lblCategory.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCategory.Name = "lblCategory";
             this.lblCategory.Size = new System.Drawing.Size(91, 18);
-            this.lblCategory.TabIndex = 57;
+            this.lblCategory.TabIndex = 29;
             this.lblCategory.Text = "Category :";
             // 
             // lblUnitPrice
@@ -244,7 +348,7 @@
             this.lblUnitPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUnitPrice.Name = "lblUnitPrice";
             this.lblUnitPrice.Size = new System.Drawing.Size(95, 18);
-            this.lblUnitPrice.TabIndex = 56;
+            this.lblUnitPrice.TabIndex = 21;
             this.lblUnitPrice.Text = "Unit Price :";
             // 
             // lblInStock
@@ -258,7 +362,7 @@
             this.lblInStock.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblInStock.Name = "lblInStock";
             this.lblInStock.Size = new System.Drawing.Size(69, 18);
-            this.lblInStock.TabIndex = 54;
+            this.lblInStock.TabIndex = 31;
             this.lblInStock.Text = "Status :";
             // 
             // txtSupplier
@@ -269,7 +373,7 @@
             this.txtSupplier.Margin = new System.Windows.Forms.Padding(2);
             this.txtSupplier.Name = "txtSupplier";
             this.txtSupplier.Size = new System.Drawing.Size(336, 24);
-            this.txtSupplier.TabIndex = 53;
+            this.txtSupplier.TabIndex = 26;
             // 
             // lblSupplier
             // 
@@ -282,7 +386,7 @@
             this.lblSupplier.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSupplier.Name = "lblSupplier";
             this.lblSupplier.Size = new System.Drawing.Size(83, 18);
-            this.lblSupplier.TabIndex = 52;
+            this.lblSupplier.TabIndex = 25;
             this.lblSupplier.Text = "Supplier :";
             // 
             // txtCost
@@ -293,7 +397,7 @@
             this.txtCost.Margin = new System.Windows.Forms.Padding(2);
             this.txtCost.Name = "txtCost";
             this.txtCost.Size = new System.Drawing.Size(336, 24);
-            this.txtCost.TabIndex = 51;
+            this.txtCost.TabIndex = 24;
             this.txtCost.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCost_KeyPress);
             // 
             // lblCost
@@ -307,7 +411,7 @@
             this.lblCost.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCost.Name = "lblCost";
             this.lblCost.Size = new System.Drawing.Size(54, 18);
-            this.lblCost.TabIndex = 50;
+            this.lblCost.TabIndex = 23;
             this.lblCost.Text = "Cost :";
             // 
             // txtUnitPrice
@@ -318,7 +422,7 @@
             this.txtUnitPrice.Margin = new System.Windows.Forms.Padding(2);
             this.txtUnitPrice.Name = "txtUnitPrice";
             this.txtUnitPrice.Size = new System.Drawing.Size(336, 24);
-            this.txtUnitPrice.TabIndex = 49;
+            this.txtUnitPrice.TabIndex = 22;
             this.txtUnitPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtUnitPrice_KeyPress);
             // 
             // txtQuantity
@@ -329,7 +433,7 @@
             this.txtQuantity.Margin = new System.Windows.Forms.Padding(2);
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(336, 24);
-            this.txtQuantity.TabIndex = 48;
+            this.txtQuantity.TabIndex = 20;
             this.txtQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtQuantity_KeyPress);
             // 
             // lblQuantity
@@ -343,7 +447,7 @@
             this.lblQuantity.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblQuantity.Name = "lblQuantity";
             this.lblQuantity.Size = new System.Drawing.Size(85, 18);
-            this.lblQuantity.TabIndex = 47;
+            this.lblQuantity.TabIndex = 19;
             this.lblQuantity.Text = "Quantity :";
             // 
             // txtItemName
@@ -356,7 +460,7 @@
             this.txtItemName.Name = "txtItemName";
             this.txtItemName.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtItemName.Size = new System.Drawing.Size(336, 38);
-            this.txtItemName.TabIndex = 46;
+            this.txtItemName.TabIndex = 18;
             // 
             // lblItemName
             // 
@@ -369,7 +473,7 @@
             this.lblItemName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblItemName.Name = "lblItemName";
             this.lblItemName.Size = new System.Drawing.Size(52, 18);
-            this.lblItemName.TabIndex = 45;
+            this.lblItemName.TabIndex = 17;
             this.lblItemName.Text = "Item :";
             // 
             // pnlBackground
@@ -381,7 +485,7 @@
             this.pnlBackground.Location = new System.Drawing.Point(0, 100);
             this.pnlBackground.Name = "pnlBackground";
             this.pnlBackground.Size = new System.Drawing.Size(935, 539);
-            this.pnlBackground.TabIndex = 1;
+            this.pnlBackground.TabIndex = 12;
             // 
             // lblSearchItem
             // 
@@ -394,7 +498,7 @@
             this.lblSearchItem.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSearchItem.Name = "lblSearchItem";
             this.lblSearchItem.Size = new System.Drawing.Size(109, 18);
-            this.lblSearchItem.TabIndex = 33;
+            this.lblSearchItem.TabIndex = 9;
             this.lblSearchItem.Text = "Search item:";
             // 
             // btnAddItem
@@ -409,7 +513,7 @@
             this.btnAddItem.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddItem.Name = "btnAddItem";
             this.btnAddItem.Size = new System.Drawing.Size(109, 31);
-            this.btnAddItem.TabIndex = 36;
+            this.btnAddItem.TabIndex = 4;
             this.btnAddItem.Text = "Add item";
             this.btnAddItem.UseVisualStyleBackColor = false;
             this.btnAddItem.Click += new System.EventHandler(this.BtnAddItem_Click);
@@ -425,7 +529,7 @@
             this.txtSearchItem.Margin = new System.Windows.Forms.Padding(2);
             this.txtSearchItem.Name = "txtSearchItem";
             this.txtSearchItem.Size = new System.Drawing.Size(193, 24);
-            this.txtSearchItem.TabIndex = 32;
+            this.txtSearchItem.TabIndex = 10;
             this.txtSearchItem.TextChanged += new System.EventHandler(this.TxtSearchItem_TextChanged);
             // 
             // btnUpdateItem
@@ -440,7 +544,7 @@
             this.btnUpdateItem.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdateItem.Name = "btnUpdateItem";
             this.btnUpdateItem.Size = new System.Drawing.Size(109, 31);
-            this.btnUpdateItem.TabIndex = 37;
+            this.btnUpdateItem.TabIndex = 5;
             this.btnUpdateItem.Text = "Update item";
             this.btnUpdateItem.UseVisualStyleBackColor = false;
             this.btnUpdateItem.Click += new System.EventHandler(this.BtnUpdateItem_Click);
@@ -457,7 +561,7 @@
             this.btnDeleteItem.Margin = new System.Windows.Forms.Padding(2);
             this.btnDeleteItem.Name = "btnDeleteItem";
             this.btnDeleteItem.Size = new System.Drawing.Size(109, 31);
-            this.btnDeleteItem.TabIndex = 35;
+            this.btnDeleteItem.TabIndex = 6;
             this.btnDeleteItem.Text = "Delete item";
             this.btnDeleteItem.UseVisualStyleBackColor = false;
             this.btnDeleteItem.Click += new System.EventHandler(this.BtnDeleteItem_Click);
@@ -489,7 +593,7 @@
             this.lblProducts.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblProducts.Name = "lblProducts";
             this.lblProducts.Size = new System.Drawing.Size(157, 37);
-            this.lblProducts.TabIndex = 1;
+            this.lblProducts.TabIndex = 2;
             this.lblProducts.Text = "Products";
             // 
             // label5
@@ -517,7 +621,7 @@
             this.btnRefreshItem.Margin = new System.Windows.Forms.Padding(2);
             this.btnRefreshItem.Name = "btnRefreshItem";
             this.btnRefreshItem.Size = new System.Drawing.Size(109, 31);
-            this.btnRefreshItem.TabIndex = 38;
+            this.btnRefreshItem.TabIndex = 3;
             this.btnRefreshItem.Text = "Refresh";
             this.btnRefreshItem.UseVisualStyleBackColor = false;
             this.btnRefreshItem.Click += new System.EventHandler(this.BtnRefreshItem_Click);
@@ -543,7 +647,7 @@
             this.pnlTop.Margin = new System.Windows.Forms.Padding(2);
             this.pnlTop.Name = "pnlTop";
             this.pnlTop.Size = new System.Drawing.Size(935, 100);
-            this.pnlTop.TabIndex = 0;
+            this.pnlTop.TabIndex = 1;
             // 
             // cboCategory
             // 
@@ -555,7 +659,7 @@
             this.cboCategory.Location = new System.Drawing.Point(636, 29);
             this.cboCategory.Name = "cboCategory";
             this.cboCategory.Size = new System.Drawing.Size(193, 26);
-            this.cboCategory.TabIndex = 40;
+            this.cboCategory.TabIndex = 8;
             this.cboCategory.SelectedIndexChanged += new System.EventHandler(this.CboCategory_SelectedIndexChanged);
             // 
             // lblCategorySort
@@ -568,7 +672,7 @@
             this.lblCategorySort.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCategorySort.Name = "lblCategorySort";
             this.lblCategorySort.Size = new System.Drawing.Size(87, 18);
-            this.lblCategorySort.TabIndex = 39;
+            this.lblCategorySort.TabIndex = 7;
             this.lblCategorySort.Text = "Category:";
             // 
             // searchItemBtn
@@ -583,102 +687,10 @@
             this.searchItemBtn.Location = new System.Drawing.Point(830, 61);
             this.searchItemBtn.Name = "searchItemBtn";
             this.searchItemBtn.Size = new System.Drawing.Size(75, 25);
-            this.searchItemBtn.TabIndex = 0;
+            this.searchItemBtn.TabIndex = 11;
             this.searchItemBtn.Text = "Search";
             this.searchItemBtn.UseVisualStyleBackColor = false;
             this.searchItemBtn.Click += new System.EventHandler(this.SearchBtn_Click);
-            // 
-            // txtDate
-            // 
-            this.txtDate.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDate.Location = new System.Drawing.Point(581, 86);
-            this.txtDate.Margin = new System.Windows.Forms.Padding(2);
-            this.txtDate.Name = "txtDate";
-            this.txtDate.ReadOnly = true;
-            this.txtDate.Size = new System.Drawing.Size(336, 24);
-            this.txtDate.TabIndex = 64;
-            // 
-            // lblDate
-            // 
-            this.lblDate.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblDate.AutoSize = true;
-            this.lblDate.BackColor = System.Drawing.Color.Transparent;
-            this.lblDate.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.ForeColor = System.Drawing.Color.Black;
-            this.lblDate.Location = new System.Drawing.Point(508, 89);
-            this.lblDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(55, 18);
-            this.lblDate.TabIndex = 63;
-            this.lblDate.Text = "Date :";
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // itemDataGridViewTextBoxColumn
-            // 
-            this.itemDataGridViewTextBoxColumn.DataPropertyName = "Item";
-            this.itemDataGridViewTextBoxColumn.HeaderText = "Item";
-            this.itemDataGridViewTextBoxColumn.Name = "itemDataGridViewTextBoxColumn";
-            this.itemDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // qtyDataGridViewTextBoxColumn
-            // 
-            this.qtyDataGridViewTextBoxColumn.DataPropertyName = "Qty";
-            this.qtyDataGridViewTextBoxColumn.HeaderText = "Qty";
-            this.qtyDataGridViewTextBoxColumn.Name = "qtyDataGridViewTextBoxColumn";
-            this.qtyDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // unitPriceDataGridViewTextBoxColumn
-            // 
-            this.unitPriceDataGridViewTextBoxColumn.DataPropertyName = "UnitPrice";
-            this.unitPriceDataGridViewTextBoxColumn.HeaderText = "UnitPrice";
-            this.unitPriceDataGridViewTextBoxColumn.Name = "unitPriceDataGridViewTextBoxColumn";
-            this.unitPriceDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // costDataGridViewTextBoxColumn
-            // 
-            this.costDataGridViewTextBoxColumn.DataPropertyName = "Cost";
-            this.costDataGridViewTextBoxColumn.HeaderText = "Cost";
-            this.costDataGridViewTextBoxColumn.Name = "costDataGridViewTextBoxColumn";
-            this.costDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dateDataGridViewTextBoxColumn
-            // 
-            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
-            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
-            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
-            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // categoryDataGridViewTextBoxColumn
-            // 
-            this.categoryDataGridViewTextBoxColumn.DataPropertyName = "Category";
-            this.categoryDataGridViewTextBoxColumn.HeaderText = "Category";
-            this.categoryDataGridViewTextBoxColumn.Name = "categoryDataGridViewTextBoxColumn";
-            this.categoryDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // supplierDataGridViewTextBoxColumn
-            // 
-            this.supplierDataGridViewTextBoxColumn.DataPropertyName = "Supplier";
-            this.supplierDataGridViewTextBoxColumn.HeaderText = "Supplier";
-            this.supplierDataGridViewTextBoxColumn.Name = "supplierDataGridViewTextBoxColumn";
-            this.supplierDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // statusDataGridViewCheckBoxColumn
-            // 
-            this.statusDataGridViewCheckBoxColumn.DataPropertyName = "Status";
-            this.statusDataGridViewCheckBoxColumn.HeaderText = "Status";
-            this.statusDataGridViewCheckBoxColumn.Name = "statusDataGridViewCheckBoxColumn";
-            this.statusDataGridViewCheckBoxColumn.ReadOnly = true;
-            // 
-            // inventoryModelBindingSource
-            // 
-            this.inventoryModelBindingSource.DataSource = typeof(BiliPC.InventoryModel);
             // 
             // Products
             // 
@@ -692,12 +704,12 @@
             this.Name = "Products";
             this.Text = "Product";
             ((System.ComponentModel.ISupportInitialize)(this.dgdProduct)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inventoryModelBindingSource)).EndInit();
             this.GroupTextBox.ResumeLayout(false);
             this.GroupTextBox.PerformLayout();
             this.pnlBackground.ResumeLayout(false);
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.inventoryModelBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -737,7 +749,6 @@
         private System.Windows.Forms.Button searchItemBtn;
         private System.Windows.Forms.ComboBox cboCategory;
         private System.Windows.Forms.Label lblCategorySort;
-        private System.Windows.Forms.BindingSource inventoryModelBindingSource;
         private System.Windows.Forms.TextBox txtDate;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
@@ -745,9 +756,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn qtyDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn unitPriceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn costDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn categoryDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn supplierDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn statusDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateModifiedDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn inStockDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource inventoryModelBindingSource;
     }
 }

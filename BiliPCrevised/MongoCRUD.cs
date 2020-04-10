@@ -90,6 +90,18 @@
             return collection.Find(filter).ToList();
         }
 
+        public List<T> LoadRecordsByMonthList<T>(string table, string element, int year, int month, int dayStart, int dayEnd)
+        {
+            var collection = this.db.GetCollection<T>(table);
+            var start = new DateTime(year, month, dayStart, 0, 0, 0).ToUniversalTime();
+            var end = new DateTime(year, month, dayEnd, 23, 59, 59).ToUniversalTime();
+
+            var filterBuilder = Builders<T>.Filter;
+            var filter = filterBuilder.Gte(element, start) & filterBuilder.Lte(element, end);
+
+            return collection.Find(filter).ToList();
+        }
+
         public void UpsertRecord<T>(string table, ObjectId id, T record)
         {
             var collection = this.db.GetCollection<T>(table);

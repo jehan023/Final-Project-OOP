@@ -62,7 +62,7 @@
             this.pnlRight.Location = new System.Drawing.Point(522, 58);
             this.pnlRight.Name = "pnlRight";
             this.pnlRight.Size = new System.Drawing.Size(10, 474);
-            this.pnlRight.TabIndex = 8;
+            this.pnlRight.TabIndex = 3;
             // 
             // pnlLeft
             // 
@@ -71,7 +71,7 @@
             this.pnlLeft.Location = new System.Drawing.Point(0, 58);
             this.pnlLeft.Name = "pnlLeft";
             this.pnlLeft.Size = new System.Drawing.Size(10, 474);
-            this.pnlLeft.TabIndex = 7;
+            this.pnlLeft.TabIndex = 2;
             // 
             // pnlBottom
             // 
@@ -80,7 +80,7 @@
             this.pnlBottom.Location = new System.Drawing.Point(0, 532);
             this.pnlBottom.Name = "pnlBottom";
             this.pnlBottom.Size = new System.Drawing.Size(532, 10);
-            this.pnlBottom.TabIndex = 6;
+            this.pnlBottom.TabIndex = 21;
             // 
             // pnlTop
             // 
@@ -90,7 +90,7 @@
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
             this.pnlTop.Name = "pnlTop";
             this.pnlTop.Size = new System.Drawing.Size(532, 58);
-            this.pnlTop.TabIndex = 5;
+            this.pnlTop.TabIndex = 1;
             // 
             // lblAddNewEmployee
             // 
@@ -121,7 +121,7 @@
             this.pnlBackground.Location = new System.Drawing.Point(10, 58);
             this.pnlBackground.Name = "pnlBackground";
             this.pnlBackground.Size = new System.Drawing.Size(512, 474);
-            this.pnlBackground.TabIndex = 9;
+            this.pnlBackground.TabIndex = 4;
             // 
             // lblConfirmPassword
             // 
@@ -134,7 +134,7 @@
             this.lblConfirmPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblConfirmPassword.Name = "lblConfirmPassword";
             this.lblConfirmPassword.Size = new System.Drawing.Size(153, 18);
-            this.lblConfirmPassword.TabIndex = 59;
+            this.lblConfirmPassword.TabIndex = 12;
             this.lblConfirmPassword.Text = "Confirm Password";
             // 
             // adminFalseRadioBtn
@@ -145,7 +145,7 @@
             this.adminFalseRadioBtn.Location = new System.Drawing.Point(173, 342);
             this.adminFalseRadioBtn.Name = "adminFalseRadioBtn";
             this.adminFalseRadioBtn.Size = new System.Drawing.Size(97, 21);
-            this.adminFalseRadioBtn.TabIndex = 65;
+            this.adminFalseRadioBtn.TabIndex = 17;
             this.adminFalseRadioBtn.TabStop = true;
             this.adminFalseRadioBtn.Text = "Employee";
             this.adminFalseRadioBtn.UseVisualStyleBackColor = true;
@@ -157,7 +157,7 @@
             this.adminTrueRadioBtn.Location = new System.Drawing.Point(96, 342);
             this.adminTrueRadioBtn.Name = "adminTrueRadioBtn";
             this.adminTrueRadioBtn.Size = new System.Drawing.Size(72, 21);
-            this.adminTrueRadioBtn.TabIndex = 64;
+            this.adminTrueRadioBtn.TabIndex = 18;
             this.adminTrueRadioBtn.Text = "Admin";
             this.adminTrueRadioBtn.UseVisualStyleBackColor = true;
             // 
@@ -172,7 +172,7 @@
             this.lblAcctType.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAcctType.Name = "lblAcctType";
             this.lblAcctType.Size = new System.Drawing.Size(119, 18);
-            this.lblAcctType.TabIndex = 63;
+            this.lblAcctType.TabIndex = 16;
             this.lblAcctType.Text = "Account Type";
             // 
             // lblSalary
@@ -186,7 +186,7 @@
             this.lblSalary.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSalary.Name = "lblSalary";
             this.lblSalary.Size = new System.Drawing.Size(59, 18);
-            this.lblSalary.TabIndex = 61;
+            this.lblSalary.TabIndex = 14;
             this.lblSalary.Text = "Salary";
             // 
             // btnCancel
@@ -202,7 +202,7 @@
             this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(109, 31);
-            this.btnCancel.TabIndex = 67;
+            this.btnCancel.TabIndex = 20;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
@@ -219,7 +219,7 @@
             this.btnAddAccount.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddAccount.Name = "btnAddAccount";
             this.btnAddAccount.Size = new System.Drawing.Size(109, 31);
-            this.btnAddAccount.TabIndex = 66;
+            this.btnAddAccount.TabIndex = 19;
             this.btnAddAccount.Text = "Save";
             this.btnAddAccount.UseVisualStyleBackColor = false;
             this.btnAddAccount.Click += new System.EventHandler(this.BtnAddAccount_Click);
@@ -235,7 +235,7 @@
             this.lblPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(87, 18);
-            this.lblPassword.TabIndex = 57;
+            this.lblPassword.TabIndex = 10;
             this.lblPassword.Text = "Password";
             // 
             // lblUsername
@@ -249,7 +249,7 @@
             this.lblUsername.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(90, 18);
-            this.lblUsername.TabIndex = 55;
+            this.lblUsername.TabIndex = 8;
             this.lblUsername.Text = "Username";
             // 
             // lblName
@@ -263,7 +263,7 @@
             this.lblName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(54, 18);
-            this.lblName.TabIndex = 53;
+            this.lblName.TabIndex = 6;
             this.lblName.Text = "Name";
             // 
             // GroupTextBox
@@ -276,7 +276,7 @@
             this.GroupTextBox.Location = new System.Drawing.Point(70, 39);
             this.GroupTextBox.Name = "GroupTextBox";
             this.GroupTextBox.Size = new System.Drawing.Size(379, 338);
-            this.GroupTextBox.TabIndex = 10;
+            this.GroupTextBox.TabIndex = 5;
             this.GroupTextBox.TabStop = false;
             // 
             // txtName
@@ -287,7 +287,7 @@
             this.txtName.Margin = new System.Windows.Forms.Padding(2);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(336, 21);
-            this.txtName.TabIndex = 54;
+            this.txtName.TabIndex = 7;
             // 
             // txtConfirmPassword
             // 
@@ -298,7 +298,7 @@
             this.txtConfirmPassword.Name = "txtConfirmPassword";
             this.txtConfirmPassword.PasswordChar = '*';
             this.txtConfirmPassword.Size = new System.Drawing.Size(336, 21);
-            this.txtConfirmPassword.TabIndex = 60;
+            this.txtConfirmPassword.TabIndex = 13;
             // 
             // txtUsername
             // 
@@ -308,7 +308,7 @@
             this.txtUsername.Margin = new System.Windows.Forms.Padding(2);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(336, 21);
-            this.txtUsername.TabIndex = 56;
+            this.txtUsername.TabIndex = 9;
             // 
             // txtPassword
             // 
@@ -319,7 +319,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(336, 21);
-            this.txtPassword.TabIndex = 58;
+            this.txtPassword.TabIndex = 11;
             // 
             // txtWage
             // 
@@ -329,7 +329,7 @@
             this.txtWage.Margin = new System.Windows.Forms.Padding(2);
             this.txtWage.Name = "txtWage";
             this.txtWage.Size = new System.Drawing.Size(336, 21);
-            this.txtWage.TabIndex = 62;
+            this.txtWage.TabIndex = 15;
             this.txtWage.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtWage_KeyPress);
             // 
             // AddNewEmployee

@@ -15,7 +15,7 @@
             this.DataSource = dataSource;
 
             // Kulang pa ng transaction Id haha
-            this.TransId = "01";
+            this.TransId = transId;
             this.Subtotal = subtotal;
             this.Discount = discount;
             this.Cash = cash;

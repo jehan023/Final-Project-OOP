@@ -71,7 +71,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(608, 53);
-            this.panel2.TabIndex = 1;
+            this.panel2.TabIndex = 4;
             // 
             // lblAddDiscount
             // 
@@ -82,7 +82,7 @@
             this.lblAddDiscount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAddDiscount.Name = "lblAddDiscount";
             this.lblAddDiscount.Size = new System.Drawing.Size(225, 37);
-            this.lblAddDiscount.TabIndex = 4;
+            this.lblAddDiscount.TabIndex = 5;
             this.lblAddDiscount.Text = "Add Discount";
             // 
             // panel3
@@ -102,7 +102,7 @@
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(10, 399);
-            this.panel4.TabIndex = 2;
+            this.panel4.TabIndex = 6;
             // 
             // panel5
             // 
@@ -111,7 +111,7 @@
             this.panel5.Location = new System.Drawing.Point(598, 53);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(10, 399);
-            this.panel5.TabIndex = 2;
+            this.panel5.TabIndex = 8;
             // 
             // panel6
             // 
@@ -132,7 +132,7 @@
             this.panel7.Location = new System.Drawing.Point(10, 53);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(588, 389);
-            this.panel7.TabIndex = 4;
+            this.panel7.TabIndex = 7;
             // 
             // btnCancel
             // 
@@ -147,7 +147,7 @@
             this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(109, 49);
-            this.btnCancel.TabIndex = 59;
+            this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
@@ -164,7 +164,7 @@
             this.btnAddDiscount.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddDiscount.Name = "btnAddDiscount";
             this.btnAddDiscount.Size = new System.Drawing.Size(109, 49);
-            this.btnAddDiscount.TabIndex = 58;
+            this.btnAddDiscount.TabIndex = 2;
             this.btnAddDiscount.Text = "Add Discount";
             this.btnAddDiscount.UseVisualStyleBackColor = false;
             this.btnAddDiscount.Click += new System.EventHandler(this.BtnAddDiscount_Click);
@@ -181,7 +181,7 @@
             this.groupBox1.Location = new System.Drawing.Point(34, 6);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(524, 305);
-            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             // 
             // lblPercent
@@ -205,7 +205,7 @@
             this.txtDiscountedPrice.Name = "txtDiscountedPrice";
             this.txtDiscountedPrice.ReadOnly = true;
             this.txtDiscountedPrice.Size = new System.Drawing.Size(466, 45);
-            this.txtDiscountedPrice.TabIndex = 63;
+            this.txtDiscountedPrice.TabIndex = 13;
             // 
             // label2
             // 
@@ -218,7 +218,7 @@
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(244, 25);
-            this.label2.TabIndex = 62;
+            this.label2.TabIndex = 12;
             this.label2.Text = "Discounted Amount Due";
             // 
             // txtDiscount
@@ -230,7 +230,7 @@
             this.txtDiscount.Margin = new System.Windows.Forms.Padding(2);
             this.txtDiscount.Name = "txtDiscount";
             this.txtDiscount.Size = new System.Drawing.Size(466, 45);
-            this.txtDiscount.TabIndex = 57;
+            this.txtDiscount.TabIndex = 1;
             this.txtDiscount.TextChanged += new System.EventHandler(this.TxtDiscount_TextChanged);
             this.txtDiscount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtDiscount_KeyPress);
             // 
@@ -245,7 +245,7 @@
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(96, 25);
-            this.label1.TabIndex = 56;
+            this.label1.TabIndex = 14;
             this.label1.Text = "Discount";
             // 
             // txtTotalPrice
@@ -258,7 +258,7 @@
             this.txtTotalPrice.Name = "txtTotalPrice";
             this.txtTotalPrice.ReadOnly = true;
             this.txtTotalPrice.Size = new System.Drawing.Size(466, 45);
-            this.txtTotalPrice.TabIndex = 61;
+            this.txtTotalPrice.TabIndex = 11;
             // 
             // lblTotalAmountDue
             // 
@@ -271,7 +271,7 @@
             this.lblTotalAmountDue.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTotalAmountDue.Name = "lblTotalAmountDue";
             this.lblTotalAmountDue.Size = new System.Drawing.Size(184, 25);
-            this.lblTotalAmountDue.TabIndex = 60;
+            this.lblTotalAmountDue.TabIndex = 10;
             this.lblTotalAmountDue.Text = "Total Amount Due";
             // 
             // AddDiscount

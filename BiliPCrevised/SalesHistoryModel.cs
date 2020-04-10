@@ -11,6 +11,9 @@
         public ObjectId Id { get; set; }
 
         [BsonElement]
+        public string TransactionId { get; set; }
+
+        [BsonElement]
         public string Items { get; set; }
 
         [BsonElement]

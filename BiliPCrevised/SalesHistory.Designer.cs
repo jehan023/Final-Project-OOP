@@ -67,7 +67,7 @@
             this.pnlTop.Margin = new System.Windows.Forms.Padding(2);
             this.pnlTop.Name = "pnlTop";
             this.pnlTop.Size = new System.Drawing.Size(945, 117);
-            this.pnlTop.TabIndex = 2;
+            this.pnlTop.TabIndex = 0;
             // 
             // btnShowAll
             // 
@@ -79,7 +79,7 @@
             this.btnShowAll.Location = new System.Drawing.Point(793, 51);
             this.btnShowAll.Name = "btnShowAll";
             this.btnShowAll.Size = new System.Drawing.Size(102, 44);
-            this.btnShowAll.TabIndex = 20;
+            this.btnShowAll.TabIndex = 3;
             this.btnShowAll.Text = "Show All";
             this.btnShowAll.UseVisualStyleBackColor = false;
             this.btnShowAll.Click += new System.EventHandler(this.BtnShowAll_Click);
@@ -92,7 +92,7 @@
             this.cboMonth.Location = new System.Drawing.Point(107, 69);
             this.cboMonth.Name = "cboMonth";
             this.cboMonth.Size = new System.Drawing.Size(312, 26);
-            this.cboMonth.TabIndex = 18;
+            this.cboMonth.TabIndex = 2;
             this.cboMonth.SelectedIndexChanged += new System.EventHandler(this.CboMonth_SelectedIndexChanged);
             // 
             // lblMonth
@@ -104,7 +104,7 @@
             this.lblMonth.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMonth.Name = "lblMonth";
             this.lblMonth.Size = new System.Drawing.Size(72, 22);
-            this.lblMonth.TabIndex = 17;
+            this.lblMonth.TabIndex = 2;
             this.lblMonth.Text = "Month:";
             // 
             // lblSalesHistory
@@ -116,7 +116,7 @@
             this.lblSalesHistory.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSalesHistory.Name = "lblSalesHistory";
             this.lblSalesHistory.Size = new System.Drawing.Size(221, 37);
-            this.lblSalesHistory.TabIndex = 16;
+            this.lblSalesHistory.TabIndex = 1;
             this.lblSalesHistory.Text = "Sales History";
             // 
             // btnX
@@ -133,7 +133,7 @@
             this.btnX.Margin = new System.Windows.Forms.Padding(2);
             this.btnX.Name = "btnX";
             this.btnX.Size = new System.Drawing.Size(25, 27);
-            this.btnX.TabIndex = 0;
+            this.btnX.TabIndex = 6;
             this.btnX.Text = "X";
             this.btnX.UseVisualStyleBackColor = false;
             this.btnX.Click += new System.EventHandler(this.BtnX_Click);
@@ -146,7 +146,7 @@
             this.pnlBackground.Location = new System.Drawing.Point(0, 117);
             this.pnlBackground.Name = "pnlBackground";
             this.pnlBackground.Size = new System.Drawing.Size(945, 522);
-            this.pnlBackground.TabIndex = 3;
+            this.pnlBackground.TabIndex = 4;
             // 
             // dgdSalesHistory
             // 
@@ -181,7 +181,7 @@
             this.dgdSalesHistory.ReadOnly = true;
             this.dgdSalesHistory.RowHeadersWidth = 51;
             this.dgdSalesHistory.Size = new System.Drawing.Size(894, 472);
-            this.dgdSalesHistory.TabIndex = 0;
+            this.dgdSalesHistory.TabIndex = 5;
             // 
             // idDataGridViewTextBoxColumn
             // 

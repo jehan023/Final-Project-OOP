@@ -66,6 +66,9 @@
 
         private void RefreshDataUpper()
         {
+            var salesRecByDate = this.db.LoadRecordsByMonthList<SalesHistoryModel>("SalesHistory", "DateOfPurchase", DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, DateTime.Now.Day);
+            this.txtTransactionID.Text = string.Format(CultureInfo.CurrentCulture, "{0}{1:D5}", DateTime.Now.ToString("yyyyMMdd", CultureInfo.CurrentCulture), salesRecByDate.Count + 1);
+
             // Refresh Total Unit Price
             if (!string.IsNullOrEmpty(this.CboItem.Text) && int.TryParse(this.txtQuantity.Text, out int result))
             {
@@ -118,7 +121,7 @@
                 totalPrice += item.TotalUnitPrice - (item.TotalUnitPrice * item.Discount / 100);
             }
 
-            this.txtTotalPrice.Text = totalPrice.ToString(CultureInfo.InvariantCulture);
+            this.txtTotalPrice.Text = totalPrice.ToString(CultureInfo.CurrentCulture);
 
             // Refresh Change text
             double amountReceived = 0;
@@ -132,7 +135,7 @@
                 this.txtAmountReceived.Text = "0";
             }
 
-            this.txtChange.Text = (amountReceived - totalPrice).ToString(CultureInfo.InvariantCulture);
+            this.txtChange.Text = (amountReceived - totalPrice).ToString(CultureInfo.CurrentCulture);
         }
 
         private void RefreshDiscountsToAll()
@@ -359,7 +362,7 @@
                     using (PrintReceipt receipt = new PrintReceipt(
                         DateTime.Now.ToString("MM/dd/yyyy", CultureInfo.InvariantCulture),
                         LoginUI.AcctName,
-                        default,
+                        this.txtTransactionID.Text,
                         cartRecord,
                         string.Format(CultureInfo.CurrentCulture, "₱{0:0.00}", cartRecord.Sum(x => x.TotalUnitPrice)),
                         string.Format(CultureInfo.CurrentCulture, "{0}%", selectedCartRecord.Discount),
@@ -418,24 +421,20 @@
                         {
                             if (item.Qty == cart.Quantity)
                             {
-                                item.Status = false;
+                                item.InStock = false;
                             }
 
                             item.Qty -= cart.Quantity;
-                            this.db.UpsertRecord("Inventory", item.Id, item);
-                            totalCostItemSold += item.Cost * cart.Quantity;
 
-                            // Update status in Inventory Report
-                            var selectedReportRecord = this.db.LoadRecordsByGenericT<InventoryReportModel, string>("InventoryReport", "Item", item.Item);
                             string status = "OUT";
                             if (item.Qty > 0)
                             {
                                 status = "IN (" + item.Qty.ToString(CultureInfo.CurrentCulture) + ")";
                             }
 
-                            selectedReportRecord.Status = status;
-
-                            this.db.UpsertRecord("InventoryReport", selectedReportRecord.Id, selectedReportRecord);
+                            item.Status = status;
+                            this.db.UpsertRecord("Inventory", item.Id, item);
+                            totalCostItemSold += item.Cost * cart.Quantity;
                             break;
                         }
                     }
@@ -444,6 +443,7 @@
                 // Insert the sales history to the database
                 this.db.InsertRecord("SalesHistory", new SalesHistoryModel
                 {
+                    TransactionId = this.txtTransactionID.Text,
                     Items = string.Join(", ", (from item in cartRecord select item.Item).ToArray()),
                     DateOfPurchase = DateTime.Now,
                     Employee = LoginUI.AcctName,

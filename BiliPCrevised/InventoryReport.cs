@@ -22,7 +22,7 @@
 
         private void InventoryReport_Load(object sender, EventArgs e)
         {
-            var inventoryRecord = this.db.LoadRecords<InventoryReportModel>("InventoryReport");
+            var inventoryRecord = this.db.LoadRecords<InventoryModel>("Inventory");
             this.dgdInventoryReport.DataSource = inventoryRecord;
             foreach (var item in inventoryRecord)
             {
@@ -32,7 +32,7 @@
                 }
             }
 
-            var deletedItemRecord = this.db.LoadRecords<InventoryReportModel>("InventoryDeletedRecords");
+            var deletedItemRecord = this.db.LoadRecords<InventoryModel>("InventoryDeletedRecords");
             foreach (var record in deletedItemRecord)
             {
                 if (!this.cboViewMonth.Items.Contains(record.DateModified.ToString("MMMM yyyy", CultureInfo.CurrentCulture)))
@@ -46,9 +46,9 @@
 
         private void BtnShowAll_Click(object sender, EventArgs e)
         {
-            var inventoryRecord = this.db.LoadRecords<InventoryReportModel>("InventoryReport");
+            var inventoryRecord = this.db.LoadRecords<InventoryModel>("Inventory");
             this.cboViewMonth.Text = string.Empty;
-            var deletedItemRecord = this.db.LoadRecords<InventoryReportModel>("InventoryDeletedRecords");
+            var deletedItemRecord = this.db.LoadRecords<InventoryModel>("InventoryDeletedRecords");
 
             this.RefreshDataGrids(inventoryRecord, deletedItemRecord);
         }
@@ -56,14 +56,14 @@
         private void CboViewMonth_SelectedIndexChanged(object sender, EventArgs e)
         {
             DateTime monYear = DateTime.Parse(this.cboViewMonth.Text, CultureInfo.InvariantCulture);
-            var selectedRecord = this.db.LoadRecordsByMonthList<InventoryReportModel>(
-                "InventoryReport", "DateModified", monYear.Year, monYear.Month);
-            var deletedItemRecord = this.db.LoadRecordsByMonthList<InventoryReportModel>(
+            var selectedRecord = this.db.LoadRecordsByMonthList<InventoryModel>(
+                "Inventory", "DateModified", monYear.Year, monYear.Month);
+            var deletedItemRecord = this.db.LoadRecordsByMonthList<InventoryModel>(
                 "InventoryDeletedRecords", "DateModified", monYear.Year, monYear.Month);
             this.RefreshDataGrids(selectedRecord, deletedItemRecord);
         }
 
-        private void RefreshDataGrids(List<InventoryReportModel> inventoryReport, List<InventoryReportModel> deletedItemRecord)
+        private void RefreshDataGrids(List<InventoryModel> inventoryReport, List<InventoryModel> deletedItemRecord)
         {
             this.dgdInventoryReport.DataSource = inventoryReport;
             this.dgdDeletedRecords.DataSource = deletedItemRecord;
@@ -80,12 +80,31 @@
                 foreach (var qty in invRecord)
                 {
                     totalCostAllItems += item.Cost * qty.Qty;
-                    totalRetailPrice += item.RetailAmount * qty.Qty;
+                    totalRetailPrice += item.UnitPrice * qty.Qty;
                 }
             }
 
             this.txtTCAI.Text = totalCostAllItems.ToString(CultureInfo.CurrentCulture);
             this.txtTRA.Text = totalRetailPrice.ToString(CultureInfo.CurrentCulture);
+        }
+
+        private void BtnClearDelRec_Click(object sender, EventArgs e)
+        {
+            var deletedRecords = this.db.LoadRecords<InventoryModel>("InventoryDeletedRecords");
+            if (!string.IsNullOrEmpty(this.cboViewMonth.Text))
+            {
+                DateTime monYear = DateTime.Parse(this.cboViewMonth.Text, CultureInfo.InvariantCulture);
+                deletedRecords = this.db.LoadRecordsByMonthList<InventoryModel>("InventoryDeletedRecords", "DateModified", monYear.Year, monYear.Month);
+            }
+
+            foreach (var record in deletedRecords)
+            {
+                this.db.DeleleRecord<InventoryModel>("InventoryDeletedRecords", record.Id);
+            }
+
+            var inventoryRecord = this.db.LoadRecords<InventoryModel>("Inventory");
+            deletedRecords = this.db.LoadRecords<InventoryModel>("InventoryDeletedRecords");
+            this.RefreshDataGrids(inventoryRecord, deletedRecords);
         }
 
         private void BtnGenerateReport_Click(object sender, EventArgs e)
@@ -118,20 +137,26 @@
             }
 
             // Storing header part in Excel
-            for (int i = 2; i < this.dgdInventoryReport.Columns.Count + 1; i++)
+            for (int x = 1; x < this.dgdInventoryReport.ColumnCount; x++)
             {
-                xlWorkSheet.Cells[1, i - 1] = this.dgdInventoryReport.Columns[i - 1].HeaderText;
+                if (this.dgdInventoryReport.Columns[x].Visible)
+                {
+                    xlWorkSheet.Cells[1, x] = this.dgdInventoryReport.Columns[x].HeaderText;
+                }
             }
 
             // Default distance between datagrid and the summary
             int lastRow = 2;
 
             // Storing Each row and column value to excel sheet
-            for (int i = 0; i < this.dgdInventoryReport.Rows.Count; i++)
+            for (int y = 0; y < this.dgdInventoryReport.Rows.Count; y++)
             {
-                for (int j = 1; j < this.dgdInventoryReport.Columns.Count; j++)
+                for (int x = 1; x < this.dgdInventoryReport.ColumnCount; x++)
                 {
-                    xlWorkSheet.Cells[i + 2, j] = this.dgdInventoryReport.Rows[i].Cells[j].Value.ToString();
+                    if (this.dgdInventoryReport.Columns[x].Visible)
+                    {
+                        xlWorkSheet.Cells[y + 2, x] = this.dgdInventoryReport.Rows[y].Cells[x].Value.ToString();
+                    }
                 }
 
                 lastRow += 1;
@@ -143,14 +168,14 @@
             xlWorkSheet.Cells[lastRow + 2, 1] = "Total Retail Amount of All Items: ";
             xlWorkSheet.Cells[lastRow + 2, 2] = this.txtTRA.Text;
 
-            // -------------------------------Add new worksheet for deleted items------------------------------
-
             // Save the file
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.FileName = "BiliPC Inventory Report";
-            saveFileDialog.DefaultExt = ".xlsx";
-            saveFileDialog.Filter = "Excel files (*.xlsx)|*.xlsx|All files (*.*)|*.*";
-            saveFileDialog.FilterIndex = 2;
+            SaveFileDialog saveFileDialog = new SaveFileDialog
+            {
+                FileName = "BiliPC Inventory Report",
+                DefaultExt = ".xlsx",
+                Filter = "Excel files (*.xlsx)|*.xlsx|All files (*.*)|*.*",
+                FilterIndex = 2,
+            };
 
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {

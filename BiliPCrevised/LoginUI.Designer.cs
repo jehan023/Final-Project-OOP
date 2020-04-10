@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginUI));
             this.picBiliPCLogo = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.LinkResetPassword = new System.Windows.Forms.LinkLabel();
             this.btnExit = new System.Windows.Forms.Button();
             this.lblUsername = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
@@ -39,7 +40,6 @@
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblLoginBiliPC = new System.Windows.Forms.Label();
-            this.LinkResetPassword = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.picBiliPCLogo)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -72,9 +72,22 @@
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(316, 154);
-            this.groupBox1.TabIndex = 7;
+            this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Sign In";
+            // 
+            // LinkResetPassword
+            // 
+            this.LinkResetPassword.AutoSize = true;
+            this.LinkResetPassword.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LinkResetPassword.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LinkResetPassword.Location = new System.Drawing.Point(116, 80);
+            this.LinkResetPassword.Name = "LinkResetPassword";
+            this.LinkResetPassword.Size = new System.Drawing.Size(98, 14);
+            this.LinkResetPassword.TabIndex = 6;
+            this.LinkResetPassword.TabStop = true;
+            this.LinkResetPassword.Text = "Reset Password";
+            this.LinkResetPassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkResetPassword_LinkClicked);
             // 
             // btnExit
             // 
@@ -89,7 +102,7 @@
             this.btnExit.Margin = new System.Windows.Forms.Padding(2);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(69, 32);
-            this.btnExit.TabIndex = 5;
+            this.btnExit.TabIndex = 8;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.BtnExit_Click);
@@ -105,7 +118,7 @@
             this.lblUsername.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(83, 17);
-            this.lblUsername.TabIndex = 0;
+            this.lblUsername.TabIndex = 2;
             this.lblUsername.Text = "Username";
             // 
             // btnLogin
@@ -120,7 +133,7 @@
             this.btnLogin.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(69, 32);
-            this.btnLogin.TabIndex = 4;
+            this.btnLogin.TabIndex = 7;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
@@ -134,7 +147,7 @@
             this.lblPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(80, 17);
-            this.lblPassword.TabIndex = 1;
+            this.lblPassword.TabIndex = 4;
             this.lblPassword.Text = "Password";
             // 
             // txtPassword
@@ -145,7 +158,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(190, 23);
-            this.txtPassword.TabIndex = 3;
+            this.txtPassword.TabIndex = 5;
             // 
             // txtUsername
             // 
@@ -154,7 +167,7 @@
             this.txtUsername.Margin = new System.Windows.Forms.Padding(2);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(190, 23);
-            this.txtUsername.TabIndex = 2;
+            this.txtUsername.TabIndex = 3;
             // 
             // panel1
             // 
@@ -178,19 +191,6 @@
             this.lblLoginBiliPC.Size = new System.Drawing.Size(130, 16);
             this.lblLoginBiliPC.TabIndex = 0;
             this.lblLoginBiliPC.Text = "Login BiliPC Store";
-            // 
-            // LinkResetPassword
-            // 
-            this.LinkResetPassword.AutoSize = true;
-            this.LinkResetPassword.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LinkResetPassword.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LinkResetPassword.Location = new System.Drawing.Point(116, 80);
-            this.LinkResetPassword.Name = "LinkResetPassword";
-            this.LinkResetPassword.Size = new System.Drawing.Size(96, 14);
-            this.LinkResetPassword.TabIndex = 6;
-            this.LinkResetPassword.TabStop = true;
-            this.LinkResetPassword.Text = "reset password";
-            this.LinkResetPassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkResetPassword_LinkClicked);
             // 
             // LoginUI
             // 

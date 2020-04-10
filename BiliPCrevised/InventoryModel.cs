@@ -27,7 +27,7 @@
 
         [BsonElement]
         [BsonDateTimeOptions(Kind = DateTimeKind.Local)]
-        public DateTime Date { get; set; }
+        public DateTime DateModified { get; set; }
 
         [BsonElement]
         public string Category { get; set; }
@@ -36,6 +36,9 @@
         public string Supplier { get; set; }
 
         [BsonElement]
-        public bool Status { get; set; }
+        public bool InStock { get; set; }
+
+        [BsonElement]
+        public string Status { get; set; }
     }
 }
