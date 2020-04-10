@@ -87,6 +87,7 @@
             this.LinkResetPassword.TabIndex = 6;
             this.LinkResetPassword.TabStop = true;
             this.LinkResetPassword.Text = "Reset Password";
+            this.LinkResetPassword.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.LinkResetPassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkResetPassword_LinkClicked);
             // 
             // btnExit

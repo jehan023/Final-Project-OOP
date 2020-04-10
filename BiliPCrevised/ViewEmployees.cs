@@ -50,6 +50,7 @@
             var userRecord = this.db.LoadRecords<UsersModel>("Users");
             this.dgdEmployee.DataSource = userRecord;
             this.TxtSearchEmployee.Text = string.Empty;
+            this.AutoCompleteSearch();
 
             if (userRecord.Any()
                 && double.TryParse(this.dgdEmployee.Rows[0].Cells[5].Value.ToString(), out double workhours))

@@ -40,6 +40,9 @@
         private void BtnX_Click(object sender, EventArgs e)
         {
             this.Close();
+
+            // When Transaction UI close automatically cart will be refreshed/dropped
+            this.db.DropCollection<TransactionTempModel>("TransactionTemp");
         }
 
         private void TransactionForm_Load(object sender, EventArgs e)
@@ -258,16 +261,16 @@
         private void CheckItem()
         {
             var invRecord = this.db.LoadRecords<InventoryModel>("Inventory");
-            bool exists = false;
+            bool exist = false;
             foreach (var item in invRecord)
             {
                 if (this.CboItem.Text == item.Item)
                 {
-                    exists = true;
+                    exist = true;
                 }
             }
 
-            if (exists == false)
+            if (exist == false)
             {
                 MessageBox.Show("Item not exist.");
                 this.RefreshCboItems();
@@ -294,7 +297,7 @@
                     selectedCartRecord.Quantity = result;
                     selectedCartRecord.TotalUnitPrice = selectedCartRecord.UnitPrice * selectedCartRecord.Quantity;
 
-                    if (selectedInvRecord.Qty >= selectedCartRecord.Quantity)
+                    if (selectedInvRecord.Qty >= selectedCartRecord.Quantity )
                     {
                         this.db.UpsertRecord("TransactionTemp", selectedCartRecord.Id, selectedCartRecord);
                         this.RefreshCboItems();
@@ -305,7 +308,10 @@
                     }
                     else
                     {
-                        MessageBox.Show("Please check the stocks of your item.");
+                        // Shows hpw many stocks left for that item in cboItem
+                        var stock = selectedInvRecord.Qty;
+                        string msg = $"This item has {stock} available.";
+                        MessageBox.Show(msg);
                     }
                 }
                 else
@@ -358,22 +364,30 @@
                 && double.TryParse(this.txtTotalPrice.Text, out double totalPrice)
                 && change >= 0)
                 {
-                    var selectedCartRecord = this.db.LoadRecordsByGenericT<TransactionTempModel, ObjectId>("TransactionTemp", "Id", id);
-                    using (PrintReceipt receipt = new PrintReceipt(
-                        DateTime.Now.ToString("MM/dd/yyyy", CultureInfo.InvariantCulture),
-                        LoginUI.AcctName,
-                        this.txtTransactionID.Text,
-                        cartRecord,
-                        string.Format(CultureInfo.CurrentCulture, "₱{0:0.00}", cartRecord.Sum(x => x.TotalUnitPrice)),
-                        string.Format(CultureInfo.CurrentCulture, "{0}%", selectedCartRecord.Discount),
-                        string.Format(CultureInfo.CurrentCulture, "₱{0:0.00}", cash),
-                        string.Format(CultureInfo.CurrentCulture, "₱{0:0.00}", change),
-                        string.Format(CultureInfo.CurrentCulture, "₱{0:0.00}", totalPrice)))
+                    // Message box confirmation of transaction
+                    string message = "Do you want to continue?";
+                    string title = "Transaction Confirmation";
+                    MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                    DialogResult result = MessageBox.Show(message, title, buttons, MessageBoxIcon.Question);
+                    if (result == DialogResult.Yes)
                     {
-                        receipt.ShowDialog();
-                    }
+                        var selectedCartRecord = this.db.LoadRecordsByGenericT<TransactionTempModel, ObjectId>("TransactionTemp", "Id", id);
+                        using (PrintReceipt receipt = new PrintReceipt(
+                            DateTime.Now.ToString("MM/dd/yyyy", CultureInfo.InvariantCulture),
+                            LoginUI.AcctName,
+                            this.txtTransactionID.Text,
+                            cartRecord,
+                            string.Format(CultureInfo.CurrentCulture, "₱{0:0.00}", cartRecord.Sum(x => x.TotalUnitPrice)),
+                            string.Format(CultureInfo.CurrentCulture, "{0}%", selectedCartRecord.Discount),
+                            string.Format(CultureInfo.CurrentCulture, "₱{0:0.00}", cash),
+                            string.Format(CultureInfo.CurrentCulture, "₱{0:0.00}", change),
+                            string.Format(CultureInfo.CurrentCulture, "₱{0:0.00}", totalPrice)))
+                        {
+                            receipt.ShowDialog();
+                        }
 
-                    this.Transact(cartRecord);
+                        this.Transact(cartRecord);
+                    }
                 }
                 else
                 {
@@ -393,7 +407,16 @@
             {
                 if (double.TryParse(this.txtChange.Text, out double change) && change >= 0)
                 {
-                    this.Transact(cartRecord);
+
+                    // Message box confirmation of transaction
+                    string message = "Do you want to continue?";
+                    string title = "Transaction Confirmation";
+                    MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                    DialogResult result = MessageBox.Show(message, title, buttons, MessageBoxIcon.Question);
+                    if (result == DialogResult.Yes)
+                    {
+                        this.Transact(cartRecord);
+                    }
                 }
                 else
                 {

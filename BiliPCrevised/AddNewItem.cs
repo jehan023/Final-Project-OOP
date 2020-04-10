@@ -12,6 +12,31 @@
         public AddNewItem()
         {
             this.InitializeComponent();
+            this.AutoComplete();
+        }
+
+        private void AutoComplete()
+        {
+            AutoCompleteStringCollection category = new AutoCompleteStringCollection();
+            AutoCompleteStringCollection supplier = new AutoCompleteStringCollection();
+
+            var invRecord = this.db.LoadRecords<InventoryModel>("Inventory");
+
+            foreach (var fill in invRecord)
+            {
+                if (!category.Contains(fill.Category))
+                {
+                    category.Add(fill.Category);
+                }
+
+                if (!supplier.Contains(fill.Supplier))
+                {
+                    supplier.Add(fill.Supplier);
+                }
+            }
+
+            this.txtCategory.AutoCompleteCustomSource = category;
+            this.txtSupplier.AutoCompleteCustomSource = supplier;
         }
 
         private void BtnCancel_Click(object sender, EventArgs e)
