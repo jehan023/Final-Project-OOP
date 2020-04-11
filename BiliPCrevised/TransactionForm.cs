@@ -279,23 +279,23 @@
             this.CheckItem();
             if (!string.IsNullOrEmpty(this.CboItem.Text))
             {
-                if (int.TryParse(this.txtQuantity.Text, out int result) && result > 0)
+                if (int.TryParse(this.txtQuantity.Text, out int quantity) && quantity > 0)
                 {
                     var selectedInvRecord = this.db.LoadRecordsByGenericT<InventoryModel, string>("Inventory", "Item", this.CboItem.Text);
+                    var selectedCartRecord = this.db.LoadRecordsByGenericT<TransactionTempModel, ObjectId>("TransactionTemp", "Id", selectedInvRecord.Id);
                     var cartExists = this.db.CheckExistenceByGeneric<TransactionTempModel, ObjectId>("TransactionTemp", "Id", selectedInvRecord.Id);
                     if (!cartExists)
                     {
-                        this.db.InsertRecord("TransactionTemp", new TransactionTempModel { Id = selectedInvRecord.Id, });
+                        selectedCartRecord.Id = selectedInvRecord.Id;
                     }
-
-                    var selectedCartRecord = this.db.LoadRecordsByGenericT<TransactionTempModel, ObjectId>("TransactionTemp", "Id", selectedInvRecord.Id);
-                    selectedCartRecord.Item = selectedInvRecord.Item;
-                    selectedCartRecord.UnitPrice = selectedInvRecord.UnitPrice;
-                    selectedCartRecord.Quantity = result;
-                    selectedCartRecord.TotalUnitPrice = selectedCartRecord.UnitPrice * selectedCartRecord.Quantity;
 
                     if (selectedInvRecord.Qty >= selectedCartRecord.Quantity)
                     {
+                        selectedCartRecord.Item = selectedInvRecord.Item;
+                        selectedCartRecord.UnitPrice = selectedInvRecord.UnitPrice;
+                        selectedCartRecord.Quantity = quantity;
+                        selectedCartRecord.TotalUnitPrice = selectedCartRecord.UnitPrice * selectedCartRecord.Quantity;
+
                         this.db.UpsertRecord("TransactionTemp", selectedCartRecord.Id, selectedCartRecord);
                         this.RefreshCboItems();
                         this.RefreshDiscountsToAll();
