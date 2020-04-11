@@ -34,7 +34,6 @@
             else if (emptyField == 0)
             {
                 var usersRecord = this.db.LoadRecords<UsersModel>("Users");
-                bool accountNotFound = false;
                 foreach (var user in usersRecord)
                 {
                     if (user.Name == this.txtName.Text && user.Username == this.txtUsername.Text
@@ -46,16 +45,17 @@
                         this.Close();
                         break;
                     }
-                    else if (user.Name != this.txtName.Text || user.Username != this.txtUsername.Text)
+                    else if (user.Username == this.txtUsername.Text && user.Name != this.txtName.Text)
                     {
-                        accountNotFound = true;
+                        MessageBox.Show("Please check your Name/Username.");
+                        break;
                     }
                 }
 
-                // Condition might be prone to brute force but ok
-                if (accountNotFound)
+                var usrnmExists = this.db.CheckExistenceByGeneric<UsersModel, string>("Users", "Name", this.txtUsername.Text);
+                if (!usrnmExists)
                 {
-                    MessageBox.Show("Please check your entered Name/Username.");
+                    MessageBox.Show("Account does not exist.");
                 }
                 else if (this.txtNewPassword.Text != this.txtConfirmPassword.Text)
                 {

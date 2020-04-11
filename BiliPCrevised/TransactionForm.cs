@@ -224,13 +224,14 @@
 
         private void CboCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
+            var selectedCatRecord = this.db.LoadRecordsByGenericList<InventoryModel, string>("Inventory", "Category", this.cboCategory.Text);
+
             // Pass the value before resetting the box
             string returnItem = this.CboItem.Text;
 
             // Reset the cboItem value
-            this.CboItem.Items.Clear();
             this.CboItem.Text = string.Empty;
-            var selectedCatRecord = this.db.LoadRecordsByGenericList<InventoryModel, string>("Inventory", "Category", this.cboCategory.Text);
+            this.CboItem.Items.Clear();
 
             // Change cboItem.Items value depending on selected cboCategory
             foreach (var cboInventory in selectedCatRecord)
@@ -275,6 +276,13 @@
                 MessageBox.Show("Item not exist.");
                 this.RefreshCboItems();
             }
+
+            //var itemExists = this.db.CheckExistenceByGeneric<InventoryModel, string>("Inventory", "Item", this.CboItem.Text);
+            //if (!itemExists)
+            //{
+            //    MessageBox.Show("Item not exist.");
+            //    this.RefreshCboItems();
+            //}
         }
 
         private void BtnAddItem_Click(object sender, EventArgs e)
@@ -285,15 +293,15 @@
                 if (int.TryParse(this.txtQuantity.Text, out int quantity) && quantity > 0)
                 {
                     var selectedInvRecord = this.db.LoadRecordsByGenericT<InventoryModel, string>("Inventory", "Item", this.CboItem.Text);
-                    var selectedCartRecord = this.db.LoadRecordsByGenericT<TransactionTempModel, ObjectId>("TransactionTemp", "Id", selectedInvRecord.Id);
-                    var cartExists = this.db.CheckExistenceByGeneric<TransactionTempModel, ObjectId>("TransactionTemp", "Id", selectedInvRecord.Id);
-                    if (!cartExists)
+                    if (selectedInvRecord.Qty >= quantity)
                     {
-                        selectedCartRecord.Id = selectedInvRecord.Id;
-                    }
+                        var cartExists = this.db.CheckExistenceByGeneric<TransactionTempModel, ObjectId>("TransactionTemp", "Id", selectedInvRecord.Id);
+                        if (!cartExists)
+                        {
+                            this.db.InsertRecord("TransactionTemp", new TransactionTempModel { Id = selectedInvRecord.Id, });
+                        }
 
-                    if (selectedInvRecord.Qty >= selectedCartRecord.Quantity )
-                    {
+                        var selectedCartRecord = this.db.LoadRecordsByGenericT<TransactionTempModel, ObjectId>("TransactionTemp", "Id", selectedInvRecord.Id);
                         selectedCartRecord.Item = selectedInvRecord.Item;
                         selectedCartRecord.UnitPrice = selectedInvRecord.UnitPrice;
                         selectedCartRecord.Quantity = quantity;
@@ -308,7 +316,7 @@
                     }
                     else
                     {
-                        // Shows hpw many stocks left for that item in cboItem
+                        // Shows how many stocks left for that item in cboItem
                         var stock = selectedInvRecord.Qty;
                         string msg = $"This item has {stock} available.";
                         MessageBox.Show(msg);
@@ -407,7 +415,6 @@
             {
                 if (double.TryParse(this.txtChange.Text, out double change) && change >= 0)
                 {
-
                     // Message box confirmation of transaction
                     string message = "Do you want to continue?";
                     string title = "Transaction Confirmation";

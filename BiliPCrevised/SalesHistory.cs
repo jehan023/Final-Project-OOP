@@ -30,7 +30,7 @@
                 }
             }
 
-            this.RefreshDataGrid(salesRecord);
+            this.dgdSalesHistory.DataSource = salesRecord;
         }
 
         private void CboMonth_SelectedIndexChanged(object sender, EventArgs e)
@@ -45,19 +45,21 @@
             DateTime monYear = DateTime.Parse(this.cboMonth.Text, CultureInfo.InvariantCulture);
             var selectedRecord = this.db.LoadRecordsByMonthList<SalesHistoryModel>(
                 "SalesHistory", "DateOfPurchase", monYear.Year, monYear.Month);
-            this.RefreshDataGrid(selectedRecord);
+            this.dgdSalesHistory.DataSource = selectedRecord;
         }
 
         private void BtnShowAll_Click(object sender, EventArgs e)
         {
             var salesRecord = this.db.LoadRecords<SalesHistoryModel>("SalesHistory");
             this.cboMonth.Text = string.Empty;
-            this.RefreshDataGrid(salesRecord);
+            this.dgdSalesHistory.DataSource = salesRecord;
         }
 
-        private void RefreshDataGrid(List<SalesHistoryModel> salesRecord)
+
+        private void TxtTransID_TextChanged(object sender, EventArgs e)
         {
-            this.dgdSalesHistory.DataSource = salesRecord;
+            var selectedRecord = this.db.LoadRecordsByCaseInsensitive<SalesHistoryModel>("SalesHistory", "TransactionId", this.txtTransID.Text);
+            this.dgdSalesHistory.DataSource = selectedRecord;
         }
     }
 }
