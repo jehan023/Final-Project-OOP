@@ -103,7 +103,11 @@
             int emptyField = Functions.CheckFields(this.GroupTextBox);
             if (emptyField > 0)
             {
-                MessageBox.Show("Please fill all of the " + emptyField + " field/s.");
+                // Message box showing unfilled textbox.
+                string message = "Please fill all of the " + emptyField + " field/s.";
+                string title = "Error";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBox.Show(message, title, buttons, MessageBoxIcon.Error);
             }
             else if (ObjectId.TryParse(this.txtAcctID.Text, out ObjectId id) && double.TryParse(this.txtAcctSalary.Text, out double salary))
             {
@@ -139,12 +143,21 @@
                 }
                 else
                 {
-                    MessageBox.Show("Username already exists. Please choose another username.");
+                    // Message box showing username already exists.
+                    string message = "Username already exists.\nPlease choose another username.";
+                    string title = "Error";
+                    MessageBoxButtons buttons = MessageBoxButtons.OK;
+                    MessageBox.Show(message, title, buttons, MessageBoxIcon.Error);
+                    this.RefreshAccounts();
                 }
             }
             else
             {
-                MessageBox.Show("Please enter a valid character.");
+                // Message box showing enter valid.
+                string message = "Please enter a valid character.";
+                string title = " ";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBox.Show(message, title, buttons, MessageBoxIcon.Error);
             }
         }
 
@@ -152,8 +165,14 @@
         {
             if (ObjectId.TryParse(this.txtAcctID.Text, out ObjectId id))
             {
-                var selectedRecord = this.db.LoadRecordsByGenericT<UsersModel, string>("Users", "Name", DashboardUI.AcctName);
+                // Message box delete account confirmation.
+                string msg = "Are you sure to delete this account?";
+                string ttl = "Delete Account Confirmation";
+                MessageBoxButtons btns = MessageBoxButtons.YesNo;
+                DialogResult result = MessageBox.Show(msg, ttl, btns, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
                 {
+                    var selectedRecord = this.db.LoadRecordsByGenericT<UsersModel, string>("Users", "Name", DashboardUI.AcctName);
                     if (selectedRecord.Id != id)
                     {
                         this.db.DeleleRecord<UsersModel>("Users", id);
@@ -162,8 +181,14 @@
                     }
                     else
                     {
-                        MessageBox.Show("You cannot delete your account while logged in. Please log in using different admin account.");
+                        // Message box showing error deleting your own account.
+                        string message = "You cannot delete your account while logged in.\nPlease log in using different admin account.";
+                        string title = "Error";
+                        MessageBoxButtons buttons = MessageBoxButtons.OK;
+                        MessageBox.Show(message, title, buttons, MessageBoxIcon.Error);
                     }
+
+                    this.RefreshAccounts();
                 }
             }
             else

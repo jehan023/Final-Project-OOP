@@ -26,9 +26,9 @@
             this.dgdSalesReport.DataSource = salesRecord;
             foreach (var transaction in salesRecord)
             {
-                if (!this.cboViewMonth.Items.Contains(transaction.DateOfPurchase.ToString("MMMM yyyy", CultureInfo.CurrentCulture)))
+                if (!this.CboViewMonth.Items.Contains(transaction.DateOfPurchase.ToString("MMMM yyyy", CultureInfo.CurrentCulture)))
                 {
-                    this.cboViewMonth.Items.Add(transaction.DateOfPurchase.ToString("MMMM yyyy", CultureInfo.CurrentCulture));
+                    this.CboViewMonth.Items.Add(transaction.DateOfPurchase.ToString("MMMM yyyy", CultureInfo.CurrentCulture));
                 }
             }
 
@@ -38,7 +38,7 @@
         private void BtnShowAll_Click(object sender, EventArgs e)
         {
             var salesRecord = this.db.LoadRecords<SalesHistoryModel>("SalesHistory");
-            this.cboViewMonth.Text = string.Empty;
+            this.CboViewMonth.Text = string.Empty;
             this.RefreshData(salesRecord);
         }
 
@@ -85,7 +85,7 @@
 
         private void CboViewMonth_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DateTime monYear = DateTime.Parse(this.cboViewMonth.Text, CultureInfo.InvariantCulture);
+            DateTime monYear = DateTime.Parse(this.CboViewMonth.Text, CultureInfo.InvariantCulture);
             var selectedRecord = this.db.LoadRecordsByMonthList<SalesHistoryModel>(
                 "SalesHistory", "DateOfPurchase", monYear.Year, monYear.Month);
             this.RefreshData(selectedRecord);
@@ -111,9 +111,9 @@
             xlWorkSheet = xlWorkBook.ActiveSheet;
 
             // Changing the name of active sheet
-            if (!string.IsNullOrEmpty(this.cboViewMonth.Text))
+            if (!string.IsNullOrEmpty(this.CboViewMonth.Text))
             {
-                xlWorkSheet.Name = this.cboViewMonth.Text;
+                xlWorkSheet.Name = this.CboViewMonth.Text;
             }
             else
             {
@@ -155,7 +155,7 @@
             // Save the file
             SaveFileDialog saveFileDialog = new SaveFileDialog
             {
-                FileName = "BiliPC Sales Report",
+                FileName = $"BiliPC Sales Report {this.CboViewMonth.Text}",
                 DefaultExt = ".xlsx",
                 Filter = "Excel files (*.xlsx)|*.xlsx|All files (*.*)|*.*",
                 FilterIndex = 2,
@@ -208,6 +208,11 @@
             {
                 GC.Collect();
             }
+        }
+
+        private void CboViewMonth_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
         }
     }
 }

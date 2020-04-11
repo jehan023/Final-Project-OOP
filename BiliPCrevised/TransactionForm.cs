@@ -212,6 +212,7 @@
         {
             if (!string.IsNullOrEmpty(this.CboItem.Text))
             {
+                this.CheckItem();
                 this.RefreshAddButton();
                 this.RefreshDataUpper();
             }
@@ -273,63 +274,92 @@
 
             if (exist == false)
             {
-                MessageBox.Show("Item not exist.");
+                // Message box showing Item is not exists.
+                string message = "Item not exists.";
+                string title = "Add Item";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBox.Show(message, title, buttons, MessageBoxIcon.Error);
                 this.RefreshCboItems();
             }
-
-            //var itemExists = this.db.CheckExistenceByGeneric<InventoryModel, string>("Inventory", "Item", this.CboItem.Text);
-            //if (!itemExists)
-            //{
-            //    MessageBox.Show("Item not exist.");
-            //    this.RefreshCboItems();
-            //}
         }
 
         private void BtnAddItem_Click(object sender, EventArgs e)
         {
-            this.CheckItem();
+            var invRecord = this.db.LoadRecords<InventoryModel>("Inventory");
+            bool exist = false;
+            foreach (var item in invRecord)
+            {
+                if (this.CboItem.Text == item.Item)
+                {
+                    exist = true;
+                }
+            }
+
             if (!string.IsNullOrEmpty(this.CboItem.Text))
             {
-                if (int.TryParse(this.txtQuantity.Text, out int quantity) && quantity > 0)
+                if (exist == true)
                 {
-                    var selectedInvRecord = this.db.LoadRecordsByGenericT<InventoryModel, string>("Inventory", "Item", this.CboItem.Text);
-                    if (selectedInvRecord.Qty >= quantity)
+                    if (int.TryParse(this.txtQuantity.Text, out int quantity) && quantity > 0)
                     {
-                        var cartExists = this.db.CheckExistenceByGeneric<TransactionTempModel, ObjectId>("TransactionTemp", "Id", selectedInvRecord.Id);
-                        if (!cartExists)
+                        var selectedInvRecord = this.db.LoadRecordsByGenericT<InventoryModel, string>("Inventory", "Item", this.CboItem.Text);
+                        if (selectedInvRecord.Qty >= quantity)
                         {
-                            this.db.InsertRecord("TransactionTemp", new TransactionTempModel { Id = selectedInvRecord.Id, });
+                            var cartExists = this.db.CheckExistenceByGeneric<TransactionTempModel, ObjectId>("TransactionTemp", "Id", selectedInvRecord.Id);
+                            if (!cartExists)
+                            {
+                                this.db.InsertRecord("TransactionTemp", new TransactionTempModel { Id = selectedInvRecord.Id, });
+                            }
+
+                            var selectedCartRecord = this.db.LoadRecordsByGenericT<TransactionTempModel, ObjectId>("TransactionTemp", "Id", selectedInvRecord.Id);
+                            selectedCartRecord.Item = selectedInvRecord.Item;
+                            selectedCartRecord.UnitPrice = selectedInvRecord.UnitPrice;
+                            selectedCartRecord.Quantity = quantity;
+                            selectedCartRecord.TotalUnitPrice = selectedCartRecord.UnitPrice * selectedCartRecord.Quantity;
+
+                            this.db.UpsertRecord("TransactionTemp", selectedCartRecord.Id, selectedCartRecord);
+                            this.RefreshCboItems();
+                            this.RefreshDiscountsToAll();
+                            this.RefreshDataGrid();
+                            this.RefreshDataLower();
+                            this.RefreshAddButton();
                         }
-
-                        var selectedCartRecord = this.db.LoadRecordsByGenericT<TransactionTempModel, ObjectId>("TransactionTemp", "Id", selectedInvRecord.Id);
-                        selectedCartRecord.Item = selectedInvRecord.Item;
-                        selectedCartRecord.UnitPrice = selectedInvRecord.UnitPrice;
-                        selectedCartRecord.Quantity = quantity;
-                        selectedCartRecord.TotalUnitPrice = selectedCartRecord.UnitPrice * selectedCartRecord.Quantity;
-
-                        this.db.UpsertRecord("TransactionTemp", selectedCartRecord.Id, selectedCartRecord);
-                        this.RefreshCboItems();
-                        this.RefreshDiscountsToAll();
-                        this.RefreshDataGrid();
-                        this.RefreshDataLower();
-                        this.RefreshAddButton();
+                        else
+                        {
+                            // Shows how many stocks left for that item in cboItem
+                            var stock = selectedInvRecord.Qty;
+                            string msg = $"This item has {stock} available.";
+                            string title = "Stocks Left";
+                            MessageBoxButtons buttons = MessageBoxButtons.OK;
+                            MessageBox.Show(msg, title, buttons, MessageBoxIcon.Warning);
+                            this.txtQuantity.Text = "0";
+                        }
                     }
                     else
                     {
-                        // Shows how many stocks left for that item in cboItem
-                        var stock = selectedInvRecord.Qty;
-                        string msg = $"This item has {stock} available.";
-                        MessageBox.Show(msg);
+                        // Message box showing to add qty.
+                        string message = "Please add quantity.";
+                        string title = " ";
+                        MessageBoxButtons buttons = MessageBoxButtons.OK;
+                        MessageBox.Show(message, title, buttons, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Please add quantity.");
+                    // Message box showing Item is not exists.
+                    string message = "Item not exists.";
+                    string title = "Add Item";
+                    MessageBoxButtons buttons = MessageBoxButtons.OK;
+                    MessageBox.Show(message, title, buttons, MessageBoxIcon.Error);
+                    this.RefreshCboItems();
                 }
             }
             else
             {
-                MessageBox.Show("Please select an item.");
+                // Message box showing to select an item.
+                string message = "Please select an item.";
+                string title = " ";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBox.Show(message, title, buttons, MessageBoxIcon.Error);
             }
         }
 
@@ -346,7 +376,11 @@
             }
             else
             {
-                MessageBox.Show("Please select an item.");
+                // Message box showing to select an item on cart.
+                string message = "Please select an item.";
+                string title = " ";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBox.Show(message, title, buttons, MessageBoxIcon.Error);
             }
         }
 
@@ -381,7 +415,7 @@
                     {
                         var selectedCartRecord = this.db.LoadRecordsByGenericT<TransactionTempModel, ObjectId>("TransactionTemp", "Id", id);
                         using (PrintReceipt receipt = new PrintReceipt(
-                            DateTime.Now.ToString("MM/dd/yyyy", CultureInfo.InvariantCulture),
+                            DateTime.Now.ToString("MM/dd/yyyy hh:mm tt", CultureInfo.InvariantCulture),
                             LoginUI.AcctName,
                             this.txtTransactionID.Text,
                             cartRecord,
@@ -399,12 +433,20 @@
                 }
                 else
                 {
-                    MessageBox.Show("Please check your cash.");
+                    // Message box showing to check your cash input.
+                    string message = "Please check your cash.";
+                    string title = " ";
+                    MessageBoxButtons buttons = MessageBoxButtons.OK;
+                    MessageBox.Show(message, title, buttons, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("Please add an item.");
+                // Message box showing to add item on cart.
+                string message = "Please add an item.";
+                string title = " ";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBox.Show(message, title, buttons, MessageBoxIcon.Error);
             }
         }
 
@@ -427,12 +469,20 @@
                 }
                 else
                 {
-                    MessageBox.Show("Please check your cash");
+                    // Message box showing to check your cash input.
+                    string message = "Please check your cash.";
+                    string title = " ";
+                    MessageBoxButtons buttons = MessageBoxButtons.OK;
+                    MessageBox.Show(message, title, buttons, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("Please add an item.");
+                // Message box showing to add item on cart.
+                string message = "Please add an item.";
+                string title = " ";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBox.Show(message, title, buttons, MessageBoxIcon.Error);
             }
         }
 
@@ -455,6 +505,7 @@
                             }
 
                             item.Qty -= cart.Quantity;
+                            item.DateModified = DateTime.Now;
 
                             string status = "OUT";
                             if (item.Qty > 0)

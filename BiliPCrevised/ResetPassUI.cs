@@ -29,38 +29,99 @@
             int emptyField = Functions.CheckFields(this.GroupTextBox);
             if (emptyField > 0)
             {
-                MessageBox.Show("Please fill all of the " + emptyField + " field/s.");
+                // Message box showing unfilled textbox.
+                string message = "Please fill all of the " + emptyField + " field/s.";
+                string title = "Error";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBox.Show(message, title, buttons, MessageBoxIcon.Error);
             }
             else if (emptyField == 0)
             {
+                var usrnmExists = this.db.CheckExistenceByGeneric<UsersModel, string>("Users", "Username", this.txtUsername.Text);
+                if (!usrnmExists)
+                {
+                    // Message box showing Account doesn't exists.
+                    string message = "Account does not exists.";
+                    string title = "Reset Account";
+                    MessageBoxButtons buttons = MessageBoxButtons.OK;
+                    MessageBox.Show(message, title, buttons, MessageBoxIcon.Error);
+                }
+                else if (this.TxtNewPassword.Text != this.TxtConfirmPassword.Text)
+                {
+                    // Message box showing input Passwords doesn't matched.
+                    string message = "Please check your entered password.";
+                    string title = "Reset Account";
+                    MessageBoxButtons buttons = MessageBoxButtons.OK;
+                    MessageBox.Show(message, title, buttons, MessageBoxIcon.Error);
+                }
+
                 var usersRecord = this.db.LoadRecords<UsersModel>("Users");
                 foreach (var user in usersRecord)
                 {
                     if (user.Name == this.txtName.Text && user.Username == this.txtUsername.Text
-                        && this.txtNewPassword.Text == this.txtConfirmPassword.Text)
+                        && this.TxtNewPassword.Text == this.TxtConfirmPassword.Text)
                     {
-                        user.Password = this.txtConfirmPassword.Text;
-                        this.db.UpsertRecord("Users", user.Id, user);
-                        MessageBox.Show("Success.");
-                        this.Close();
+                        // Message box confirmation of password resetting
+                        string message = "Do you want to reset your passsword?";
+                        string title = "Reset Account Confirmation";
+                        MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                        DialogResult result = MessageBox.Show(message, title, buttons, MessageBoxIcon.Warning);
+                        if (result == DialogResult.Yes)
+                        {
+                            user.Password = this.TxtConfirmPassword.Text;
+                            this.db.UpsertRecord("Users", user.Id, user);
+                            MessageBox.Show("Password Reset Successful.");
+                            this.Close();
+                        }
+
                         break;
                     }
                     else if (user.Username == this.txtUsername.Text && user.Name != this.txtName.Text)
                     {
-                        MessageBox.Show("Please check your Name/Username.");
+                        // Message box showing Name doesn't matched.
+                        string message = "Please check your Name.";
+                        string title = "Reset Account";
+                        MessageBoxButtons buttons = MessageBoxButtons.OK;
+                        MessageBox.Show(message, title, buttons, MessageBoxIcon.Error);
                         break;
                     }
                 }
+            }
+        }
 
-                var usrnmExists = this.db.CheckExistenceByGeneric<UsersModel, string>("Users", "Name", this.txtUsername.Text);
-                if (!usrnmExists)
-                {
-                    MessageBox.Show("Account does not exist.");
-                }
-                else if (this.txtNewPassword.Text != this.txtConfirmPassword.Text)
-                {
-                    MessageBox.Show("Please check your entered password.");
-                }
+        private void TxtConfirmPassword_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(this.TxtConfirmPassword.Text))
+            {
+                this.lblCheckPass.Text = " ";
+            }
+            else if (this.TxtNewPassword.Text == this.TxtConfirmPassword.Text)
+            {
+                this.lblCheckPass.Text = "Password Matched.";
+                this.lblCheckPass.ForeColor = Color.Green;
+            }
+            else if (this.TxtNewPassword.Text != this.TxtConfirmPassword.Text)
+            {
+                this.lblCheckPass.Text = "Password  Not Matched!";
+                this.lblCheckPass.ForeColor = Color.Red;
+            }
+        }
+
+        private void TxtNewPassword_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(this.TxtConfirmPassword.Text))
+            {
+                this.lblCheckPass.Text = " ";
+            }
+            else if (this.TxtNewPassword.Text == this.TxtConfirmPassword.Text)
+            {
+                this.lblCheckPass.Text = "Password Matched.";
+                this.lblCheckPass.ForeColor = Color.Green;
+            }
+            else if (this.TxtNewPassword.Text != this.TxtConfirmPassword.Text)
+            {
+                this.lblCheckPass.Text = "Password  Not Matched!";
+                this.lblCheckPass.ForeColor = Color.Red;
             }
         }
     }

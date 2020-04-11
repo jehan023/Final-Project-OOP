@@ -31,10 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlTop = new System.Windows.Forms.Panel();
-            this.txtTransID = new System.Windows.Forms.TextBox();
+            this.TxtTransID = new System.Windows.Forms.TextBox();
             this.lblTransID = new System.Windows.Forms.Label();
             this.btnShowAll = new System.Windows.Forms.Button();
-            this.cboMonth = new System.Windows.Forms.ComboBox();
+            this.CboMonth = new System.Windows.Forms.ComboBox();
             this.lblMonth = new System.Windows.Forms.Label();
             this.lblSalesHistory = new System.Windows.Forms.Label();
             this.btnX = new System.Windows.Forms.Button();
@@ -59,30 +59,33 @@
             // pnlTop
             // 
             this.pnlTop.BackColor = System.Drawing.Color.Teal;
-            this.pnlTop.Controls.Add(this.txtTransID);
+            this.pnlTop.Controls.Add(this.TxtTransID);
             this.pnlTop.Controls.Add(this.lblTransID);
             this.pnlTop.Controls.Add(this.btnShowAll);
-            this.pnlTop.Controls.Add(this.cboMonth);
+            this.pnlTop.Controls.Add(this.CboMonth);
             this.pnlTop.Controls.Add(this.lblMonth);
             this.pnlTop.Controls.Add(this.lblSalesHistory);
             this.pnlTop.Controls.Add(this.btnX);
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTop.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
-            this.pnlTop.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlTop.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlTop.Name = "pnlTop";
             this.pnlTop.Size = new System.Drawing.Size(945, 117);
             this.pnlTop.TabIndex = 0;
             // 
-            // txtTransID
+            // TxtTransID
             // 
-            this.txtTransID.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTransID.Location = new System.Drawing.Point(172, 67);
-            this.txtTransID.Margin = new System.Windows.Forms.Padding(2);
-            this.txtTransID.Name = "txtTransID";
-            this.txtTransID.Size = new System.Drawing.Size(312, 29);
-            this.txtTransID.TabIndex = 9;
-            this.txtTransID.TextChanged += new System.EventHandler(this.TxtTransID_TextChanged);
+            this.TxtTransID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.TxtTransID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.TxtTransID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtTransID.Location = new System.Drawing.Point(179, 66);
+            this.TxtTransID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TxtTransID.Name = "TxtTransID";
+            this.TxtTransID.Size = new System.Drawing.Size(312, 29);
+            this.TxtTransID.TabIndex = 9;
+            this.TxtTransID.TextChanged += new System.EventHandler(this.TxtTransID_TextChanged);
+            this.TxtTransID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtTransID_KeyPress);
             // 
             // lblTransID
             // 
@@ -111,16 +114,17 @@
             this.btnShowAll.UseVisualStyleBackColor = false;
             this.btnShowAll.Click += new System.EventHandler(this.BtnShowAll_Click);
             // 
-            // cboMonth
+            // CboMonth
             // 
-            this.cboMonth.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.cboMonth.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboMonth.FormattingEnabled = true;
-            this.cboMonth.Location = new System.Drawing.Point(571, 67);
-            this.cboMonth.Name = "cboMonth";
-            this.cboMonth.Size = new System.Drawing.Size(207, 29);
-            this.cboMonth.TabIndex = 2;
-            this.cboMonth.SelectedIndexChanged += new System.EventHandler(this.CboMonth_SelectedIndexChanged);
+            this.CboMonth.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.CboMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CboMonth.FormattingEnabled = true;
+            this.CboMonth.Location = new System.Drawing.Point(575, 65);
+            this.CboMonth.Name = "CboMonth";
+            this.CboMonth.Size = new System.Drawing.Size(207, 32);
+            this.CboMonth.TabIndex = 2;
+            this.CboMonth.SelectedIndexChanged += new System.EventHandler(this.CboMonth_SelectedIndexChanged);
+            this.CboMonth.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CboMonth_KeyPress);
             // 
             // lblMonth
             // 
@@ -157,7 +161,7 @@
             this.btnX.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnX.ForeColor = System.Drawing.Color.Black;
             this.btnX.Location = new System.Drawing.Point(921, 0);
-            this.btnX.Margin = new System.Windows.Forms.Padding(2);
+            this.btnX.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnX.Name = "btnX";
             this.btnX.Size = new System.Drawing.Size(25, 27);
             this.btnX.TabIndex = 6;
@@ -232,6 +236,7 @@
             // 
             this.transactionIdDataGridViewTextBoxColumn.DataPropertyName = "TransactionId";
             this.transactionIdDataGridViewTextBoxColumn.HeaderText = "TransactionId";
+            this.transactionIdDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.transactionIdDataGridViewTextBoxColumn.Name = "transactionIdDataGridViewTextBoxColumn";
             this.transactionIdDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -312,7 +317,7 @@
 
         private System.Windows.Forms.Panel pnlTop;
         private System.Windows.Forms.Button btnShowAll;
-        private System.Windows.Forms.ComboBox cboMonth;
+        private System.Windows.Forms.ComboBox CboMonth;
         private System.Windows.Forms.Label lblMonth;
         private System.Windows.Forms.Label lblSalesHistory;
         private System.Windows.Forms.Button btnX;
@@ -328,7 +333,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn netSalesDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn grossMarginDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource salesHistoryModelBindingSource;
-        private System.Windows.Forms.TextBox txtTransID;
+        private System.Windows.Forms.TextBox TxtTransID;
         private System.Windows.Forms.Label lblTransID;
     }
 }

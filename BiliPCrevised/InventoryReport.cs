@@ -26,18 +26,18 @@
             this.dgdInventoryReport.DataSource = inventoryRecord;
             foreach (var item in inventoryRecord)
             {
-                if (!this.cboViewMonth.Items.Contains(item.DateModified.ToString("MMMM yyyy", CultureInfo.CurrentCulture)))
+                if (!this.CboViewMonth.Items.Contains(item.DateModified.ToString("MMMM yyyy", CultureInfo.CurrentCulture)))
                 {
-                    this.cboViewMonth.Items.Add(item.DateModified.ToString("MMMM yyyy", CultureInfo.CurrentCulture));
+                    this.CboViewMonth.Items.Add(item.DateModified.ToString("MMMM yyyy", CultureInfo.CurrentCulture));
                 }
             }
 
             var deletedItemRecord = this.db.LoadRecords<InventoryModel>("InventoryDeletedRecords");
             foreach (var record in deletedItemRecord)
             {
-                if (!this.cboViewMonth.Items.Contains(record.DateModified.ToString("MMMM yyyy", CultureInfo.CurrentCulture)))
+                if (!this.CboViewMonth.Items.Contains(record.DateModified.ToString("MMMM yyyy", CultureInfo.CurrentCulture)))
                 {
-                    this.cboViewMonth.Items.Add(record.DateModified.ToString("MMMM yyyy", CultureInfo.CurrentCulture));
+                    this.CboViewMonth.Items.Add(record.DateModified.ToString("MMMM yyyy", CultureInfo.CurrentCulture));
                 }
             }
 
@@ -47,7 +47,7 @@
         private void BtnShowAll_Click(object sender, EventArgs e)
         {
             var inventoryRecord = this.db.LoadRecords<InventoryModel>("Inventory");
-            this.cboViewMonth.Text = string.Empty;
+            this.CboViewMonth.Text = string.Empty;
             var deletedItemRecord = this.db.LoadRecords<InventoryModel>("InventoryDeletedRecords");
 
             this.RefreshDataGrids(inventoryRecord, deletedItemRecord);
@@ -55,7 +55,7 @@
 
         private void CboViewMonth_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DateTime monYear = DateTime.Parse(this.cboViewMonth.Text, CultureInfo.InvariantCulture);
+            DateTime monYear = DateTime.Parse(this.CboViewMonth.Text, CultureInfo.InvariantCulture);
             var selectedRecord = this.db.LoadRecordsByMonthList<InventoryModel>(
                 "Inventory", "DateModified", monYear.Year, monYear.Month);
             var deletedItemRecord = this.db.LoadRecordsByMonthList<InventoryModel>(
@@ -91,9 +91,9 @@
         private void BtnClearDelRec_Click(object sender, EventArgs e)
         {
             var deletedRecords = this.db.LoadRecords<InventoryModel>("InventoryDeletedRecords");
-            if (!string.IsNullOrEmpty(this.cboViewMonth.Text))
+            if (!string.IsNullOrEmpty(this.CboViewMonth.Text))
             {
-                DateTime monYear = DateTime.Parse(this.cboViewMonth.Text, CultureInfo.InvariantCulture);
+                DateTime monYear = DateTime.Parse(this.CboViewMonth.Text, CultureInfo.InvariantCulture);
                 deletedRecords = this.db.LoadRecordsByMonthList<InventoryModel>("InventoryDeletedRecords", "DateModified", monYear.Year, monYear.Month);
             }
 
@@ -127,9 +127,9 @@
             xlWorkSheet = xlWorkBook.ActiveSheet;
 
             // Changing the name of active sheet
-            if (!string.IsNullOrEmpty(this.cboViewMonth.Text))
+            if (!string.IsNullOrEmpty(this.CboViewMonth.Text))
             {
-                xlWorkSheet.Name = this.cboViewMonth.Text;
+                xlWorkSheet.Name = this.CboViewMonth.Text;
             }
             else
             {
@@ -171,7 +171,7 @@
             // Save the file
             SaveFileDialog saveFileDialog = new SaveFileDialog
             {
-                FileName = "BiliPC Inventory Report",
+                FileName = $"BiliPC Inventory Report {this.CboViewMonth.Text}",
                 DefaultExt = ".xlsx",
                 Filter = "Excel files (*.xlsx)|*.xlsx|All files (*.*)|*.*",
                 FilterIndex = 2,
@@ -224,6 +224,11 @@
             {
                 GC.Collect();
             }
+        }
+
+        private void CboViewMonth_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
         }
     }
 }

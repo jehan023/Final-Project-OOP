@@ -60,13 +60,13 @@
             this.lblQuantity = new System.Windows.Forms.Label();
             this.lblItem = new System.Windows.Forms.Label();
             this.dgdCart = new System.Windows.Forms.DataGridView();
-            this.transactionTempModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Item = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UnitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotalUnitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Discount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.transactionTempModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pnlTop.SuspendLayout();
             this.pnlBackground.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -97,7 +97,7 @@
             this.btnX.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnX.ForeColor = System.Drawing.Color.Black;
             this.btnX.Location = new System.Drawing.Point(920, 0);
-            this.btnX.Margin = new System.Windows.Forms.Padding(2);
+            this.btnX.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnX.Name = "btnX";
             this.btnX.Size = new System.Drawing.Size(25, 27);
             this.btnX.TabIndex = 1;
@@ -149,14 +149,14 @@
             // 
             // btnTransact
             // 
-            this.btnTransact.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnTransact.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnTransact.BackColor = System.Drawing.Color.YellowGreen;
             this.btnTransact.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnTransact.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnTransact.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTransact.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTransact.Location = new System.Drawing.Point(625, 524);
-            this.btnTransact.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTransact.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnTransact.Name = "btnTransact";
             this.btnTransact.Size = new System.Drawing.Size(132, 45);
             this.btnTransact.TabIndex = 27;
@@ -166,7 +166,7 @@
             // 
             // lblCategory
             // 
-            this.lblCategory.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblCategory.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblCategory.AutoSize = true;
             this.lblCategory.BackColor = System.Drawing.Color.Transparent;
             this.lblCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -180,11 +180,11 @@
             // 
             // cboCategory
             // 
-            this.cboCategory.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cboCategory.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cboCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboCategory.FormattingEnabled = true;
             this.cboCategory.Location = new System.Drawing.Point(603, 31);
-            this.cboCategory.Margin = new System.Windows.Forms.Padding(2);
+            this.cboCategory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cboCategory.Name = "cboCategory";
             this.cboCategory.Size = new System.Drawing.Size(192, 28);
             this.cboCategory.TabIndex = 7;
@@ -192,13 +192,13 @@
             // 
             // CboItem
             // 
-            this.CboItem.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.CboItem.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.CboItem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.CboItem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.CboItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CboItem.FormattingEnabled = true;
             this.CboItem.Location = new System.Drawing.Point(82, 31);
-            this.CboItem.Margin = new System.Windows.Forms.Padding(2);
+            this.CboItem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.CboItem.Name = "CboItem";
             this.CboItem.Size = new System.Drawing.Size(372, 28);
             this.CboItem.TabIndex = 5;
@@ -208,12 +208,12 @@
             // 
             // txtTransactionID
             // 
-            this.txtTransactionID.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtTransactionID.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtTransactionID.BackColor = System.Drawing.Color.DarkGray;
             this.txtTransactionID.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTransactionID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTransactionID.Location = new System.Drawing.Point(162, 6);
-            this.txtTransactionID.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTransactionID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtTransactionID.Name = "txtTransactionID";
             this.txtTransactionID.ReadOnly = true;
             this.txtTransactionID.Size = new System.Drawing.Size(633, 19);
@@ -221,7 +221,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.groupBox2.Controls.Add(this.txtChange);
             this.groupBox2.Controls.Add(this.lblChange);
             this.groupBox2.Controls.Add(this.txtAmountReceived);
@@ -234,11 +234,11 @@
             // 
             // txtChange
             // 
-            this.txtChange.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtChange.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.txtChange.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.txtChange.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtChange.Location = new System.Drawing.Point(27, 111);
-            this.txtChange.Margin = new System.Windows.Forms.Padding(2);
+            this.txtChange.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtChange.Name = "txtChange";
             this.txtChange.ReadOnly = true;
             this.txtChange.Size = new System.Drawing.Size(312, 39);
@@ -246,7 +246,7 @@
             // 
             // lblChange
             // 
-            this.lblChange.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblChange.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lblChange.AutoSize = true;
             this.lblChange.BackColor = System.Drawing.Color.Transparent;
             this.lblChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -260,12 +260,12 @@
             // 
             // txtAmountReceived
             // 
-            this.txtAmountReceived.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtAmountReceived.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.txtAmountReceived.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.txtAmountReceived.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAmountReceived.HideSelection = false;
             this.txtAmountReceived.Location = new System.Drawing.Point(27, 36);
-            this.txtAmountReceived.Margin = new System.Windows.Forms.Padding(2);
+            this.txtAmountReceived.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtAmountReceived.Name = "txtAmountReceived";
             this.txtAmountReceived.Size = new System.Drawing.Size(312, 39);
             this.txtAmountReceived.TabIndex = 20;
@@ -274,7 +274,7 @@
             // 
             // lblCash
             // 
-            this.lblCash.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblCash.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lblCash.AutoSize = true;
             this.lblCash.BackColor = System.Drawing.Color.Transparent;
             this.lblCash.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -288,14 +288,14 @@
             // 
             // btnAddDiscount
             // 
-            this.btnAddDiscount.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAddDiscount.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnAddDiscount.BackColor = System.Drawing.Color.Tan;
             this.btnAddDiscount.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnAddDiscount.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnAddDiscount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddDiscount.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddDiscount.Location = new System.Drawing.Point(475, 524);
-            this.btnAddDiscount.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAddDiscount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAddDiscount.Name = "btnAddDiscount";
             this.btnAddDiscount.Size = new System.Drawing.Size(132, 45);
             this.btnAddDiscount.TabIndex = 26;
@@ -305,7 +305,7 @@
             // 
             // lblTransactionID
             // 
-            this.lblTransactionID.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblTransactionID.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblTransactionID.AutoSize = true;
             this.lblTransactionID.BackColor = System.Drawing.Color.Transparent;
             this.lblTransactionID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -319,14 +319,14 @@
             // 
             // btnPrintReceipt
             // 
-            this.btnPrintReceipt.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnPrintReceipt.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnPrintReceipt.BackColor = System.Drawing.Color.LightCoral;
             this.btnPrintReceipt.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnPrintReceipt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnPrintReceipt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrintReceipt.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrintReceipt.Location = new System.Drawing.Point(774, 524);
-            this.btnPrintReceipt.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPrintReceipt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnPrintReceipt.Name = "btnPrintReceipt";
             this.btnPrintReceipt.Size = new System.Drawing.Size(132, 45);
             this.btnPrintReceipt.TabIndex = 28;
@@ -336,10 +336,10 @@
             // 
             // txtUnitPrice
             // 
-            this.txtUnitPrice.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtUnitPrice.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtUnitPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUnitPrice.Location = new System.Drawing.Point(283, 70);
-            this.txtUnitPrice.Margin = new System.Windows.Forms.Padding(2);
+            this.txtUnitPrice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtUnitPrice.Name = "txtUnitPrice";
             this.txtUnitPrice.ReadOnly = true;
             this.txtUnitPrice.Size = new System.Drawing.Size(171, 26);
@@ -347,7 +347,7 @@
             // 
             // lblUnitPrice
             // 
-            this.lblUnitPrice.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblUnitPrice.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblUnitPrice.AutoSize = true;
             this.lblUnitPrice.BackColor = System.Drawing.Color.Transparent;
             this.lblUnitPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -361,7 +361,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.groupBox1.Controls.Add(this.txtTotalPrice);
             this.groupBox1.Controls.Add(this.lblTotalAmountDue);
             this.groupBox1.Location = new System.Drawing.Point(421, 414);
@@ -372,11 +372,11 @@
             // 
             // txtTotalPrice
             // 
-            this.txtTotalPrice.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtTotalPrice.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.txtTotalPrice.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.txtTotalPrice.Font = new System.Drawing.Font("Arial Rounded MT Bold", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotalPrice.Location = new System.Drawing.Point(19, 39);
-            this.txtTotalPrice.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTotalPrice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtTotalPrice.Name = "txtTotalPrice";
             this.txtTotalPrice.ReadOnly = true;
             this.txtTotalPrice.Size = new System.Drawing.Size(466, 45);
@@ -384,7 +384,7 @@
             // 
             // lblTotalAmountDue
             // 
-            this.lblTotalAmountDue.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblTotalAmountDue.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lblTotalAmountDue.AutoSize = true;
             this.lblTotalAmountDue.BackColor = System.Drawing.Color.Transparent;
             this.lblTotalAmountDue.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -398,14 +398,14 @@
             // 
             // btnAddItem
             // 
-            this.btnAddItem.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAddItem.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnAddItem.BackColor = System.Drawing.Color.SpringGreen;
             this.btnAddItem.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnAddItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnAddItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddItem.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddItem.Location = new System.Drawing.Point(814, 54);
-            this.btnAddItem.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAddItem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAddItem.Name = "btnAddItem";
             this.btnAddItem.Size = new System.Drawing.Size(109, 41);
             this.btnAddItem.TabIndex = 14;
@@ -415,14 +415,14 @@
             // 
             // btnRemoveItem
             // 
-            this.btnRemoveItem.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnRemoveItem.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnRemoveItem.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btnRemoveItem.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnRemoveItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnRemoveItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoveItem.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemoveItem.Location = new System.Drawing.Point(814, 6);
-            this.btnRemoveItem.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRemoveItem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRemoveItem.Name = "btnRemoveItem";
             this.btnRemoveItem.Size = new System.Drawing.Size(109, 41);
             this.btnRemoveItem.TabIndex = 15;
@@ -432,7 +432,7 @@
             // 
             // lblTotalUnitPrice
             // 
-            this.lblTotalUnitPrice.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblTotalUnitPrice.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblTotalUnitPrice.AutoSize = true;
             this.lblTotalUnitPrice.BackColor = System.Drawing.Color.Transparent;
             this.lblTotalUnitPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -446,10 +446,10 @@
             // 
             // txtTotalUnitPrice
             // 
-            this.txtTotalUnitPrice.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtTotalUnitPrice.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtTotalUnitPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotalUnitPrice.Location = new System.Drawing.Point(603, 67);
-            this.txtTotalUnitPrice.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTotalUnitPrice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtTotalUnitPrice.Name = "txtTotalUnitPrice";
             this.txtTotalUnitPrice.ReadOnly = true;
             this.txtTotalUnitPrice.Size = new System.Drawing.Size(192, 26);
@@ -457,10 +457,10 @@
             // 
             // txtQuantity
             // 
-            this.txtQuantity.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtQuantity.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQuantity.Location = new System.Drawing.Point(82, 69);
-            this.txtQuantity.Margin = new System.Windows.Forms.Padding(2);
+            this.txtQuantity.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(64, 26);
             this.txtQuantity.TabIndex = 9;
@@ -469,7 +469,7 @@
             // 
             // lblQuantity
             // 
-            this.lblQuantity.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblQuantity.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblQuantity.AutoSize = true;
             this.lblQuantity.BackColor = System.Drawing.Color.Transparent;
             this.lblQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -483,7 +483,7 @@
             // 
             // lblItem
             // 
-            this.lblItem.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblItem.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblItem.AutoSize = true;
             this.lblItem.BackColor = System.Drawing.Color.Transparent;
             this.lblItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -499,7 +499,7 @@
             // 
             this.dgdCart.AllowUserToAddRows = false;
             this.dgdCart.AllowUserToDeleteRows = false;
-            this.dgdCart.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dgdCart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.dgdCart.AutoGenerateColumns = false;
             this.dgdCart.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgdCart.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -530,51 +530,63 @@
             this.dgdCart.TabIndex = 17;
             this.dgdCart.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgdCart_CellClick);
             // 
-            // transactionTempModelBindingSource
-            // 
-            this.transactionTempModelBindingSource.DataSource = typeof(BiliPC.TransactionTempModel);
-            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
+            this.dataGridViewTextBoxColumn1.FillWeight = 80.88277F;
             this.dataGridViewTextBoxColumn1.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // Item
             // 
             this.Item.DataPropertyName = "Item";
+            this.Item.FillWeight = 224.5989F;
             this.Item.HeaderText = "Item";
+            this.Item.MinimumWidth = 6;
             this.Item.Name = "Item";
             this.Item.ReadOnly = true;
             // 
             // Quantity
             // 
             this.Quantity.DataPropertyName = "Quantity";
+            this.Quantity.FillWeight = 72.16849F;
             this.Quantity.HeaderText = "Quantity";
+            this.Quantity.MinimumWidth = 6;
             this.Quantity.Name = "Quantity";
             this.Quantity.ReadOnly = true;
             // 
             // UnitPrice
             // 
             this.UnitPrice.DataPropertyName = "UnitPrice";
+            this.UnitPrice.FillWeight = 80.88277F;
             this.UnitPrice.HeaderText = "UnitPrice";
+            this.UnitPrice.MinimumWidth = 6;
             this.UnitPrice.Name = "UnitPrice";
             this.UnitPrice.ReadOnly = true;
             // 
             // TotalUnitPrice
             // 
             this.TotalUnitPrice.DataPropertyName = "TotalUnitPrice";
+            this.TotalUnitPrice.FillWeight = 80.88277F;
             this.TotalUnitPrice.HeaderText = "TotalUnitPrice";
+            this.TotalUnitPrice.MinimumWidth = 6;
             this.TotalUnitPrice.Name = "TotalUnitPrice";
             this.TotalUnitPrice.ReadOnly = true;
             // 
             // Discount
             // 
             this.Discount.DataPropertyName = "Discount";
+            this.Discount.FillWeight = 60.58426F;
             this.Discount.HeaderText = "Discount";
+            this.Discount.MinimumWidth = 6;
             this.Discount.Name = "Discount";
             this.Discount.ReadOnly = true;
+            // 
+            // transactionTempModelBindingSource
+            // 
+            this.transactionTempModelBindingSource.DataSource = typeof(BiliPC.TransactionTempModel);
             // 
             // TransactionForm
             // 

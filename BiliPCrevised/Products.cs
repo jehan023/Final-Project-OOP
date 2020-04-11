@@ -120,59 +120,86 @@
             int emptyField = Functions.CheckFields(this.GroupTextBox);
             if (emptyField > 0)
             {
-                MessageBox.Show("Please fill all of the " + emptyField + " field/s.");
+                // Message box showing unfilled textbox.
+                string message = "Please fill all of the " + emptyField + " field/s.";
+                string title = "Error";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBox.Show(message, title, buttons, MessageBoxIcon.Error);
             }
             else if (ObjectId.TryParse(this.idBox.Text, out ObjectId id) && int.TryParse(this.txtQuantity.Text, out int quantity) && double.TryParse(this.txtUnitPrice.Text, out double unitPrice) && double.TryParse(this.txtCost.Text, out double cost))
             {
-                var selectedInvRecord = this.db.LoadRecordsByGenericT<InventoryModel, ObjectId>("Inventory", "Id", id);
-
-                // Default stock status unless specified
-                string status = "OUT";
-                if (quantity > 0)
+                var selectedRecord = this.db.LoadRecordsByGenericT<InventoryModel, ObjectId>("Inventory", "Id", id);
+                var invRecord = this.db.LoadRecords<InventoryModel>("Inventory");
+                bool exists = false;
+                foreach (var item in invRecord)
                 {
-                    status = "IN (" + quantity.ToString(CultureInfo.CurrentCulture) + ")";
-                }
-
-                // Updating Inventory
-                selectedInvRecord.Item = this.txtItemName.Text;
-                selectedInvRecord.Qty = quantity;
-                selectedInvRecord.UnitPrice = unitPrice;
-                selectedInvRecord.Cost = cost;
-                selectedInvRecord.DateModified = DateTime.Now;
-                selectedInvRecord.Category = this.txtCategory.Text;
-                selectedInvRecord.Supplier = this.txtSupplier.Text;
-                selectedInvRecord.InStock = quantity != 0;
-                selectedInvRecord.Status = status;
-
-                this.db.UpsertRecord("Inventory", selectedInvRecord.Id, selectedInvRecord);
-                MessageBox.Show("Item updated.");
-
-                // Updating of Transaction Form
-                bool itemExists = this.db.CheckExistenceByGeneric<TransactionTempModel, ObjectId>("TransactionTemp", "Id", id);
-                if (itemExists)
-                {
-                    var selectedCartRecord = this.db.LoadRecordsByGenericT<TransactionTempModel, ObjectId>("TransactionTemp", "Id", id);
-                    if (selectedInvRecord.Qty >= selectedCartRecord.Quantity)
+                    if (item.Id != selectedRecord.Id && item.Item == this.txtItemName.Text)
                     {
-                        selectedCartRecord.Item = selectedInvRecord.Item;
-                        selectedCartRecord.UnitPrice = selectedInvRecord.UnitPrice;
-                        selectedCartRecord.TotalUnitPrice = selectedCartRecord.UnitPrice * selectedCartRecord.Quantity;
-                        this.db.UpsertRecord("TransactionTemp", selectedInvRecord.Id, selectedCartRecord);
-
-                        MessageBox.Show("Transaction form updated.");
-                    }
-                }
-                else if (itemExists)
-                {
-                    var selectedCartRecord = this.db.LoadRecordsByGenericT<TransactionTempModel, ObjectId>("TransactionTemp", "Id", id);
-                    if (selectedInvRecord.Qty < selectedCartRecord.Quantity)
-                    {
-                        this.db.DeleleRecord<TransactionTempModel>("TransactionTemp", id);
-                        MessageBox.Show("An item was deleted in transaction form due to insufficient stock.");
+                        exists = true;
                     }
                 }
 
-                this.RefreshInventory();
+                if (!exists)
+                {
+                    var selectedInvRecord = this.db.LoadRecordsByGenericT<InventoryModel, ObjectId>("Inventory", "Id", id);
+
+                    // Default stock status unless specified
+                    string status = "OUT";
+                    if (quantity > 0)
+                    {
+                        status = "IN (" + quantity.ToString(CultureInfo.CurrentCulture) + ")";
+                    }
+
+                    // Updating Inventory
+                    selectedInvRecord.Item = this.txtItemName.Text;
+                    selectedInvRecord.Qty = quantity;
+                    selectedInvRecord.UnitPrice = unitPrice;
+                    selectedInvRecord.Cost = cost;
+                    selectedInvRecord.DateModified = DateTime.Now;
+                    selectedInvRecord.Category = this.txtCategory.Text;
+                    selectedInvRecord.Supplier = this.txtSupplier.Text;
+                    selectedInvRecord.InStock = quantity != 0;
+                    selectedInvRecord.Status = status;
+
+                    this.db.UpsertRecord("Inventory", selectedInvRecord.Id, selectedInvRecord);
+                    MessageBox.Show("Item updated.");
+
+                    // Updating of Transaction Form
+                    bool itemExists = this.db.CheckExistenceByGeneric<TransactionTempModel, ObjectId>("TransactionTemp", "Id", id);
+                    if (itemExists)
+                    {
+                        var selectedCartRecord = this.db.LoadRecordsByGenericT<TransactionTempModel, ObjectId>("TransactionTemp", "Id", id);
+                        if (selectedInvRecord.Qty >= selectedCartRecord.Quantity)
+                        {
+                            selectedCartRecord.Item = selectedInvRecord.Item;
+                            selectedCartRecord.UnitPrice = selectedInvRecord.UnitPrice;
+                            selectedCartRecord.TotalUnitPrice = selectedCartRecord.UnitPrice * selectedCartRecord.Quantity;
+                            this.db.UpsertRecord("TransactionTemp", selectedInvRecord.Id, selectedCartRecord);
+
+                            MessageBox.Show("Transaction form updated.");
+                        }
+                    }
+                    else if (itemExists)
+                    {
+                        var selectedCartRecord = this.db.LoadRecordsByGenericT<TransactionTempModel, ObjectId>("TransactionTemp", "Id", id);
+                        if (selectedInvRecord.Qty < selectedCartRecord.Quantity)
+                        {
+                            this.db.DeleleRecord<TransactionTempModel>("TransactionTemp", id);
+                            MessageBox.Show("An item was deleted in transaction form due to insufficient stock.");
+                        }
+                    }
+
+                    this.RefreshInventory();
+                }
+                else
+                {
+                    // Message box showing item already exists.
+                    string message = "Item already exists.";
+                    string title = "Error";
+                    MessageBoxButtons buttons = MessageBoxButtons.OK;
+                    MessageBox.Show(message, title, buttons, MessageBoxIcon.Error);
+                    this.RefreshInventory();
+                }
             }
             else
             {
@@ -184,31 +211,39 @@
         {
             if (!string.IsNullOrEmpty(this.idBox.Text) && ObjectId.TryParse(this.idBox.Text, out ObjectId id))
             {
-                var selectedRecord = this.db.LoadRecordsByGenericT<InventoryModel, ObjectId>("Inventory", "Id", id);
-
-                // Record deleted Item then delete from Inventory Report
-                this.db.InsertRecord("InventoryDeletedRecords", new InventoryModel
+                // Message box delete item confirmation.
+                string msg = "Are you sure to delete this item?";
+                string ttl = "Delete Item Confirmation";
+                MessageBoxButtons btns = MessageBoxButtons.YesNo;
+                DialogResult result = MessageBox.Show(msg, ttl, btns, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
                 {
-                    Item = selectedRecord.Item,
-                    DateModified = DateTime.Now,
-                    Qty = selectedRecord.Qty,
-                    Category = selectedRecord.Category,
-                    Supplier = selectedRecord.Supplier,
-                });
+                    var selectedRecord = this.db.LoadRecordsByGenericT<InventoryModel, ObjectId>("Inventory", "Id", id);
 
-                // Delete item in Inventory
-                this.db.DeleleRecord<InventoryModel>("Inventory", id);
-                MessageBox.Show("Item deleted.");
+                    // Record deleted Item then delete from Inventory Report
+                    this.db.InsertRecord("InventoryDeletedRecords", new InventoryModel
+                    {
+                        Item = selectedRecord.Item,
+                        DateModified = DateTime.Now,
+                        Qty = selectedRecord.Qty,
+                        Category = selectedRecord.Category,
+                        Supplier = selectedRecord.Supplier,
+                    });
 
-                // Delete item in Transaction Form
-                bool itemExists = this.db.CheckExistenceByGeneric<TransactionTempModel, ObjectId>("TransactionTemp", "Id", id);
-                if (itemExists)
-                {
-                    this.db.DeleleRecord<TransactionTempModel>("TransactionTemp", id);
-                    MessageBox.Show("Transaction form updated.");
+                    // Delete item in Inventory
+                    this.db.DeleleRecord<InventoryModel>("Inventory", id);
+                    MessageBox.Show("Item deleted.");
+
+                    // Delete item in Transaction Form
+                    bool itemExists = this.db.CheckExistenceByGeneric<TransactionTempModel, ObjectId>("TransactionTemp", "Id", id);
+                    if (itemExists)
+                    {
+                        this.db.DeleleRecord<TransactionTempModel>("TransactionTemp", id);
+                        MessageBox.Show("Transaction form updated.");
+                    }
+
+                    this.RefreshInventory();
                 }
-
-                this.RefreshInventory();
             }
             else
             {

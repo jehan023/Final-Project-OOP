@@ -46,12 +46,12 @@
             this.itemDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.supplierDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.qtyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unitPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateModifiedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.inStockDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlTop.SuspendLayout();
             this.pnlBackground.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgdViewProducts)).BeginInit();
@@ -63,10 +63,9 @@
             this.lblSearchItem.AutoSize = true;
             this.lblSearchItem.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSearchItem.ForeColor = System.Drawing.Color.White;
-            this.lblSearchItem.Location = new System.Drawing.Point(26, 76);
-            this.lblSearchItem.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSearchItem.Location = new System.Drawing.Point(35, 94);
             this.lblSearchItem.Name = "lblSearchItem";
-            this.lblSearchItem.Size = new System.Drawing.Size(126, 22);
+            this.lblSearchItem.Size = new System.Drawing.Size(159, 28);
             this.lblSearchItem.TabIndex = 15;
             this.lblSearchItem.Text = "Search item:";
             // 
@@ -76,10 +75,10 @@
             this.TxtSearchItem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.TxtSearchItem.BackColor = System.Drawing.SystemColors.Window;
             this.TxtSearchItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtSearchItem.Location = new System.Drawing.Point(159, 75);
-            this.TxtSearchItem.Margin = new System.Windows.Forms.Padding(2);
+            this.TxtSearchItem.Location = new System.Drawing.Point(212, 92);
+            this.TxtSearchItem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtSearchItem.Name = "TxtSearchItem";
-            this.TxtSearchItem.Size = new System.Drawing.Size(360, 24);
+            this.TxtSearchItem.Size = new System.Drawing.Size(479, 29);
             this.TxtSearchItem.TabIndex = 14;
             this.TxtSearchItem.TextChanged += new System.EventHandler(this.TxtSearchItem_TextChanged);
             // 
@@ -93,10 +92,10 @@
             this.btnX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnX.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnX.ForeColor = System.Drawing.Color.Black;
-            this.btnX.Location = new System.Drawing.Point(921, 0);
-            this.btnX.Margin = new System.Windows.Forms.Padding(2);
+            this.btnX.Location = new System.Drawing.Point(1228, 0);
+            this.btnX.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnX.Name = "btnX";
-            this.btnX.Size = new System.Drawing.Size(25, 27);
+            this.btnX.Size = new System.Drawing.Size(33, 33);
             this.btnX.TabIndex = 0;
             this.btnX.Text = "X";
             this.btnX.UseVisualStyleBackColor = false;
@@ -116,9 +115,9 @@
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTop.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
-            this.pnlTop.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlTop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlTop.Name = "pnlTop";
-            this.pnlTop.Size = new System.Drawing.Size(945, 117);
+            this.pnlTop.Size = new System.Drawing.Size(1260, 144);
             this.pnlTop.TabIndex = 1;
             // 
             // btnShowAll
@@ -129,9 +128,10 @@
             this.btnShowAll.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnShowAll.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnShowAll.ForeColor = System.Drawing.Color.Black;
-            this.btnShowAll.Location = new System.Drawing.Point(822, 38);
+            this.btnShowAll.Location = new System.Drawing.Point(1096, 47);
+            this.btnShowAll.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnShowAll.Name = "btnShowAll";
-            this.btnShowAll.Size = new System.Drawing.Size(88, 28);
+            this.btnShowAll.Size = new System.Drawing.Size(117, 34);
             this.btnShowAll.TabIndex = 20;
             this.btnShowAll.Text = "Show All";
             this.btnShowAll.UseVisualStyleBackColor = false;
@@ -145,9 +145,10 @@
             this.btnSearchItem.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSearchItem.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchItem.ForeColor = System.Drawing.Color.White;
-            this.btnSearchItem.Location = new System.Drawing.Point(519, 74);
+            this.btnSearchItem.Location = new System.Drawing.Point(692, 91);
+            this.btnSearchItem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSearchItem.Name = "btnSearchItem";
-            this.btnSearchItem.Size = new System.Drawing.Size(75, 26);
+            this.btnSearchItem.Size = new System.Drawing.Size(100, 32);
             this.btnSearchItem.TabIndex = 19;
             this.btnSearchItem.Text = "Search";
             this.btnSearchItem.UseVisualStyleBackColor = false;
@@ -160,9 +161,10 @@
             this.cboCategory.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.cboCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboCategory.FormattingEnabled = true;
-            this.cboCategory.Location = new System.Drawing.Point(747, 72);
+            this.cboCategory.Location = new System.Drawing.Point(996, 89);
+            this.cboCategory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cboCategory.Name = "cboCategory";
-            this.cboCategory.Size = new System.Drawing.Size(163, 26);
+            this.cboCategory.Size = new System.Drawing.Size(216, 32);
             this.cboCategory.TabIndex = 18;
             this.cboCategory.SelectedIndexChanged += new System.EventHandler(this.CboCategory_SelectedIndexChanged);
             // 
@@ -173,10 +175,9 @@
             this.lblCategory.AutoSize = true;
             this.lblCategory.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCategory.ForeColor = System.Drawing.Color.White;
-            this.lblCategory.Location = new System.Drawing.Point(643, 74);
-            this.lblCategory.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCategory.Location = new System.Drawing.Point(857, 91);
             this.lblCategory.Name = "lblCategory";
-            this.lblCategory.Size = new System.Drawing.Size(100, 22);
+            this.lblCategory.Size = new System.Drawing.Size(127, 28);
             this.lblCategory.TabIndex = 17;
             this.lblCategory.Text = "Category:";
             // 
@@ -185,10 +186,9 @@
             this.lblViewProducts.AutoSize = true;
             this.lblViewProducts.Font = new System.Drawing.Font("Arial Rounded MT Bold", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblViewProducts.ForeColor = System.Drawing.Color.White;
-            this.lblViewProducts.Location = new System.Drawing.Point(26, 21);
-            this.lblViewProducts.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblViewProducts.Location = new System.Drawing.Point(35, 26);
             this.lblViewProducts.Name = "lblViewProducts";
-            this.lblViewProducts.Size = new System.Drawing.Size(241, 37);
+            this.lblViewProducts.Size = new System.Drawing.Size(304, 46);
             this.lblViewProducts.TabIndex = 16;
             this.lblViewProducts.Text = "View Products";
             // 
@@ -197,9 +197,10 @@
             this.pnlBackground.BackColor = System.Drawing.SystemColors.Info;
             this.pnlBackground.Controls.Add(this.dgdViewProducts);
             this.pnlBackground.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlBackground.Location = new System.Drawing.Point(0, 117);
+            this.pnlBackground.Location = new System.Drawing.Point(0, 144);
+            this.pnlBackground.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlBackground.Name = "pnlBackground";
-            this.pnlBackground.Size = new System.Drawing.Size(945, 522);
+            this.pnlBackground.Size = new System.Drawing.Size(1260, 642);
             this.pnlBackground.TabIndex = 2;
             // 
             // dgdViewProducts
@@ -225,17 +226,19 @@
             this.itemDataGridViewTextBoxColumn,
             this.categoryDataGridViewTextBoxColumn,
             this.supplierDataGridViewTextBoxColumn,
+            this.statusDataGridViewTextBoxColumn,
             this.qtyDataGridViewTextBoxColumn,
             this.unitPriceDataGridViewTextBoxColumn,
             this.costDataGridViewTextBoxColumn,
             this.dateModifiedDataGridViewTextBoxColumn,
-            this.inStockDataGridViewCheckBoxColumn,
-            this.statusDataGridViewTextBoxColumn});
+            this.inStockDataGridViewCheckBoxColumn});
             this.dgdViewProducts.DataSource = this.inventoryModelBindingSource;
-            this.dgdViewProducts.Location = new System.Drawing.Point(26, 22);
+            this.dgdViewProducts.Location = new System.Drawing.Point(35, 27);
+            this.dgdViewProducts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgdViewProducts.Name = "dgdViewProducts";
             this.dgdViewProducts.ReadOnly = true;
-            this.dgdViewProducts.Size = new System.Drawing.Size(894, 472);
+            this.dgdViewProducts.RowHeadersWidth = 51;
+            this.dgdViewProducts.Size = new System.Drawing.Size(1192, 581);
             this.dgdViewProducts.TabIndex = 0;
             // 
             // inventoryModelBindingSource
@@ -246,6 +249,7 @@
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
             this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             this.idDataGridViewTextBoxColumn.ReadOnly = true;
             this.idDataGridViewTextBoxColumn.Visible = false;
@@ -254,6 +258,7 @@
             // 
             this.itemDataGridViewTextBoxColumn.DataPropertyName = "Item";
             this.itemDataGridViewTextBoxColumn.HeaderText = "Item";
+            this.itemDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.itemDataGridViewTextBoxColumn.Name = "itemDataGridViewTextBoxColumn";
             this.itemDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -261,6 +266,7 @@
             // 
             this.categoryDataGridViewTextBoxColumn.DataPropertyName = "Category";
             this.categoryDataGridViewTextBoxColumn.HeaderText = "Category";
+            this.categoryDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.categoryDataGridViewTextBoxColumn.Name = "categoryDataGridViewTextBoxColumn";
             this.categoryDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -268,20 +274,32 @@
             // 
             this.supplierDataGridViewTextBoxColumn.DataPropertyName = "Supplier";
             this.supplierDataGridViewTextBoxColumn.HeaderText = "Supplier";
+            this.supplierDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.supplierDataGridViewTextBoxColumn.Name = "supplierDataGridViewTextBoxColumn";
             this.supplierDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // statusDataGridViewTextBoxColumn
+            // 
+            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
+            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
+            this.statusDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            this.statusDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // qtyDataGridViewTextBoxColumn
             // 
             this.qtyDataGridViewTextBoxColumn.DataPropertyName = "Qty";
             this.qtyDataGridViewTextBoxColumn.HeaderText = "Qty";
+            this.qtyDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.qtyDataGridViewTextBoxColumn.Name = "qtyDataGridViewTextBoxColumn";
             this.qtyDataGridViewTextBoxColumn.ReadOnly = true;
+            this.qtyDataGridViewTextBoxColumn.Visible = false;
             // 
             // unitPriceDataGridViewTextBoxColumn
             // 
             this.unitPriceDataGridViewTextBoxColumn.DataPropertyName = "UnitPrice";
             this.unitPriceDataGridViewTextBoxColumn.HeaderText = "UnitPrice";
+            this.unitPriceDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.unitPriceDataGridViewTextBoxColumn.Name = "unitPriceDataGridViewTextBoxColumn";
             this.unitPriceDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -289,13 +307,16 @@
             // 
             this.costDataGridViewTextBoxColumn.DataPropertyName = "Cost";
             this.costDataGridViewTextBoxColumn.HeaderText = "Cost";
+            this.costDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.costDataGridViewTextBoxColumn.Name = "costDataGridViewTextBoxColumn";
             this.costDataGridViewTextBoxColumn.ReadOnly = true;
+            this.costDataGridViewTextBoxColumn.Visible = false;
             // 
             // dateModifiedDataGridViewTextBoxColumn
             // 
             this.dateModifiedDataGridViewTextBoxColumn.DataPropertyName = "DateModified";
             this.dateModifiedDataGridViewTextBoxColumn.HeaderText = "DateModified";
+            this.dateModifiedDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.dateModifiedDataGridViewTextBoxColumn.Name = "dateModifiedDataGridViewTextBoxColumn";
             this.dateModifiedDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -303,28 +324,21 @@
             // 
             this.inStockDataGridViewCheckBoxColumn.DataPropertyName = "InStock";
             this.inStockDataGridViewCheckBoxColumn.HeaderText = "InStock";
+            this.inStockDataGridViewCheckBoxColumn.MinimumWidth = 6;
             this.inStockDataGridViewCheckBoxColumn.Name = "inStockDataGridViewCheckBoxColumn";
             this.inStockDataGridViewCheckBoxColumn.ReadOnly = true;
             this.inStockDataGridViewCheckBoxColumn.Visible = false;
             // 
-            // statusDataGridViewTextBoxColumn
-            // 
-            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
-            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
-            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
-            this.statusDataGridViewTextBoxColumn.ReadOnly = true;
-            this.statusDataGridViewTextBoxColumn.Visible = false;
-            // 
             // ViewProducts
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(945, 639);
+            this.ClientSize = new System.Drawing.Size(1260, 786);
             this.Controls.Add(this.pnlBackground);
             this.Controls.Add(this.pnlTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
-            this.MinimumSize = new System.Drawing.Size(945, 639);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MinimumSize = new System.Drawing.Size(1260, 786);
             this.Name = "ViewProducts";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ViewProducts";
@@ -350,16 +364,16 @@
         private System.Windows.Forms.Label lblCategory;
         private System.Windows.Forms.Button btnSearchItem;
         private System.Windows.Forms.Button btnShowAll;
+        private System.Windows.Forms.BindingSource inventoryModelBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn itemDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn categoryDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn supplierDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn qtyDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn unitPriceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn costDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateModifiedDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn inStockDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource inventoryModelBindingSource;
     }
 }

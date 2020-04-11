@@ -79,7 +79,11 @@
 
             if (IsLoggedIn != true)
             {
-                MessageBox.Show("Incorrect username/password.");
+                // Message box showing Username/Password incorrect.
+                string message = "Incorrect username/password.";
+                string title = "Sign In";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBox.Show(message, title, buttons, MessageBoxIcon.Error);
             }
         }
 

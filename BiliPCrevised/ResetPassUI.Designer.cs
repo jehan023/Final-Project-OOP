@@ -32,14 +32,15 @@
             this.lblConfirmPassword = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.lblNewPassword = new System.Windows.Forms.Label();
-            this.txtNewPassword = new System.Windows.Forms.TextBox();
+            this.TxtNewPassword = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
-            this.txtConfirmPassword = new System.Windows.Forms.TextBox();
+            this.TxtConfirmPassword = new System.Windows.Forms.TextBox();
             this.lblUsername = new System.Windows.Forms.Label();
             this.BtnCancel = new System.Windows.Forms.Button();
             this.BtnSubmit = new System.Windows.Forms.Button();
             this.pnlBackground = new System.Windows.Forms.Panel();
             this.GroupTextBox = new System.Windows.Forms.GroupBox();
+            this.lblCheckPass = new System.Windows.Forms.Label();
             this.pnlRight = new System.Windows.Forms.Panel();
             this.pnlLeft = new System.Windows.Forms.Panel();
             this.pnlBottom = new System.Windows.Forms.Panel();
@@ -55,7 +56,7 @@
             this.txtUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsername.Location = new System.Drawing.Point(17, 48);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(2);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(336, 24);
             this.txtUsername.TabIndex = 8;
@@ -79,7 +80,7 @@
             this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.Location = new System.Drawing.Point(17, 102);
-            this.txtName.Margin = new System.Windows.Forms.Padding(2);
+            this.txtName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(336, 24);
             this.txtName.TabIndex = 10;
@@ -98,16 +99,17 @@
             this.lblNewPassword.TabIndex = 11;
             this.lblNewPassword.Text = "New Password";
             // 
-            // txtNewPassword
+            // TxtNewPassword
             // 
-            this.txtNewPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtNewPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNewPassword.Location = new System.Drawing.Point(19, 158);
-            this.txtNewPassword.Margin = new System.Windows.Forms.Padding(2);
-            this.txtNewPassword.Name = "txtNewPassword";
-            this.txtNewPassword.PasswordChar = '*';
-            this.txtNewPassword.Size = new System.Drawing.Size(336, 24);
-            this.txtNewPassword.TabIndex = 12;
+            this.TxtNewPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.TxtNewPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtNewPassword.Location = new System.Drawing.Point(19, 158);
+            this.TxtNewPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TxtNewPassword.Name = "TxtNewPassword";
+            this.TxtNewPassword.PasswordChar = '*';
+            this.TxtNewPassword.Size = new System.Drawing.Size(336, 24);
+            this.TxtNewPassword.TabIndex = 12;
+            this.TxtNewPassword.TextChanged += new System.EventHandler(this.TxtNewPassword_TextChanged);
             // 
             // lblName
             // 
@@ -123,16 +125,17 @@
             this.lblName.TabIndex = 9;
             this.lblName.Text = "Name";
             // 
-            // txtConfirmPassword
+            // TxtConfirmPassword
             // 
-            this.txtConfirmPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtConfirmPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConfirmPassword.Location = new System.Drawing.Point(17, 214);
-            this.txtConfirmPassword.Margin = new System.Windows.Forms.Padding(2);
-            this.txtConfirmPassword.Name = "txtConfirmPassword";
-            this.txtConfirmPassword.PasswordChar = '*';
-            this.txtConfirmPassword.Size = new System.Drawing.Size(336, 24);
-            this.txtConfirmPassword.TabIndex = 14;
+            this.TxtConfirmPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.TxtConfirmPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtConfirmPassword.Location = new System.Drawing.Point(17, 214);
+            this.TxtConfirmPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TxtConfirmPassword.Name = "TxtConfirmPassword";
+            this.TxtConfirmPassword.PasswordChar = '*';
+            this.TxtConfirmPassword.Size = new System.Drawing.Size(336, 24);
+            this.TxtConfirmPassword.TabIndex = 14;
+            this.TxtConfirmPassword.TextChanged += new System.EventHandler(this.TxtConfirmPassword_TextChanged);
             // 
             // lblUsername
             // 
@@ -158,7 +161,7 @@
             this.BtnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCancel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCancel.Location = new System.Drawing.Point(297, 290);
-            this.BtnCancel.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BtnCancel.Name = "BtnCancel";
             this.BtnCancel.Size = new System.Drawing.Size(109, 31);
             this.BtnCancel.TabIndex = 16;
@@ -175,7 +178,7 @@
             this.BtnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSubmit.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnSubmit.Location = new System.Drawing.Point(156, 290);
-            this.BtnSubmit.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnSubmit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BtnSubmit.Name = "BtnSubmit";
             this.BtnSubmit.Size = new System.Drawing.Size(109, 31);
             this.BtnSubmit.TabIndex = 15;
@@ -196,19 +199,32 @@
             // 
             // GroupTextBox
             // 
+            this.GroupTextBox.Controls.Add(this.lblCheckPass);
             this.GroupTextBox.Controls.Add(this.txtUsername);
             this.GroupTextBox.Controls.Add(this.lblConfirmPassword);
             this.GroupTextBox.Controls.Add(this.txtName);
             this.GroupTextBox.Controls.Add(this.lblNewPassword);
-            this.GroupTextBox.Controls.Add(this.txtNewPassword);
+            this.GroupTextBox.Controls.Add(this.TxtNewPassword);
             this.GroupTextBox.Controls.Add(this.lblName);
-            this.GroupTextBox.Controls.Add(this.txtConfirmPassword);
+            this.GroupTextBox.Controls.Add(this.TxtConfirmPassword);
             this.GroupTextBox.Controls.Add(this.lblUsername);
             this.GroupTextBox.Location = new System.Drawing.Point(32, 16);
             this.GroupTextBox.Name = "GroupTextBox";
             this.GroupTextBox.Size = new System.Drawing.Size(374, 259);
             this.GroupTextBox.TabIndex = 6;
             this.GroupTextBox.TabStop = false;
+            // 
+            // lblCheckPass
+            // 
+            this.lblCheckPass.AutoSize = true;
+            this.lblCheckPass.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCheckPass.Location = new System.Drawing.Point(162, 198);
+            this.lblCheckPass.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCheckPass.Name = "lblCheckPass";
+            this.lblCheckPass.Size = new System.Drawing.Size(16, 14);
+            this.lblCheckPass.TabIndex = 15;
+            this.lblCheckPass.Text = "   ";
+            this.lblCheckPass.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pnlRight
             // 
@@ -289,9 +305,9 @@
         private System.Windows.Forms.Label lblConfirmPassword;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label lblNewPassword;
-        private System.Windows.Forms.TextBox txtNewPassword;
+        private System.Windows.Forms.TextBox TxtNewPassword;
         private System.Windows.Forms.Label lblName;
-        private System.Windows.Forms.TextBox txtConfirmPassword;
+        private System.Windows.Forms.TextBox TxtConfirmPassword;
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Button BtnCancel;
         private System.Windows.Forms.Button BtnSubmit;
@@ -302,5 +318,6 @@
         private System.Windows.Forms.Panel pnlBottom;
         private System.Windows.Forms.Label lblResetPassword;
         private System.Windows.Forms.Panel pnlTop;
+        private System.Windows.Forms.Label lblCheckPass;
     }
 }

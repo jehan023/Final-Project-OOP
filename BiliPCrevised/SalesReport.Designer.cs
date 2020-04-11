@@ -32,23 +32,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlTop = new System.Windows.Forms.Panel();
             this.btnGenerateReport = new System.Windows.Forms.Button();
-            this.cboViewMonth = new System.Windows.Forms.ComboBox();
+            this.CboViewMonth = new System.Windows.Forms.ComboBox();
             this.lblMonth = new System.Windows.Forms.Label();
             this.btnShowAll = new System.Windows.Forms.Button();
             this.lblSalesReport = new System.Windows.Forms.Label();
             this.btnX = new System.Windows.Forms.Button();
             this.pnlBackground = new System.Windows.Forms.Panel();
             this.dgdSalesReport = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.transactionIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.itemsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateOfPurchaseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.employeeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tCISDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tRADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.netSalesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grossMarginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.salesHistoryModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.GroupTextBox = new System.Windows.Forms.GroupBox();
             this.txtGrossMargin = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -60,18 +50,28 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtTCIS = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.transactionIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.itemsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateOfPurchaseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tCISDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tRADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.netSalesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grossMarginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.salesHistoryModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pnlTop.SuspendLayout();
             this.pnlBackground.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgdSalesReport)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.salesHistoryModelBindingSource)).BeginInit();
             this.GroupTextBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.salesHistoryModelBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTop
             // 
             this.pnlTop.BackColor = System.Drawing.Color.SaddleBrown;
             this.pnlTop.Controls.Add(this.btnGenerateReport);
-            this.pnlTop.Controls.Add(this.cboViewMonth);
+            this.pnlTop.Controls.Add(this.CboViewMonth);
             this.pnlTop.Controls.Add(this.lblMonth);
             this.pnlTop.Controls.Add(this.btnShowAll);
             this.pnlTop.Controls.Add(this.lblSalesReport);
@@ -99,16 +99,17 @@
             this.btnGenerateReport.UseVisualStyleBackColor = false;
             this.btnGenerateReport.Click += new System.EventHandler(this.BtnGenerateReport_Click);
             // 
-            // cboViewMonth
+            // CboViewMonth
             // 
-            this.cboViewMonth.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.cboViewMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboViewMonth.FormattingEnabled = true;
-            this.cboViewMonth.Location = new System.Drawing.Point(156, 69);
-            this.cboViewMonth.Name = "cboViewMonth";
-            this.cboViewMonth.Size = new System.Drawing.Size(312, 26);
-            this.cboViewMonth.TabIndex = 4;
-            this.cboViewMonth.SelectedIndexChanged += new System.EventHandler(this.CboViewMonth_SelectedIndexChanged);
+            this.CboViewMonth.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.CboViewMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CboViewMonth.FormattingEnabled = true;
+            this.CboViewMonth.Location = new System.Drawing.Point(152, 69);
+            this.CboViewMonth.Name = "CboViewMonth";
+            this.CboViewMonth.Size = new System.Drawing.Size(312, 32);
+            this.CboViewMonth.TabIndex = 4;
+            this.CboViewMonth.SelectedIndexChanged += new System.EventHandler(this.CboViewMonth_SelectedIndexChanged);
+            this.CboViewMonth.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CboViewMonth_KeyPress);
             // 
             // lblMonth
             // 
@@ -213,74 +214,6 @@
             this.dgdSalesReport.RowHeadersWidth = 51;
             this.dgdSalesReport.Size = new System.Drawing.Size(894, 311);
             this.dgdSalesReport.TabIndex = 8;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // transactionIdDataGridViewTextBoxColumn
-            // 
-            this.transactionIdDataGridViewTextBoxColumn.DataPropertyName = "TransactionId";
-            this.transactionIdDataGridViewTextBoxColumn.HeaderText = "TransactionId";
-            this.transactionIdDataGridViewTextBoxColumn.Name = "transactionIdDataGridViewTextBoxColumn";
-            this.transactionIdDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // itemsDataGridViewTextBoxColumn
-            // 
-            this.itemsDataGridViewTextBoxColumn.DataPropertyName = "Items";
-            this.itemsDataGridViewTextBoxColumn.HeaderText = "Items";
-            this.itemsDataGridViewTextBoxColumn.Name = "itemsDataGridViewTextBoxColumn";
-            this.itemsDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dateOfPurchaseDataGridViewTextBoxColumn
-            // 
-            this.dateOfPurchaseDataGridViewTextBoxColumn.DataPropertyName = "DateOfPurchase";
-            this.dateOfPurchaseDataGridViewTextBoxColumn.HeaderText = "DateOfPurchase";
-            this.dateOfPurchaseDataGridViewTextBoxColumn.Name = "dateOfPurchaseDataGridViewTextBoxColumn";
-            this.dateOfPurchaseDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // employeeDataGridViewTextBoxColumn
-            // 
-            this.employeeDataGridViewTextBoxColumn.DataPropertyName = "Employee";
-            this.employeeDataGridViewTextBoxColumn.HeaderText = "Employee";
-            this.employeeDataGridViewTextBoxColumn.Name = "employeeDataGridViewTextBoxColumn";
-            this.employeeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tCISDataGridViewTextBoxColumn
-            // 
-            this.tCISDataGridViewTextBoxColumn.DataPropertyName = "TCIS";
-            this.tCISDataGridViewTextBoxColumn.HeaderText = "TCIS";
-            this.tCISDataGridViewTextBoxColumn.Name = "tCISDataGridViewTextBoxColumn";
-            this.tCISDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tRADataGridViewTextBoxColumn
-            // 
-            this.tRADataGridViewTextBoxColumn.DataPropertyName = "TRA";
-            this.tRADataGridViewTextBoxColumn.HeaderText = "TRA";
-            this.tRADataGridViewTextBoxColumn.Name = "tRADataGridViewTextBoxColumn";
-            this.tRADataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // netSalesDataGridViewTextBoxColumn
-            // 
-            this.netSalesDataGridViewTextBoxColumn.DataPropertyName = "NetSales";
-            this.netSalesDataGridViewTextBoxColumn.HeaderText = "NetSales";
-            this.netSalesDataGridViewTextBoxColumn.Name = "netSalesDataGridViewTextBoxColumn";
-            this.netSalesDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // grossMarginDataGridViewTextBoxColumn
-            // 
-            this.grossMarginDataGridViewTextBoxColumn.DataPropertyName = "GrossMargin";
-            this.grossMarginDataGridViewTextBoxColumn.HeaderText = "GrossMargin";
-            this.grossMarginDataGridViewTextBoxColumn.Name = "grossMarginDataGridViewTextBoxColumn";
-            this.grossMarginDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // salesHistoryModelBindingSource
-            // 
-            this.salesHistoryModelBindingSource.DataSource = typeof(BiliPC.SalesHistoryModel);
             // 
             // GroupTextBox
             // 
@@ -428,6 +361,74 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "Total Cost of Items Sold :";
             // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // transactionIdDataGridViewTextBoxColumn
+            // 
+            this.transactionIdDataGridViewTextBoxColumn.DataPropertyName = "TransactionId";
+            this.transactionIdDataGridViewTextBoxColumn.HeaderText = "TransactionId";
+            this.transactionIdDataGridViewTextBoxColumn.Name = "transactionIdDataGridViewTextBoxColumn";
+            this.transactionIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // itemsDataGridViewTextBoxColumn
+            // 
+            this.itemsDataGridViewTextBoxColumn.DataPropertyName = "Items";
+            this.itemsDataGridViewTextBoxColumn.HeaderText = "Items";
+            this.itemsDataGridViewTextBoxColumn.Name = "itemsDataGridViewTextBoxColumn";
+            this.itemsDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dateOfPurchaseDataGridViewTextBoxColumn
+            // 
+            this.dateOfPurchaseDataGridViewTextBoxColumn.DataPropertyName = "DateOfPurchase";
+            this.dateOfPurchaseDataGridViewTextBoxColumn.HeaderText = "DateOfPurchase";
+            this.dateOfPurchaseDataGridViewTextBoxColumn.Name = "dateOfPurchaseDataGridViewTextBoxColumn";
+            this.dateOfPurchaseDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // employeeDataGridViewTextBoxColumn
+            // 
+            this.employeeDataGridViewTextBoxColumn.DataPropertyName = "Employee";
+            this.employeeDataGridViewTextBoxColumn.HeaderText = "Employee";
+            this.employeeDataGridViewTextBoxColumn.Name = "employeeDataGridViewTextBoxColumn";
+            this.employeeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tCISDataGridViewTextBoxColumn
+            // 
+            this.tCISDataGridViewTextBoxColumn.DataPropertyName = "TCIS";
+            this.tCISDataGridViewTextBoxColumn.HeaderText = "TCIS";
+            this.tCISDataGridViewTextBoxColumn.Name = "tCISDataGridViewTextBoxColumn";
+            this.tCISDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tRADataGridViewTextBoxColumn
+            // 
+            this.tRADataGridViewTextBoxColumn.DataPropertyName = "TRA";
+            this.tRADataGridViewTextBoxColumn.HeaderText = "TRA";
+            this.tRADataGridViewTextBoxColumn.Name = "tRADataGridViewTextBoxColumn";
+            this.tRADataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // netSalesDataGridViewTextBoxColumn
+            // 
+            this.netSalesDataGridViewTextBoxColumn.DataPropertyName = "NetSales";
+            this.netSalesDataGridViewTextBoxColumn.HeaderText = "NetSales";
+            this.netSalesDataGridViewTextBoxColumn.Name = "netSalesDataGridViewTextBoxColumn";
+            this.netSalesDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // grossMarginDataGridViewTextBoxColumn
+            // 
+            this.grossMarginDataGridViewTextBoxColumn.DataPropertyName = "GrossMargin";
+            this.grossMarginDataGridViewTextBoxColumn.HeaderText = "GrossMargin";
+            this.grossMarginDataGridViewTextBoxColumn.Name = "grossMarginDataGridViewTextBoxColumn";
+            this.grossMarginDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // salesHistoryModelBindingSource
+            // 
+            this.salesHistoryModelBindingSource.DataSource = typeof(BiliPC.SalesHistoryModel);
+            // 
             // SalesReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -445,9 +446,9 @@
             this.pnlTop.PerformLayout();
             this.pnlBackground.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgdSalesReport)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.salesHistoryModelBindingSource)).EndInit();
             this.GroupTextBox.ResumeLayout(false);
             this.GroupTextBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.salesHistoryModelBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -456,7 +457,7 @@
 
         private System.Windows.Forms.Panel pnlTop;
         private System.Windows.Forms.Button btnGenerateReport;
-        private System.Windows.Forms.ComboBox cboViewMonth;
+        private System.Windows.Forms.ComboBox CboViewMonth;
         private System.Windows.Forms.Label lblMonth;
         private System.Windows.Forms.Button btnShowAll;
         private System.Windows.Forms.Label lblSalesReport;

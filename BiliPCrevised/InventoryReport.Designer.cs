@@ -33,7 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlTop = new System.Windows.Forms.Panel();
             this.btnGenerateReport = new System.Windows.Forms.Button();
-            this.cboViewMonth = new System.Windows.Forms.ComboBox();
+            this.CboViewMonth = new System.Windows.Forms.ComboBox();
             this.lblMonth = new System.Windows.Forms.Label();
             this.btnShowAll = new System.Windows.Forms.Button();
             this.lblInventoryReport = new System.Windows.Forms.Label();
@@ -42,6 +42,12 @@
             this.btnClearDelRec = new System.Windows.Forms.Button();
             this.lblDeletedRecords = new System.Windows.Forms.Label();
             this.dgdDeletedRecords = new System.Windows.Forms.DataGridView();
+            this.GroupTextBox = new System.Windows.Forms.GroupBox();
+            this.txtTCAI = new System.Windows.Forms.TextBox();
+            this.lblTRA = new System.Windows.Forms.Label();
+            this.txtTRA = new System.Windows.Forms.TextBox();
+            this.lblTCAI = new System.Windows.Forms.Label();
+            this.dgdInventoryReport = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateModifiedDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itemDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,12 +59,6 @@
             this.inStockDataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.statusDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.inventoryModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.GroupTextBox = new System.Windows.Forms.GroupBox();
-            this.txtTCAI = new System.Windows.Forms.TextBox();
-            this.lblTRA = new System.Windows.Forms.Label();
-            this.txtTRA = new System.Windows.Forms.TextBox();
-            this.lblTCAI = new System.Windows.Forms.Label();
-            this.dgdInventoryReport = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateModifiedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itemDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -72,16 +72,16 @@
             this.pnlTop.SuspendLayout();
             this.pnlBackground.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgdDeletedRecords)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inventoryModelBindingSource)).BeginInit();
             this.GroupTextBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgdInventoryReport)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inventoryModelBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTop
             // 
             this.pnlTop.BackColor = System.Drawing.Color.DarkOliveGreen;
             this.pnlTop.Controls.Add(this.btnGenerateReport);
-            this.pnlTop.Controls.Add(this.cboViewMonth);
+            this.pnlTop.Controls.Add(this.CboViewMonth);
             this.pnlTop.Controls.Add(this.lblMonth);
             this.pnlTop.Controls.Add(this.btnShowAll);
             this.pnlTop.Controls.Add(this.lblInventoryReport);
@@ -89,7 +89,7 @@
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTop.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
-            this.pnlTop.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlTop.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlTop.Name = "pnlTop";
             this.pnlTop.Size = new System.Drawing.Size(945, 117);
             this.pnlTop.TabIndex = 1;
@@ -109,16 +109,17 @@
             this.btnGenerateReport.UseVisualStyleBackColor = false;
             this.btnGenerateReport.Click += new System.EventHandler(this.BtnGenerateReport_Click);
             // 
-            // cboViewMonth
+            // CboViewMonth
             // 
-            this.cboViewMonth.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.cboViewMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboViewMonth.FormattingEnabled = true;
-            this.cboViewMonth.Location = new System.Drawing.Point(156, 69);
-            this.cboViewMonth.Name = "cboViewMonth";
-            this.cboViewMonth.Size = new System.Drawing.Size(312, 26);
-            this.cboViewMonth.TabIndex = 224;
-            this.cboViewMonth.SelectedIndexChanged += new System.EventHandler(this.CboViewMonth_SelectedIndexChanged);
+            this.CboViewMonth.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.CboViewMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CboViewMonth.FormattingEnabled = true;
+            this.CboViewMonth.Location = new System.Drawing.Point(156, 65);
+            this.CboViewMonth.Name = "CboViewMonth";
+            this.CboViewMonth.Size = new System.Drawing.Size(312, 32);
+            this.CboViewMonth.TabIndex = 224;
+            this.CboViewMonth.SelectedIndexChanged += new System.EventHandler(this.CboViewMonth_SelectedIndexChanged);
+            this.CboViewMonth.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CboViewMonth_KeyPress);
             // 
             // lblMonth
             // 
@@ -170,7 +171,7 @@
             this.btnX.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnX.ForeColor = System.Drawing.Color.Black;
             this.btnX.Location = new System.Drawing.Point(921, 0);
-            this.btnX.Margin = new System.Windows.Forms.Padding(2);
+            this.btnX.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnX.Name = "btnX";
             this.btnX.Size = new System.Drawing.Size(25, 27);
             this.btnX.TabIndex = 0;
@@ -254,85 +255,6 @@
             this.dgdDeletedRecords.StandardTab = true;
             this.dgdDeletedRecords.TabIndex = 11;
             // 
-            // idDataGridViewTextBoxColumn1
-            // 
-            this.idDataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn1.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
-            this.idDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // dateModifiedDataGridViewTextBoxColumn1
-            // 
-            this.dateModifiedDataGridViewTextBoxColumn1.DataPropertyName = "DateModified";
-            this.dateModifiedDataGridViewTextBoxColumn1.HeaderText = "DateModified";
-            this.dateModifiedDataGridViewTextBoxColumn1.Name = "dateModifiedDataGridViewTextBoxColumn1";
-            this.dateModifiedDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // itemDataGridViewTextBoxColumn1
-            // 
-            this.itemDataGridViewTextBoxColumn1.DataPropertyName = "Item";
-            this.itemDataGridViewTextBoxColumn1.HeaderText = "Item";
-            this.itemDataGridViewTextBoxColumn1.Name = "itemDataGridViewTextBoxColumn1";
-            this.itemDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // qtyDataGridViewTextBoxColumn1
-            // 
-            this.qtyDataGridViewTextBoxColumn1.DataPropertyName = "Qty";
-            this.qtyDataGridViewTextBoxColumn1.HeaderText = "Qty";
-            this.qtyDataGridViewTextBoxColumn1.Name = "qtyDataGridViewTextBoxColumn1";
-            this.qtyDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // unitPriceDataGridViewTextBoxColumn1
-            // 
-            this.unitPriceDataGridViewTextBoxColumn1.DataPropertyName = "UnitPrice";
-            this.unitPriceDataGridViewTextBoxColumn1.HeaderText = "UnitPrice";
-            this.unitPriceDataGridViewTextBoxColumn1.Name = "unitPriceDataGridViewTextBoxColumn1";
-            this.unitPriceDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.unitPriceDataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // costDataGridViewTextBoxColumn1
-            // 
-            this.costDataGridViewTextBoxColumn1.DataPropertyName = "Cost";
-            this.costDataGridViewTextBoxColumn1.HeaderText = "Cost";
-            this.costDataGridViewTextBoxColumn1.Name = "costDataGridViewTextBoxColumn1";
-            this.costDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.costDataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // categoryDataGridViewTextBoxColumn1
-            // 
-            this.categoryDataGridViewTextBoxColumn1.DataPropertyName = "Category";
-            this.categoryDataGridViewTextBoxColumn1.HeaderText = "Category";
-            this.categoryDataGridViewTextBoxColumn1.Name = "categoryDataGridViewTextBoxColumn1";
-            this.categoryDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // supplierDataGridViewTextBoxColumn1
-            // 
-            this.supplierDataGridViewTextBoxColumn1.DataPropertyName = "Supplier";
-            this.supplierDataGridViewTextBoxColumn1.HeaderText = "Supplier";
-            this.supplierDataGridViewTextBoxColumn1.Name = "supplierDataGridViewTextBoxColumn1";
-            this.supplierDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // inStockDataGridViewCheckBoxColumn1
-            // 
-            this.inStockDataGridViewCheckBoxColumn1.DataPropertyName = "InStock";
-            this.inStockDataGridViewCheckBoxColumn1.HeaderText = "InStock";
-            this.inStockDataGridViewCheckBoxColumn1.Name = "inStockDataGridViewCheckBoxColumn1";
-            this.inStockDataGridViewCheckBoxColumn1.ReadOnly = true;
-            this.inStockDataGridViewCheckBoxColumn1.Visible = false;
-            // 
-            // statusDataGridViewTextBoxColumn1
-            // 
-            this.statusDataGridViewTextBoxColumn1.DataPropertyName = "Status";
-            this.statusDataGridViewTextBoxColumn1.HeaderText = "Status";
-            this.statusDataGridViewTextBoxColumn1.Name = "statusDataGridViewTextBoxColumn1";
-            this.statusDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.statusDataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // inventoryModelBindingSource
-            // 
-            this.inventoryModelBindingSource.DataSource = typeof(BiliPC.InventoryModel);
-            // 
             // GroupTextBox
             // 
             this.GroupTextBox.BackColor = System.Drawing.SystemColors.Info;
@@ -353,7 +275,7 @@
             this.txtTCAI.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtTCAI.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTCAI.Location = new System.Drawing.Point(335, 62);
-            this.txtTCAI.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTCAI.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtTCAI.Name = "txtTCAI";
             this.txtTCAI.ReadOnly = true;
             this.txtTCAI.Size = new System.Drawing.Size(268, 29);
@@ -378,7 +300,7 @@
             this.txtTRA.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtTRA.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTRA.Location = new System.Drawing.Point(335, 21);
-            this.txtTRA.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTRA.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtTRA.Name = "txtTRA";
             this.txtTRA.ReadOnly = true;
             this.txtTRA.Size = new System.Drawing.Size(268, 29);
@@ -435,10 +357,105 @@
             this.dgdInventoryReport.Size = new System.Drawing.Size(897, 245);
             this.dgdInventoryReport.TabIndex = 8;
             // 
+            // idDataGridViewTextBoxColumn1
+            // 
+            this.idDataGridViewTextBoxColumn1.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn1.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
+            this.idDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // dateModifiedDataGridViewTextBoxColumn1
+            // 
+            this.dateModifiedDataGridViewTextBoxColumn1.DataPropertyName = "DateModified";
+            this.dateModifiedDataGridViewTextBoxColumn1.FillWeight = 106.0934F;
+            this.dateModifiedDataGridViewTextBoxColumn1.HeaderText = "DateModified";
+            this.dateModifiedDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dateModifiedDataGridViewTextBoxColumn1.Name = "dateModifiedDataGridViewTextBoxColumn1";
+            this.dateModifiedDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // itemDataGridViewTextBoxColumn1
+            // 
+            this.itemDataGridViewTextBoxColumn1.DataPropertyName = "Item";
+            this.itemDataGridViewTextBoxColumn1.FillWeight = 149.7326F;
+            this.itemDataGridViewTextBoxColumn1.HeaderText = "Item";
+            this.itemDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.itemDataGridViewTextBoxColumn1.Name = "itemDataGridViewTextBoxColumn1";
+            this.itemDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // qtyDataGridViewTextBoxColumn1
+            // 
+            this.qtyDataGridViewTextBoxColumn1.DataPropertyName = "Qty";
+            this.qtyDataGridViewTextBoxColumn1.FillWeight = 63.44374F;
+            this.qtyDataGridViewTextBoxColumn1.HeaderText = "Qty";
+            this.qtyDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.qtyDataGridViewTextBoxColumn1.Name = "qtyDataGridViewTextBoxColumn1";
+            this.qtyDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // unitPriceDataGridViewTextBoxColumn1
+            // 
+            this.unitPriceDataGridViewTextBoxColumn1.DataPropertyName = "UnitPrice";
+            this.unitPriceDataGridViewTextBoxColumn1.HeaderText = "UnitPrice";
+            this.unitPriceDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.unitPriceDataGridViewTextBoxColumn1.Name = "unitPriceDataGridViewTextBoxColumn1";
+            this.unitPriceDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.unitPriceDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // costDataGridViewTextBoxColumn1
+            // 
+            this.costDataGridViewTextBoxColumn1.DataPropertyName = "Cost";
+            this.costDataGridViewTextBoxColumn1.HeaderText = "Cost";
+            this.costDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.costDataGridViewTextBoxColumn1.Name = "costDataGridViewTextBoxColumn1";
+            this.costDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.costDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // categoryDataGridViewTextBoxColumn1
+            // 
+            this.categoryDataGridViewTextBoxColumn1.DataPropertyName = "Category";
+            this.categoryDataGridViewTextBoxColumn1.FillWeight = 90.36512F;
+            this.categoryDataGridViewTextBoxColumn1.HeaderText = "Category";
+            this.categoryDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.categoryDataGridViewTextBoxColumn1.Name = "categoryDataGridViewTextBoxColumn1";
+            this.categoryDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // supplierDataGridViewTextBoxColumn1
+            // 
+            this.supplierDataGridViewTextBoxColumn1.DataPropertyName = "Supplier";
+            this.supplierDataGridViewTextBoxColumn1.FillWeight = 90.36512F;
+            this.supplierDataGridViewTextBoxColumn1.HeaderText = "Supplier";
+            this.supplierDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.supplierDataGridViewTextBoxColumn1.Name = "supplierDataGridViewTextBoxColumn1";
+            this.supplierDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // inStockDataGridViewCheckBoxColumn1
+            // 
+            this.inStockDataGridViewCheckBoxColumn1.DataPropertyName = "InStock";
+            this.inStockDataGridViewCheckBoxColumn1.HeaderText = "InStock";
+            this.inStockDataGridViewCheckBoxColumn1.MinimumWidth = 6;
+            this.inStockDataGridViewCheckBoxColumn1.Name = "inStockDataGridViewCheckBoxColumn1";
+            this.inStockDataGridViewCheckBoxColumn1.ReadOnly = true;
+            this.inStockDataGridViewCheckBoxColumn1.Visible = false;
+            // 
+            // statusDataGridViewTextBoxColumn1
+            // 
+            this.statusDataGridViewTextBoxColumn1.DataPropertyName = "Status";
+            this.statusDataGridViewTextBoxColumn1.HeaderText = "Status";
+            this.statusDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.statusDataGridViewTextBoxColumn1.Name = "statusDataGridViewTextBoxColumn1";
+            this.statusDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.statusDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // inventoryModelBindingSource
+            // 
+            this.inventoryModelBindingSource.DataSource = typeof(BiliPC.InventoryModel);
+            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
             this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             this.idDataGridViewTextBoxColumn.ReadOnly = true;
             this.idDataGridViewTextBoxColumn.Visible = false;
@@ -446,49 +463,63 @@
             // dateModifiedDataGridViewTextBoxColumn
             // 
             this.dateModifiedDataGridViewTextBoxColumn.DataPropertyName = "DateModified";
+            this.dateModifiedDataGridViewTextBoxColumn.FillWeight = 102.6373F;
             this.dateModifiedDataGridViewTextBoxColumn.HeaderText = "DateModified";
+            this.dateModifiedDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.dateModifiedDataGridViewTextBoxColumn.Name = "dateModifiedDataGridViewTextBoxColumn";
             this.dateModifiedDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // itemDataGridViewTextBoxColumn
             // 
             this.itemDataGridViewTextBoxColumn.DataPropertyName = "Item";
+            this.itemDataGridViewTextBoxColumn.FillWeight = 209.6256F;
             this.itemDataGridViewTextBoxColumn.HeaderText = "Item";
+            this.itemDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.itemDataGridViewTextBoxColumn.Name = "itemDataGridViewTextBoxColumn";
             this.itemDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // statusDataGridViewTextBoxColumn
             // 
             this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
+            this.statusDataGridViewTextBoxColumn.FillWeight = 80.89497F;
             this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
+            this.statusDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
             this.statusDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // unitPriceDataGridViewTextBoxColumn
             // 
             this.unitPriceDataGridViewTextBoxColumn.DataPropertyName = "UnitPrice";
+            this.unitPriceDataGridViewTextBoxColumn.FillWeight = 76.71047F;
             this.unitPriceDataGridViewTextBoxColumn.HeaderText = "UnitPrice";
+            this.unitPriceDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.unitPriceDataGridViewTextBoxColumn.Name = "unitPriceDataGridViewTextBoxColumn";
             this.unitPriceDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // costDataGridViewTextBoxColumn
             // 
             this.costDataGridViewTextBoxColumn.DataPropertyName = "Cost";
+            this.costDataGridViewTextBoxColumn.FillWeight = 76.71047F;
             this.costDataGridViewTextBoxColumn.HeaderText = "Cost";
+            this.costDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.costDataGridViewTextBoxColumn.Name = "costDataGridViewTextBoxColumn";
             this.costDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // categoryDataGridViewTextBoxColumn
             // 
             this.categoryDataGridViewTextBoxColumn.DataPropertyName = "Category";
+            this.categoryDataGridViewTextBoxColumn.FillWeight = 76.71047F;
             this.categoryDataGridViewTextBoxColumn.HeaderText = "Category";
+            this.categoryDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.categoryDataGridViewTextBoxColumn.Name = "categoryDataGridViewTextBoxColumn";
             this.categoryDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // supplierDataGridViewTextBoxColumn
             // 
             this.supplierDataGridViewTextBoxColumn.DataPropertyName = "Supplier";
+            this.supplierDataGridViewTextBoxColumn.FillWeight = 76.71047F;
             this.supplierDataGridViewTextBoxColumn.HeaderText = "Supplier";
+            this.supplierDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.supplierDataGridViewTextBoxColumn.Name = "supplierDataGridViewTextBoxColumn";
             this.supplierDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -496,6 +527,7 @@
             // 
             this.qtyDataGridViewTextBoxColumn.DataPropertyName = "Qty";
             this.qtyDataGridViewTextBoxColumn.HeaderText = "Qty";
+            this.qtyDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.qtyDataGridViewTextBoxColumn.Name = "qtyDataGridViewTextBoxColumn";
             this.qtyDataGridViewTextBoxColumn.ReadOnly = true;
             this.qtyDataGridViewTextBoxColumn.Visible = false;
@@ -504,6 +536,7 @@
             // 
             this.inStockDataGridViewCheckBoxColumn.DataPropertyName = "InStock";
             this.inStockDataGridViewCheckBoxColumn.HeaderText = "InStock";
+            this.inStockDataGridViewCheckBoxColumn.MinimumWidth = 6;
             this.inStockDataGridViewCheckBoxColumn.Name = "inStockDataGridViewCheckBoxColumn";
             this.inStockDataGridViewCheckBoxColumn.ReadOnly = true;
             this.inStockDataGridViewCheckBoxColumn.Visible = false;
@@ -525,10 +558,10 @@
             this.pnlBackground.ResumeLayout(false);
             this.pnlBackground.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgdDeletedRecords)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inventoryModelBindingSource)).EndInit();
             this.GroupTextBox.ResumeLayout(false);
             this.GroupTextBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgdInventoryReport)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inventoryModelBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -540,7 +573,7 @@
         private System.Windows.Forms.Label lblInventoryReport;
         private System.Windows.Forms.Button btnX;
         private System.Windows.Forms.Button btnGenerateReport;
-        private System.Windows.Forms.ComboBox cboViewMonth;
+        private System.Windows.Forms.ComboBox CboViewMonth;
         private System.Windows.Forms.Label lblMonth;
         private System.Windows.Forms.Panel pnlBackground;
         private System.Windows.Forms.DataGridView dgdInventoryReport;
@@ -551,17 +584,8 @@
         private System.Windows.Forms.Label lblTCAI;
         private System.Windows.Forms.Label lblDeletedRecords;
         private System.Windows.Forms.DataGridView dgdDeletedRecords;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateModifiedDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn itemDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn qtyDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn unitPriceDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn costDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn categoryDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn supplierDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn inStockDataGridViewCheckBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn1;
         private System.Windows.Forms.BindingSource inventoryModelBindingSource;
+        private System.Windows.Forms.Button btnClearDelRec;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateModifiedDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn itemDataGridViewTextBoxColumn;
@@ -572,6 +596,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn supplierDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn qtyDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn inStockDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.Button btnClearDelRec;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateModifiedDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn itemDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qtyDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unitPriceDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn costDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn categoryDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn supplierDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn inStockDataGridViewCheckBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn1;
     }
 }

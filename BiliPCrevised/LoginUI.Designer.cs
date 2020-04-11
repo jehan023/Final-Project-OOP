@@ -81,7 +81,7 @@
             this.LinkResetPassword.AutoSize = true;
             this.LinkResetPassword.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LinkResetPassword.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LinkResetPassword.Location = new System.Drawing.Point(116, 80);
+            this.LinkResetPassword.Location = new System.Drawing.Point(208, 79);
             this.LinkResetPassword.Name = "LinkResetPassword";
             this.LinkResetPassword.Size = new System.Drawing.Size(98, 14);
             this.LinkResetPassword.TabIndex = 6;

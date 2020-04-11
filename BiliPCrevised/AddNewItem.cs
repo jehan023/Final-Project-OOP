@@ -51,11 +51,19 @@
 
             if (emptyField > 0)
             {
-                MessageBox.Show("Please fill all of the " + emptyField + " field/s.");
+                // Message box showing unfilled textbox.
+                string message = "Please fill all of the " + emptyField + " field/s.";
+                string title = "Error";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBox.Show(message, title, buttons, MessageBoxIcon.Error);
             }
             else if (itemExists)
             {
-                MessageBox.Show("Item already exists.");
+                // Message box showing Item already exists.
+                string message = "Item already exists.";
+                string title = "New Item";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBox.Show(message, title, buttons, MessageBoxIcon.Error);
             }
             else if (!itemExists)
             {

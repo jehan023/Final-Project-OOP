@@ -1,6 +1,7 @@
 ﻿namespace BiliPC
 {
     using System;
+    using System.Drawing;
     using System.Linq;
     using System.Windows.Forms;
 
@@ -25,17 +26,25 @@
 
             if (emptyField > 0)
             {
-                MessageBox.Show("Please fill all of the " + emptyField + " field/s.");
+                // Message box showing unfilled textbox.
+                string message = "Please fill all of the " + emptyField + " field/s.";
+                string title = "Error";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBox.Show(message, title, buttons, MessageBoxIcon.Error);
             }
             else if (usernameExists)
             {
-                MessageBox.Show("Username already taken.");
+                // Message box showing Username already exists.
+                string message = "Username already taken.";
+                string title = "New Account";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBox.Show(message, title, buttons, MessageBoxIcon.Error);
             }
-            else if (this.txtPassword.Text != this.txtConfirmPassword.Text)
+            else if (this.TxtPassword.Text != this.TxtConfirmPassword.Text)
             {
                 MessageBox.Show("Please confirm your password.");
             }
-            else if ((this.txtPassword.Text == this.txtConfirmPassword.Text) && !usernameExists && (emptyField == 0))
+            else if ((this.TxtPassword.Text == this.TxtConfirmPassword.Text) && !usernameExists && (emptyField == 0))
             {
                 if (double.TryParse(this.txtWage.Text, out double wage))
                 {
@@ -43,7 +52,7 @@
                     {
                         Name = this.txtName.Text,
                         Username = this.txtUsername.Text,
-                        Password = this.txtPassword.Text,
+                        Password = this.TxtPassword.Text,
                         Salary = wage,
                         IsAdmin = this.adminTrueRadioBtn.Checked,
                     });
@@ -70,6 +79,42 @@
             else
             {
                 Functions.RestrictedKeyPressToInt(e);
+            }
+        }
+
+        private void TxtConfirmPassword_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(this.TxtConfirmPassword.Text))
+            {
+                this.lblCheckPass.Text = " ";
+            }
+            else if (this.TxtPassword.Text == this.TxtConfirmPassword.Text)
+            {
+                this.lblCheckPass.Text = "Password Matched.";
+                this.lblCheckPass.ForeColor = Color.Green;
+            }
+            else if (this.TxtPassword.Text != this.TxtConfirmPassword.Text)
+            {
+                this.lblCheckPass.Text = "Password  Not Matched!";
+                this.lblCheckPass.ForeColor = Color.Red;
+            }
+        }
+
+        private void TxtPassword_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(this.TxtConfirmPassword.Text))
+            {
+                this.lblCheckPass.Text = " ";
+            }
+            else if (this.TxtPassword.Text == this.TxtConfirmPassword.Text)
+            {
+                this.lblCheckPass.Text = "Password Matched.";
+                this.lblCheckPass.ForeColor = Color.Green;
+            }
+            else if (this.TxtPassword.Text != this.TxtConfirmPassword.Text)
+            {
+                this.lblCheckPass.Text = "Password  Not Matched!";
+                this.lblCheckPass.ForeColor = Color.Red;
             }
         }
     }
