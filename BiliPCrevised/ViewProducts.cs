@@ -35,7 +35,7 @@
         {
             var inventoryRecord = this.db.LoadRecords<InventoryModel>("Inventory");
             this.dgdViewProducts.DataSource = inventoryRecord;
-            this.TxtSearchItem.Text = string.Empty;
+            this.TxtSearchItem.Text = this.cboCategory.Text = string.Empty;
 
             foreach (var itemInventory in inventoryRecord)
             {

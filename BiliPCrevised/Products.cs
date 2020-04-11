@@ -39,6 +39,7 @@
             var inventoryRecord = this.db.LoadRecords<InventoryModel>("Inventory");
             this.dgdProduct.DataSource = inventoryRecord;
             this.txtSearchItem.Text = string.Empty;
+            this.AutoCompleteSearch();
 
             foreach (var itemInventory in inventoryRecord)
             {
