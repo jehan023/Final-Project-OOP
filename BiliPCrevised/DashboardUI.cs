@@ -199,14 +199,22 @@
 
         private void BtnLogout_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Logout();
-            using (LoginUI login = new LoginUI())
+            // Message box delete item confirmation.
+            string msg = "Are you sure you want to log out?";
+            string ttl = "Log out Confirmation";
+            MessageBoxButtons btns = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(msg, ttl, btns, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
             {
-                login.ShowDialog();
-            }
+                this.Hide();
+                Logout();
+                using (LoginUI login = new LoginUI())
+                {
+                    login.ShowDialog();
+                }
 
-            this.Close();
+                this.Close();
+            }
         }
         #endregion
     }

@@ -125,6 +125,9 @@
             </summary>
             <param name="documentSerializer">The document serializer.</param>
         </member>
+        <member name="M:MongoDB.Driver.ChangeStreamDocumentSerializer`1.Deserialize(MongoDB.Bson.Serialization.BsonDeserializationContext,MongoDB.Bson.Serialization.BsonDeserializationArgs)">
+            <inheritdoc />
+        </member>
         <member name="M:MongoDB.Driver.ChangeStreamDocumentSerializer`1.CreateInstance(MongoDB.Bson.BsonDocument)">
             <inheritdoc />
         </member>
