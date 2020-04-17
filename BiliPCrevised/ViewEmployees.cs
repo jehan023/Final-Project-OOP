@@ -58,8 +58,8 @@
                 // Show first item in the textboxes
                 this.txtAcctID.Text = this.dgdEmployee.Rows[0].Cells[0].Value.ToString();
                 this.txtAcctName.Text = this.dgdEmployee.Rows[0].Cells[1].Value.ToString();
-                this.txtAcctUsername.Text = this.dgdEmployee.Rows[0].Cells[2].Value.ToString();
-                this.txtAcctPassword.Text = this.dgdEmployee.Rows[0].Cells[3].Value.ToString();
+                this.TxtContactNo.Text = this.dgdEmployee.Rows[0].Cells[2].Value.ToString();
+                this.txtAcctUsername.Text = this.dgdEmployee.Rows[0].Cells[3].Value.ToString();
                 this.txtAcctSalary.Text = this.dgdEmployee.Rows[0].Cells[4].Value.ToString();
                 this.txtAcctWorkhours.Text = workhours.ToString("F2", CultureInfo.CurrentCulture);
                 this.radAdminTrue.Checked = this.dgdEmployee.Rows[0].Cells[6].Value.Equals(true);
@@ -71,8 +71,7 @@
                 this.txtAcctID.Text
                     = this.txtAcctName.Text
                     = this.txtAcctUsername.Text
-                    = this.txtAcctPassword.Text
-                    = this.txtAcctPassword.Text
+                    = this.TxtContactNo.Text
                     = this.txtAcctSalary.Text
                     = this.txtAcctWorkhours.Text
                     = string.Empty;
@@ -109,6 +108,15 @@
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
                 MessageBox.Show(message, title, buttons, MessageBoxIcon.Error);
             }
+            else if (this.TxtContactNo.TextLength != 11)
+            { 
+                // Message box showing incorrect contact number.
+                string message = "Please confirm the contact number.";
+                string title = "Error";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBox.Show(message, title, buttons, MessageBoxIcon.Error);
+                this.RefreshAccounts();
+            }
             else if (ObjectId.TryParse(this.txtAcctID.Text, out ObjectId id) && double.TryParse(this.txtAcctSalary.Text, out double salary))
             {
                 var selectedRecord = this.db.LoadRecordsByGenericT<UsersModel, ObjectId>("Users", "Id", id);
@@ -134,7 +142,7 @@
 
                     selectedRecord.Name = this.txtAcctName.Text;
                     selectedRecord.Username = this.txtAcctUsername.Text;
-                    selectedRecord.Password = this.txtAcctPassword.Text;
+                    selectedRecord.ContactNo = this.TxtContactNo.Text;
                     selectedRecord.Salary = salary;
                     selectedRecord.IsAdmin = this.radAdminTrue.Checked;
                     this.db.UpsertRecord("Users", selectedRecord.Id, selectedRecord);
@@ -204,8 +212,8 @@
             {
                 this.txtAcctID.Text = this.dgdEmployee.Rows[e.RowIndex].Cells[0].Value.ToString();
                 this.txtAcctName.Text = this.dgdEmployee.Rows[e.RowIndex].Cells[1].Value.ToString();
-                this.txtAcctUsername.Text = this.dgdEmployee.Rows[e.RowIndex].Cells[2].Value.ToString();
-                this.txtAcctPassword.Text = this.dgdEmployee.Rows[e.RowIndex].Cells[3].Value.ToString();
+                this.TxtContactNo.Text = this.dgdEmployee.Rows[e.RowIndex].Cells[2].Value.ToString();
+                this.txtAcctUsername.Text = this.dgdEmployee.Rows[e.RowIndex].Cells[3].Value.ToString();
                 this.txtAcctSalary.Text = this.dgdEmployee.Rows[e.RowIndex].Cells[4].Value.ToString();
                 this.txtAcctWorkhours.Text = workhours.ToString("F2", CultureInfo.CurrentCulture);
                 this.radAdminTrue.Checked = this.dgdEmployee.Rows[e.RowIndex].Cells[6].Value.Equals(true);
@@ -229,6 +237,12 @@
         {
             var userRecord = this.db.LoadRecordsByCaseInsensitive<UsersModel>("Users", "Name", this.TxtSearchEmployee.Text);
             this.dgdEmployee.DataSource = userRecord;
+        }
+
+
+        private void TxtContactNo_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            Functions.RestrictedKeyPressToInt(e);
         }
     }
 }

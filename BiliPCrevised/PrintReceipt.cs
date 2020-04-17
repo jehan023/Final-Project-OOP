@@ -7,15 +7,15 @@
 
     public partial class PrintReceipt : Form
     {
-        public PrintReceipt(string dateTime, string employeeName, string transId, List<TransactionTempModel> dataSource, string subtotal, string discount, string cash, string change, string totalPrice)
+        public PrintReceipt(string dateTime, string employeeName, string transId, string customerName, string contactNo, List<TransactionTempModel> dataSource, string subtotal, string discount, string cash, string change, string totalPrice)
         {
             this.InitializeComponent();
             this.DateTime = dateTime;
             this.EmployeeName = employeeName;
             this.DataSource = dataSource;
-
-            // Kulang pa ng transaction Id haha
             this.TransId = transId;
+            this.CustomerName = customerName;
+            this.CustomerNo = contactNo;
             this.Subtotal = subtotal;
             this.Discount = discount;
             this.Cash = cash;
@@ -30,6 +30,10 @@
         private string EmployeeName { get; set; }
 
         private string TransId { get; set; }
+
+        private string CustomerName { get; set; }
+
+        private string CustomerNo { get; set; }
 
         private string Subtotal { get; set; }
 
@@ -52,6 +56,8 @@
                 new ReportParameter("pDate", this.DateTime),
                 new ReportParameter("pSalesRepresentative", this.EmployeeName),
                 new ReportParameter("pTransID", this.TransId),
+                new ReportParameter("pCustomerName", this.CustomerName),
+                new ReportParameter("pCustomerNo", this.CustomerNo),
                 new ReportParameter("pSubtotalAmount", this.Subtotal),
                 new ReportParameter("pDiscount", this.Discount),
                 new ReportParameter("pTotalAmountDue", this.TotalPrice),

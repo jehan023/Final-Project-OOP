@@ -34,29 +34,30 @@
             this.pnlBottom = new System.Windows.Forms.Panel();
             this.lblDate = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
-            this.btnInventory = new System.Windows.Forms.Button();
             this.pnlSideMenu = new System.Windows.Forms.Panel();
+            this.BtnLogout = new System.Windows.Forms.Button();
+            this.panelManageEmployees = new System.Windows.Forms.Panel();
+            this.BtnTrackEmployees = new System.Windows.Forms.Button();
+            this.BtnViewEmployees = new System.Windows.Forms.Button();
+            this.BtnManageEmployees = new System.Windows.Forms.Button();
+            this.panelInventory = new System.Windows.Forms.Panel();
+            this.BtnInventoryReport = new System.Windows.Forms.Button();
+            this.BtnEditProducts = new System.Windows.Forms.Button();
+            this.BtnSearchProducts = new System.Windows.Forms.Button();
+            this.BtnInventory = new System.Windows.Forms.Button();
+            this.panelSales = new System.Windows.Forms.Panel();
+            this.BtnSalesReport = new System.Windows.Forms.Button();
+            this.BtnTransactionHistory = new System.Windows.Forms.Button();
+            this.BtnSales = new System.Windows.Forms.Button();
+            this.BtnPOS = new System.Windows.Forms.Button();
             this.txtAcctName = new System.Windows.Forms.Label();
             this.lblLoggedInAs = new System.Windows.Forms.Label();
-            this.btnLogout = new System.Windows.Forms.Button();
-            this.panelManageEmployees = new System.Windows.Forms.Panel();
-            this.btnTrackEmployees = new System.Windows.Forms.Button();
-            this.btnViewEmployees = new System.Windows.Forms.Button();
-            this.btnManageEmployees = new System.Windows.Forms.Button();
-            this.panelInventory = new System.Windows.Forms.Panel();
-            this.btnInventoryReport = new System.Windows.Forms.Button();
-            this.btnEditProducts = new System.Windows.Forms.Button();
-            this.btnSearchProducts = new System.Windows.Forms.Button();
-            this.panelSales = new System.Windows.Forms.Panel();
-            this.btnSalesReport = new System.Windows.Forms.Button();
-            this.btnTransactionHistory = new System.Windows.Forms.Button();
-            this.btnCreateTransaction = new System.Windows.Forms.Button();
-            this.btnSales = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.picBiliPCLogo = new System.Windows.Forms.PictureBox();
             this.pnlTop = new System.Windows.Forms.Panel();
             this.pnlContainerForm = new System.Windows.Forms.Panel();
             this.picBiliPCLogoDefault = new System.Windows.Forms.PictureBox();
+            this.lblCopyrights = new System.Windows.Forms.Label();
             this.pnlSideMenu.SuspendLayout();
             this.panelManageEmployees.SuspendLayout();
             this.panelInventory.SuspendLayout();
@@ -111,42 +112,22 @@
             this.lblTime.Text = "Time";
             this.lblTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnInventory
-            // 
-            this.btnInventory.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnInventory.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnInventory.FlatAppearance.BorderSize = 0;
-            this.btnInventory.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
-            this.btnInventory.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btnInventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInventory.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInventory.ForeColor = System.Drawing.Color.White;
-            this.btnInventory.Location = new System.Drawing.Point(0, 229);
-            this.btnInventory.Margin = new System.Windows.Forms.Padding(2);
-            this.btnInventory.Name = "btnInventory";
-            this.btnInventory.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
-            this.btnInventory.Size = new System.Drawing.Size(206, 30);
-            this.btnInventory.TabIndex = 12;
-            this.btnInventory.Text = "Inventory";
-            this.btnInventory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInventory.UseVisualStyleBackColor = true;
-            this.btnInventory.Click += new System.EventHandler(this.BtnInventory_Click_1);
-            // 
             // pnlSideMenu
             // 
             this.pnlSideMenu.AutoScroll = true;
             this.pnlSideMenu.BackColor = System.Drawing.Color.Black;
+            this.pnlSideMenu.Controls.Add(this.BtnLogout);
+            this.pnlSideMenu.Controls.Add(this.panelManageEmployees);
+            this.pnlSideMenu.Controls.Add(this.BtnManageEmployees);
+            this.pnlSideMenu.Controls.Add(this.panelInventory);
+            this.pnlSideMenu.Controls.Add(this.BtnInventory);
+            this.pnlSideMenu.Controls.Add(this.panelSales);
+            this.pnlSideMenu.Controls.Add(this.BtnSales);
+            this.pnlSideMenu.Controls.Add(this.BtnPOS);
             this.pnlSideMenu.Controls.Add(this.txtAcctName);
             this.pnlSideMenu.Controls.Add(this.lblLoggedInAs);
-            this.pnlSideMenu.Controls.Add(this.btnLogout);
-            this.pnlSideMenu.Controls.Add(this.panelManageEmployees);
-            this.pnlSideMenu.Controls.Add(this.btnManageEmployees);
             this.pnlSideMenu.Controls.Add(this.lblDate);
             this.pnlSideMenu.Controls.Add(this.lblTime);
-            this.pnlSideMenu.Controls.Add(this.panelInventory);
-            this.pnlSideMenu.Controls.Add(this.btnInventory);
-            this.pnlSideMenu.Controls.Add(this.panelSales);
-            this.pnlSideMenu.Controls.Add(this.btnSales);
             this.pnlSideMenu.Controls.Add(this.panelLogo);
             this.pnlSideMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlSideMenu.Location = new System.Drawing.Point(0, 0);
@@ -154,6 +135,299 @@
             this.pnlSideMenu.Name = "pnlSideMenu";
             this.pnlSideMenu.Size = new System.Drawing.Size(206, 687);
             this.pnlSideMenu.TabIndex = 14;
+            // 
+            // BtnLogout
+            // 
+            this.BtnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnLogout.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnLogout.FlatAppearance.BorderSize = 0;
+            this.BtnLogout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
+            this.BtnLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.BtnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnLogout.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnLogout.ForeColor = System.Drawing.Color.White;
+            this.BtnLogout.Location = new System.Drawing.Point(0, 442);
+            this.BtnLogout.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnLogout.Name = "BtnLogout";
+            this.BtnLogout.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
+            this.BtnLogout.Size = new System.Drawing.Size(206, 30);
+            this.BtnLogout.TabIndex = 48;
+            this.BtnLogout.Text = "Logout";
+            this.BtnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnLogout.UseVisualStyleBackColor = true;
+            this.BtnLogout.Click += new System.EventHandler(this.BtnLogout_Click_1);
+            // 
+            // panelManageEmployees
+            // 
+            this.panelManageEmployees.BackColor = System.Drawing.Color.DimGray;
+            this.panelManageEmployees.Controls.Add(this.BtnTrackEmployees);
+            this.panelManageEmployees.Controls.Add(this.BtnViewEmployees);
+            this.panelManageEmployees.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelManageEmployees.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelManageEmployees.Location = new System.Drawing.Point(0, 381);
+            this.panelManageEmployees.Margin = new System.Windows.Forms.Padding(2);
+            this.panelManageEmployees.Name = "panelManageEmployees";
+            this.panelManageEmployees.Size = new System.Drawing.Size(206, 61);
+            this.panelManageEmployees.TabIndex = 46;
+            // 
+            // BtnTrackEmployees
+            // 
+            this.BtnTrackEmployees.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnTrackEmployees.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnTrackEmployees.FlatAppearance.BorderSize = 0;
+            this.BtnTrackEmployees.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
+            this.BtnTrackEmployees.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.BtnTrackEmployees.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnTrackEmployees.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnTrackEmployees.ForeColor = System.Drawing.Color.White;
+            this.BtnTrackEmployees.Location = new System.Drawing.Point(0, 30);
+            this.BtnTrackEmployees.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnTrackEmployees.Name = "BtnTrackEmployees";
+            this.BtnTrackEmployees.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.BtnTrackEmployees.Size = new System.Drawing.Size(206, 30);
+            this.BtnTrackEmployees.TabIndex = 1;
+            this.BtnTrackEmployees.Text = "Track Employees";
+            this.BtnTrackEmployees.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnTrackEmployees.UseVisualStyleBackColor = true;
+            this.BtnTrackEmployees.Click += new System.EventHandler(this.BtnTrackEmployees_Click_1);
+            // 
+            // BtnViewEmployees
+            // 
+            this.BtnViewEmployees.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnViewEmployees.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnViewEmployees.FlatAppearance.BorderSize = 0;
+            this.BtnViewEmployees.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
+            this.BtnViewEmployees.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.BtnViewEmployees.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnViewEmployees.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnViewEmployees.ForeColor = System.Drawing.Color.White;
+            this.BtnViewEmployees.Location = new System.Drawing.Point(0, 0);
+            this.BtnViewEmployees.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnViewEmployees.Name = "BtnViewEmployees";
+            this.BtnViewEmployees.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.BtnViewEmployees.Size = new System.Drawing.Size(206, 30);
+            this.BtnViewEmployees.TabIndex = 0;
+            this.BtnViewEmployees.Text = "View Employees";
+            this.BtnViewEmployees.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnViewEmployees.UseVisualStyleBackColor = true;
+            this.BtnViewEmployees.Click += new System.EventHandler(this.BtnViewEmployees_Click_1);
+            // 
+            // BtnManageEmployees
+            // 
+            this.BtnManageEmployees.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnManageEmployees.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnManageEmployees.FlatAppearance.BorderSize = 0;
+            this.BtnManageEmployees.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
+            this.BtnManageEmployees.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.BtnManageEmployees.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnManageEmployees.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnManageEmployees.ForeColor = System.Drawing.Color.White;
+            this.BtnManageEmployees.Location = new System.Drawing.Point(0, 351);
+            this.BtnManageEmployees.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnManageEmployees.Name = "BtnManageEmployees";
+            this.BtnManageEmployees.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
+            this.BtnManageEmployees.Size = new System.Drawing.Size(206, 30);
+            this.BtnManageEmployees.TabIndex = 47;
+            this.BtnManageEmployees.Text = "Manage Employees";
+            this.BtnManageEmployees.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnManageEmployees.UseVisualStyleBackColor = true;
+            this.BtnManageEmployees.Click += new System.EventHandler(this.BtnManageEmployees_Click_1);
+            // 
+            // panelInventory
+            // 
+            this.panelInventory.BackColor = System.Drawing.Color.DimGray;
+            this.panelInventory.Controls.Add(this.BtnInventoryReport);
+            this.panelInventory.Controls.Add(this.BtnEditProducts);
+            this.panelInventory.Controls.Add(this.BtnSearchProducts);
+            this.panelInventory.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelInventory.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelInventory.Location = new System.Drawing.Point(0, 260);
+            this.panelInventory.Margin = new System.Windows.Forms.Padding(2);
+            this.panelInventory.Name = "panelInventory";
+            this.panelInventory.Size = new System.Drawing.Size(206, 91);
+            this.panelInventory.TabIndex = 44;
+            // 
+            // BtnInventoryReport
+            // 
+            this.BtnInventoryReport.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnInventoryReport.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnInventoryReport.FlatAppearance.BorderSize = 0;
+            this.BtnInventoryReport.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
+            this.BtnInventoryReport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.BtnInventoryReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnInventoryReport.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnInventoryReport.ForeColor = System.Drawing.Color.White;
+            this.BtnInventoryReport.Location = new System.Drawing.Point(0, 60);
+            this.BtnInventoryReport.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnInventoryReport.Name = "BtnInventoryReport";
+            this.BtnInventoryReport.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.BtnInventoryReport.Size = new System.Drawing.Size(206, 30);
+            this.BtnInventoryReport.TabIndex = 2;
+            this.BtnInventoryReport.Text = "Report";
+            this.BtnInventoryReport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnInventoryReport.UseVisualStyleBackColor = true;
+            this.BtnInventoryReport.Click += new System.EventHandler(this.BtnInventoryReport_Click_1);
+            // 
+            // BtnEditProducts
+            // 
+            this.BtnEditProducts.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnEditProducts.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnEditProducts.FlatAppearance.BorderSize = 0;
+            this.BtnEditProducts.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
+            this.BtnEditProducts.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.BtnEditProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnEditProducts.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnEditProducts.ForeColor = System.Drawing.Color.White;
+            this.BtnEditProducts.Location = new System.Drawing.Point(0, 30);
+            this.BtnEditProducts.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnEditProducts.Name = "BtnEditProducts";
+            this.BtnEditProducts.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.BtnEditProducts.Size = new System.Drawing.Size(206, 30);
+            this.BtnEditProducts.TabIndex = 1;
+            this.BtnEditProducts.Text = "Edit Products";
+            this.BtnEditProducts.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnEditProducts.UseVisualStyleBackColor = true;
+            this.BtnEditProducts.Click += new System.EventHandler(this.BtnEditProducts_Click);
+            // 
+            // BtnSearchProducts
+            // 
+            this.BtnSearchProducts.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnSearchProducts.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnSearchProducts.FlatAppearance.BorderSize = 0;
+            this.BtnSearchProducts.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
+            this.BtnSearchProducts.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.BtnSearchProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnSearchProducts.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnSearchProducts.ForeColor = System.Drawing.Color.White;
+            this.BtnSearchProducts.Location = new System.Drawing.Point(0, 0);
+            this.BtnSearchProducts.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnSearchProducts.Name = "BtnSearchProducts";
+            this.BtnSearchProducts.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.BtnSearchProducts.Size = new System.Drawing.Size(206, 30);
+            this.BtnSearchProducts.TabIndex = 0;
+            this.BtnSearchProducts.Text = "Search Products";
+            this.BtnSearchProducts.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnSearchProducts.UseVisualStyleBackColor = true;
+            this.BtnSearchProducts.Click += new System.EventHandler(this.BtnSearchProducts_Click);
+            // 
+            // BtnInventory
+            // 
+            this.BtnInventory.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnInventory.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnInventory.FlatAppearance.BorderSize = 0;
+            this.BtnInventory.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
+            this.BtnInventory.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.BtnInventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnInventory.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnInventory.ForeColor = System.Drawing.Color.White;
+            this.BtnInventory.Location = new System.Drawing.Point(0, 230);
+            this.BtnInventory.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnInventory.Name = "BtnInventory";
+            this.BtnInventory.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
+            this.BtnInventory.Size = new System.Drawing.Size(206, 30);
+            this.BtnInventory.TabIndex = 45;
+            this.BtnInventory.Text = "Inventory";
+            this.BtnInventory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnInventory.UseVisualStyleBackColor = true;
+            this.BtnInventory.Click += new System.EventHandler(this.BtnInventory_Click);
+            // 
+            // panelSales
+            // 
+            this.panelSales.BackColor = System.Drawing.Color.DimGray;
+            this.panelSales.Controls.Add(this.BtnSalesReport);
+            this.panelSales.Controls.Add(this.BtnTransactionHistory);
+            this.panelSales.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelSales.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelSales.Location = new System.Drawing.Point(0, 166);
+            this.panelSales.Margin = new System.Windows.Forms.Padding(2);
+            this.panelSales.Name = "panelSales";
+            this.panelSales.Size = new System.Drawing.Size(206, 64);
+            this.panelSales.TabIndex = 42;
+            // 
+            // BtnSalesReport
+            // 
+            this.BtnSalesReport.BackColor = System.Drawing.Color.DimGray;
+            this.BtnSalesReport.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnSalesReport.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnSalesReport.FlatAppearance.BorderSize = 0;
+            this.BtnSalesReport.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
+            this.BtnSalesReport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.BtnSalesReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnSalesReport.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnSalesReport.ForeColor = System.Drawing.Color.White;
+            this.BtnSalesReport.Location = new System.Drawing.Point(0, 30);
+            this.BtnSalesReport.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnSalesReport.Name = "BtnSalesReport";
+            this.BtnSalesReport.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.BtnSalesReport.Size = new System.Drawing.Size(206, 32);
+            this.BtnSalesReport.TabIndex = 2;
+            this.BtnSalesReport.Text = "Sales Report";
+            this.BtnSalesReport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnSalesReport.UseVisualStyleBackColor = false;
+            this.BtnSalesReport.Click += new System.EventHandler(this.BtnSalesReport_Click_1);
+            // 
+            // BtnTransactionHistory
+            // 
+            this.BtnTransactionHistory.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnTransactionHistory.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnTransactionHistory.FlatAppearance.BorderSize = 0;
+            this.BtnTransactionHistory.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
+            this.BtnTransactionHistory.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.BtnTransactionHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnTransactionHistory.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnTransactionHistory.ForeColor = System.Drawing.Color.White;
+            this.BtnTransactionHistory.Location = new System.Drawing.Point(0, 0);
+            this.BtnTransactionHistory.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnTransactionHistory.Name = "BtnTransactionHistory";
+            this.BtnTransactionHistory.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.BtnTransactionHistory.Size = new System.Drawing.Size(206, 30);
+            this.BtnTransactionHistory.TabIndex = 1;
+            this.BtnTransactionHistory.Text = "Sales History";
+            this.BtnTransactionHistory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnTransactionHistory.UseVisualStyleBackColor = true;
+            this.BtnTransactionHistory.Click += new System.EventHandler(this.BtnTransactionHistory_Click_1);
+            // 
+            // BtnSales
+            // 
+            this.BtnSales.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnSales.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnSales.FlatAppearance.BorderSize = 0;
+            this.BtnSales.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
+            this.BtnSales.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.BtnSales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnSales.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnSales.ForeColor = System.Drawing.Color.White;
+            this.BtnSales.Location = new System.Drawing.Point(0, 136);
+            this.BtnSales.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnSales.Name = "BtnSales";
+            this.BtnSales.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
+            this.BtnSales.Size = new System.Drawing.Size(206, 30);
+            this.BtnSales.TabIndex = 43;
+            this.BtnSales.Text = "Sales";
+            this.BtnSales.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnSales.UseVisualStyleBackColor = true;
+            this.BtnSales.Click += new System.EventHandler(this.BtnSales_Click);
+            // 
+            // BtnPOS
+            // 
+            this.BtnPOS.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnPOS.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnPOS.FlatAppearance.BorderSize = 0;
+            this.BtnPOS.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
+            this.BtnPOS.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.BtnPOS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnPOS.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnPOS.ForeColor = System.Drawing.Color.White;
+            this.BtnPOS.Location = new System.Drawing.Point(0, 106);
+            this.BtnPOS.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnPOS.Name = "BtnPOS";
+            this.BtnPOS.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
+            this.BtnPOS.Size = new System.Drawing.Size(206, 30);
+            this.BtnPOS.TabIndex = 41;
+            this.BtnPOS.Text = "Point of Sale";
+            this.BtnPOS.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnPOS.UseVisualStyleBackColor = true;
+            this.BtnPOS.Click += new System.EventHandler(this.BtnPOS_Click);
             // 
             // txtAcctName
             // 
@@ -178,278 +452,6 @@
             this.lblLoggedInAs.Size = new System.Drawing.Size(79, 12);
             this.lblLoggedInAs.TabIndex = 5;
             this.lblLoggedInAs.Text = "Logged in as:";
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLogout.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnLogout.FlatAppearance.BorderSize = 0;
-            this.btnLogout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
-            this.btnLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogout.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogout.ForeColor = System.Drawing.Color.White;
-            this.btnLogout.Location = new System.Drawing.Point(0, 441);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(2);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
-            this.btnLogout.Size = new System.Drawing.Size(206, 30);
-            this.btnLogout.TabIndex = 40;
-            this.btnLogout.Text = "Logout";
-            this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogout.UseVisualStyleBackColor = true;
-            this.btnLogout.Click += new System.EventHandler(this.BtnLogout_Click);
-            // 
-            // panelManageEmployees
-            // 
-            this.panelManageEmployees.BackColor = System.Drawing.Color.DimGray;
-            this.panelManageEmployees.Controls.Add(this.btnTrackEmployees);
-            this.panelManageEmployees.Controls.Add(this.btnViewEmployees);
-            this.panelManageEmployees.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelManageEmployees.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelManageEmployees.Location = new System.Drawing.Point(0, 380);
-            this.panelManageEmployees.Margin = new System.Windows.Forms.Padding(2);
-            this.panelManageEmployees.Name = "panelManageEmployees";
-            this.panelManageEmployees.Size = new System.Drawing.Size(206, 61);
-            this.panelManageEmployees.TabIndex = 21;
-            // 
-            // btnTrackEmployees
-            // 
-            this.btnTrackEmployees.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTrackEmployees.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnTrackEmployees.FlatAppearance.BorderSize = 0;
-            this.btnTrackEmployees.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
-            this.btnTrackEmployees.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btnTrackEmployees.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTrackEmployees.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTrackEmployees.ForeColor = System.Drawing.Color.White;
-            this.btnTrackEmployees.Location = new System.Drawing.Point(0, 30);
-            this.btnTrackEmployees.Margin = new System.Windows.Forms.Padding(2);
-            this.btnTrackEmployees.Name = "btnTrackEmployees";
-            this.btnTrackEmployees.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnTrackEmployees.Size = new System.Drawing.Size(206, 30);
-            this.btnTrackEmployees.TabIndex = 1;
-            this.btnTrackEmployees.Text = "Track Employees";
-            this.btnTrackEmployees.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTrackEmployees.UseVisualStyleBackColor = true;
-            this.btnTrackEmployees.Click += new System.EventHandler(this.BtnTrackEmployees_Click);
-            // 
-            // btnViewEmployees
-            // 
-            this.btnViewEmployees.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnViewEmployees.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnViewEmployees.FlatAppearance.BorderSize = 0;
-            this.btnViewEmployees.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
-            this.btnViewEmployees.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btnViewEmployees.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnViewEmployees.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViewEmployees.ForeColor = System.Drawing.Color.White;
-            this.btnViewEmployees.Location = new System.Drawing.Point(0, 0);
-            this.btnViewEmployees.Margin = new System.Windows.Forms.Padding(2);
-            this.btnViewEmployees.Name = "btnViewEmployees";
-            this.btnViewEmployees.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnViewEmployees.Size = new System.Drawing.Size(206, 30);
-            this.btnViewEmployees.TabIndex = 0;
-            this.btnViewEmployees.Text = "View Employees";
-            this.btnViewEmployees.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnViewEmployees.UseVisualStyleBackColor = true;
-            this.btnViewEmployees.Click += new System.EventHandler(this.BtnViewEmployees_Click);
-            // 
-            // btnManageEmployees
-            // 
-            this.btnManageEmployees.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnManageEmployees.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnManageEmployees.FlatAppearance.BorderSize = 0;
-            this.btnManageEmployees.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
-            this.btnManageEmployees.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btnManageEmployees.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnManageEmployees.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnManageEmployees.ForeColor = System.Drawing.Color.White;
-            this.btnManageEmployees.Location = new System.Drawing.Point(0, 350);
-            this.btnManageEmployees.Margin = new System.Windows.Forms.Padding(2);
-            this.btnManageEmployees.Name = "btnManageEmployees";
-            this.btnManageEmployees.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
-            this.btnManageEmployees.Size = new System.Drawing.Size(206, 30);
-            this.btnManageEmployees.TabIndex = 21;
-            this.btnManageEmployees.Text = "Manage Employees";
-            this.btnManageEmployees.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnManageEmployees.UseVisualStyleBackColor = true;
-            this.btnManageEmployees.Click += new System.EventHandler(this.BtnManageEmployees_Click);
-            // 
-            // panelInventory
-            // 
-            this.panelInventory.BackColor = System.Drawing.Color.DimGray;
-            this.panelInventory.Controls.Add(this.btnInventoryReport);
-            this.panelInventory.Controls.Add(this.btnEditProducts);
-            this.panelInventory.Controls.Add(this.btnSearchProducts);
-            this.panelInventory.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelInventory.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelInventory.Location = new System.Drawing.Point(0, 259);
-            this.panelInventory.Margin = new System.Windows.Forms.Padding(2);
-            this.panelInventory.Name = "panelInventory";
-            this.panelInventory.Size = new System.Drawing.Size(206, 91);
-            this.panelInventory.TabIndex = 12;
-            // 
-            // btnInventoryReport
-            // 
-            this.btnInventoryReport.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnInventoryReport.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnInventoryReport.FlatAppearance.BorderSize = 0;
-            this.btnInventoryReport.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
-            this.btnInventoryReport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btnInventoryReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInventoryReport.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInventoryReport.ForeColor = System.Drawing.Color.White;
-            this.btnInventoryReport.Location = new System.Drawing.Point(0, 60);
-            this.btnInventoryReport.Margin = new System.Windows.Forms.Padding(2);
-            this.btnInventoryReport.Name = "btnInventoryReport";
-            this.btnInventoryReport.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnInventoryReport.Size = new System.Drawing.Size(206, 30);
-            this.btnInventoryReport.TabIndex = 2;
-            this.btnInventoryReport.Text = "Report";
-            this.btnInventoryReport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInventoryReport.UseVisualStyleBackColor = true;
-            this.btnInventoryReport.Click += new System.EventHandler(this.BtnInventoryReport_Click);
-            // 
-            // btnEditProducts
-            // 
-            this.btnEditProducts.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditProducts.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnEditProducts.FlatAppearance.BorderSize = 0;
-            this.btnEditProducts.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
-            this.btnEditProducts.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btnEditProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditProducts.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditProducts.ForeColor = System.Drawing.Color.White;
-            this.btnEditProducts.Location = new System.Drawing.Point(0, 30);
-            this.btnEditProducts.Margin = new System.Windows.Forms.Padding(2);
-            this.btnEditProducts.Name = "btnEditProducts";
-            this.btnEditProducts.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnEditProducts.Size = new System.Drawing.Size(206, 30);
-            this.btnEditProducts.TabIndex = 1;
-            this.btnEditProducts.Text = "Edit Products";
-            this.btnEditProducts.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditProducts.UseVisualStyleBackColor = true;
-            this.btnEditProducts.Click += new System.EventHandler(this.BtnEditProducts_Click_1);
-            // 
-            // btnSearchProducts
-            // 
-            this.btnSearchProducts.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSearchProducts.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSearchProducts.FlatAppearance.BorderSize = 0;
-            this.btnSearchProducts.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
-            this.btnSearchProducts.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btnSearchProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearchProducts.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearchProducts.ForeColor = System.Drawing.Color.White;
-            this.btnSearchProducts.Location = new System.Drawing.Point(0, 0);
-            this.btnSearchProducts.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSearchProducts.Name = "btnSearchProducts";
-            this.btnSearchProducts.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnSearchProducts.Size = new System.Drawing.Size(206, 30);
-            this.btnSearchProducts.TabIndex = 0;
-            this.btnSearchProducts.Text = "Search Products";
-            this.btnSearchProducts.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearchProducts.UseVisualStyleBackColor = true;
-            this.btnSearchProducts.Click += new System.EventHandler(this.BtnSearchProducts_Click_1);
-            // 
-            // panelSales
-            // 
-            this.panelSales.BackColor = System.Drawing.Color.DimGray;
-            this.panelSales.Controls.Add(this.btnSalesReport);
-            this.panelSales.Controls.Add(this.btnTransactionHistory);
-            this.panelSales.Controls.Add(this.btnCreateTransaction);
-            this.panelSales.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSales.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelSales.Location = new System.Drawing.Point(0, 136);
-            this.panelSales.Margin = new System.Windows.Forms.Padding(2);
-            this.panelSales.Name = "panelSales";
-            this.panelSales.Size = new System.Drawing.Size(206, 93);
-            this.panelSales.TabIndex = 10;
-            // 
-            // btnSalesReport
-            // 
-            this.btnSalesReport.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSalesReport.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSalesReport.FlatAppearance.BorderSize = 0;
-            this.btnSalesReport.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
-            this.btnSalesReport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btnSalesReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalesReport.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalesReport.ForeColor = System.Drawing.Color.White;
-            this.btnSalesReport.Location = new System.Drawing.Point(0, 60);
-            this.btnSalesReport.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSalesReport.Name = "btnSalesReport";
-            this.btnSalesReport.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnSalesReport.Size = new System.Drawing.Size(206, 32);
-            this.btnSalesReport.TabIndex = 2;
-            this.btnSalesReport.Text = "Sales Report";
-            this.btnSalesReport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalesReport.UseVisualStyleBackColor = true;
-            this.btnSalesReport.Click += new System.EventHandler(this.BtnSalesReport_Click);
-            // 
-            // btnTransactionHistory
-            // 
-            this.btnTransactionHistory.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTransactionHistory.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnTransactionHistory.FlatAppearance.BorderSize = 0;
-            this.btnTransactionHistory.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
-            this.btnTransactionHistory.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btnTransactionHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTransactionHistory.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTransactionHistory.ForeColor = System.Drawing.Color.White;
-            this.btnTransactionHistory.Location = new System.Drawing.Point(0, 30);
-            this.btnTransactionHistory.Margin = new System.Windows.Forms.Padding(2);
-            this.btnTransactionHistory.Name = "btnTransactionHistory";
-            this.btnTransactionHistory.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnTransactionHistory.Size = new System.Drawing.Size(206, 30);
-            this.btnTransactionHistory.TabIndex = 1;
-            this.btnTransactionHistory.Text = "Sales History";
-            this.btnTransactionHistory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTransactionHistory.UseVisualStyleBackColor = true;
-            this.btnTransactionHistory.Click += new System.EventHandler(this.BtnTransactionHistory_Click);
-            // 
-            // btnCreateTransaction
-            // 
-            this.btnCreateTransaction.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCreateTransaction.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCreateTransaction.FlatAppearance.BorderSize = 0;
-            this.btnCreateTransaction.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
-            this.btnCreateTransaction.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btnCreateTransaction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCreateTransaction.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreateTransaction.ForeColor = System.Drawing.Color.White;
-            this.btnCreateTransaction.Location = new System.Drawing.Point(0, 0);
-            this.btnCreateTransaction.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCreateTransaction.Name = "btnCreateTransaction";
-            this.btnCreateTransaction.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnCreateTransaction.Size = new System.Drawing.Size(206, 30);
-            this.btnCreateTransaction.TabIndex = 0;
-            this.btnCreateTransaction.Text = "Create Transaction";
-            this.btnCreateTransaction.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCreateTransaction.UseVisualStyleBackColor = true;
-            this.btnCreateTransaction.Click += new System.EventHandler(this.BtnCreateTransaction_Click_1);
-            // 
-            // btnSales
-            // 
-            this.btnSales.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSales.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSales.FlatAppearance.BorderSize = 0;
-            this.btnSales.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
-            this.btnSales.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btnSales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSales.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSales.ForeColor = System.Drawing.Color.White;
-            this.btnSales.Location = new System.Drawing.Point(0, 106);
-            this.btnSales.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSales.Name = "btnSales";
-            this.btnSales.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
-            this.btnSales.Size = new System.Drawing.Size(206, 30);
-            this.btnSales.TabIndex = 10;
-            this.btnSales.Text = "Sales";
-            this.btnSales.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSales.UseVisualStyleBackColor = true;
-            this.btnSales.Click += new System.EventHandler(this.BtnSales_Click_1);
             // 
             // panelLogo
             // 
@@ -485,6 +487,7 @@
             // pnlContainerForm
             // 
             this.pnlContainerForm.BackColor = System.Drawing.Color.LavenderBlush;
+            this.pnlContainerForm.Controls.Add(this.lblCopyrights);
             this.pnlContainerForm.Controls.Add(this.picBiliPCLogoDefault);
             this.pnlContainerForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlContainerForm.Location = new System.Drawing.Point(206, 24);
@@ -505,6 +508,18 @@
             this.picBiliPCLogoDefault.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBiliPCLogoDefault.TabIndex = 0;
             this.picBiliPCLogoDefault.TabStop = false;
+            // 
+            // lblCopyrights
+            // 
+            this.lblCopyrights.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblCopyrights.AutoSize = true;
+            this.lblCopyrights.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCopyrights.ForeColor = System.Drawing.Color.Navy;
+            this.lblCopyrights.Location = new System.Drawing.Point(379, 593);
+            this.lblCopyrights.Name = "lblCopyrights";
+            this.lblCopyrights.Size = new System.Drawing.Size(211, 15);
+            this.lblCopyrights.TabIndex = 2;
+            this.lblCopyrights.Text = "©2020 by J. Hadjisaid and S. Pineda ";
             // 
             // DashboardUI
             // 
@@ -530,6 +545,7 @@
             this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picBiliPCLogo)).EndInit();
             this.pnlContainerForm.ResumeLayout(false);
+            this.pnlContainerForm.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBiliPCLogoDefault)).EndInit();
             this.ResumeLayout(false);
 
@@ -541,28 +557,29 @@
         private System.Windows.Forms.Panel pnlBottom;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Label lblTime;
-        private System.Windows.Forms.Button btnInventory;
         private System.Windows.Forms.Panel pnlSideMenu;
-        private System.Windows.Forms.Panel panelManageEmployees;
-        private System.Windows.Forms.Button btnTrackEmployees;
-        private System.Windows.Forms.Button btnViewEmployees;
-        private System.Windows.Forms.Button btnManageEmployees;
-        private System.Windows.Forms.Panel panelInventory;
-        private System.Windows.Forms.Button btnInventoryReport;
-        private System.Windows.Forms.Button btnEditProducts;
-        private System.Windows.Forms.Button btnSearchProducts;
-        private System.Windows.Forms.Panel panelSales;
-        private System.Windows.Forms.Button btnSalesReport;
-        private System.Windows.Forms.Button btnTransactionHistory;
-        private System.Windows.Forms.Button btnCreateTransaction;
-        private System.Windows.Forms.Button btnSales;
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.PictureBox picBiliPCLogo;
-        private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Panel pnlTop;
         private System.Windows.Forms.Label txtAcctName;
         private System.Windows.Forms.Label lblLoggedInAs;
         private System.Windows.Forms.Panel pnlContainerForm;
         private System.Windows.Forms.PictureBox picBiliPCLogoDefault;
+        private System.Windows.Forms.Button BtnLogout;
+        private System.Windows.Forms.Panel panelManageEmployees;
+        private System.Windows.Forms.Button BtnTrackEmployees;
+        private System.Windows.Forms.Button BtnViewEmployees;
+        private System.Windows.Forms.Button BtnManageEmployees;
+        private System.Windows.Forms.Panel panelInventory;
+        private System.Windows.Forms.Button BtnInventoryReport;
+        private System.Windows.Forms.Button BtnEditProducts;
+        private System.Windows.Forms.Button BtnSearchProducts;
+        private System.Windows.Forms.Button BtnInventory;
+        private System.Windows.Forms.Panel panelSales;
+        private System.Windows.Forms.Button BtnSalesReport;
+        private System.Windows.Forms.Button BtnTransactionHistory;
+        private System.Windows.Forms.Button BtnSales;
+        private System.Windows.Forms.Button BtnPOS;
+        private System.Windows.Forms.Label lblCopyrights;
     }
 }

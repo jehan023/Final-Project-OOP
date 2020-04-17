@@ -52,9 +52,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.transactionIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.itemsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateOfPurchaseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.itemsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.employeeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tCISDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tRADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.netSalesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -200,9 +202,11 @@
             this.dgdSalesReport.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
             this.transactionIdDataGridViewTextBoxColumn,
-            this.itemsDataGridViewTextBoxColumn,
             this.dateOfPurchaseDataGridViewTextBoxColumn,
+            this.itemsDataGridViewTextBoxColumn,
             this.employeeDataGridViewTextBoxColumn,
+            this.customerNameDataGridViewTextBoxColumn,
+            this.customerNoDataGridViewTextBoxColumn,
             this.tCISDataGridViewTextBoxColumn,
             this.tRADataGridViewTextBoxColumn,
             this.netSalesDataGridViewTextBoxColumn,
@@ -372,16 +376,9 @@
             // transactionIdDataGridViewTextBoxColumn
             // 
             this.transactionIdDataGridViewTextBoxColumn.DataPropertyName = "TransactionId";
-            this.transactionIdDataGridViewTextBoxColumn.HeaderText = "TransactionId";
+            this.transactionIdDataGridViewTextBoxColumn.HeaderText = "TransactionID";
             this.transactionIdDataGridViewTextBoxColumn.Name = "transactionIdDataGridViewTextBoxColumn";
             this.transactionIdDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // itemsDataGridViewTextBoxColumn
-            // 
-            this.itemsDataGridViewTextBoxColumn.DataPropertyName = "Items";
-            this.itemsDataGridViewTextBoxColumn.HeaderText = "Items";
-            this.itemsDataGridViewTextBoxColumn.Name = "itemsDataGridViewTextBoxColumn";
-            this.itemsDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // dateOfPurchaseDataGridViewTextBoxColumn
             // 
@@ -390,12 +387,33 @@
             this.dateOfPurchaseDataGridViewTextBoxColumn.Name = "dateOfPurchaseDataGridViewTextBoxColumn";
             this.dateOfPurchaseDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // itemsDataGridViewTextBoxColumn
+            // 
+            this.itemsDataGridViewTextBoxColumn.DataPropertyName = "Items";
+            this.itemsDataGridViewTextBoxColumn.HeaderText = "Items";
+            this.itemsDataGridViewTextBoxColumn.Name = "itemsDataGridViewTextBoxColumn";
+            this.itemsDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // employeeDataGridViewTextBoxColumn
             // 
             this.employeeDataGridViewTextBoxColumn.DataPropertyName = "Employee";
             this.employeeDataGridViewTextBoxColumn.HeaderText = "Employee";
             this.employeeDataGridViewTextBoxColumn.Name = "employeeDataGridViewTextBoxColumn";
             this.employeeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // customerNameDataGridViewTextBoxColumn
+            // 
+            this.customerNameDataGridViewTextBoxColumn.DataPropertyName = "CustomerName";
+            this.customerNameDataGridViewTextBoxColumn.HeaderText = "CustomerName";
+            this.customerNameDataGridViewTextBoxColumn.Name = "customerNameDataGridViewTextBoxColumn";
+            this.customerNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // customerNoDataGridViewTextBoxColumn
+            // 
+            this.customerNoDataGridViewTextBoxColumn.DataPropertyName = "CustomerNo";
+            this.customerNoDataGridViewTextBoxColumn.HeaderText = "ContactNo";
+            this.customerNoDataGridViewTextBoxColumn.Name = "customerNoDataGridViewTextBoxColumn";
+            this.customerNoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // tCISDataGridViewTextBoxColumn
             // 
@@ -475,15 +493,17 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtGrossMargin;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.BindingSource salesHistoryModelBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn transactionIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn itemsDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateOfPurchaseDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn itemsDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn employeeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn customerNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn customerNoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tCISDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tRADataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn netSalesDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn grossMarginDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource salesHistoryModelBindingSource;
     }
 }

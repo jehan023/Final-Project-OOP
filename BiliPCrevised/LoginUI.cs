@@ -30,6 +30,7 @@
                 this.db.InsertRecord("Users", new UsersModel
                 {
                     Name = "Admin",
+                    ContactNo = "not set",
                     IsAdmin = true,
                     Username = "Admin",
                     Password = "Admin123",

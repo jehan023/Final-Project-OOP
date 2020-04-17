@@ -21,6 +21,9 @@
         public string Password { get; set; }
 
         [BsonElement]
+        public string ContactNo { get; set; }
+
+        [BsonElement]
         public double Salary { get; set; }
 
         [BsonElement]

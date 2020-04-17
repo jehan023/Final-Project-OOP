@@ -23,7 +23,7 @@
             // Verify if user is an Admin to show the "Manage Users" button
             using (new LoginUI())
             {
-                this.btnManageEmployees.Visible = LoginUI.Admin;
+                this.BtnManageEmployees.Visible = LoginUI.Admin;
                 this.txtAcctName.Text = AcctName = LoginUI.AcctName;
             }
         }
@@ -99,51 +99,54 @@
         }
         #endregion
 
-        #region Sales
-        private void BtnSales_Click_1(object sender, EventArgs e)
-            {
-                this.ShowSubmenu(this.panelSales);
-            }
-
-        private void BtnCreateTransaction_Click_1(object sender, EventArgs e)
-            {
-                this.OpenContainerForm(new TransactionForm());
-                this.HideSubmenu();
-            }
-
-        private void BtnSalesReport_Click(object sender, EventArgs e)
+        #region Point of Sale
+        private void BtnPOS_Click(object sender, EventArgs e)
         {
-            this.OpenContainerForm(new SalesReport());
+            this.HideSubmenu();
+            this.OpenContainerForm(new TransactionForm());
+        }
+
+        #endregion
+
+        #region Sales
+        private void BtnSales_Click(object sender, EventArgs e)
+        {
+            this.ShowSubmenu(this.panelSales);
+        }
+
+        private void BtnTransactionHistory_Click_1(object sender, EventArgs e)
+        {
+            this.OpenContainerForm(new SalesHistory());
             this.HideSubmenu();
         }
 
-        private void BtnTransactionHistory_Click(object sender, EventArgs e)
+        private void BtnSalesReport_Click_1(object sender, EventArgs e)
         {
-            this.OpenContainerForm(new SalesHistory());
+            this.OpenContainerForm(new SalesReport());
             this.HideSubmenu();
         }
 
         #endregion
 
         #region Inventory
-        private void BtnInventory_Click_1(object sender, EventArgs e)
+        private void BtnInventory_Click(object sender, EventArgs e)
         {
             this.ShowSubmenu(this.panelInventory);
         }
 
-        private void BtnSearchProducts_Click_1(object sender, EventArgs e)
+        private void BtnSearchProducts_Click(object sender, EventArgs e)
         {
             this.OpenContainerForm(new ViewProducts());
             this.HideSubmenu();
         }
 
-        private void BtnEditProducts_Click_1(object sender, EventArgs e)
+        private void BtnEditProducts_Click(object sender, EventArgs e)
         {
             this.OpenContainerForm(new Products());
             this.HideSubmenu();
         }
 
-        private void BtnInventoryReport_Click(object sender, EventArgs e)
+        private void BtnInventoryReport_Click_1(object sender, EventArgs e)
         {
             this.OpenContainerForm(new InventoryReport());
             this.HideSubmenu();
@@ -152,18 +155,18 @@
         #endregion
 
         #region Manage Employees
-        private void BtnManageEmployees_Click(object sender, EventArgs e)
+        private void BtnManageEmployees_Click_1(object sender, EventArgs e)
         {
             this.ShowSubmenu(this.panelManageEmployees);
         }
 
-        private void BtnViewEmployees_Click(object sender, EventArgs e)
+        private void BtnViewEmployees_Click_1(object sender, EventArgs e)
         {
             this.OpenContainerForm(new ViewEmployees());
             this.HideSubmenu();
         }
 
-        private void BtnTrackEmployees_Click(object sender, EventArgs e)
+        private void BtnTrackEmployees_Click_1(object sender, EventArgs e)
         {
             this.OpenContainerForm(new TrackEmployees());
             this.HideSubmenu();
@@ -197,9 +200,11 @@
             AcctName = null;
         }
 
-        private void BtnLogout_Click(object sender, EventArgs e)
+        private void BtnLogout_Click_1(object sender, EventArgs e)
         {
-            // Message box delete item confirmation.
+            this.HideSubmenu();
+
+            // Message box log out confirmation.
             string msg = "Are you sure you want to log out?";
             string ttl = "Log out Confirmation";
             MessageBoxButtons btns = MessageBoxButtons.YesNo;
@@ -216,6 +221,7 @@
                 this.Close();
             }
         }
+
         #endregion
     }
 }

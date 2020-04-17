@@ -24,6 +24,12 @@
         public string Employee { get; set; }
 
         [BsonElement]
+        public string CustomerName { get; set; }
+
+        [BsonElement]
+        public string CustomerNo { get; set; }
+
+        [BsonElement]
         public double TCIS { get; set; }
 
         [BsonElement]

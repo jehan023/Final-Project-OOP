@@ -97,10 +97,10 @@
             this.btnX.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnX.ForeColor = System.Drawing.Color.Black;
             this.btnX.Location = new System.Drawing.Point(920, 0);
-            this.btnX.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnX.Margin = new System.Windows.Forms.Padding(2);
             this.btnX.Name = "btnX";
             this.btnX.Size = new System.Drawing.Size(25, 27);
-            this.btnX.TabIndex = 1;
+            this.btnX.TabIndex = 0;
             this.btnX.Text = "X";
             this.btnX.UseVisualStyleBackColor = false;
             this.btnX.Click += new System.EventHandler(this.BtnX_Click);
@@ -114,7 +114,7 @@
             this.lblTransaction.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTransaction.Name = "lblTransaction";
             this.lblTransaction.Size = new System.Drawing.Size(202, 37);
-            this.lblTransaction.TabIndex = 1;
+            this.lblTransaction.TabIndex = 0;
             this.lblTransaction.Text = "Transaction";
             // 
             // pnlBackground
@@ -145,7 +145,7 @@
             this.pnlBackground.Location = new System.Drawing.Point(0, 56);
             this.pnlBackground.Name = "pnlBackground";
             this.pnlBackground.Size = new System.Drawing.Size(945, 583);
-            this.pnlBackground.TabIndex = 16;
+            this.pnlBackground.TabIndex = 0;
             // 
             // btnTransact
             // 
@@ -156,10 +156,10 @@
             this.btnTransact.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTransact.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTransact.Location = new System.Drawing.Point(625, 524);
-            this.btnTransact.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnTransact.Margin = new System.Windows.Forms.Padding(2);
             this.btnTransact.Name = "btnTransact";
             this.btnTransact.Size = new System.Drawing.Size(132, 45);
-            this.btnTransact.TabIndex = 27;
+            this.btnTransact.TabIndex = 7;
             this.btnTransact.Text = "TRANSACT";
             this.btnTransact.UseVisualStyleBackColor = false;
             this.btnTransact.Click += new System.EventHandler(this.BtnTransact_Click);
@@ -175,7 +175,7 @@
             this.lblCategory.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCategory.Name = "lblCategory";
             this.lblCategory.Size = new System.Drawing.Size(95, 24);
-            this.lblCategory.TabIndex = 6;
+            this.lblCategory.TabIndex = 0;
             this.lblCategory.Text = "Category :";
             // 
             // cboCategory
@@ -184,10 +184,10 @@
             this.cboCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboCategory.FormattingEnabled = true;
             this.cboCategory.Location = new System.Drawing.Point(603, 31);
-            this.cboCategory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboCategory.Margin = new System.Windows.Forms.Padding(2);
             this.cboCategory.Name = "cboCategory";
             this.cboCategory.Size = new System.Drawing.Size(192, 28);
-            this.cboCategory.TabIndex = 7;
+            this.cboCategory.TabIndex = 1;
             this.cboCategory.SelectedIndexChanged += new System.EventHandler(this.CboCategory_SelectedIndexChanged);
             // 
             // CboItem
@@ -198,10 +198,10 @@
             this.CboItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CboItem.FormattingEnabled = true;
             this.CboItem.Location = new System.Drawing.Point(82, 31);
-            this.CboItem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CboItem.Margin = new System.Windows.Forms.Padding(2);
             this.CboItem.Name = "CboItem";
             this.CboItem.Size = new System.Drawing.Size(372, 28);
-            this.CboItem.TabIndex = 5;
+            this.CboItem.TabIndex = 2;
             this.CboItem.SelectedIndexChanged += new System.EventHandler(this.CboItem_SelectedIndexChanged);
             this.CboItem.TextChanged += new System.EventHandler(this.CboItem_TextChanged);
             this.CboItem.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CboItem_KeyPress);
@@ -213,11 +213,11 @@
             this.txtTransactionID.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTransactionID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTransactionID.Location = new System.Drawing.Point(162, 6);
-            this.txtTransactionID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTransactionID.Margin = new System.Windows.Forms.Padding(2);
             this.txtTransactionID.Name = "txtTransactionID";
             this.txtTransactionID.ReadOnly = true;
             this.txtTransactionID.Size = new System.Drawing.Size(633, 19);
-            this.txtTransactionID.TabIndex = 3;
+            this.txtTransactionID.TabIndex = 0;
             // 
             // groupBox2
             // 
@@ -229,7 +229,7 @@
             this.groupBox2.Location = new System.Drawing.Point(19, 414);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(361, 157);
-            this.groupBox2.TabIndex = 18;
+            this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             // 
             // txtChange
@@ -238,11 +238,11 @@
             this.txtChange.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.txtChange.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtChange.Location = new System.Drawing.Point(27, 111);
-            this.txtChange.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtChange.Margin = new System.Windows.Forms.Padding(2);
             this.txtChange.Name = "txtChange";
             this.txtChange.ReadOnly = true;
             this.txtChange.Size = new System.Drawing.Size(312, 39);
-            this.txtChange.TabIndex = 22;
+            this.txtChange.TabIndex = 0;
             // 
             // lblChange
             // 
@@ -255,7 +255,7 @@
             this.lblChange.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblChange.Name = "lblChange";
             this.lblChange.Size = new System.Drawing.Size(77, 24);
-            this.lblChange.TabIndex = 21;
+            this.lblChange.TabIndex = 0;
             this.lblChange.Text = "Change";
             // 
             // txtAmountReceived
@@ -265,10 +265,10 @@
             this.txtAmountReceived.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAmountReceived.HideSelection = false;
             this.txtAmountReceived.Location = new System.Drawing.Point(27, 36);
-            this.txtAmountReceived.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAmountReceived.Margin = new System.Windows.Forms.Padding(2);
             this.txtAmountReceived.Name = "txtAmountReceived";
             this.txtAmountReceived.Size = new System.Drawing.Size(312, 39);
-            this.txtAmountReceived.TabIndex = 20;
+            this.txtAmountReceived.TabIndex = 5;
             this.txtAmountReceived.TextChanged += new System.EventHandler(this.TxtAmountReceived_TextChanged);
             this.txtAmountReceived.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtAmountReceived_KeyPress);
             // 
@@ -283,7 +283,7 @@
             this.lblCash.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCash.Name = "lblCash";
             this.lblCash.Size = new System.Drawing.Size(53, 24);
-            this.lblCash.TabIndex = 19;
+            this.lblCash.TabIndex = 0;
             this.lblCash.Text = "Cash";
             // 
             // btnAddDiscount
@@ -295,10 +295,10 @@
             this.btnAddDiscount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddDiscount.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddDiscount.Location = new System.Drawing.Point(475, 524);
-            this.btnAddDiscount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddDiscount.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddDiscount.Name = "btnAddDiscount";
             this.btnAddDiscount.Size = new System.Drawing.Size(132, 45);
-            this.btnAddDiscount.TabIndex = 26;
+            this.btnAddDiscount.TabIndex = 6;
             this.btnAddDiscount.Text = "ADD DISCOUNT";
             this.btnAddDiscount.UseVisualStyleBackColor = false;
             this.btnAddDiscount.Click += new System.EventHandler(this.BtnAddDiscount_Click);
@@ -314,7 +314,7 @@
             this.lblTransactionID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTransactionID.Name = "lblTransactionID";
             this.lblTransactionID.Size = new System.Drawing.Size(140, 24);
-            this.lblTransactionID.TabIndex = 2;
+            this.lblTransactionID.TabIndex = 0;
             this.lblTransactionID.Text = "Transaction ID: ";
             // 
             // btnPrintReceipt
@@ -326,10 +326,10 @@
             this.btnPrintReceipt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrintReceipt.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrintReceipt.Location = new System.Drawing.Point(774, 524);
-            this.btnPrintReceipt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPrintReceipt.Margin = new System.Windows.Forms.Padding(2);
             this.btnPrintReceipt.Name = "btnPrintReceipt";
             this.btnPrintReceipt.Size = new System.Drawing.Size(132, 45);
-            this.btnPrintReceipt.TabIndex = 28;
+            this.btnPrintReceipt.TabIndex = 8;
             this.btnPrintReceipt.Text = "TRANSACT w/ RECEIPT";
             this.btnPrintReceipt.UseVisualStyleBackColor = false;
             this.btnPrintReceipt.Click += new System.EventHandler(this.BtnPrintReceipt_Click);
@@ -339,11 +339,11 @@
             this.txtUnitPrice.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtUnitPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUnitPrice.Location = new System.Drawing.Point(283, 70);
-            this.txtUnitPrice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUnitPrice.Margin = new System.Windows.Forms.Padding(2);
             this.txtUnitPrice.Name = "txtUnitPrice";
             this.txtUnitPrice.ReadOnly = true;
             this.txtUnitPrice.Size = new System.Drawing.Size(171, 26);
-            this.txtUnitPrice.TabIndex = 11;
+            this.txtUnitPrice.TabIndex = 0;
             // 
             // lblUnitPrice
             // 
@@ -356,7 +356,7 @@
             this.lblUnitPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUnitPrice.Name = "lblUnitPrice";
             this.lblUnitPrice.Size = new System.Drawing.Size(100, 24);
-            this.lblUnitPrice.TabIndex = 10;
+            this.lblUnitPrice.TabIndex = 0;
             this.lblUnitPrice.Text = "Unit Price :";
             // 
             // groupBox1
@@ -367,7 +367,7 @@
             this.groupBox1.Location = new System.Drawing.Point(421, 414);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(502, 98);
-            this.groupBox1.TabIndex = 23;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
             // txtTotalPrice
@@ -376,11 +376,11 @@
             this.txtTotalPrice.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.txtTotalPrice.Font = new System.Drawing.Font("Arial Rounded MT Bold", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotalPrice.Location = new System.Drawing.Point(19, 39);
-            this.txtTotalPrice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTotalPrice.Margin = new System.Windows.Forms.Padding(2);
             this.txtTotalPrice.Name = "txtTotalPrice";
             this.txtTotalPrice.ReadOnly = true;
             this.txtTotalPrice.Size = new System.Drawing.Size(466, 45);
-            this.txtTotalPrice.TabIndex = 25;
+            this.txtTotalPrice.TabIndex = 0;
             // 
             // lblTotalAmountDue
             // 
@@ -393,7 +393,7 @@
             this.lblTotalAmountDue.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTotalAmountDue.Name = "lblTotalAmountDue";
             this.lblTotalAmountDue.Size = new System.Drawing.Size(184, 25);
-            this.lblTotalAmountDue.TabIndex = 24;
+            this.lblTotalAmountDue.TabIndex = 0;
             this.lblTotalAmountDue.Text = "Total Amount Due";
             // 
             // btnAddItem
@@ -405,10 +405,10 @@
             this.btnAddItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddItem.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddItem.Location = new System.Drawing.Point(814, 54);
-            this.btnAddItem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddItem.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddItem.Name = "btnAddItem";
             this.btnAddItem.Size = new System.Drawing.Size(109, 41);
-            this.btnAddItem.TabIndex = 14;
+            this.btnAddItem.TabIndex = 4;
             this.btnAddItem.Text = "ADD";
             this.btnAddItem.UseVisualStyleBackColor = false;
             this.btnAddItem.Click += new System.EventHandler(this.BtnAddItem_Click);
@@ -422,10 +422,10 @@
             this.btnRemoveItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoveItem.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemoveItem.Location = new System.Drawing.Point(814, 6);
-            this.btnRemoveItem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRemoveItem.Margin = new System.Windows.Forms.Padding(2);
             this.btnRemoveItem.Name = "btnRemoveItem";
             this.btnRemoveItem.Size = new System.Drawing.Size(109, 41);
-            this.btnRemoveItem.TabIndex = 15;
+            this.btnRemoveItem.TabIndex = 0;
             this.btnRemoveItem.Text = "REMOVE";
             this.btnRemoveItem.UseVisualStyleBackColor = false;
             this.btnRemoveItem.Click += new System.EventHandler(this.BtnRemoveItem_Click);
@@ -441,7 +441,7 @@
             this.lblTotalUnitPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTotalUnitPrice.Name = "lblTotalUnitPrice";
             this.lblTotalUnitPrice.Size = new System.Drawing.Size(141, 24);
-            this.lblTotalUnitPrice.TabIndex = 12;
+            this.lblTotalUnitPrice.TabIndex = 0;
             this.lblTotalUnitPrice.Text = "Total Unit Price:";
             // 
             // txtTotalUnitPrice
@@ -449,21 +449,21 @@
             this.txtTotalUnitPrice.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtTotalUnitPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotalUnitPrice.Location = new System.Drawing.Point(603, 67);
-            this.txtTotalUnitPrice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTotalUnitPrice.Margin = new System.Windows.Forms.Padding(2);
             this.txtTotalUnitPrice.Name = "txtTotalUnitPrice";
             this.txtTotalUnitPrice.ReadOnly = true;
             this.txtTotalUnitPrice.Size = new System.Drawing.Size(192, 26);
-            this.txtTotalUnitPrice.TabIndex = 13;
+            this.txtTotalUnitPrice.TabIndex = 0;
             // 
             // txtQuantity
             // 
             this.txtQuantity.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQuantity.Location = new System.Drawing.Point(82, 69);
-            this.txtQuantity.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtQuantity.Margin = new System.Windows.Forms.Padding(2);
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(64, 26);
-            this.txtQuantity.TabIndex = 9;
+            this.txtQuantity.TabIndex = 3;
             this.txtQuantity.TextChanged += new System.EventHandler(this.TxtQuantity_TextChanged);
             this.txtQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtQuantity_KeyPress);
             // 
@@ -478,7 +478,7 @@
             this.lblQuantity.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblQuantity.Name = "lblQuantity";
             this.lblQuantity.Size = new System.Drawing.Size(48, 24);
-            this.lblQuantity.TabIndex = 8;
+            this.lblQuantity.TabIndex = 0;
             this.lblQuantity.Text = "Qty :";
             // 
             // lblItem
@@ -492,7 +492,7 @@
             this.lblItem.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblItem.Name = "lblItem";
             this.lblItem.Size = new System.Drawing.Size(55, 24);
-            this.lblItem.TabIndex = 4;
+            this.lblItem.TabIndex = 0;
             this.lblItem.Text = "Item :";
             // 
             // dgdCart
@@ -527,7 +527,7 @@
             this.dgdCart.RowHeadersWidth = 51;
             this.dgdCart.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgdCart.Size = new System.Drawing.Size(904, 301);
-            this.dgdCart.TabIndex = 17;
+            this.dgdCart.TabIndex = 9;
             this.dgdCart.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgdCart_CellClick);
             // 
             // dataGridViewTextBoxColumn1

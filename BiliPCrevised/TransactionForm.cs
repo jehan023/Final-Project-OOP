@@ -413,11 +413,18 @@
                     DialogResult result = MessageBox.Show(message, title, buttons, MessageBoxIcon.Question);
                     if (result == DialogResult.Yes)
                     {
+                        using (CustomerInfo info = new CustomerInfo())
+                        {
+                            info.ShowDialog();
+                        }
+
                         var selectedCartRecord = this.db.LoadRecordsByGenericT<TransactionTempModel, ObjectId>("TransactionTemp", "Id", id);
                         using (PrintReceipt receipt = new PrintReceipt(
                             DateTime.Now.ToString("MM/dd/yyyy hh:mm tt", CultureInfo.InvariantCulture),
                             LoginUI.AcctName,
                             this.txtTransactionID.Text,
+                            CustomerInfo.CustomerName,
+                            CustomerInfo.ContactNo,
                             cartRecord,
                             string.Format(CultureInfo.CurrentCulture, "₱{0:0.00}", cartRecord.Sum(x => x.TotalUnitPrice)),
                             string.Format(CultureInfo.CurrentCulture, "{0}%", selectedCartRecord.Discount),
@@ -464,6 +471,11 @@
                     DialogResult result = MessageBox.Show(message, title, buttons, MessageBoxIcon.Question);
                     if (result == DialogResult.Yes)
                     {
+                        using (CustomerInfo info = new CustomerInfo())
+                        {
+                            info.ShowDialog();
+                        }
+
                         this.Transact(cartRecord);
                     }
                 }
@@ -528,11 +540,13 @@
                     Items = string.Join(", ", (from item in cartRecord select item.Item).ToArray()),
                     DateOfPurchase = DateTime.Now,
                     Employee = LoginUI.AcctName,
+                    CustomerName = CustomerInfo.CustomerName,
+                    CustomerNo = CustomerInfo.ContactNo,
                     TCIS = totalCostItemSold,
                     TRA = cartRecord.Sum(x => x.TotalUnitPrice),
                     NetSales = totalPrice,
                     GrossMargin = totalPrice - totalCostItemSold,
-                });
+                }); ;
 
                 MessageBox.Show("Transaction Success!");
                 this.db.DropCollection<TransactionTempModel>("TransactionTemp");

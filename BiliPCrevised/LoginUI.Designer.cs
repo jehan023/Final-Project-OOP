@@ -84,7 +84,7 @@
             this.LinkResetPassword.Location = new System.Drawing.Point(208, 79);
             this.LinkResetPassword.Name = "LinkResetPassword";
             this.LinkResetPassword.Size = new System.Drawing.Size(98, 14);
-            this.LinkResetPassword.TabIndex = 6;
+            this.LinkResetPassword.TabIndex = 8;
             this.LinkResetPassword.TabStop = true;
             this.LinkResetPassword.Text = "Reset Password";
             this.LinkResetPassword.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -103,7 +103,7 @@
             this.btnExit.Margin = new System.Windows.Forms.Padding(2);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(69, 32);
-            this.btnExit.TabIndex = 8;
+            this.btnExit.TabIndex = 7;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.BtnExit_Click);
@@ -134,7 +134,7 @@
             this.btnLogin.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(69, 32);
-            this.btnLogin.TabIndex = 7;
+            this.btnLogin.TabIndex = 6;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.BtnLogin_Click);

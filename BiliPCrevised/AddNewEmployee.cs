@@ -40,9 +40,21 @@
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
                 MessageBox.Show(message, title, buttons, MessageBoxIcon.Error);
             }
+            else if (this.TxtContactNo.TextLength != 11)
+            {
+                // Message box showing incorrect contact number.
+                string message = "Please confirm the contact number.";
+                string title = "Error";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBox.Show(message, title, buttons, MessageBoxIcon.Error);
+            }
             else if (this.TxtPassword.Text != this.TxtConfirmPassword.Text)
             {
-                MessageBox.Show("Please confirm your password.");
+                // Message box showing password not matched.
+                string message = "Please confirm your password.";
+                string title = "Error";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBox.Show(message, title, buttons, MessageBoxIcon.Error);
             }
             else if ((this.TxtPassword.Text == this.TxtConfirmPassword.Text) && !usernameExists && (emptyField == 0))
             {
@@ -51,6 +63,7 @@
                     this.db.InsertRecord("Users", new UsersModel
                     {
                         Name = this.txtName.Text,
+                        ContactNo = this.TxtContactNo.Text,
                         Username = this.txtUsername.Text,
                         Password = this.TxtPassword.Text,
                         Salary = wage,
@@ -116,6 +129,11 @@
                 this.lblCheckPass.Text = "Password  Not Matched!";
                 this.lblCheckPass.ForeColor = Color.Red;
             }
+        }
+
+        private void TxtContactNo_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            Functions.RestrictedKeyPressToInt(e);
         }
     }
 }

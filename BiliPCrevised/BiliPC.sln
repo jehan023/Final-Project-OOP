@@ -8,6 +8,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{761F42C8-1798-4654-A173-9FCE0591F63C}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
+		PrintReceiptViewer.rdlc = PrintReceiptViewer.rdlc
 	EndProjectSection
 EndProject
 Global

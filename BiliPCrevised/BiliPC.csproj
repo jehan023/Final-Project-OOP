@@ -176,6 +176,12 @@
     <Compile Include="AddNewItem.Designer.cs">
       <DependentUpon>AddNewItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomerInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerInfo.Designer.cs">
+      <DependentUpon>CustomerInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="DashboardUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -274,6 +280,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddNewItem.resx">
       <DependentUpon>AddNewItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerInfo.resx">
+      <DependentUpon>CustomerInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DashboardUI.resx">
       <DependentUpon>DashboardUI.cs</DependentUpon>
